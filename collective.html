@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Collective — ARCENI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0a;
+    --bg-2:#111;
+    --bg-3:#161616;
+    --ink:#f5f5f5;
+    --ink-dim:#8a8a8a;
+    --line:rgba(255,255,255,0.10);
+    --line-2:rgba(255,255,255,0.18);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-weight:300;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  .display{font-family:'Bebas Neue',sans-serif;letter-spacing:.02em;line-height:.95;font-weight:400;text-transform:uppercase}
+  .mono{font-family:'JetBrains Mono',monospace;font-weight:300;letter-spacing:.05em}
+
+  .grain{position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.06;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:22px 40px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(14px);background:rgba(10,10,10,.4);border-bottom:1px solid transparent;transition:all .3s}
+  header.nav.scrolled{border-bottom-color:var(--line);background:rgba(10,10,10,.85)}
+  .logo{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.22em;color:#fff}
+  .logo sup{font-size:9px;letter-spacing:.3em;color:var(--ink-dim);margin-left:5px;vertical-align:top}
+  .nav-links{display:flex;gap:34px;align-items:center}
+  .nav-links a{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--ink-dim);transition:color .3s}
+  .nav-links a:hover{color:#fff}
+  .nav-links a.active{color:#fff}
+  .nav-cta{font-size:11px;letter-spacing:.25em;text-transform:uppercase;padding:11px 20px;border:1px solid var(--line-2);color:#fff;transition:all .3s}
+  .nav-cta:hover{background:#fff;color:#000}
+
+  /* HERO */
+  .hero{min-height:100vh;padding:120px 40px 40px;position:relative;overflow:hidden;border-bottom:1px solid var(--line);display:flex;flex-direction:column;background:#000}
+  .hero-corner{position:absolute;width:20px;height:20px;z-index:3;pointer-events:none}
+  .hero-corner::before,.hero-corner::after{content:"";position:absolute;background:var(--line-2)}
+  .hero-corner.tl{top:100px;left:40px}
+  .hero-corner.tl::before{top:0;left:0;width:1px;height:20px}
+  .hero-corner.tl::after{top:0;left:0;width:20px;height:1px}
+  .hero-corner.tr{top:100px;right:40px}
+  .hero-corner.tr::before{top:0;right:0;width:1px;height:20px}
+  .hero-corner.tr::after{top:0;right:0;width:20px;height:1px}
+  .hero-corner.bl{bottom:40px;left:40px}
+  .hero-corner.bl::before{bottom:0;left:0;width:1px;height:20px}
+  .hero-corner.bl::after{bottom:0;left:0;width:20px;height:1px}
+  .hero-corner.br{bottom:40px;right:40px}
+  .hero-corner.br::before{bottom:0;right:0;width:1px;height:20px}
+  .hero-corner.br::after{bottom:0;right:0;width:20px;height:1px}
+  .hero-issue{position:relative;z-index:2;margin-bottom:60px;display:flex;align-items:center;gap:24px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim)}
+  .hero-issue-line{width:40px;height:1px;background:var(--ink-dim);flex-shrink:0}
+  .hero-issue-sep{width:1px;height:12px;background:var(--line-2);flex-shrink:0}
+  .hero-content{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:2}
+  .hero-number{font-family:'Bebas Neue',sans-serif;font-size:clamp(200px,25vw,400px);line-height:.8;color:rgba(255,255,255,.03);position:absolute;top:50%;right:0;transform:translateY(-50%);letter-spacing:-.05em;pointer-events:none;z-index:0}
+  .hero-headline{font-family:'Bebas Neue',sans-serif;font-size:clamp(70px,11vw,180px);text-transform:uppercase;line-height:.85;color:#fff;letter-spacing:.01em;font-weight:400;margin-bottom:50px;position:relative;z-index:1}
+  .hero-headline .line{display:block}
+  .hero-headline .line-2 em{font-style:normal;color:var(--ink-dim)}
+  .hero-headline .line-3{color:var(--ink-dim);letter-spacing:.02em}
+  .hero-divider{width:80px;height:1px;background:var(--line-2);margin-bottom:40px}
+  .hero-manifesto{font-size:clamp(15px,1.2vw,18px);color:#b0b0b0;line-height:1.75;font-weight:300;max-width:640px;margin-bottom:50px;position:relative;z-index:1}
+  .hero-manifesto strong{color:#fff;font-weight:400}
+  .hero-actions{display:flex;gap:18px;flex-wrap:wrap;align-items:center;position:relative;z-index:1}
+  .btn-primary{display:inline-flex;align-items:center;gap:14px;padding:18px 32px;background:#fff;color:#000;font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;transition:all .35s}
+  .btn-primary:hover{background:#e5e5e5;gap:20px}
+  .btn-ghost{display:inline-flex;align-items:center;gap:14px;padding:18px 32px;border:1px solid var(--line-2);color:#fff;font-size:11px;letter-spacing:.28em;text-transform:uppercase;transition:all .35s}
+  .btn-ghost:hover{background:#fff;color:#000;border-color:#fff}
+  .hero-bottom{display:flex;justify-content:flex-end;align-items:center;padding:24px 0 0;margin-top:auto;border-top:1px solid var(--line);position:relative;z-index:2;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--ink-dim)}
+  .hero-bottom-right{display:flex;align-items:center;gap:12px}
+  .hero-bottom-right .scroll-line{width:30px;height:1px;background:var(--ink-dim);animation:scrollSlide 2s ease-in-out infinite}
+  @keyframes scrollSlide{0%,100%{transform:scaleX(1);opacity:.4}50%{transform:scaleX(1.4);opacity:1}}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+  /* THE ARCHER */
+  .archer{background:#000;position:relative;overflow:hidden}
+  .archer-photo{position:relative;width:100%;height:720px;overflow:hidden;border-bottom:1px solid var(--line);cursor:default;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+  .archer-photo-img{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=80');background-size:cover;background-position:center;transition:transform 1.2s cubic-bezier(.25,.1,.25,1);filter:grayscale(100%) contrast(1.1) brightness(.55)}
+  .archer-photo:hover .archer-photo-img{transform:scale(1.03)}
+  .archer-photo-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.3) 0%,rgba(0,0,0,.1) 40%,rgba(0,0,0,.85) 100%);z-index:1}
+  .archer-photo-content{position:absolute;bottom:0;left:0;right:0;z-index:2;padding:60px 80px;display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
+  .archer-photo-text{max-width:600px}
+  .archer-photo-label{display:flex;align-items:center;gap:16px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:30px}
+  .archer-photo-label::before{content:"";width:40px;height:1px;background:var(--ink-dim)}
+  .archer-photo-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(72px,10vw,160px);text-transform:uppercase;line-height:.85;color:#fff;letter-spacing:.01em;margin-bottom:24px}
+  .archer-photo-title em{font-style:normal;color:var(--ink-dim)}
+  .archer-photo-tagline{font-size:clamp(15px,1.2vw,18px);color:#c0c0c0;line-height:1.75;font-weight:300;max-width:640px;margin-bottom:0}
+  .archer-photo-tagline strong{color:#fff;font-weight:400}
+  .archer-photo-meta{position:absolute;top:40px;right:80px;z-index:2;display:flex;gap:24px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--ink-dim)}
+  .archer-photo-cta{display:inline-flex;align-items:center;gap:14px;padding:18px 32px;border:1px solid rgba(255,255,255,.4);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:.2em;text-transform:uppercase;transition:all .4s;backdrop-filter:blur(8px);background:rgba(0,0,0,.3);flex-shrink:0}
+  .archer-photo-cta:hover{background:#fff;color:#000;border-color:#fff}
+  .archer-photo-cta .arrow{transition:transform .4s}
+  .archer-photo-cta:hover .arrow{transform:translate(4px,-4px);color:#000}
+
+  .archer-cta-row{padding:60px 40px;background:#000;border-bottom:1px solid var(--line)}
+  .archer-cta-row-inner{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap}
+  .archer-cta-text{font-size:14px;color:var(--ink-dim);letter-spacing:.05em;max-width:500px}
+  .archer-cta-text strong{color:#fff;font-weight:400}
+  .archer-cta{display:inline-flex;align-items:center;gap:16px;padding:22px 40px;background:#fff;color:#000;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:.25em;text-transform:uppercase;transition:all .4s;position:relative;overflow:hidden}
+  .archer-cta::before{content:"";position:absolute;inset:0;background:#000;transform:translateY(100%);transition:transform .4s cubic-bezier(.77,0,.18,1);z-index:0}
+  .archer-cta:hover::before{transform:translateY(0)}
+  .archer-cta span{position:relative;z-index:1;transition:color .4s}
+  .archer-cta:hover span{color:#fff}
+  .archer-cta .arrow{position:relative;z-index:1;transition:transform .4s, color .4s}
+  .archer-cta:hover .arrow{transform:translate(6px,-6px);color:#fff}
+
+  /* ========================================
+     THE CATALYST — Workshop Section
+     ======================================== */
+  .catalyst{background:#000;position:relative;overflow:hidden}
+  .catalyst-photo{position:relative;width:100%;height:720px;overflow:hidden;border-bottom:1px solid var(--line);cursor:default;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+  .catalyst-photo-img{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=1920&q=80');background-size:cover;background-position:center;transition:transform 1.2s cubic-bezier(.25,.1,.25,1);filter:grayscale(100%) contrast(1.1) brightness(.55)}
+  .catalyst-photo:hover .catalyst-photo-img{transform:scale(1.03)}
+  .catalyst-photo-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.3) 0%,rgba(0,0,0,.1) 40%,rgba(0,0,0,.85) 100%);z-index:1}
+  .catalyst-photo-content{position:absolute;bottom:0;left:0;right:0;z-index:2;padding:60px 80px;display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
+  .catalyst-photo-text{max-width:600px}
+  .catalyst-photo-label{display:flex;align-items:center;gap:16px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:30px}
+  .catalyst-photo-label::before{content:"";width:40px;height:1px;background:var(--ink-dim)}
+  .catalyst-photo-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(72px,10vw,160px);text-transform:uppercase;line-height:.85;color:#fff;letter-spacing:.01em;margin-bottom:24px}
+  .catalyst-photo-title em{font-style:normal;color:var(--ink-dim)}
+  .catalyst-photo-tagline{font-size:clamp(15px,1.2vw,18px);color:#c0c0c0;line-height:1.75;font-weight:300;max-width:640px;margin-bottom:0}
+  .catalyst-photo-tagline strong{color:#fff;font-weight:400}
+  .catalyst-photo-meta{position:absolute;top:40px;right:80px;z-index:2;display:flex;gap:24px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--ink-dim)}
+
+  /* Upcoming Event Card */
+  .catalyst-event{padding:100px 40px;background:#000;border-bottom:1px solid var(--line)}
+  .catalyst-event-inner{max-width:1400px;margin:0 auto}
+  .catalyst-event-label{display:flex;align-items:center;gap:16px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:40px}
+  .catalyst-event-label::before{content:"";width:40px;height:1px;background:var(--ink-dim)}
+  .catalyst-event-card{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;padding:60px;border:1px solid var(--line);background:rgba(255,255,255,.01);transition:background .4s ease, border-color .4s ease;position:relative;overflow:hidden}
+  .catalyst-event-card::before{content:"";position:absolute;top:0;left:0;width:0;height:1px;background:#fff;transition:width .6s cubic-bezier(.25,.1,.25,1)}
+  .catalyst-event-card:hover{background:rgba(255,255,255,.025);border-color:var(--line-2)}
+  .catalyst-event-card:hover::before{width:100%}
+
+  .catalyst-event-left{display:flex;flex-direction:column;gap:24px}
+  .catalyst-event-num{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim)}
+  .catalyst-event-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,4vw,64px);text-transform:uppercase;color:#fff;line-height:.95;letter-spacing:.02em}
+  .catalyst-event-title em{font-style:normal;color:var(--ink-dim)}
+  .catalyst-event-theme{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--ink-dim);padding:6px 12px;border:1px solid var(--line);border-radius:100px;display:inline-block;align-self:flex-start}
+  .catalyst-event-desc{font-size:15px;color:#a0a0a0;line-height:1.75;font-weight:300}
+  .catalyst-event-desc strong{color:#fff;font-weight:400}
+
+  .catalyst-event-right{display:flex;flex-direction:column;gap:30px}
+  .catalyst-event-details{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line);padding-top:24px}
+  .catalyst-event-detail{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+  .catalyst-event-detail:last-child{border-bottom:none}
+  .catalyst-event-detail-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim)}
+  .catalyst-event-detail-value{font-size:14px;color:#fff;font-weight:400;letter-spacing:.05em}
+  .catalyst-event-cta{display:inline-flex;align-items:center;gap:16px;padding:22px 40px;background:#fff;color:#000;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:.25em;text-transform:uppercase;transition:all .4s;position:relative;overflow:hidden;align-self:flex-start}
+  .catalyst-event-cta::before{content:"";position:absolute;inset:0;background:#000;transform:translateY(100%);transition:transform .4s cubic-bezier(.77,0,.18,1);z-index:0}
+  .catalyst-event-cta:hover::before{transform:translateY(0)}
+  .catalyst-event-cta span{position:relative;z-index:1;transition:color .4s}
+  .catalyst-event-cta:hover span{color:#fff}
+  .catalyst-event-cta .arrow{position:relative;z-index:1;transition:transform .4s, color .4s}
+  .catalyst-event-cta:hover .arrow{transform:translate(6px,-6px);color:#fff}
+
+  /* Catalyst CTA row */
+  .catalyst-cta-row{padding:60px 40px;background:#000;border-bottom:1px solid var(--line)}
+  .catalyst-cta-row-inner{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap}
+  .catalyst-cta-text{font-size:14px;color:var(--ink-dim);letter-spacing:.05em;max-width:500px}
+  .catalyst-cta-text strong{color:#fff;font-weight:400}
+  .catalyst-cta{display:inline-flex;align-items:center;gap:16px;padding:22px 40px;background:#fff;color:#000;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:.25em;text-transform:uppercase;transition:all .4s;position:relative;overflow:hidden}
+  .catalyst-cta::before{content:"";position:absolute;inset:0;background:#000;transform:translateY(100%);transition:transform .4s cubic-bezier(.77,0,.18,1);z-index:0}
+  .catalyst-cta:hover::before{transform:translateY(0)}
+  .catalyst-cta span{position:relative;z-index:1;transition:color .4s}
+  .catalyst-cta:hover span{color:#fff}
+  .catalyst-cta .arrow{position:relative;z-index:1;transition:transform .4s, color .4s}
+  .catalyst-cta:hover .arrow{transform:translate(6px,-6px);color:#fff}
+
+  /* Footer */
+  footer{background:#000;position:relative;overflow:hidden}
+  footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent)}
+  .foot-top{padding:80px 40px 60px;display:flex;justify-content:space-between;align-items:flex-start;gap:60px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+  .foot-brand{max-width:320px}
+  .foot-wordmark{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:.22em;color:#fff;margin-bottom:14px}
+  .foot-wordmark sup{font-size:10px;letter-spacing:.3em;color:var(--ink-dim);vertical-align:top;margin-left:4px}
+  .foot-tagline{font-size:13px;color:var(--ink-dim);line-height:1.7;font-weight:300}
+  .foot-links{display:flex;gap:80px;flex-wrap:wrap}
+  .foot-col h4{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:18px}
+  .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .foot-col a{font-size:13px;color:#888;transition:color .3s}
+  .foot-col a:hover{color:#fff}
+  .foot-newsletter{display:flex;flex-direction:column;gap:12px;min-width:240px}
+  .foot-newsletter p{font-size:12px;color:#888;line-height:1.6;margin-bottom:8px}
+  .foot-newsletter-form{display:flex;gap:0;border:1px solid var(--line)}
+  .foot-newsletter-input{flex:1;background:transparent;border:none;padding:12px 16px;font-family:'Inter',sans-serif;font-size:13px;color:#fff;outline:none}
+  .foot-newsletter-input::placeholder{color:#555}
+  .foot-newsletter-btn{background:#fff;color:#000;border:none;padding:12px 20px;font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:all .3s}
+  .foot-newsletter-btn:hover{background:#e5e5e5}
+  .foot-bottom{padding:24px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-dim)}
+  .foot-bottom .status{display:flex;align-items:center;gap:8px}
+  .foot-bottom .status .dot{width:5px;height:5px;background:#fff;border-radius:50%;animation:pulse 2s infinite}
+
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .9s ease, transform .9s ease}
+  .reveal.in{opacity:1;transform:translateY(0)}
+
+  @media (max-width: 960px){
+    header.nav{padding:18px 22px}
+    .nav-links{display:none}
+    .hero{padding:110px 22px 30px}
+    .hero-corner.tl,.hero-corner.tr{top:90px}
+    .hero-corner.tl,.hero-corner.bl{left:22px}
+    .hero-corner.tr,.hero-corner.br{right:22px}
+    .hero-issue{flex-direction:column;align-items:flex-start;gap:12px;margin-bottom:40px}
+    .hero-headline{font-size:clamp(52px,13vw,100px)}
+    .hero-number{font-size:200px}
+    .hero-bottom{flex-direction:column;align-items:flex-end;gap:16px;margin-top:40px}
+    .archer-photo, .catalyst-photo{height:560px}
+    .archer-photo-content, .catalyst-photo-content{padding:40px 30px;flex-direction:column;align-items:flex-start}
+    .archer-photo-meta, .catalyst-photo-meta{top:24px;right:30px;flex-direction:column;gap:8px;align-items:flex-end}
+    .archer-cta-row, .catalyst-cta-row{padding:40px 22px}
+    .archer-cta-row-inner, .catalyst-cta-row-inner{flex-direction:column;align-items:flex-start}
+    .catalyst-event{padding:60px 22px}
+    .catalyst-event-card{grid-template-columns:1fr;gap:40px;padding:36px 28px}
+    .foot-top{padding:60px 22px 40px;flex-direction:column;gap:40px}
+    .foot-links{gap:50px}
+    .foot-newsletter{min-width:100%}
+    .foot-bottom{padding:20px 22px;flex-direction:column;text-align:center;gap:12px}
+  }
+  @media (max-width: 540px){
+    .hero-actions{flex-direction:column;align-items:stretch;width:100%}
+    .btn-primary, .btn-ghost{justify-content:center}
+    .hero-headline{font-size:clamp(44px,12vw,70px)}
+    .hero-number{font-size:150px}
+    .archer-photo, .catalyst-photo{height:480px}
+    .archer-photo-title, .catalyst-photo-title{font-size:clamp(56px,14vw,100px)}
+    .archer-photo-meta, .catalyst-photo-meta{display:none}
+    .catalyst-event-card{padding:28px 22px}
+    .foot-links{flex-direction:column;gap:30px}
+  }
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="nav" id="nav">
+  <a href="index.html" class="logo">ARCENI<sup>®</sup></a>
+  <div class="nav-links">
+    <a href="index.html#consulting">Consulting</a>
+    <a href="index.html#programs">Programs</a>
+    <a href="collective.html" class="active">The Collective</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <a href="contact.html" class="nav-cta">Apply Now</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-corner tl"></div>
+  <div class="hero-corner tr"></div>
+  <div class="hero-corner bl"></div>
+  <div class="hero-corner br"></div>
+
+  <div class="hero-issue reveal">
+    <span class="hero-issue-line"></span>
+    <span>The Collective</span>
+    <span class="hero-issue-sep"></span>
+    <span>Private Membership</span>
+    <span class="hero-issue-sep"></span>
+    <span>By Application</span>
+  </div>
+
+  <div class="hero-number display">01</div>
+
+  <div class="hero-content">
+    <h1 class="hero-headline reveal">
+      <span class="line line-1">Purpose.</span>
+      <span class="line line-2">Growth.</span>
+      <span class="line line-3">Impact.</span>
+    </h1>
+    <div class="hero-divider reveal"></div>
+    <p class="hero-manifesto reveal"> The Arceni Collective provides personalized coaching programs and workshops for participants to build <strong>clarity and confidence</strong> within a supportive community. Two pathways. One standard of depth.</p>
+    <div class="hero-actions reveal">
+      <a href="#archer" class="btn-primary">The Archer <span>→</span></a>
+      <a href="#catalyst" class="btn-ghost">The Catalyst</a>
+    </div>
+  </div>
+
+  <div class="hero-bottom reveal">
+    <div class="hero-bottom-right">
+      <span>Scroll</span>
+      <span class="scroll-line"></span>
+    </div>
+  </div>
+</section>
+
+<!-- THE ARCHER -->
+<section class="archer" id="archer">
+
+  <div class="archer-photo reveal">
+    <div class="archer-photo-img"></div>
+    <div class="archer-photo-overlay"></div>
+    <div class="archer-photo-meta">
+      <span>Cohort 01</span>
+      <span>London · 2026</span>
+    </div>
+    <div class="archer-photo-content">
+      <div class="archer-photo-text">
+        <div class="archer-photo-label"> · The Flagship· 1-on-1</div>
+        <h2 class="archer-photo-title">Archer<br/><em>Program.</em></h2>
+        <p class="archer-photo-tagline">A 3–6 month <strong>immersive</strong> coaching program for youth and professionals to find clarity, purpose and drive to make a lasting and meaningful impact in their careers. It combines <strong>reflection</strong>, <strong>practical learning</strong> and experiences that translate into real-world change.
+      </div>
+      <a href="contact.html" class="archer-photo-cta">
+        <span>Apply Now</span>
+        <span class="arrow">↗</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="archer-cta-row reveal">
+    <div class="archer-cta-row-inner">
+      <div class="archer-cta-text">The Archer Program is right for you IF you a seeking a <strong>breakthrough</strong> or facing challenges to: Find your <strong>identity</strong>, build your <strong>skillset</strong> or start a passion <strong>project</strong>.</div>
+      <a href="contact.html" class="archer-cta"><span>Apply for The Archer</span><span class="arrow">↗</span></a>
+    </div>
+  </div>
+
+</section>
+
+<!-- ========================================
+     THE CATALYST — Workshop Section
+     ======================================== -->
+<section class="catalyst" id="catalyst">
+
+  <div class="catalyst-photo reveal">
+    <div class="catalyst-photo-img"></div>
+    <div class="catalyst-photo-overlay"></div>
+    <div class="catalyst-photo-meta">
+      <span>Workshop · 02</span>
+      <span>Series · 2026</span>
+    </div>
+    <div class="catalyst-photo-content">
+      <div class="catalyst-photo-text">
+        <div class="catalyst-photo-label">Workshop · 02 · The Immersion</div>
+        <h2 class="catalyst-photo-title">Catalyst<br/><em>Workshops.</em></h2>
+        <p class="catalyst-photo-tagline">Immersive workshops built around 4 core principles: Life demands intention, Purpose is forged in work, Leadership is a practice, and Impact is the measure of a life well-lived. <strong>Small rooms. Candid conversations. No spectators.</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Upcoming Event -->
+  <div class="catalyst-event reveal">
+    <div class="catalyst-event-inner">
+      <div class="catalyst-event-label">Next Workshop</div>
+      <div class="catalyst-event-card">
+        <div class="catalyst-event-left">
+          <div class="catalyst-event-num">Workshop · 01</div>
+          <h3 class="catalyst-event-title">Identity + <br/><em>Belonging.</em></h3>
+          <span class="catalyst-event-theme">Life · Purpose · Leadership</span>
+          <p class="catalyst-event-desc">A one-day immersion on designing a life with intention. <strong>For youth ready to explore aspects of their identity and journey</strong> — and to build a life that reflects what actually matters. Facilitated by Coach Almas. Limited to <strong>10</strong> participants.</p>
+        </div>
+        <div class="catalyst-event-right">
+          <div class="catalyst-event-details">
+            <div class="catalyst-event-detail">
+              <span class="catalyst-event-detail-label">Date</span>
+              <span class="catalyst-event-detail-value">TBD</span>
+            </div>
+            <div class="catalyst-event-detail">
+              <span class="catalyst-event-detail-label">Time</span>
+              <span class="catalyst-event-detail-value">TBD</span>
+            </div>
+            <div class="catalyst-event-detail">
+              <span class="catalyst-event-detail-label">Seats</span>
+              <span class="catalyst-event-detail-value">10 participants</span>
+            </div>
+            <div class="catalyst-event-detail">
+              <span class="catalyst-event-detail-label">Facilitator</span>
+              <span class="catalyst-event-detail-value">TBD</span>
+            </div>
+            <div class="catalyst-event-detail">
+              <span class="catalyst-event-detail-label">Location</span>
+              <span class="catalyst-event-detail-value">TBD</span>
+            </div>
+          </div>
+          <a href="contact.html" class="catalyst-event-cta"><span>Reserve Your Seat</span><span class="arrow">↗</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="catalyst-cta-row reveal">
+    <div class="catalyst-cta-row-inner">
+      <div class="catalyst-cta-text">The workshops are for you if you are seeking to explore. From <strong>purpose to impact.</strong> Each session is built around the belief that real transformation begins with honest work. Get started!</div>
+      <a href="contact.html" class="catalyst-cta"><span>Enroll Now</span><span class="arrow">↗</span></a>
+    </div>
+  </div>
+
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="foot-top">
+    <div class="foot-brand">
+      <div class="foot-wordmark">ARCENI<sup>®</sup></div>
+      <p class="foot-tagline">Strategy consulting, training and advisory providing transformational coaching and leadership for impact. Three disciplines, one house.</p>
+    </div>
+    <div class="foot-links">
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html#consulting">Consulting</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="collective.html">The Collective</a></li>
+          <li><a href="index.html#programs">The Basketball</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Newsletter</h4>
+        <div class="foot-newsletter">
+          <p>Stay informed with insights on leadership, strategy, and building what endures.</p>
+          <form class="foot-newsletter-form" action="#" method="POST">
+            <input type="email" class="foot-newsletter-input" placeholder="your@email.com" required>
+            <button type="submit" class="foot-newsletter-btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>© 2026 ARCENI.</div>
+    <div>Nairobi · Africa · Global </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href');
+      if (id.length > 1) {
+        const t = document.querySelector(id);
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      }
+    });
+  });
+</script>
+</body>
+</html>

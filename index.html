@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ARCENI — Consulting, Training & Advisory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0a;
+    --bg-2:#111;
+    --bg-3:#161616;
+    --ink:#f5f5f5;
+    --ink-dim:#8a8a8a;
+    --line:rgba(255,255,255,0.10);
+    --line-2:rgba(255,255,255,0.18);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-weight:300;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  .display{font-family:'Bebas Neue',sans-serif;letter-spacing:.02em;line-height:.95;font-weight:400;text-transform:uppercase}
+  .mono{font-family:'JetBrains Mono',monospace;font-weight:300;letter-spacing:.05em}
+
+  .grain{position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.06;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:22px 40px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(14px);background:rgba(10,10,10,.4);border-bottom:1px solid transparent;transition:all .3s}
+  header.nav.scrolled{border-bottom-color:var(--line);background:rgba(10,10,10,.85)}
+  .logo{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.22em;color:#fff}
+  .logo sup{font-size:9px;letter-spacing:.3em;color:var(--ink-dim);margin-left:5px;vertical-align:top}
+  .nav-links{display:flex;gap:34px;align-items:center}
+  .nav-links a{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--ink-dim);transition:color .3s}
+  .nav-links a:hover{color:#fff}
+  .nav-cta{font-size:11px;letter-spacing:.25em;text-transform:uppercase;padding:11px 20px;border:1px solid var(--line-2);color:#fff;transition:all .3s}
+  .nav-cta:hover{background:#fff;color:#000}
+
+  /* Hero Section */
+  .hero{min-height:100vh;padding:120px 40px 40px;position:relative;overflow:hidden;border-bottom:1px solid var(--line);display:flex;flex-direction:column;background:#000}
+  .hero-corner{position:absolute;width:20px;height:20px;z-index:3;pointer-events:none}
+  .hero-corner::before,.hero-corner::after{content:"";position:absolute;background:var(--line-2)}
+  .hero-corner.tl{top:100px;left:40px}
+  .hero-corner.tl::before{top:0;left:0;width:1px;height:20px}
+  .hero-corner.tl::after{top:0;left:0;width:20px;height:1px}
+  .hero-corner.tr{top:100px;right:40px}
+  .hero-corner.tr::before{top:0;right:0;width:1px;height:20px}
+  .hero-corner.tr::after{top:0;right:0;width:20px;height:1px}
+  .hero-corner.bl{bottom:40px;left:40px}
+  .hero-corner.bl::before{bottom:0;left:0;width:1px;height:20px}
+  .hero-corner.bl::after{bottom:0;left:0;width:20px;height:1px}
+  .hero-corner.br{bottom:40px;right:40px}
+  .hero-corner.br::before{bottom:0;right:0;width:1px;height:20px}
+  .hero-corner.br::after{bottom:0;right:0;width:20px;height:1px}
+  .hero-issue{position:relative;z-index:2;margin-bottom:60px;display:flex;align-items:center;gap:24px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim)}
+  .hero-issue-line{width:40px;height:1px;background:var(--ink-dim);flex-shrink:0}
+  .hero-issue-sep{width:1px;height:12px;background:var(--line-2);flex-shrink:0}
+  .hero-content{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:2}
+  .hero-number{font-family:'Bebas Neue',sans-serif;font-size:clamp(200px,25vw,400px);line-height:.8;color:rgba(255,255,255,.03);position:absolute;top:50%;right:0;transform:translateY(-50%);letter-spacing:-.05em;pointer-events:none;z-index:0}
+  .hero-headline{font-family:'Bebas Neue',sans-serif;font-size:clamp(70px,11vw,180px);text-transform:uppercase;line-height:.85;color:#fff;letter-spacing:.01em;font-weight:400;margin-bottom:50px;position:relative;z-index:1}
+  .hero-headline .line{display:block}
+  .hero-headline .line-2 em{font-style:normal;color:var(--ink-dim)}
+  .hero-headline .line-3{color:var(--ink-dim);letter-spacing:.02em}
+  .hero-divider{width:80px;height:1px;background:var(--line-2);margin-bottom:40px}
+  .hero-manifesto{font-size:clamp(15px,1.2vw,18px);color:#b0b0b0;line-height:1.75;font-weight:300;max-width:640px;margin-bottom:50px;position:relative;z-index:1}
+  .hero-manifesto strong{color:#fff;font-weight:400}
+  .hero-actions{display:flex;gap:18px;flex-wrap:wrap;align-items:center;position:relative;z-index:1}
+  .btn-primary{display:inline-flex;align-items:center;gap:14px;padding:18px 32px;background:#fff;color:#000;font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;transition:all .35s}
+  .btn-primary:hover{background:#e5e5e5;gap:20px}
+  .btn-ghost{display:inline-flex;align-items:center;gap:14px;padding:18px 32px;border:1px solid var(--line-2);color:#fff;font-size:11px;letter-spacing:.28em;text-transform:uppercase;transition:all .35s}
+  .btn-ghost:hover{background:#fff;color:#000;border-color:#fff}
+  .hero-bottom{display:flex;justify-content:flex-end;align-items:center;padding:24px 0 0;margin-top:auto;border-top:1px solid var(--line);position:relative;z-index:2;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--ink-dim)}
+  .hero-bottom-right{display:flex;align-items:center;gap:12px}
+  .hero-bottom-right .scroll-line{width:30px;height:1px;background:var(--ink-dim);animation:scrollSlide 2s ease-in-out infinite}
+  @keyframes scrollSlide{0%,100%{transform:scaleX(1);opacity:.4}50%{transform:scaleX(1.4);opacity:1}}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+  /* Consulting Section */
+  .consulting{padding:160px 40px;background:#000;position:relative;border-bottom:1px solid var(--line);overflow:hidden}
+  .consulting::before{content:"";position:absolute;top:-20%;left:-10%;width:50%;aspect-ratio:1;background:radial-gradient(circle,rgba(255,255,255,.03) 0%,transparent 60%);pointer-events:none}
+  .consulting::after{content:"";position:absolute;bottom:-20%;right:-10%;width:50%;aspect-ratio:1;background:radial-gradient(circle,rgba(255,255,255,.03) 0%,transparent 60%);pointer-events:none}
+  .consulting-inner{max-width:1400px;margin:0 auto;position:relative}
+  .consulting-header{display:grid;grid-template-columns:1.3fr 1fr;gap:80px;align-items:end;margin-bottom:60px}
+  .consulting-header-left .c-label{display:flex;align-items:center;gap:16px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:40px}
+  .consulting-header-left .c-label::before{content:"";width:40px;height:1px;background:var(--ink-dim)}
+  .consulting-header-left h2{font-size:clamp(56px,8vw,130px);text-transform:uppercase;line-height:.92;color:var(--ink-dim);letter-spacing:.02em}
+  .consulting-header-left h2 em{font-style:normal;color:var(--ink-dim)}
+  .consulting-header-right{padding-bottom:10px}
+  .consulting-header-right p{font-size:17px;color:#b0b0b0;line-height:1.75;font-weight:300}
+  .consulting-header-right p strong{color:#fff;font-weight:400}
+  .consulting-photo{position:relative;width:100%;height:560px;overflow:hidden;border:1px solid var(--line-2);cursor:pointer;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+  .consulting-photo-img{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=80');background-size:cover;background-position:center;transition:transform 1s cubic-bezier(.25,.1,.25,1);filter:grayscale(100%) contrast(1.1) brightness(.55)}
+  .consulting-photo:hover .consulting-photo-img{transform:scale(1.04)}
+  .consulting-photo-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.2) 0%,rgba(0,0,0,.7) 100%);z-index:1}
+  .consulting-photo-content{position:absolute;bottom:0;left:0;right:0;z-index:2;padding:50px 60px;display:flex;align-items:flex-end;gap:40px;flex-wrap:wrap}
+  .consulting-photo-text{max-width:600px}
+  .consulting-photo-text .photo-label{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:16px}
+  .consulting-photo-text h3{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,4vw,56px);text-transform:uppercase;color:#fff;line-height:1;letter-spacing:.02em;margin-bottom:14px}
+  .consulting-photo-text p{font-size:15px;color:#c0c0c0;line-height:1.7;font-weight:300}
+
+  /* Consulting CTA Row */
+  .consulting-cta-row{display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap;padding-top:60px;margin-top:60px;border-top:1px solid var(--line)}
+  .consulting-cta-text{font-size:14px;color:var(--ink-dim);letter-spacing:.05em;max-width:500px}
+  .consulting-cta-text strong{color:#fff;font-weight:400}
+  .consulting-cta{display:inline-flex;align-items:center;gap:16px;padding:22px 40px;background:#fff;color:#000;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:.25em;text-transform:uppercase;transition:all .4s;position:relative;overflow:hidden}
+  .consulting-cta::before{content:"";position:absolute;inset:0;background:#000;transform:translateY(100%);transition:transform .4s cubic-bezier(.77,0,.18,1);z-index:0}
+  .consulting-cta:hover::before{transform:translateY(0)}
+  .consulting-cta span{position:relative;z-index:1;transition:color .4s}
+  .consulting-cta:hover span{color:#fff}
+  .consulting-cta .arrow{position:relative;z-index:1;transition:transform .4s, color .4s}
+  .consulting-cta:hover .arrow{transform:translate(6px,-6px);color:#fff}
+
+  /* Trust Section */
+  .trust{padding:40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#000}
+  .trust-inner{display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+  .trust-label{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim);white-space:nowrap}
+  .trust-logos{display:flex;gap:50px;flex-wrap:wrap;align-items:center;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.15em;color:#666}
+  .trust-logos span{transition:color .3s}
+  .trust-logos span:hover{color:#fff}
+
+  /* Programs Section */
+  .programs{padding:160px 40px;background:var(--bg);position:relative;border-bottom:1px solid var(--line);overflow:hidden}
+  .programs::before{content:"";position:absolute;top:-20%;left:-10%;width:50%;aspect-ratio:1;background:radial-gradient(circle,rgba(255,255,255,.03) 0%,transparent 60%);pointer-events:none}
+  .programs::after{content:"";position:absolute;bottom:-20%;right:-10%;width:50%;aspect-ratio:1;background:radial-gradient(circle,rgba(255,255,255,.03) 0%,transparent 60%);pointer-events:none}
+  .programs-inner{max-width:1400px;margin:0 auto;position:relative}
+  .programs-header{display:grid;grid-template-columns:1.3fr 1fr;gap:80px;align-items:end;margin-bottom:60px}
+  .programs-header-left .p-label{display:flex;align-items:center;gap:16px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:40px}
+  .programs-header-left .p-label::before{content:"";width:40px;height:1px;background:var(--ink-dim)}
+  .programs-header-left h2{font-size:clamp(56px,8vw,130px);text-transform:uppercase;line-height:.92;color:var(--ink-dim);letter-spacing:.02em}
+  .programs-header-left h2 em{font-style:normal;color:var(--ink-dim)}
+  .programs-header-right{padding-bottom:10px}
+  .programs-header-right p{font-size:17px;color:#b0b0b0;line-height:1.75;font-weight:300}
+  .programs-header-right p strong{color:#fff;font-weight:400}
+  .programs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-bottom:60px}
+  .panel{position:relative;height:720px;overflow:hidden;cursor:pointer;border:1px solid var(--line);display:block}
+  .panel-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .8s cubic-bezier(.25,.1,.25,1);filter:grayscale(100%) contrast(1.1) brightness(.6)}
+  .panel:hover .panel-img{transform:scale(1.08)}
+  .panel-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.3) 0%,rgba(0,0,0,.85) 100%);z-index:1}
+  .panel-content{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;padding:50px 40px;transition:padding .4s ease}
+  .panel:hover .panel-content{padding-bottom:60px}
+  .panel-num{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:.3em;color:var(--ink-dim);margin-bottom:20px}
+  .panel-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,3.5vw,56px);text-transform:uppercase;line-height:.95;color:#fff;margin-bottom:16px;letter-spacing:.02em}
+  .panel-subtitle{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:20px}
+  .panel-desc{font-size:16px;color:#c0c0c0;line-height:1.7;margin-bottom:20px;font-weight:300}
+  .panel-meta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+  .panel-pill{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-dim);padding:5px 10px;border:1px solid var(--line);border-radius:100px;white-space:nowrap}
+  .panel-cta{display:inline-flex;align-items:center;gap:10px;font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:#fff;transition:gap .3s}
+  .panel-cta:hover{gap:16px}
+  .panel-cta .arrow{transition:transform .3s}
+  .panel-cta:hover .arrow{transform:translate(4px,-4px)}
+  .programs-cta-row{display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap;padding-top:40px;border-top:1px solid var(--line);padding-bottom:40px}
+  .programs-cta-text{font-size:14px;color:var(--ink-dim);letter-spacing:.05em;max-width:500px}
+  .programs-cta-text strong{color:#fff;font-weight:400}
+  .programs-cta{display:inline-flex;align-items:center;gap:16px;padding:22px 40px;background:#fff;color:#000;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:.25em;text-transform:uppercase;transition:all .4s;position:relative;overflow:hidden}
+  .programs-cta::before{content:"";position:absolute;inset:0;background:#000;transform:translateY(100%);transition:transform .4s cubic-bezier(.77,0,.18,1);z-index:0}
+  .programs-cta:hover::before{transform:translateY(0)}
+  .programs-cta span{position:relative;z-index:1;transition:color .4s}
+  .programs-cta:hover span{color:#fff}
+  .programs-cta .arrow{position:relative;z-index:1;transition:transform .4s, color .4s}
+  .programs-cta:hover .arrow{transform:translate(6px,-6px);color:#fff}
+
+  /* Footer */
+  footer{background:#000;position:relative;overflow:hidden}
+  footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent)}
+  .foot-top{padding:80px 40px 60px;display:flex;justify-content:space-between;align-items:flex-start;gap:60px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+  .foot-brand{max-width:320px}
+  .foot-wordmark{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:.22em;color:#fff;margin-bottom:14px}
+  .foot-wordmark sup{font-size:10px;letter-spacing:.3em;color:var(--ink-dim);vertical-align:top;margin-left:4px}
+  .foot-tagline{font-size:13px;color:var(--ink-dim);line-height:1.7;font-weight:300}
+  .foot-links{display:flex;gap:80px;flex-wrap:wrap}
+  .foot-col h4{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:18px}
+  .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .foot-col a{font-size:13px;color:#888;transition:color .3s}
+  .foot-col a:hover{color:#fff}
+  .foot-newsletter{display:flex;flex-direction:column;gap:12px;min-width:240px}
+  .foot-newsletter p{font-size:12px;color:#888;line-height:1.6;margin-bottom:8px}
+  .foot-newsletter-form{display:flex;gap:0;border:1px solid var(--line)}
+  .foot-newsletter-input{flex:1;background:transparent;border:none;padding:12px 16px;font-family:'Inter',sans-serif;font-size:13px;color:#fff;outline:none}
+  .foot-newsletter-input::placeholder{color:#555}
+  .foot-newsletter-btn{background:#fff;color:#000;border:none;padding:12px 20px;font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:all .3s}
+  .foot-newsletter-btn:hover{background:#e5e5e5}
+  .foot-bottom{padding:24px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-dim)}
+  .foot-bottom .status{display:flex;align-items:center;gap:8px}
+  .foot-bottom .status .dot{width:5px;height:5px;background:#fff;border-radius:50%;animation:pulse 2s infinite}
+
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .9s ease, transform .9s ease}
+  .reveal.in{opacity:1;transform:translateY(0)}
+
+  @media (max-width: 960px){
+    header.nav{padding:18px 22px}
+    .nav-links{display:none}
+    .hero{padding:110px 22px 30px}
+    .hero-corner.tl,.hero-corner.tr{top:90px}
+    .hero-corner.tl,.hero-corner.bl{left:22px}
+    .hero-corner.tr,.hero-corner.br{right:22px}
+    .hero-headline{font-size:clamp(52px,13vw,100px)}
+    .hero-number{font-size:200px}
+    .hero-bottom{flex-direction:column;align-items:flex-end;gap:16px;margin-top:40px}
+    .consulting, .programs{padding:100px 22px}
+    .consulting-header, .programs-header{grid-template-columns:1fr;gap:30px;margin-bottom:50px}
+    .consulting-cta-row{flex-direction:column;align-items:flex-start}
+    .programs-grid{grid-template-columns:1fr;gap:20px}
+    .panel{height:600px}
+    .panel-content{padding:40px 30px}
+    .consulting-photo{height:440px}
+    .consulting-photo-content{padding:36px 30px}
+    .trust-inner{justify-content:center;text-align:center}
+    .trust-logos{justify-content:center;gap:30px}
+    .foot-top{padding:60px 22px 40px;flex-direction:column;gap:40px}
+    .foot-links{gap:50px}
+    .foot-newsletter{min-width:100%}
+    .foot-bottom{padding:20px 22px;flex-direction:column;text-align:center;gap:12px}
+    .programs-cta-row{flex-direction:column;align-items:flex-start}
+  }
+  @media (max-width: 540px){
+    .hero-actions{flex-direction:column;align-items:stretch;width:100%}
+    .btn-primary, .btn-ghost{justify-content:center}
+    .hero-headline{font-size:clamp(44px,12vw,70px)}
+    .hero-number{font-size:150px}
+    .foot-links{flex-direction:column;gap:30px}
+    .panel{height:500px}
+    .panel-content{padding:30px 24px}
+    .consulting-photo{height:380px}
+  }
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="nav" id="nav">
+  <a href="index.html" class="logo">ARCENI<sup>®</sup></a>
+  <div class="nav-links">
+    <a href="#consulting">Consulting</a>
+    <a href="#programs">Programs</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <a href="contact.html" class="nav-cta">Contact Us</a>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-corner tl"></div>
+  <div class="hero-corner tr"></div>
+  <div class="hero-corner bl"></div>
+  <div class="hero-corner br"></div>
+
+  <div class="hero-issue reveal">
+    <span class="hero-issue-line"></span>
+    <span class="hero-issue-sep"></span>
+    <span>A Consulting, Training & Advisory</span>
+  </div>
+
+  <div class="hero-content">
+    <h1 class="hero-headline reveal">
+      <span class="line line-1">Bold Ideas.</span>
+      <span class="line line-2">Shared <em>Value.</em></span>
+      <span class="line line-3">Impact.</span>
+    </h1>
+    <div class="hero-divider reveal"></div>
+    <p class="hero-manifesto reveal">Transformational advisory for sustainable impact. <strong>Built for individuals and institutions</strong> — to support development projects and ecosystems.</p>
+    <div class="hero-actions reveal">
+      <a href="#consulting" class="btn-primary">Our Work<span>→</span></a>
+      <a href="#programs" class="btn-ghost">Our Programs</a>
+    </div>
+  </div>
+
+  <div class="hero-bottom reveal">
+    <div class="hero-bottom-right">
+      <span>Scroll</span>
+      <span class="scroll-line"></span>
+    </div>
+  </div>
+</section>
+
+<!-- Consulting Section -->
+<section class="consulting" id="consulting">
+  <div class="consulting-inner">
+    <div class="consulting-header reveal">
+      <div class="consulting-header-left">
+        <div class="c-label"> What We Do — </div>
+        <h2 class="display">Consulting</h2>
+      </div>
+      <div class="consulting-header-right">
+        <p>Our consulting firm provides strategic insights, capacity building services to help organizations find <strong>clarity</strong>, <strong>purpose</strong> and support managing projects or systems for sustainable <strong>growth</strong> and <strong>impact</strong>.</p>
+      </div>
+    </div>
+
+    <div class="consulting-photo reveal">
+      <div class="consulting-photo-img"></div>
+      <div class="consulting-photo-overlay"></div>
+      <div class="consulting-photo-content">
+        <div class="consulting-photo-text">
+          <div class="photo-label">Project Management · Capacity Building </div>
+          <h3 class="display">Strategy in action</h3>
+          <p>We partner to make sense of projects, design an approach and processes to execute your overall objectives. Every engagement we undertake is shaped around your organization’s people, priorities, and context.</p>
+        </div>
+      </div>
+    </div>
+
+<!-- Trust Section -->
+<div class="trust">
+  <div class="trust-inner">
+    <div class="trust-label">Trusted by leaders at</div>
+    <div class="trust-logos">
+      <span>Transformacion Ballet</span>
+      <span>NGO Committee on Migration</span>
+    </div>
+  </div>
+</div>
+
+<!-- CTA Row -->
+  <div class="consulting-cta-row reveal">
+    <div class="consulting-cta-text">At ARCENI, we believe that the best ideas come from deep <strong>curiosity</strong>, passion for <strong>change</strong> and <strong>collaboration</strong> —  and we act as <strong>catalysts</strong> in the <strong>transformation</strong> you seek.</div>
+      <a href="contact.html" class="consulting-cta"><span>Start a Project</span><span class="arrow">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- Programs Section -->
+<section class="programs" id="programs">
+  <div class="programs-inner">
+    <div class="programs-header reveal">
+      <div class="programs-header-left">
+        <div class="p-label">Coaching & Leadership — </div>
+        <h2 class="display">Programs</h2>
+      </div>
+      <div class="programs-header-right">
+        <p>Two signature programs designed for those seeking incremental progress and refuse to settle for less.<strong> Each program is built around a philosophy</strong>, the same ethos that produces leaders that adapt and strive to impact.</p>
+      </div>
+    </div>
+
+    <div class="programs-grid">
+
+      <a href="contact.html" class="panel reveal">
+        <div class="panel-img" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80')"></div>
+        <div class="panel-overlay"></div>
+        <div class="panel-content">
+          <h3 class="panel-title display">The Collective</h3>
+          <div class="panel-subtitle">Individuals · Organizations · </div>
+          <p class="panel-desc">Coaching programs for individuals to find clarity and confidence in their careers. We help you move from insight to action, potential to impact, and create experiences that translate into real-world change.</p>
+          <div class="panel-meta">
+          </div>
+          <span class="panel-cta"><span>Request Info</span><span class="arrow">↗</span></span>
+        </div>
+      </a>
+
+      <a href="contact.html" class="panel reveal">
+        <div class="panel-img" style="background-image:url('https://images.unsplash.com/photo-1546519638-68e109498ffc?w=1200&q=80')"></div>
+        <div class="panel-overlay"></div>
+        <div class="panel-content">
+          <h3 class="panel-title display">The Basketball</h3>
+          <div class="panel-subtitle">Players · Teams · Organizations</div>
+          <p class="panel-desc">Personalized training, holistic development and leadership for individuals and teams to gain a competitive edge — on and off the court. We also partner with organizations to build capacity, grow the sport and impact the game.</p>
+          <div class="panel-meta">
+          </div>
+          <span class="panel-cta"><span>Request Info</span><span class="arrow">↗</span></span>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="programs-cta-row reveal">
+      <div class="programs-cta-text">For individuals and teams seeking transformation to athletes building skills to build confidence and impact. <strong>Two programs. One standard of excellence.</strong> Begin your journey!</div>
+      <a href="contact.html" class="programs-cta"><span>Contact Us</span><span class="arrow">↗</span></a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="foot-top">
+    <div class="foot-brand">
+      <div class="foot-wordmark">ARCENI<sup>®</sup></div>
+      <p class="foot-tagline">A strategy consulting, training and advisory providing transformational coaching and leadership for impact. Three disciplines, one house.</p>
+    </div>
+    <div class="foot-links">
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#consulting">Consulting</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="#programs">The Collective</a></li>
+          <li><a href="#programs">The Basketball</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">YouTube</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Newsletter</h4>
+        <div class="foot-newsletter">
+          <p>Stay informed with insights on leadership, strategy, and impact.</p>
+          <form class="foot-newsletter-form" action="#" method="POST">
+            <input type="email" class="foot-newsletter-input" placeholder="your@email.com" required>
+            <button type="submit" class="foot-newsletter-btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>© 2026 ARCENI.</div>
+    <div>Nairobi · Africa · Global </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href');
+      if (id.length > 1) {
+        const t = document.querySelector(id);
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      }
+    });
+  });
+</script>
+</body>
+</html>

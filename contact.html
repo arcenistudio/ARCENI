@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — ARCENI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0a;
+    --bg-2:#111;
+    --bg-3:#161616;
+    --ink:#f5f5f5;
+    --ink-dim:#8a8a8a;
+    --line:rgba(255,255,255,0.10);
+    --line-2:rgba(255,255,255,0.18);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-weight:300;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  .display{font-family:'Bebas Neue',sans-serif;letter-spacing:.02em;line-height:.95;font-weight:400;text-transform:uppercase}
+
+  .grain{position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.06;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:22px 40px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(14px);background:rgba(10,10,10,.4);border-bottom:1px solid transparent;transition:all .3s}
+  header.nav.scrolled{border-bottom-color:var(--line);background:rgba(10,10,10,.85)}
+  .logo{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.22em;color:#fff}
+  .logo sup{font-size:9px;letter-spacing:.3em;color:var(--ink-dim);margin-left:5px;vertical-align:top}
+  .nav-links{display:flex;gap:34px;align-items:center}
+  .nav-links a{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--ink-dim);transition:color .3s}
+  .nav-links a:hover{color:#fff}
+  .nav-cta{font-size:11px;letter-spacing:.25em;text-transform:uppercase;padding:11px 20px;border:1px solid var(--line-2);color:#fff;transition:all .3s}
+  .nav-cta:hover{background:#fff;color:#000}
+
+  /* Contact Section — now full page */
+  .contact{padding:160px 40px 80px;background:#000;position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:center}
+  .contact::before{content:"";position:absolute;top:-20%;left:-10%;width:50%;aspect-ratio:1;background:radial-gradient(circle,rgba(255,255,255,.03) 0%,transparent 60%);pointer-events:none}
+  .contact::after{content:"";position:absolute;bottom:-20%;right:-10%;width:50%;aspect-ratio:1;background:radial-gradient(circle,rgba(255,255,255,.03) 0%,transparent 60%);pointer-events:none}
+  .contact-inner{max-width:1400px;margin:0 auto;position:relative;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .contact-left{padding:80px 80px 80px 0;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--line);position:relative;overflow:hidden}
+  .contact-left::before{content:"";position:absolute;top:-30%;left:-20%;width:60%;aspect-ratio:1;background:radial-gradient(circle,rgba(255,255,255,.02) 0%,transparent 60%);pointer-events:none}
+  .contact-label{display:flex;align-items:center;gap:16px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:40px}
+  .contact-label::before{content:"";width:40px;height:1px;background:var(--ink-dim)}
+  .contact-title{font-size:clamp(56px,6vw,100px);text-transform:uppercase;line-height:.9;color:#fff;letter-spacing:.02em;margin-bottom:30px}
+  .contact-sub{font-size:16px;color:#b0b0b0;line-height:1.75;font-weight:300;margin-bottom:50px}
+  .contact-sub strong{color:#fff;font-weight:400}
+  .contact-details{display:flex;flex-direction:column;gap:0;padding-top:40px;border-top:1px solid var(--line)}
+  .contact-detail{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid var(--line)}
+  .contact-detail:last-child{border-bottom:none}
+  .contact-detail-label{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim)}
+  .contact-detail-value{font-size:14px;color:#fff;font-weight:400}
+  .contact-detail-value a{color:#fff;transition:color .3s}
+  .contact-detail-value a:hover{color:var(--ink-dim)}
+  .contact-right{padding:80px 0 80px 80px;display:flex;flex-direction:column;justify-content:center}
+  .form-wrap{background:transparent;border:none;padding:0}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:28px}
+  .form-group{display:flex;flex-direction:column;gap:8px}
+  .form-group.full{grid-column:1/-1}
+  .form-group label{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--ink-dim)}
+  .form-group input,
+  .form-group select,
+  .form-group textarea{background:transparent;border:none;border-bottom:1px solid var(--line);padding:14px 0;font-family:'Inter',sans-serif;font-size:15px;color:#fff;font-weight:300;transition:border-color .3s;outline:none;resize:none;width:100%}
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus{border-bottom-color:#fff}
+  .form-group input::placeholder,
+  .form-group textarea::placeholder{color:#555}
+  .form-group select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%238a8a8a' stroke-width='1.5' fill='none'/></svg>");background-repeat:no-repeat;background-position:right 0 center;padding-right:20px;cursor:pointer}
+  .form-group select option{background:#000;color:#fff}
+  .form-group textarea{min-height:100px}
+  .form-submit{margin-top:40px;display:flex;justify-content:flex-start}
+  .form-submit button{display:inline-flex;align-items:center;gap:14px;padding:20px 40px;background:#fff;color:#000;font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:.28em;text-transform:uppercase;border:none;cursor:pointer;transition:all .35s}
+  .form-submit button:hover{background:#e5e5e5;gap:20px}
+  .form-submit .arrow{transition:transform .35s}
+  .form-submit button:hover .arrow{transform:translate(4px,-4px)}
+
+  /* Footer */
+  footer{background:#000;position:relative;overflow:hidden}
+  footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent)}
+  .foot-top{padding:80px 40px 60px;display:flex;justify-content:space-between;align-items:flex-start;gap:60px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+  .foot-brand{max-width:320px}
+  .foot-wordmark{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:.22em;color:#fff;margin-bottom:14px}
+  .foot-wordmark sup{font-size:10px;letter-spacing:.3em;color:var(--ink-dim);vertical-align:top;margin-left:4px}
+  .foot-tagline{font-size:13px;color:var(--ink-dim);line-height:1.7;font-weight:300}
+  .foot-links{display:flex;gap:80px;flex-wrap:wrap}
+  .foot-col h4{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:18px}
+  .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .foot-col a{font-size:13px;color:#888;transition:color .3s}
+  .foot-col a:hover{color:#fff}
+  .foot-bottom{padding:24px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-dim)}
+  .foot-bottom .status{display:flex;align-items:center;gap:8px}
+  .foot-bottom .status .dot{width:5px;height:5px;background:#fff;border-radius:50%;animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .9s ease, transform .9s ease}
+  .reveal.in{opacity:1;transform:translateY(0)}
+
+  @media (max-width: 960px){
+    header.nav{padding:18px 22px}
+    .nav-links{display:none}
+    .contact{padding:130px 22px 60px}
+    .contact-inner{grid-template-columns:1fr}
+    .contact-left{padding:0 0 60px 0;border-right:none;border-bottom:1px solid var(--line)}
+    .contact-right{padding:60px 0 0 0}
+    .form-row{grid-template-columns:1fr;gap:20px}
+    .foot-top{padding:60px 22px 40px;flex-direction:column;gap:40px}
+    .foot-links{gap:50px}
+    .foot-bottom{padding:20px 22px;flex-direction:column;text-align:center;gap:12px}
+  }
+  @media (max-width: 540px){
+    .foot-links{flex-direction:column;gap:30px}
+    .contact-left{padding:0 0 40px 0}
+    .contact-right{padding:40px 0 0 0}
+  }
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="nav" id="nav">
+  <a href="index.html" class="logo">ARCENI<sup>®</sup></a>
+  <div class="nav-links">
+    <a href="index.html#consulting">Consulting</a>
+    <a href="index.html#programs">Programs</a>
+  </div>
+  <a href="contact.html" class="nav-cta">Contact Us</a>
+</header>
+
+<!-- Contact Section — full page -->
+<section class="contact">
+  <div class="contact-inner">
+    <div class="contact-left reveal">
+      <div class="contact-label">Begin the Conversation</div>
+      <h2 class="contact-title display">Contact Us</h2>
+      <p class="contact-sub">Every inquiry is reviewed personally by us. <strong>No intake teams. No automated systems.</strong> Just a real conversation about the work you're navigating — and whether we're the right fit to help.</p>
+      <div class="contact-details">
+        <div class="contact-detail">
+          <span class="contact-detail-label">The Consulting</span>
+          <span class="contact-detail-value">Project Management · Capacity Building · Sports Development</span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">The Collective</span>
+          <span class="contact-detail-value">Archer Program · Catalyst Workshops</span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">The Basketball</span>
+          <span class="contact-detail-value">Development · Performance · Clinics</span>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Location</span>
+          <span class="contact-detail-value">Nairobi · Kenya </span>
+        </div>
+      </div>
+    </div>
+    <div class="contact-right reveal">
+      <form class="form-wrap" action="mailto:hello@arceni.com" method="POST" enctype="text/plain">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Your first name" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Your last name" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group full">
+            <label for="org">Organization</label>
+            <input type="text" id="org" name="organization" placeholder="Your organization" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="role">Your Role</label>
+            <input type="text" id="role" name="role" placeholder="CEO, Founder, Director...">
+          </div>
+          <div class="form-group">
+            <label for="inquiry">Nature of Inquiry</label>
+            <select id="inquiry" name="inquiry" required>
+              <option value="" disabled selected>How can we help?</option>
+              <option value="consulting">The Consulting</option>
+              <option value="collective">The Collective</option>
+              <option value="basketball">The Basketball</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group full">
+            <label for="message">Tell us about your situation</label>
+            <textarea id="message" name="message" placeholder="What you're navigating, what you're building, or simply what brought you here..." required></textarea>
+          </div>
+        </div>
+        <div class="form-submit">
+          <button type="submit">
+            <span>Submit Inquiry</span>
+            <span class="arrow">↗</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="foot-top">
+    <div class="foot-brand">
+      <div class="foot-wordmark">ARCENI<sup>®</sup></div>
+      <p class="foot-tagline">A strategy consulting, training and advisory providing transformational coaching and leadership for impact. Three disciplines, one house.</p>
+    </div>
+    <div class="foot-links">
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html#consulting">Consulting</a></li>
+          <li><a href="index.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="collective.html">The Collective</a></li>
+          <li><a href="basketball.html">The Basketball</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:hello@arceni.com">hello@arceni.com</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div>© 2026 ARCENI.</div>
+    <div>Nairobi · Africa · Global </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
