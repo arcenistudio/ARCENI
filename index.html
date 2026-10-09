@@ -38,7 +38,9 @@
   .nav-cta:hover{background:#fff;color:#000}
 
   /* Hero Section */
-  .hero{min-height:100vh;padding:120px 40px 40px;position:relative;overflow:hidden;border-bottom:1px solid var(--line);display:flex;flex-direction:column;background:#000}
+  .hero{min-height:100vh;padding:120px 40px 40px;position:relative;isolation:isolate;overflow:hidden;border-bottom:1px solid var(--line);display:flex;flex-direction:column;background:#000}
+  .hero::before{content:"";position:absolute;inset:0;z-index:-2;background:url('images/Homepage/mediensturmer-aWf7mjwwJJo-unsplash.jpg') center 45%/cover no-repeat;filter:grayscale(100%) contrast(1.08) brightness(.58);transform:scale(1.01)}
+  .hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(0,0,0,.76) 0%,rgba(0,0,0,.48) 52%,rgba(0,0,0,.16) 100%),linear-gradient(0deg,rgba(0,0,0,.64) 0%,transparent 42%,rgba(0,0,0,.16) 100%)}
   .hero-corner{position:absolute;width:20px;height:20px;z-index:3;pointer-events:none}
   .hero-corner::before,.hero-corner::after{content:"";position:absolute;background:var(--line-2)}
   .hero-corner.tl{top:100px;left:40px}
@@ -90,7 +92,7 @@
   .consulting-header-right p{font-size:17px;color:#b0b0b0;line-height:1.75;font-weight:300}
   .consulting-header-right p strong{color:#fff;font-weight:400}
   .consulting-photo{position:relative;width:100%;height:560px;overflow:hidden;border:1px solid var(--line-2);cursor:pointer;box-shadow:0 30px 80px rgba(0,0,0,.5)}
-  .consulting-photo-img{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=80');background-size:cover;background-position:center;transition:transform 1s cubic-bezier(.25,.1,.25,1);filter:grayscale(100%) contrast(1.1) brightness(.55)}
+  .consulting-photo-img{position:absolute;inset:0;background-image:url('images/Homepage/dylan-gillis-KdeqA3aTnBY-unsplash.jpg');background-size:cover;background-position:center;transition:transform 1s cubic-bezier(.25,.1,.25,1);filter:grayscale(100%) contrast(1.1) brightness(.55)}
   .consulting-photo:hover .consulting-photo-img{transform:scale(1.04)}
   .consulting-photo-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.2) 0%,rgba(0,0,0,.7) 100%);z-index:1}
   .consulting-photo-content{position:absolute;bottom:0;left:0;right:0;z-index:2;padding:50px 60px;display:flex;align-items:flex-end;gap:40px;flex-wrap:wrap}
@@ -334,7 +336,7 @@
     <div class="programs-grid">
 
       <a href="contact.html" class="panel reveal">
-        <div class="panel-img" style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80')"></div>
+        <div class="panel-img" style="background-image:url('images/Homepage/wadi-lissa-AZvGpBp925o-unsplash.jpg')"></div>
         <div class="panel-overlay"></div>
         <div class="panel-content">
           <h3 class="panel-title display">The Collective</h3>
