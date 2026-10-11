@@ -7,6 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="section-scroll.css" rel="stylesheet">
+<script src="section-scroll.js" defer></script>
 <style>
   :root{
     --bg:#0a0a0a;
@@ -27,8 +29,8 @@
     background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
   }
 
-  header.nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:22px 40px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(14px);background:rgba(10,10,10,.4);border-bottom:1px solid transparent;transition:all .3s}
-  header.nav.scrolled{border-bottom-color:var(--line);background:rgba(10,10,10,.85)}
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:22px max(40px,calc((100vw - 1300px)/2));display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(14px);background:transparent;border-bottom:1px solid transparent;transition:all .3s}
+  header.nav.scrolled{border-bottom-color:var(--line);background:var(--bg)}
   .logo{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.22em;color:#fff}
   .logo sup{font-size:9px;letter-spacing:.3em;color:var(--ink-dim);margin-left:5px;vertical-align:top}
   .nav-links{display:flex;gap:34px;align-items:center}
@@ -37,34 +39,26 @@
   .nav-cta{font-size:11px;letter-spacing:.25em;text-transform:uppercase;padding:11px 20px;border:1px solid var(--line-2);color:#fff;transition:all .3s}
   .nav-cta:hover{background:#fff;color:#000}
 
-  /* ========================================
-     HERO — Compact About Header
-     ======================================== */
-  .hero{padding:160px 40px 80px;position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:#000}
-  .hero-corner{position:absolute;width:20px;height:20px;z-index:3;pointer-events:none}
-  .hero-corner::before,.hero-corner::after{content:"";position:absolute;background:var(--line-2)}
-  .hero-corner.tl{top:140px;left:40px}
-  .hero-corner.tl::before{top:0;left:0;width:1px;height:20px}
-  .hero-corner.tl::after{top:0;left:0;width:20px;height:1px}
-  .hero-corner.tr{top:140px;right:40px}
-  .hero-corner.tr::before{top:0;right:0;width:1px;height:20px}
-  .hero-corner.tr::after{top:0;right:0;width:20px;height:1px}
-  .hero-inner{max-width:1400px;margin:0 auto;position:relative;z-index:2}
-  .hero-issue{display:flex;justify-content:space-between;align-items:center;padding:0 0 24px;margin-bottom:60px;border-bottom:1px solid var(--line)}
+  /* Hero */
+  .hero{min-height:100vh;min-height:100svh;padding:120px 40px 40px;position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;background:var(--bg)}
+  .hero::before{content:"";position:absolute;inset:0;z-index:-2;background:url('images/About/Founder_Arceni.png') center 34%/cover no-repeat;filter:grayscale(100%) contrast(1.08) brightness(.42);transform:scale(1.01)}
+  .hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(0,0,0,.76) 0%,rgba(0,0,0,.48) 52%,rgba(0,0,0,.16) 100%),linear-gradient(0deg,rgba(0,0,0,.64) 0%,transparent 42%,rgba(0,0,0,.16) 100%)}
+  .hero-inner{flex:1;width:100%;max-width:1300px;margin:0 auto;position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center}
+  .hero-issue{display:flex;justify-content:space-between;align-items:center;margin:0 0 60px}
   .hero-issue-left{display:flex;align-items:center;gap:24px}
-  .hero-issue-text{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-dim)}
-  .hero-issue-sep{width:1px;height:12px;background:var(--line-2)}
-  .hero-headline{font-family:'Bebas Neue',sans-serif;font-size:clamp(60px,10vw,160px);text-transform:uppercase;line-height:.88;color:#fff;letter-spacing:.01em;margin-bottom:30px}
+  .hero-issue-text{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim)}
+  .hero-issue-sep{display:none}
+  .hero-headline{font-family:'Bebas Neue',sans-serif;font-size:clamp(50px,7.92vw,130px);text-transform:uppercase;line-height:.85;color:#fff;letter-spacing:.01em;margin-bottom:50px;position:relative;z-index:1}
   .hero-headline em{font-style:normal;color:var(--ink-dim)}
-  .hero-sub{font-size:clamp(15px,1.2vw,18px);color:#b0b0b0;line-height:1.75;font-weight:300;max-width:640px}
+  .hero-sub{font-size:clamp(15px,1.2vw,18px);color:#b0b0b0;line-height:1.75;font-weight:300;max-width:640px;margin-bottom:50px;position:relative;z-index:1}
   .hero-sub strong{color:#fff;font-weight:400}
 
   /* ========================================
      FOUNDER SECTION
      ======================================== */
-  .founder{padding:160px 40px;background:#000;position:relative;border-bottom:1px solid var(--line);overflow:hidden}
+  .founder{padding:160px 40px;background:var(--bg);position:relative;border-bottom:1px solid var(--line);overflow:hidden}
   .founder::before{content:"";position:absolute;top:-20%;right:-10%;width:50%;aspect-ratio:1;background:radial-gradient(circle,rgba(255,255,255,.03) 0%,transparent 60%);pointer-events:none}
-  .founder-inner{max-width:1400px;margin:0 auto;position:relative}
+  .founder-inner{max-width:1300px;margin:0 auto;position:relative}
   .founder-label{display:flex;align-items:center;gap:16px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:60px}
   .founder-label::before{content:"";width:40px;height:1px;background:var(--ink-dim)}
   .founder-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:80px;align-items:start}
@@ -105,7 +99,7 @@
      ======================================== */
   .philosophy{padding:160px 40px;background:var(--bg);position:relative;border-bottom:1px solid var(--line);overflow:hidden}
   .philosophy::before{content:"";position:absolute;top:-20%;left:-10%;width:50%;aspect-ratio:1;background:radial-gradient(circle,rgba(255,255,255,.03) 0%,transparent 60%);pointer-events:none}
-  .philosophy-inner{max-width:1400px;margin:0 auto;position:relative}
+  .philosophy-inner{max-width:1300px;margin:0 auto;position:relative}
   .philosophy-label{display:flex;align-items:center;gap:16px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:60px}
   .philosophy-label::before{content:"";width:40px;height:1px;background:var(--ink-dim)}
   .philosophy-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
@@ -127,7 +121,7 @@
   /* ========================================
      CTA SECTION
      ======================================== */
-  .cta{padding:160px 40px;background:#000;position:relative;border-bottom:1px solid var(--line);overflow:hidden;text-align:center}
+  .cta{padding:160px 40px;background:var(--bg);position:relative;border-bottom:1px solid var(--line);overflow:hidden;text-align:center}
   .cta-inner{max-width:900px;margin:0 auto;position:relative}
   .cta-label{display:flex;align-items:center;justify-content:center;gap:16px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:40px}
   .cta-label::before,.cta-label::after{content:"";width:40px;height:1px;background:var(--ink-dim)}
@@ -142,9 +136,9 @@
   .btn-ghost:hover{background:#fff;color:#000;border-color:#fff}
 
   /* Footer */
-  footer{background:#000;position:relative;overflow:hidden}
+  footer{background:var(--bg);position:relative;overflow:hidden}
   footer::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent)}
-  .foot-top{padding:80px 40px 60px;display:flex;justify-content:space-between;align-items:flex-start;gap:60px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+  .foot-top{padding:80px max(40px,calc((100vw - 1300px)/2)) 60px;display:flex;justify-content:space-between;align-items:flex-start;gap:60px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
   .foot-brand{max-width:320px}
   .foot-wordmark{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:.22em;color:#fff;margin-bottom:14px}
   .foot-wordmark sup{font-size:10px;letter-spacing:.3em;color:var(--ink-dim);vertical-align:top;margin-left:4px}
@@ -154,7 +148,7 @@
   .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
   .foot-col a{font-size:13px;color:#888;transition:color .3s}
   .foot-col a:hover{color:#fff}
-  .foot-bottom{padding:24px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-dim)}
+  .foot-bottom{padding:24px max(40px,calc((100vw - 1300px)/2));display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-dim)}
   .foot-bottom .status{display:flex;align-items:center;gap:8px}
   .foot-bottom .status .dot{width:5px;height:5px;background:#fff;border-radius:50%;animation:pulse 2s infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
@@ -165,11 +159,8 @@
   @media (max-width: 960px){
     header.nav{padding:18px 22px}
     .nav-links{display:none}
-    .hero{padding:130px 22px 60px}
-    .hero-corner.tl,.hero-corner.tr{top:110px}
-    .hero-corner.tl,.hero-corner.bl{left:22px}
-    .hero-corner.tr,.hero-corner.br{right:22px}
-    .hero-issue{flex-direction:column;align-items:flex-start;gap:12px;margin-bottom:40px}
+    .hero{padding:110px 22px 30px}
+    .hero-issue{margin-bottom:40px}
     .founder, .philosophy, .cta{padding:100px 22px}
     .founder-grid{grid-template-columns:1fr;gap:50px}
     .founder-credentials{grid-template-columns:1fr}
@@ -182,7 +173,7 @@
     .foot-bottom{padding:20px 22px;flex-direction:column;text-align:center;gap:12px}
   }
   @media (max-width: 540px){
-    .hero-headline{font-size:clamp(48px,12vw,80px)}
+    .hero-headline{font-size:clamp(38px,9.36vw,72px)}
     .founder-name{font-size:clamp(36px,10vw,56px)}
     .philosophy-headline{font-size:clamp(40px,10vw,64px)}
     .cta-headline{font-size:clamp(40px,10vw,70px)}
@@ -208,9 +199,7 @@
 </header>
 
 <!-- Hero Section -->
-<section class="hero">
-  <div class="hero-corner tl"></div>
-  <div class="hero-corner tr"></div>
+<section class="hero" aria-labelledby="about-title">
 
   <div class="hero-inner">
     <div class="hero-issue reveal">
@@ -224,13 +213,13 @@
       <div class="hero-issue-text">LONDON · NEW YORK · SINGAPORE · DUBAI</div>
     </div>
 
-    <h1 class="hero-headline reveal">Built on<br/><em>conviction.</em></h1>
+    <h1 id="about-title" class="hero-headline reveal">Built on<br/><em>conviction.</em></h1>
     <p class="hero-sub reveal">ARCENI is a transformational advisory firm for leaders and organizations navigating the decisions that define legacies. <strong>We believe the same discipline that produces enduring leaders produces enduring institutions.</strong></p>
   </div>
 </section>
 
 <!-- Founder Section -->
-<section class="founder">
+<section class="founder" id="founder">
   <div class="founder-inner">
     <div class="founder-label reveal">The Founder — 01</div>
 
