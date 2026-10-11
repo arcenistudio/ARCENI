@@ -7,11 +7,10 @@
 
   const nav = document.createElement('div');
   nav.className = 'section-scroll-nav';
-  nav.innerHTML = '<button class="section-scroll-control" type="button"><span class="section-scroll-label">Scroll</span><span class="section-scroll-icon" aria-hidden="true">↓</span></button>';
+  nav.innerHTML = '<button class="section-scroll-control" type="button"><span class="section-scroll-icon" aria-hidden="true">↓</span></button>';
   document.body.appendChild(nav);
 
   const button = nav.querySelector('button');
-  const label = nav.querySelector('.section-scroll-label');
   const icon = nav.querySelector('.section-scroll-icon');
   let direction = 'down';
   let lastY = window.scrollY;
@@ -33,7 +32,6 @@
     const target = sections[targetIndex];
     if (!target) return;
 
-    label.textContent = 'Scroll';
     icon.textContent = direction === 'down' ? '↓' : '↑';
     button.dataset.direction = direction;
     button.setAttribute('aria-label', `Scroll ${direction} to ${sectionTitle(target)}`);

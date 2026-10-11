@@ -30,7 +30,7 @@
   }
 
   header.nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:22px max(40px,calc((100vw - 1300px)/2));display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(14px);background:transparent;border-bottom:1px solid transparent;transition:all .3s}
-  header.nav.scrolled{border-bottom-color:var(--line);background:var(--bg)}
+  header.nav.scrolled{--ink:#f5f5f5;--ink-dim:#8a8a8a;--line:rgba(26,29,32,.10);--line-2:rgba(26,29,32,.18);border-bottom-color:var(--line);background:var(--bg)}
   .logo{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.22em;color:#fff}
   .logo sup{font-size:9px;letter-spacing:.3em;color:var(--ink-dim);margin-left:5px;vertical-align:top}
   .nav-links{display:flex;gap:34px;align-items:center}
@@ -176,7 +176,7 @@
     header.nav{padding:18px 22px}
     .nav-links{display:none}
     .hero{padding:110px 22px 30px}
-    .hero-headline{font-size:clamp(50.2px,12.3552vw,95px)}
+    .hero-headline{font-size:clamp(57.7px,14.21vw,109.3px)}
     .hero-number{font-size:200px}
     .consulting, .programs{padding:100px 22px}
     .consulting-header, .programs-header{grid-template-columns:1fr;gap:30px;margin-bottom:50px}
@@ -197,7 +197,7 @@
   @media (max-width: 540px){
     .hero-actions{flex-direction:column;align-items:stretch;width:100%}
     .btn-primary, .btn-ghost{justify-content:center}
-    .hero-headline{font-size:clamp(42.2px,11.4048vw,66px)}
+    .hero-headline{font-size:clamp(48.5px,13.12vw,75.9px)}
     .hero-number{font-size:150px}
     .foot-links{flex-direction:column;gap:30px}
     .panel{height:500px}
