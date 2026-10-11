@@ -1,0 +1,67 @@
+.section-scroll-nav {
+  position: fixed;
+  z-index: 45;
+  right: max(40px, calc((100vw - 1300px) / 2));
+  bottom: 30px;
+  display: flex;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+.section-scroll-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink-dim, #8a8a8a);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: color .25s ease;
+}
+
+.section-scroll-control:hover,
+.section-scroll-control:focus-visible {
+  color: #fff;
+}
+
+.section-scroll-icon {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line-2, rgba(255,255,255,.18));
+  border-radius: 50%;
+  color: inherit;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  letter-spacing: 0;
+  transition: background .25s ease, border-color .25s ease, transform .25s ease;
+}
+
+.section-scroll-control:hover .section-scroll-icon,
+.section-scroll-control:focus-visible .section-scroll-icon {
+  transform: translateY(3px);
+  border-color: #fff;
+  background: #fff;
+  color: #000;
+}
+
+.section-scroll-control[data-direction="up"]:hover .section-scroll-icon,
+.section-scroll-control[data-direction="up"]:focus-visible .section-scroll-icon {
+  transform: translateY(-3px);
+}
+
+@media (max-width: 960px) {
+  .section-scroll-nav { right: 22px; bottom: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-scroll-control,
+  .section-scroll-icon { transition: none; }
+}
