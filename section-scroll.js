@@ -7,7 +7,7 @@
 
   const nav = document.createElement('div');
   nav.className = 'section-scroll-nav';
-  nav.innerHTML = '<button class="section-scroll-control" type="button"><span class="section-scroll-icon" aria-hidden="true">↓</span></button>';
+  nav.innerHTML = '<button class="section-scroll-control" type="button"><span class="section-scroll-label">scroll</span><span class="section-scroll-icon" aria-hidden="true">↓</span></button>';
   document.body.appendChild(nav);
 
   const button = nav.querySelector('button');
