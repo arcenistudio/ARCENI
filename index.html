@@ -48,9 +48,6 @@
   .hero{min-height:100vh;min-height:100svh;padding:120px 40px 40px;position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;background:var(--bg)}
   .hero::before{content:"";position:absolute;inset:0;z-index:-2;background:url('images/Homepage/mediensturmer-aWf7mjwwJJo-unsplash.jpg') center 45%/cover no-repeat;filter:grayscale(100%) contrast(1.08) brightness(.58);transform:scale(1.01)}
   .hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(0,0,0,.76) 0%,rgba(0,0,0,.48) 52%,rgba(0,0,0,.16) 100%),linear-gradient(0deg,rgba(0,0,0,.64) 0%,transparent 42%,rgba(0,0,0,.16) 100%)}
-  .hero-issue{position:relative;z-index:2;width:100%;max-width:1300px;margin:0 auto 60px;display:flex;align-items:center;gap:24px;font-family:'Open Sans',sans-serif;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-dim)}
-  .hero-issue-line{width:40px;height:1px;background:var(--ink-dim);flex-shrink:0}
-  .hero-issue-sep{width:1px;height:12px;background:var(--line-2);flex-shrink:0}
   .hero-content{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;max-width:1300px;margin:0 auto;width:100%;position:relative;z-index:2}
   .hero-number{font-family:'Open Sans',sans-serif;font-size:clamp(200px,25vw,400px);line-height:.8;color:rgba(255,255,255,.03);position:absolute;top:50%;right:0;transform:translateY(-50%);letter-spacing:-.05em;pointer-events:none;z-index:0}
   .hero-headline{font-family:'Open Sans',sans-serif;font-size:clamp(40px,4.45vw,64px);line-height:1;color:#fff;letter-spacing:0;font-weight:400;margin-bottom:32px;position:relative;z-index:1}
@@ -183,7 +180,7 @@
     .nav.menu-open .nav-links a{padding:15px 0;border-bottom:1px solid var(--line)}
     .nav.menu-open .nav-links a:last-child{border-bottom:0}
     .hero{padding:110px 22px 30px}
-    .hero-headline{font-size:clamp(55.2px,6.9vw,71.76px)}
+    .hero-headline{font-size:clamp(49.68px,6.21vw,64.584px)}
     .hero-manifesto{font-size:16px}
     .hero-number{font-size:200px}
     .consulting, .programs{padding:100px 22px}
@@ -210,10 +207,15 @@
     .hero-actions{flex-direction:row;align-items:center;width:auto;gap:8px}
     .btn-primary, .btn-ghost{width:auto;justify-content:center;align-self:auto;padding:12px 14px;font-size:11px}
     .btn-primary{gap:8px}
-    .hero-headline{font-size:clamp(41.4px,11.04vw,49.68px)}
+    .hero-headline{font-size:clamp(37.26px,9.936vw,44.712px)}
     .hero-manifesto{font-size:16px}
     .hero-number{font-size:150px}
     .foot-links{flex-direction:column;gap:30px}
+    .foot-newsletter{width:100%;max-width:100%;min-width:0;gap:8px}
+    .foot-newsletter p{font-size:12px;line-height:1.5;margin-bottom:2px}
+    .foot-newsletter-form{width:100%;min-width:0}
+    .foot-newsletter-input{min-width:0;width:0;padding:10px 11px;font-size:13px}
+    .foot-newsletter-btn{flex:0 0 auto;white-space:nowrap;padding:10px 13px!important;font-size:10px;letter-spacing:.04em}
     .panel{height:500px}
     .panel-content{padding:30px 24px}
     .consulting-photo{height:380px}
@@ -256,12 +258,6 @@
 
 <!-- Hero Section -->
 <section class="hero">
-
-  <div class="hero-issue reveal">
-    <span class="hero-issue-line"></span>
-    <span class="hero-issue-sep"></span>
-    <span>Est. 2018</span>
-  </div>
 
   <div class="hero-content">
     <h1 class="hero-headline reveal">
