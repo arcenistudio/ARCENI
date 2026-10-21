@@ -26,6 +26,7 @@
     .home-nav-cta{display:inline-flex;min-height:44px;align-items:center;justify-self:end;gap:14px;padding:5px 6px 5px 16px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.26);font-size:11px;font-weight:600;white-space:nowrap;transition:background .22s ease,transform .22s ease,box-shadow .22s ease}
     .home-nav-cta span{display:grid;width:32px;height:32px;place-items:center;border-radius:10px;background:#302C31;color:#fff;font-size:15px}
     .home-nav-cta:hover,.home-nav-cta:focus-visible{transform:translateY(-1px) scale(1.04);background:rgba(255,255,255,.68);box-shadow:0 5px 14px rgba(48,44,49,.08)}
+    .home-nav-actions{display:flex;align-items:center;justify-content:flex-end;gap:clamp(14px,2vw,24px);margin-left:auto}
     .home-hero{display:flex;flex:1;min-height:clamp(590px,calc(100svh - 112px),900px);flex-direction:column;align-items:center;justify-content:center;padding:64px 0 80px;text-align:center}
     .home-hero h1{max-width:1000px;margin:0;color:#1D1D1F;font-size:clamp(43px,6.3vw,76px);font-weight:500;line-height:1.04;letter-spacing:-.075em;text-wrap:balance}
     .home-hero h1 .hero-line{display:block}
@@ -37,10 +38,11 @@
     .home-hero .hero-keyword:hover,.home-hero .hero-accent:hover{transform:translateY(-5px)}
     @media(max-width:760px){
       .home-shell{width:min(100% - 42px,620px);padding-top:20px}
-      .home-topbar{grid-template-columns:1fr auto;row-gap:13px}
+      .home-topbar{gap:12px}
+      .home-nav-actions{gap:12px}
       .home-brand{font-size:16px}
       .home-nav{position:static;order:3;transform:none;width:100%;justify-content:center;gap:clamp(15px,4vw,25px);padding-top:13px;border-top:1px solid var(--line);font-size:10px}
-      .home-nav-cta{grid-column:2;grid-row:1;min-height:40px;font-size:10px}
+      .home-nav-cta{min-height:40px;font-size:10px}
       .home-nav-cta span{width:28px;height:28px}
       .home-hero{min-height:calc(100svh - 105px);padding:60px 0 42px}
       .home-hero h1{font-size:clamp(40px,8.4vw,58px)}
@@ -49,7 +51,7 @@
     @media(max-width:420px){
       .home-shell{width:calc(100% - 30px)}
       .home-nav{gap:13px;font-size:9px;letter-spacing:.08em}
-      .home-nav-cta{gap:9px;padding-left:12px}
+      .home-nav-actions{gap:9px}.home-about{font-size:9px;letter-spacing:.08em}.home-nav-cta{gap:9px;padding-left:12px}
       .home-hero{padding-top:44px}
       .home-hero h1{font-size:clamp(35px,9.5vw,43px);letter-spacing:-.065em}
       .home-hero-intro{font-size:14px}
@@ -79,8 +81,9 @@
     .home-hero .hero-accent{display:inline-block;vertical-align:bottom;white-space:nowrap;color:#989091!important;transition:transform .28s cubic-bezier(.16,1,.3,1)}
     .home-hero-intro{color:#70696D}
     .site-social{color:#514B4F}
-    .home-about{position:absolute;left:50%;transform:translateX(-50%);color:#6D676A;font-size:11px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+    .home-about{position:static;transform:none;color:#6D676A;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;transition:color .22s ease}
     .home-about:hover,.home-about:focus-visible{color:#1D1D1F}
+    .home-about:focus-visible{outline:2px solid #1D1D1F;outline-offset:4px}
     .home-social{display:flex;align-items:center;justify-content:flex-end;gap:18px;margin-left:auto;color:#1D1D1F}
     .home-footer-social{width:min(100% - 48px,1250px);justify-content:flex-end;margin:20px auto 0;padding:22px 0 30px;border-top:1px solid rgba(48,44,49,.12);color:#70696D}
     .home-social a{display:grid;width:22px;height:22px;place-items:center;color:inherit;transition:opacity .2s ease,transform .2s ease}
@@ -132,11 +135,6 @@
     .home-offering-item p{max-width:410px;margin:0;color:#70696D;font-size:13px;line-height:1.5}
     @media(max-width:760px){.home-offering-content{grid-template-columns:1fr;grid-template-rows:auto auto;padding-top:92px;gap:15px}.offering-overview{grid-column:1}.offering-overview h2{font-size:28px}.home-perfect-for{margin-top:13px}.home-panel-cta{margin-top:13px}.home-offering-list{grid-column:1;grid-template-columns:1fr 1fr;gap:7px}.home-offering-item{min-height:115px;padding:40px 11px 11px}.home-offering-item:before{top:10px;left:11px}.home-offering-item h3{font-size:14px}.home-offering-item p{font-size:12px}}
     @media(max-width:420px){.home-scroll{bottom:14px}.home-offerings{width:calc(100% - 30px);min-height:480px;border-radius:18px;grid-template-columns:40px minmax(0,1fr) 40px}.home-offering-tab .tab-inner{gap:9px}.home-offering-tab .tab-name{font-size:14px}.home-offering-tab .tab-number{font-size:9px}.home-offering-panel.is-active .home-offering-tab .tab-name{font-size:25px}.home-offering-content{padding-right:14px;padding-left:14px}.home-offering-item{min-height:125px}.home-offering-item h3{font-size:13px}.home-offering-item p{font-size:11px}.home-perfect-tags span{font-size:9px}}
-    .home-founder{display:grid;grid-template-columns:minmax(230px,.72fr) 1px minmax(0,1.28fr);align-items:center;gap:clamp(32px,6vw,76px);margin:0 0 70px;padding:clamp(28px,4.2vw,56px);border:1px solid rgba(48,44,49,.11);border-radius:24px;background:#EEECE8;box-shadow:0 12px 32px rgba(29,29,31,.04)}
-    .home-founder-photo{display:grid;justify-items:center;gap:18px}.home-founder-photo img{width:clamp(170px,21vw,250px);aspect-ratio:1;border-radius:50%;object-fit:cover;transition:transform .35s cubic-bezier(.16,1,.3,1)}.home-founder-photo img:hover{transform:scale(1.045)}.home-founder-photo p{margin:0;color:#989091;font-size:10px;letter-spacing:.16em;text-align:center;text-transform:uppercase}
-    .home-founder-divider{width:1px;height:min(42vh,340px);background:var(--line)}.home-founder-bio{display:grid;grid-template-columns:1fr;gap:17px;min-width:0;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none}.home-founder-bio>p{max-width:700px;margin:0;color:var(--muted);font-size:14px;line-height:1.8}.home-founder-credentials{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px 12px;padding-top:7px;border-top:1px solid var(--line)}.home-founder-credential{padding:10px 8px;border:1px solid transparent;border-radius:10px;color:var(--muted);font-size:11px;line-height:1.55;transition:transform .25s ease,background-color .25s ease,border-color .25s ease}.home-founder-credential:hover{transform:translateY(-2px);border-color:var(--line);background:#EAE5DF}.home-founder-credential strong{display:block;margin-bottom:4px;color:#989091;font-size:9px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
- @media(max-width:760px){.home-founder{grid-template-columns:1fr;gap:24px;margin-bottom:48px;padding:32px 24px}.home-founder-photo img{width:clamp(155px,38vw,220px)}.home-founder-divider{width:100%;height:1px}.home-founder-bio{grid-template-columns:1fr}.home-founder-credentials{grid-column:1}}
- @media(max-width:560px){.home-founder-credentials{grid-template-columns:1fr;gap:6px}}
 
     .home-offerings{width:min(calc(100% - 48px),1250px);height:auto;min-height:0;margin:0 auto 60px;overflow:visible;border:0;border-radius:0;background:transparent;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
     .home-offering-panel{position:relative;display:flex;min-width:0;min-height:410px;flex-direction:column;overflow:hidden;padding:clamp(21px,2.2vw,30px);border:1px solid rgba(48,44,49,.13);border-radius:22px;background:#F8F6F3;transition:transform .28s cubic-bezier(.16,1,.3,1),box-shadow .28s ease,border-color .2s ease}
@@ -189,7 +187,7 @@
   <main class="home-shell">
     <header class="home-topbar">
       <a class="home-brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a>
-      <a class="home-nav-cta" href="mailto:hello@arceni.com?subject=Work%20With%20Us">Work With Us<span aria-hidden="true">↗</span></a>
+      <div class="home-nav-actions"><a class="home-about" href="about.html">About</a><a class="home-nav-cta" href="mailto:hello@arceni.com?subject=Work%20With%20Us">Work With Us<span aria-hidden="true">↗</span></a></div>
     </header>
     <section class="home-hero" id="home-top" aria-labelledby="home-title">
       <p class="home-hero-eyebrow">Consulting · Training · Advisory</p>
@@ -211,13 +209,7 @@
         <article class="home-testimonial-card" aria-hidden="true" inert><p class="home-testimonial-topic">Basketball</p><blockquote class="home-testimonial-quote">“Coach gives me perspective about life, being deliberate in what I do and advises me regularly. It is amazing to have someone support you to grow in basketball, learn the little details and have a plan in everything I do.”</blockquote><div class="home-testimonial-byline"><span class="home-testimonial-avatar" aria-hidden="true">B</span><div>Lisa O.<small>Basketball Program</small></div></div></article>
       </div></div><div class="home-testimonial-controls"><button type="button" data-home-testimonial-step="-1" aria-label="Previous reflection" aria-controls="home-testimonial-viewport">←</button><button type="button" data-home-testimonial-step="1" aria-label="Next reflection" aria-controls="home-testimonial-viewport">→</button></div></div>
       <div class="home-testimonial-footer"><div><strong>ARCENI - Consulting, Training & Advisory</strong><span>We drive bold ideas, shared value and impact.</span></div><a class="home-testimonial-footer-cta" href="#home-offerings">Explore Our Work<span aria-hidden="true">↗</span></a></div>
-      <a class="home-section-scroll" href="#home-founder" aria-label="Scroll to about the founder">About Founder <span aria-hidden="true"></span></a>
-    </section>
-    <section class="home-founder" id="home-founder" aria-label="About the founder">
-      <div class="home-founder-photo"><img src="images/About/Almas_Casual.png" alt="Portrait of Almas Ismail"><p>Almas Ismail· Consultant</p></div>
-      <div class="home-founder-divider" aria-hidden="true"></div>
-      <article class="home-founder-bio"><p> ARCENI partners with organizations to move projects from concept to completion, and coaches individuals and athletes to build confidence, discipline and find purpose through their work. ALMAS ISMAIL brings his experience in project management, coaching and leadership to the firm’s flagship engagements, leading with commitment, integrity and high standards. He also has a strong passion for sports, basketball in particular -- specializing in development and performance, nurturing aspiring players to pursue their goals on and off the court. </p><div class="home-founder-credentials" aria-label="Background"><div class="home-founder-credential"><strong>Education</strong>B.A. in Economics, University at Buffalo</div><div class="home-founder-credential"><strong>Graduate study</strong>M.B.A. in Project Management</div><div class="home-founder-credential"><strong>Practice</strong>Consulting · Training · Advisory</div><div class="home-founder-credential"><strong>Coaching</strong>Leadership · Growth · Development</div></div></article>
-      <a class="home-section-scroll is-top" href="#home-top" aria-label="Scroll back to the top">Back to top <span aria-hidden="true"></span></a>
+      <a class="home-section-scroll is-top" href="#home-top" aria-label="Scroll back to the top">Back to Top <span aria-hidden="true"></span></a>
     </section>
     <nav class="home-social home-footer-social" aria-label="Social media links">
       <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.7" cy="6.5" r=".7" fill="currentColor" stroke="none"/></svg></a>
