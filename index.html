@@ -24,7 +24,7 @@
     .home-nav a:hover,.home-nav a:focus-visible{color:var(--ink)}
     .home-nav a:focus-visible,.home-nav-cta:focus-visible{outline:2px solid #746B70;outline-offset:4px}
     .home-nav-cta{display:inline-flex;min-height:44px;align-items:center;justify-self:end;gap:14px;padding:5px 6px 5px 16px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.26);font-size:11px;font-weight:600;white-space:nowrap;transition:background .22s ease,transform .22s ease,box-shadow .22s ease}
-    .home-nav-cta span{display:grid;width:32px;height:32px;place-items:center;border-radius:10px;background:#302C31;color:#fff;font-size:15px}
+    .home-nav-cta span{display:grid;width:32px;height:32px;place-items:center;border:0;border-radius:10px;background:#302C31;color:#fff;font-size:15px}
     .home-nav-cta:hover,.home-nav-cta:focus-visible{transform:translateY(-1px) scale(1.04);background:rgba(255,255,255,.68);box-shadow:0 5px 14px rgba(48,44,49,.08)}
     .home-nav-actions{display:flex;align-items:center;justify-content:flex-end;gap:clamp(14px,2vw,24px);margin-left:auto}
     .home-hero{display:flex;flex:1;min-height:clamp(590px,calc(100svh - 112px),900px);flex-direction:column;align-items:center;justify-content:center;padding:64px 0 80px;text-align:center}
@@ -69,7 +69,8 @@
     @media(max-width:360px){.shell,.home-shell{width:calc(100% - 24px)}.nav{gap:10px;font-size:9px;letter-spacing:.06em}.cta{gap:8px;padding-left:10px}.basketball-contact{padding:28px 14px}.basketball-testimonial-section{padding-left:16px;padding-right:16px}}
     .hero h1,.hero h1 span,.home-hero h1,.home-hero h1 span,.home-hero .hero-accent{color:#1D1D1F!important}
     :root{--paper:#F4F1EE;--ink:#1D1D1F;--muted:#70696D;--soft:#989091;--line:rgba(48,44,49,.13)}
-    html,body{background:#F4F1EE;color:#1D1D1F}
+    html,body{background-color:#F4F1EE;color:#1D1D1F}
+    body{background-image:url('images/homepage-background-texture.svg');background-position:center top;background-repeat:no-repeat;background-size:cover;background-attachment:fixed}
     .home-nav{color:#6D676A}.home-nav a:hover,.home-nav a:focus-visible{color:#1D1D1F}
     .home-nav a:focus-visible,.home-nav-cta:focus-visible{outline-color:#1D1D1F}
     .home-nav-cta{background:rgba(255,255,255,.26);color:#1D1D1F;border-color:rgba(48,44,49,.13)}
@@ -224,24 +225,24 @@
     </section>
     <a class="home-section-scroll" href="#home-testimonials" aria-label="Scroll to reflections">Reflections <span aria-hidden="true"></span></a>
     <section class="consulting-testimonial" id="home-testimonials" aria-labelledby="consulting-testimonial-title">
-    <div class="consulting-testimonial-copy"><p class="eyebrow">Impact, In Their Words</p><h2 id="consulting-testimonial-title">What Clients Say</h2><p>Clear priorities, thoughtful collaboration and practical support help individuals and teams make progress that lasts.</p><p class="consulting-testimonial-values">Project Management · Personal Growth · Coaching & Leadership</p></div>
+    <div class="consulting-testimonial-copy"><p class="eyebrow">Impact, In Their Words</p><h2 id="consulting-testimonial-title">What Clients Say</h2><p>From clear priorities, thoughtful collaboration and practical support see how we help individuals and projects make progress.</p><p class="consulting-testimonial-values">Project Management · Personal Growth · Coaching & Leadership</p></div>
     <div class="consulting-testimonial-carousel">
       <div class="consulting-testimonial-viewport" id="consulting-testimonial-viewport" aria-label="Client reflections">
         <div class="consulting-testimonial-track">
           <article class="consulting-testimonial-card" aria-hidden="false"><p class="consulting-testimonial-topic">Consulting</p><blockquote class="consulting-testimonial-quote">“The Committee on Migration's Subcommittee on Children in Migration would like to express our sincerest thanks to for all the hard work, without whom the infographic project would not have been possible.”</blockquote><div class="consulting-testimonial-byline"><span class="consulting-testimonial-avatar" aria-hidden="true">C</span><div>NGO Committee On Migration<small>Project Consulting</small></div></div></article>
-          <article class="consulting-testimonial-card" aria-hidden="true" inert><p class="consulting-testimonial-topic">Collective</p><blockquote class="consulting-testimonial-quote">“The level of engagement was very intensive with how we were able to focus on the ‘why’ of things and not necessarily the ‘what’. We found an approach to solving the challenges and plannned how I was going to achieve my objectives was in a very practical manner.”</blockquote><div class="consulting-testimonial-byline"><span class="consulting-testimonial-avatar" aria-hidden="true">C</span><div>Mwita P.<small>The Archer Program</small></div></div></article>
+          <article class="consulting-testimonial-card" aria-hidden="true" inert><p class="consulting-testimonial-topic">Collective</p><blockquote class="consulting-testimonial-quote">“The level of engagement was very intensive with how we were able to focus on the ‘why’ of things and not necessarily the ‘what’. We found an approach to solving the challenges and plannned how I was going to achieve my objectives in a very practical manner.”</blockquote><div class="consulting-testimonial-byline"><span class="consulting-testimonial-avatar" aria-hidden="true">C</span><div>Mwita P.<small>The Archer Program</small></div></div></article>
           <article class="consulting-testimonial-card" aria-hidden="true" inert><p class="consulting-testimonial-topic">Basketball</p><blockquote class="consulting-testimonial-quote">“Coach gives me perspective about life, being deliberate in what I do and advises me regularly. It is amazing to have someone support you to grow in basketball, learn the little details and have a plan in everything I do.”</blockquote><div class="consulting-testimonial-byline"><span class="consulting-testimonial-avatar" aria-hidden="true">B</span><div>Lisa O.<small>Basketball Program</small></div></div></article>
         </div>
       </div>
       <div class="consulting-testimonial-controls"><button type="button" data-consulting-testimonial-step="-1" aria-label="Previous reflection" aria-controls="consulting-testimonial-viewport">←</button><button type="button" data-consulting-testimonial-step="1" aria-label="Next reflection" aria-controls="consulting-testimonial-viewport">→</button></div>
     </div>
-    <div class="consulting-testimonial-footer"><div><strong>ARCENI - Consulting, Training & Advisory</strong><span>We drive bold ideas, shared value and impact.</span></div><a class="consulting-testimonial-footer-cta" href="#home-offerings">Explore services <b aria-hidden="true">↗</b></a></div>
+    <div class="consulting-testimonial-footer"><div><strong>ARCENI - Consulting, Training & Advisory</strong><span>We drive bold ideas, shared value and impact.</span></div><a class="consulting-testimonial-footer-cta" href="#home-offerings">Explore Services <b aria-hidden="true">↗</b></a></div>
   </section>
       <a class="home-section-scroll" href="#home-founder" aria-label="Scroll to about the founder">About the Founder <span aria-hidden="true"></span></a>
     <section class="home-founder" aria-label="About the founder">
       <div class="home-founder-photo"><img src="images/About/Almas_Casual.png" alt="Portrait of Almas Ismail"><p>Founder · ARCENI</p></div>
       <div class="home-founder-divider" aria-hidden="true"></div>
-      <article class="home-founder-bio"><p class="home-founder-eyebrow">Est. 2018</p><h2>ALMAS <span>ISMAIL</span></h2><p> He brings his experience in project management, coaching and leadership to the firm’s flagship engagements, leading with commitment, integrity and high standards. The firm partners with organizations to move projects from concept to completion, and coaches young people and athletes to build confidence, discipline and find purpose through their work.</p><div class="home-founder-credentials" aria-label="Background"><div class="home-founder-credential"><strong>Education</strong>B.A. in Economics, University at Buffalo</div><div class="home-founder-credential"><strong>Graduate study</strong>M.B.A. in Project Management</div><div class="home-founder-credential"><strong>Practice</strong>Consulting · Training · Advisory</div><div class="home-founder-credential"><strong>Coaching</strong>Leadership · Personal Development · Basketball</div></div></article>
+      <article class="home-founder-bio"><h2>ALMAS <span>ISMAIL</span></h2><p> He brings his experience in project management, coaching and leadership to the firm’s flagship engagements, leading with commitment, integrity and high standards. The firm partners with organizations to move projects from concept to completion, and coaches young people and athletes to build confidence, discipline and find purpose through their work.</p><div class="home-founder-credentials" aria-label="Background"><div class="home-founder-credential"><strong>Education</strong>B.A. in Economics, University at Buffalo</div><div class="home-founder-credential"><strong>Graduate study</strong>M.B.A. in Project Management</div><div class="home-founder-credential"><strong>Practice</strong>Consulting · Training · Advisory</div><div class="home-founder-credential"><strong>Coaching</strong>Leadership · Personal Development · Basketball</div></div></article>
     </section>
     <footer class="home-footer" aria-label="Site footer">
       <div class="home-footer-inner">
