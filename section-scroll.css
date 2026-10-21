@@ -1,7 +1,7 @@
 .section-scroll-nav {
   position: fixed;
   z-index: 45;
-  right: max(40px, calc((100vw - 1300px) / 2));
+  right: max(40px, calc((100vw - 1400px) / 2));
   bottom: 30px;
   display: flex;
   justify-content: flex-end;
@@ -15,7 +15,7 @@
   padding: 0;
   border: 0;
   background: transparent;
-  color: var(--ink-dim, #8a8a8a);
+  color: var(--ink-dim, #77756f);
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
   letter-spacing: .25em;
@@ -47,9 +47,9 @@
 .section-scroll-control:hover .section-scroll-icon,
 .section-scroll-control:focus-visible .section-scroll-icon {
   transform: translateY(3px);
-  border-color: #fff;
-  background: #fff;
-  color: #000;
+  border-color:#64635e;
+  background: rgba(255, 255, 255, .08);
+  color: #fff;
 }
 
 .section-scroll-control[data-direction="up"]:hover .section-scroll-icon,
