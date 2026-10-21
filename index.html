@@ -41,6 +41,7 @@
     .home-trust-items{display:flex;align-items:center;justify-content:center;gap:clamp(20px,3vw,38px);flex-wrap:wrap;color:#6D676A}
     .home-trust-items span{font-size:clamp(13px,1.4vw,16px);font-weight:500;letter-spacing:-.025em;white-space:nowrap;transition:color .2s ease,transform .2s ease;cursor:default}
     .home-trust-items span:hover{color:#FFFFFF;transform:translateY(-3px)}
+    .home-offerings + .home-trust{width:min(calc(100% - 48px),1250px);margin:-22px auto 70px;padding:0 20px 26px}
     @media(max-width:760px){
       .home-shell{width:min(100% - 42px,620px);padding-top:20px}
       .home-topbar{grid-template-columns:1fr auto;row-gap:13px}
@@ -52,6 +53,7 @@
       .home-hero h1{font-size:clamp(40px,8.4vw,58px)}
       .home-hero-intro{max-width:580px;margin-top:19px}
       .home-trust{margin-top:48px}
+      .home-offerings + .home-trust{width:calc(100% - 36px);margin:-12px auto 48px;padding:0 12px 22px}
     }
     @media(max-width:420px){
       .home-shell{width:calc(100% - 30px)}
@@ -76,25 +78,104 @@
     @media(max-width:560px){.shell,.home-shell{width:calc(100% - 32px)}.section{padding:58px 0}.consulting-service-card{padding:24px}.consulting-service-stack .consulting-service-card{padding:22px}.basketball-contact{padding:32px 18px}.basketball-contact-form{padding:22px 18px}}
     @media(max-width:360px){.shell,.home-shell{width:calc(100% - 24px)}.nav{gap:10px;font-size:9px;letter-spacing:.06em}.cta{gap:8px;padding-left:10px}.basketball-contact{padding:28px 14px}.basketball-testimonial-section{padding-left:16px;padding-right:16px}}
     .hero h1,.hero h1 span,.home-hero h1,.home-hero h1 span,.home-hero .hero-accent{color:#1D1D1F!important}
-    :root{--paper:#282828;--ink:#F4F1EE;--muted:#D0CBCD;--soft:#B8B0B3;--line:rgba(244,241,238,.2)}
-    html,body{background:#282828;color:#F4F1EE}
-    .home-nav{color:#D0CBCD}.home-nav a:hover,.home-nav a:focus-visible{color:#FFFFFF}
-    .home-nav a:focus-visible,.home-nav-cta:focus-visible{outline-color:#F4F1EE}
-    .home-nav-cta{background:rgba(255,255,255,.06);color:#F4F1EE;border-color:rgba(244,241,238,.24)}
-    .home-nav-cta span{background:#F4F1EE;color:#282828}
-    .home-nav-cta:hover,.home-nav-cta:focus-visible{background:rgba(255,255,255,.16);box-shadow:0 5px 16px rgba(0,0,0,.24)}
-    .home-hero h1,.home-hero h1 span,.home-hero .hero-accent{color:#F4F1EE!important}
-    .home-hero .hero-accent{display:inline-block;vertical-align:bottom;white-space:nowrap;color:#B8B0B3!important;transition:transform .28s cubic-bezier(.16,1,.3,1)}
-    .home-hero .hero-accent{color:#B8B0B3!important}
-    .home-hero-intro{color:#D0CBCD}.home-trust-label{color:#B8B0B3}.home-trust-items{color:#E4E0E1}
-    .site-social{color:#F4F1EE}
-    .home-about{position:absolute;left:50%;transform:translateX(-50%);color:#D0CBCD;font-size:11px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
-    .home-about:hover,.home-about:focus-visible{color:#FFFFFF}
-    .home-social{display:flex;align-items:center;justify-content:flex-end;gap:18px;margin-left:auto;color:#F4F1EE}
+    :root{--paper:#F4F1EE;--ink:#1D1D1F;--muted:#70696D;--soft:#989091;--line:rgba(48,44,49,.13)}
+    html,body{background:#F4F1EE;color:#1D1D1F}
+    .home-nav{color:#6D676A}.home-nav a:hover,.home-nav a:focus-visible{color:#1D1D1F}
+    .home-nav a:focus-visible,.home-nav-cta:focus-visible{outline-color:#1D1D1F}
+    .home-nav-cta{background:rgba(255,255,255,.26);color:#1D1D1F;border-color:rgba(48,44,49,.13)}
+    .home-nav-cta span{background:#1D1D1F;color:#F4F1EE}
+    .home-nav-cta:hover,.home-nav-cta:focus-visible{background:rgba(255,255,255,.68);box-shadow:0 5px 14px rgba(48,44,49,.08)}
+    .home-hero h1,.home-hero h1 span,.home-hero .hero-accent{color:#1D1D1F!important}
+    .home-hero .hero-accent{display:inline-block;vertical-align:bottom;white-space:nowrap;color:#989091!important;transition:transform .28s cubic-bezier(.16,1,.3,1)}
+    .home-hero-intro{color:#70696D}.home-trust-label{color:#817A7D}.home-trust-items{color:#6D676A}
+    .site-social{color:#514B4F}
+    .home-about{position:absolute;left:50%;transform:translateX(-50%);color:#6D676A;font-size:11px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+    .home-about:hover,.home-about:focus-visible{color:#1D1D1F}
+    .home-hero-cta{display:inline-flex;align-items:center;justify-content:space-between;gap:14px;min-height:44px;margin-top:28px;padding:5px 6px 5px 16px;border:1px solid rgba(48,44,49,.13);border-radius:15px;background:rgba(255,255,255,.26);color:#1D1D1F;font-size:11px;font-weight:600;transition:background .22s ease,transform .22s ease,box-shadow .22s ease}
+    .home-hero-cta span{display:grid;width:32px;height:32px;place-items:center;border-radius:10px;background:#1D1D1F;color:#F4F1EE;font-size:15px;transition:background .22s ease}
+    .home-hero-cta:hover,.home-hero-cta:focus-visible{transform:translateY(-1px) scale(1.04);background:rgba(255,255,255,.68);color:#1D1D1F;box-shadow:0 5px 14px rgba(48,44,49,.08)}
+    .home-hero-cta:hover span,.home-hero-cta:focus-visible span{background:#514B4F;color:#fff}
+    .home-social{display:flex;align-items:center;justify-content:flex-end;gap:18px;margin-left:auto;color:#1D1D1F}
     .home-social a{display:grid;width:22px;height:22px;place-items:center;color:inherit;transition:opacity .2s ease,transform .2s ease}
     .home-social a:hover,.home-social a:focus-visible{opacity:.7;transform:translateY(-1px)}
     .home-social svg{display:block;width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
     @media(max-width:420px){.home-social{gap:12px}}
+    .home-hero{position:relative}
+    .home-scroll{position:absolute;bottom:22px;left:50%;display:flex;flex-direction:column;align-items:center;gap:9px;transform:translateX(-50%);color:#70696D;font-size:10px;font-weight:500;letter-spacing:.15em;text-transform:uppercase}
+    .home-scroll span{position:relative;display:block;width:1px;height:35px;background:rgba(48,44,49,.28);font-size:0;overflow:hidden}
+    .home-scroll span:after{position:absolute;top:-7px;left:-2px;width:5px;height:9px;border-radius:4px;background:#1D1D1F;content:"";animation:home-scroll-drop 1.6s ease-in-out infinite}
+    @keyframes home-scroll-drop{0%{transform:translateY(0);opacity:0}20%{opacity:1}85%{transform:translateY(38px);opacity:1}100%{transform:translateY(38px);opacity:0}}
+    .home-offerings{width:min(100% - 48px,1250px);height:510px;margin:0 auto 70px;overflow:hidden;border:1px solid rgba(48,44,49,.14);border-radius:24px;background:rgba(255,255,255,.22);display:grid;grid-template-columns:1fr 3fr 1fr;transition:grid-template-columns .35s ease}
+    .home-offering-panel{position:relative;display:flex;min-width:0;overflow:hidden;border-right:1px solid rgba(48,44,49,.14);background:transparent;transition:background .3s ease}
+    .home-offering-panel:last-child{border-right:0}
+    .home-offering-panel.is-active{background:#E8E3DD}
+    .home-offering-tab{display:flex;flex:0 0 100%;align-items:center;justify-content:center;min-width:0;padding:28px 14px;border:0;background:transparent;color:#1D1D1F;cursor:pointer;transition:all .3s ease}
+    .home-offering-tab .tab-inner{display:flex;align-items:center;gap:28px;writing-mode:vertical-rl;transform:rotate(180deg)}
+    .home-offering-tab .tab-number{color:#817A7D;font-size:13px;letter-spacing:.1em}
+    .home-offering-tab .tab-name{font-size:clamp(21px,2.6vw,34px);font-weight:600;letter-spacing:-.05em;white-space:nowrap}
+    .home-offering-panel.is-active .home-offering-tab{flex-basis:0;flex-grow:0;position:absolute;top:0;left:0;width:100%;height:82px;justify-content:flex-start;padding:20px clamp(25px,5vw,64px);border-bottom:1px solid rgba(48,44,49,.14)}
+    .home-offering-panel.is-active .home-offering-tab .tab-inner{flex-direction:row;writing-mode:horizontal-tb;transform:none;gap:16px}
+    .home-offering-panel.is-active .home-offering-tab .tab-name{font-size:clamp(25px,3vw,38px)}
+    .home-offering-content{display:none;min-width:0;width:100%;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto 1fr 1fr;align-content:center;align-items:stretch;gap:0 clamp(22px,4vw,54px);padding:112px clamp(25px,5vw,64px) 38px;animation:offering-in .28s ease both}
+    .home-offering-panel.is-active .home-offering-content{display:grid}
+    .offering-overview{grid-column:1/-1;display:flex;align-items:flex-end;justify-content:space-between;gap:28px;margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid rgba(48,44,49,.2)}
+    .offering-overview .eyebrow{display:none}
+    .offering-overview h2{max-width:52%;margin:0;font-size:clamp(27px,3.2vw,40px);font-weight:500;line-height:1.02;letter-spacing:-.065em}
+    .offering-overview p:last-child{max-width:360px;margin:0;color:#70696D;font-size:12px;line-height:1.65}
+    .home-offering-list{display:contents}
+    .home-offering-item{display:grid;grid-template-columns:31px minmax(0,1fr);grid-template-rows:auto 1fr;column-gap:12px;align-content:start;min-height:115px;padding:17px 0 15px;border-bottom:1px solid rgba(48,44,49,.16);transition:color .2s ease}
+    .home-offering-item:hover{color:#70696D}
+    .home-offering-item:before{grid-column:1;grid-row:1/3;display:grid;width:27px;height:27px;place-items:center;border:1px solid rgba(48,44,49,.16);border-radius:50%;color:#817A7D;font-size:9px;letter-spacing:.03em;content:attr(data-index)}
+    .home-offering-item h3{grid-column:2;margin:2px 0 7px;font-size:clamp(15px,1.6vw,19px);font-weight:500;letter-spacing:-.025em}
+    .home-offering-item p{grid-column:2;max-width:410px;margin:0;color:#70696D;font-size:11px;line-height:1.55}
+    @keyframes offering-in{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+    @media(max-width:760px){.home-offerings{width:calc(100% - 36px);height:auto;min-height:520px;grid-template-columns:54px minmax(0,1fr) 54px;margin-bottom:48px}.home-offering-tab{padding:12px 5px}.home-offering-tab .tab-inner{gap:12px}.home-offering-tab .tab-name{font-size:clamp(15px,3vw,21px)}.home-offering-tab .tab-number{font-size:10px}.home-offering-panel.is-active .home-offering-tab{height:70px;padding:15px 22px}.home-offering-content{grid-template-columns:1fr 1fr;padding:92px 22px 26px}.offering-overview{align-items:flex-start;flex-direction:column;gap:9px;margin-bottom:12px;padding-bottom:12px}.offering-overview h2{max-width:none;font-size:28px}.offering-overview p:last-child{max-width:520px;font-size:12px}.home-offering-item{min-height:96px;padding:12px 0}.home-offering-item h3{font-size:16px}.home-offering-item p{font-size:10px}}
+    .home-offering-content{grid-template-columns:minmax(190px,.8fr) minmax(0,1.2fr);grid-template-rows:1fr;align-items:center;gap:clamp(20px,4vw,50px);padding-top:108px}
+    .offering-overview{grid-column:1;display:flex;align-items:flex-start;flex-direction:column;justify-content:center;gap:0;margin:0;padding:0;border:0}
+    .offering-overview .eyebrow{display:block;margin:0 0 11px}
+    .offering-overview h2{max-width:none;margin:0 0 13px;font-size:clamp(25px,3vw,37px)}
+    .offering-overview .overview-description{max-width:350px;margin:0;color:#70696D;font-size:12px;line-height:1.65}
+    .home-perfect-for{margin-top:19px}.home-perfect-label{display:block;margin-bottom:8px;color:#817A7D;font-size:9px;letter-spacing:.13em;text-transform:uppercase}.home-perfect-tags{display:flex;flex-wrap:wrap;gap:6px}.home-perfect-tags span{padding:6px 9px;border-radius:999px;background:rgba(255,255,255,.64);color:#514B4F;font-size:10px}
+    .home-panel-cta{display:inline-flex;align-items:center;gap:12px;margin-top:21px;padding:8px 11px 8px 15px;border-radius:999px;background:#1D1D1F;color:#F4F1EE;font-size:10px;font-weight:600;transition:transform .2s ease,background .2s ease}.home-panel-cta span{font-size:14px;transition:transform .2s ease}.home-panel-cta:hover{transform:translateY(-2px);background:#514B4F}.home-panel-cta:hover span{transform:translate(2px,-2px)}
+    .home-offering-list{grid-column:2;display:grid;grid-template-columns:1fr;gap:9px}
+    .home-offering-item{position:relative;display:flex;min-height:100px;flex-direction:column;justify-content:center;padding:17px 18px 16px 52px;border:1px solid rgba(48,44,49,.1);border-radius:15px;background:rgba(255,255,255,.53);transition:transform .22s ease,background .22s ease,border-color .22s ease}
+    .home-offering-item:hover{transform:translateX(4px);border-color:rgba(48,44,49,.22);background:rgba(255,255,255,.86)}
+    .home-offering-item:before{position:absolute;top:18px;left:17px;display:grid;width:24px;height:24px;place-items:center;border-radius:8px;background:#E8E3DD;color:#514B4F;font-size:9px;letter-spacing:.03em;content:attr(data-index)}
+    .home-offering-item h3{margin:0 0 7px;font-size:clamp(15px,1.6vw,19px);font-weight:500;letter-spacing:-.025em}
+    .home-offering-item p{max-width:410px;margin:0;color:#70696D;font-size:11px;line-height:1.5}
+    @media(max-width:760px){.home-offering-content{grid-template-columns:1fr;grid-template-rows:auto auto;padding-top:92px;gap:15px}.offering-overview{grid-column:1}.offering-overview h2{font-size:28px}.home-perfect-for{margin-top:13px}.home-panel-cta{margin-top:13px}.home-offering-list{grid-column:1;grid-template-columns:1fr 1fr;gap:7px}.home-offering-item{min-height:115px;padding:40px 11px 11px}.home-offering-item:before{top:10px;left:11px}.home-offering-item h3{font-size:14px}.home-offering-item p{font-size:10px}}
+    @media(max-width:420px){.home-scroll{bottom:14px}.home-offerings{width:calc(100% - 30px);min-height:480px;border-radius:18px;grid-template-columns:40px minmax(0,1fr) 40px}.home-offering-tab .tab-inner{gap:9px}.home-offering-tab .tab-name{font-size:14px}.home-offering-tab .tab-number{font-size:9px}.home-offering-panel.is-active .home-offering-tab .tab-name{font-size:25px}.home-offering-content{padding-right:14px;padding-left:14px}.home-offering-item{min-height:125px}.home-offering-item h3{font-size:13px}.home-offering-item p{font-size:9px}.home-perfect-tags span{font-size:9px}}
+    .home-founder{display:grid;grid-template-columns:minmax(230px,.72fr) 1px minmax(0,1.28fr);align-items:center;gap:clamp(32px,6vw,76px);margin:0 0 70px;padding:clamp(28px,4.2vw,56px);border:1px solid rgba(48,44,49,.11);border-radius:24px;background:#EAE5DF;box-shadow:0 12px 32px rgba(29,29,31,.04)}
+    .home-founder-photo{display:grid;justify-items:center;gap:18px}.home-founder-photo img{width:clamp(170px,21vw,250px);aspect-ratio:1;border-radius:50%;object-fit:cover;transition:transform .35s cubic-bezier(.16,1,.3,1)}.home-founder-photo img:hover{transform:scale(1.045)}.home-founder-photo p{margin:0;color:#989091;font-size:10px;letter-spacing:.16em;text-align:center;text-transform:uppercase}
+    .home-founder-divider{width:1px;height:min(42vh,340px);background:var(--line)}.home-founder-bio{display:grid;grid-template-columns:1fr;gap:17px;min-width:0;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none}.home-founder-bio>p{max-width:700px;margin:0;color:var(--muted);font-size:14px;line-height:1.8}.home-founder-credentials{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px 12px;padding-top:7px;border-top:1px solid var(--line)}.home-founder-credential{padding:10px 8px;border:1px solid transparent;border-radius:10px;color:var(--muted);font-size:11px;line-height:1.55;transition:transform .25s ease,background-color .25s ease,border-color .25s ease}.home-founder-credential:hover{transform:translateY(-2px);border-color:var(--line);background:#EAE5DF}.home-founder-credential strong{display:block;margin-bottom:4px;color:#989091;font-size:9px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+ @media(max-width:760px){.home-founder{grid-template-columns:1fr;gap:24px;margin-bottom:48px;padding:32px 24px}.home-founder-photo img{width:clamp(155px,38vw,220px)}.home-founder-divider{width:100%;height:1px}.home-founder-bio{grid-template-columns:1fr}.home-founder-credentials{grid-column:1}}
+ @media(max-width:560px){.home-founder-credentials{grid-template-columns:1fr;gap:6px}}
+
+    .home-offerings{width:min(calc(100% - 48px),1250px);height:auto;min-height:0;margin:0 auto 60px;overflow:visible;border:0;border-radius:0;background:transparent;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .home-offering-panel{position:relative;display:flex;min-width:0;min-height:410px;flex-direction:column;overflow:hidden;padding:clamp(21px,2.2vw,30px);border:1px solid rgba(48,44,49,.13);border-radius:22px;background:#F8F6F3;transition:transform .28s cubic-bezier(.16,1,.3,1),box-shadow .28s ease,border-color .2s ease}
+    .home-offering-panel:nth-child(2){background:#EAE5DF}.home-offering-panel:nth-child(3){background:#EEECE8}
+    .home-offering-panel:hover{transform:translateY(-5px);border-color:rgba(48,44,49,.23);box-shadow:0 16px 32px rgba(29,29,31,.08)}
+    .home-offering-tab{display:flex;flex:0 0 auto;align-items:center;justify-content:space-between;width:100%;height:auto;min-height:0;padding:0 0 16px;border:0;border-bottom:1px solid rgba(48,44,49,.16);background:transparent;color:#70696D;cursor:default}
+    .home-offering-tab .tab-inner{display:flex;align-items:center;gap:10px;writing-mode:horizontal-tb;transform:none}
+    .home-offering-tab .tab-number{display:grid;width:29px;height:29px;place-items:center;border:1px solid rgba(48,44,49,.2);border-radius:50%;color:#514B4F;font-size:9px;letter-spacing:0}
+    .home-offering-tab .tab-name{font-size:10px;font-weight:500;letter-spacing:.13em;text-transform:uppercase}
+    .home-offering-panel.is-active .home-offering-tab{position:static;width:100%;height:auto;justify-content:space-between;padding:0 0 16px;border-bottom:1px solid rgba(48,44,49,.16)}
+    .home-offering-panel.is-active .home-offering-tab .tab-inner{gap:10px}
+    .home-offering-panel.is-active .home-offering-tab .tab-name{font-size:10px}
+    .home-offering-content,.home-offering-panel.is-active .home-offering-content{display:flex;width:100%;min-width:0;flex:1;flex-direction:column;gap:0;padding:0;margin-top:23px;animation:none}
+    .offering-overview{display:flex;align-items:flex-start;flex-direction:column;justify-content:flex-start;gap:0;margin:0;padding:0;border:0}
+    .offering-overview .eyebrow{display:none}.offering-overview h2{max-width:none;margin:0 0 10px;font-size:clamp(22px,2.1vw,29px);font-weight:500;line-height:1.06;letter-spacing:-.055em}
+    .offering-overview .overview-description{max-width:none;margin:0;color:#70696D;font-size:11px;line-height:1.6}
+    .home-perfect-for{margin-top:17px}.home-perfect-label{margin-bottom:7px;font-size:8px}.home-perfect-tags{gap:5px}.home-perfect-tags span{padding:5px 8px;background:rgba(255,255,255,.55);font-size:9px}
+    .home-offering-list{display:grid;grid-template-columns:1fr;gap:0;margin-top:18px}
+    .home-offering-item{display:grid;grid-template-columns:24px minmax(0,1fr);grid-template-rows:auto 1fr;column-gap:9px;align-content:start;min-height:64px;padding:12px 0 10px;border:0;border-top:1px solid rgba(48,44,49,.15);border-radius:0;background:transparent;transition:color .2s ease}
+    .home-offering-item:hover{transform:none;border-color:rgba(48,44,49,.15);background:transparent;color:#70696D}
+    .home-offering-item:before{position:static;grid-column:1;grid-row:1/3;display:grid;width:22px;height:22px;place-items:center;border:1px solid rgba(48,44,49,.15);border-radius:7px;background:rgba(255,255,255,.42);color:#817A7D;font-size:8px;content:attr(data-index)}
+    .home-offering-item h3{grid-column:2;margin:1px 0 4px;font-size:12px;font-weight:500;letter-spacing:-.015em}.home-offering-item p{grid-column:2;margin:0;color:#70696D;font-size:9px;line-height:1.45}
+    .home-panel-cta{align-self:flex-start;margin-top:auto;padding:7px 10px 7px 13px;font-size:9px}.home-panel-cta span{display:grid;width:25px;height:25px;place-items:center;border-radius:50%;background:#F4F1EE;color:#1D1D1F;font-size:12px}
+    @media(max-width:900px){.home-offerings{grid-template-columns:repeat(2,minmax(0,1fr))}.home-offering-panel{min-height:390px}.home-offering-panel:last-child{grid-column:1/-1;min-height:350px}.home-offering-panel:last-child .home-offering-list{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:20px}}
+    @media(max-width:600px){.home-offerings{width:calc(100% - 36px);grid-template-columns:1fr;gap:11px;margin-bottom:46px}.home-offering-panel,.home-offering-panel:last-child{grid-column:auto;min-height:0;padding:22px}.home-offering-panel:last-child .home-offering-list{grid-template-columns:1fr}.home-offering-content,.home-offering-panel.is-active .home-offering-content{margin-top:18px}.offering-overview h2{font-size:26px}.offering-overview .overview-description{font-size:12px}.home-perfect-for{margin-top:14px}.home-offering-list{margin-top:16px}.home-offering-item{min-height:61px}.home-offering-item h3{font-size:13px}.home-offering-item p{font-size:10px}.home-panel-cta{margin-top:18px}}
+    @media(max-width:420px){.home-offerings{width:calc(100% - 30px)}}
 
   </style>
 </head>
@@ -109,13 +190,24 @@
       </nav>
     </header>
     <section class="home-hero" aria-labelledby="home-title">
-      <h1 id="home-title"><span class="hero-line"><span class="hero-accent">Strategy</span> for Change.</span><span class="hero-line">Clarity to <span class="hero-accent">Impact.</span></span></h1>
-      <p class="home-hero-intro"> For individuals, organizations and ecosystems.</p>
-      <a class="home-hero-cta" href="about.html">Our Story<span aria-hidden="true">↗</span></a>
-      <div class="home-trust" aria-label="Sectors we work in">
-        <p class="home-trust-label">Sectors We Work In</p>
-        <div class="home-trust-items"><span>Nonprofits</span><span>Education</span><span>Sports</span><span>Leadership</span></div>
-      </div>
+      <p class="home-hero-eyebrow">Consulting · Training · Advisory</p>
+      <h1 id="home-title"><span class="hero-line">We drive <strong>bold ideas,</strong></span><span class="hero-line">shared value and <span class="hero-accent">impact.</span></span></h1>
+      <p class="home-hero-intro"> For Individuals, Organizations and Ecosystems.</p>
+      <a class="home-scroll" href="#home-offerings" aria-label="Scroll to explore our work">Scroll to explore<span aria-hidden="true">↓</span></a>
+    </section>
+    <section class="home-offerings" id="home-offerings" aria-label="Explore our work">
+      <article class="home-offering-panel"><header class="home-offering-tab"><span class="tab-inner"><span class="tab-number">01</span><span class="tab-name">Consulting</span></span><span aria-hidden="true">↗</span></header><div class="home-offering-content"><div class="offering-overview"><h2>Strategy For Change</h2><p class="overview-description">Practical support to help organizations shape priorities, strengthen delivery and sustain results.</p></div><div class="home-offering-list"><div class="home-offering-item" data-index="01"><h3>Project Management</h3><p>Move projects from concept to completion with clear systems and coordinated delivery.</p></div><div class="home-offering-item" data-index="02"><h3>Capacity Building</h3><p>Strengthen the people, processes and skills that support lasting results.</p></div></div></div></article>
+      <article class="home-offering-panel"><header class="home-offering-tab"><span class="tab-inner"><span class="tab-number">02</span><span class="tab-name">Collective</span></span><span aria-hidden="true">↗</span></header><div class="home-offering-content"><div class="offering-overview"><h2>Clarity To Impact</h2><p class="overview-description">Coaching programs and workshops for emerging leaders to build self-awareness, find their voice and live with intention.</p></div><div class="home-offering-list"><div class="home-offering-item" data-index="01"><h3>The Archer</h3><p>One-to-one coaching to help you build confidence, identity and purpose.</p></div><div class="home-offering-item" data-index="02"><h3>The Catalyst</h3><p>Facilitated workshops to explore identity, purpose and impact.</p></div></div></div></article>
+      <article class="home-offering-panel"><header class="home-offering-tab"><span class="tab-inner"><span class="tab-number">03</span><span class="tab-name">Basketball</span></span><span aria-hidden="true">↗</span></header><div class="home-offering-content"><div class="offering-overview"><h2>Train With Purpose</h2><p class="overview-description">Personalized basketball training and leadership to gain a competitive edge on and off the court.</p></div><div class="home-offering-list"><div class="home-offering-item" data-index="01"><h3>Player Development</h3><p>Build on your fundamentals, decision-making, skills and confidence at every stage of the game.</p></div><div class="home-offering-item" data-index="02"><h3>Character and leadership</h3><p>Carry with you discipline, resilience and leadership from sport into everyday life situations.</p></div></div></div></article>
+    </section>
+    <div class="home-trust" aria-label="Sectors we work in">
+      <p class="home-trust-label">Sectors We Work In</p>
+      <div class="home-trust-items"><span>Nonprofits</span><span>Education</span><span>Sports</span><span>Leadership</span></div>
+    </div>
+    <section class="home-founder" aria-label="About the founder">
+      <div class="home-founder-photo"><img src="images/About/Almas_Casual.png" alt="Portrait of Almas Ismail"><p>Almas Ismail· Founder</p></div>
+      <div class="home-founder-divider" aria-hidden="true"></div>
+      <article class="home-founder-bio"><p> ALMAS ISMAIL brings his experience in project management, coaching and leadership to the firm’s flagship engagements, leading with commitment, integrity and high standards. The firm partners with organizations to move projects from concept to completion, and coaches young people and athletes to build confidence, discipline and find purpose through their work. He also has a strong passion for sports, basketball in particular - specializing in development and performance, nurturing aspiring players to pursue their goals on and off the court. </p><div class="home-founder-credentials" aria-label="Background"><div class="home-founder-credential"><strong>Education</strong>B.A. in Economics, University at Buffalo</div><div class="home-founder-credential"><strong>Graduate study</strong>M.B.A. in Project Management</div><div class="home-founder-credential"><strong>Practice</strong>Consulting · Training · Advisory</div><div class="home-founder-credential"><strong>Coaching</strong>Leadership · Growth · Development</div></div></article>
     </section>
   </main>
 </body>
