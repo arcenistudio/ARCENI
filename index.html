@@ -31,10 +31,8 @@
     .home-hero h1 .hero-line{display:block}
     .home-hero .hero-accent{display:inline;color:#989091;font-weight:500}
     .home-hero-intro{max-width:720px;margin:22px auto 0;color:#6F696C;font-size:clamp(15px,1.55vw,18px);font-weight:400;line-height:1.6}
-    .home-hero-cta{display:inline-flex;align-items:center;gap:20px;margin-top:30px;padding:14px 21px;border:1px solid #F4F1EE;border-radius:999px;background:#F4F1EE;color:#282828;font-size:12px;font-weight:600;transition:transform .22s ease,background .22s ease,color .22s ease,box-shadow .22s ease}
-    .home-hero-cta span{display:inline-block;color:inherit;font-size:17px;line-height:1;transition:transform .22s ease}
-    .home-hero-cta:hover,.home-hero-cta:focus-visible{transform:translateY(-2px);background:transparent;color:#F4F1EE;box-shadow:0 8px 24px rgba(0,0,0,.2)}
-    .home-hero-cta:hover span,.home-hero-cta:focus-visible span{transform:translate(2px,-2px)}
+    .home-hero .hero-keyword{display:inline-block;transition:transform .28s cubic-bezier(.16,1,.3,1)}
+    .home-hero .hero-keyword:hover,.home-hero .hero-accent:hover{transform:translateY(-5px)}
     .home-trust{margin:clamp(44px,7vh,76px) auto 0;text-align:center}
     .home-trust-label{margin:0 0 19px;color:#817A7D;font-size:11px;font-weight:400;line-height:1.4}
     .home-trust-items{display:flex;align-items:center;justify-content:center;gap:clamp(20px,3vw,38px);flex-wrap:wrap;color:#6D676A}
@@ -85,7 +83,7 @@
     .home-hero h1,.home-hero h1 span,.home-hero .hero-accent{color:#F4F1EE!important}
     .home-hero h1 .hero-accent{display:inline-block;overflow:hidden;vertical-align:bottom;white-space:nowrap;clip-path:inset(0 100% 0 0);animation:home-type .9s steps(7,end) both}
     .home-hero .hero-line:nth-child(2) .hero-accent{animation-delay:1s}
-    .home-hero .hero-accent{color:#B8B0B3!important}
+    .home-hero .hero-accent{color:#B8B0B3!important;transition:transform .28s cubic-bezier(.16,1,.3,1)}
     @keyframes home-type{to{clip-path:inset(0 0 0 0)}}
     @media(prefers-reduced-motion:reduce){.home-hero h1 .hero-accent{clip-path:none}}
     .home-hero-intro{color:#D0CBCD}.home-trust-label{color:#B8B0B3}.home-trust-items{color:#E4E0E1}
@@ -111,9 +109,8 @@
       </nav>
     </header>
     <section class="home-hero" aria-labelledby="home-title">
-      <h1 id="home-title"><span class="hero-line">Strategy for <span class="hero-accent">change.</span></span><span class="hero-line">Clarity to <span class="hero-accent">impact.</span></span></h1>
+      <h1 id="home-title"><span class="hero-line"><span class="hero-keyword">Strategy</span> for <span class="hero-accent">change.</span></span><span class="hero-line"><span class="hero-keyword">Clarity</span> to <span class="hero-accent">impact.</span></span></h1>
       <p class="home-hero-intro">A consulting and advisory for sustainable impact. Built for individuals and organizations to support projects and ecosystems.</p>
-      <a class="home-hero-cta" href="about.html">Meet The Founder <span aria-hidden="true">↗</span></a>
       <div class="home-trust" aria-label="Sectors we work in">
         <p class="home-trust-label">Sectors We Work In</p>
         <div class="home-trust-items"><span>Nonprofits</span><span>Education</span><span>Sports</span><span>Leadership</span></div>
