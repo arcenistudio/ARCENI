@@ -32,7 +32,6 @@
     .home-hero h1 .hero-line{display:block}
     .home-hero-eyebrow{margin:0 0 18px;color:#B8B0B3;font-size:11px;font-weight:500;letter-spacing:.16em;line-height:1.4;text-transform:uppercase}
     .home-hero .hero-accent{display:inline;color:#989091;font-weight:500}
-    .home-hero-intro{max-width:720px;margin:22px auto 0;color:#6F696C;font-size:clamp(15px,1.55vw,18px);font-weight:400;line-height:1.6}
     
     .home-hero .hero-keyword{display:inline-block;transition:transform .28s cubic-bezier(.16,1,.3,1)}
     .home-hero .hero-keyword:hover,.home-hero .hero-accent:hover{transform:translateY(-5px)}
@@ -46,7 +45,6 @@
       .home-nav-cta span{width:28px;height:28px}
       .home-hero{min-height:calc(100svh - 105px);padding:60px 0 42px}
       .home-hero h1{font-size:clamp(40px,8.4vw,58px)}
-      .home-hero-intro{max-width:580px;margin-top:19px}
     }
     @media(max-width:420px){
       .home-shell{width:calc(100% - 30px)}
@@ -54,7 +52,6 @@
       .home-nav-actions{gap:9px}.home-about{font-size:9px;letter-spacing:.08em}.home-nav-cta{gap:9px;padding-left:12px}
       .home-hero{padding-top:44px}
       .home-hero h1{font-size:clamp(35px,9.5vw,43px);letter-spacing:-.065em}
-      .home-hero-intro{font-size:14px}
     }
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
       .site-social{width:min(100% - 48px,1250px);display:flex;align-items:center;justify-content:center;gap:22px;margin:0 auto;padding:26px 0 34px;color:#514B4F}
@@ -79,17 +76,27 @@
     .home-nav-cta:hover,.home-nav-cta:focus-visible{background:rgba(255,255,255,.68);box-shadow:0 5px 14px rgba(48,44,49,.08)}
     .home-hero h1,.home-hero h1 span,.home-hero .hero-accent{color:#1D1D1F!important}
     .home-hero .hero-accent{display:inline-block;vertical-align:bottom;white-space:nowrap;color:#989091!important;transition:transform .28s cubic-bezier(.16,1,.3,1)}
-    .home-hero-intro{color:#70696D}
     .site-social{color:#514B4F}
     .home-about{position:static;transform:none;color:#6D676A;font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;transition:color .22s ease}
     .home-about:hover,.home-about:focus-visible{color:#1D1D1F}
     .home-about:focus-visible{outline:2px solid #1D1D1F;outline-offset:4px}
     .home-social{display:flex;align-items:center;justify-content:flex-end;gap:18px;margin-left:auto;color:#1D1D1F}
-    .home-footer-social{width:min(100% - 48px,1250px);justify-content:flex-end;margin:20px auto 0;padding:22px 0 30px;border-top:1px solid rgba(48,44,49,.12);color:#70696D}
+    .home-founder{display:grid;grid-template-columns:minmax(230px,.72fr) 1px minmax(0,1.28fr);align-items:center;gap:clamp(32px,6vw,76px);margin:0 0 50px;padding:clamp(28px,4.2vw,56px);border:1px solid rgba(48,44,49,.11);border-radius:24px;background:#EEECE8;box-shadow:0 12px 32px rgba(29,29,31,.04)}
+    .home-founder-photo{display:grid;justify-items:center;gap:18px}.home-founder-photo img{width:clamp(170px,21vw,250px);aspect-ratio:1;border-radius:50%;object-fit:cover;transition:transform .35s cubic-bezier(.16,1,.3,1)}.home-founder-photo img:hover{transform:scale(1.045)}.home-founder-photo>p{margin:0;color:#989091;font-size:10px;letter-spacing:.16em;text-align:center;text-transform:uppercase}
+    .home-founder-divider{width:1px;height:min(42vh,340px);background:var(--line)}.home-founder-bio{display:grid;grid-template-columns:1fr;gap:17px;min-width:0}.home-founder-bio>p{max-width:700px;margin:0;color:var(--muted);font-size:14px;line-height:1.8}.home-founder-eyebrow{margin:0 0 -7px!important;color:#989091!important;font-size:10px!important;line-height:1.4!important;letter-spacing:.16em;text-transform:uppercase}.home-founder-bio h2{margin:0;color:var(--ink);font-size:clamp(38px,5vw,62px);font-weight:500;line-height:.98;letter-spacing:-.075em}.home-founder-bio h2 span{color:#989091}
+    .home-founder-credentials{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px 12px;padding-top:7px;border-top:1px solid var(--line)}.home-founder-credential{padding:10px 8px;border:1px solid transparent;border-radius:10px;color:var(--muted);font-size:11px;line-height:1.55;transition:transform .25s ease,background-color .25s ease,border-color .25s ease}.home-founder-credential:hover{transform:translateY(-2px);border-color:var(--line);background:#EAE5DF}.home-founder-credential strong{display:block;margin-bottom:4px;color:#989091;font-size:9px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+    .home-footer{width:100%;margin:20px auto 0;padding:25px 0 4px;border-top:1px solid rgba(48,44,49,.12);color:#70696D}
+    .home-footer-inner,.home-footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:22px;width:100%}
+    .home-footer-brand{font-size:15px;font-weight:600;letter-spacing:.18em;color:#1D1D1F}.home-footer-brand sup{font-size:7px;letter-spacing:0}
+    .home-footer-bottom a{transition:color .2s ease}.home-footer-bottom a:hover{color:#1D1D1F}
+    .home-footer .home-social{margin:0}
+    .home-footer-bottom{margin-top:22px;padding-top:14px;border-top:1px solid rgba(48,44,49,.1);font-size:10px;color:#817A7D}
     .home-social a{display:grid;width:22px;height:22px;place-items:center;color:inherit;transition:opacity .2s ease,transform .2s ease}
     .home-social a:hover,.home-social a:focus-visible{opacity:.7;transform:translateY(-1px)}
     .home-social svg{display:block;width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-    @media(max-width:420px){.home-social{gap:12px}.home-footer-social{width:calc(100% - 30px)}}
+    @media(max-width:760px){.home-footer-inner{flex-wrap:wrap}.home-founder{grid-template-columns:1fr;gap:24px;margin-bottom:42px;padding:32px 24px}.home-founder-photo img{width:clamp(155px,38vw,220px)}.home-founder-divider{width:100%;height:1px}.home-founder-bio{grid-template-columns:1fr}}
+    @media(max-width:560px){.home-founder-credentials{grid-template-columns:1fr;gap:6px}.home-footer-bottom{align-items:flex-start;flex-direction:column}}
+    @media(max-width:420px){.home-social{gap:12px}}
     .home-hero{position:relative}
     .home-scroll{position:absolute;bottom:22px;left:50%;display:flex;flex-direction:column;align-items:center;gap:8px;transform:translateX(-50%);color:#70696D;font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
     .home-scroll span{position:relative;display:block;width:1px;height:38px;background:rgba(48,44,49,.35);font-size:0;overflow:hidden}
@@ -101,6 +108,7 @@
     .home-offering-panel.is-active{background:#E8E3DD}
     .home-offering-tab{display:flex;flex:0 0 100%;align-items:center;justify-content:center;min-width:0;padding:28px 14px;border:0;background:transparent;color:#1D1D1F;cursor:pointer;transition:all .3s ease}
     .home-offering-tab .tab-inner{display:flex;align-items:center;gap:28px;writing-mode:vertical-rl;transform:rotate(180deg)}
+    .home-offering-tab .panel-icon{display:block;width:21px;height:21px;flex:0 0 21px;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
     .home-offering-tab .tab-number{color:#817A7D;font-size:13px;letter-spacing:.1em}
     .home-offering-tab .tab-name{font-size:clamp(21px,2.6vw,34px);font-weight:600;letter-spacing:-.05em;white-space:nowrap}
     .home-offering-panel.is-active .home-offering-tab{flex-basis:0;flex-grow:0;position:absolute;top:0;left:0;width:100%;height:82px;justify-content:flex-start;padding:20px clamp(25px,5vw,64px);border-bottom:1px solid rgba(48,44,49,.14)}
@@ -166,20 +174,7 @@
     @media(max-width:900px){.home-offerings{grid-template-columns:repeat(2,minmax(0,1fr))}.home-offering-panel{min-height:390px}.home-offering-panel:last-child{grid-column:1/-1;min-height:350px}.home-offering-panel:last-child .home-offering-list{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:20px}}
     @media(max-width:600px){.home-offerings{width:calc(100% - 36px);grid-template-columns:1fr;gap:11px;margin-bottom:46px}.home-offering-panel,.home-offering-panel:last-child{grid-column:auto;min-height:0;padding:22px}.home-offering-panel:last-child .home-offering-list{grid-template-columns:1fr}.home-offering-content,.home-offering-panel.is-active .home-offering-content{margin-top:18px}.offering-overview h2{font-size:26px}.offering-overview .overview-description{font-size:12px}.home-perfect-for{margin-top:14px}.home-offering-list{margin-top:16px}.home-offering-item{min-height:61px}.home-offering-item h3{font-size:13px}.home-offering-item p{font-size:12px}.home-panel-cta{margin-top:18px}}
     @media(max-width:420px){.home-offerings{width:calc(100% - 30px)}}
-    .home-testimonial{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(34px,6vw,84px);align-items:center;margin:38px 0 72px;padding:clamp(32px,5vw,68px);border:1px solid rgba(48,44,49,.08);border-radius:28px;background:#fff;box-shadow:0 18px 42px rgba(48,44,49,.06)}
-    .home-testimonial-copy .eyebrow{display:inline-flex;margin:0;padding:9px 13px;border-radius:10px;background:#F4F1EE;color:var(--ink);letter-spacing:.03em;text-transform:none;font-size:12px}
-    .home-testimonial-copy h2{max-width:480px;margin:24px 0 0;font-size:clamp(36px,4.5vw,50px);font-weight:600;line-height:1.08;letter-spacing:-.065em}
-    .home-testimonial-copy>p:not(.eyebrow){max-width:440px;margin:20px 0 0;color:var(--muted);font-size:14px;line-height:1.7}
-    .home-testimonial-values{margin-top:64px!important;color:var(--muted);font-size:11px!important;line-height:1.7}
-    .home-testimonial-carousel{position:relative;min-width:0}.home-testimonial-viewport{overflow:hidden;border-radius:24px;padding:10px;margin:-10px}.home-testimonial-track{display:flex;width:100%;align-items:stretch;transition:transform .48s cubic-bezier(.16,1,.3,1)}
-    .home-testimonial-card{position:relative;display:flex;flex:0 0 100%;min-height:340px;flex-direction:column;padding:34px 34px 82px;border:1px solid rgba(48,44,49,.06);border-radius:24px;background:linear-gradient(145deg,#F7F4F0 0%,#EAE5DF 100%);box-shadow:0 12px 26px rgba(48,44,49,.08);transition:transform .3s cubic-bezier(.16,1,.3,1);will-change:transform}
-    .home-testimonial-card:hover,.home-testimonial-card:focus-within{position:relative;z-index:1;transform:scale(1.025)}.home-testimonial-topic{margin:0;color:#817A7D;font-size:11px;letter-spacing:.1em;text-transform:uppercase}.home-testimonial-quote{margin:42px 0 28px;color:#514B4F;font-size:18px;line-height:1.65}.home-testimonial-byline{display:flex;align-items:center;gap:12px;margin-top:auto;font-size:12px;font-weight:600}.home-testimonial-avatar{display:grid;width:38px;height:38px;place-items:center;border-radius:50%;background:#E8E4DF;color:#504A4D;font-size:11px}.home-testimonial-byline small{display:block;margin-top:3px;color:var(--muted);font-size:10px;font-weight:400}
-    .home-testimonial-controls{position:absolute;right:18px;bottom:18px;z-index:2;display:flex;gap:10px}.home-testimonial-controls button{display:grid;width:40px;height:40px;place-items:center;border:1px solid rgba(40,37,42,.2);border-radius:50%;background:transparent;color:var(--ink);font:500 18px Inter,Arial,sans-serif;cursor:pointer;transition:background .2s ease,border-color .2s ease,transform .2s ease}.home-testimonial-controls button:hover{transform:translateY(-1px);border-color:rgba(40,37,42,.45);background:rgba(255,255,255,.35)}.home-testimonial-controls button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
-    .home-testimonial-footer{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:28px;padding-top:20px;color:#514B4F;font-size:11px}.home-testimonial-footer strong{display:block;font-size:11px;font-weight:500}.home-testimonial-footer span{display:block;margin-top:4px;color:var(--muted);font-size:10px}
-    .home-testimonial-footer-cta{display:inline-flex;align-items:center;gap:10px;color:#514B4F;font-size:12px;font-weight:500;white-space:nowrap}.home-testimonial-footer-cta span{margin:0;font-size:15px;transition:transform .2s ease}.home-testimonial-footer-cta:hover span{transform:translate(2px,-2px)}
     .home-section-scroll{display:flex;grid-column:1/-1;justify-self:center;flex-direction:column;align-items:center;gap:8px;margin:18px auto 0;color:#70696D;font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;transition:color .2s ease}.home-section-scroll span{position:relative;display:block;width:1px;height:38px;background:rgba(48,44,49,.35);font-size:0;overflow:hidden}.home-section-scroll span:after{position:absolute;top:0;left:-3px;width:7px;height:7px;border-radius:50%;background:#1D1D1F;content:"";animation:home-scroll-drop 1.7s cubic-bezier(.16,1,.3,1) infinite}.home-section-scroll:hover{color:#1D1D1F}.home-section-scroll.is-top span:after{animation-direction:reverse}
-    @media(max-width:760px){.home-testimonial{grid-template-columns:1fr;gap:30px;padding:32px}.home-testimonial-values{margin-top:28px!important}}
-    @media(max-width:560px){.home-testimonial{padding:26px 18px}.home-testimonial-card{min-height:320px;padding:28px 22px 76px}.home-testimonial-controls{right:14px;bottom:14px}.home-testimonial-footer{align-items:flex-start;flex-direction:row;gap:16px;margin-top:18px}.home-testimonial-footer-cta{align-self:flex-end}}
 
   </style>
 </head>
@@ -187,49 +182,37 @@
   <main class="home-shell">
     <header class="home-topbar">
       <a class="home-brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a>
-      <div class="home-nav-actions"><a class="home-about" href="about.html">About</a><a class="home-nav-cta" href="mailto:hello@arceni.com?subject=Work%20With%20Us">Work With Us<span aria-hidden="true">↗</span></a></div>
+      <div class="home-nav-actions"><a class="home-nav-cta" href="mailto:hello@arceni.com?subject=Work%20With%20Us">Work With Us<span aria-hidden="true">↗</span></a></div>
     </header>
     <section class="home-hero" id="home-top" aria-labelledby="home-title">
+      <p class="home-hero-eyebrow">Consulting · Training · Advisory</p>
       <h1 id="home-title"><span class="hero-line">We drive <strong>bold ideas,</strong></span><span class="hero-line">shared value and <span class="hero-accent">impact.</span></span></h1>
-      <p class="home-hero-intro">A consulting, training and advisory built to support projects and ecosystems.</p>
       <a class="home-scroll" href="#home-offerings" aria-label="Scroll to explore our work">What We Do<span aria-hidden="true">↓</span></a>
     </section>
     <section class="home-offerings" id="home-offerings" aria-label="Explore our work">
-      <article class="home-offering-panel"><header class="home-offering-tab"><span class="tab-inner"><span class="tab-number">01</span><span class="tab-name">Consulting</span></span><span aria-hidden="true">↗</span></header><div class="home-offering-content"><div class="offering-overview"><h2>Strategy For Change</h2><p class="overview-description">Practical support to help organizations shape priorities, strengthen delivery and sustain results.</p></div><div class="home-offering-list"><div class="home-offering-item project-management-item" data-index="01"><h3>Project Management</h3><p>Move projects from concept to completion with clear systems and coordinated delivery.</p></div><div class="home-offering-item" data-index="02"><h3>Capacity Building</h3><p>Strengthen the people, processes and skills that support lasting results.</p></div></div></div></article>
-      <article class="home-offering-panel"><header class="home-offering-tab"><span class="tab-inner"><span class="tab-number">02</span><span class="tab-name">Collective</span></span><span aria-hidden="true">↗</span></header><div class="home-offering-content"><div class="offering-overview"><h2>Clarity To Impact</h2><p class="overview-description">Coaching programs and workshops for emerging leaders to build self-awareness, find their voice and live with intention.</p></div><div class="home-offering-list"><div class="home-offering-item" data-index="01"><h3>The Archer</h3><p>One-to-one coaching to help you build confidence, identity and purpose.</p></div><div class="home-offering-item" data-index="02"><h3>The Catalyst</h3><p>Facilitated workshops to explore identity, purpose and impact.</p></div></div></div></article>
-      <article class="home-offering-panel"><header class="home-offering-tab"><span class="tab-inner"><span class="tab-number">03</span><span class="tab-name">Basketball</span></span><span aria-hidden="true">↗</span></header><div class="home-offering-content"><div class="offering-overview"><h2>Train With Purpose</h2><p class="overview-description">Personalized basketball training and leadership to gain a competitive edge on and off the court.</p></div><div class="home-offering-list"><div class="home-offering-item" data-index="01"><h3>Player Development</h3><p>Build on your fundamentals, decision-making, skills and confidence at every stage of the game.</p></div><div class="home-offering-item" data-index="02"><h3>Character and leadership</h3><p>Carry with you discipline, resilience and leadership from sport into everyday life situations.</p></div></div></div></article>
-      <a class="home-section-scroll" href="#home-testimonial" aria-label="Scroll to testimonials">Client Reflections <span aria-hidden="true"></span></a>
+      <article class="home-offering-panel"><header class="home-offering-tab"><span class="tab-inner"><svg class="panel-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 8h8M8 12h5M8 16h3M16 13v5m-2.5-2.5h5"/></svg><span class="tab-number">01</span><span class="tab-name">Consulting</span></span><span aria-hidden="true">↗</span></header><div class="home-offering-content"><div class="offering-overview"><h2>Strategy For Change</h2><p class="overview-description">Practical support to help organizations shape priorities, strengthen delivery and sustain results.</p></div><div class="home-offering-list"><div class="home-offering-item project-management-item" data-index="01"><h3>Project Management</h3><p>Move projects from concept to completion with clear systems and coordinated delivery.</p></div><div class="home-offering-item" data-index="02"><h3>Capacity Building</h3><p>Strengthen the people, processes and skills that support lasting results.</p></div></div></div></article>
+      <article class="home-offering-panel"><header class="home-offering-tab"><span class="tab-inner"><svg class="panel-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3.5 19v-1.5a5.5 5.5 0 0 1 11 0V19zM16 5.5a3 3 0 0 1 0 5.8M17 14a4.5 4.5 0 0 1 3.5 4.4V19h-4"/></svg><span class="tab-number">02</span><span class="tab-name">Collective</span></span><span aria-hidden="true">↗</span></header><div class="home-offering-content"><div class="offering-overview"><h2>Clarity To Impact</h2><p class="overview-description">Coaching programs and workshops for emerging leaders to build self-awareness, find their voice, live with intention.</p></div><div class="home-offering-list"><div class="home-offering-item" data-index="01"><h3>The Archer Program</h3><p>One-to-one coaching to help you grow personally, build confidence, find your purpose and impact.</p></div><div class="home-offering-item" data-index="02"><h3>The Catalyst Workshops</h3><p>Candid conversations, facilitated workshops to explore identity, belonging and purpose.</p></div></div></div></article>
+      <article class="home-offering-panel"><header class="home-offering-tab"><span class="tab-inner"><svg class="panel-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3.5 9h17M3.5 15h17M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><span class="tab-number">03</span><span class="tab-name">Basketball</span></span><span aria-hidden="true">↗</span></header><div class="home-offering-content"><div class="offering-overview"><h2>Train With Purpose</h2><p class="overview-description">Personalized basketball training and leadership to gain a competitive edge on and off the court.</p></div><div class="home-offering-list"><div class="home-offering-item" data-index="01"><h3>Player Development</h3><p>Build on your fundamentals, decision-making, skills and confidence at every stage of the game.</p></div><div class="home-offering-item" data-index="02"><h3>Character and leadership</h3><p>Carry with you discipline, resilience and leadership from sport into everyday life situations.</p></div></div></div></article>
+      <a class="home-section-scroll" href="#home-founder" aria-label="Scroll to about the founder">About the Founder <span aria-hidden="true"></span></a>
     </section>
-    <section class="home-testimonial" id="home-testimonial" aria-labelledby="home-testimonial-title">
-      <div class="home-testimonial-copy"><p class="eyebrow">Impact, In Their Words</p><h2 id="home-testimonial-title">Good work moves people forward.</h2><p>Clear priorities, thoughtful collaboration and practical support help individuals and teams make progress that last.</p><p class="home-testimonial-values">Project Management · Personal Growth · Coaching & Leadership</p></div>
-      <div class="home-testimonial-carousel"><div class="home-testimonial-viewport" id="home-testimonial-viewport" aria-label="Client reflections"><div class="home-testimonial-track">
-        <article class="home-testimonial-card" aria-hidden="false"><p class="home-testimonial-topic">Consulting</p><blockquote class="home-testimonial-quote">“The Committee on Migration's Subcommittee on Children in Migration would like to express our sincerest thanks to for all the hard work, without whom the infographic project would not have been possible."</blockquote><div class="home-testimonial-byline"><span class="home-testimonial-avatar" aria-hidden="true">C</span><div>NGO Committee On Migration<small>Project Management Consulting</small></div></div></article>
-        <article class="home-testimonial-card" aria-hidden="true" inert><p class="home-testimonial-topic">Collective</p><blockquote class="home-testimonial-quote">“The level of engagement was very intensive with how we were able to focus on the ‘why' of things and not necessarily the ‘what’. We were able to approach solving the challenges and planning how I was going to achieve my objectives was in a very practical manner.”</blockquote><div class="home-testimonial-byline"><span class="home-testimonial-avatar" aria-hidden="true">C</span><div>Mwita P.<small>The Archer Program</small></div></div></article>
-        <article class="home-testimonial-card" aria-hidden="true" inert><p class="home-testimonial-topic">Basketball</p><blockquote class="home-testimonial-quote">“Coach gives me perspective about life, being deliberate in what I do and advises me regularly. It is amazing to have someone support you to grow in basketball, learn the little details and have a plan in everything I do.”</blockquote><div class="home-testimonial-byline"><span class="home-testimonial-avatar" aria-hidden="true">B</span><div>Lisa O.<small>Basketball Program</small></div></div></article>
-      </div></div><div class="home-testimonial-controls"><button type="button" data-home-testimonial-step="-1" aria-label="Previous reflection" aria-controls="home-testimonial-viewport">←</button><button type="button" data-home-testimonial-step="1" aria-label="Next reflection" aria-controls="home-testimonial-viewport">→</button></div></div>
-      <div class="home-testimonial-footer"><div><strong>ARCENI - Consulting, Training & Advisory</strong><span>We drive bold ideas, shared value and impact.</span></div><a class="home-testimonial-footer-cta" href="#home-offerings">Explore Our Work<span aria-hidden="true">↗</span></a></div>
-      <a class="home-section-scroll is-top" href="#home-top" aria-label="Scroll back to the top">Back to Top <span aria-hidden="true"></span></a>
+    <section class="home-founder" aria-label="About the founder">
+      <div class="home-founder-photo"><img src="images/About/Almas_Casual.png" alt="Portrait of Almas Ismail"><p>Founder · ARCENI</p></div>
+      <div class="home-founder-divider" aria-hidden="true"></div>
+      <article class="home-founder-bio"><p class="home-founder-eyebrow">Est. 2018</p><h2>ALMAS <span>ISMAIL</span></h2><p> He brings his experience in project management, coaching and leadership to the firm’s flagship engagements, leading with commitment, integrity and high standards. The firm partners with organizations to move projects from concept to completion, and coaches young people and athletes to build confidence, discipline and find purpose through their work.</p><div class="home-founder-credentials" aria-label="Background"><div class="home-founder-credential"><strong>Education</strong>B.A. in Economics, University at Buffalo</div><div class="home-founder-credential"><strong>Graduate study</strong>M.B.A. in Project Management</div><div class="home-founder-credential"><strong>Practice</strong>Consulting · Training · Advisory</div><div class="home-founder-credential"><strong>Coaching</strong>Leadership · Personal Development · Basketball</div></div></article>
     </section>
-    <nav class="home-social home-footer-social" aria-label="Social media links">
-      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.7" cy="6.5" r=".7" fill="currentColor" stroke="none"/></svg></a>
-      <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 7.2a2.8 2.8 0 0 0-2-2C17.3 4.7 12 4.7 12 4.7s-5.3 0-7 .5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2.5 12a29 29 0 0 0 .5 4.8 2.8 2.8 0 0 0 2 2c1.7.5 7 .5 7 .5s5.3 0 7-.5a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .5-4.8 29 29 0 0 0-.5-4.8Z"/><path d="m10 9 5 3-5 3z"/></svg></a>
-      <a href="https://www.linkedin.com/company/arceni/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10v7M8 7v.01M12 17v-7m0 3a3 3 0 0 1 6 0v4"/></svg></a>
-    </nav>
+    <footer class="home-footer" aria-label="Site footer">
+      <div class="home-footer-inner">
+        <span class="home-footer-brand">ARCENI<sup>®</sup></span>
+        <nav class="home-social" aria-label="Social media links">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.7" cy="6.5" r=".7" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 7.2a2.8 2.8 0 0 0-2-2C17.3 4.7 12 4.7 12 4.7s-5.3 0-7 .5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2.5 12a29 29 0 0 0 .5 4.8 2.8 2.8 0 0 0 2 2c1.7.5 7 .5 7 .5s5.3 0 7-.5a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .5-4.8 29 29 0 0 0-.5-4.8Z"/><path d="m10 9 5 3-5 3z"/></svg></a>
+          <a href="https://www.linkedin.com/company/arceni/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10v7M8 7v.01M12 17v-7m0 3a3 3 0 0 1 6 0v4"/></svg></a>
+        </nav>
+      </div>
+      <div class="home-footer-bottom"><span>© 2026 ARCENI. All rights reserved.</span></div>
+    </footer>
 
   </main>
-  <script>
-    const testimonialTrack = document.querySelector('.home-testimonial-track');
-    const testimonialSlides = [...document.querySelectorAll('.home-testimonial-card')];
-    let testimonialIndex = 0;
-    document.querySelectorAll('[data-home-testimonial-step]').forEach(button => button.addEventListener('click', () => {
-      testimonialIndex = (testimonialIndex + Number(button.dataset.homeTestimonialStep) + testimonialSlides.length) % testimonialSlides.length;
-      testimonialTrack.style.transform = `translateX(-${testimonialIndex * 100}%)`;
-      testimonialSlides.forEach((slide, index) => {
-        const active = index === testimonialIndex;
-        slide.setAttribute('aria-hidden', String(!active));
-        if (active) slide.removeAttribute('inert'); else slide.setAttribute('inert', '');
-      });
-    }));
-  </script>
+
 </body>
 </html>
