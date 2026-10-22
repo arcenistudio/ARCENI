@@ -24,6 +24,7 @@
     .home-nav a:hover,.home-nav a:focus-visible{color:var(--ink)}
     .home-nav a:focus-visible,.home-nav-cta:focus-visible{outline:2px solid #746B70;outline-offset:4px}
     .home-nav-cta{display:inline-flex;min-height:44px;align-items:center;justify-self:end;gap:14px;padding:5px 6px 5px 16px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.26);font-size:11px;font-weight:600;white-space:nowrap;transition:background .22s ease,transform .22s ease,box-shadow .22s ease}
+    .home-events-link{color:#6D676A;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;transition:color .2s ease}.home-events-link:hover{color:#1D1D1F}
     .home-nav-cta span{display:grid;width:32px;height:32px;place-items:center;border:0;border-radius:10px;background:#302C31;color:#fff;font-size:15px}
     .home-nav-cta:hover,.home-nav-cta:focus-visible{transform:translateY(-1px) scale(1.04);background:rgba(255,255,255,.68);box-shadow:0 5px 14px rgba(48,44,49,.08)}
     .home-nav-actions{display:flex;align-items:center;justify-content:flex-end;gap:clamp(14px,2vw,24px);margin-left:auto}
@@ -70,7 +71,6 @@
     .hero h1,.hero h1 span,.home-hero h1,.home-hero h1 span,.home-hero .hero-accent{color:#1D1D1F!important}
     :root{--paper:#F4F1EE;--ink:#1D1D1F;--muted:#70696D;--soft:#989091;--line:rgba(48,44,49,.13)}
     html,body{background-color:#F4F1EE;color:#1D1D1F}
-    body{background-image:url('images/homepage-background-texture.svg');background-position:center top;background-repeat:no-repeat;background-size:cover;background-attachment:fixed}
     .home-nav{color:#6D676A}.home-nav a:hover,.home-nav a:focus-visible{color:#1D1D1F}
     .home-nav a:focus-visible,.home-nav-cta:focus-visible{outline-color:#1D1D1F}
     .home-nav-cta{background:rgba(255,255,255,.26);color:#1D1D1F;border-color:rgba(48,44,49,.13)}
@@ -85,7 +85,7 @@
     .home-social{display:flex;align-items:center;justify-content:flex-end;gap:18px;margin-left:auto;color:#1D1D1F}
     .home-founder{display:grid;grid-template-columns:minmax(230px,.72fr) 1px minmax(0,1.28fr);align-items:center;gap:clamp(32px,6vw,76px);margin:0 0 50px;padding:clamp(28px,4.2vw,56px);border:1px solid rgba(48,44,49,.11);border-radius:24px;background:#EEECE8;box-shadow:0 12px 32px rgba(29,29,31,.04)}
     .home-founder-photo{display:grid;justify-items:center;gap:18px}.home-founder-photo img{width:clamp(170px,21vw,250px);aspect-ratio:1;border-radius:50%;object-fit:cover;transition:transform .35s cubic-bezier(.16,1,.3,1)}.home-founder-photo img:hover{transform:scale(1.045)}.home-founder-photo>p{margin:0;color:#989091;font-size:10px;letter-spacing:.16em;text-align:center;text-transform:uppercase}
-    .home-founder-divider{width:1px;height:min(42vh,340px);background:var(--line)}.home-founder-bio{display:grid;grid-template-columns:1fr;gap:17px;min-width:0}.home-founder-bio>p{max-width:700px;margin:0;color:var(--muted);font-size:14px;line-height:1.8}.home-founder-eyebrow{margin:0 0 -7px!important;color:#989091!important;font-size:10px!important;line-height:1.4!important;letter-spacing:.16em;text-transform:uppercase}.home-founder-bio h2{margin:0;color:var(--ink);font-size:clamp(38px,5vw,62px);font-weight:500;line-height:.98;letter-spacing:-.075em}.home-founder-bio h2 span{color:#989091}
+    .home-founder-divider{width:1px;height:min(42vh,340px);background:var(--line)}.home-founder-bio{display:grid;grid-template-columns:1fr;gap:17px;min-width:0}.home-founder-bio>p{max-width:700px;margin:0;color:var(--muted);font-size:14px;line-height:1.8}.home-founder-eyebrow{margin:0 0 -7px!important;color:#989091!important;font-size:10px!important;line-height:1.4!important;letter-spacing:.16em;text-transform:uppercase}.home-founder-bio h2{margin:0;color:#989091;font-size:12px;font-weight:600;line-height:1.4;letter-spacing:.16em;text-transform:uppercase}.home-founder-bio h2 span{color:#989091}
     .home-founder-credentials{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px 12px;padding-top:7px;border-top:1px solid var(--line)}.home-founder-credential{padding:10px 8px;border:1px solid transparent;border-radius:10px;color:var(--muted);font-size:11px;line-height:1.55;transition:transform .25s ease,background-color .25s ease,border-color .25s ease}.home-founder-credential:hover{transform:translateY(-2px);border-color:var(--line);background:#EAE5DF}.home-founder-credential strong{display:block;margin-bottom:4px;color:#989091;font-size:9px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
     .home-footer{width:100%;margin:20px auto 0;padding:25px 0 4px;border-top:1px solid rgba(48,44,49,.12);color:#70696D}
     .home-footer-inner,.home-footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:22px;width:100%}
@@ -184,30 +184,42 @@
     @media(max-width:420px){.home-offerings{width:calc(100% - 30px)}}
     .home-section-scroll{display:flex;grid-column:1/-1;justify-self:center;flex-direction:column;align-items:center;gap:8px;margin:18px auto 0;color:#70696D;font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;transition:color .2s ease}.home-section-scroll span{position:relative;display:block;width:1px;height:38px;background:rgba(48,44,49,.35);font-size:0;overflow:hidden}.home-section-scroll span:after{position:absolute;top:0;left:-3px;width:7px;height:7px;border-radius:50%;background:#1D1D1F;content:"";animation:home-scroll-drop 1.7s cubic-bezier(.16,1,.3,1) infinite}.home-section-scroll:hover{color:#1D1D1F}.home-section-scroll.is-top span:after{animation-direction:reverse}
 
-    .consulting-testimonial{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(34px,6vw,84px);align-items:center;margin:38px 0 72px;padding:clamp(32px,5vw,68px);border:1px solid rgba(48,44,49,.08);border-radius:28px;background:#fff;box-shadow:0 18px 42px rgba(48,44,49,.06)}
-    .consulting-testimonial-copy .eyebrow{display:inline-flex;margin:0;padding:9px 13px;border-radius:10px;background:#F4F1EE;color:var(--ink);letter-spacing:.03em;text-transform:none;font-size:12px}
-    .consulting-testimonial-copy h2{max-width:480px;margin:24px 0 0;font-size:clamp(36px,4.5vw,50px);font-weight:600;line-height:1.08;letter-spacing:-.065em}
+    .consulting-testimonial{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(34px,6vw,84px);align-items:center;margin:38px 0 48px;padding:clamp(32px,5vw,68px);border:1px solid rgba(48,44,49,.08);border-radius:28px;background:#fff;box-shadow:0 18px 42px rgba(48,44,49,.06)}
+    .consulting-testimonial-copy .eyebrow{display:inline-flex;align-items:center;gap:9px;width:max-content;margin:0;padding:0;border:0;background:transparent;color:#817A7D;letter-spacing:.14em;text-transform:uppercase;font-size:10px;font-weight:500}
+    .consulting-testimonial-copy .eyebrow:before{width:17px;height:1px;flex:0 0 17px;background:#989091;content:""}
+    .consulting-testimonial-copy h2{max-width:480px;margin:24px 0 0;font-size:clamp(36px,4.5vw,40px);font-weight:600;line-height:1.08;letter-spacing:-.065em}
+    .consulting-testimonial-copy h2 span{color:#989091}
     .consulting-testimonial-copy>p:not(.eyebrow){max-width:440px;margin:20px 0 0;color:var(--muted);font-size:14px;line-height:1.7}
-    .consulting-testimonial-values{margin-top:64px;color:var(--muted);font-size:11px;line-height:1.7}
-    .consulting-testimonial-carousel{position:relative;min-width:0}
-    .consulting-testimonial-viewport{overflow:hidden;border-radius:24px;padding:10px;margin:-10px}
-    .consulting-testimonial-track{display:flex;width:100%;align-items:stretch;transition:transform .48s cubic-bezier(.16,1,.3,1)}
-    .consulting-testimonial-card{position:relative;display:flex;flex:0 0 100%;min-height:340px;flex-direction:column;padding:34px 34px 82px;border:1px solid rgba(48,44,49,.06);border-radius:24px;background:linear-gradient(145deg,#F7F4F0 0%,#EAE5DF 100%);box-shadow:0 12px 26px rgba(48,44,49,.08);transition:transform .3s cubic-bezier(.16,1,.3,1);will-change:transform}
-    .consulting-testimonial-card:hover,.consulting-testimonial-card:focus-within{position:relative;z-index:1;transform:scale(1.025)}
+    .consulting-testimonial-values{margin-top:48px;color:var(--muted);font-size:11px;line-height:1.7}
+    .consulting-testimonial-carousel{position:relative;min-width:0;isolation:isolate;perspective:1400px;padding:4px 10px 12px}
+    .consulting-testimonial-carousel:before,.consulting-testimonial-carousel:after{position:absolute;inset:15px 16px 6px 22px;z-index:-1;border:1px solid rgba(48,44,49,.08);border-radius:18px;background:#E8E4DF;box-shadow:0 10px 22px rgba(48,44,49,.045);content:""}
+    .consulting-testimonial-carousel:before{transform:rotate(3deg) translateY(2px)}
+    .consulting-testimonial-carousel:after{inset:10px 12px 8px 16px;background:#F2EFEB;transform:rotate(-2deg) translateY(1px)}
+    .consulting-testimonial-viewport{position:relative;z-index:1;overflow:hidden;border:1px solid rgba(48,44,49,.11);border-radius:18px;padding:0;margin:0;background:#F7F4F0;box-shadow:0 16px 32px rgba(48,44,49,.1)}
+    .consulting-testimonial-track{position:relative;display:block;width:100%;min-height:340px;transform-style:preserve-3d}
+    .consulting-testimonial-card{position:absolute;inset:0;display:flex;visibility:hidden;flex-direction:column;min-height:340px;padding:38px 34px 76px 42px;border:0;border-radius:18px;background:linear-gradient(145deg,#FBFAF8 0%,#EEEAE5 100%);box-shadow:inset 7px 0 0 rgba(48,44,49,.045),inset 8px 0 0 rgba(255,255,255,.8);backface-visibility:hidden;transform-origin:left center}
+    .consulting-testimonial-card:after{position:absolute;top:0;right:25px;bottom:0;width:1px;background:rgba(48,44,49,.055);content:""}
+    .consulting-testimonial-card.is-active{position:relative;visibility:visible;z-index:2}
+    .consulting-testimonial-carousel.flip-next .consulting-testimonial-card.is-active{animation:homePageTurnNext .62s cubic-bezier(.2,.75,.25,1) both}
+    .consulting-testimonial-carousel.flip-prev .consulting-testimonial-card.is-active{transform-origin:right center;animation:homePageTurnPrev .62s cubic-bezier(.2,.75,.25,1) both}
+    @keyframes homePageTurnNext{from{opacity:.55;transform:rotateY(-70deg);box-shadow:inset -18px 0 24px rgba(35,30,28,.18)}to{opacity:1;transform:rotateY(0);box-shadow:inset 7px 0 0 rgba(48,44,49,.045),inset 8px 0 0 rgba(255,255,255,.8)}}
+    @keyframes homePageTurnPrev{from{opacity:.55;transform:rotateY(70deg);box-shadow:inset 18px 0 24px rgba(35,30,28,.18)}to{opacity:1;transform:rotateY(0);box-shadow:inset 7px 0 0 rgba(48,44,49,.045),inset 8px 0 0 rgba(255,255,255,.8)}}
     .consulting-testimonial-topic{margin:0;color:#817A7D;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
-    .consulting-testimonial-quote{margin:42px 0 28px;color:#514B4F;font-size:18px;line-height:1.65}
+    .consulting-testimonial-quote{margin:42px 0 28px;color:#514B4F;font-size:15px;line-height:1.65}
     .consulting-testimonial-byline{display:flex;align-items:center;gap:12px;margin-top:auto;font-size:12px;font-weight:600}
-    .consulting-testimonial-avatar{display:grid;width:38px;height:38px;place-items:center;border-radius:50%;background:#E8E4DF;color:#504A4D;font-size:11px}
-    .consulting-testimonial-byline small{display:block;margin-top:3px;color:var(--muted);font-size:10px;font-weight:400}
+    .consulting-testimonial-avatar{display:grid;width:44px;height:44px;flex:0 0 44px;place-items:center;border-radius:50%;background:#E8E4DF;color:#504A4D;font-size:12px;font-weight:600;letter-spacing:.02em}
+    .consulting-testimonial-byline small{display:block;margin-top:3px;color:var(--muted);font-size:12px;font-weight:400}
     .consulting-testimonial-controls{position:absolute;right:18px;bottom:18px;z-index:2;display:flex;gap:10px}
     .consulting-testimonial-controls button{display:grid;width:40px;height:40px;place-items:center;border:1px solid rgba(40,37,42,.2);border-radius:50%;background:transparent;color:var(--ink);font:500 18px Inter,Arial,sans-serif;cursor:pointer;transition:background-color .2s ease,border-color .2s ease}
     .consulting-testimonial-controls button:hover{border-color:rgba(40,37,42,.38);background:rgba(40,37,42,.06)}
     .consulting-testimonial-controls button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
-    .consulting-testimonial-footer{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:28px;padding-top:20px;color:#514B4F;font-size:11px}
+    .consulting-testimonial-footer{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:0;padding-top:20px;border-top:1px solid rgba(48,44,49,.1);color:#514B4F;font-size:11px}
     .consulting-testimonial-footer strong{display:block;font-size:11px;font-weight:500}.consulting-testimonial-footer span{display:block;margin-top:4px;color:var(--muted);font-size:10px}
     .consulting-testimonial-footer-cta{display:inline-flex;align-items:center;gap:10px;color:#514B4F;font-size:12px;font-weight:500;white-space:nowrap}.consulting-testimonial-footer-cta b{font-size:15px;transition:transform .2s ease}.consulting-testimonial-footer-cta:hover b{transform:translate(2px,-2px)}
-    @media(max-width:760px){.consulting-testimonial{grid-template-columns:1fr;gap:30px;padding:32px}.consulting-testimonial-values{margin-top:28px}}
-    @media(max-width:560px){.consulting-testimonial{padding:26px 18px}.consulting-testimonial-card{min-height:320px;padding:28px 22px 76px}.consulting-testimonial-controls{right:14px;bottom:14px}.consulting-testimonial-footer{align-items:flex-start;flex-direction:column;gap:16px;margin-top:18px}}
+    @media(max-width:760px){.consulting-testimonial{grid-template-columns:1fr;gap:30px;padding:32px}}
+    @media(max-width:560px){.consulting-testimonial{padding:26px 18px}.consulting-testimonial-carousel{padding-right:6px;padding-left:4px}.consulting-testimonial-track,.consulting-testimonial-card{min-height:320px}.consulting-testimonial-card{padding:30px 26px 76px 30px}.consulting-testimonial-card:after{right:15px}.consulting-testimonial-controls{right:14px;bottom:14px}.consulting-testimonial-values{margin-top:28px!important}.consulting-testimonial-footer{align-items:flex-start;flex-direction:column;gap:16px}}
+    @media(prefers-reduced-motion:reduce){.consulting-testimonial-carousel.flip-next .consulting-testimonial-card.is-active,.consulting-testimonial-carousel.flip-prev .consulting-testimonial-card.is-active{animation:none}}
+
 
     .home-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.36fr);grid-template-rows:1fr;align-content:center;align-items:end;column-gap:clamp(24px,5vw,72px);min-height:clamp(620px,calc(100svh - 100px),900px);padding:clamp(70px,10vh,120px) clamp(10px,3vw,40px) 104px;text-align:left}
     .home-hero h1{grid-column:1;grid-row:1;max-width:1000px;font-size:clamp(46.4px,6.56vw,86.4px);line-height:.96;letter-spacing:-.085em;text-wrap:balance}
@@ -243,6 +255,64 @@
     @media(max-width:600px){.home-offering-panel,.home-offering-panel:last-child{padding:18px}.home-offering-photo{height:220px;margin:-18px -18px 16px}.home-offering-content .home-offering-item,.home-offering-item.project-management-item{min-height:78px}.offering-overview h2{font-size:26px}}
     .home-offering-photo figcaption{display:none}
 
+    /* Editorial service cards: photo title treatment with compact service rows */
+    .home-page .home-offerings{align-items:stretch;gap:18px}
+    .home-page .home-offering-panel{--home-panel-photo-height:clamp(190px,20vw,235px);min-height:500px;padding:18px;border:1px solid rgba(48,44,49,.11);border-radius:24px;background:#F5F3F0;box-shadow:0 12px 30px rgba(29,29,31,.045)}
+    .home-page .home-offering-panel:nth-child(2){background:#ECEAE6}
+    .home-page .home-offering-panel:nth-child(3){background:#E7E8E6}
+    .home-page .home-offering-photo{height:var(--home-panel-photo-height);margin:-18px -18px 16px;border-radius:23px 23px 14px 14px}
+    .home-page .home-offering-photo:after{inset:25% 0 0;background:linear-gradient(180deg,rgba(22,22,23,.02),rgba(22,22,23,.65))}
+    .home-page .home-offering-photo img{filter:brightness(.76) saturate(.78)}
+    .home-page .home-offering-tab,.home-page .home-offering-panel.is-active .home-offering-tab{position:absolute;top:calc(var(--home-panel-photo-height) - 55px);right:18px;left:18px;z-index:2;display:flex;align-items:center;justify-content:space-between;width:auto;height:auto;min-height:0;margin:0;padding:0;border:0;background:transparent;color:#fff;cursor:default}
+    .home-page .home-offering-tab .tab-inner,.home-page .home-offering-panel.is-active .home-offering-tab .tab-inner{display:flex;align-items:center;gap:10px;writing-mode:horizontal-tb;transform:none}
+    .home-page .home-offering-tab .tab-number{display:grid;width:28px;height:28px;place-items:center;border:1px solid rgba(255,255,255,.72);border-radius:50%;background:rgba(20,20,20,.14);color:#fff;font-size:9px;font-weight:600;letter-spacing:.04em}
+    .home-page .home-offering-tab .tab-name,.home-page .home-offering-panel.is-active .home-offering-tab .tab-name{color:#fff;font-size:14px;font-weight:600;letter-spacing:.14em}
+    .home-page .home-offering-tab .panel-icon,.home-page .home-offering-panel.is-active .home-offering-tab .panel-icon{position:static;width:34px;height:34px;padding:7px;border:1px solid rgba(255,255,255,.64);border-radius:50%;background:rgba(20,20,20,.14);color:#fff;transform:none}
+    .home-page .home-offering-content,.home-page .home-offering-panel.is-active .home-offering-content{display:grid;grid-template-columns:1fr;grid-template-rows:auto auto;align-items:start;gap:0;margin:0;padding:0;animation:none}
+    .home-page .offering-overview{grid-column:1;gap:0;margin:0;padding:0;border:0}
+    .home-page .offering-overview h2{margin:0 0 8px;font-size:clamp(25px,calc(2vw + 3px),31px);line-height:1.02;letter-spacing:-.06em}
+    .home-page .offering-overview .overview-description{max-width:42ch;margin:0;color:#70696D;font-size:14px;line-height:1.55}
+    .home-page .home-offering-content .home-offering-list{grid-column:1;display:grid;grid-template-columns:1fr;gap:6px;margin-top:13px}
+    .home-page .home-offering-content .home-offering-item,.home-page .home-offering-content .home-offering-item.project-management-item{display:grid;grid-template-columns:24px minmax(0,1fr);grid-template-rows:auto auto;column-gap:9px;align-content:start;min-height:67px;padding:10px 9px;border:1px solid rgba(48,44,49,.1);border-radius:12px;background:rgba(255,255,255,.55);box-shadow:none;transition:transform .22s ease,border-color .22s ease,background .22s ease}
+    .home-page .home-offering-content .home-offering-item:before{position:static;grid-column:1;grid-row:1/3;width:23px;height:23px;border:1px solid rgba(48,44,49,.15);border-radius:8px;background:rgba(255,255,255,.55);color:#70696D;font-size:11px}
+    .home-page .home-offering-content .home-offering-item h3{grid-column:2;margin:1px 0 4px;font-size:14px;font-weight:600;letter-spacing:-.01em}
+    .home-page .home-offering-content .home-offering-item p{grid-column:2;margin:0;color:#70696D;font-size:12px;line-height:1.4}
+    .home-page .home-offering-content .home-offering-item:hover,.home-page .home-offering-content .home-offering-item.project-management-item:hover{transform:translateX(3px);border-color:rgba(48,44,49,.22);background:rgba(255,255,255,.88);box-shadow:0 5px 14px rgba(29,29,31,.05)}
+    .home-page .home-panel-arrow{margin-top:auto}
+    @media(max-width:900px){.home-page .home-offerings{gap:12px}.home-page .home-offering-panel{min-height:510px;padding:14px}.home-page .home-offering-photo{margin:-14px -14px 14px}.home-page .home-offering-tab,.home-page .home-offering-panel.is-active .home-offering-tab{right:14px;left:14px}}
+    @media(max-width:760px){.home-page .home-offerings{gap:14px}.home-page .home-offering-panel{--home-panel-photo-height:clamp(190px,42vw,250px);min-height:0;padding:18px}.home-page .home-offering-photo{height:var(--home-panel-photo-height);margin:-18px -18px 16px}.home-page .home-offering-tab,.home-page .home-offering-panel.is-active .home-offering-tab{top:calc(var(--home-panel-photo-height) - 55px);right:18px;left:18px}.home-page .home-offering-content,.home-page .home-offering-panel.is-active .home-offering-content{grid-template-columns:1fr;grid-template-rows:auto auto;padding:0}.home-page .home-offering-content .home-offering-list{grid-template-columns:1fr}.home-page .home-offering-content .home-offering-item,.home-page .home-offering-content .home-offering-item.project-management-item{min-height:64px;padding:10px}.home-page .home-offering-content .home-offering-item h3{font-size:15px}.home-page .home-offering-content .home-offering-item p{font-size:13px}}
+    @media(max-width:420px){.home-page .home-offering-panel{padding:15px}.home-page .home-offering-photo{margin:-15px -15px 14px}.home-page .home-offering-tab,.home-page .home-offering-panel.is-active .home-offering-tab{right:15px;left:15px}.home-page .home-offering-tab .tab-name,.home-page .home-offering-panel.is-active .home-offering-tab .tab-name{font-size:13px}.home-page .home-panel-arrow{width:30px;height:30px}}
+
+    /* Homepage service panels restored to the reference card composition */
+    .home-page .home-offerings{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch;gap:18px}
+    .home-page .home-offering-panel{--home-panel-photo-height:clamp(184px,17.6vw,240px);min-height:690px;padding:18px 20px 16px;border:1px solid rgba(48,44,49,.12);border-radius:24px;background:#F8F7F5;box-shadow:0 12px 28px rgba(29,29,31,.055)}
+    .home-page .home-offering-panel:nth-child(2){background:#ECE9E5}
+    .home-page .home-offering-panel:nth-child(3){background:#E7E7E4}
+    .home-page .home-offering-photo{height:var(--home-panel-photo-height);margin:-18px -20px 18px;border-radius:23px 23px 0 0}
+    .home-page .home-offering-photo:after{inset:0;background:rgba(18,18,20,.28)}
+    .home-page .home-offering-photo img{filter:brightness(.72) saturate(.72)}
+    .home-page .home-offering-panel:hover .home-offering-photo img{filter:brightness(.78) saturate(.8)}
+    .home-page .home-offering-tab,.home-page .home-offering-panel.is-active .home-offering-tab{position:relative;inset:auto;z-index:auto;display:flex;flex:0 0 auto;align-items:center;justify-content:space-between;width:100%;height:auto;min-height:48px;margin:0;padding:0 0 15px;border:0;border-bottom:1px solid rgba(48,44,49,.15);background:transparent;color:#70696D;cursor:default}
+    .home-page .home-offering-tab .tab-inner,.home-page .home-offering-panel.is-active .home-offering-tab .tab-inner{display:flex;align-items:center;gap:10px;writing-mode:horizontal-tb;transform:none}
+    .home-page .home-offering-tab .tab-number{display:grid;width:28px;height:28px;place-items:center;border:0;border-radius:50%;background:#302C31;color:#F4F1EE;font-size:9px;font-weight:600;letter-spacing:0}
+    .home-page .home-offering-tab .tab-name,.home-page .home-offering-panel.is-active .home-offering-tab .tab-name{color:#70696D;font-size:9px;font-weight:600;letter-spacing:.16em}
+    .home-page .home-offering-tab .panel-icon,.home-page .home-offering-panel.is-active .home-offering-tab .panel-icon{position:static;width:24px;height:24px;padding:0;border:0;border-radius:0;background:transparent;color:#817A7D;transform:none}
+    .home-page .home-offering-content,.home-page .home-offering-panel.is-active .home-offering-content{display:flex;flex:1;flex-direction:column;align-items:stretch;gap:0;margin:0;padding:20px 0 0;animation:none}
+    .home-page .offering-overview{display:flex;flex-direction:column;align-items:flex-start;gap:0;margin:0;padding:0;border:0}
+    .home-page .offering-overview h2{max-width:none;margin:0 0 10px;font-size:31px;line-height:1.05;letter-spacing:-.065em}
+    .home-page .offering-overview .overview-description{max-width:46ch;margin:0;color:#70696D;font-size:13px;line-height:1.65}
+    .home-page .home-offering-content .home-offering-list{display:grid;grid-template-columns:1fr;gap:10px;margin-top:20px}
+    .home-page .home-offering-content .home-offering-item,.home-page .home-offering-content .home-offering-item.project-management-item{display:grid;grid-template-columns:34px minmax(0,1fr);grid-template-rows:auto auto;column-gap:11px;align-content:start;min-height:99px;padding:15px 14px;border:1px solid rgba(48,44,49,.09);border-radius:15px;background:rgba(255,255,255,.72);box-shadow:0 4px 12px rgba(29,29,31,.035);transition:transform .22s ease,border-color .22s ease,background .22s ease,box-shadow .22s ease}
+    .home-page .home-offering-content .home-offering-item:before{position:static;grid-column:1;grid-row:1/3;width:30px;height:30px;border:1px solid rgba(48,44,49,.16);border-radius:50%;background:transparent;color:#817A7D;font-size:8px}
+    .home-page .home-offering-content .home-offering-item h3{grid-column:2;margin:2px 0 5px;font-size:12px;font-weight:600;letter-spacing:-.02em}
+    .home-page .home-offering-content .home-offering-item p{grid-column:2;margin:0;color:#70696D;font-size:11px;line-height:1.5}
+    .home-page .home-offering-content .home-offering-item:hover,.home-page .home-offering-content .home-offering-item.project-management-item:hover{transform:translateY(-2px);border-color:rgba(48,44,49,.17);background:rgba(255,255,255,.92);box-shadow:0 8px 18px rgba(29,29,31,.06)}
+    .home-page .home-panel-arrow{display:grid;align-self:flex-end;width:40px;height:40px;place-items:center;margin-top:auto;border:1px solid rgba(48,44,49,.13);border-radius:50%;background:rgba(255,255,255,.48);color:#514B4F;font-size:14px;transition:transform .22s ease,background .22s ease,color .22s ease}
+    .home-page .home-offering-panel:hover .home-panel-arrow{transform:translate(2px,-2px);background:#302C31;color:#F4F1EE}
+    @media(max-width:1050px){.home-page .home-offerings{grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.home-page .home-offering-panel{min-height:660px}.home-page .home-offering-panel:last-child{grid-column:1/-1}.home-page .home-offering-panel:last-child .home-offering-content .home-offering-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:760px){.home-page .home-offerings{width:calc(100% - 36px);grid-template-columns:1fr;gap:14px;margin-bottom:48px}.home-page .home-offering-panel,.home-page .home-offering-panel:last-child{grid-column:auto;min-height:0;padding:16px 18px 14px}.home-page .home-offering-panel{--home-panel-photo-height:clamp(176px,41.6vw,248px)}.home-page .home-offering-photo{height:var(--home-panel-photo-height);margin:-16px -18px 16px}.home-page .home-offering-tab,.home-page .home-offering-panel.is-active .home-offering-tab{min-height:45px;padding-bottom:12px}.home-page .home-offering-content,.home-page .home-offering-panel.is-active .home-offering-content{padding-top:18px}.home-page .home-offering-content .home-offering-list,.home-page .home-offering-panel:last-child .home-offering-content .home-offering-list{grid-template-columns:1fr;margin-top:15px}.home-page .home-offering-content .home-offering-item,.home-page .home-offering-content .home-offering-item.project-management-item{min-height:82px;padding:12px}.home-page .home-offering-content .home-offering-item h3{font-size:12px}.home-page .home-offering-content .home-offering-item p{font-size:11px}.home-page .home-panel-arrow{width:36px;height:36px;margin-top:14px}}
+    @media(max-width:420px){.home-page .home-offerings{width:calc(100% - 30px)}.home-page .home-offering-panel,.home-page .home-offering-panel:last-child{padding:14px 15px 12px}.home-page .home-offering-photo{height:clamp(160px,45.6vw,192px);margin:-14px -15px 14px}.home-page .home-offering-tab .tab-name,.home-page .home-offering-panel.is-active .home-offering-tab .tab-name{font-size:8px}.home-page .offering-overview h2{font-size:31px}.home-page .offering-overview .overview-description{font-size:12px}.home-page .home-offering-content .home-offering-item h3{font-size:12px}.home-page .home-offering-content .home-offering-item p{font-size:11px}}
+
   </style>
   <link rel="stylesheet" href="site-responsive.css">
 </head>
@@ -250,7 +320,7 @@
   <main class="home-shell">
     <header class="home-topbar">
       <a class="home-brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a>
-      <div class="home-nav-actions"><a class="home-nav-cta" href="mailto:hello@arceni.com?subject=Work%20With%20Us">Work With Us<span aria-hidden="true">↗</span></a></div>
+      <div class="home-nav-actions"><a class="home-events-link" href="events.html">Events</a><a class="home-nav-cta" href="mailto:?subject=Work%20With%20Us">Work With Us<span aria-hidden="true">↗</span></a></div>
     </header>
     <section class="home-hero" id="home-top" aria-labelledby="home-title">
       <h1 id="home-title"><span class="hero-line">We drive <strong>bold ideas,</strong></span><span class="hero-line">shared value and <span class="hero-accent">impact.</span></span></h1>
@@ -259,29 +329,35 @@
     </section>
     <section class="home-offerings" id="home-offerings" aria-label="Explore our work">
       <article class="home-offering-panel"><figure class="home-offering-photo"><img src="images/Consulting/anastasia-vityukova-Q3qKcPAGrKw-unsplash.jpg" alt="A hand taking notes during a planning session" loading="lazy"><figcaption>Planning &amp; project support</figcaption></figure><header class="home-offering-tab"><span class="tab-inner"><span class="tab-number">01</span><span class="tab-name">Consulting</span></span><svg class="panel-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 8h8M8 12h5M8 16h3M16 13v5m-2.5-2.5h5"/></svg></header><div class="home-offering-content"><div class="offering-overview"><h2>Strategy For Change</h2><p class="overview-description">Practical support to help organizations shape priorities, strengthen delivery and sustain results.</p></div><div class="home-offering-list"><div class="home-offering-item project-management-item" data-index="01"><h3>Project Management</h3><p>Move projects from concept to completion with clear systems and coordinated delivery.</p></div><div class="home-offering-item" data-index="02"><h3>Capacity Building</h3><p>Strengthen the people, processes and skills that support lasting results.</p></div></div></div><span class="home-panel-arrow" aria-hidden="true">↗</span></article>
-      <article class="home-offering-panel"><figure class="home-offering-photo"><img src="images/Collective/wadi-lissa-AZvGpBp925o-unsplash.jpg" alt="A young person studying and writing in a workbook" loading="lazy"><figcaption>Coaching &amp; leadership</figcaption></figure><header class="home-offering-tab"><span class="tab-inner"><span class="tab-number">02</span><span class="tab-name">Collective</span></span><svg class="panel-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3.5 19v-1.5a5.5 5.5 0 0 1 11 0V19zM16 5.5a3 3 0 0 1 0 5.8M17 14a4.5 4.5 0 0 1 3.5 4.4V19h-4"/></svg></header><div class="home-offering-content"><div class="offering-overview"><h2>Clarity To Impact</h2><p class="overview-description">Coaching programs and workshops for emerging leaders to build self-awareness, find their voice, live with intention.</p></div><div class="home-offering-list"><div class="home-offering-item" data-index="01"><h3>The Archer Program</h3><p>One-to-one coaching to help you grow personally, build confidence, find your purpose and impact.</p></div><div class="home-offering-item" data-index="02"><h3>The Catalyst Workshops</h3><p>Candid conversations, facilitated workshops to explore identity, belonging and purpose.</p></div></div></div><span class="home-panel-arrow" aria-hidden="true">↗</span></article>
+      <article class="home-offering-panel"><figure class="home-offering-photo"><img src="images/Collective/wadi-lissa-AZvGpBp925o-unsplash.jpg" alt="A young person studying and writing in a workbook" loading="lazy"><figcaption>Coaching &amp; leadership</figcaption></figure><header class="home-offering-tab"><span class="tab-inner"><span class="tab-number">02</span><span class="tab-name">Collective</span></span><svg class="panel-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3.5 19v-1.5a5.5 5.5 0 0 1 11 0V19zM16 5.5a3 3 0 0 1 0 5.8M17 14a4.5 4.5 0 0 1 3.5 4.4V19h-4"/></svg></header><div class="home-offering-content"><div class="offering-overview"><h2>Clarity To Impact</h2><p class="overview-description">Coaching programs/workshops for emerging leaders to build self-awareness, find their voice, live with intention.</p></div><div class="home-offering-list"><div class="home-offering-item" data-index="01"><h3>The Archer Program</h3><p>1-on-1 coaching to help you grow personally, navigate challenges, find your purpose and impact.</p></div><div class="home-offering-item" data-index="02"><h3>The Catalyst Workshops</h3><p>Candid conversations, facilitated workshops to explore identity, belonging and purpose.</p></div></div></div><span class="home-panel-arrow" aria-hidden="true">↗</span></article>
       <article class="home-offering-panel"><figure class="home-offering-photo"><img src="images/Basketball/Slytherin.jpg" alt="Basketball teammates bring their hands together in a team huddle" loading="lazy"><figcaption>Player development &amp; performance</figcaption></figure><header class="home-offering-tab"><span class="tab-inner"><span class="tab-number">03</span><span class="tab-name">Basketball</span></span><svg class="panel-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3.5 9h17M3.5 15h17M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></header><div class="home-offering-content"><div class="offering-overview"><h2>Train With Purpose</h2><p class="overview-description">Personalized basketball training and leadership to gain a competitive edge on and off the court.</p></div><div class="home-offering-list"><div class="home-offering-item" data-index="01"><h3>Player Development</h3><p>Build on your fundamentals, decision-making, skills and confidence at every stage of the game.</p></div><div class="home-offering-item" data-index="02"><h3>Character and Leadership</h3><p>Carry with you discipline, resilience and leadership from sport into everyday life situations.</p></div></div></div><span class="home-panel-arrow" aria-hidden="true">↗</span></article>
     </section>
-    <a class="home-section-scroll" href="#home-testimonials" aria-label="Scroll to reflections">Reflections <span aria-hidden="true"></span></a>
+    <a class="home-section-scroll" href="#home-testimonials" aria-label="Scroll to reflections">Client Reflections <span aria-hidden="true"></span></a>
     <section class="consulting-testimonial" id="home-testimonials" aria-labelledby="consulting-testimonial-title">
-      <div class="consulting-testimonial-copy"><p class="eyebrow">Impact, In Their Words</p><h2 id="consulting-testimonial-title">What Clients Say</h2><p>From clear priorities, thoughtful collaboration and practical support see how we help individuals and projects make progress.</p><p class="consulting-testimonial-values">Project Management · Personal Growth · Coaching &amp; Leadership</p></div>
+      <div class="consulting-testimonial-copy"><p class="eyebrow">Impact In Action</p><h2 id="consulting-testimonial-title"><span>Perspectives</span> from the clients we serve.</h2><p>From clear priorities, thoughtful collaboration and practical support see how we help individuals and projects make progress.</p><p class="consulting-testimonial-values">Project Management · Personal Growth · Coaching &amp; Leadership</p></div>
       <div class="consulting-testimonial-carousel">
         <div class="consulting-testimonial-viewport" id="consulting-testimonial-viewport" aria-label="Client reflections">
           <div class="consulting-testimonial-track">
-            <article class="consulting-testimonial-card" aria-hidden="false"><p class="consulting-testimonial-topic">Consulting</p><blockquote class="consulting-testimonial-quote">“The Committee on Migration's Subcommittee on Children in Migration would like to express our sincerest thanks to for all the hard work, without whom the infographic project would not have been possible.”</blockquote><div class="consulting-testimonial-byline"><span class="consulting-testimonial-avatar" aria-hidden="true">C</span><div>NGO Committee On Migration<small>Project Consulting</small></div></div></article>
-            <article class="consulting-testimonial-card" aria-hidden="true" inert><p class="consulting-testimonial-topic">Collective</p><blockquote class="consulting-testimonial-quote">“The level of engagement was very intensive with how we were able to focus on the ‘why’ of things and not necessarily the ‘what’. We found an approach to solving the challenges and plannned how I was going to achieve my objectives in a very practical manner.”</blockquote><div class="consulting-testimonial-byline"><span class="consulting-testimonial-avatar" aria-hidden="true">C</span><div>Mwita P.<small>The Archer Program</small></div></div></article>
-            <article class="consulting-testimonial-card" aria-hidden="true" inert><p class="consulting-testimonial-topic">Basketball</p><blockquote class="consulting-testimonial-quote">“Coach gives me perspective about life, being deliberate in what I do and advises me regularly. It is amazing to have someone support you to grow in basketball, learn the little details and have a plan in everything I do.”</blockquote><div class="consulting-testimonial-byline"><span class="consulting-testimonial-avatar" aria-hidden="true">B</span><div>Lisa O.<small>Basketball Program</small></div></div></article>
+            <article class="consulting-testimonial-card is-active" aria-hidden="false"><p class="consulting-testimonial-topic">Consulting</p><blockquote class="consulting-testimonial-quote">“The Committee on Migration's Subcommittee on Children in Migration would like to express our sincerest thanks to for all the hard work, without whom the infographic project would not have been possible.”</blockquote><div class="consulting-testimonial-byline"><span class="consulting-testimonial-avatar" aria-hidden="true">C</span><div>NGO Committee On Migration<small>Project Consulting</small></div></div></article>
+            <article class="consulting-testimonial-card" aria-hidden="true" inert><p class="consulting-testimonial-topic">Basketball</p><blockquote class="consulting-testimonial-quote">“Coach gives me perspective about life, being deliberate in what I do and advises me regularly. It is amazing to have someone support you to grow in basketball, learn the little details and have a plan in everything I do.”</blockquote><div class="consulting-testimonial-byline"><span class="consulting-testimonial-avatar" aria-hidden="true">L</span><div>Lisa O.<small>Development Program</small></div></div></article>
           </div>
         </div>
         <div class="consulting-testimonial-controls"><button type="button" data-consulting-testimonial-step="-1" aria-label="Previous reflection" aria-controls="consulting-testimonial-viewport">←</button><button type="button" data-consulting-testimonial-step="1" aria-label="Next reflection" aria-controls="consulting-testimonial-viewport">→</button></div>
       </div>
-      <div class="consulting-testimonial-footer"><div><strong>ARCENI - Consulting, Training &amp; Advisory</strong><span>We drive bold ideas, shared value and impact.</span></div><a class="consulting-testimonial-footer-cta" href="#home-offerings">Explore Services <b aria-hidden="true">↗</b></a></div>
+      <div class="consulting-testimonial-footer"><div><strong>ARCENI - Consulting, Training &amp; Advisory</strong><span>We drive bold ideas, shared value and impact.</span></div><a class="consulting-testimonial-footer-cta" href="#home-offerings">Explore Our Work <b aria-hidden="true">↗</b></a></div>
     </section>
-      <a class="home-section-scroll" href="#home-founder" aria-label="Scroll to about the founder">About the Founder <span aria-hidden="true"></span></a>
-    <section class="home-founder" aria-label="About the founder">
-      <div class="home-founder-photo"><img src="images/About/Almas_Casual.png" alt="Portrait of Almas Ismail"><p>Founder · ARCENI</p></div>
+    <a class="home-section-scroll" href="#home-company" aria-label="Scroll to about the company">Why We Exist<span aria-hidden="true"></span></a>
+    <section class="home-founder" id="home-company" aria-label="About ARCENI company">
+      <div class="home-founder-photo"><img src="images/About/Almas_Casual.png" alt="Portrait of Almas Ismail"><p>Founder · Almas Ismail</p></div>
       <div class="home-founder-divider" aria-hidden="true"></div>
-      <article class="home-founder-bio"><h2>ALMAS <span>ISMAIL</span></h2><p> He brings his experience in project management, coaching and leadership to the firm’s flagship engagements, leading with commitment, integrity and high standards. The firm partners with organizations to move projects from concept to completion, and coaches young people and athletes to build confidence, discipline and find purpose through their work.</p><div class="home-founder-credentials" aria-label="Background"><div class="home-founder-credential"><strong>Education</strong>B.A. in Economics, University at Buffalo</div><div class="home-founder-credential"><strong>Graduate study</strong>M.B.A. in Project Management</div><div class="home-founder-credential"><strong>Practice</strong>Consulting · Training · Advisory</div><div class="home-founder-credential"><strong>Coaching</strong>Leadership · Personal Development · Basketball</div></div></article>
+      <article class="home-founder-bio"><h2>About Company</h2><p>We are an impact-consultancy and advisory that helps individuals and organizations turn purpose into meaningful progress. We partner and collaborate to strengthen projects, their delivery and leadership. We also work  support and empower athletes in their journey to unlock their full potential.</p>
+        <div class="home-founder-credentials" aria-label="About ARCENI">
+          <div class="home-founder-credential"><strong>Practice</strong>Consulting · Training · Advisory</div>
+          <div class="home-founder-credential"><strong>Who we serve</strong>Individuals · Organizations · Ecosystems </div>
+          <div class="home-founder-credential"><strong>Coaching</strong>Leadership · Development · Sports</div>
+          <div class="home-founder-credential"><strong>Location</strong>Nairobi · Kenya · Global</div>
+        </div>
+      </article>
     </section>
     <footer class="home-footer" aria-label="Site footer">
       <div class="home-footer-inner">
@@ -298,17 +374,31 @@
   </main>
 
 <script>
+  const testimonialCarousel = document.querySelector('.consulting-testimonial-carousel');
   const testimonialTrack = document.querySelector('.consulting-testimonial-track');
   const testimonialSlides = [...document.querySelectorAll('.consulting-testimonial-card')];
   let testimonialIndex = 0;
-  document.querySelectorAll('[data-consulting-testimonial-step]').forEach(button => button.addEventListener('click', () => {
-    testimonialIndex = (testimonialIndex + Number(button.dataset.consultingTestimonialStep) + testimonialSlides.length) % testimonialSlides.length;
-    testimonialTrack.style.transform = `translateX(-${testimonialIndex * 100}%)`;
+  const updateTestimonials = direction => {
+    testimonialCarousel.classList.remove('flip-next', 'flip-prev');
+    testimonialSlides.forEach((slide, index) => {
+      slide.classList.toggle('is-active', index === testimonialIndex);
+    });
+    if (direction) {
+      void testimonialTrack.offsetWidth;
+      testimonialCarousel.classList.add(direction > 0 ? 'flip-next' : 'flip-prev');
+      window.setTimeout(() => testimonialCarousel.classList.remove('flip-next', 'flip-prev'), 650);
+    }
     testimonialSlides.forEach((slide, index) => {
       const active = index === testimonialIndex;
       slide.setAttribute('aria-hidden', String(!active));
       if (active) slide.removeAttribute('inert'); else slide.setAttribute('inert', '');
     });
+  };
+  updateTestimonials();
+  document.querySelectorAll('[data-consulting-testimonial-step]').forEach(button => button.addEventListener('click', () => {
+    const direction = Number(button.dataset.consultingTestimonialStep);
+    testimonialIndex = (testimonialIndex + direction + testimonialSlides.length) % testimonialSlides.length;
+    updateTestimonials(direction);
   }));
 </script>
 </body>
