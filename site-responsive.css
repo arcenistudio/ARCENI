@@ -1,0 +1,163 @@
+/* Shared responsive safeguards for all ARCENI pages. */
+*,*::before,*::after{box-sizing:border-box}
+html,body{width:100%;max-width:100%;overflow-x:clip}
+img,svg,video{max-width:100%}
+main,section,article,figure,form,.shell,.home-shell{min-width:0}
+.shell,.home-shell{width:min(calc(100% - 48px),1250px)}
+
+/* Homepage hero: a framed editorial canvas with a soft orbital accent. */
+.home-page .home-hero{position:relative;isolation:isolate;overflow:hidden;min-height:clamp(620px,calc(100svh - 118px),850px);margin:18px 0 42px;padding:clamp(56px,8vw,108px) clamp(26px,5vw,68px) 104px;border:1px solid rgba(48,44,49,.12);border-radius:32px;background:linear-gradient(132deg,rgba(255,255,255,.72),rgba(234,229,223,.78));box-shadow:0 22px 58px rgba(40,37,42,.055)}
+.home-page .home-hero:before{position:absolute;z-index:-1;top:50%;right:-115px;width:clamp(350px,45vw,610px);aspect-ratio:1;transform:translateY(-50%);border:1px solid rgba(48,44,49,.1);border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.55) 0 31%,transparent 31.3% 44%,rgba(48,44,49,.045) 44.2% 44.5%,transparent 44.8% 62%,rgba(48,44,49,.06) 62.2% 62.5%,transparent 62.8%);content:"";pointer-events:none}
+.home-page .home-hero:after{position:absolute;z-index:-1;top:19%;right:clamp(24px,6vw,78px);width:8px;height:8px;border-radius:50%;background:#989091;box-shadow:0 0 0 8px rgba(152,144,145,.12),0 0 0 18px rgba(152,144,145,.055);content:"";pointer-events:none}
+.home-page .home-hero h1{max-width:900px;font-size:clamp(46.4px,6.56vw,86.4px);line-height:.98;letter-spacing:-.087em}
+.home-page .home-hero h1 strong{font-weight:600}
+.home-page .home-hero h1 .hero-accent{color:#989091!important}
+.home-page .home-hero-subheading{max-width:280px;padding:14px 0 14px 20px;border-left:2px solid rgba(48,44,49,.28);font-size:clamp(14px,1.4vw,17px);line-height:1.7}
+.home-page .home-scroll{bottom:30px}
+
+@media (min-width:761px) and (max-width:1024px){
+  .shell,.home-shell{width:calc(100% - 40px)}
+  .nav{gap:clamp(10px,1.45vw,16px);font-size:10px;letter-spacing:.09em}
+  .programs-layout,.philosophy{grid-template-columns:minmax(0,1fr)}
+  .basketball-contact{grid-template-columns:minmax(0,1fr);gap:28px}
+  .basketball-home-testimonial,.collective-testimonial-section{grid-template-columns:minmax(0,1fr);gap:28px}
+  .collective-programs-layout{grid-template-columns:minmax(0,1fr);gap:18px}
+  .collective-side-stack{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto}
+  .archer-program-content{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+  .consulting-services-grid{grid-template-columns:minmax(0,1fr)}
+  .consulting-service-stack{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto}
+  .consulting-service-stack .consulting-service-card{min-height:300px}
+  .consulting-case-study-card{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .project-management-card .consulting-service-content{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .project-management-card .consulting-service-priorities{grid-column:1/-1;grid-row:auto}
+  .project-management-card .consulting-service-priorities ul{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .home-page .home-hero{min-height:620px;padding-right:34px;padding-left:34px;border-radius:28px}
+  .home-page .home-hero:before{right:-175px;width:470px}
+}
+
+@media (max-width:760px){
+  .shell,.home-shell{width:calc(100% - 36px)}
+  .topbar{height:auto;min-height:68px;flex-wrap:wrap;row-gap:12px;padding:14px 0}
+  .nav{position:static;left:auto;order:3;transform:none;width:100%;justify-content:center;flex-wrap:wrap;gap:10px 18px;padding-top:13px;border-top:1px solid var(--line);font-size:10px;letter-spacing:.08em}
+  .hero{min-height:0;padding:clamp(68px,12vh,110px) 0 clamp(68px,12vh,108px)}
+  .hero h1{font-size:clamp(40px,8.6vw,64px);line-height:1.02}
+  .intro{max-width:620px;font-size:clamp(15px,2.3vw,17px)}
+  .section{padding:clamp(54px,9vw,76px) 0}
+  .closing{align-items:flex-start;flex-direction:column;gap:22px}
+  .about{grid-template-columns:minmax(0,1fr);gap:28px;min-height:0;padding:54px 0 88px}
+  .about .divider{width:100%;height:1px}
+  .bio{grid-template-columns:minmax(0,1fr);row-gap:20px}
+  .bio-detail,.credentials{grid-column:1}
+  .home-founder{grid-template-columns:minmax(0,1fr);gap:24px;padding:clamp(22px,5vw,36px)}
+  .home-founder-divider{width:100%;height:1px}
+  .home-founder-credentials{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .home-offerings{grid-template-columns:minmax(0,1fr);gap:12px}
+  .home-offering-panel,.home-offering-panel:last-child{grid-column:auto;min-height:0}
+  .home-offering-photo{height:clamp(190px,55vw,300px)}
+  .home-offering-content .home-offering-item,.home-offering-item.project-management-item{min-height:76px}
+  .consulting-testimonial,.basketball-home-testimonial,.collective-testimonial-section{grid-template-columns:minmax(0,1fr);gap:28px;padding:clamp(22px,5vw,34px)}
+  .consulting-testimonial-values,.basketball-home-testimonial-values{margin-top:28px}
+  .programs-layout,.feature,.philosophy,.basketball-contact{grid-template-columns:minmax(0,1fr)}
+  .programs-layout{gap:20px;padding:40px 0 58px}
+  .feature{gap:26px}
+  .basketball-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,clamp(140px,34vw,220px))}
+  .basketball-player-reflections{grid-template-columns:minmax(0,1fr);grid-template-rows:auto}
+  .parent-testimonials-grid{grid-template-columns:minmax(0,1fr);grid-template-rows:auto}
+  .values-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .collective-programs-layout{grid-template-columns:minmax(0,1fr);gap:16px}
+  .collective-side-stack{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto}
+  .archer-program-content{grid-template-columns:minmax(0,1fr);gap:22px}
+  .catalyst-details,.benefits-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .consulting-services-grid,.consulting-service-stack{grid-template-columns:minmax(0,1fr)}
+  .consulting-case-study-card{grid-template-columns:minmax(0,1fr)}
+  .project-management-card .consulting-service-content{grid-template-columns:minmax(0,1fr)}
+  .project-management-card h2,.project-management-card .consulting-service-content>p,.project-management-card .consulting-service-priorities,.project-management-card .consulting-service-delivery,.project-management-card .project-management-features,.project-management-card .cta{grid-column:1;grid-row:auto}
+  .project-management-card .consulting-service-priorities ul{grid-template-columns:minmax(0,1fr)}
+  .basketball-contact-form{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+@media (max-width:560px){
+  .shell,.home-shell{width:calc(100% - 32px)}
+  .topbar{column-gap:10px}
+  .brand,.home-brand{font-size:16px}
+  .nav{gap:9px 13px;font-size:9px;letter-spacing:.06em}
+  .cta,.home-nav-cta{gap:9px;padding-left:12px;font-size:10px}
+  .cta b,.home-nav-cta span{width:29px;height:29px}
+  .home-hero{min-height:calc(100svh - 90px);padding:58px 0 86px}
+  .home-hero h1{font-size:clamp(31px,8.6vw,45px);line-height:1.02;letter-spacing:-.07em}
+  .home-hero-subheading{max-width:100%;font-size:14px}
+  .home-offerings{width:calc(100% - 32px)}
+  .home-offering-panel,.home-offering-panel:last-child{padding:18px}
+  .home-offering-photo{height:clamp(170px,58vw,230px);margin:-18px -18px 16px}
+  .home-offering-content .home-offering-item,.home-offering-item.project-management-item{grid-template-columns:24px minmax(0,1fr);padding:12px 10px;min-height:72px}
+  .home-offering-content .home-offering-item h3{font-size:12px}
+  .home-offering-content .home-offering-item p{font-size:10px}
+  .home-page .home-hero{min-height:calc(100svh - 122px);margin:12px 0 32px;padding:56px 22px 88px;border-radius:24px}
+  .home-page .home-hero:before{top:auto;right:-170px;bottom:-180px;width:400px;transform:none}
+  .home-page .home-hero:after{top:22px;right:28px;width:6px;height:6px}
+  .home-page .home-hero h1{font-size:clamp(34px,8vw,52px);letter-spacing:-.075em}
+  .home-page .home-hero-subheading{max-width:320px;padding:10px 0 10px 14px}
+  .home-page .home-scroll{left:22px;bottom:24px}
+  .home-founder-credentials,.credentials,.values-grid,.collective-side-stack,.catalyst-details,.benefits-list{grid-template-columns:minmax(0,1fr)}
+  .consulting-testimonial,.basketball-home-testimonial,.collective-testimonial-section{padding:23px 17px}
+  .consulting-testimonial-card,.basketball-home-testimonial-card{min-height:300px;padding:26px 20px 72px}
+  .basketball-gallery{padding:22px 14px}
+  .basketball-gallery-grid{grid-template-columns:minmax(0,1fr);grid-template-rows:repeat(4,clamp(170px,58vw,240px))}
+  .basketball-gallery-item:first-child,.basketball-gallery-item:nth-child(4){grid-row:auto;grid-column:auto}
+  .basketball-contact{padding:28px 16px}
+  .basketball-contact-form{grid-template-columns:minmax(0,1fr);padding:20px 16px}
+  .emergency-fields{grid-template-columns:minmax(0,1fr)}
+  .contact-field.field-wide,.emergency-fields,.contact-submit,.contact-status{grid-column:1}
+  .project-management-card{padding:22px 18px}
+  .project-management-card .consulting-service-content>p{font-size:13px}
+  .project-management-card .project-management-features{grid-template-columns:minmax(0,1fr);gap:18px}
+  .consulting-service-featured{min-height:0}
+  .consulting-service-stack .consulting-service-card{min-height:230px}
+  .consulting-case-study-card{min-height:0}
+  .service-explorer-tabs button{min-width:0;font-size:10px}
+}
+
+@media (max-width:360px){
+  .shell,.home-shell{width:calc(100% - 24px)}
+  .nav{gap:8px 10px;font-size:8px}
+  .home-offering-content .home-offering-item,.home-offering-item.project-management-item{grid-template-columns:21px minmax(0,1fr);column-gap:7px}
+  .home-offering-content .home-offering-item:before{width:20px;height:20px}
+  .home-offering-content .home-offering-item h3{font-size:11px}
+  .home-page .home-hero{padding:48px 17px 82px;border-radius:20px}
+  .home-page .home-hero h1{font-size:clamp(30px,8.5vw,40px)}
+  .home-page .home-scroll{left:17px;bottom:20px}
+}
+
+/* Match the homepage hero to basketball's centered editorial hero. */
+.home-page .home-hero{display:flex;min-height:clamp(610px,calc(100svh - 92px),850px);flex:1;flex-direction:column;align-items:center;justify-content:center;gap:0;margin:0;padding:90px 0 96px;overflow:visible;border:0;border-radius:0;background:transparent;box-shadow:none;text-align:center}
+.home-page .home-hero:before,.home-page .home-hero:after{display:none}
+.home-page .home-hero h1{max-width:1000px;margin:0;font-size:clamp(46px,7vw,86px);font-weight:500;line-height:1.02;letter-spacing:-.075em;text-align:center;text-wrap:balance}
+.home-page .home-hero h1 strong{font-weight:700}
+.home-page .home-hero h1 strong{display:inline-block;transition:transform .28s cubic-bezier(.16,1,.3,1)}
+.home-page .home-hero h1 strong:hover{transform:translateY(-5px)}
+.home-page .home-hero h1 .hero-line{display:block}
+.home-page .home-hero h1 .hero-accent{display:inline-block;color:#989091!important;font-weight:500;transition:transform .28s cubic-bezier(.16,1,.3,1)}
+.home-page .home-hero h1 .hero-accent:hover{transform:translateY(-5px)}
+.home-page .home-hero-subheading{max-width:690px;margin:24px auto 0;padding:0;border:0;color:#70696D;font-size:clamp(15px,1.7vw,19px);line-height:1.65;letter-spacing:-.015em;text-align:center}
+.home-page .home-scroll{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);flex-direction:column;align-items:center;gap:8px}
+.home-page .home-panel-arrow{align-self:flex-end;display:grid;width:32px;height:32px;place-items:center;margin-top:auto;border:1px solid rgba(48,44,49,.15);border-radius:50%;background:rgba(255,255,255,.5);color:#514B4F;font-size:14px;transition:transform .22s ease,background .22s ease,color .22s ease}
+.home-page .home-offering-tab .panel-icon,.home-page .home-offering-panel.is-active .home-offering-tab .panel-icon{width:21px;height:21px}
+.home-page .home-offering-panel:hover .home-panel-arrow{transform:translate(2px,-2px);background:#302C31;color:#F4F1EE}
+.home-page .home-offering-content{margin-bottom:18px}
+@media(max-width:560px){.home-page .home-offering-content{margin-bottom:14px}}
+@media(max-width:760px){
+  .home-page .home-hero{min-height:calc(100svh - 140px);margin:0;padding:52px 0 72px;gap:0;text-align:center}
+  .home-page .home-hero h1{max-width:680px;font-size:clamp(40px,8.4vw,58px);line-height:1.02;letter-spacing:-.075em;text-align:center}
+  .home-page .home-hero-subheading{max-width:690px;margin:24px auto 0;padding:0;font-size:17px;line-height:1.65;text-align:center}
+  .home-page .home-scroll{left:50%;bottom:18px}
+}
+@media(max-width:560px){
+  .home-page .home-hero{min-height:calc(100svh - 140px);padding:52px 0 72px}
+  .home-page .home-hero h1{font-size:clamp(35px,9.5vw,43px);letter-spacing:-.065em}
+  .home-page .home-hero-subheading{max-width:100%;margin-top:20px;font-size:17px}
+}
+@media (min-width:761px) and (max-width:1024px){
+  .home-page .home-hero{min-height:560px;padding:82px 0 80px}
+  .home-page .home-hero h1{font-size:clamp(46px,7vw,76px)}
+  .home-page .home-hero-subheading{max-width:690px;font-size:17px}
+}
