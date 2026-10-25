@@ -231,3 +231,80 @@ main,section,article,figure,form,.shell,.home-shell{min-width:0}
   .event-meta,.collective-event-details{grid-template-columns:repeat(2,minmax(0,1fr))}
   .catalyst-date-chip{align-self:flex-start}
 }
+
+/* Give each basketball program item consistent space at every viewport size. */
+.basketball-page .programs-layout{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(18px,2.5vw,32px);align-items:stretch}
+.basketball-page .program-values-column,.basketball-page .program-focus{min-width:0;width:100%}
+.basketball-page .program-values-column{gap:clamp(12px,1.5vw,18px)}
+.basketball-page .values-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(10px,1.2vw,16px);overflow:visible}
+.basketball-page .value-card{min-width:0;min-height:210px;padding:clamp(18px,2vw,24px)}
+.basketball-page .value-card>div{min-width:0}
+.basketball-page .value-card h3{font-size:clamp(18px,1.8vw,22px);line-height:1.15}
+.basketball-page .value-card p{font-size:clamp(12px,1.1vw,13px);line-height:1.55;overflow-wrap:anywhere}
+.basketball-page .program-focus{min-height:0;height:100%;padding:clamp(24px,3vw,42px)}
+.basketball-page .focus-tabs{grid-template-columns:repeat(2,minmax(0,1fr));min-width:0}
+.basketball-page .focus-tabs button{min-width:0;height:auto;padding:8px 7px}
+.basketball-page .focus-choice-copy{min-width:0}
+.basketball-page .focus-choice-copy strong,.basketball-page .focus-choice-copy small{overflow-wrap:anywhere}
+.basketball-page .focus-panel{min-width:0}
+.basketball-page .focus-panel li{grid-template-columns:26px minmax(0,1fr);min-width:0}
+.basketball-page .focus-panel li div{min-width:0}
+
+@media (min-width:761px) and (max-width:1024px){
+  .basketball-page .programs-layout{grid-template-columns:minmax(0,1fr);gap:18px}
+  .basketball-page .values-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .basketball-page .value-card{min-height:185px}
+  .basketball-page .program-focus{height:auto}
+}
+
+@media (max-width:760px){
+  .basketball-page .programs-layout{grid-template-columns:minmax(0,1fr);gap:16px;padding:38px 0 54px}
+  .basketball-page .values-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .basketball-page .value-card{min-height:174px;padding:17px}
+  .basketball-page .value-card h3{margin:18px 0 7px;font-size:19px}
+  .basketball-page .value-card p{font-size:12px}
+  .basketball-page .program-focus{height:auto;padding:clamp(22px,5vw,30px)}
+  .basketball-page .program-focus .cta{width:100%;white-space:normal}
+}
+
+@media (max-width:480px){
+  .basketball-page .values-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:minmax(185px,auto)}
+  .basketball-page .value-card{min-height:185px;display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:15px}
+  .basketball-page .value-card h3{margin:0 0 5px;font-size:16px}
+  .basketball-page .value-card p{font-size:11px;line-height:1.5}
+  .basketball-page .program-focus{padding:23px 18px}
+  .basketball-page .focus-tabs button{justify-content:flex-start}
+  .basketball-page .focus-panel li{grid-template-columns:22px minmax(0,1fr);gap:8px}
+}
+
+.basketball-page .basketball-player-feature{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);min-width:0;min-height:320px;overflow:hidden;border:1px solid rgba(48,44,49,.12);border-radius:24px;background:#EEECE8}
+.basketball-page .basketball-player-feature-copy{display:flex;min-width:0;flex-direction:column;align-items:flex-start;justify-content:center;padding:clamp(26px,4vw,52px)}
+.basketball-page .basketball-player-feature-copy .eyebrow{margin:0 0 14px}
+.basketball-page .basketball-player-feature-copy h2{max-width:560px;margin:0 0 14px;font-size:clamp(30px,4vw,48px);font-weight:500;line-height:1.02;letter-spacing:-.065em}
+.basketball-page .basketball-player-feature-copy>p:not(.eyebrow){max-width:510px;margin:0;color:var(--muted);font-size:14px;line-height:1.7}
+.basketball-page .basketball-player-feature-copy .cta{margin-top:24px}
+.basketball-page .basketball-player-feature>img{display:block;width:100%;height:100%;min-height:320px;object-fit:cover;object-position:center 42%}
+@media(max-width:760px){.basketball-page .basketball-player-feature{grid-template-columns:minmax(0,1fr);min-height:0}.basketball-page .basketball-player-feature>img{order:-1;height:auto;min-height:0;max-height:380px;aspect-ratio:16/10}.basketball-page .basketball-player-feature-copy{padding:27px 23px 30px}}
+
+/* Keep the four basketball values in a balanced 2×2 group beside Programs. */
+@media (min-width:1100px){
+  .basketball-page .programs-layout{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(18px,2.5vw,32px);align-items:stretch}
+  .basketball-page .program-values-column{grid-column:2;grid-row:1;display:grid;grid-template-columns:minmax(0,1fr);align-content:start}
+  .basketball-page .values-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:minmax(210px,1fr);gap:clamp(10px,1.2vw,16px)}
+  .basketball-page .value-card{height:100%;min-height:210px;padding:clamp(18px,2vw,24px)}
+  .basketball-page .value-card h3{font-size:clamp(18px,1.8vw,22px)}
+  .basketball-page .value-card p{font-size:clamp(12px,1.1vw,13px);line-height:1.55}
+  .basketball-page .program-focus{grid-column:1;grid-row:1;height:100%;min-height:0;padding:clamp(24px,3vw,42px)}
+  .basketball-page .basketball-player-feature{grid-column:1/-1}
+}
+@media (min-width:761px) and (max-width:1099px){
+  .basketball-page .programs-layout{grid-template-columns:minmax(0,1fr);gap:18px}
+  .basketball-page .program-values-column{display:grid;grid-template-columns:minmax(0,1fr)}
+  .basketball-page .values-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .basketball-page .program-focus{grid-column:auto;grid-row:auto;height:auto}
+}
+@media (min-width:1100px){
+  .basketball-page .program-values-column{grid-template-rows:minmax(0,1fr);align-content:stretch}
+  .basketball-page .values-grid{height:100%;grid-template-rows:repeat(2,minmax(210px,1fr));align-content:stretch}
+  .basketball-page .value-card{align-self:stretch}
+}

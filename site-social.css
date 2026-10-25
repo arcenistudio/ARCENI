@@ -1,6 +1,6 @@
 .basketball-social{display:flex;justify-content:center;margin:clamp(42px,6vw,70px) 0 24px;padding:0}
 .basketball-social-links{display:flex;align-items:center;justify-content:center;gap:27px}
-.basketball-social-links a{display:grid;width:28px;height:28px;place-items:center;border-radius:50%;color:#64635e;text-decoration:none;transition:color .2s ease,transform .2s ease}
+.basketball-social-links a{display:grid;width:28px;height:28px;place-items:center;border-radius:0;color:#64635e;text-decoration:none;transition:color .2s ease,transform .2s ease}
 .basketball-social-links a:hover{transform:translateY(-2px);color:#77756f}
 .basketball-social-links svg{display:block;width:19px;height:19px;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7}
 @media(prefers-reduced-motion:reduce){.basketball-social-links a{transition:none}.basketball-social-links a:hover{transform:none}}

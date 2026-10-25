@@ -1,0 +1,19 @@
+body.site-scroll-ready .site-scroll-reveal {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition: opacity 700ms cubic-bezier(.2,.7,.2,1), transform 700ms cubic-bezier(.2,.7,.2,1);
+}
+
+body.site-scroll-ready .site-scroll-reveal.site-scroll-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.site-scroll-ready .site-scroll-reveal,
+  body.site-scroll-ready .site-scroll-reveal.site-scroll-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
