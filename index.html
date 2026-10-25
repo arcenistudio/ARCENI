@@ -263,6 +263,7 @@
     @media(max-width:760px){.home-showcase-current{font-size:9px}}
     @media(max-width:560px){.home-showcase-current{width:auto;font-size:10px}}
   </style>
+  <link rel="stylesheet" href="site-responsive.css">
 </head>
 <body>
   <main>
@@ -281,8 +282,7 @@
       <div class="home-showcase-copy" aria-live="polite">
         <p class="home-showcase-eyebrow">01 <span>·</span> Consulting</p>
         <h1 class="home-showcase-title">CONSULTING</h1>
-        <p class="home-showcase-description">We help organizations turn ambition into clear priorities, stronger teams and lasting impact.</p>
-        <a class="home-showcase-cta" aria-disabled="true">Explore consulting <span aria-hidden="true">↗</span></a>
+        <p class="home-showcase-description">We help organizations turn their challenges into clear priorities, strengthen projects and teams towards a sustainable impact.</p>
       </div>
       <div class="home-showcase-count"><span class="home-showcase-current">01</span><span class="home-showcase-divider">/</span><span>03</span></div>
       <div class="home-showcase-arrows" aria-label="Change featured area">
@@ -311,9 +311,9 @@
   <script>
     (() => {
       const slides = [
-        {category:'Consulting',title:'CONSULTING',description:'We help organizations turn ambition into clear priorities, stronger teams and lasting impact.',image:'images/Consulting/anastasia-vityukova-Q3qKcPAGrKw-unsplash.jpg',href:null,cta:'Explore consulting'},
-        {category:'The Collective',title:'COACHING',description:'Coaching and workshops that help people find their voice, build self-awareness and move with purpose.',image:'images/Collective/wadi-lissa-AZvGpBp925o-unsplash.jpg',href:'collective.html',cta:'Explore collective'},
-        {category:'The Basketball',title:'BASKETBALL',description:'Basketball development that builds skill, character and confidence on and off the court.',image:'images/Basketball/Slytherin.jpg',href:'basketball.html',cta:'Explore basketball'}
+        {category:'Strategy for Change',title:'CONSULTING',description:'We help organizations turn their challenges into clear priorities, strengthen projects and teams to create a sustainable impact.',image:'images/Consulting/anastasia-vityukova-Q3qKcPAGrKw-unsplash.jpg',href:null,cta:'Explore consulting'},
+        {category:'Clarity to Impact',title:'COACHING',description:'Bespoke coaching and workshops for individuals and teams to find their voice, build self-awareness and lead with purpose.',image:'images/Collective/wadi-lissa-AZvGpBp925o-unsplash.jpg',href:'collective.html',cta:'Explore collective'},
+        {category:'Train With Purpose',title:'BASKETBALL',description:'Personalized training, holistic development and leadership to build a competitive edge on and off the court.',image:'images/Basketball/Slytherin.jpg',href:'basketball.html',cta:'Explore basketball'}
       ];
       const hero = document.querySelector('.home-showcase');
       if (!hero) return;

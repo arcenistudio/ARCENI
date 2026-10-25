@@ -308,3 +308,111 @@ main,section,article,figure,form,.shell,.home-shell{min-width:0}
   .basketball-page .values-grid{height:100%;grid-template-rows:repeat(2,minmax(210px,1fr));align-content:stretch}
   .basketball-page .value-card{align-self:stretch}
 }
+
+/* Home's split hero band needs an intermediate layout before the phone stack. */
+@media (min-width:761px) and (max-width:1024px){
+  .home-showcase{min-height:620px}
+  .home-showcase::after,.home-showcase-count{width:24%;height:154px}
+  .home-showcase-copy{width:76%;min-height:154px;grid-template-columns:minmax(0,1.1fr) minmax(145px,.9fr);grid-template-rows:auto auto;gap:8px 18px;padding:17px 62px 17px 22px}
+  .home-showcase-title{grid-column:1;grid-row:2;white-space:normal;font-size:clamp(24px,3.1vw,32px);line-height:1.04}
+  .home-showcase-description{grid-column:2;grid-row:1/3;max-width:32ch;font-size:11px;line-height:1.5}
+  .home-showcase-cta{grid-column:1;grid-row:3;justify-self:start;margin-top:2px;padding:4px 0;font-size:9px}
+  .home-showcase-arrows{right:14px;bottom:50px}
+  .basketball-page{padding-right:clamp(24px,4vw,40px);padding-left:clamp(24px,4vw,40px)}
+}
+
+/* Give compact laptops and tablets more breathing room around navigation and forms. */
+@media (min-width:761px) and (max-width:900px){
+  .home-showcase .home-page-nav{padding-right:30px;padding-left:30px}
+  .home-showcase .home-page-social{gap:8px}
+  .basketball-page .basketball-nav{gap:14px}
+  .basketball-page-links{gap:clamp(12px,2vw,20px)}
+  .basketball-page .basketball-contact{padding:26px;gap:24px}
+  .basketball-page .basketball-contact-form{padding:24px}
+}
+
+@media (max-width:760px){
+  .home-showcase{width:100%;min-height:max(640px,100svh)}
+  .home-showcase .home-page-nav{gap:10px}
+  .home-showcase .home-page-social{gap:5px}
+  .home-showcase .home-page-social a{width:24px;height:24px}
+  .home-showcase-copy{min-width:0}
+  .home-showcase-title,.home-showcase-description{min-width:0;overflow-wrap:anywhere}
+  .basketball-page .basketball-hero{width:100%;min-height:max(640px,calc(100svh - 80px))}
+  .basketball-page .basketball-next-steps,.basketball-page .basketball-contact{width:100%}
+}
+
+@media (max-width:480px){
+  .home-showcase{min-height:max(620px,100svh)}
+  .home-showcase .home-page-nav{gap:8px}
+  .home-showcase .home-page-social{gap:2px}
+  .home-showcase .home-page-social a{width:22px;height:22px}
+  .home-showcase-count{padding-left:18px}
+  .home-showcase-arrows{right:14px}
+  .basketball-page{padding-right:16px;padding-left:16px}
+  .basketball-page .basketball-nav{column-gap:8px}
+  .basketball-page .basketball-brand{font-size:14px}
+  .basketball-page .basketball-social{gap:3px}
+  .basketball-page .basketball-social a{width:26px;height:26px}
+  .basketball-page .basketball-contact{padding:24px 14px}
+  .basketball-page .basketball-contact-form{padding:19px 14px}
+}
+
+@media (max-height:620px) and (min-width:761px){
+  .home-showcase{min-height:620px}
+  .basketball-page .basketball-hero{min-height:640px}
+}
+
+/* Index hero refresh: a strong editorial split with the featured photo on the right. */
+@media (min-width:761px){
+  .home-showcase{height:100svh;min-height:680px;background:#181716}
+  .home-showcase-image{inset:0 0 0 43%;background-position:center;background-size:cover;filter:saturate(.78) brightness(.82)}
+  .home-showcase-shade{background:linear-gradient(90deg,#181716 0%,#181716 35%,rgba(24,23,22,.93) 43%,rgba(24,23,22,.32) 66%,rgba(24,23,22,.08) 100%),linear-gradient(0deg,rgba(24,23,22,.42),transparent 30%)}
+  .home-showcase::after{display:none}
+  .home-showcase .home-page-nav{min-height:86px;padding:0 clamp(30px,6vw,88px);background:linear-gradient(180deg,rgba(24,23,22,.3),transparent)}
+  .home-showcase-copy{top:47%;right:auto;bottom:auto;left:clamp(30px,8vw,116px);display:flex;width:min(41%,590px);min-height:0;flex-direction:column;align-items:flex-start;gap:0;padding:0;transform:translateY(-50%);background:transparent;color:#f4f1ee}
+  .home-showcase-eyebrow{margin:0 0 22px;color:#b8b0b3;font-size:10px;letter-spacing:.18em}
+  .home-showcase-title{width:100%;margin:0;font-size:clamp(54px,7.5vw,104px);line-height:.88;letter-spacing:-.075em;white-space:normal;text-wrap:balance}
+  .home-showcase-description{max-width:40ch;margin:22px 0 0;color:rgba(244,241,238,.76);font-size:clamp(14px,1.25vw,16px);line-height:1.7}
+  .home-showcase-cta{display:inline-flex;min-height:48px;align-items:center;gap:18px;margin-top:26px;padding:6px 7px 6px 17px;border:1px solid #b8b0b3;border-radius:3px;background:#b8b0b3;color:#181716;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:transform .2s ease,background .2s ease,border-color .2s ease}
+  .home-showcase-cta span{display:grid;width:34px;height:34px;place-items:center;background:#181716;color:#f4f1ee;font-size:18px;transition:transform .2s ease}
+  .home-showcase-cta:hover,.home-showcase-cta:focus-visible{transform:translateY(-2px);border-color:#d98a6e;background:#d98a6e;color:#181716;outline:none}
+  .home-showcase-cta:hover span,.home-showcase-cta:focus-visible span{transform:translate(2px,-2px)}
+  .home-showcase-cta[aria-disabled="true"]{cursor:default;opacity:1}
+  .home-showcase-count{top:auto;right:auto;bottom:30px;left:clamp(30px,6vw,88px);display:flex;width:auto;height:auto;justify-content:flex-start;padding:0;background:transparent;color:#f4f1ee;font-size:10px}
+  .home-showcase-current{display:inline;width:auto;height:auto;font-size:12px}
+  .home-showcase-arrows{top:50%;right:24px;bottom:auto;left:auto;display:flex;gap:8px;transform:translateY(-50%)}
+  .home-showcase-arrows button{width:38px;height:38px;border-color:rgba(244,241,238,.4);background:rgba(24,23,22,.35);color:#f4f1ee;font-size:20px}
+}
+
+@media (min-width:761px) and (max-width:1024px){
+  .home-showcase-copy{left:6vw;width:38%}
+  .home-showcase-title{font-size:clamp(48px,7vw,72px)}
+  .home-showcase-description{font-size:14px}
+  .home-showcase-count{left:6vw}
+}
+
+@media (max-width:760px){
+  .home-showcase{height:100svh;min-height:640px;background:#181716}
+  .home-showcase-image{inset:0;background-position:center;background-size:cover;filter:saturate(.8) brightness(.72)}
+  .home-showcase-shade{background:linear-gradient(180deg,rgba(24,23,22,.26),rgba(24,23,22,.08) 30%,rgba(24,23,22,.5) 58%,#181716 100%)}
+  .home-showcase::after{display:none}
+  .home-showcase-copy{top:auto;right:24px;bottom:92px;left:24px;display:flex;width:auto;min-height:0;flex-direction:column;align-items:flex-start;gap:0;padding:0;transform:none;background:transparent;color:#f4f1ee}
+  .home-showcase-eyebrow{margin:0 0 13px;font-size:9px}
+  .home-showcase-title{width:auto;max-width:100%;font-size:clamp(42px,9vw,68px);line-height:.9;white-space:normal}
+  .home-showcase-description{max-width:42ch;margin:15px 0 0;font-size:14px;line-height:1.6}
+  .home-showcase-cta{min-height:46px;gap:14px;margin-top:18px;padding:5px 6px 5px 14px;border:1px solid #b8b0b3;border-radius:3px;background:#b8b0b3;color:#181716;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+  .home-showcase-cta span{display:grid;width:32px;height:32px;place-items:center;background:#181716;color:#f4f1ee;font-size:17px}
+  .home-showcase-count{top:auto;right:auto;bottom:27px;left:24px;width:auto;height:auto;justify-content:flex-start;padding:0;background:transparent;color:#f4f1ee}
+  .home-showcase-current{display:inline;width:auto;height:auto}
+  .home-showcase-arrows{top:auto;right:22px;bottom:20px;left:auto;display:flex;gap:7px;transform:none}
+  .home-showcase-arrows button{width:34px;height:34px;border-color:rgba(244,241,238,.35);background:rgba(24,23,22,.35);color:#f4f1ee}
+}
+
+@media (max-width:420px){
+  .home-showcase-copy{right:20px;bottom:88px;left:20px}
+  .home-showcase-title{font-size:clamp(38px,10vw,48px)}
+  .home-showcase-description{font-size:13px}
+  .home-showcase-count{left:20px}
+  .home-showcase-arrows{right:18px}
+}
