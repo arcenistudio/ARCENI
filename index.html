@@ -9,7 +9,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="site-footer.css">
   <style>
     :root{color-scheme:dark;--page:#181716;--ink:#f4f1ee;--muted:#d0c9c5;--accent:#d98a6e;--line:rgba(244,241,238,.28)}
     *{box-sizing:border-box}html{min-width:320px;scroll-behavior:smooth}body{margin:0;background:var(--page);color:var(--ink);font-family:Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
@@ -262,6 +261,9 @@
     .home-showcase-current{display:block;width:100%;height:auto;font-size:clamp(8px,.9vw,11px);font-weight:650;line-height:1.25;letter-spacing:.025em;text-align:center}
     @media(max-width:760px){.home-showcase-current{font-size:9px}}
     @media(max-width:560px){.home-showcase-current{width:auto;font-size:10px}}
+    .home-showcase-copy{left:clamp(24px,5.2vw,88px);right:clamp(24px,5.2vw,88px);width:auto;max-width:none}
+    @media(max-width:760px){.home-showcase-copy{left:24px;right:24px;width:auto}}
+    @media(max-width:480px){.home-showcase-copy{left:20px;right:20px;width:auto}}
   </style>
   <link rel="stylesheet" href="site-responsive.css">
 </head>
@@ -282,7 +284,8 @@
       <div class="home-showcase-copy" aria-live="polite">
         <p class="home-showcase-eyebrow">01 <span>·</span> Consulting</p>
         <h1 class="home-showcase-title">CONSULTING</h1>
-        <p class="home-showcase-description">We help organizations turn their challenges into clear priorities, strengthen projects and teams towards a sustainable impact.</p>
+        <p class="home-showcase-description">Practical support to help organizations shape priorities, strengthen project delivery and sustain results for impact.</p>
+        <a class="home-showcase-cta" aria-disabled="true">Explore consulting <span aria-hidden="true">↗</span></a>
       </div>
       <div class="home-showcase-count"><span class="home-showcase-current">01</span><span class="home-showcase-divider">/</span><span>03</span></div>
       <div class="home-showcase-arrows" aria-label="Change featured area">
@@ -306,14 +309,12 @@
 
   </main>
 
-
-
   <script>
     (() => {
       const slides = [
-        {category:'Strategy for Change',title:'CONSULTING',description:'We help organizations turn their challenges into clear priorities, strengthen projects and teams to create a sustainable impact.',image:'images/Consulting/anastasia-vityukova-Q3qKcPAGrKw-unsplash.jpg',href:null,cta:'Explore consulting'},
-        {category:'Clarity to Impact',title:'COACHING',description:'Bespoke coaching and workshops for individuals and teams to find their voice, build self-awareness and lead with purpose.',image:'images/Collective/wadi-lissa-AZvGpBp925o-unsplash.jpg',href:'collective.html',cta:'Explore collective'},
-        {category:'Train With Purpose',title:'BASKETBALL',description:'Personalized training, holistic development and leadership to build a competitive edge on and off the court.',image:'images/Basketball/Slytherin.jpg',href:'basketball.html',cta:'Explore basketball'}
+        {category:'Strategy for Change',title:'CONSULTING',description:'Practical support to help organizations shape priorities, strengthen project delivery and sustain results for impact.',image:'images/Consulting/anastasia-vityukova-Q3qKcPAGrKw-unsplash.jpg',href:null,cta:'Explore consulting'},
+        {category:'Clarity to Impact',title:'COACHING',description:'Bespoke coaching and workshops for individuals and teams to find their voice, build self-awareness and lead with purpose.',image:'images/Collective/wadi-lissa-AZvGpBp925o-unsplash.jpg',href:'collective.html',cta:'Join Program'},
+        {category:'Train With Purpose',title:'BASKETBALL',description:'Personalized training, holistic development and leadership for players and teams to gain a competitive edge on and off the court.',image:'images/Basketball/Slytherin.jpg',href:'basketball.html',cta:'Work With Us'}
       ];
       const hero = document.querySelector('.home-showcase');
       if (!hero) return;
@@ -328,7 +329,6 @@
       const rail = [...hero.querySelectorAll('.home-showcase-rail button')];
       const previous = hero.querySelector('.home-showcase-prev');
       const next = hero.querySelector('.home-showcase-next');
-      const serviceLabels = ['Strategy to Change','Clarity to Impact','Train With Purpose'];
       let activeSlide = 0;
       function showSlide(index) {
         activeSlide = index;
@@ -341,13 +341,15 @@
         if (slide.href) {
           cta.href = slide.href;
           cta.removeAttribute('aria-disabled');
+          cta.hidden = false;
         } else {
           cta.removeAttribute('href');
           cta.setAttribute('aria-disabled','true');
+          cta.hidden = true;
         }
         cta.firstChild.textContent = `${slide.cta} `;
-        current.textContent = serviceLabels[index];
-        current.setAttribute('aria-label', slide.category);
+        current.textContent = String(index + 1).padStart(2,'0');
+        current.setAttribute('aria-label', `Slide ${index + 1} of ${slides.length}`);
         dots.forEach((button,i) => button.setAttribute('aria-current',String(i === index)));
         rail.forEach((button,i) => button.classList.toggle('is-current',i === index));
       }
@@ -360,6 +362,5 @@
     })();
   </script>
 
-  <script src="site-footer.js"></script>
 </body>
 </html>
