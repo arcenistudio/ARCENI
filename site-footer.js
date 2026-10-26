@@ -7,3 +7,4 @@ document.querySelectorAll('.site-newsletter-form').forEach(form => {
     window.location.href = `mailto:?subject=${encodeURIComponent('Newsletter subscription request')}&body=${encodeURIComponent(`Please add ${email} to the newsletter mailing list.`)}`;
   });
 });
+

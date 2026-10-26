@@ -125,3 +125,13 @@
 
 /* Keep Basketball's footer visually identical to Collective's shared footer. */
 .basketball-footer .site-footer-newsletter{border:0;border-radius:0;background:transparent}
+
+/* Footer social links and responsive grid shared by all non-home pages. */
+.site-footer-social{display:flex!important;grid-area:social;align-items:center;justify-content:flex-start;gap:12px;margin:0;color:#F4F1EE}
+.site-footer-social a{display:grid;width:24px;height:24px;place-items:center;color:inherit;opacity:.82;transition:opacity .2s ease,transform .2s ease}
+.site-footer-social a:hover,.site-footer-social a:focus-visible{transform:translateY(-2px);opacity:1}
+.site-footer-social svg{display:block;width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.site-footer-inner{grid-template-columns:minmax(105px,.7fr) minmax(150px,1fr) auto minmax(230px,1.15fr);grid-template-areas:"brand links social newsletter" "bottom bottom bottom bottom";column-gap:clamp(14px,2.8vw,38px);row-gap:22px}
+@media(min-width:761px) and (max-width:1100px){.site-footer-inner{grid-template-columns:minmax(120px,.7fr) minmax(0,1fr) auto;grid-template-areas:"brand links social" "newsletter newsletter newsletter" "bottom bottom bottom"}.site-footer-page-links{justify-content:flex-end}.site-footer-social{justify-self:end}}
+@media(max-width:760px){.site-footer-inner{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"brand social" "links links" "newsletter newsletter" "bottom bottom"}.site-footer-social{grid-area:social;justify-self:end;gap:10px}.site-footer-page-links{grid-area:links}.site-footer-newsletter{grid-area:newsletter}.site-footer-bottom{grid-area:bottom}}
+@media(max-width:420px){.site-footer-social{gap:8px}.site-footer-social a{width:22px;height:22px}.site-footer-social svg{width:14px;height:14px}}
