@@ -15,119 +15,6 @@ main,section,article,figure,form,.shell,.home-shell{min-width:0}
 .home-page .home-hero-subheading{max-width:280px;padding:14px 0 14px 20px;border-left:2px solid rgba(48,44,49,.28);font-size:clamp(14px,1.4vw,17px);line-height:1.7}
 .home-page .home-scroll{bottom:30px}
 
-@media (min-width:761px) and (max-width:1024px){
-  .shell,.home-shell{width:100%;max-width:87.5rem;padding-right:clamp(1.5rem,4vw,2.5rem);padding-left:clamp(1.5rem,4vw,2.5rem)}
-  .nav{gap:clamp(10px,1.45vw,16px);font-size:10px;letter-spacing:.09em}
-  .programs-layout,.philosophy{grid-template-columns:minmax(0,1fr)}
-  .basketball-contact{grid-template-columns:minmax(0,1fr);gap:28px}
-  .basketball-home-testimonial,.collective-testimonial-section{grid-template-columns:minmax(0,1fr);gap:28px}
-  .collective-programs-layout{grid-template-columns:minmax(0,1fr);gap:18px}
-  .collective-side-stack{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto}
-  .archer-program-content{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
-  .consulting-services-grid{grid-template-columns:minmax(0,1fr)}
-  .consulting-service-stack{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto}
-  .consulting-service-stack .consulting-service-card{min-height:300px}
-  .consulting-case-study-card{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .project-management-card .consulting-service-content{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .project-management-card .consulting-service-priorities{grid-column:1/-1;grid-row:auto}
-  .project-management-card .consulting-service-priorities ul{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .home-page .home-hero{min-height:620px;padding-right:34px;padding-left:34px;border-radius:28px}
-  .home-page .home-hero:before{right:-175px;width:470px}
-}
-
-@media (max-width:760px){
-  .shell,.home-shell{width:100%;max-width:none;padding-right:clamp(24px,5.2vw,40px);padding-left:clamp(24px,5.2vw,40px)}
-  .topbar{height:auto;min-height:68px;flex-wrap:wrap;row-gap:12px;padding:14px 0}
-  .nav{position:static;left:auto;order:3;transform:none;width:100%;justify-content:center;flex-wrap:wrap;gap:10px 18px;padding-top:13px;border-top:1px solid var(--line);font-size:10px;letter-spacing:.08em}
-  .hero{min-height:0;padding:clamp(68px,12vh,110px) 0 clamp(68px,12vh,108px)}
-  .hero h1{font-size:clamp(40px,8.6vw,64px);line-height:1.02}
-  .intro{max-width:620px;font-size:clamp(15px,2.3vw,17px)}
-  .section{padding:clamp(54px,9vw,76px) 0}
-  .closing{align-items:flex-start;flex-direction:column;gap:22px}
-  .about{grid-template-columns:minmax(0,1fr);gap:28px;min-height:0;padding:54px 0 88px}
-  .about .divider{width:100%;height:1px}
-  .bio{grid-template-columns:minmax(0,1fr);row-gap:20px}
-  .bio-detail,.credentials{grid-column:1}
-  .home-founder{grid-template-columns:minmax(0,1fr);gap:24px;padding:clamp(22px,5vw,36px)}
-  .home-founder-divider{width:100%;height:1px}
-  .home-founder-credentials{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .home-offerings{grid-template-columns:minmax(0,1fr);gap:12px}
-  .home-offering-panel,.home-offering-panel:last-child{grid-column:auto;min-height:0}
-  .home-offering-photo{height:clamp(190px,55vw,300px)}
-  .home-offering-content .home-offering-item,.home-offering-item.project-management-item{min-height:76px}
-  .consulting-testimonial,.basketball-home-testimonial,.collective-testimonial-section{grid-template-columns:minmax(0,1fr);gap:28px;padding:clamp(22px,5vw,34px)}
-  .consulting-testimonial-values,.basketball-home-testimonial-values{margin-top:28px}
-  .programs-layout,.feature,.philosophy,.basketball-contact{grid-template-columns:minmax(0,1fr)}
-  .programs-layout{gap:20px;padding:40px 0 58px}
-  .feature{gap:26px}
-  .basketball-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,clamp(140px,34vw,220px))}
-  .basketball-player-reflections{grid-template-columns:minmax(0,1fr);grid-template-rows:auto}
-  .parent-testimonials-grid{grid-template-columns:minmax(0,1fr);grid-template-rows:auto}
-  .values-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .collective-programs-layout{grid-template-columns:minmax(0,1fr);gap:16px}
-  .collective-side-stack{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto}
-  .archer-program-content{grid-template-columns:minmax(0,1fr);gap:22px}
-  .catalyst-details,.benefits-list{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .consulting-services-grid,.consulting-service-stack{grid-template-columns:minmax(0,1fr)}
-  .consulting-case-study-card{grid-template-columns:minmax(0,1fr)}
-  .project-management-card .consulting-service-content{grid-template-columns:minmax(0,1fr)}
-  .project-management-card h2,.project-management-card .consulting-service-content>p,.project-management-card .consulting-service-priorities,.project-management-card .consulting-service-delivery,.project-management-card .project-management-features,.project-management-card .cta{grid-column:1;grid-row:auto}
-  .project-management-card .consulting-service-priorities ul{grid-template-columns:minmax(0,1fr)}
-  .basketball-contact-form{grid-template-columns:repeat(2,minmax(0,1fr))}
-}
-
-@media (max-width:560px){
-  .shell,.home-shell{padding-right:19px;padding-left:19px}
-  .topbar{column-gap:10px}
-  .brand,.home-brand{font-size:16px}
-  .nav{gap:9px 13px;font-size:9px;letter-spacing:.06em}
-  .cta,.home-nav-cta{gap:9px;padding-left:12px;font-size:10px}
-  .cta b,.home-nav-cta span{width:29px;height:29px}
-  .home-hero{min-height:calc(100svh - 90px);padding:58px 0 86px}
-  .home-hero h1{font-size:clamp(31px,8.6vw,45px);line-height:1.02;letter-spacing:-.07em}
-  .home-hero-subheading{max-width:100%;font-size:14px}
-  .home-offerings{width:calc(100% - 32px)}
-  .home-offering-panel,.home-offering-panel:last-child{padding:18px}
-  .home-offering-photo{height:clamp(170px,58vw,230px);margin:-18px -18px 16px}
-  .home-offering-content .home-offering-item,.home-offering-item.project-management-item{grid-template-columns:24px minmax(0,1fr);padding:12px 10px;min-height:72px}
-  .home-offering-content .home-offering-item h3{font-size:12px}
-  .home-offering-content .home-offering-item p{font-size:10px}
-  .home-page .home-hero{min-height:calc(100svh - 122px);margin:12px 0 32px;padding:56px 22px 88px;border-radius:24px}
-  .home-page .home-hero:before{top:auto;right:-170px;bottom:-180px;width:400px;transform:none}
-  .home-page .home-hero:after{top:22px;right:28px;width:6px;height:6px}
-  .home-page .home-hero h1{font-size:clamp(34px,8vw,52px);letter-spacing:-.075em}
-  .home-page .home-hero-subheading{max-width:320px;padding:10px 0 10px 14px}
-  .home-page .home-scroll{left:22px;bottom:24px}
-  .home-founder-credentials,.credentials,.values-grid,.collective-side-stack,.catalyst-details,.benefits-list{grid-template-columns:minmax(0,1fr)}
-  .consulting-testimonial,.basketball-home-testimonial,.collective-testimonial-section{padding:23px 17px}
-  .consulting-testimonial-card,.basketball-home-testimonial-card{min-height:300px;padding:26px 20px 72px}
-  .basketball-gallery{padding:22px 14px}
-  .basketball-gallery-grid{grid-template-columns:minmax(0,1fr);grid-template-rows:repeat(4,clamp(170px,58vw,240px))}
-  .basketball-gallery-item:first-child,.basketball-gallery-item:nth-child(4){grid-row:auto;grid-column:auto}
-  .basketball-contact{padding:28px 16px}
-  .basketball-contact-form{grid-template-columns:minmax(0,1fr);padding:20px 16px}
-  .emergency-fields{grid-template-columns:minmax(0,1fr)}
-  .contact-field.field-wide,.emergency-fields,.contact-submit,.contact-status{grid-column:1}
-  .project-management-card{padding:22px 18px}
-  .project-management-card .consulting-service-content>p{font-size:13px}
-  .project-management-card .project-management-features{grid-template-columns:minmax(0,1fr);gap:18px}
-  .consulting-service-featured{min-height:0}
-  .consulting-service-stack .consulting-service-card{min-height:230px}
-  .consulting-case-study-card{min-height:0}
-  .service-explorer-tabs button{min-width:0;font-size:10px}
-}
-
-@media (max-width:360px){
-  .shell,.home-shell{padding-right:16px;padding-left:16px}
-  .nav{gap:8px 10px;font-size:8px}
-  .home-offering-content .home-offering-item,.home-offering-item.project-management-item{grid-template-columns:21px minmax(0,1fr);column-gap:7px}
-  .home-offering-content .home-offering-item:before{width:20px;height:20px}
-  .home-offering-content .home-offering-item h3{font-size:11px}
-  .home-page .home-hero{padding:48px 17px 82px;border-radius:20px}
-  .home-page .home-hero h1{font-size:clamp(30px,8.5vw,40px)}
-  .home-page .home-scroll{left:17px;bottom:20px}
-}
-
 /* Match the homepage hero to basketball's centered editorial hero. */
 .home-page .home-hero{display:flex;min-height:clamp(610px,calc(100svh - 92px),850px);flex:1;flex-direction:column;align-items:center;justify-content:center;gap:0;margin:0;padding:90px 0 96px;overflow:visible;border:0;border-radius:0;background:transparent;box-shadow:none;text-align:center}
 .home-page .home-hero:before,.home-page .home-hero:after{display:none}
@@ -144,93 +31,14 @@ main,section,article,figure,form,.shell,.home-shell{min-width:0}
 .home-page .home-offering-tab .panel-icon,.home-page .home-offering-panel.is-active .home-offering-tab .panel-icon{width:21px;height:21px}
 .home-page .home-offering-panel:hover .home-panel-arrow{transform:translate(2px,-2px);background:#302C31;color:#F4F1EE}
 .home-page .home-offering-content{margin-bottom:18px}
-@media(max-width:560px){.home-page .home-offering-content{margin-bottom:14px}}
-@media(max-width:760px){
-  .home-page .home-hero{min-height:calc(100svh - 140px);margin:0;padding:52px 0 72px;gap:0;text-align:center}
-  .home-page .home-hero h1{max-width:680px;font-size:clamp(40px,8.4vw,58px);line-height:1.02;letter-spacing:-.075em;text-align:center}
-  .home-page .home-hero-subheading{max-width:690px;margin:24px auto 0;padding:0;font-size:17px;line-height:1.65;text-align:center}
-  .home-page .home-scroll{left:50%;bottom:18px}
-}
-@media(max-width:560px){
-  .home-page .home-hero{min-height:calc(100svh - 140px);padding:52px 0 72px}
-  .home-page .home-hero h1{font-size:clamp(35px,9.5vw,43px);letter-spacing:-.065em}
-  .home-page .home-hero-subheading{max-width:100%;margin-top:20px;font-size:17px}
-}
-@media (min-width:761px) and (max-width:1024px){
-  .home-page .home-hero{min-height:560px;padding:82px 0 80px}
-  .home-page .home-hero h1{font-size:clamp(46px,7vw,76px)}
-  .home-page .home-hero-subheading{max-width:690px;font-size:17px}
-}
 
 /* Keep navigation and content grids balanced at tablet widths. */
-@media (min-width:761px) and (max-width:1024px){
-  .home-shell{width:calc(100% - 40px)}
-  .home-topbar{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px}
-  .home-nav{position:static;left:auto;grid-column:2;transform:none;flex-wrap:wrap;gap:8px 14px;font-size:10px;letter-spacing:.08em;white-space:normal}
-  .home-nav-actions{grid-column:3;gap:0}
-  .home-nav-cta{gap:8px;padding-left:11px;font-size:10px}
-  .home-nav-cta span{width:29px;height:29px}
-  .home-page .home-offering-panel{min-width:0}
-  .collective-archer-card,.collective-catalyst-card,.basketball-contact,.consulting-case-study-card{min-width:0}
-}
 
 /* Prevent long copy and form controls from pushing cards wider on small screens. */
-@media (max-width:760px){
-  .home-topbar{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center}
-  .home-nav{grid-column:1/-1;order:3}
-  .home-nav-actions{grid-column:2;grid-row:1}
-  .home-brand,.brand{min-width:0}
-  .home-nav,.nav{min-width:0;max-width:100%;white-space:normal}
-  .home-nav-actions,.home-nav-cta,.cta{min-width:0}
-  .home-page .home-hero{width:100%}
-  .home-founder,.collective-archer-card,.collective-catalyst-card,.basketball-contact,.consulting-case-study-card{max-width:100%}
-  .home-founder-photo img,.archer-coach-bio img,.collective-coach-card img{max-width:100%;height:auto;aspect-ratio:1}
-  input,select,textarea,button{max-width:100%}
-  .event-shell{width:calc(100% - 36px)}
-}
-
-@media (max-width:420px){
-  .home-shell{width:calc(100% - 30px)}
-  .home-nav{gap:9px 12px}
-  .home-nav-actions{justify-self:end}
-  .home-nav-cta{font-size:9px}
-  .event-shell{width:calc(100% - 30px)}
-}
 
 /* Tablet layouts: preserve readable line lengths and avoid compressed columns. */
-@media (min-width:761px) and (max-width:1024px){
-  .about-page .home-founder{grid-template-columns:minmax(180px,.62fr) 1px minmax(0,1.38fr);gap:clamp(22px,4vw,42px)}
-  .about-page .home-founder-credentials{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .basketball-page .feature,.basketball-page .philosophy{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
-  .basketball-page .programs-layout{grid-template-columns:minmax(0,1fr)}
-  .basketball-page .values-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
-  .basketball-page .basketball-contact,.basketball-page .basketball-testimonial-section{grid-template-columns:minmax(0,1fr);gap:28px}
-  .consulting-philosophy-head{grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr);gap:22px}
-  .consulting-philosophy-pillars{grid-template-columns:repeat(3,minmax(0,1fr))}
-}
 
 /* Small-screen card motion should not cause clipped content or sideways drift. */
-@media (hover:none) and (max-width:1024px){
-  .home-page .home-offering-panel:hover,.value-card:hover,.philosophy:hover,.basketball-testimonial-card:hover,.basketball-contact-form:hover,.collective-program-card:hover,.collective-coach-card:hover,.home-founder-photo img:hover{transform:none}
-}
-
-@media (max-width:760px){
-  .about-page .home-founder{grid-template-columns:minmax(0,1fr);gap:26px}
-  .about-page .home-founder-divider{width:100%;height:1px}
-  .about-page .home-founder-credentials{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .basketball-page .feature,.basketball-page .philosophy{grid-template-columns:minmax(0,1fr)}
-  .basketball-page .values-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .basketball-page .basketball-contact,.basketball-page .basketball-testimonial-section{grid-template-columns:minmax(0,1fr)}
-  .collective-archer-card{grid-template-columns:minmax(0,1fr)}
-}
-
-@media (max-width:480px){
-  .about-page .home-founder-credentials{grid-template-columns:minmax(0,1fr)}
-  .basketball-page .values-grid{grid-template-columns:minmax(0,1fr)}
-  .basketball-page .basketball-testimonial-card{padding:24px 20px 70px}
-  .event-meta,.collective-event-details{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .catalyst-date-chip{align-self:flex-start}
-}
 
 /* Give each basketball program item consistent space at every viewport size. */
 .basketball-page .programs-layout{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(18px,2.5vw,32px);align-items:stretch}
@@ -250,109 +58,11 @@ main,section,article,figure,form,.shell,.home-shell{min-width:0}
 .basketball-page .focus-panel li{grid-template-columns:26px minmax(0,1fr);min-width:0}
 .basketball-page .focus-panel li div{min-width:0}
 
-@media (min-width:761px) and (max-width:1024px){
-  .basketball-page .programs-layout{grid-template-columns:minmax(0,1fr);gap:18px}
-  .basketball-page .values-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .basketball-page .value-card{min-height:185px}
-  .basketball-page .program-focus{height:auto}
-}
-
-@media (max-width:760px){
-  .basketball-page .programs-layout{grid-template-columns:minmax(0,1fr);gap:16px;padding:38px 0 54px}
-  .basketball-page .values-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-  .basketball-page .value-card{min-height:174px;padding:17px}
-  .basketball-page .value-card h3{margin:18px 0 7px;font-size:19px}
-  .basketball-page .value-card p{font-size:12px}
-  .basketball-page .program-focus{height:auto;padding:clamp(22px,5vw,30px)}
-  .basketball-page .program-focus .cta{width:100%;white-space:normal}
-}
-
-@media (max-width:480px){
-  .basketball-page .values-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:minmax(185px,auto)}
-  .basketball-page .value-card{min-height:185px;display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:15px}
-  .basketball-page .value-card h3{margin:0 0 5px;font-size:16px}
-  .basketball-page .value-card p{font-size:11px;line-height:1.5}
-  .basketball-page .program-focus{padding:23px 18px}
-  .basketball-page .focus-tabs button{justify-content:flex-start}
-  .basketball-page .focus-panel li{grid-template-columns:22px minmax(0,1fr);gap:8px}
-}
-
 /* Keep the four basketball values in a balanced 2×2 group beside Programs. */
-@media (min-width:1100px){
-  .basketball-page .programs-layout{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(18px,2.5vw,32px);align-items:stretch}
-  .basketball-page .program-values-column{grid-column:2;grid-row:1;display:grid;grid-template-columns:minmax(0,1fr);align-content:start}
-  .basketball-page .values-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:minmax(210px,1fr);gap:clamp(10px,1.2vw,16px)}
-  .basketball-page .value-card{height:100%;min-height:210px;padding:clamp(18px,2vw,24px)}
-  .basketball-page .value-card h3{font-size:clamp(18px,1.8vw,22px)}
-  .basketball-page .value-card p{font-size:clamp(12px,1.1vw,13px);line-height:1.55}
-  .basketball-page .program-focus{grid-column:1;grid-row:1;height:100%;min-height:0;padding:clamp(24px,3vw,42px)}
-  .basketball-page .basketball-player-feature{grid-column:1/-1}
-}
-@media (min-width:761px) and (max-width:1099px){
-  .basketball-page .programs-layout{grid-template-columns:minmax(0,1fr);gap:18px}
-  .basketball-page .program-values-column{display:grid;grid-template-columns:minmax(0,1fr)}
-  .basketball-page .values-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
-  .basketball-page .program-focus{grid-column:auto;grid-row:auto;height:auto}
-}
-@media (min-width:1100px){
-  .basketball-page .program-values-column{grid-template-rows:minmax(0,1fr);align-content:stretch}
-  .basketball-page .values-grid{height:100%;grid-template-rows:repeat(2,minmax(210px,1fr));align-content:stretch}
-  .basketball-page .value-card{align-self:stretch}
-}
 
 /* Home's split hero band needs an intermediate layout before the phone stack. */
-@media (min-width:761px) and (max-width:1024px){
-  .home-showcase{min-height:620px}
-  .home-showcase::after,.home-showcase-count{width:24%;height:154px}
-  .home-showcase-copy{width:76%;min-height:154px;grid-template-columns:minmax(0,1.1fr) minmax(145px,.9fr);grid-template-rows:auto auto;gap:8px 18px;padding:17px 62px 17px 22px}
-  .home-showcase-title{grid-column:1;grid-row:2;white-space:normal;font-size:clamp(24px,3.1vw,32px);line-height:1.04}
-  .home-showcase-description{grid-column:2;grid-row:1/3;max-width:32ch;font-size:11px;line-height:1.5}
-  .home-showcase-cta{grid-column:1;grid-row:3;justify-self:start;margin-top:2px;padding:4px 0;font-size:9px}
-  .home-showcase-arrows{right:14px;bottom:50px}
-  .basketball-page{padding-right:clamp(24px,4vw,40px);padding-left:clamp(24px,4vw,40px)}
-}
 
 /* Give compact laptops and tablets more breathing room around navigation and forms. */
-@media (min-width:761px) and (max-width:900px){
-  .home-showcase .home-page-nav{padding-right:30px;padding-left:30px}
-  .home-showcase .home-page-social{gap:8px}
-  .basketball-page .basketball-nav{gap:14px}
-  .basketball-page-links{gap:clamp(12px,2vw,20px)}
-  .basketball-page .basketball-contact{padding:26px;gap:24px}
-  .basketball-page .basketball-contact-form{padding:24px}
-}
-
-@media (max-width:760px){
-  .home-showcase{width:100%;min-height:max(640px,100svh)}
-  .home-showcase .home-page-nav{gap:10px}
-  .home-showcase .home-page-social{gap:5px}
-  .home-showcase .home-page-social a{width:24px;height:24px}
-  .home-showcase-copy{min-width:0}
-  .home-showcase-title,.home-showcase-description{min-width:0;overflow-wrap:anywhere}
-  .basketball-page .basketball-hero{width:100%;min-height:max(640px,calc(100svh - 80px))}
-  .basketball-page .basketball-next-steps,.basketball-page .basketball-contact{width:100%}
-}
-
-@media (max-width:480px){
-  .home-showcase{min-height:max(620px,100svh)}
-  .home-showcase .home-page-nav{gap:8px}
-  .home-showcase .home-page-social{gap:2px}
-  .home-showcase .home-page-social a{width:22px;height:22px}
-  .home-showcase-count{padding-left:18px}
-  .home-showcase-arrows{right:14px}
-  .basketball-page{padding-right:16px;padding-left:16px}
-  .basketball-page .basketball-nav{column-gap:8px}
-  .basketball-page .basketball-brand{font-size:14px}
-  .basketball-page .basketball-social{gap:3px}
-  .basketball-page .basketball-social a{width:26px;height:26px}
-  .basketball-page .basketball-contact{padding:24px 14px}
-  .basketball-page .basketball-contact-form{padding:19px 14px}
-}
-
-@media (max-height:620px) and (min-width:761px){
-  .home-showcase{min-height:620px}
-  .basketball-page .basketball-hero{min-height:640px}
-}
 
 /* Index hero refresh: a strong editorial split with the featured photo on the right. */
 .home-showcase .home-showcase-cta[hidden]{display:none!important}
@@ -362,9 +72,6 @@ main,section,article,figure,form,.shell,.home-shell{min-width:0}
 .basketball-page{overflow:visible}
 .home-showcase .home-page-nav .home-brand{flex:0 0 auto;color:#f4f1ee;font-size:18px;font-weight:750;letter-spacing:.17em}
 .home-showcase .home-page-nav .home-brand sup{margin-left:2px;font-size:9px;letter-spacing:0;vertical-align:top}
-@media(max-width:760px){.shell,.home-shell{width:100%;max-width:none;padding-right:clamp(24px,5.2vw,40px);padding-left:clamp(24px,5.2vw,40px)}.basketball-page,.home-showcase{width:100%}}
-@media(max-width:620px){.home-showcase .home-page-nav .home-brand{font-size:16px}}
-@media(max-width:620px){.basketball-page .basketball-note{top:17%}}
 
 /* Consulting hero mirrors Basketball's image-led editorial layout. */
 .consulting-page .topbar{z-index:5;color:#f4f1ee}
@@ -402,8 +109,7 @@ main,section,article,figure,form,.shell,.home-shell{min-width:0}
 .consulting-page .trusted-organizations-group{display:flex;flex:0 0 auto;align-items:center;gap:clamp(38px,6vw,86px);padding-right:clamp(38px,6vw,86px)}
 .consulting-page .trusted-organizations-group span{color:rgba(244,241,238,.78);font-size:clamp(12px,1.4vw,17px);font-weight:600;letter-spacing:.12em;white-space:nowrap}
 @keyframes trusted-organizations-scroll{to{transform:translateX(-50%)}}
-@media(max-width:760px){.consulting-page .topbar{background:#181716}.consulting-page .consulting-hero{min-height:680px;min-height:max(680px,calc(100svh - 80px));padding:52px 22px 72px}.consulting-page .consulting-hero:after{background:linear-gradient(90deg,rgba(24,23,22,.88),rgba(24,23,22,.46)),linear-gradient(0deg,#181716 2%,rgba(24,23,22,.35) 55%,rgba(24,23,22,.12))}.consulting-page .consulting-hero-image{top:0;right:-20%;width:110%;height:68%;object-position:center 42%;opacity:.66;mask-image:linear-gradient(180deg,#000 0%,#000 55%,transparent 100%)}.consulting-page .consulting-hero-eyebrow{top:27px;left:22px;max-width:calc(100% - 44px);font-size:8px}.consulting-page .consulting-hero-note{top:14%;right:22px;width:min(200px,43%);font-size:11px}.consulting-page .consulting-hero-title{max-width:100%;margin-bottom:30px;font-size:clamp(48px,11vw,76px);line-height:.87}.consulting-page .consulting-hero-title span{display:block}.consulting-page .consulting-hero-title .consulting-title-accent{margin-left:0}.consulting-page .consulting-hero-bottom{grid-template-columns:1fr;gap:13px;padding-top:14px}.consulting-page .consulting-hero-label{max-width:none;font-size:9px}.consulting-page .consulting-hero-copy{max-width:440px;font-size:12px}.consulting-page .consulting-hero-cta{width:100%;min-height:49px}.consulting-page .consulting-hero-scroll{right:22px;bottom:8px;font-size:8px}.consulting-page .trusted-organizations{padding:22px 22px 25px}.consulting-page .trusted-organizations-heading{align-items:flex-start;flex-direction:column;gap:6px}.consulting-page .trusted-organizations-track{animation-duration:28s}}
-@media(max-width:420px){.consulting-page .consulting-hero{padding-right:18px;padding-left:18px}.consulting-page .consulting-hero-eyebrow{left:18px}.consulting-page .consulting-hero-note{right:18px;top:13%;width:44%;font-size:10px}.consulting-page .consulting-hero-title{font-size:clamp(43px,11vw,58px)}.consulting-page .consulting-hero-scroll{right:18px}.consulting-page .trusted-organizations{padding-right:18px;padding-left:18px}}
+
 @media(prefers-reduced-motion:reduce){.consulting-page .consulting-hero-scroll span:after{animation:none}.consulting-page .trusted-organizations-track{animation-play-state:paused}}
 
 /* Carry Basketball's charcoal canvas and warm grey text through Consulting. */
@@ -513,67 +219,14 @@ body.consulting-page{--paper:#181716;--ink:#f4f1ee;--muted:#b8b0b3;--line:rgba(2
 .consulting-page .consulting-next-steps .basketball-next-step strong{color:#f4f1ee;font-size:14px;font-weight:500;letter-spacing:-.02em}
 .consulting-page .consulting-next-steps .basketball-next-step span:last-child{display:grid;width:32px;height:32px;place-items:center;background:#b8b0b3;color:#181716;font-size:17px;transition:transform .2s ease}
 .consulting-page .consulting-next-steps .basketball-next-step:hover span:last-child,.consulting-page .consulting-next-steps .basketball-next-step:focus-visible span:last-child{transform:translate(2px,-2px)}
-@media(max-width:900px){.consulting-page .consulting-next-steps-inner{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px}.consulting-page .consulting-next-steps-heading h2{font-size:clamp(42px,6vw,62px)}}
-@media(max-width:760px){.consulting-page .consulting-section-scroll{margin:14px auto 18px;font-size:9px}.consulting-page .consulting-next-steps{padding:58px 0 68px}.consulting-page .consulting-next-steps-inner{grid-template-columns:minmax(0,1fr);gap:30px;padding:20px 22px}.consulting-page .consulting-next-steps-heading .philosophy-eyebrow{margin-bottom:18px}.consulting-page .consulting-next-steps-heading>p:not(.philosophy-eyebrow){margin-top:16px}.consulting-page .consulting-next-steps-links{grid-template-columns:1fr 1fr;gap:8px}.consulting-page .consulting-next-steps .basketball-next-step{padding:13px}.consulting-page .consulting-next-steps .basketball-next-step strong{font-size:12px}}
-@media(max-width:480px){.consulting-page .consulting-next-steps-links{grid-template-columns:1fr}.consulting-page .consulting-next-steps-inner{padding-right:18px;padding-left:18px}}
+
 @media(prefers-reduced-motion:reduce){.consulting-page .consulting-next-steps .basketball-next-step{transition:none}}
 .consulting-page .shell{width:100%!important;max-width:87.5rem!important;margin-right:auto!important;margin-left:auto!important}
 .consulting-page .consulting-case-study{width:100%;margin-right:0;margin-left:0}
 .consulting-page .consulting-next-steps-inner{width:100%;max-width:87.5rem;margin-right:auto;margin-left:auto}
-@media(max-width:760px){.consulting-page .shell{width:100%!important;max-width:none!important}}
 
 /* Consulting page: keep hero, story and CTA clear from tablet through narrow phones. */
 .consulting-page{overflow-x:clip}
-@media (min-width:761px) and (max-width:1100px){
-  .consulting-page .topbar{display:flex;min-height:82px;height:auto;justify-content:space-between;gap:20px}
-  .consulting-page .site-header-actions{margin-left:auto}
-  .consulting-page .consulting-hero{min-height:max(620px,calc(100svh - 82px))}
-  .consulting-page .consulting-hero-title{font-size:clamp(64px,8.8vw,100px)}
-  .consulting-page .consulting-hero-note{width:min(230px,24vw);font-size:12px}
-  .consulting-page .consulting-hero-bottom{grid-template-columns:minmax(120px,.45fr) minmax(0,1.2fr) auto;gap:clamp(16px,2.4vw,28px)}
-  .consulting-page .consulting-hero-cta{min-width:190px}
-  .consulting-page .consulting-case-study-card{grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr)}
-}
-@media(max-width:760px){
-  :is(.consulting-page,.about-page) .case-study-editorial-heading{grid-template-columns:minmax(0,1fr);gap:12px}
-  :is(.consulting-page,.about-page) .case-study-editorial-heading>p{max-width:580px}
-  :is(.consulting-page,.about-page) .case-study-editorial-grid{grid-template-columns:minmax(0,1fr);gap:18px}
-  :is(.consulting-page,.about-page) .case-study-editorial-visual{min-height:0;height:clamp(280px,65vw,460px)}
-  :is(.consulting-page,.about-page) .case-study-editorial-story{grid-template-rows:none}
-  :is(.consulting-page,.about-page) .case-study-editorial-story article{padding:19px 0}
-  :is(.consulting-page,.about-page) .case-study-editorial .consulting-director-testimonial{max-width:none;margin-left:0}
-  .consulting-page .consulting-hero-bottom,.consulting-page .consulting-case-study-card,.consulting-page .consulting-next-steps-inner{min-width:0}
-  .consulting-page .consulting-case-study-redesign-head{align-items:flex-start;flex-direction:column;gap:10px}
-  .consulting-page .consulting-case-study-redesign-head>p{max-width:520px}
-  .consulting-page .consulting-case-study-feature{height:clamp(240px,56vw,420px)}
-  .consulting-page .consulting-case-study-stages{grid-template-columns:minmax(0,1fr)}
-  .consulting-page .consulting-case-study-stages article{padding:19px 0}
-  .consulting-page .consulting-case-study-stages article+article{padding-left:0;border-top:1px solid rgba(244,241,238,.14);border-left:0}
-  :is(.consulting-page,.about-page) .consulting-director-testimonial{grid-template-columns:100px minmax(0,1fr);gap:18px;padding:20px}
-  :is(.consulting-page,.about-page) .consulting-director-photo-placeholder{min-height:126px}
-  .consulting-page .consulting-case-study-card{grid-template-columns:minmax(0,1fr)}
-  .consulting-page .consulting-case-study-card img{width:100%;height:auto;aspect-ratio:4/3;min-height:0;object-fit:cover}
-  .consulting-page .consulting-case-study-copy{min-width:0;padding:26px 22px}
-  .consulting-page .consulting-next-steps-links{width:100%;min-width:0}
-  .consulting-page .consulting-next-steps .basketball-next-step{min-width:0}
-}
-@media(max-width:480px){
-  .consulting-page .consulting-hero{min-height:max(650px,calc(100svh - 76px))}
-  .consulting-page .consulting-hero-bottom{gap:11px}
-  .consulting-page .consulting-hero-copy{font-size:12px;line-height:1.55}
-  .consulting-page .consulting-hero-cta{min-width:0}
-  .consulting-page .consulting-case-study{padding-bottom:52px}
-  .consulting-page .consulting-case-study-copy{padding:24px 18px}
-  :is(.consulting-page,.about-page) .consulting-director-testimonial{grid-template-columns:1fr;padding:18px}
-  :is(.consulting-page,.about-page) .consulting-director-photo-placeholder{min-height:145px}
-  .consulting-page .consulting-next-steps-heading h2{font-size:clamp(38px,10vw,48px)}
-}
-@media(max-width:360px){
-  .consulting-page .consulting-hero{padding-right:16px;padding-left:16px}
-  .consulting-page .consulting-hero-title{font-size:41px}
-  .consulting-page .consulting-hero-note{width:46%;font-size:9px}
-  .consulting-page .consulting-hero-scroll{gap:8px;font-size:7px}
-}
 
 /* Homepage visual refresh: editorial service showcase with a dedicated selector rail. */
 .home-showcase{height:100svh;min-height:680px;max-height:1000px;background:#181716}
@@ -602,55 +255,6 @@ body.consulting-page{--paper:#181716;--ink:#f4f1ee;--muted:#b8b0b3;--line:rgba(2
 .home-showcase-social{bottom:30px;left:clamp(30px,8vw,112px);gap:16px}
 .home-showcase-social a{opacity:.76}
 .home-showcase-social a:hover,.home-showcase-social a:focus-visible{opacity:1}
-@media(max-width:900px) and (min-width:761px){
-  .home-showcase-image{inset:0 0 0 42%}
-  .home-showcase-shade{background:linear-gradient(90deg,#181716 0%,#181716 34%,rgba(24,23,22,.9) 44%,rgba(24,23,22,.1) 72%),linear-gradient(0deg,rgba(24,23,22,.5),transparent 32%)}
-  .home-showcase-copy{left:6vw;width:34vw}
-  .home-showcase-title{font-size:clamp(68px,8.5vw,96px)}
-  .home-showcase-description{font-size:13px}
-  .home-showcase-rail{left:42%;width:58%}
-  .home-showcase-rail button{padding-right:10px;padding-left:10px}
-  .home-showcase-rail strong{font-size:10px}
-  .home-showcase-rail small{font-size:7px}
-}
-@media(max-width:760px){
-  .home-showcase{height:100svh;min-height:700px;max-height:none}
-  .home-showcase-image{inset:0;background-position:center 42%;filter:saturate(.78) brightness(.68)}
-  .home-showcase-shade{background:linear-gradient(90deg,rgba(24,23,22,.8),rgba(24,23,22,.28) 100%),linear-gradient(0deg,#181716 0%,rgba(24,23,22,.86) 21%,transparent 58%)}
-  .home-showcase .home-page-nav{min-height:74px;padding-right:22px;padding-left:22px}
-  .home-services-menu summary{padding:10px 12px;font-size:9px}
-  .home-showcase-meta{top:100px;left:24px}
-  .home-showcase-copy{top:45%;left:24px;width:min(580px,calc(100% - 76px));transform:translateY(-50%)}
-  .home-showcase-title{max-width:8ch;font-size:clamp(68px,12vw,94px)}
-  .home-showcase-description{max-width:35ch;font-size:14px}
-  .home-showcase-arrows{top:46%;right:12px;left:auto;display:grid;gap:7px;transform:translateY(-50%)}
-  .home-showcase-arrows button{width:32px;height:38px;font-size:24px}
-  .home-showcase-count{right:20px;bottom:118px;padding:6px 9px}
-  .home-showcase-rail{right:0;left:0;width:100%;min-height:100px}
-  .home-showcase-rail button{min-height:100px;grid-template-columns:1fr;gap:5px;padding:12px 9px}
-  .home-showcase-rail button span{grid-row:auto}
-  .home-showcase-rail strong{font-size:10px}
-  .home-showcase-rail small{font-size:7px}
-  .home-showcase-social{bottom:126px;left:20px;gap:11px}
-}
-@media(max-width:480px){
-  .home-showcase{min-height:680px}
-  .home-showcase .home-page-nav{min-height:68px;padding-right:17px;padding-left:17px}
-  .home-showcase-meta{top:91px;left:19px;font-size:8px}
-  .home-showcase-copy{top:44%;left:19px;width:calc(100% - 62px)}
-  .home-showcase-eyebrow{margin-bottom:14px;font-size:9px}
-  .home-showcase-title{font-size:clamp(58px,15vw,76px)}
-  .home-showcase-description{max-width:30ch;margin-top:17px;font-size:13px}
-  .home-showcase-cta{min-height:42px;margin-top:18px;padding:6px 11px;font-size:8px}
-  .home-showcase-count{right:15px;bottom:114px;font-size:10px}
-  .home-showcase-rail{min-height:94px}
-  .home-showcase-rail button{min-height:94px;padding:10px 6px}
-  .home-showcase-rail strong{font-size:9px;line-height:1.2}
-  .home-showcase-rail small{font-size:6px;line-height:1.2}
-  .home-showcase-social{bottom:118px;left:15px;gap:7px}
-  .home-showcase-social a{width:22px;height:22px}
-  .home-showcase-social svg{width:14px;height:14px}
-}
 
 /* Consulting hero runs behind the navbar as one continuous image-led panel. */
 .consulting-page .shell{position:relative}
@@ -662,18 +266,6 @@ body.consulting-page{--paper:#181716;--ink:#f4f1ee;--muted:#b8b0b3;--line:rgba(2
 :is(.consulting-page,.about-page) .case-study-editorial-story{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:none}
 :is(.consulting-page,.about-page) .case-study-editorial-story article{min-height:208px;align-content:start;padding:24px 20px 24px 0}
 :is(.consulting-page,.about-page) .case-study-editorial-story article+article{border-top:0;border-left:1px solid rgba(244,241,238,.15);padding-left:20px}
-@media(max-width:760px){
-  .consulting-page .topbar{height:auto;min-height:80px;padding:16px 0}
-  .consulting-page .consulting-hero{min-height:max(700px,100svh);padding-top:120px}
-  .consulting-page .consulting-hero-eyebrow{top:102px}
-  :is(.consulting-page,.about-page) .case-study-editorial-story{grid-template-columns:minmax(0,1fr);grid-template-rows:none}
-  :is(.consulting-page,.about-page) .case-study-editorial-story article{min-height:0;padding:19px 0}
-  :is(.consulting-page,.about-page) .case-study-editorial-story article+article{padding-left:0;border-top:1px solid rgba(244,241,238,.15);border-left:0}
-}
-@media(max-width:480px){
-  .consulting-page .consulting-hero{min-height:max(680px,100svh);padding-top:112px}
-  .consulting-page .consulting-hero-eyebrow{top:95px}
-}
 
 /* Match Consulting's container, navbar and footer alignment to Basketball. */
 .consulting-page{--basketball-content-inset:calc(clamp(1.5rem,5.2vw,5.5rem) + max(0px,calc((100vw - 87.5rem)/2)))}
@@ -684,25 +276,6 @@ body.consulting-page{--paper:#181716;--ink:#f4f1ee;--muted:#b8b0b3;--line:rgba(2
 .consulting-page .consulting-hero-note,.consulting-page .consulting-hero-scroll{right:var(--basketball-content-inset)}
 .consulting-page .trusted-organizations{padding-right:var(--basketball-content-inset);padding-left:var(--basketball-content-inset)}
 .consulting-page .consulting-next-steps-inner{width:100%;max-width:none;padding:clamp(20px,3vw,40px) clamp(24px,7vw,112px)}
-@media(min-width:761px) and (max-width:1100px){
-  .consulting-page{--basketball-content-inset:clamp(1.5rem,4vw,2.5rem)}
-  .consulting-page .shell{padding-right:clamp(24px,4vw,40px)!important;padding-left:clamp(24px,4vw,40px)!important}
-  .consulting-page .consulting-next-steps-inner{padding-right:clamp(28px,5vw,64px);padding-left:clamp(28px,5vw,64px)}
-}
-@media(max-width:760px){
-  .consulting-page .shell{width:100%!important;max-width:none!important;padding-right:clamp(24px,5.2vw,40px)!important;padding-left:clamp(24px,5.2vw,40px)!important}
-  .consulting-page .consulting-next-steps-inner{padding-right:22px;padding-left:22px}
-}
-@media(max-width:620px){
-  .consulting-page{--basketball-content-inset:19px}
-  .consulting-page .shell{padding-right:19px!important;padding-left:19px!important}
-  .consulting-page .consulting-next-steps-inner{padding-right:19px;padding-left:19px}
-}
-@media(max-width:480px){
-  .consulting-page{--basketball-content-inset:16px}
-  .consulting-page .shell{padding-right:16px!important;padding-left:16px!important}
-  .consulting-page .consulting-next-steps-inner{padding-right:16px;padding-left:16px}
-}
 
 /* Shared Our Work dropdown keeps each page's navbar aligned with the homepage. */
 .site-work-menu{position:relative;z-index:30;flex:0 0 auto;margin-left:auto;color:inherit;font-size:10px;font-weight:600;letter-spacing:.13em;text-transform:uppercase}
@@ -722,14 +295,6 @@ body.consulting-page{--paper:#181716;--ink:#f4f1ee;--muted:#b8b0b3;--line:rgba(2
 .consulting-page .topbar .site-work-menu{color:inherit}
 .about-page .topbar .site-work-menu{color:inherit}
 .site-header-actions{gap:clamp(12px,2vw,24px)}
-@media(max-width:760px){
-  .site-work-menu{font-size:9px}
-  .site-work-menu summary{gap:9px;padding:9px 11px}
-  .site-work-options{min-width:180px}
-  .site-header-actions{gap:10px}
-  .basketball-nav .site-work-menu{margin-left:auto}
-}
-@media(max-width:420px){.site-work-menu summary{padding:8px 9px;font-size:8px;letter-spacing:.09em}.site-work-options{min-width:164px}}
 
 /* Social links live in every inner-page footer; keep the homepage hero icons separate. */
 .site-footer-social{display:flex!important;grid-area:social;align-items:center;justify-content:flex-start;gap:12px;margin:0;color:#f4f1ee}
@@ -737,63 +302,6 @@ body.consulting-page{--paper:#181716;--ink:#f4f1ee;--muted:#b8b0b3;--line:rgba(2
 .site-footer-social a:hover,.site-footer-social a:focus-visible{transform:translateY(-2px);opacity:1}
 .site-footer-social svg{display:block;width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .site-footer-inner{grid-template-columns:minmax(105px,.7fr) minmax(150px,1fr) auto minmax(230px,1.15fr);grid-template-areas:"brand links social newsletter" "bottom bottom bottom bottom";column-gap:clamp(14px,2.8vw,38px);row-gap:22px}
-@media(min-width:761px) and (max-width:1100px){.site-footer-inner{grid-template-columns:minmax(120px,.7fr) minmax(0,1fr) auto;grid-template-areas:"brand links social" "newsletter newsletter newsletter" "bottom bottom bottom"}.site-footer-page-links{justify-content:flex-end}.site-footer-social{justify-self:end}}
-@media(max-width:760px){.site-footer-inner{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"brand social" "links links" "newsletter newsletter" "bottom bottom"}.site-footer-social{grid-area:social;justify-self:end;gap:10px}.site-footer-page-links{grid-area:links}.site-footer-newsletter{grid-area:newsletter}.site-footer-bottom{grid-area:bottom}}
-@media(max-width:420px){.site-footer-social{gap:8px}.site-footer-social a{width:22px;height:22px}.site-footer-social svg{width:14px;height:14px}}
-@media (min-width:761px){
-  .home-showcase{height:100svh;min-height:680px;background:#181716}
-  .home-showcase-image{inset:0 0 0 43%;background-position:center;background-size:cover;filter:saturate(.78) brightness(.82)}
-  .home-showcase-shade{background:linear-gradient(90deg,#181716 0%,#181716 35%,rgba(24,23,22,.93) 43%,rgba(24,23,22,.32) 66%,rgba(24,23,22,.08) 100%),linear-gradient(0deg,rgba(24,23,22,.42),transparent 30%)}
-  .home-showcase::after{display:none}
-  .home-showcase .home-page-nav{min-height:86px;padding:0 clamp(30px,6vw,88px);background:linear-gradient(180deg,rgba(24,23,22,.3),transparent)}
-  .home-showcase-copy{top:47%;right:auto;bottom:auto;left:clamp(30px,8vw,116px);display:flex;width:min(41%,590px);min-height:0;flex-direction:column;align-items:flex-start;gap:0;padding:0;transform:translateY(-50%);background:transparent;color:#f4f1ee}
-  .home-showcase-eyebrow{margin:0 0 22px;color:#b8b0b3;font-size:10px;letter-spacing:.18em}
-  .home-showcase-title{width:100%;margin:0;font-size:clamp(54px,7.5vw,104px);line-height:.88;letter-spacing:-.075em;white-space:normal;text-wrap:balance}
-  .home-showcase-description{max-width:40ch;margin:22px 0 0;color:rgba(244,241,238,.76);font-size:clamp(14px,1.25vw,16px);line-height:1.7}
-  .home-showcase-cta{display:inline-flex;min-height:48px;align-items:center;gap:18px;margin-top:38px;padding:6px 7px 6px 17px;border:1px solid #b8b0b3;border-radius:3px;background:#b8b0b3;color:#181716;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:transform .2s ease,background .2s ease,border-color .2s ease}
-  .home-showcase .home-showcase-cta{margin-top:38px}
-  .home-showcase-cta span{display:grid;width:34px;height:34px;place-items:center;background:#181716;color:#f4f1ee;font-size:18px;transition:transform .2s ease}
-  .home-showcase-cta:hover,.home-showcase-cta:focus-visible{transform:translateY(-2px);border-color:#d98a6e;background:#d98a6e;color:#181716;outline:none}
-  .home-showcase-cta:hover span,.home-showcase-cta:focus-visible span{transform:translate(2px,-2px)}
-  .home-showcase-cta[aria-disabled="true"]{cursor:default;opacity:1}
-  .home-showcase-count{top:auto;right:auto;bottom:30px;left:clamp(30px,6vw,88px);display:flex;width:auto;height:auto;justify-content:flex-start;padding:0;background:transparent;color:#f4f1ee;font-size:10px}
-  .home-showcase-current{display:inline;width:auto;height:auto;font-size:12px}
-  .home-showcase-arrows{top:50%;right:24px;bottom:auto;left:auto;display:flex;gap:8px;transform:translateY(-50%)}
-  .home-showcase-arrows button{width:38px;height:38px;border-color:rgba(244,241,238,.4);background:rgba(24,23,22,.35);color:#f4f1ee;font-size:20px}
-}
-
-@media (min-width:761px) and (max-width:1024px){
-  .home-showcase-copy{left:6vw;width:38%}
-  .home-showcase-title{font-size:clamp(48px,7vw,72px)}
-  .home-showcase-description{font-size:14px}
-  .home-showcase-count{left:6vw}
-}
-
-@media (max-width:760px){
-  .home-showcase{height:100svh;min-height:640px;background:#181716}
-  .home-showcase-image{inset:0;background-position:center;background-size:cover;filter:saturate(.8) brightness(.72)}
-  .home-showcase-shade{background:linear-gradient(180deg,rgba(24,23,22,.26),rgba(24,23,22,.08) 30%,rgba(24,23,22,.5) 58%,#181716 100%)}
-  .home-showcase::after{display:none}
-  .home-showcase-copy{top:auto;right:24px;bottom:92px;left:24px;display:flex;width:auto;min-height:0;flex-direction:column;align-items:flex-start;gap:0;padding:0;transform:none;background:transparent;color:#f4f1ee}
-  .home-showcase-eyebrow{margin:0 0 13px;font-size:9px}
-  .home-showcase-title{width:auto;max-width:100%;font-size:clamp(42px,9vw,68px);line-height:.9;white-space:normal}
-  .home-showcase-description{max-width:42ch;margin:15px 0 0;font-size:14px;line-height:1.6}
-  .home-showcase-cta{min-height:46px;gap:14px;margin-top:27px;padding:5px 6px 5px 14px;border:1px solid #b8b0b3;border-radius:3px;background:#b8b0b3;color:#181716;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
-  .home-showcase .home-showcase-cta{margin-top:27px}
-  .home-showcase-cta span{display:grid;width:32px;height:32px;place-items:center;background:#181716;color:#f4f1ee;font-size:17px}
-  .home-showcase-count{top:auto;right:auto;bottom:27px;left:24px;width:auto;height:auto;justify-content:flex-start;padding:0;background:transparent;color:#f4f1ee}
-  .home-showcase-current{display:inline;width:auto;height:auto}
-  .home-showcase-arrows{top:auto;right:22px;bottom:20px;left:auto;display:flex;gap:7px;transform:none}
-  .home-showcase-arrows button{width:34px;height:34px;border-color:rgba(244,241,238,.35);background:rgba(24,23,22,.35);color:#f4f1ee}
-}
-
-@media (max-width:420px){
-  .home-showcase-copy{right:20px;bottom:88px;left:20px}
-  .home-showcase-title{font-size:clamp(38px,10vw,48px)}
-  .home-showcase-description{font-size:13px}
-  .home-showcase-count{left:20px}
-  .home-showcase-arrows{right:18px}
-}
 
 /* Final cross-page responsive fit rules. */
 :where(.home-page,.basketball-page,.collective-page,.consulting-page,.about-page) {
@@ -824,49 +332,6 @@ body.consulting-page{--paper:#181716;--ink:#f4f1ee;--muted:#b8b0b3;--line:rgba(2
 .site-footer-bottom { min-width: 0; }
 .site-footer-bottom > span { grid-column: 1 / -1; width: 100%; }
 
-@media (min-width:761px) and (max-width:1100px) {
-  .site-footer-inner {
-    grid-template-columns: minmax(120px,.7fr) minmax(0,1fr);
-    grid-template-areas: "brand links" "newsletter newsletter" "bottom bottom";
-    column-gap: 24px;
-  }
-  .site-footer-page-links { justify-content: flex-end; flex-wrap: wrap; }
-  .site-footer-newsletter { max-width: none; }
-}
-@media (max-width:760px) {
-  .site-footer-inner {
-    grid-template-columns: minmax(0,1fr);
-    grid-template-areas: "brand" "links" "newsletter" "bottom";
-    row-gap: 18px;
-  }
-  .site-footer-brand { justify-self: start; }
-  .site-footer-page-links { justify-content: flex-start; padding-top: 0; }
-  .site-footer-newsletter { width: 100%; max-width: none; }
-  .site-footer-bottom { grid-template-columns: minmax(0,1fr); justify-items: start; gap: 12px; }
-  .site-footer-bottom > span { grid-column: 1; }
-  .site-footer-bottom > a { grid-column: 1; grid-row: auto; justify-self: start; }
-  .home-showcase { min-height: max(600px,100svh); }
-  .home-showcase-copy { max-width: 100%; }
-  .basketball-page .basketball-nav { flex-wrap: wrap; }
-}
-@media (max-width:480px) {
-  .site-footer-inner { padding-right: 16px; padding-left: 16px; }
-  .site-footer-page-links { gap: 12px 18px; font-size: 9px; }
-  .site-footer-bottom { font-size: 9px; }
-  .home-showcase { min-height: max(580px,100svh); }
-  .home-showcase-cta { max-width: 100%; white-space: normal; }
-  .basketball-page .basketball-contact-form { grid-template-columns: minmax(0,1fr); }
-  .basketball-page .basketball-contact-form > * { min-width: 0; }
-  .event-meta,.collective-event-details { grid-template-columns: minmax(0,1fr); }
-}
-@media (max-width:360px) {
-  .site-footer-inner { padding-right: 12px; padding-left: 12px; }
-  .site-footer-page-links { gap: 10px 14px; letter-spacing: .08em; }
-  .home-showcase-copy { right: 16px; left: 16px; }
-  .home-showcase-count { left: 16px; }
-  .home-showcase-title { font-size: clamp(34px,10vw,42px); }
-}
-
 /* Homepage visual refresh: editorial service showcase with a dedicated selector rail. */
 .home-showcase{height:100svh;min-height:680px;max-height:1000px;background:#181716}
 .home-showcase-image{inset:0 0 0 47%;background-position:center;background-size:cover;filter:saturate(.76) brightness(.78);transform:scale(1);transition:filter .35s ease,background-position .5s ease}
@@ -894,66 +359,305 @@ body.consulting-page{--paper:#181716;--ink:#f4f1ee;--muted:#b8b0b3;--line:rgba(2
 .home-showcase-social{bottom:30px;left:clamp(30px,8vw,112px);gap:16px}
 .home-showcase-social a{opacity:.76}
 .home-showcase-social a:hover,.home-showcase-social a:focus-visible{opacity:1}
-@media(max-width:900px) and (min-width:761px){
-  .home-showcase-image{inset:0 0 0 42%}
-  .home-showcase-shade{background:linear-gradient(90deg,#181716 0%,#181716 34%,rgba(24,23,22,.9) 44%,rgba(24,23,22,.1) 72%),linear-gradient(0deg,rgba(24,23,22,.5),transparent 32%)}
-  .home-showcase-copy{left:6vw;width:34vw}
-  .home-showcase-title{font-size:clamp(68px,8.5vw,96px)}
-  .home-showcase-description{font-size:13px}
-  .home-showcase-rail{left:42%;width:58%}
-  .home-showcase-rail button{padding-right:10px;padding-left:10px}
-  .home-showcase-rail strong{font-size:10px}
-  .home-showcase-rail small{font-size:7px}
-}
-@media(max-width:760px){
-  .home-showcase{height:100svh;min-height:700px;max-height:none}
-  .home-showcase-image{inset:0;background-position:center 42%;filter:saturate(.78) brightness(.68)}
-  .home-showcase-shade{background:linear-gradient(90deg,rgba(24,23,22,.8),rgba(24,23,22,.28) 100%),linear-gradient(0deg,#181716 0%,rgba(24,23,22,.86) 21%,transparent 58%)}
-  .home-showcase .home-page-nav{min-height:74px;padding-right:22px;padding-left:22px}
-  .home-services-menu summary{padding:10px 12px;font-size:9px}
-  .home-showcase-meta{top:100px;left:24px}
-  .home-showcase-copy{top:45%;left:24px;width:min(580px,calc(100% - 76px));transform:translateY(-50%)}
-  .home-showcase-title{max-width:8ch;font-size:clamp(68px,12vw,94px)}
-  .home-showcase-description{max-width:35ch;font-size:14px}
-  .home-showcase-arrows{top:46%;right:12px;left:auto;display:grid;gap:7px;transform:translateY(-50%)}
-  .home-showcase-arrows button{width:32px;height:38px;font-size:24px}
-  .home-showcase-count{right:20px;bottom:118px;padding:6px 9px}
-  .home-showcase-rail{right:0;left:0;width:100%;min-height:100px}
-  .home-showcase-rail button{min-height:100px;grid-template-columns:1fr;gap:5px;padding:12px 9px}
-  .home-showcase-rail button span{grid-row:auto}
-  .home-showcase-rail strong{font-size:10px}
-  .home-showcase-rail small{font-size:7px}
-  .home-showcase-social{bottom:126px;left:20px;gap:11px}
-}
-@media(max-width:480px){
-  .home-showcase{min-height:680px}
-  .home-showcase .home-page-nav{min-height:68px;padding-right:17px;padding-left:17px}
-  .home-showcase-meta{top:91px;left:19px;font-size:8px}
-  .home-showcase-copy{top:44%;left:19px;width:calc(100% - 62px)}
-  .home-showcase-eyebrow{margin-bottom:14px;font-size:9px}
-  .home-showcase-title{font-size:clamp(58px,15vw,76px)}
-  .home-showcase-description{max-width:30ch;margin-top:17px;font-size:13px}
-  .home-showcase-cta{min-height:42px;margin-top:18px;padding:6px 11px;font-size:8px}
-  .home-showcase-count{right:15px;bottom:114px;font-size:10px}
-  .home-showcase-rail{min-height:94px}
-  .home-showcase-rail button{min-height:94px;padding:10px 6px}
-  .home-showcase-rail strong{font-size:9px;line-height:1.2}
-  .home-showcase-rail small{font-size:6px;line-height:1.2}
-  .home-showcase-social{bottom:118px;left:15px;gap:7px}
-  .home-showcase-social a{width:22px;height:22px}
-  .home-showcase-social svg{width:14px;height:14px}
-}
 
 /* Keep the homepage canvas and its controls aligned with Basketball at tablet widths. */
-@media (min-width:761px) and (max-width:1024px) {
-  .home-showcase .home-page-nav{padding-right:clamp(24px,4vw,40px);padding-left:clamp(24px,4vw,40px)}
-  .home-showcase-meta{right:clamp(24px,4vw,40px);left:clamp(24px,4vw,40px)}
-  .home-showcase-copy{right:clamp(24px,4vw,40px);left:clamp(24px,4vw,40px)}
-  .home-showcase-social,.home-showcase-scroll{left:clamp(24px,4vw,40px)}
-  .home-showcase .home-showcase-count{right:clamp(24px,4vw,40px)}
-  .home-showcase-dots{right:clamp(24px,4vw,40px)}
+
+    /* Homepage refresh: split editorial layout with a dedicated service selector. */
+    .home-showcase{height:min(900px,100svh);min-height:680px;background:#181716}
+    .home-showcase-image{inset:0 0 0 44%;background-position:center 45%;filter:saturate(.72) brightness(.82);transition:filter .45s ease,background-position .7s ease}
+    .home-showcase-shade{background:linear-gradient(90deg,#181716 0%,#181716 35%,rgba(24,23,22,.88) 44%,rgba(24,23,22,.08) 75%),linear-gradient(0deg,rgba(18,17,16,.7),transparent 30%)}
+    .home-showcase .home-page-nav{min-height:94px;padding-inline:clamp(24px,6vw,88px);background:#181716}
+    .home-showcase .home-brand{font-size:19px;letter-spacing:.19em}
+    .home-services-menu{font-size:10px;letter-spacing:.16em}
+    .home-services-menu summary{gap:15px}
+    .home-services-menu summary::after{display:grid;width:28px;height:28px;place-items:center;border:1px solid rgba(244,241,238,.38);border-radius:50%;font-size:15px}
+    .home-showcase-meta{position:absolute;z-index:2;top:27%;left:clamp(24px,8vw,116px);display:block;color:#f4f1ee;font-size:10px;letter-spacing:.18em;text-transform:uppercase}
+    .home-showcase-meta::before{display:inline-block;width:28px;height:1px;margin:0 12px 3px 0;background:#d98a6e;content:""}
+    .home-showcase-copy{top:33%;right:auto;bottom:auto;left:clamp(24px,8vw,116px);display:flex;width:min(540px,39vw);min-height:0;flex-direction:column;align-items:flex-start;gap:0;padding:0;background:none;color:#f4f1ee}
+    .home-showcase-eyebrow{order:0;margin:0 0 17px;color:#d98a6e;font-size:11px;letter-spacing:.2em}
+    .home-showcase-title{order:1;width:auto;margin:0;color:#f4f1ee;font-size:clamp(58px,7.4vw,104px);font-weight:600;line-height:.86;letter-spacing:-.08em;white-space:normal;text-wrap:balance}
+    .home-showcase-description{order:2;max-width:39ch;margin:22px 0 0;color:rgba(244,241,238,.82);font-size:clamp(14px,1.2vw,16px);line-height:1.65}
+    .home-showcase .home-showcase-cta{order:3;min-height:48px;gap:22px;margin-top:29px;padding:5px 6px 5px 17px;border-color:rgba(244,241,238,.45);border-radius:2px;background:rgba(24,23,22,.14);font-size:10px;letter-spacing:.13em}
+    .home-showcase .home-showcase-cta span{width:36px;height:36px;background:#d98a6e;color:#181716}
+    .home-showcase .home-showcase-cta:hover,.home-showcase .home-showcase-cta:focus-visible{border-color:#d98a6e;background:rgba(24,23,22,.38)}
+    .home-showcase .home-showcase-cta:hover span,.home-showcase .home-showcase-cta:focus-visible span{background:#e6a58b}
+    .home-showcase .home-showcase-count{right:clamp(24px,6vw,88px);bottom:110px;width:auto;height:auto;gap:9px;color:#f4f1ee}
+    .home-showcase-current{width:auto;font-family:"Barlow Condensed",sans-serif;font-size:clamp(22px,3vw,36px);font-weight:600;letter-spacing:.04em}
+    .home-showcase-divider,.home-showcase-count>span:last-child{color:rgba(244,241,238,.68);font-size:13px}
+    .home-showcase-social{bottom:110px;left:clamp(24px,6vw,88px);gap:16px}
+    .home-showcase-social a{width:30px;height:30px;opacity:.85}
+    .home-showcase-social svg{width:16px;height:16px}
+    .home-showcase-arrows{top:50%;right:clamp(24px,6vw,88px);bottom:auto;display:flex;gap:8px;transform:translateY(-50%)}
+    .home-showcase-arrows button{width:34px;height:34px;border-color:rgba(244,241,238,.38);background:rgba(24,23,22,.24);font-size:20px}
+    .home-showcase-rail{position:absolute;z-index:4;right:clamp(24px,6vw,88px);bottom:0;left:clamp(24px,6vw,88px);display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid rgba(244,241,238,.28)}
+    .home-showcase-rail button{display:grid;grid-template-columns:32px 1fr;grid-template-rows:auto auto;gap:5px 12px;align-content:center;min-height:84px;padding:12px 18px;border:0;border-right:1px solid rgba(244,241,238,.18);background:rgba(24,23,22,.28);color:rgba(244,241,238,.62);text-align:left;cursor:pointer;transition:background .25s ease,color .25s ease}
+    .home-showcase-rail button:first-child{border-left:1px solid rgba(244,241,238,.18)}
+    .home-showcase-rail button:hover,.home-showcase-rail button:focus-visible,.home-showcase-rail button.is-current{background:rgba(24,23,22,.72);color:#f4f1ee}
+    .home-showcase-rail button:focus-visible{outline:2px solid #d98a6e;outline-offset:-3px}
+    .home-showcase-rail button>span{grid-column:1;grid-row:1/3;color:#d98a6e;font-family:"Barlow Condensed",sans-serif;font-size:18px}
+    .home-showcase-rail button strong{grid-column:2;grid-row:1;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+    .home-showcase-rail button small{grid-column:2;grid-row:2;font-size:10px;letter-spacing:.04em}
+    .home-showcase-dots{display:none!important}
+
+    @media(prefers-reduced-motion:reduce){.home-showcase-image,.home-showcase-rail button,.home-showcase-cta,.home-showcase-arrows button{transition:none!important}}
+
+/* Homepage direction: warm editorial canvas and framed, full-height service image. */
+.home-showcase{height:min(940px,100svh);min-height:700px;max-height:none;background:#eeeae4;color:#211f1d}
+.home-showcase-image{inset:108px clamp(24px,5vw,72px) 120px 51%;border-radius:3px;background-position:center 45%;filter:saturate(.78) brightness(.94);box-shadow:0 22px 70px rgba(32,27,23,.14)}
+.home-showcase-shade{inset:108px clamp(24px,5vw,72px) 120px 51%;border-radius:3px;background:linear-gradient(0deg,rgba(24,23,22,.33),transparent 45%),linear-gradient(90deg,rgba(24,23,22,.08),transparent 35%)}
+.home-showcase .home-page-nav{position:absolute;inset:0 0 auto;min-height:88px;padding-inline:clamp(24px,6vw,88px);background:transparent;color:#211f1d}
+.home-showcase .home-brand{color:#211f1d;font-size:19px;letter-spacing:.19em}
+.home-services-menu{color:#211f1d}
+.home-services-menu summary::after{border-color:rgba(33,31,29,.3)}
+.home-services-options{border-color:rgba(33,31,29,.13);background:rgba(238,234,228,.97);box-shadow:0 16px 36px rgba(33,31,29,.12)}
+.home-services-options a{color:#3c3935}
+.home-services-options a:hover,.home-services-options a:focus-visible{background:rgba(33,31,29,.07);color:#211f1d}
+.home-showcase-meta{top:26%;left:clamp(24px,8vw,116px);color:#615c56}
+.home-showcase-meta::before{background:#b86b50}
+.home-showcase-copy{top:34%;left:clamp(24px,8vw,116px);width:min(510px,40vw);color:#211f1d}
+.home-showcase-eyebrow{color:#b86b50}
+.home-showcase-title{max-width:7.5ch;color:#211f1d;font-family:"Barlow Condensed",Impact,sans-serif;font-size:clamp(72px,9vw,124px);font-weight:600;line-height:.79;letter-spacing:-.045em}
+.home-showcase-description{max-width:37ch;color:#615c56;font-size:clamp(14px,1.2vw,16px);line-height:1.7}
+.home-showcase .home-showcase-cta{min-height:48px;border:0;border-radius:2px;background:#211f1d;color:#f4f1ee}
+.home-showcase .home-showcase-cta span{background:#b86b50;color:#211f1d}
+.home-showcase .home-showcase-cta:hover,.home-showcase .home-showcase-cta:focus-visible{border:0;background:#39342f}
+.home-showcase .home-showcase-cta:hover span,.home-showcase .home-showcase-cta:focus-visible span{background:#d58d70}
+.home-showcase-rail{right:clamp(24px,6vw,88px);left:clamp(24px,6vw,88px);border-color:rgba(33,31,29,.2)}
+.home-showcase-rail button,.home-showcase-rail button:first-child{border-color:rgba(33,31,29,.14);background:transparent;color:#777069}
+.home-showcase-rail button:hover,.home-showcase-rail button:focus-visible,.home-showcase-rail button.is-current{background:#e4ded5;color:#211f1d}
+.home-showcase-rail button>span{color:#b86b50}
+.home-showcase-rail button strong{color:inherit}
+.home-showcase-rail button small{color:#777069}
+.home-showcase-social{bottom:27px;left:clamp(24px,6vw,88px);color:#211f1d}
+.home-showcase-social a{opacity:.75}
+.home-showcase .home-showcase-count{right:clamp(24px,6vw,88px);bottom:27px;color:#211f1d}
+.home-showcase-divider,.home-showcase-count>span:last-child{color:#777069}
+.home-showcase-arrows{top:50%;right:clamp(38px,7vw,100px)}
+.home-showcase-arrows button{border-color:rgba(244,241,238,.6);background:rgba(24,23,22,.32);color:#fff}
+
+/* Homepage hero format: panoramic image over a structured project information band. */
+.home-showcase{position:relative;height:100svh;min-height:690px;max-height:1040px;overflow:hidden;background:#181716}
+.home-showcase-image{inset:0 0 37% 0;height:auto;border-radius:0;box-shadow:none;background-position:center 46%;filter:saturate(.78) brightness(.77)}
+.home-showcase-shade{inset:0 0 37% 0;height:auto;border-radius:0;background:linear-gradient(180deg,rgba(24,23,22,.45),transparent 30%,rgba(24,23,22,.05) 62%,rgba(24,23,22,.18))}
+.home-showcase .home-page-nav{min-height:86px;background:linear-gradient(180deg,rgba(24,23,22,.45),transparent);color:#f4f1ee}
+.home-showcase .home-brand,.home-services-menu{color:#f4f1ee}
+.home-services-options{border-color:rgba(244,241,238,.18);background:rgba(24,23,22,.96)}
+.home-services-options a{color:rgba(244,241,238,.82)}
+.home-services-options a:hover,.home-services-options a:focus-visible{background:rgba(244,241,238,.08);color:#fff}
+.home-showcase-meta{display:none}
+.home-showcase-copy{top:auto;right:0;bottom:84px;left:0;display:grid;width:100%;min-height:calc(37% - 84px);grid-template-columns:minmax(0,1.05fr) minmax(220px,1fr) auto;grid-template-rows:auto auto;align-content:center;align-items:center;gap:7px clamp(20px,4vw,58px);padding:24px clamp(24px,7vw,100px);background:#eeeae4;color:#211f1d}
+.home-showcase-eyebrow{grid-column:1;grid-row:1;margin:0;color:#a65e45;font-size:10px;letter-spacing:.19em}
+.home-showcase-title{grid-column:1;grid-row:2;max-width:100%;margin:0;color:#211f1d;font-family:"Barlow Condensed",Impact,sans-serif;font-size:clamp(38px,5.2vw,72px);font-weight:600;line-height:.88;letter-spacing:-.045em;white-space:normal}
+.home-showcase-description{grid-column:2;grid-row:1/3;max-width:38ch;margin:0;color:#615c56;font-size:clamp(13px,1.15vw,16px);line-height:1.65}
+.home-showcase .home-showcase-cta{grid-column:3;grid-row:1/3;min-height:46px;margin:0;padding:4px 5px 4px 14px;border:0;border-radius:2px;background:#211f1d;color:#f4f1ee;font-size:9px;white-space:nowrap}
+.home-showcase .home-showcase-cta span{width:36px;height:36px;background:#b86b50;color:#211f1d}
+.home-showcase .home-showcase-cta:hover,.home-showcase .home-showcase-cta:focus-visible{background:#39342f}
+.home-showcase .home-showcase-cta:hover span,.home-showcase .home-showcase-cta:focus-visible span{background:#d58d70}
+.home-showcase-rail{right:0;left:0;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid rgba(33,31,29,.17);background:#eeeae4}
+.home-showcase-rail button,.home-showcase-rail button:first-child{min-height:84px;padding:12px clamp(12px,4vw,48px);border-color:rgba(33,31,29,.14);background:transparent;color:#777069}
+.home-showcase-rail button:hover,.home-showcase-rail button:focus-visible,.home-showcase-rail button.is-current{background:#e4ded5;color:#211f1d}
+.home-showcase-rail button>span{color:#a65e45}
+.home-showcase-rail button small{color:#777069}
+.home-showcase-social{bottom:calc(37% + 18px);left:clamp(24px,7vw,100px);color:#f4f1ee}
+.home-showcase-social a{opacity:.9}
+.home-showcase .home-showcase-count{right:clamp(24px,7vw,100px);bottom:calc(37% + 18px);color:#f4f1ee}
+.home-showcase-divider,.home-showcase-count>span:last-child{color:rgba(244,241,238,.78)}
+.home-showcase-arrows{top:31%;right:clamp(20px,4vw,56px);display:flex;flex-direction:column;gap:8px;transform:translateY(-50%)}
+.home-showcase-arrows button{border-color:rgba(244,241,238,.55);background:rgba(24,23,22,.28);color:#fff}
+
+/* Homepage hero based on the supplied full-image editorial reference. */
+.home-showcase{position:relative;height:100svh;min-height:640px;max-height:none;overflow:hidden;background:#181716;color:#f4f1ee}
+.home-showcase-image{inset:0;background-position:center 48%;background-size:cover;border-radius:0;box-shadow:none;filter:saturate(.76) brightness(.8)}
+.home-showcase-shade{inset:0;border-radius:0;background:linear-gradient(90deg,rgba(17,17,18,.34),rgba(17,17,18,.08) 62%,rgba(17,17,18,.1)),linear-gradient(180deg,rgba(17,17,18,.24),transparent 25%,transparent 55%,rgba(17,17,18,.36))}
+.home-showcase .home-page-nav{position:absolute;z-index:5;inset:0 0 auto;min-height:76px;padding:0 clamp(28px,5.5vw,82px);background:transparent;color:#f4f1ee}
+.home-showcase .home-brand,.home-services-menu{color:#f4f1ee}
+.home-services-menu summary{padding:11px 0;font-size:9px;letter-spacing:.13em}
+.home-services-menu summary::after{width:23px;height:23px;border-color:rgba(244,241,238,.45);font-size:13px}
+.home-services-options{border-color:rgba(244,241,238,.18);background:rgba(24,23,22,.96)}
+.home-services-options a{color:rgba(244,241,238,.82)}
+.home-showcase-meta{top:36%;left:clamp(28px,15vw,220px);display:block;color:rgba(244,241,238,.82);font-size:9px;letter-spacing:.06em;text-transform:none}
+.home-showcase-meta::before{display:none}
+.home-showcase-copy{top:42%;right:auto;bottom:auto;left:clamp(28px,15vw,220px);display:grid;width:min(68%,940px);min-height:0;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto auto;align-content:start;align-items:start;gap:0 26px;padding:0;background:none;color:#f4f1ee}
+.home-showcase-eyebrow{grid-column:1;grid-row:1;margin:0 0 12px;color:#f4f1ee;font-size:0;line-height:0}
+.home-showcase-title{grid-column:1;grid-row:2;max-width:10ch;margin:0;color:#f4f1ee;font-family:Inter,Arial,sans-serif;font-size:clamp(48px,6.4vw,88px);font-weight:600;line-height:.93;letter-spacing:-.07em;white-space:normal;text-wrap:balance}
+.home-showcase-description{display:none}
+.home-showcase .home-showcase-cta{grid-column:1;grid-row:3;justify-self:start;min-height:0;margin:18px 0 0;padding:0;border:0;border-radius:0;background:none;color:#fff;font-size:9px;font-weight:600;letter-spacing:.1em}
+.home-showcase .home-showcase-cta span{display:none}
+.home-showcase .home-showcase-cta:hover,.home-showcase .home-showcase-cta:focus-visible{transform:translateX(3px);background:none;color:#d98a6e}
+.home-showcase .home-showcase-count{position:absolute;z-index:3;top:43%;right:clamp(80px,20vw,300px);bottom:auto;display:flex;width:auto;height:auto;gap:8px;padding:0;background:none;color:#f4f1ee;transform:none}
+.home-showcase-current{width:auto;font-family:Inter,Arial,sans-serif;font-size:clamp(20px,2.8vw,34px);font-weight:600;letter-spacing:0}
+.home-showcase-divider,.home-showcase-count>span:last-child{color:rgba(244,241,238,.82);font-size:12px}
+.home-showcase-rail{position:absolute;z-index:4;right:0;bottom:0;left:auto;width:50%;height:94px;grid-template-columns:repeat(3,minmax(0,1fr));border:0;background:#f4f1ee}
+.home-showcase-rail button,.home-showcase-rail button:first-child{min-height:94px;grid-template-columns:1fr;grid-template-rows:auto auto;align-content:center;gap:6px;padding:13px clamp(12px,2vw,28px);border:0;background:#f4f1ee;color:#77716c}
+.home-showcase-rail button:hover,.home-showcase-rail button:focus-visible,.home-showcase-rail button.is-current{background:#ebe7e2;color:#211f1d}
+.home-showcase-rail button>span{grid-column:1;grid-row:1;color:#817a74;font-size:9px}
+.home-showcase-rail button strong{grid-column:1;grid-row:2;color:#211f1d;font-size:10px;letter-spacing:.025em;text-transform:none}
+.home-showcase-rail button small{display:none}
+.home-showcase-social{bottom:30px;left:clamp(28px,4vw,58px);gap:8px;color:#f4f1ee}
+.home-showcase-social a{width:20px;height:20px;opacity:.9}
+.home-showcase-social svg{width:13px;height:13px}
+.home-showcase-arrows{top:50%;right:24px;bottom:auto;display:flex;flex-direction:column;gap:8px;transform:translateY(-50%)}
+.home-showcase-arrows button{width:25px;height:25px;border:0;background:transparent;color:#fff;font-size:24px}
+
+/* Keep the Consulting sections and footer inside the same site container. */
+.consulting-page .consulting-hero{width:100%;margin-left:0;padding-right:0;padding-left:0}
+.consulting-page .consulting-hero-eyebrow{left:0}
+.consulting-page .consulting-hero-note,.consulting-page .consulting-hero-scroll{right:0}
+.consulting-page .trusted-organizations{width:100%;margin-left:0;padding-right:0;padding-left:0}
+.consulting-page .site-footer{width:100%;margin-left:0}
+.consulting-page .site-footer-inner{padding-right:0;padding-left:0}
+.consulting-page .consulting-next-steps{width:100%;margin-left:0}
+.consulting-page .consulting-next-steps-inner{width:100%;max-width:none;padding:clamp(30px,4vw,48px) 0}
+
+/* Keep Basketball page sections and footer within the centered page container. */
+.basketball-page{width:min(calc(100% - 48px),1400px);margin-right:auto;margin-left:auto;padding-right:0;padding-left:0}
+.basketball-page .basketball-player-feature,.basketball-page .basketball-team-section{width:100%;margin-left:0}
+.basketball-page .basketball-next-steps-inner{width:100%;max-width:none;margin-right:0;margin-left:0;padding-right:0;padding-left:0}
+.basketball-footer{width:min(calc(100% - 48px),1400px);max-width:1400px;margin:0 auto}
+.basketball-footer .site-footer-inner{padding-right:0;padding-left:0}
+
+/* Social links sit at the right edge of each page navbar. */
+.site-header-social{display:flex;flex:0 0 auto;align-items:center;gap:12px;margin-left:auto;color:inherit}
+.site-header-social a{display:grid;width:25px;height:25px;place-items:center;color:currentColor;opacity:.78;transition:opacity .2s ease,transform .2s ease}
+.site-header-social a:hover,.site-header-social a:focus-visible{opacity:1;transform:translateY(-2px);outline:none}
+.site-header-social a:focus-visible{outline:1px solid currentColor;outline-offset:3px}
+.site-header-social svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.topbar .site-work-menu + .site-header-social{margin-left:16px}
+.consulting-page .consulting-next-steps{position:relative;overflow:hidden;margin:70px 0 0;padding:clamp(56px,8vw,104px) 0}
+.consulting-page .consulting-next-steps-inner{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(280px,.75fr);align-items:center;gap:clamp(38px,7vw,100px);padding:clamp(20px,3vw,40px) 0;text-align:left}
+.consulting-page .topbar{right:clamp(1.5rem,5.2vw,5.5rem);left:clamp(1.5rem,5.2vw,5.5rem);width:auto}
+@media(max-width:720px){
+  .consulting-page .consulting-next-steps-inner{grid-template-columns:minmax(0,1fr);gap:30px;padding:clamp(20px,3vw,40px) 0}
+  :is(.consulting-page,.about-page) .case-study-editorial-heading{grid-template-columns:minmax(0,1fr);gap:15px}
+  :is(.consulting-page,.about-page) .case-study-editorial-story{grid-template-columns:minmax(0,1fr);grid-template-rows:none}
+  :is(.consulting-page,.about-page) .case-study-editorial-story article{min-height:0;padding:20px 0}
+  :is(.consulting-page,.about-page) .case-study-editorial-story article+article{border-top:1px solid rgba(244,241,238,.15);border-left:0;padding-left:0}
+  :is(.consulting-page,.about-page) .consulting-director-testimonial{grid-template-columns:minmax(0,1fr);margin-left:0}
 }
 
-@media (max-width:760px) {
-  .collective-page>.shell>.topbar{padding-right:0;padding-left:0}
+/* Tablet and mobile layouts across all pages. */
+@media(max-width:1024px){
+  .basketball-page .basketball-impact{grid-template-columns:minmax(0,1fr);gap:26px}
+  .basketball-page .basketball-impact-heading h2{max-width:16ch}
+  .basketball-page .basketball-gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(3,clamp(135px,22vw,210px))}
+  .basketball-page .basketball-gallery-item:nth-child(1){grid-column:1/3;grid-row:1/3}
+  .basketball-page .basketball-gallery-item:nth-child(2){grid-column:3;grid-row:1}
+  .basketball-page .basketball-gallery-item:nth-child(3){grid-column:3;grid-row:2}
+  .basketball-page .basketball-gallery-item:nth-child(4){grid-column:1;grid-row:3}
+  .basketball-page .basketball-gallery-item:nth-child(5){grid-column:2;grid-row:3}
+  .basketball-page .basketball-gallery-item:nth-child(6){grid-column:3;grid-row:3}
+  .basketball-page .basketball-player-caption,.basketball-page .basketball-team-caption{right:clamp(24px,5.2vw,56px);left:clamp(24px,5.2vw,56px)}
+  .basketball-page .basketball-next-steps-inner{grid-template-columns:minmax(0,1fr) minmax(250px,.8fr);gap:32px;padding:30px 0}
+  .collective-page .archer-panel-archer{grid-template-columns:minmax(0,.8fr) minmax(0,1fr);column-gap:24px}
+  .collective-page .archer-panel-photo{grid-column:1;grid-row:1/4;min-height:350px}
+  .collective-page .archer-panel-archer .archer-foundation-panel-heading,.collective-page .archer-panel-archer>p,.collective-page .archer-panel-meta{grid-column:2;grid-row:auto}
+  .collective-page .archer-panel-archer .archer-program-benefits{grid-column:1/-1;grid-row:auto;grid-template-columns:repeat(2,minmax(0,1fr));padding:18px 0 0;border-top:1px solid rgba(244,241,238,.2);border-left:0}
+  .collective-page .archer-panel-archer .archer-panel-cta{grid-column:2;grid-row:auto}
+  .consulting-page .consulting-hero-bottom{grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:22px 28px}
+  .consulting-page .consulting-hero-cta{grid-column:2;justify-self:start}
+  .home-founder{grid-template-columns:minmax(170px,.6fr) 1px minmax(0,1.4fr);gap:clamp(20px,4vw,42px);padding:clamp(24px,4vw,40px)}
+}
+
+@media(max-width:720px){
+  .shell,.home-shell{padding-right:24px;padding-left:24px}
+  .topbar,.basketball-nav{min-height:72px;height:auto;gap:12px}
+  .topbar .site-work-menu{margin-left:auto}
+  .site-header-social{gap:6px}
+  .site-header-social a{width:22px;height:22px}
+
+  .basketball-page .basketball-hero{min-height:calc(88svh - 72px);padding:0 0 58px}
+  .basketball-page .basketball-title{max-width:100%;margin-bottom:34px;font-size:clamp(42px,10.5vw,76px);line-height:.9;letter-spacing:-.075em}
+  .basketball-page .basketball-hero-copy{max-width:38ch;font-size:clamp(14px,3.8vw,17px);line-height:1.6}
+  .basketball-page .basketball-impact{padding:48px 0}
+  .basketball-page .basketball-impact-stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .basketball-page .basketball-impact-stat{padding:18px 8px}
+  .basketball-page .basketball-impact-stat strong{font-size:clamp(28px,8vw,42px)}
+  .basketball-page .basketball-impact-stat p{font-size:9px;line-height:1.4}
+  .basketball-page .basketball-gallery{padding:32px 0 52px}
+  .basketball-page .basketball-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:clamp(130px,38vw,220px);gap:6px}
+  .basketball-page .basketball-gallery-item:nth-child(n){grid-column:auto;grid-row:auto}
+  .basketball-page .basketball-gallery-item:nth-child(1),.basketball-page .basketball-gallery-item:nth-child(6){grid-column:1/-1}
+  .basketball-page .basketball-player-feature,.basketball-page .basketball-team-section{min-height:clamp(360px,74svh,560px)}
+  .basketball-page .basketball-player-caption,.basketball-page .basketball-team-caption{right:24px;bottom:26px;left:24px;display:grid;gap:12px;align-items:start}
+  .basketball-page .basketball-player-caption h2,.basketball-page .basketball-team-title{max-width:18ch;margin-top:7px;font-size:clamp(32px,8.5vw,52px)}
+  .basketball-page .basketball-player-caption .basketball-player-note,.basketball-page .basketball-team-note{max-width:38ch;margin:0;text-align:left}
+  .basketball-page .basketball-team-action{gap:10px}
+  .basketball-page .basketball-next-steps-inner{grid-template-columns:minmax(0,1fr);gap:28px;padding:24px 0}
+
+  .collective-page>.shell>.topbar{height:72px;left:0;right:0;padding:0}
+  .collective-page .collective-hero{min-height:calc(100svh - 72px);padding:130px 0 74px}
+  .collective-page .collective-hero-photo{right:0;width:100%;height:58%;object-position:center 40%;opacity:.68;mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.85) 62%,transparent 100%)}
+  .collective-page .collective-hero .collective-hero-eyebrow{top:82px;left:0;max-width:calc(100% - 20px);font-size:9px}
+  .collective-page .collective-hero-note{top:112px;right:auto;left:0;width:min(290px,82%);font-size:12px}
+  .collective-page .collective-hero h1{max-width:100%;margin-bottom:28px;font-size:clamp(42px,12vw,76px);line-height:.88;letter-spacing:-.08em}
+  .collective-page .collective-hero-bottom{grid-template-columns:minmax(0,1fr);gap:12px;padding-top:14px}
+  .collective-page .collective-hero-label{max-width:none}
+  .collective-page .collective-hero-cta{min-width:min(100%,250px);justify-self:start}
+  .collective-page .collective-hero-scroll{right:0;bottom:12px}
+  .collective-page .archer-benefits-heading{grid-template-columns:minmax(0,1fr);align-items:start;gap:12px;margin-bottom:20px;padding-bottom:18px}
+  .collective-page .archer-section-aside{justify-items:start;padding:0}
+  .collective-page .archer-benefits{grid-template-columns:minmax(0,1fr);column-gap:0}
+  .collective-page .archer-benefit{grid-template-columns:25px 38px minmax(0,1fr);gap:10px;min-height:100px;padding:16px 0}
+  .collective-page .archer-benefit-icon{width:36px;height:36px}
+  .collective-page .archer-foundation-panel{align-content:start;overflow:visible;padding:20px 0}
+  .collective-page .archer-panel-archer{grid-template-columns:minmax(0,1fr);row-gap:16px;padding:0}
+  .collective-page .archer-panel-photo{grid-column:1;grid-row:auto;min-height:clamp(230px,65vw,360px)}
+  .collective-page .archer-panel-archer .archer-foundation-panel-heading,.collective-page .archer-panel-archer>p,.collective-page .archer-panel-meta,.collective-page .archer-panel-archer .archer-program-benefits,.collective-page .archer-panel-archer .archer-panel-cta{grid-column:1;grid-row:auto}
+  .collective-page .archer-panel-meta{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .collective-page .archer-panel-archer .archer-program-benefits{grid-template-columns:repeat(2,minmax(0,1fr));padding:0;border:0}
+  .collective-page .archer-contact{margin-top:42px;padding:42px 0}
+  .collective-page .archer-contact-inner{grid-template-columns:minmax(0,1fr);gap:26px;padding:0}
+  .collective-page .archer-contact-links{grid-template-columns:minmax(0,1fr)}
+
+  .site-footer-inner{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"brand social" "links links" "newsletter newsletter" "bottom bottom";column-gap:24px;row-gap:18px;padding-right:24px;padding-left:24px}
+  .site-footer-brand{grid-area:brand}
+  .site-footer-social{grid-area:social;justify-self:end}
+  .site-footer-page-links{grid-area:links}
+  .site-footer-newsletter{grid-area:newsletter}
+  .site-footer-bottom{grid-area:bottom}
+
+  .consulting-page .topbar{left:24px;right:24px;height:72px}
+  .consulting-page .consulting-hero{min-height:calc(100svh - 72px);padding:136px 0 66px}
+  .consulting-page .consulting-hero-eyebrow{top:92px;left:0;max-width:100%;font-size:9px}
+  .consulting-page .consulting-hero-title{max-width:100%;margin-bottom:32px;font-size:clamp(42px,11vw,76px);line-height:.9;letter-spacing:-.075em}
+  .consulting-page .consulting-hero-title .consulting-title-accent{margin-left:0}
+  .consulting-page .consulting-hero-bottom{grid-template-columns:minmax(0,1fr);gap:14px;padding-top:15px}
+  .consulting-page .consulting-hero-label{max-width:none}
+  .consulting-page .consulting-hero-cta{grid-column:1;min-width:min(100%,250px)}
+  .consulting-page .consulting-hero-scroll{right:0;bottom:8px;font-size:8px}
+  .consulting-page .trusted-organizations{padding-top:22px;padding-bottom:24px}
+  .consulting-page .trusted-organizations-heading{align-items:flex-start;flex-direction:column;gap:7px}
+  .consulting-page .trusted-organizations-group{gap:30px;padding-right:30px}
+
+  .home-founder{grid-template-columns:minmax(0,1fr);gap:22px;margin:28px 0 44px;padding:24px}
+  .home-founder-divider{width:100%;height:1px}
+  .home-founder-bio{gap:13px}
+  .home-founder-credentials{grid-template-columns:minmax(0,1fr)}
+  .case-study-editorial{padding-top:46px!important;padding-bottom:44px!important}
+  .case-study-editorial-heading h2{font-size:clamp(36px,10vw,58px)!important}
+}
+
+@media(max-width:480px){
+  .shell,.home-shell{padding-right:20px;padding-left:20px}
+  .topbar .brand,.basketball-brand{font-size:16px}
+  .site-header-social{gap:3px}
+  .site-header-social a{width:20px;height:20px}
+  .site-header-social svg{width:14px;height:14px}
+  .site-work-menu summary{gap:7px;padding:9px 10px;font-size:9px}
+  .basketball-page .basketball-impact-stats{grid-template-columns:1fr}
+  .basketball-page .basketball-impact-stat{padding:14px 0}
+  .basketball-page .basketball-impact-stat+.basketball-impact-stat{border-top:1px solid rgba(244,241,238,.16);border-left:0}
+  .collective-page .archer-program-benefits,.collective-page .archer-panel-archer .archer-program-benefits{grid-template-columns:minmax(0,1fr)}
+  .collective-page .archer-panel-meta{grid-template-columns:minmax(0,1fr)}
+  .collective-page .archer-benefit{grid-template-columns:22px 32px minmax(0,1fr);gap:8px}
+  .consulting-page .consulting-hero-title{font-size:clamp(38px,11vw,54px)}
+  .consulting-page .consulting-hero-bottom{gap:12px}
+  .site-footer{padding-top:30px;padding-bottom:14px}
+  .site-footer-inner{grid-template-columns:minmax(0,1fr);grid-template-areas:"brand" "social" "links" "newsletter" "bottom";gap:18px;padding:0 20px}
+  .site-footer-brand{align-self:start}
+  .site-footer-page-links{justify-content:flex-start;gap:12px 18px;padding:0;font-size:9px}
+  .site-footer-newsletter{width:100%;padding:0}
+  .site-footer-bottom{grid-template-columns:minmax(0,1fr);gap:10px;margin-top:0;padding-top:14px}
+  .site-footer-bottom>span{grid-column:1}
+  .site-footer-bottom>a{grid-column:1;grid-row:auto;justify-self:start}
 }
