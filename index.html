@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#181716">
   <meta name="description" content="ARCENI — coaching, consulting and basketball development.">
   <title>ARCENI — Home</title>
@@ -62,6 +62,10 @@
     .service-panel:hover .service-explore::after,.service-panel:focus-visible .service-explore::after{border-color:var(--ink);background:var(--ink);color:var(--canvas)}
     .landing{position:relative;display:block;width:100%;max-width:none;height:100svh;min-height:100svh;padding:0;overflow:hidden;background:#181716}
     .navbar{position:absolute;z-index:5;top:0;right:0;left:0;min-height:86px;padding:0 clamp(24px,5.2vw,88px)}
+    .navbar-contact-link{display:inline-flex;min-height:42px;align-items:center;gap:15px;margin-left:auto;padding:0 15px;border:1px solid rgba(244,241,238,.42);color:rgba(244,241,238,.9);font-size:9px;font-weight:650;letter-spacing:.14em;text-transform:uppercase;transition:background .2s ease,border-color .2s ease,color .2s ease}
+    .navbar-contact-link:after{font-size:16px;font-weight:400;content:"↗";transition:transform .2s ease}
+    .navbar-contact-link:hover,.navbar-contact-link:focus-visible{border-color:#d2b49b;background:rgba(244,241,238,.09);color:#fff}
+    .navbar-contact-link:hover:after,.navbar-contact-link:focus-visible:after{transform:translate(2px,-2px)}
     .home-featured{position:relative;isolation:isolate;width:100%;height:100%;min-height:100svh;overflow:hidden;background:#242220}
     .home-slide{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:clamp(36px,7vw,94px) clamp(28px,10vw,145px);opacity:0;pointer-events:none;transform:scale(1.025);transition:opacity .65s ease,transform 1.2s cubic-bezier(.16,1,.3,1)}
     .home-slide.is-active{z-index:1;opacity:1;pointer-events:auto;transform:scale(1)}
@@ -69,41 +73,39 @@
     .home-slide.is-active:before{transform:scale(1.035)}
     .home-slide:after{position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,rgba(18,17,16,.78) 0%,rgba(18,17,16,.5) 44%,rgba(18,17,16,.22) 100%),linear-gradient(0deg,rgba(18,17,16,.52),transparent 40%,rgba(18,17,16,.12));content:""}
     .home-slide-content{width:min(660px,74%)}
-    .home-slide-kicker{display:flex;align-items:center;gap:12px;margin:0 0 clamp(19px,3vw,38px);color:rgba(244,241,238,.8);font-size:10px;font-weight:650;letter-spacing:.2em;text-transform:uppercase}
-    .home-slide-kicker:before{width:28px;height:1px;background:var(--accent);content:""}
     .home-slide h1{max-width:9ch;margin:0;font-family:Inter,Arial,sans-serif;font-size:clamp(54px,9.4vw,132px);font-weight:700;line-height:.88;letter-spacing:-.09em}
     .home-slide-copy{max-width:45ch;margin:clamp(20px,3vw,32px) 0 0;color:rgba(244,241,238,.83);font-size:clamp(13px,1.2vw,15px);line-height:1.75}
     .home-slide-cta{display:inline-flex;align-items:center;gap:19px;margin-top:clamp(22px,3.5vw,40px);padding:0 0 8px;border-bottom:1px solid rgba(244,241,238,.6);color:#f4f1ee;font-size:10px;font-weight:650;letter-spacing:.17em;text-transform:uppercase;transition:gap .2s ease,border-color .2s ease}
     .home-slide-cta:hover,.home-slide-cta:focus-visible{gap:26px;border-color:#d2b49b;color:#d2b49b}
     .home-slide-cta span{font-size:18px;font-weight:400}
-    .home-slide-meta{position:absolute;top:clamp(40px,8vw,102px);right:clamp(30px,7vw,98px);display:grid;gap:5px;text-align:right}
-    .home-slide-meta span:first-child{color:rgba(244,241,238,.67);font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
-    .home-slide-meta span:last-child{font-size:clamp(16px,2vw,22px);font-weight:500;letter-spacing:-.04em}
+    .home-slide-meta{position:absolute;top:50%;right:clamp(30px,7vw,98px);display:grid;gap:5px;text-align:right;transform:translateY(-50%)}
+    .home-slide-meta span{font-size:clamp(16px,2vw,22px);font-weight:500;letter-spacing:-.04em}
     .home-slider-controls{position:absolute;z-index:3;inset:50% 0 auto;display:flex;justify-content:space-between;padding:0 18px;transform:translateY(-50%);pointer-events:none}
     .home-slider-controls button{display:grid;width:42px;height:42px;place-items:center;border:1px solid rgba(244,241,238,.38);border-radius:50%;background:rgba(24,23,22,.18);color:#f4f1ee;font:22px Inter,Arial,sans-serif;cursor:pointer;pointer-events:auto;transition:background .2s ease,border-color .2s ease,transform .2s ease}
     .home-slider-controls button:hover,.home-slider-controls button:focus-visible{transform:scale(1.06);border-color:#f4f1ee;background:rgba(24,23,22,.55);outline:none}
     .home-slide-count{position:absolute;z-index:3;right:clamp(30px,7vw,98px);bottom:clamp(26px,4vw,52px);display:flex;align-items:center;gap:10px;color:rgba(244,241,238,.8);font-size:11px;font-weight:550;letter-spacing:.2em;font-variant-numeric:tabular-nums}
     .home-slide-count:before{width:34px;height:1px;background:rgba(244,241,238,.54);content:""}
-    @media(max-width:700px){.navbar{padding:0 22px}.home-slide{justify-content:flex-end;padding:110px 28px 96px}.home-slide-content{width:100%}.home-slide h1{font-size:clamp(55px,15vw,92px)}.home-slide-meta{top:100px;right:28px}.home-slider-controls{top:46%;padding:0 10px}.home-slider-controls button{width:36px;height:36px}.home-slide-count{right:28px;bottom:30px}}
+    @media(max-width:700px){.navbar{padding:0 22px}.home-slide{justify-content:flex-end;padding:110px 28px 96px}.home-slide-content{width:100%}.home-slide h1{font-size:clamp(55px,15vw,92px)}.home-slide-meta{top:43%;right:28px;transform:translateY(-50%)}.home-slider-controls{top:46%;padding:0 10px}.home-slider-controls button{width:36px;height:36px}.home-slide-count{right:28px;bottom:30px}}
     @media(max-width:430px){.home-slide{padding-right:22px;padding-left:22px}.home-slide-copy{max-width:34ch}}
     @media(prefers-reduced-motion:reduce){.home-slide,.home-slide:before,.home-slider-controls button,.home-slide-cta{transition:none!important}}
     
   </style>
+  <link rel="stylesheet" href="site-responsive.css">
 </head>
 <body>
   <div class="landing">
     <header class="navbar">
-      <a class="basketball-brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a>
+      <a class="basketball-brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a><a class="navbar-contact-link" href="contact.html">Work with us</a>
     </header>
     <section class="home-featured" aria-label="Featured ARCENI services">
       <article class="home-slide is-active" aria-hidden="false" style="--slide-image:url('images/Consulting/anastasia-vityukova-Q3qKcPAGrKw-unsplash.jpg')">
-        <div class="home-slide-content"><p class="home-slide-kicker">I · Strategy &amp; advisory</p><h1>Consulting</h1><p class="home-slide-copy">Practical strategy and advisory to help organizations move important work forward, strengthen teams and create lasting impact.</p><a class="home-slide-cta" href="consulting.html">Explore consulting <span aria-hidden="true">↗</span></a></div><div class="home-slide-meta"><span>ARCENI</span><span>Strategy to change</span></div>
+        <div class="home-slide-content"><h1>Consulting</h1><p class="home-slide-copy">Practical strategy and advisory to help organizations move important work forward, strengthen teams and create lasting impact.</p><a class="home-slide-cta" href="consulting.html">Explore consulting <span aria-hidden="true">↗</span></a></div><div class="home-slide-meta"><span>Strategy to change</span></div>
       </article>
       <article class="home-slide" aria-hidden="true" inert style="--slide-image:url('images/Homepage/wadi-lissa-AZvGpBp925o-unsplash.jpg')">
-        <div class="home-slide-content"><p class="home-slide-kicker">II · Personal growth</p><h1>Coaching</h1><p class="home-slide-copy">Build self-awareness, confidence and purposeful action through personal coaching and shared learning.</p><a class="home-slide-cta" href="coaching.html">Explore coaching <span aria-hidden="true">↗</span></a></div><div class="home-slide-meta"><span>ARCENI</span><span>Clarity to impact</span></div>
+        <div class="home-slide-content"><h1>Coaching</h1><p class="home-slide-copy">Build self-awareness, confidence and purposeful action through personal coaching and shared learning.</p><a class="home-slide-cta" href="coaching.html">Our Programs <span aria-hidden="true">↗</span></a></div><div class="home-slide-meta"><span>Clarity to impact</span></div>
       </article>
       <article class="home-slide" aria-hidden="true" inert style="--slide-image:url('images/Basketball/Slytherin.jpg')">
-        <div class="home-slide-content"><p class="home-slide-kicker">III · Player development</p><h1>Basketball</h1><p class="home-slide-copy">Build strong fundamentals, sharpen game awareness and bring character, discipline, teamwork and grit on and off the court.</p><a class="home-slide-cta" href="basketball.html">Explore basketball <span aria-hidden="true">↗</span></a></div><div class="home-slide-meta"><span>ARCENI</span><span>Train with purpose</span></div>
+        <div class="home-slide-content"><h1>Basketball</h1><p class="home-slide-copy">Build strong fundamentals, sharpen game awareness and bring character, discipline, teamwork and grit on and off the court.</p><a class="home-slide-cta" href="basketball.html">Our Work <span aria-hidden="true">↗</span></a></div><div class="home-slide-meta"><span>Train with purpose</span></div>
       </article>
       <div class="home-slider-controls" aria-label="Featured services controls"><button type="button" data-slide-step="-1" aria-label="Previous service">‹</button><button type="button" data-slide-step="1" aria-label="Next service">›</button></div>
       <p class="home-slide-count" aria-live="polite"><span data-slide-current>01</span> / <span>03</span></p>

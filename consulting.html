@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#181716">
   <title>ARCENI Consulting | Strategy to Change</title>
   <meta name="description" content="Practical strategy and advisory to help organizations move important work forward, strengthen teams and create lasting impact.">
@@ -13,6 +13,11 @@
     a{color:inherit;text-decoration:none}
     .coaching-page{position:relative;min-height:100svh;overflow:hidden;padding:0 clamp(24px,5.2vw,88px);background:#181716}
     .coaching-nav{position:relative;z-index:5;height:86px;display:flex;align-items:center;justify-content:space-between}
+
+    .service-nav-cta{display:inline-flex;flex:none;min-height:42px;align-items:center;gap:14px;margin-left:clamp(14px,2vw,28px);padding:0 14px;border:1px solid rgba(244,241,238,.42);color:rgba(244,241,238,.9);font-size:9px;font-weight:650;letter-spacing:.13em;text-transform:uppercase;transition:background .2s ease,border-color .2s ease,color .2s ease}
+    .service-nav-cta:after{font-size:16px;font-weight:400;content:"↗";transition:transform .2s ease}
+    .service-nav-cta:hover,.service-nav-cta:focus-visible{border-color:#d2b49b;background:rgba(244,241,238,.09);color:#fff}
+    .service-nav-cta:hover:after,.service-nav-cta:focus-visible:after{transform:translate(2px,-2px)}
     .coaching-nav-links{display:flex;align-items:center;gap:clamp(16px,2.4vw,34px);color:rgba(244,241,238,.72);font-size:10px;font-weight:550;letter-spacing:.13em;text-transform:uppercase}
     .coaching-nav-links a{transition:color .2s ease;text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:1px;text-underline-offset:5px}
     .coaching-nav-links a:hover,.coaching-nav-links a:focus-visible{ text-decoration-color:currentColor }
@@ -20,6 +25,29 @@
     @media(max-width:520px){.coaching-nav-links{gap:10px;font-size:8px;letter-spacing:.08em}.coaching-brand{font-size:15px}}
     .coaching-brand{font-size:18px;font-weight:750;letter-spacing:.17em}
     .coaching-brand sup{margin-left:2px;font-size:9px;letter-spacing:0;vertical-align:top}
+    .consulting-programs{position:relative;width:100vw;margin-left:calc(50% - 50vw);padding:clamp(54px,7vw,92px) clamp(24px,5.2vw,88px);border-top:1px solid var(--line);background:#181716;color:var(--ink)}
+    .consulting-programs-layout{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(34px,6vw,82px);max-width:1440px;margin:0 auto}
+    .consulting-program-focus{min-width:0;padding-right:clamp(22px,4vw,56px);border-right:1px solid rgba(244,241,238,.2)}
+    .consulting-program-eyebrow{margin:0 0 14px;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
+    .consulting-program-focus h2{margin:0 0 18px;font-family:Georgia,serif;font-size:clamp(38px,4.5vw,58px);font-weight:400;line-height:.98;letter-spacing:-.055em}
+    .consulting-program-focus>p:not(.consulting-program-eyebrow){max-width:54ch;margin:0;padding:20px;border-left:2px solid #b8b0b3;background:rgba(255,255,255,.045);color:rgba(244,241,238,.76);font-size:14px;line-height:1.75}
+    .consulting-program-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 18px;margin:22px 0 0}
+    .consulting-program-meta div{padding:12px 0;border-top:1px solid rgba(244,241,238,.2)}
+    .consulting-program-meta dt{margin-bottom:5px;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+    .consulting-program-meta dd{margin:0;color:var(--ink);font-size:13px;line-height:1.5}
+    .consulting-program-cta{display:inline-flex;min-height:48px;align-items:center;gap:18px;margin-top:24px;padding:6px 7px 6px 16px;background:#b8b0b3;color:#181716;font-size:11px;font-weight:650;transition:transform .2s ease,background .2s ease}
+    .consulting-program-cta:hover,.consulting-program-cta:focus-visible{transform:translateY(-2px);background:#d1cacc}
+    .consulting-program-cta span{display:grid;width:34px;height:34px;place-items:center;background:#181716;color:var(--ink);font-size:16px}
+    .consulting-program-services{min-width:0}
+    .consulting-program-services>header{padding:0 0 20px;border-bottom:1px solid rgba(244,241,238,.2)}
+    .consulting-program-services>header strong{display:block;margin-bottom:8px;color:#d2b49b;font-size:10px;font-weight:650;letter-spacing:.16em;text-transform:uppercase}
+    .consulting-program-services>header p{max-width:52ch;margin:0;color:rgba(244,241,238,.72);font-size:13px;line-height:1.7}
+    .consulting-program-service{display:grid;grid-template-columns:32px minmax(0,1fr);align-items:start;gap:10px 14px;padding:20px 0;border-bottom:1px solid rgba(244,241,238,.16)}
+    .consulting-program-service>span{display:grid;width:27px;height:27px;place-items:center;border:1px solid rgba(210,180,155,.5);border-radius:50%;color:#d2b49b;font-size:10px;font-weight:600}
+    .consulting-program-service h3{margin:2px 0 6px;font-size:clamp(18px,2vw,24px);font-weight:550;letter-spacing:-.04em}
+    .consulting-program-service p{grid-column:2;max-width:50ch;margin:0;color:rgba(244,241,238,.68);font-size:12px;line-height:1.65}
+    @media(max-width:760px){.consulting-programs-layout{grid-template-columns:1fr;gap:30px}.consulting-program-focus{padding:0 0 28px;border-right:0;border-bottom:1px solid rgba(244,241,238,.2)}}
+    @media(max-width:520px){.consulting-programs{padding:48px 20px 60px}.consulting-program-meta{grid-template-columns:1fr 1fr}.consulting-program-focus h2{font-size:40px}}
     .coaching-page-links{display:flex;align-items:center;gap:clamp(16px,2.4vw,34px);color:rgba(244,241,238,.72);font-size:10px;font-weight:550;letter-spacing:.13em;text-transform:uppercase}
     .coaching-page-links a{transition:color .2s ease}
     .coaching-page-links a:hover,.coaching-page-links a:focus-visible,.coaching-page-links a[aria-current=page]{color:#f4f1ee}
@@ -80,45 +108,6 @@
     .coaching-gallery-item:nth-child(4){grid-column:2;grid-row:3}
     .coaching-gallery-item:nth-child(5){grid-column:3/5;grid-row:3/5}
     .coaching-gallery-item:nth-child(6){grid-column:1/3;grid-row:4}
-    .coaching-next-steps{position:relative;overflow:hidden;padding:clamp(56px,8vw,104px) 0;background:#181716;color:var(--ink)}
-    .coaching-next-steps-inner{position:relative;display:grid;width:100%;grid-template-columns:minmax(0,1.05fr) minmax(280px,.75fr);align-items:center;gap:clamp(38px,7vw,100px);max-width:none;margin:0;padding:clamp(20px,3vw,40px) clamp(24px,7vw,112px);text-align:left}
-    .coaching-next-steps-heading{position:static;padding-top:0}
-    .coaching-next-steps-heading .philosophy-eyebrow{display:flex;align-items:center;gap:12px;margin:0 0 24px;color:#c0b9bb;font-size:10px;font-weight:600;letter-spacing:.17em;text-transform:uppercase}
-    .coaching-next-steps-heading .philosophy-eyebrow:before{width:28px;height:1px;background:#c0b9bb;content:""}
-    .coaching-next-steps-heading h2{max-width:720px;margin:0;font-size:clamp(42px,5.8vw,72px);font-weight:600;line-height:.96;letter-spacing:-.075em}
-    .coaching-next-steps-heading>p{max-width:500px;margin:22px 0 0;color:#c0b9bb;font-size:14px;line-height:1.75}
-    .coaching-contact-cta{display:inline-flex;min-height:48px;align-items:center;gap:14px;margin:30px auto 0;padding:5px 6px 5px 16px;border:1px solid rgba(244,241,238,.32);border-radius:15px;background:rgba(244,241,238,.06);color:#f4f1ee;font-size:11px;font-weight:600;text-decoration:none;transition:background .22s ease,transform .22s ease,box-shadow .22s ease}
-    .coaching-contact-cta b{display:grid;width:32px;height:32px;place-items:center;border-radius:10px;background:#f4f1ee;color:#181716;font-size:15px;transition:background .22s ease,transform .22s ease}
-    .coaching-contact-cta:hover,.coaching-contact-cta:focus-visible{transform:translateY(-2px) scale(1.03);background:rgba(244,241,238,.12);box-shadow:0 8px 22px rgba(0,0,0,.22);outline:none}
-    .coaching-contact-cta:hover b,.coaching-contact-cta:focus-visible b{transform:translate(1px,-1px);background:#d0c9c5}
-    .coaching-next-steps-links{display:grid;gap:10px;margin:0}
-    .coaching-next-step{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:7px 14px;padding:18px 19px;border:1px solid rgba(244,241,238,.16);background:rgba(255,255,255,.035);text-decoration:none;color:#f4f1ee;transition:background .2s ease,border-color .2s ease,transform .2s ease}
-    .coaching-next-step:hover,.coaching-next-step:focus-visible{transform:translateX(4px);border-color:rgba(244,241,238,.4);background:rgba(255,255,255,.08);outline:none}
-    .coaching-next-step-label{grid-column:1/-1;color:#b8b0b3;font-size:10px;font-weight:500;letter-spacing:.02em}
-    .coaching-next-step strong{font-size:14px;font-weight:500;letter-spacing:-.02em}
-    .coaching-next-step span:last-child{display:grid;width:32px;height:32px;place-items:center;background:#b8b0b3;color:#181716;font-size:17px;transition:transform .2s ease}
-    .coaching-next-step:hover span:last-child,.coaching-next-step:focus-visible span:last-child{transform:translate(2px,-2px)}
-    .coaching-contact-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px;padding:clamp(26px,4vw,48px);border:1px solid rgba(244,241,238,.14);background:linear-gradient(145deg,#2a2827,#211f1e);color:#f4f1ee;box-shadow:0 26px 70px rgba(0,0,0,.2);transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s ease,border-color .3s ease;transform-origin:center}
-    .coaching-contact-form:hover,.coaching-contact-form:focus-within{transform:translateY(-4px);border-color:rgba(244,241,238,.28);box-shadow:0 34px 82px rgba(0,0,0,.3)}
-    .coaching-contact-form-head{grid-column:1/-1;padding-bottom:18px;border-bottom:1px solid rgba(244,241,238,.14)}
-    .coaching-contact-form-head span{color:#b8b0b3;font-size:9px;font-weight:600;letter-spacing:.15em;text-transform:uppercase}
-    .coaching-contact-form-head h3{margin:9px 0 0;font-size:clamp(23px,2.5vw,30px);font-weight:600;letter-spacing:-.055em}
-    .coaching-contact-form-head p{margin:8px 0 0;color:#b8b0b3;font-size:12px;line-height:1.6}
-    .coaching-contact-field{display:grid;gap:7px}
-    .coaching-contact-field.wide{grid-column:1/-1}
-    .coaching-contact-field label{font-size:10px;font-weight:600;letter-spacing:.04em}
-    .coaching-contact-field input,.coaching-contact-field select,.coaching-contact-field textarea{width:100%;min-height:46px;padding:12px;border:1px solid rgba(244,241,238,.18);border-radius:2px;background:#1b1918;color:#f4f1ee;font:400 12px Inter,Arial,sans-serif;transition:border-color .2s ease,box-shadow .2s ease}
-    .coaching-contact-field input::placeholder,.coaching-contact-field textarea::placeholder{color:#aaa2a4}
-    .coaching-contact-field textarea{min-height:100px;resize:vertical}
-    .coaching-contact-field input:focus,.coaching-contact-field select:focus,.coaching-contact-field textarea:focus{outline:2px solid #b8b0b3;outline-offset:1px;border-color:#b8b0b3}
-    .coaching-contact-field select option{background:#1b1918;color:#f4f1ee}
-    .coaching-contact-submit{grid-column:1/-1;display:flex;min-height:52px;align-items:center;justify-content:space-between;padding:6px 7px 6px 16px;border:1px solid #b8b0b3;border-radius:2px;background:#b8b0b3;color:#181716;font:600 11px Inter,Arial,sans-serif;cursor:pointer;transition:background .2s ease,transform .2s ease}
-    .coaching-contact-submit:hover,.coaching-contact-submit:focus-visible{transform:translateY(-2px);background:#d1cacc}
-    .coaching-contact-submit span{display:grid;width:36px;height:36px;place-items:center;background:#181716;color:#f4f1ee;font-size:17px}
-    .coaching-contact-status{grid-column:1/-1;margin:0;color:#b8b0b3;font-size:11px;line-height:1.5}
-    .coaching-next-steps-inner{grid-template-columns:minmax(0,.8fr) minmax(360px,1fr);gap:clamp(30px,5vw,72px)}
-    @media(max-width:800px){.coaching-next-steps-inner{grid-template-columns:1fr;gap:28px}.coaching-contact-form{padding:24px}}
-    @media(max-width:520px){.coaching-contact-form{grid-template-columns:1fr}.coaching-contact-field.wide,.coaching-contact-form-head,.coaching-contact-submit,.coaching-contact-status{grid-column:1}}
     .coaching-programs{position:relative;width:100vw;margin-left:calc(50% - 50vw);padding:clamp(30px,4.5vw,56px) clamp(24px,5.2vw,88px);background:#181716;color:#f4f1ee}
     .coaching-programs:before{display:none}
     .coaching-programs-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(42px,5.6vw,70px);align-items:start;max-width:1440px;margin:0 auto}
@@ -251,6 +240,7 @@
     .coaching-case-study-controls button:hover,.coaching-case-study-controls button:focus-visible{background:#d2b49b;color:#181716;outline:none}
     .coaching-case-study-count{min-width:44px;color:var(--muted);font-size:10px;font-variant-numeric:tabular-nums;text-align:center}
     @media(max-width:760px){.coaching-case-study{grid-template-columns:1fr;gap:28px}.coaching-case-study-panel{min-height:300px}}
+    .coaching-case-study-shell{padding:0 clamp(24px,5.2vw,88px)}
     .coaching-process{width:100vw;margin-left:calc(50% - 50vw);padding:clamp(42px,6vw,76px) clamp(24px,5.2vw,88px);border-top:1px solid var(--line);background:#211f1e;color:#f4f1ee}
     .coaching-process-inner{max-width:1440px;margin:0 auto}
     .coaching-process-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:clamp(28px,4vw,50px)}
@@ -336,60 +326,114 @@
 </head>
 <body class="consulting-page">
   <main class="coaching-page">
-    <header class="coaching-nav"><a class="coaching-brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a><nav class="coaching-nav-links" aria-label="Main navigation"><a href="index.html">Home</a><a href="coaching.html">Coaching</a><a href="consulting.html" aria-current="page">Consulting</a><a href="basketball.html">Basketball</a></nav></header>
+    <header class="coaching-nav"><a class="coaching-brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a><nav class="coaching-nav-links" aria-label="Main navigation"><a href="coaching.html">Coaching</a><a href="consulting.html" aria-current="page">Consulting</a><a href="basketball.html">Basketball</a></nav><a class="service-nav-cta" href="contact.html?service=consulting">Work with us</a></header>
     <section class="coaching-hero" aria-labelledby="coaching-title">
       <img class="coaching-portrait" src="images/Consulting/anastasia-vityukova-Q3qKcPAGrKw-unsplash.jpg" alt="Hands writing in a notebook during a planning session">
       <p class="coaching-eyebrow">ARCENI Consulting</p>
       <h1 class="coaching-title" id="coaching-title"><span>Strategy to</span> <span class="title-accent">Change.</span></h1>
       <div class="coaching-bottom">
-        <p class="coaching-bottom-label">Strategy &amp; Advisory</p>
+        <p class="coaching-bottom-label">Project Management<br>Capacity Building</p>
         <p class="coaching-copy">Practical strategy and advisory to help organizations move important work forward, strengthen teams and create lasting impact.</p>
-        <a class="coaching-cta" href="#consulting-contact">Discuss your work <span aria-hidden="true">↗</span></a>
+        <a class="coaching-cta" href="#consulting-programs">Our Work <span aria-hidden="true">↗</span></a>
       </div>
-      <a class="coaching-scroll-cue" href="#consulting-contact" aria-label="Scroll to contact section">Start a conversation <span aria-hidden="true"></span></a>
+      <a class="coaching-scroll-cue" href="contact.html?service=consulting" aria-label="Contact ARCENI about consulting">Start a conversation <span aria-hidden="true"></span></a>
     </section>
   </main>
-  <section class="coaching-next-steps" id="consulting-contact" aria-labelledby="consulting-contact-title">
-    <div class="coaching-next-steps-inner">
-      <div class="coaching-next-steps-heading">
-          <p class="philosophy-eyebrow">Get in touch</p><h2 id="consulting-contact-title">Let’s move important work forward.</h2>
-          <p>Tell us about the challenge, opportunity or idea your organization is working through. We’d be glad to discuss a practical next step.</p>
-        </div>
-        <form class="coaching-contact-form" action="mailto:?subject=Consulting%20Inquiry" method="post" enctype="text/plain">
-          <div class="coaching-contact-form-head">
-            <span>Consulting inquiry</span>
-            <h3>Tell us what you’re working on</h3>
-            <p>Share a little about the challenge or opportunity you’re looking to move forward.</p>
-          </div>
-          <div class="coaching-contact-field">
-            <label for="consulting-contact-name">Your name</label>
-            <input id="consulting-contact-name" name="Name" type="text" autocomplete="name" placeholder="Your name" required>
-          </div>
-          <div class="coaching-contact-field">
-            <label for="consulting-contact-email">Email address</label>
-            <input id="consulting-contact-email" name="Email" type="email" autocomplete="email" placeholder="you@example.com" required>
-          </div>
-          <div class="coaching-contact-field wide">
-            <label for="consulting-contact-role">I’m reaching out as</label>
-            <select id="consulting-contact-role" name="I am reaching out as" required>
-              <option value="" disabled selected>Select one</option>
-              <option>Business or organization</option>
-              <option>Nonprofit or community group</option>
-              <option>Public sector or institution</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="coaching-contact-field wide">
-            <label for="consulting-contact-message">How can we help?</label>
-            <textarea id="consulting-contact-message" name="Message" placeholder="Tell us a little about what you’re looking for" required></textarea>
-          </div>
-          <button class="coaching-contact-submit" type="submit">Send an inquiry <span aria-hidden="true">↗</span></button>
-          <p class="coaching-contact-status" role="status">Submitting opens your email app so you can review and send your message.</p>
-        </form>
+
+  <section class="consulting-programs" id="consulting-programs" aria-labelledby="consulting-program-title">
+    <div class="consulting-programs-layout">
+      <article class="consulting-program-focus">
+        <p class="consulting-program-eyebrow">Consulting overview</p>
+        <h2 id="consulting-program-title">Our Work</h2>
+        <p>ARCENI partners with organizations to move important work from intention to delivery. We combine clear project management with practical capacity building so teams can make progress and sustain it.</p>
+        <dl class="consulting-program-meta" aria-label="Consulting service details">
+          <div><dt>Services</dt><dd>Project management<br>Capacity building</dd></div>
+          <div><dt>For</dt><dd>Organizations and teams</dd></div>
+          <div><dt>Approach</dt><dd>Practical and collaborative</dd></div>
+          <div><dt>Focus</dt><dd>Delivery and lasting capability</dd></div>
+        </dl>
+        <a class="consulting-program-cta" href="contact.html?service=consulting">Discuss your needs <span aria-hidden="true">↗</span></a>
+      </article>
+      <div class="consulting-program-services" aria-label="Consulting services">
+        <header><strong>What we support</strong><p>Thoughtful structure and stronger team capability help turn good intentions into work that gets done.</p></header>
+        <article class="consulting-program-service"><span aria-hidden="true">01</span><div><h3>Project Management</h3><p>Align scope, people, timelines and resources. Keep delivery coordinated, surface decisions early and move projects from concept to completion.</p></div></article>
+        <article class="consulting-program-service"><span aria-hidden="true">02</span><div><h3>Capacity Building</h3><p>Develop practical skills, tools and team practices that strengthen how organizations plan, collaborate and deliver over time.</p></div></article>
+      </div>
     </div>
   </section>
 
+  <div class="coaching-case-study-shell">
+    <section class="coaching-case-study" id="coaching-case-study" aria-labelledby="coaching-case-study-title">
+      <div class="coaching-case-study-copy">
+        <p class="coaching-eyebrow">Featured case studies · Anonymous organizations</p>
+        <h2 id="coaching-case-study-title">Different organizations. Shared progress.</h2>
+        <p>Explore organization stories about moving projects forward and strengthening team capacity. Stories and video links will be added with each client’s approval.</p>
+      </div>
+      <div class="coaching-case-study-carousel" aria-roledescription="carousel" aria-label="Anonymous consulting case studies">
+        <div class="coaching-case-study-viewport">
+          <div class="coaching-case-study-track">
+            <article class="coaching-case-study-panel" aria-roledescription="slide" aria-label="Participant 1 of 3">
+              <div>
+                <p class="coaching-case-study-panel-label">Consulting · Organization 01</p>
+                <h3>Turning plans into coordinated delivery.</h3>
+                <p>Approved case-study details about this organization’s work will be added here.</p>
+              </div>
+              <div>
+                <div class="coaching-case-study-details"><div><span>Organization</span><strong>Anonymous</strong></div><div><span>Video</span><strong>YouTube link pending</strong></div></div>
+                <span class="coaching-case-study-video" aria-disabled="true">Video link pending <span aria-hidden="true">↗</span></span>
+              </div>
+            </article>
+            <article class="coaching-case-study-panel" aria-roledescription="slide" aria-label="Participant 2 of 3" aria-hidden="true">
+              <div>
+                <p class="coaching-case-study-panel-label">Consulting · Organization 02</p>
+                <h3>Strengthening team capacity.</h3>
+                <p>Approved case-study details about this organization’s work will be added here.</p>
+              </div>
+              <div>
+                <div class="coaching-case-study-details"><div><span>Organization</span><strong>Anonymous</strong></div><div><span>Video</span><strong>YouTube link pending</strong></div></div>
+                <span class="coaching-case-study-video" aria-disabled="true">Video link pending <span aria-hidden="true">↗</span></span>
+              </div>
+            </article>
+            <article class="coaching-case-study-panel" aria-roledescription="slide" aria-label="Participant 3 of 3" aria-hidden="true">
+              <div>
+                <p class="coaching-case-study-panel-label">Consulting · Organization 03</p>
+                <h3>Building momentum for lasting impact.</h3>
+                <p>Approved case-study details about this organization’s work will be added here.</p>
+              </div>
+              <div>
+                <div class="coaching-case-study-details"><div><span>Organization</span><strong>Anonymous</strong></div><div><span>Video</span><strong>YouTube link pending</strong></div></div>
+                <span class="coaching-case-study-video" aria-disabled="true">Video link pending <span aria-hidden="true">↗</span></span>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="coaching-case-study-controls" aria-label="Case study controls">
+          <button type="button" data-case-prev aria-label="Previous case study">←</button>
+          <span class="coaching-case-study-count" aria-live="polite">1 / 3</span>
+          <button type="button" data-case-next aria-label="Next case study">→</button>
+        </div>
+      </div>
+    </section>
+  </div>
 
+  <script>
+    (()=>{
+      const carousel=document.querySelector('.coaching-case-study-carousel');
+      if(!carousel)return;
+      const track=carousel.querySelector('.coaching-case-study-track');
+      const slides=[...carousel.querySelectorAll('.coaching-case-study-panel')];
+      const count=carousel.querySelector('.coaching-case-study-count');
+      let current=0;
+      const show=index=>{
+        current=(index+slides.length)%slides.length;
+        slides.forEach((slide,i)=>slide.setAttribute('aria-hidden',String(i!==current)));
+        track.style.transform=`translateX(-${current*100}%)`;
+        count.textContent=`${current+1} / ${slides.length}`;
+      };
+      carousel.querySelector('[data-case-prev]').addEventListener('click',()=>show(current-1));
+      carousel.querySelector('[data-case-next]').addEventListener('click',()=>show(current+1));
+    })();
+  </script>
   <script src="site-scroll.js"></script>
 </body>
 </html>

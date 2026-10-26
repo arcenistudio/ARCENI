@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#181716">
+  <meta name="description" content="Contact ARCENI about coaching, consulting or basketball development.">
+  <title>Contact ARCENI</title>
+  <style>
+    :root{--page:#181716;--ink:#f4f1ee;--muted:#b8b0b3;--accent:#d2b49b;--line:rgba(244,241,238,.2)}
+    *{box-sizing:border-box}
+    html{min-width:320px;background:var(--page)}
+    body{min-width:320px;min-height:100svh;margin:0;background:var(--page);color:var(--ink);font-family:Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .contact-shell{width:min(100%,1440px);min-height:100svh;margin:0 auto;padding:0 clamp(24px,5.2vw,88px)}
+    .contact-nav{position:relative;display:flex;min-height:86px;align-items:center;justify-content:space-between;gap:24px}
+    .contact-brand{flex:none;font-size:18px;font-weight:750;letter-spacing:.17em}
+    .contact-brand sup{margin-left:2px;font-size:9px;letter-spacing:0;vertical-align:top}
+    .contact-nav-links{position:absolute;left:50%;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(12px,2.2vw,30px);color:rgba(244,241,238,.72);font-size:10px;font-weight:550;letter-spacing:.13em;text-transform:uppercase;transform:translateX(-50%)}
+    .contact-nav-links a{transition:color .2s ease;text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:1px;text-underline-offset:5px}
+    .contact-nav-links a:hover,.contact-nav-links a:focus-visible,.contact-nav-links a[aria-current=page]{color:var(--ink);text-decoration-color:currentColor}
+    .contact-main{display:grid;min-height:calc(100svh - 86px);grid-template-columns:minmax(0,.85fr) minmax(360px,1.15fr);align-items:center;gap:clamp(36px,7vw,100px);padding:clamp(50px,8vw,104px) 0}
+    .contact-intro{max-width:590px}
+    .contact-eyebrow{display:flex;align-items:center;gap:12px;margin:0 0 22px;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:.19em;text-transform:uppercase}
+    .contact-eyebrow:before{width:28px;height:1px;background:var(--accent);content:""}
+    .contact-intro h1{max-width:10ch;margin:0;font-size:clamp(48px,7vw,90px);font-weight:650;line-height:.9;letter-spacing:-.085em}
+    .contact-intro>p:last-of-type{max-width:44ch;margin:24px 0 0;color:rgba(244,241,238,.74);font-size:15px;line-height:1.75}
+    .contact-services{display:grid;gap:0;margin-top:clamp(32px,5vw,60px);border-top:1px solid var(--line)}
+    .contact-service-link{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:15px 0;border-bottom:1px solid var(--line);color:rgba(244,241,238,.72);font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:color .2s ease}
+    .contact-service-link:hover,.contact-service-link:focus-visible{color:var(--accent)}
+    .contact-service-link span:last-child{font-size:17px}
+    .contact-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding:clamp(24px,4vw,46px);border:1px solid rgba(244,241,238,.15);background:linear-gradient(145deg,#262423,#1d1b1a);box-shadow:0 24px 64px rgba(0,0,0,.22)}
+    .contact-form-head{grid-column:1/-1;padding-bottom:20px;border-bottom:1px solid rgba(244,241,238,.15)}
+    .contact-form-head span{color:var(--accent);font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+    .contact-form-head h2{margin:9px 0 0;font-size:clamp(24px,3vw,34px);font-weight:600;letter-spacing:-.06em}
+    .contact-form-head p{margin:8px 0 0;color:var(--muted);font-size:12px;line-height:1.6}
+    .contact-field{display:grid;min-width:0;gap:7px}
+    .contact-field.wide{grid-column:1/-1}
+    .contact-field label{font-size:10px;font-weight:600;letter-spacing:.04em}
+    .contact-field input,.contact-field select,.contact-field textarea{width:100%;min-height:48px;padding:12px;border:1px solid rgba(244,241,238,.2);border-radius:2px;background:#191817;color:var(--ink);font:400 12px Inter,Arial,sans-serif}
+    .contact-field textarea{min-height:118px;resize:vertical}
+    .contact-field input::placeholder,.contact-field textarea::placeholder{color:#aaa2a4}
+    .contact-field :is(input,select,textarea):focus{outline:2px solid var(--accent);outline-offset:2px}
+    .contact-field select option{background:#191817;color:var(--ink)}
+    .contact-submit{grid-column:1/-1;display:flex;min-height:52px;align-items:center;justify-content:space-between;padding:6px 7px 6px 16px;border:1px solid var(--accent);background:var(--accent);color:#181716;font:600 11px Inter,Arial,sans-serif;cursor:pointer;transition:background .2s ease,transform .2s ease}
+    .contact-submit:hover,.contact-submit:focus-visible{transform:translateY(-2px);background:#e1c9b4}
+    .contact-submit span{display:grid;width:36px;height:36px;place-items:center;background:#181716;color:var(--ink);font-size:17px}
+    .contact-note{grid-column:1/-1;margin:0;color:var(--muted);font-size:10px;line-height:1.6}
+    @media(max-width:850px){.contact-main{grid-template-columns:1fr;gap:36px;padding:54px 0}.contact-intro{max-width:720px}.contact-intro h1{max-width:13ch}.contact-services{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 20px}.contact-service-link{padding:13px 0}}
+    @media(max-width:600px){.contact-shell{padding-right:20px;padding-left:20px}.contact-nav{min-height:100px;align-items:flex-start;flex-direction:column;justify-content:center;gap:14px;padding:14px 0}.contact-nav-links{position:static;width:100%;justify-content:center;gap:clamp(8px,3vw,15px);font-size:8px;letter-spacing:.045em;transform:none}.contact-main{min-height:calc(100svh - 100px);gap:30px;padding:42px 0}.contact-intro h1{font-size:clamp(44px,13vw,68px)}.contact-intro>p:last-of-type{font-size:14px}.contact-services{grid-template-columns:1fr;gap:0;margin-top:28px}.contact-service-link{padding:12px 0}.contact-form{grid-template-columns:1fr;padding:20px}.contact-form-head,.contact-field.wide,.contact-submit,.contact-note{grid-column:1}.contact-field{grid-column:1}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+  <link rel="stylesheet" href="site-responsive.css">
+</head>
+<body>
+  <div class="contact-shell">
+    <header class="contact-nav"><a class="contact-brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a><nav class="contact-nav-links" aria-label="Main navigation"><a href="coaching.html">Coaching</a><a href="consulting.html">Consulting</a><a href="basketball.html">Basketball</a><a href="contact.html" aria-current="page">Contact</a></nav></header>
+    <main class="contact-main">
+      <section class="contact-intro" aria-labelledby="contact-title"><p class="contact-eyebrow">Get in touch</p><h1 id="contact-title">Let’s start a conversation.</h1><p>Tell us what you’re working toward. Choose a service and share a little about what you need; we’ll help you find a practical next step.</p><nav class="contact-services" aria-label="Choose a service"><a class="contact-service-link" href="#contact-form" data-service-link="consulting">Consulting <span aria-hidden="true">↗</span></a><a class="contact-service-link" href="#contact-form" data-service-link="coaching">Coaching <span aria-hidden="true">↗</span></a><a class="contact-service-link" href="#contact-form" data-service-link="basketball">Basketball <span aria-hidden="true">↗</span></a></nav></section>
+      <form class="contact-form" id="contact-form" action="mailto:?subject=ARCENI%20Service%20Inquiry" method="post" enctype="text/plain">
+        <div class="contact-form-head"><span>ARCENI · Inquiry</span><h2>How can we help?</h2><p>We’ll use your note to understand where you’d like to begin.</p></div>
+        <div class="contact-field wide"><label for="inquiry-service">I’m interested in</label><select id="inquiry-service" name="Service" required><option value="" disabled selected>Select a service</option><option value="consulting">Consulting</option><option value="coaching">Coaching</option><option value="basketball">Basketball</option></select></div>
+        <div class="contact-field"><label for="inquiry-name">Your name</label><input id="inquiry-name" name="Name" type="text" autocomplete="name" placeholder="Your name" required></div>
+        <div class="contact-field"><label for="inquiry-email">Email address</label><input id="inquiry-email" name="Email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+        <div class="contact-field wide"><label for="inquiry-role">I’m reaching out as</label><select id="inquiry-role" name="I am reaching out as" required><option value="" disabled selected>Select one</option><option>Individual</option><option>Parent or supporter</option><option>Team or organization</option><option>Nonprofit or community group</option><option>Other</option></select></div>
+        <div class="contact-field wide"><label for="inquiry-message">Tell us a little more</label><textarea id="inquiry-message" name="Message" placeholder="What would you like help with?" required></textarea></div>
+        <button class="contact-submit" type="submit">Send an inquiry <span aria-hidden="true">↗</span></button>
+        <p class="contact-note" role="status">Submitting opens your email app so you can review and send your message.</p>
+      </form>
+    </main>
+  </div>
+  <script>
+    (()=>{
+      const service=document.querySelector('#inquiry-service');
+      const allowed=new Set(['consulting','coaching','basketball']);
+      const initial=new URLSearchParams(location.search).get('service');
+      const choose=value=>{if(allowed.has(value)){service.value=value;service.focus();}};
+      choose(initial);
+      document.querySelectorAll('[data-service-link]').forEach(link=>link.addEventListener('click',()=>choose(link.dataset.serviceLink)));
+    })();
+  </script>
+</body>
+</html>

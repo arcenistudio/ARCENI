@@ -770,3 +770,109 @@ body.consulting-page{--paper:#181716;--ink:#f4f1ee;--muted:#b8b0b3;--line:rgba(2
 
 
 
+/* Final viewport and layout rules for the current page structures. */
+html{min-width:320px;scroll-behavior:smooth}
+body{min-width:320px;min-height:100vh;min-height:100svh;overflow-x:clip}
+main,section,article,form,figure{min-width:0}
+input,select,textarea,button{max-width:100%;font:inherit}
+img{max-width:100%}
+
+@media (min-width:1441px){
+  .contact-shell{width:min(100%,1440px);margin-inline:auto}
+  .basketball-gallery-inner{max-width:1440px}
+  .basketball-case-study-shell{padding-right:max(48px,calc((100vw - 1440px)/2));padding-left:max(48px,calc((100vw - 1440px)/2))}
+}
+
+@media (max-width:980px){
+  .consulting-programs-layout{grid-template-columns:minmax(0,1fr);gap:32px}
+  .consulting-program-focus{padding-right:0;padding-bottom:28px;border-right:0;border-bottom:1px solid rgba(244,241,238,.2)}
+  .consulting-programs{padding-right:clamp(24px,5vw,48px);padding-left:clamp(24px,5vw,48px)}
+  .basketball-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:clamp(160px,25vw,240px)}
+  .basketball-gallery-item:nth-child(n){grid-column:auto;grid-row:auto}
+  .basketball-gallery-item:first-child,.basketball-gallery-item:nth-child(5){grid-column:span 2}
+  .contact-main{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(24px,4vw,44px)}
+  .contact-form{padding:clamp(22px,3vw,34px)}
+}
+
+@media (max-width:850px){
+  .contact-main{grid-template-columns:minmax(0,1fr);gap:34px;padding:52px 0}
+  .contact-intro{max-width:720px}
+  .contact-intro h1{max-width:13ch}
+  .contact-services{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 18px}
+  .contact-form{width:100%}
+}
+
+@media (max-width:760px){
+  .coaching-nav,.basketball-nav{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"brand cta" "links links";align-items:center;gap:8px 16px;min-height:0;height:auto;padding-top:14px;padding-bottom:14px}
+  .coaching-brand,.basketball-brand{grid-area:brand}
+  .coaching-nav-links,.basketball-nav-links{grid-area:links;width:100%;justify-content:flex-start;gap:clamp(14px,4vw,26px);font-size:9px}
+  .coaching-nav>.service-nav-cta,.basketball-nav>.service-nav-cta{grid-area:cta;min-height:38px;margin:0;padding-inline:11px;font-size:8px}
+  .coaching-hero,.basketball-hero{min-height:max(590px,calc(100svh - 112px));padding-top:70px;padding-bottom:74px}
+  .coaching-title,.basketball-title{max-width:12ch;font-size:clamp(48px,10vw,78px);line-height:.9}
+  .coaching-bottom,.basketball-bottom{grid-template-columns:minmax(0,1fr);gap:14px}
+  .coaching-bottom-label,.basketball-bottom-label,.coaching-copy,.basketball-copy,.coaching-cta,.basketball-cta{grid-column:1}
+  .coaching-cta,.basketball-cta{justify-self:start}
+  .coaching-programs-layout,.consulting-programs-layout{grid-template-columns:minmax(0,1fr);gap:28px}
+  .coaching-program-focus,.consulting-program-focus{padding-right:0;padding-bottom:26px;border-right:0;border-bottom:1px solid rgba(244,241,238,.2)}
+  .coaching-case-study,.basketball-case-study{grid-template-columns:minmax(0,1fr);gap:24px}
+  .coaching-case-study-panel{min-height:300px}
+  .coaching-process-grid{grid-template-columns:minmax(0,1fr)}
+  .coaching-testimonials{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .basketball-impact{grid-template-columns:minmax(0,1fr);gap:24px}
+  .basketball-gallery{padding-right:clamp(20px,4vw,32px);padding-left:clamp(20px,4vw,32px)}
+  .contact-nav{gap:14px}
+  .contact-nav-links{position:static;flex:1;transform:none}
+  .contact-form{width:100%;min-width:0}
+}
+
+@media (max-width:600px){
+  .coaching-nav,.basketball-nav{grid-template-columns:minmax(0,1fr) auto}
+  .coaching-nav-links,.basketball-nav-links{justify-content:space-between;gap:8px;font-size:8px;letter-spacing:.06em}
+  .coaching-nav>.service-nav-cta,.basketball-nav>.service-nav-cta{min-height:36px;padding-inline:9px;font-size:7px;letter-spacing:.08em}
+  .coaching-title,.basketball-title{font-size:clamp(43px,12vw,64px)}
+  .coaching-hero,.basketball-hero{min-height:max(610px,calc(100svh - 120px));padding-bottom:66px}
+  .coaching-portrait,.basketball-portrait{right:-5%;width:min(78vw,420px);height:68%;opacity:.55}
+  .coaching-cta,.basketball-cta{min-width:min(214px,100%)}
+  .coaching-program-meta,.consulting-program-meta{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .coaching-program-values,.basketball-program-values{grid-template-columns:minmax(0,1fr)}
+  .coaching-case-study-panel{min-height:280px;padding:24px}
+  .coaching-case-study-details{grid-template-columns:minmax(0,1fr);gap:12px}
+  .coaching-testimonials{grid-template-columns:minmax(0,1fr)}
+  .basketball-impact-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .basketball-impact-stat{padding-inline:12px}
+  .basketball-gallery{padding:42px 16px 54px}
+  .basketball-gallery-grid{grid-auto-rows:clamp(125px,42vw,190px);gap:6px}
+  .basketball-gallery-item:nth-child(n){grid-column:auto;grid-row:auto}
+  .basketball-gallery-item:first-child,.basketball-gallery-item:nth-child(5){grid-column:span 2}
+  .basketball-case-study-shell{padding-right:20px;padding-left:20px}
+  .contact-shell{padding-right:max(20px,env(safe-area-inset-right));padding-left:max(20px,env(safe-area-inset-left))}
+  .contact-nav{align-items:flex-start;flex-direction:column;gap:14px;padding:14px 0}
+  .contact-nav-links{width:100%;justify-content:flex-start;gap:clamp(12px,4vw,20px);font-size:8px}
+  .contact-main{min-height:calc(100svh - 116px);gap:28px;padding:40px 0}
+  .contact-intro h1{font-size:clamp(42px,12vw,64px)}
+  .contact-services{grid-template-columns:minmax(0,1fr);gap:0}
+  .contact-form{grid-template-columns:minmax(0,1fr);gap:14px;padding:20px}
+  .contact-form-head,.contact-field,.contact-field.wide,.contact-submit,.contact-note{grid-column:1}
+  .home-slide{padding-right:max(22px,env(safe-area-inset-right));padding-left:max(22px,env(safe-area-inset-left))}
+  .home-slide-content{width:100%;max-width:620px}
+  .home-slide h1{font-size:clamp(48px,14vw,76px)}
+  .home-slide-meta{top:30%;right:22px;max-width:62%;font-size:15px}
+  .home-slider-controls{top:43%;padding-inline:8px}
+  .home-slider-controls button{width:34px;height:34px}
+  .home-slide-count{right:22px;bottom:max(24px,env(safe-area-inset-bottom))}
+}
+
+@media (max-width:380px){
+  .coaching-nav-links,.basketball-nav-links{font-size:7px;letter-spacing:.03em}
+  .coaching-nav>.service-nav-cta,.basketball-nav>.service-nav-cta{font-size:6px;letter-spacing:.06em}
+  .home-slide-meta{max-width:58%;font-size:13px}
+  .contact-nav-links{gap:10px;font-size:7px}
+  .basketball-impact-stat strong{font-size:clamp(28px,8vw,38px)}
+}
+
+@media (orientation:landscape) and (max-height:560px) and (max-width:900px){
+  .coaching-hero,.basketball-hero{min-height:620px}
+  .home-slide{justify-content:flex-end;padding-top:100px;padding-bottom:80px}
+  .home-slide-meta{top:30%}
+}
+

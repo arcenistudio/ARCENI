@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#181716">
   <title>ARCENI Basketball | Development Is Personal</title>
   <style>
@@ -12,9 +12,16 @@
     a{color:inherit;text-decoration:none}
     .basketball-page{position:relative;min-height:100svh;overflow:hidden;padding:0 clamp(24px,5.2vw,88px);background:#181716}
     .basketball-nav{position:relative;z-index:5;height:86px;display:flex;align-items:center;justify-content:space-between}
+
+    .service-nav-cta{display:inline-flex;flex:none;min-height:42px;align-items:center;gap:14px;margin-left:clamp(14px,2vw,28px);padding:0 14px;border:1px solid rgba(244,241,238,.42);color:rgba(244,241,238,.9);font-size:9px;font-weight:650;letter-spacing:.13em;text-transform:uppercase;transition:background .2s ease,border-color .2s ease,color .2s ease}
+    .service-nav-cta:after{font-size:16px;font-weight:400;content:"↗";transition:transform .2s ease}
+    .service-nav-cta:hover,.service-nav-cta:focus-visible{border-color:#d2b49b;background:rgba(244,241,238,.09);color:#fff}
+    .service-nav-cta:hover:after,.service-nav-cta:focus-visible:after{transform:translate(2px,-2px)}
     .basketball-nav-links{display:flex;align-items:center;gap:clamp(16px,2.4vw,34px);color:rgba(244,241,238,.72);font-size:10px;font-weight:550;letter-spacing:.13em;text-transform:uppercase}
-    .basketball-nav-links a{transition:color .2s ease;text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:1px;text-underline-offset:5px}
-    .basketball-nav-links a:hover,.basketball-nav-links a:focus-visible{color:#f4f1ee;text-decoration-color:currentColor}
+    .basketball-nav-links a{position:relative;padding:7px 0;color:rgba(244,241,238,.72);transition:color .2s ease}
+    .basketball-nav-links a:after{position:absolute;right:0;bottom:1px;left:0;height:1px;background:#d2b49b;content:"";transform:scaleX(0);transform-origin:left center;transition:transform .24s cubic-bezier(.16,1,.3,1)}
+    .basketball-nav-links a:hover,.basketball-nav-links a:focus-visible{color:#d2b49b}
+    .basketball-nav-links a:hover:after,.basketball-nav-links a:focus-visible:after,.basketball-nav-links a[aria-current=page]:after{transform:scaleX(1)}
     .basketball-nav-links a[aria-current=page]{color:#f4f1ee}
     @media(max-width:520px){.basketball-nav-links{gap:10px;font-size:8px;letter-spacing:.08em}.basketball-brand{font-size:15px}}
     .basketball-brand{font-size:18px;font-weight:750;letter-spacing:.17em}
@@ -63,6 +70,31 @@
     .basketball-impact-stat strong{display:block;white-space:nowrap;font-size:clamp(34px,5vw,64px);font-weight:650;line-height:1;letter-spacing:-.07em}
     .basketball-impact-stat strong span{color:var(--accent)}
     .basketball-impact-stat p{margin:10px 0 0;color:var(--muted);font-size:11px;line-height:1.5}
+    .coaching-case-study{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);align-items:stretch;gap:clamp(28px,5vw,64px);padding:clamp(58px,8vw,96px) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .coaching-case-study-copy{display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+    .coaching-case-study-copy .coaching-eyebrow{position:static;margin:0 0 20px;color:#d2b49b}
+    .coaching-case-study-copy h2{max-width:11ch;margin:0;font-size:clamp(42px,6vw,74px);font-weight:600;line-height:.94;letter-spacing:-.08em}
+    .coaching-case-study-copy>p:last-child{max-width:48ch;margin:22px 0 0;color:var(--muted);font-size:14px;line-height:1.75}
+    .coaching-case-study-panel{display:flex;min-height:320px;flex-direction:column;justify-content:space-between;padding:clamp(24px,4vw,42px);border:1px solid rgba(244,241,238,.14);background:#211f1e}
+    .coaching-case-study-panel-label{margin:0;color:#d2b49b;font-size:10px;font-weight:650;letter-spacing:.15em;text-transform:uppercase}
+    .coaching-case-study-panel h3{max-width:16ch;margin:26px 0 0;font-size:clamp(24px,3vw,36px);font-weight:550;line-height:1.05;letter-spacing:-.055em}
+    .coaching-case-study-details{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px;padding-top:18px;border-top:1px solid rgba(244,241,238,.15)}
+    .coaching-case-study-details span{display:block;margin-bottom:7px;color:var(--muted);font-size:9px;letter-spacing:.13em;text-transform:uppercase}
+    .coaching-case-study-details strong{font-size:12px;font-weight:500;line-height:1.5}
+    .coaching-case-study-video{display:inline-flex;width:max-content;min-height:48px;align-items:center;gap:18px;margin-top:24px;padding:0 16px;border:1px solid rgba(244,241,238,.2);color:rgba(244,241,238,.55);font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase}
+    .coaching-case-study-video span{color:#d2b49b;font-size:16px}
+    .coaching-case-study-carousel{min-width:0}
+    .coaching-case-study-viewport{overflow:hidden}
+    .coaching-case-study-track{display:flex;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+    .coaching-case-study-panel{flex:0 0 100%;min-width:0;min-height:340px;padding:clamp(28px,4vw,48px)}
+    .coaching-case-study-panel h3{max-width:24ch;font-size:clamp(27px,3.6vw,42px)}
+    .coaching-case-study-panel>div:first-child>p:last-child{max-width:54ch;margin:18px 0 0;color:rgba(244,241,238,.72);font-size:13px;line-height:1.7}
+    .coaching-case-study-controls{display:flex;align-items:center;justify-content:flex-end;gap:12px;margin-top:14px}
+    .coaching-case-study-controls button{display:grid;width:38px;height:38px;place-items:center;border:1px solid rgba(244,241,238,.24);background:transparent;color:#f4f1ee;font:18px Inter,Arial,sans-serif;cursor:pointer;transition:background .2s ease,color .2s ease}
+    .coaching-case-study-controls button:hover,.coaching-case-study-controls button:focus-visible{background:#d2b49b;color:#181716;outline:none}
+    .coaching-case-study-count{min-width:44px;color:var(--muted);font-size:10px;font-variant-numeric:tabular-nums;text-align:center}
+    @media(max-width:760px){.coaching-case-study{grid-template-columns:1fr;gap:28px}.coaching-case-study-panel{min-height:300px}}
+    .basketball-case-study-shell{padding:0 clamp(24px,5.2vw,88px)}
 
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition-duration:.01ms!important}}
     .basketball-gallery{padding:clamp(36px,5vw,68px) clamp(20px,3vw,48px) clamp(56px,7vw,92px);background:var(--page)}
@@ -77,42 +109,6 @@
     .basketball-gallery-item:nth-child(4){grid-column:2;grid-row:3}
     .basketball-gallery-item:nth-child(5){grid-column:3/5;grid-row:3/5}
     .basketball-gallery-item:nth-child(6){grid-column:1/3;grid-row:4}
-    .basketball-next-steps{position:relative;overflow:hidden;padding:clamp(56px,8vw,104px) 0;background:#181716;color:var(--ink)}
-    .basketball-next-steps-inner{position:relative;display:grid;width:100%;grid-template-columns:minmax(0,1.05fr) minmax(280px,.75fr);align-items:center;gap:clamp(38px,7vw,100px);max-width:none;margin:0;padding:clamp(20px,3vw,40px) clamp(24px,7vw,112px);text-align:left}
-    .basketball-next-steps-heading{position:static;padding-top:0}
-    .basketball-next-steps-heading .philosophy-eyebrow{display:flex;align-items:center;gap:12px;margin:0 0 24px;color:#c0b9bb;font-size:10px;font-weight:600;letter-spacing:.17em;text-transform:uppercase}
-    .basketball-next-steps-heading .philosophy-eyebrow:before{width:28px;height:1px;background:#c0b9bb;content:""}
-    .basketball-next-steps-heading h2{max-width:720px;margin:0;font-size:clamp(42px,5.8vw,72px);font-weight:600;line-height:.96;letter-spacing:-.075em}
-    .basketball-next-steps-heading>p{max-width:500px;margin:22px 0 0;color:#c0b9bb;font-size:14px;line-height:1.75}
-    .basketball-contact-cta{display:inline-flex;min-height:48px;align-items:center;gap:14px;margin:30px auto 0;padding:5px 6px 5px 16px;border:1px solid rgba(244,241,238,.32);border-radius:15px;background:rgba(244,241,238,.06);color:#f4f1ee;font-size:11px;font-weight:600;text-decoration:none;transition:background .22s ease,transform .22s ease,box-shadow .22s ease}
-    .basketball-contact-cta b{display:grid;width:32px;height:32px;place-items:center;border-radius:10px;background:#f4f1ee;color:#181716;font-size:15px;transition:background .22s ease,transform .22s ease}
-    .basketball-contact-cta:hover,.basketball-contact-cta:focus-visible{transform:translateY(-2px) scale(1.03);background:rgba(244,241,238,.12);box-shadow:0 8px 22px rgba(0,0,0,.22);outline:none}
-    .basketball-contact-cta:hover b,.basketball-contact-cta:focus-visible b{transform:translate(1px,-1px);background:#d0c9c5}
-    .basketball-next-steps-links{display:grid;gap:10px;margin:0}
-    .basketball-next-step{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:7px 14px;padding:18px 19px;border:1px solid rgba(244,241,238,.16);background:rgba(255,255,255,.035);text-decoration:none;color:#f4f1ee;transition:background .2s ease,border-color .2s ease,transform .2s ease}
-    .basketball-next-step:hover,.basketball-next-step:focus-visible{transform:translateX(4px);border-color:rgba(244,241,238,.4);background:rgba(255,255,255,.08);outline:none}
-    .basketball-next-step-label{grid-column:1/-1;color:#b8b0b3;font-size:10px;font-weight:500;letter-spacing:.02em}
-    .basketball-next-step strong{font-size:14px;font-weight:500;letter-spacing:-.02em}
-    .basketball-next-step span:last-child{display:grid;width:32px;height:32px;place-items:center;background:#b8b0b3;color:#181716;font-size:17px;transition:transform .2s ease}
-    .basketball-next-step:hover span:last-child,.basketball-next-step:focus-visible span:last-child{transform:translate(2px,-2px)}
-    .basketball-contact-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px;padding:clamp(26px,4vw,48px);border:1px solid rgba(244,241,238,.14);background:linear-gradient(145deg,#2a2827,#211f1e);color:#f4f1ee;box-shadow:0 26px 70px rgba(0,0,0,.2);transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s ease,border-color .3s ease;transform-origin:center}
-    .basketball-contact-form:hover,.basketball-contact-form:focus-within{transform:translateY(-4px);border-color:rgba(244,241,238,.28);box-shadow:0 34px 82px rgba(0,0,0,.3)}
-    .basketball-contact-form-head{grid-column:1/-1;padding-bottom:18px;border-bottom:1px solid rgba(244,241,238,.14)}
-    .basketball-contact-form-head span{color:#b8b0b3;font-size:9px;font-weight:600;letter-spacing:.15em;text-transform:uppercase}
-    .basketball-contact-form-head h3{margin:9px 0 0;font-size:clamp(23px,2.5vw,30px);font-weight:600;letter-spacing:-.055em}
-    .basketball-contact-form-head p{margin:8px 0 0;color:#b8b0b3;font-size:12px;line-height:1.6}
-    .basketball-contact-field{display:grid;gap:7px}
-    .basketball-contact-field.wide{grid-column:1/-1}
-    .basketball-contact-field label{font-size:10px;font-weight:600;letter-spacing:.04em}
-    .basketball-contact-field input,.basketball-contact-field select,.basketball-contact-field textarea{width:100%;min-height:46px;padding:12px;border:1px solid rgba(244,241,238,.18);border-radius:2px;background:#1b1918;color:#f4f1ee;font:400 12px Inter,Arial,sans-serif;transition:border-color .2s ease,box-shadow .2s ease}
-    .basketball-contact-field input::placeholder,.basketball-contact-field textarea::placeholder{color:#aaa2a4}
-    .basketball-contact-field textarea{min-height:100px;resize:vertical}
-    .basketball-contact-field input:focus,.basketball-contact-field select:focus,.basketball-contact-field textarea:focus{outline:2px solid #b8b0b3;outline-offset:1px;border-color:#b8b0b3}
-    .basketball-contact-field select option{background:#1b1918;color:#f4f1ee}
-    .basketball-contact-submit{grid-column:1/-1;display:flex;min-height:52px;align-items:center;justify-content:space-between;padding:6px 7px 6px 16px;border:1px solid #b8b0b3;border-radius:2px;background:#b8b0b3;color:#181716;font:600 11px Inter,Arial,sans-serif;cursor:pointer;transition:background .2s ease,transform .2s ease}
-    .basketball-contact-submit:hover,.basketball-contact-submit:focus-visible{transform:translateY(-2px);background:#d1cacc}
-    .basketball-contact-submit span{display:grid;width:36px;height:36px;place-items:center;background:#181716;color:#f4f1ee;font-size:17px}
-    .basketball-contact-status{grid-column:1/-1;margin:0;color:#b8b0b3;font-size:11px;line-height:1.5}
     .basketball-programs{padding:clamp(50px,7vw,92px) 0 44px;border-top:1px solid var(--line)}
     .basketball-programs-layout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(22px,4vw,52px);align-items:stretch}
     .basketball-program-values{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;min-width:0}
@@ -172,15 +168,15 @@
 </head>
 <body>
   <main class="basketball-page">
-    <header class="basketball-nav"><a class="basketball-brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a><nav class="basketball-nav-links" aria-label="Main navigation"><a href="index.html">Home</a><a href="coaching.html">Coaching</a><a href="consulting.html">Consulting</a><a href="basketball.html" aria-current="page">Basketball</a></nav></header>
+    <header class="basketball-nav"><a class="basketball-brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a><nav class="basketball-nav-links" aria-label="Main navigation"><a href="coaching.html">Coaching</a><a href="consulting.html">Consulting</a><a href="basketball.html" aria-current="page">Basketball</a></nav><a class="service-nav-cta" href="contact.html?service=basketball">Work with us</a></header>
     <section class="basketball-hero" aria-labelledby="basketball-title">
       <img class="basketball-portrait" src="images/Basketball/The Coach.png" alt="ARCENI basketball coach Almas Ismail holding a basketball">
-      <p class="basketball-eyebrow">The Arceni Basketball · Development</p>
+      <p class="basketball-eyebrow">Arceni Basketball</p>
       <h1 class="basketball-title" id="basketball-title"><span>Train</span> <span class="title-accent">With Purpose.</span></h1>
       <div class="basketball-bottom">
-        <p class="basketball-bottom-label">Player development<br>Team Performance</p>
+        <p class="basketball-bottom-label">Holistic development<br>Team Performance</p>
         <p class="basketball-copy">Build strong fundamentals, sharpen game awareness and bring character, discipline, teamwork and grit on and off the court.</p>
-        <a class="basketball-cta" href="#basketball-impact">Our Impact <span aria-hidden="true">↗</span></a>
+        <a class="basketball-cta" href="contact.html?service=basketball">Work With Us <span aria-hidden="true">↗</span></a>
       </div>
       <a class="basketball-scroll-cue" href="#basketball-player-photo" aria-label="Scroll to player training photo">Player development <span aria-hidden="true"></span></a>
     </section>
@@ -196,8 +192,7 @@
         <article class="basketball-impact-stat"><strong>10<span>+</span></strong><p>Teams impacted</p></article>
       </div>
     </section>
-
-    <a class="basketball-section-scroll" href="#basketball-gallery" aria-label="Scroll to basketball gallery">Coaching in Action<span aria-hidden="true"></span></a>
+    <a class="basketball-section-scroll" href="#basketball-gallery" aria-label="Scroll to basketball gallery">Gallery<span aria-hidden="true"></span></a>
   </main>
 
   <section class="basketball-gallery" id="basketball-gallery" aria-label="Basketball gallery">
@@ -212,23 +207,57 @@
       </div>
     </div>
   </section>
+  <div class="basketball-case-study-shell">
+    <a class="basketball-section-scroll" href="#coaching-case-study" aria-label="Scroll to basketball player stories">Player stories<span aria-hidden="true"></span></a>
+    <section class="coaching-case-study" id="coaching-case-study" aria-labelledby="coaching-case-study-title">
+      <div class="coaching-case-study-copy">
+        <p class="coaching-eyebrow">Basketball stories · Anonymous</p>
+        <h2 id="coaching-case-study-title">Every player has a path to grow.</h2>
+        <p>Explore player stories about developing skills, confidence and purpose on and off the court. Stories and video links will be added with each player’s approval.</p>
+      </div>
+      <div class="coaching-case-study-carousel" aria-roledescription="carousel" aria-label="Anonymous basketball player stories">
+        <div class="coaching-case-study-viewport">
+          <div class="coaching-case-study-track">
+            <article class="coaching-case-study-panel" aria-roledescription="slide" aria-label="Player 1 of 3">
+              <div><p class="coaching-case-study-panel-label">Basketball · Player 01</p><h3>Building fundamentals and game awareness.</h3><p>Approved details about this player’s basketball journey will be added here.</p></div>
+              <div><div class="coaching-case-study-details"><div><span>Player</span><strong>Anonymous</strong></div><div><span>Video</span><strong>YouTube link pending</strong></div></div><span class="coaching-case-study-video" aria-disabled="true">Video link pending <span aria-hidden="true">↗</span></span></div>
+            </article>
+            <article class="coaching-case-study-panel" aria-roledescription="slide" aria-label="Player 2 of 3" aria-hidden="true">
+              <div><p class="coaching-case-study-panel-label">Basketball · Player 02</p><h3>Growing confidence and teamwork.</h3><p>Approved details about this player’s basketball journey will be added here.</p></div>
+              <div><div class="coaching-case-study-details"><div><span>Player</span><strong>Anonymous</strong></div><div><span>Video</span><strong>YouTube link pending</strong></div></div><span class="coaching-case-study-video" aria-disabled="true">Video link pending <span aria-hidden="true">↗</span></span></div>
+            </article>
+            <article class="coaching-case-study-panel" aria-roledescription="slide" aria-label="Player 3 of 3" aria-hidden="true">
+              <div><p class="coaching-case-study-panel-label">Basketball · Player 03</p><h3>Turning practice into purposeful play.</h3><p>Approved details about this player’s basketball journey will be added here.</p></div>
+              <div><div class="coaching-case-study-details"><div><span>Player</span><strong>Anonymous</strong></div><div><span>Video</span><strong>YouTube link pending</strong></div></div><span class="coaching-case-study-video" aria-disabled="true">Video link pending <span aria-hidden="true">↗</span></span></div>
+            </article>
+          </div>
+        </div>
+        <div class="coaching-case-study-controls" aria-label="Case study controls"><button type="button" data-case-prev aria-label="Previous case study">←</button><span class="coaching-case-study-count" aria-live="polite">1 / 3</span><button type="button" data-case-next aria-label="Next case study">→</button></div>
+      </div>
+    </section>
+  </div>
   <section class="basketball-player-feature" id="basketball-team-photo" aria-label="Basketball teammates">
     <img src="images/Basketball/Slytherin.jpg" alt="Basketball teammates gathering together in a team huddle" loading="lazy">
     <div class="basketball-player-caption"><p class="basketball-player-note">Focused practice and patient coaching help players strengthen fundamentals, make confident decisions and grow together as a team.</p></div>
   </section>
-  <a class="basketball-section-scroll" href="#basketball-next-steps" aria-label="Scroll to next steps">Work with us<span aria-hidden="true"></span></a>
-  <section class="basketball-next-steps" id="basketball-next-steps" aria-labelledby="basketball-next-steps-title">
-    <div class="basketball-next-steps-inner">
-      <div class="basketball-next-steps-heading">
-          <p class="philosophy-eyebrow">Get started</p><h2 id="basketball-next-steps-title">Let’s move the game forward.</h2>
-          <p>Whether you’re looking to grow as a player or build a partnership, we’d like to hear from you.</p>
-        </div>
-        <div class="basketball-next-steps-links" aria-label="Ways to connect">
-          <a class="basketball-next-step" href="mailto:?subject=Basketball%20Player%20Development%20Inquiry"><span class="basketball-next-step-label">For players and families</span><strong>Register your interest</strong><span aria-hidden="true">↗</span></a>
-          <a class="basketball-next-step" href="mailto:?subject=Basketball%20Team%20Partnership%20Inquiry"><span class="basketball-next-step-label">For teams and organizations</span><strong>Explore a partnership</strong><span aria-hidden="true">↗</span></a>
-        </div>
-    </div>
-  </section>
+  <script>
+    (()=>{
+      const carousel=document.querySelector('.coaching-case-study-carousel');
+      if(!carousel)return;
+      const track=carousel.querySelector('.coaching-case-study-track');
+      const slides=[...carousel.querySelectorAll('.coaching-case-study-panel')];
+      const count=carousel.querySelector('.coaching-case-study-count');
+      let current=0;
+      const show=index=>{
+        current=(index+slides.length)%slides.length;
+        slides.forEach((slide,i)=>slide.setAttribute('aria-hidden',String(i!==current)));
+        track.style.transform=`translateX(-${current*100}%)`;
+        count.textContent=`${current+1} / ${slides.length}`;
+      };
+      carousel.querySelector('[data-case-prev]').addEventListener('click',()=>show(current-1));
+      carousel.querySelector('[data-case-next]').addEventListener('click',()=>show(current+1));
+    })();
+  </script>
   <script src="site-scroll.js"></script>
 </body>
 </html>
