@@ -733,6 +733,39 @@ body.consulting-page{--paper:#181716;--ink:#f4f1ee;--muted:#b8b0b3;--line:rgba(2
   .about-page .case-study-editorial-story article { grid-template-columns: 28px minmax(0, 1fr); }
 }
 
+/* Large desktop layouts: keep the page rhythm centered and readable at wide widths. */
+@media (min-width: 1441px) {
+  .coaching-page,
+  .consulting-page .coaching-page,
+  .basketball-page,
+  .about-page .shell {
+    max-width: 1440px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .basketball-page { width: min(calc(100% - 48px), 1440px); }
+  .coaching-next-steps-inner,
+  .basketball-next-steps-inner,
+  .consulting-page .coaching-next-steps-inner {
+    max-width: 1440px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: clamp(48px, 5.2vw, 88px);
+    padding-left: clamp(48px, 5.2vw, 88px);
+  }
+  .about-page .home-founder { max-width: 1440px; margin-right: auto; margin-left: auto; }
+}
+
+/* Touch devices should not retain hover lift states after a tap. */
+@media (hover: none) {
+  .coaching-contact-form:hover,
+  .basketball-contact-form:hover,
+  .coaching-value-card:hover,
+  .basketball-value-card:hover,
+  .coaching-gallery-item:hover,
+  .basketball-gallery-item:hover { transform: none; }
+}
+
 
 
 
