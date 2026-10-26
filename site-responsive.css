@@ -3,7 +3,7 @@
 html,body{width:100%;max-width:100%;overflow-x:clip}
 img,svg,video{max-width:100%}
 main,section,article,figure,form,.shell,.home-shell{min-width:0}
-.shell,.home-shell{width:min(calc(100% - 48px),1400px)}
+.shell,.home-shell{width:100%;max-width:1400px;margin:0 auto;padding-right:clamp(24px,5.2vw,88px);padding-left:clamp(24px,5.2vw,88px)}
 
 /* Homepage hero: a framed editorial canvas with a soft orbital accent. */
 .home-page .home-hero{position:relative;isolation:isolate;overflow:hidden;min-height:clamp(620px,calc(100svh - 118px),850px);margin:18px 0 42px;padding:clamp(56px,8vw,108px) clamp(26px,5vw,68px) 104px;border:1px solid rgba(48,44,49,.12);border-radius:32px;background:linear-gradient(132deg,rgba(255,255,255,.72),rgba(234,229,223,.78));box-shadow:0 22px 58px rgba(40,37,42,.055)}
@@ -16,7 +16,7 @@ main,section,article,figure,form,.shell,.home-shell{min-width:0}
 .home-page .home-scroll{bottom:30px}
 
 @media (min-width:761px) and (max-width:1024px){
-  .shell,.home-shell{width:calc(100% - 40px)}
+  .shell,.home-shell{width:100%;max-width:1400px;padding-right:clamp(24px,4vw,40px);padding-left:clamp(24px,4vw,40px)}
   .nav{gap:clamp(10px,1.45vw,16px);font-size:10px;letter-spacing:.09em}
   .programs-layout,.philosophy{grid-template-columns:minmax(0,1fr)}
   .basketball-contact{grid-template-columns:minmax(0,1fr);gap:28px}
@@ -36,7 +36,7 @@ main,section,article,figure,form,.shell,.home-shell{min-width:0}
 }
 
 @media (max-width:760px){
-  .shell,.home-shell{width:calc(100% - 36px)}
+  .shell,.home-shell{width:100%;max-width:none;padding-right:clamp(24px,5.2vw,40px);padding-left:clamp(24px,5.2vw,40px)}
   .topbar{height:auto;min-height:68px;flex-wrap:wrap;row-gap:12px;padding:14px 0}
   .nav{position:static;left:auto;order:3;transform:none;width:100%;justify-content:center;flex-wrap:wrap;gap:10px 18px;padding-top:13px;border-top:1px solid var(--line);font-size:10px;letter-spacing:.08em}
   .hero{min-height:0;padding:clamp(68px,12vh,110px) 0 clamp(68px,12vh,108px)}
@@ -77,7 +77,7 @@ main,section,article,figure,form,.shell,.home-shell{min-width:0}
 }
 
 @media (max-width:560px){
-  .shell,.home-shell{width:calc(100% - 32px)}
+  .shell,.home-shell{padding-right:19px;padding-left:19px}
   .topbar{column-gap:10px}
   .brand,.home-brand{font-size:16px}
   .nav{gap:9px 13px;font-size:9px;letter-spacing:.06em}
@@ -118,7 +118,7 @@ main,section,article,figure,form,.shell,.home-shell{min-width:0}
 }
 
 @media (max-width:360px){
-  .shell,.home-shell{width:calc(100% - 24px)}
+  .shell,.home-shell{padding-right:16px;padding-left:16px}
   .nav{gap:8px 10px;font-size:8px}
   .home-offering-content .home-offering-item,.home-offering-item.project-management-item{grid-template-columns:21px minmax(0,1fr);column-gap:7px}
   .home-offering-content .home-offering-item:before{width:20px;height:20px}
@@ -357,12 +357,12 @@ main,section,article,figure,form,.shell,.home-shell{min-width:0}
 /* Index hero refresh: a strong editorial split with the featured photo on the right. */
 .home-showcase .home-showcase-cta[hidden]{display:none!important}
 /* Keep the site's main canvas at the requested 1400px maximum. */
-.shell,.home-shell{width:min(calc(100% - 48px),1400px);max-width:1400px}
+.shell,.home-shell{width:100%;max-width:1400px;margin-right:auto;margin-left:auto;padding-right:clamp(24px,5.2vw,88px);padding-left:clamp(24px,5.2vw,88px)}
 .basketball-page,.home-showcase{width:100%;max-width:1400px;margin-right:auto;margin-left:auto}
 .basketball-page{overflow:visible}
 .home-showcase .home-page-nav .home-brand{flex:0 0 auto;color:#f4f1ee;font-size:18px;font-weight:750;letter-spacing:.17em}
 .home-showcase .home-page-nav .home-brand sup{margin-left:2px;font-size:9px;letter-spacing:0;vertical-align:top}
-@media(max-width:760px){.shell,.home-shell{width:calc(100% - 36px)}.basketball-page,.home-showcase{width:100%}}
+@media(max-width:760px){.shell,.home-shell{width:100%;max-width:none;padding-right:clamp(24px,5.2vw,40px);padding-left:clamp(24px,5.2vw,40px)}.basketball-page,.home-showcase{width:100%}}
 @media(max-width:620px){.home-showcase .home-page-nav .home-brand{font-size:16px}}
 @media(max-width:620px){.basketball-page .basketball-note{top:17%}}
 
@@ -942,4 +942,26 @@ body.consulting-page{--paper:#181716;--ink:#f4f1ee;--muted:#b8b0b3;--line:rgba(2
   .home-showcase-social{bottom:118px;left:15px;gap:7px}
   .home-showcase-social a{width:22px;height:22px}
   .home-showcase-social svg{width:14px;height:14px}
+}
+
+/* Keep the homepage canvas and its controls aligned with Basketball at tablet widths. */
+@media (min-width:761px) and (max-width:1024px) {
+  .home-showcase .home-page-nav{padding-right:clamp(24px,4vw,40px);padding-left:clamp(24px,4vw,40px)}
+  .home-showcase-meta{right:clamp(24px,4vw,40px);left:clamp(24px,4vw,40px)}
+  .home-showcase-copy{right:clamp(24px,4vw,40px);left:clamp(24px,4vw,40px)}
+  .home-showcase-social,.home-showcase-scroll{left:clamp(24px,4vw,40px)}
+  .home-showcase .home-showcase-count{right:clamp(24px,4vw,40px)}
+  .home-showcase-dots{right:clamp(24px,4vw,40px)}
+}
+
+/* Scale all three homepage hero slides down by 30% on phones. */
+@media (max-width:760px) {
+  .home-showcase-title{font-size:clamp(47.6px,8.4vw,65.8px)}
+}
+@media (max-width:480px) {
+  .home-showcase-title{font-size:clamp(40.6px,10.5vw,53.2px)}
+}
+
+@media (max-width:760px) {
+  .collective-page>.shell>.topbar{padding-right:0;padding-left:0}
 }
