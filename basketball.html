@@ -70,6 +70,29 @@
     .basketball-impact-stat strong{display:block;white-space:nowrap;font-size:clamp(34px,5vw,64px);font-weight:650;line-height:1;letter-spacing:-.07em}
     .basketball-impact-stat strong span{color:var(--accent)}
     .basketball-impact-stat p{margin:10px 0 0;color:var(--muted);font-size:11px;line-height:1.5}
+    .basketball-services{width:100vw;margin-left:calc(50% - 50vw);padding:clamp(54px,7vw,92px) clamp(24px,5.2vw,88px);border-top:1px solid var(--line);background:#181716;color:var(--ink)}
+    .basketball-services-layout{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(34px,6vw,82px);max-width:1440px;margin:0 auto}
+    .basketball-services-overview{min-width:0;padding-right:clamp(22px,4vw,56px);border-right:1px solid rgba(244,241,238,.2)}
+    .basketball-services-eyebrow{margin:0 0 14px;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
+    .basketball-services-overview h2{margin:0 0 18px;font-family:Georgia,serif;font-size:clamp(38px,4.5vw,58px);font-weight:400;line-height:.98;letter-spacing:-.055em}
+    .basketball-services-overview>p:not(.basketball-services-eyebrow){max-width:54ch;margin:0;padding:20px;border-left:2px solid var(--accent);background:rgba(255,255,255,.045);color:rgba(244,241,238,.76);font-size:14px;line-height:1.75}
+    .basketball-services-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 18px;margin:22px 0 0}
+    .basketball-services-meta div{padding:12px 0;border-top:1px solid rgba(244,241,238,.2)}
+    .basketball-services-meta dt{margin-bottom:5px;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+    .basketball-services-meta dd{margin:0;color:var(--ink);font-size:13px;line-height:1.5}
+    .basketball-services-cta{display:inline-flex;min-height:48px;align-items:center;gap:18px;margin-top:24px;padding:6px 7px 6px 16px;background:var(--accent);color:#181716;font-size:11px;font-weight:650;transition:transform .2s ease,background .2s ease}
+    .basketball-services-cta:hover,.basketball-services-cta:focus-visible{transform:translateY(-2px);background:#d1cacc}
+    .basketball-services-cta span{display:grid;width:34px;height:34px;place-items:center;background:#181716;color:var(--ink);font-size:16px}
+    .basketball-services-list{min-width:0}
+    .basketball-services-list>header{padding:0 0 20px;border-bottom:1px solid rgba(244,241,238,.2)}
+    .basketball-services-list>header strong{display:block;margin-bottom:8px;color:#d2b49b;font-size:10px;font-weight:650;letter-spacing:.16em;text-transform:uppercase}
+    .basketball-services-list>header p{max-width:52ch;margin:0;color:rgba(244,241,238,.72);font-size:13px;line-height:1.7}
+    .basketball-service-row{display:grid;grid-template-columns:32px minmax(0,1fr);align-items:start;gap:10px 14px;padding:20px 0;border-bottom:1px solid rgba(244,241,238,.16)}
+    .basketball-service-row>span{display:grid;width:27px;height:27px;place-items:center;border:1px solid rgba(210,180,155,.5);border-radius:50%;color:#d2b49b;font-size:10px;font-weight:600}
+    .basketball-service-row h3{margin:2px 0 6px;font-size:clamp(18px,2vw,24px);font-weight:550;letter-spacing:-.04em}
+    .basketball-service-row p{grid-column:2;max-width:50ch;margin:0;color:rgba(244,241,238,.68);font-size:12px;line-height:1.65}
+    @media(max-width:760px){.basketball-services-layout{grid-template-columns:1fr;gap:30px}.basketball-services-overview{padding:0 0 28px;border-right:0;border-bottom:1px solid rgba(244,241,238,.2)}}
+    @media(max-width:520px){.basketball-services{padding:48px 20px 60px}.basketball-services-meta{grid-template-columns:1fr 1fr}}
 .coaching-case-study{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);align-items:stretch;gap:clamp(28px,5vw,64px);padding:clamp(58px,8vw,96px) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
     .coaching-case-study-copy{display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
     .coaching-case-study-copy .coaching-eyebrow{position:static;margin:0 0 20px;color:#d2b49b}
@@ -186,6 +209,27 @@
       </div>
       <a class="basketball-scroll-cue" href="#basketball-player-photo" aria-label="Scroll to player training photo">Player development <span aria-hidden="true"></span></a>
     </section>
+  <section class="basketball-services" id="basketball-services" aria-labelledby="basketball-services-title">
+    <div class="basketball-services-layout">
+      <article class="basketball-services-overview">
+        <p class="basketball-services-eyebrow">Basketball overview</p>
+        <h2 id="basketball-services-title">Development</h2>
+        <p>ARCENI Basketball supports players and teams with purposeful coaching that builds strong foundations, confidence and growth on and off the court.</p>
+        <dl class="basketball-services-meta" aria-label="Basketball service details">
+          <div><dt>Services</dt><dd>Player development<br>Team performance</dd></div>
+          <div><dt>For</dt><dd>Youth players and teams</dd></div>
+          <div><dt>Approach</dt><dd>Practical and player-centered</dd></div>
+          <div><dt>Focus</dt><dd>Skill and teamwork</dd></div>
+        </dl>
+        <a class="basketball-services-cta" href="contact.html?service=basketball">Partner with us <span aria-hidden="true">↗</span></a>
+      </article>
+      <div class="basketball-services-list" aria-label="Basketball services">
+        <header><strong>What we support</strong><p>Purposeful player development and team performance brings strong fundamentals, confident decisions and shared progress to the court.</p></header>
+        <article class="basketball-service-row"><span aria-hidden="true">01</span><div><h3>Player Development</h3><p>Strengthen fundamentals, improve game awareness and build confidence through focused individual coaching.</p></div></article>
+        <article class="basketball-service-row"><span aria-hidden="true">02</span><div><h3>Team Performance</h3><p>Build communication, discipline and shared responsibility so players can grow together on and off the court.</p></div></article>
+      </div>
+    </div>
+  </section>
     <section class="basketball-player-feature" id="basketball-player-photo" aria-label="Player development photo">
       <img src="images/Basketball/IMG_5089-Lisa-Development.JPG" alt="Coach supporting a young player during an outdoor basketball training session" loading="lazy">
       <div class="basketball-player-caption"><p class="basketball-player-note">Basketball development that helps young players grow on the court and carry confidence, discipline and teamwork into life.</p></div>
@@ -198,22 +242,12 @@
         <article class="basketball-impact-stat"><strong>10<span>+</span></strong><p>Teams impacted</p></article>
       </div>
     </section>
+    <section class="basketball-player-feature" id="basketball-player-photo-impact" aria-label="Basketball player development practice">
+      <img src="images/Basketball/IMG_2199.JPG" alt="A basketball player shoots as a coach watches from the court" loading="lazy">
+      <div class="basketball-player-caption"><p class="basketball-player-note">Focused shooting practice helps players refine their technique, build confidence and apply their skills on the court.</p></div>
+    </section>
 
-    <a class="basketball-section-scroll" href="#basketball-gallery" aria-label="Scroll to basketball gallery">Gallery<span aria-hidden="true"></span></a>
   </main>
-
-  <section class="basketball-gallery" id="basketball-gallery" aria-label="Basketball gallery">
-    <div class="basketball-gallery-inner">
-      <div class="basketball-gallery-grid">
-        <a class="basketball-gallery-item" href="images/Basketball/IMG_2912.JPG" aria-label="Coach guiding a player during training"><img src="images/Basketball/IMG_2912.JPG" alt="Coach guiding a player during an outdoor basketball session" loading="lazy"></a>
-        <a class="basketball-gallery-item" href="images/Basketball/IMG_6604.JPG" aria-label="Player practicing ball handling"><img src="images/Basketball/IMG_6604.JPG" alt="Player practicing ball handling with a coach" loading="lazy"></a>
-        <a class="basketball-gallery-item" href="images/Basketball/IMG_4640.JPG" aria-label="Basketball players practicing"><img src="images/Basketball/IMG_4640.JPG" alt="Players practicing basketball together" loading="lazy"></a>
-        <a class="basketball-gallery-item" href="images/Basketball/IMG_2199.JPG" aria-label="Player practicing a jump shot"><img src="images/Basketball/IMG_2199.JPG" alt="Player practicing a jump shot with a coach" loading="lazy"></a>
-        <a class="basketball-gallery-item" href="images/Basketball/IMG_2433.JPG" aria-label="Basketball teammates in a huddle"><img src="images/Basketball/IMG_2433.JPG" alt="Basketball teammates gathering for a team huddle" loading="lazy"></a>
-        <a class="basketball-gallery-item" href="images/Basketball/IMG_2957.JPG" aria-label="Basketball training session"><img src="images/Basketball/IMG_2957.JPG" alt="Players taking part in a basketball training session" loading="lazy"></a>
-      </div>
-    </div>
-  </section>
   <div class="basketball-case-study-shell">
     <a class="basketball-section-scroll" href="#coaching-case-study" aria-label="Scroll to basketball player stories">Player stories<span aria-hidden="true"></span></a>
     <section class="coaching-case-study" id="coaching-case-study" aria-labelledby="coaching-case-study-title">
