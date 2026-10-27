@@ -876,3 +876,34 @@ img{max-width:100%}
   .home-slide-meta{top:30%}
 }
 
+/* Final fluid layout refinements for the current page templates. */
+@media (min-width:1200px){
+  .coaching-page,.consulting-page .coaching-page,.basketball-page,.about-page .shell{max-width:1440px;margin-inline:auto}
+  .coaching-gallery-grid,.basketball-gallery-grid{max-width:1440px;margin-inline:auto}
+  .contact-main{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(48px,7vw,100px)}
+}
+
+@media (max-width:760px){
+  .coaching-page,.consulting-page .coaching-page,.basketball-page,.about-page .shell{width:100%;max-width:100%}
+  .coaching-programs-layout,.consulting-programs-layout,.coaching-case-study,.basketball-case-study{grid-template-columns:minmax(0,1fr)}
+  .coaching-gallery-grid,.basketball-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:clamp(140px,30vw,220px)}
+  .coaching-gallery-item,.basketball-gallery-item{min-width:0}
+  .coaching-contact-form,.basketball-contact-form,.contact-form{width:100%;min-width:0}
+  .coaching-player-feature,.coaching-team-section,.basketball-player-feature,.basketball-team-section{max-width:100vw}
+}
+
+@media (max-width:600px){
+  .coaching-nav,.basketball-nav{padding-right:max(16px,env(safe-area-inset-right));padding-left:max(16px,env(safe-area-inset-left))}
+  .coaching-hero,.basketball-hero{min-height:max(590px,calc(100svh - 104px));padding-right:0;padding-left:0}
+  .coaching-portrait,.basketball-portrait{max-width:82vw}
+  .coaching-gallery,.basketball-gallery{padding-right:max(16px,env(safe-area-inset-right));padding-left:max(16px,env(safe-area-inset-left))}
+  .coaching-gallery-grid,.basketball-gallery-grid{grid-auto-rows:clamp(126px,42vw,190px)}
+  .contact-shell{padding-right:max(18px,env(safe-area-inset-right));padding-left:max(18px,env(safe-area-inset-left))}
+  .contact-main{grid-template-columns:minmax(0,1fr);gap:28px}
+  .contact-form,.coaching-contact-form,.basketball-contact-form{grid-template-columns:minmax(0,1fr)}
+  .contact-field,.contact-field.wide,.contact-form-head,.contact-submit,.contact-note{grid-column:1}
+  .home-slide{padding-right:max(22px,env(safe-area-inset-right));padding-left:max(22px,env(safe-area-inset-left))}
+  .home-slide-content{width:100%;max-width:620px}
+  .home-slide-meta{right:max(22px,env(safe-area-inset-right));max-width:55vw}
+}
+
