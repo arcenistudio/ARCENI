@@ -907,3 +907,56 @@ img{max-width:100%}
   .home-slide-meta{right:max(22px,env(safe-area-inset-right));max-width:55vw}
 }
 
+/* Final cross-page refinements for tablet, phone, and wide desktop screens. */
+@media (min-width:761px) and (max-width:1050px){
+  .consulting-page .consulting-hero{min-height:max(680px,calc(100svh - 86px));padding-right:clamp(28px,5vw,56px);padding-left:clamp(28px,5vw,56px)}
+  .consulting-page .consulting-hero-image{width:76vw;opacity:.58}
+  .consulting-page .consulting-hero-note{top:15%;right:clamp(28px,5vw,56px);width:min(230px,27vw)}
+  .consulting-page .consulting-hero-title{max-width:10ch;font-size:clamp(58px,9vw,96px)}
+  .consulting-page .consulting-hero-bottom{grid-template-columns:minmax(120px,.55fr) minmax(0,1.2fr);gap:20px 28px}
+  .consulting-page .consulting-hero-cta{grid-column:2;justify-self:start}
+  .consulting-page .consulting-case-study-stages{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+
+@media (max-width:760px){
+  .consulting-page .consulting-hero{width:100vw;min-height:max(690px,calc(100svh - 92px));justify-content:flex-end;margin-left:calc(50% - 50vw);padding:108px 24px 82px}
+  .consulting-page .consulting-hero:after{background:linear-gradient(90deg,rgba(24,23,22,.78),rgba(24,23,22,.34)),linear-gradient(0deg,#181716 0%,rgba(24,23,22,.72) 36%,rgba(24,23,22,.12) 100%)}
+  .consulting-page .consulting-hero-image{top:0;right:0;width:100%;height:66%;object-position:center 42%;opacity:.62;mask-image:linear-gradient(180deg,#000 0%,#000 64%,transparent 100%)}
+  .consulting-page .consulting-hero-eyebrow{top:34px;left:24px;right:24px;font-size:9px}
+  .consulting-page .consulting-hero-note{display:none}
+  .consulting-page .consulting-hero-title{max-width:9ch;margin-bottom:30px;font-size:clamp(52px,11.5vw,82px);line-height:.88}
+  .consulting-page .consulting-hero-bottom{grid-template-columns:minmax(0,1fr);gap:16px;padding-top:18px}
+  .consulting-page .consulting-hero-label,.consulting-page .consulting-hero-copy{max-width:52ch}
+  .consulting-page .consulting-hero-cta{grid-column:1;width:min(100%,280px)}
+  .consulting-page .consulting-hero-scroll{right:24px;bottom:20px}
+  .consulting-page .consulting-case-study-redesign-head{align-items:flex-start;flex-direction:column;gap:14px}
+  .consulting-page .consulting-case-study-stages{grid-template-columns:minmax(0,1fr)}
+  .consulting-page .consulting-case-study-stages article,.consulting-page .consulting-case-study-stages article+article{padding:18px 0;border-left:0}
+  .consulting-page .consulting-case-study-feature{height:clamp(230px,62vw,390px)}
+  .site-header-social{gap:8px}
+}
+
+@media (max-width:520px){
+  .consulting-page .consulting-hero{min-height:max(710px,calc(100svh - 100px));padding-right:max(20px,env(safe-area-inset-right));padding-left:max(20px,env(safe-area-inset-left))}
+  .consulting-page .consulting-hero-eyebrow{left:max(20px,env(safe-area-inset-left));right:max(20px,env(safe-area-inset-right))}
+  .consulting-page .consulting-hero-title{font-size:clamp(46px,12.5vw,68px)}
+  .consulting-page .consulting-hero-copy{font-size:13px}
+  .consulting-page .consulting-hero-scroll{right:max(20px,env(safe-area-inset-right))}
+  .consulting-page .trusted-organizations{padding-right:20px;padding-left:20px}
+  .consulting-page .trusted-organizations-heading{align-items:flex-start;flex-direction:column;gap:8px}
+  .contact-form input,.contact-form select,.contact-form textarea,.coaching-contact-form input,.coaching-contact-form select,.coaching-contact-form textarea,.basketball-contact-form input,.basketball-contact-form select,.basketball-contact-form textarea{min-width:0;width:100%}
+  .home-panel-kicker{max-width:15ch}
+}
+
+@media (min-width:1441px){
+  .consulting-page .consulting-hero{padding-right:max(88px,calc((100vw - 1440px)/2));padding-left:max(88px,calc((100vw - 1440px)/2))}
+  .consulting-page .consulting-hero-eyebrow{left:max(88px,calc((100vw - 1440px)/2))}
+  .consulting-page .consulting-hero-note,.consulting-page .consulting-hero-scroll{right:max(88px,calc((100vw - 1440px)/2))}
+  .consulting-page .consulting-hero-title{font-size:clamp(120px,9vw,148px)}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .home-panel::before,.home-panel-cta,.site-header-social a{transition:none!important}
+}
+
