@@ -303,6 +303,13 @@
     .coaching-player-caption h2{max-width:800px;margin:12px 0 0;font-size:clamp(36px,6vw,76px);font-weight:650;line-height:.96;letter-spacing:-.075em}
     .coaching-player-caption .coaching-player-note{max-width:300px;margin-left:auto;color:rgba(244,241,238,.78);font-size:12px;font-weight:400;line-height:1.6;letter-spacing:0;text-align:right;text-transform:none}
     .coaching-team-section{position:relative;width:100vw;min-height:clamp(380px,58vw,720px);margin-left:calc(50% - 50vw);overflow:hidden;background:#181716}
+    #consulting-feature-photo{min-height:clamp(266px,40.6vw,504px)}
+    .coaching-bottom-photo-cta-panel{position:absolute;z-index:1;right:clamp(24px,5.2vw,88px);bottom:clamp(28px,5vw,58px);display:grid;gap:14px;max-width:620px;padding:clamp(20px,3vw,30px);border:1px solid rgba(244,241,238,.22);background:rgba(24,23,22,.78);backdrop-filter:blur(8px)}
+    .coaching-bottom-photo-cta-panel>p{margin:0;color:#f4f1ee;font-size:clamp(18px,2vw,24px);font-weight:600;letter-spacing:-.04em}
+    .coaching-bottom-photo-cta-panel .coaching-bottom-photo-description{max-width:520px;color:rgba(244,241,238,.82);font-size:14px;font-weight:400;line-height:1.6;letter-spacing:0}
+    .coaching-bottom-photo-actions{display:flex;flex-wrap:wrap;gap:10px}
+    .coaching-bottom-photo-actions .coaching-team-cta{min-height:42px;font-size:9px}
+    @media(max-width:600px){.coaching-bottom-photo-cta-panel{right:16px;bottom:18px;left:16px;max-width:none;padding:18px}.coaching-bottom-photo-actions{display:grid;grid-template-columns:1fr}.coaching-bottom-photo-actions .coaching-team-cta{width:100%}}
     .coaching-team-section img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center 48%;filter:brightness(.72)}
     .coaching-team-section:after{position:absolute;inset:0;background:linear-gradient(0deg,rgba(24,23,22,.84),transparent 55%),linear-gradient(90deg,rgba(24,23,22,.24),transparent 70%);content:"";pointer-events:none}
     .coaching-team-caption{position:absolute;z-index:1;right:clamp(24px,5.2vw,88px);bottom:clamp(30px,5vw,64px);left:clamp(24px,5.2vw,88px);display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
@@ -314,6 +321,11 @@
     .coaching-team-cta{display:inline-flex;min-height:46px;align-items:center;justify-content:space-between;gap:28px;padding:6px 7px 6px 15px;border:1px solid rgba(244,241,238,.55);background:rgba(24,23,22,.32);color:#f4f1ee;font-size:11px;font-weight:600;transition:background .2s ease,transform .2s ease}
     .coaching-team-cta:hover,.coaching-team-cta:focus-visible{transform:translateY(-2px);background:rgba(24,23,22,.68)}
     .coaching-team-cta span{display:grid;width:32px;height:32px;place-items:center;background:#b8b0b3;color:#181716;font-size:16px}
+    @media(max-width:760px){.coaching-team-caption{right:20px;left:20px;align-items:flex-start;flex-direction:column;gap:16px}.coaching-team-title{font-size:clamp(34px,8vw,56px)}.coaching-team-note{max-width:42ch}.coaching-team-action{width:100%}}
+    .consulting-approach{min-height:clamp(228px,34.8vw,432px)}
+    .consulting-approach .coaching-team-caption{justify-content:flex-end}
+    .consulting-approach .coaching-team-note{max-width:38ch;text-align:right}
+    @media(max-width:760px){.consulting-approach .coaching-team-caption{align-items:flex-end}}
 
     :focus-visible{outline:2px solid #d0c9c7;outline-offset:4px}
 
@@ -344,7 +356,7 @@
     <div class="consulting-programs-layout">
       <article class="consulting-program-focus">
         <p class="consulting-program-eyebrow">Consulting overview</p>
-        <h2 id="consulting-program-title">Our Work</h2>
+        <h2 id="consulting-program-title">Consulting</h2>
         <p>ARCENI partners with organizations to move important work from intention to delivery. We combine clear project management with practical capacity building so teams can make progress and sustain it.</p>
         <dl class="consulting-program-meta" aria-label="Consulting service details">
           <div><dt>Services</dt><dd>Project management<br>Capacity building</dd></div>
@@ -362,11 +374,18 @@
     </div>
   </section>
 
+  <section class="coaching-team-section consulting-approach" id="consulting-approach" aria-label="Consulting approach">
+    <img src="images/Consulting/vd-photography-ek92BkvL1-I-unsplash.jpg" alt="A person writing notes during a planning session" loading="lazy">
+    <div class="coaching-team-caption">
+      <p class="coaching-team-note">We bring clarity to plans, coordinate project delivery and build the capacity to sustain progress.</p>
+    </div>
+  </section>
+
   <div class="coaching-case-study-shell">
     <section class="coaching-case-study" id="coaching-case-study" aria-labelledby="coaching-case-study-title">
       <div class="coaching-case-study-copy">
-        <p class="coaching-eyebrow">Featured case studies · Anonymous organizations</p>
-        <h2 id="coaching-case-study-title">Different organizations. Shared progress.</h2>
+        <p class="coaching-eyebrow">Featured case studiess</p>
+        <h2 id="coaching-case-study-title">Case Studies.</h2>
         <p>Explore organization stories about moving projects forward and strengthening team capacity. Stories and video links will be added with each client’s approval.</p>
       </div>
       <div class="coaching-case-study-carousel" aria-roledescription="carousel" aria-label="Anonymous consulting case studies">
@@ -379,7 +398,7 @@
                 <p>Approved case-study details about this organization’s work will be added here.</p>
               </div>
               <div>
-                <div class="coaching-case-study-details"><div><span>Organization</span><strong>Anonymous</strong></div><div><span>Video</span><strong>YouTube link pending</strong></div></div>
+                <div class="coaching-case-study-details"><div><span>Organization</span><strong>Pending</strong></div><div><span>Video</span><strong>YouTube link pending</strong></div></div>
                 <span class="coaching-case-study-video" aria-disabled="true">Video link pending <span aria-hidden="true">↗</span></span>
               </div>
             </article>
@@ -415,6 +434,18 @@
       </div>
     </section>
   </div>
+
+  <section class="coaching-team-section coaching-bottom-photo" id="consulting-feature-photo" aria-label="ARCENI Consulting contact">
+    <img src="images/Collective/wadi-lissa-AZvGpBp925o-unsplash.jpg" alt="A person reflecting while writing in a journal" loading="lazy">
+    <div class="coaching-bottom-photo-cta-panel">
+      <p>Interested in ARCENI Consulting?</p>
+      <p class="coaching-bottom-photo-description">Practical project management and capacity building help organizations move important work forward and sustain progress.</p>
+      <div class="coaching-bottom-photo-actions">
+        <a class="coaching-team-cta" href="contact.html?service=consulting#contact-form">Organizations: Contact us <span aria-hidden="true">↗</span></a>
+        <a class="coaching-team-cta" href="contact.html?service=consulting#contact-form">Teams: Discuss a project <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
 
   <script>
     (()=>{

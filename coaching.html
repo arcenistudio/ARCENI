@@ -155,6 +155,29 @@
     .coaching-value-card h3{align-self:center;font-size:13px;font-weight:600;letter-spacing:-.01em}
     .coaching-value-card p{grid-column:2;max-width:36ch;color:rgba(244,241,238,.68);font-size:12px;line-height:1.55}
     @media(max-width:760px){.coaching-program-values{grid-template-columns:1fr}.coaching-value-card,.coaching-value-card:nth-of-type(odd){padding:16px 0}}
+    .coaching-program-values{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-content:stretch}
+    .coaching-benefits-intro{grid-column:1/-1;padding:0 0 8px}
+    .coaching-benefits-intro>p:first-child{margin:0 0 8px;color:#d2b49b;font-size:9px;font-weight:650;letter-spacing:.16em;text-transform:uppercase}
+    .coaching-benefits-intro h3{margin:0;color:#f4f1ee;font-size:clamp(20px,2.2vw,27px);font-weight:600;letter-spacing:-.045em}
+    .coaching-benefits-intro>p:last-child{max-width:48ch;margin:9px 0 0;color:rgba(244,241,238,.68);font-size:12px;line-height:1.65}
+    .coaching-value-card,.coaching-value-card:nth-of-type(odd){display:grid;grid-template-columns:36px minmax(0,1fr);grid-template-rows:auto 1fr;align-content:start;align-items:start;gap:15px 12px;min-height:174px;padding:20px;border:1px solid rgba(244,241,238,.14);background:linear-gradient(145deg,#252322,#1d1b1a);transition:transform .22s ease,border-color .22s ease,background .22s ease}
+    .coaching-value-card:before{display:none}
+    .coaching-value-card:hover{transform:translateY(-3px);padding-left:20px;border-color:rgba(210,180,155,.5);background:linear-gradient(145deg,#2b2827,#211f1e)}
+    .coaching-value-icon{width:36px;height:36px;border:1px solid rgba(210,180,155,.38);background:rgba(210,180,155,.1);color:#d2b49b}
+    .coaching-value-icon svg{width:18px;height:18px;stroke:#d2b49b}
+    .coaching-value-card h3{align-self:center;font-size:12px;line-height:1.4;letter-spacing:.025em}
+    .coaching-value-card p{grid-column:1/-1;max-width:30ch;margin:0;color:rgba(244,241,238,.7);font-size:12px;line-height:1.6}
+    @media(max-width:760px){.coaching-program-values{grid-template-columns:repeat(2,minmax(0,1fr))}.coaching-value-card,.coaching-value-card:nth-of-type(odd){min-height:160px;padding:18px}}
+    .coaching-program-values{grid-template-columns:minmax(0,1fr);gap:0;align-content:start}
+    .coaching-benefits-intro{padding:0 0 22px;border-bottom:1px solid rgba(244,241,238,.2)}
+    .coaching-benefits-intro>p:first-child{margin-bottom:10px;color:#d2b49b}
+    .coaching-benefits-intro h3{font-size:clamp(28px,3.6vw,42px);letter-spacing:-.06em}
+    .coaching-benefits-intro>p:last-child{max-width:58ch;margin-top:12px;font-size:14px;line-height:1.7}
+    .coaching-value-card,.coaching-value-card:nth-of-type(odd){grid-template-columns:42px minmax(0,1fr);grid-template-rows:auto auto;align-items:center;gap:4px 16px;min-height:0;padding:20px 8px;border:0;border-bottom:1px solid rgba(244,241,238,.16);background:transparent;transition:padding .2s ease,background .2s ease}
+    .coaching-value-card:hover{transform:none;padding-left:14px;background:rgba(255,255,255,.035)}
+    .coaching-value-icon{grid-column:1;grid-row:1/3;width:36px;height:36px}
+    .coaching-value-card h3{grid-column:2;grid-row:1;margin:0;font-size:15px;font-weight:600;letter-spacing:-.025em}
+    .coaching-value-card p{grid-column:2;grid-row:2;max-width:none;margin:0;color:rgba(244,241,238,.68);font-size:13px;line-height:1.55}
     .coaching-collective{position:relative;display:grid;grid-template-columns:1fr;align-items:center;width:100vw;margin-left:calc(50% - 50vw);padding:clamp(54px,7vw,88px) clamp(24px,5.2vw,88px);background:radial-gradient(ellipse at 92% 0%,rgba(184,176,179,.1),transparent 34%),#211f1e;color:#f4f1ee}
     .coaching-collective:before{position:absolute;top:0;left:clamp(24px,5.2vw,88px);width:74px;height:2px;background:#d2b49b;content:""}
     .coaching-collective-intro{display:grid;width:100%;max-width:1440px;grid-template-columns:minmax(0,1fr) minmax(280px,.8fr);grid-template-rows:auto 1fr auto;align-items:center;gap:18px clamp(36px,7vw,104px);margin:0 auto;padding:clamp(20px,3vw,38px) 0}
@@ -214,6 +237,7 @@
     .coaching-case-study-controls button:hover,.coaching-case-study-controls button:focus-visible{background:#d2b49b;color:#181716;outline:none}
     .coaching-case-study-count{min-width:44px;color:var(--muted);font-size:10px;font-variant-numeric:tabular-nums;text-align:center}
     @media(max-width:760px){.coaching-case-study{grid-template-columns:1fr;gap:28px}.coaching-case-study-panel{min-height:300px}}
+    .coaching-case-study-shell{padding:0 clamp(24px,5.2vw,88px)}
     .coaching-process{width:100vw;margin-left:calc(50% - 50vw);padding:clamp(42px,6vw,76px) clamp(24px,5.2vw,88px);border-top:1px solid var(--line);background:#211f1e;color:#f4f1ee}
     .coaching-process-inner{max-width:1440px;margin:0 auto}
     .coaching-process-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:clamp(28px,4vw,50px)}
@@ -268,6 +292,7 @@
     .coaching-archer-outcome p{margin:0;color:rgba(244,241,238,.68);font-size:10px;line-height:1.5}
     @media(max-width:900px){.coaching-archer-meta{grid-template-columns:repeat(2,minmax(0,1fr))}.coaching-archer-meta div:nth-child(3){border-left:0}.coaching-archer-meta div:nth-child(n+3){border-top:1px solid rgba(244,241,238,.16)}.coaching-archer-grid{grid-template-columns:1fr 1fr;grid-template-areas:"story photo" "outcomes outcomes"}.coaching-archer-photo{min-height:360px}.coaching-archer-outcomes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 22px}.coaching-archer-outcomes h3,.coaching-archer-outcomes>p{grid-column:1/-1}}
     @media(max-width:600px){.coaching-archer-meta{grid-template-columns:1fr 1fr}.coaching-archer-grid{grid-template-columns:1fr;grid-template-areas:"story" "photo" "outcomes"}.coaching-archer-photo{min-height:330px}.coaching-archer-outcomes{grid-template-columns:1fr}}
+    @media(max-width:760px){.coaching-team-caption{right:20px;left:20px;align-items:flex-start;flex-direction:column;gap:16px}.coaching-team-title{font-size:clamp(34px,8vw,56px)}.coaching-team-note{max-width:42ch}.coaching-team-action{width:100%}}
     .coaching-player-feature{position:relative;width:100vw;min-height:clamp(380px,58vw,720px);margin-left:calc(50% - 50vw);overflow:hidden;background:#181716}
     .coaching-player-feature img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center 48%;filter:brightness(.72)}
     .coaching-player-feature:after{position:absolute;inset:0;background:linear-gradient(0deg,rgba(24,23,22,.84),transparent 55%),linear-gradient(90deg,rgba(24,23,22,.24),transparent 70%);content:"";pointer-events:none}
@@ -276,6 +301,13 @@
     .coaching-player-caption h2{max-width:800px;margin:12px 0 0;font-size:clamp(36px,6vw,76px);font-weight:650;line-height:.96;letter-spacing:-.075em}
     .coaching-player-caption .coaching-player-note{max-width:300px;margin-left:auto;color:rgba(244,241,238,.78);font-size:12px;font-weight:400;line-height:1.6;letter-spacing:0;text-align:right;text-transform:none}
     .coaching-team-section{position:relative;width:100vw;min-height:clamp(380px,58vw,720px);margin-left:calc(50% - 50vw);overflow:hidden;background:#181716}
+    #coaching-team-photo.coaching-bottom-photo{min-height:clamp(266px,40.6vw,504px)}
+    .coaching-bottom-photo-cta-panel{position:absolute;z-index:1;right:clamp(24px,5.2vw,88px);bottom:clamp(28px,5vw,58px);display:grid;gap:14px;max-width:620px;padding:clamp(20px,3vw,30px);border:1px solid rgba(244,241,238,.22);background:rgba(24,23,22,.78);backdrop-filter:blur(8px)}
+    .coaching-bottom-photo-cta-panel>p{margin:0;color:#f4f1ee;font-size:clamp(18px,2vw,24px);font-weight:600;letter-spacing:-.04em}
+    .coaching-bottom-photo-cta-panel .coaching-bottom-photo-description{max-width:520px;color:rgba(244,241,238,.82);font-size:14px;font-weight:400;line-height:1.6;letter-spacing:0}
+    .coaching-bottom-photo-actions{display:flex;flex-wrap:wrap;gap:10px}
+    .coaching-bottom-photo-actions .coaching-team-cta{min-height:42px;font-size:9px}
+    @media(max-width:600px){.coaching-bottom-photo-cta-panel{right:16px;bottom:18px;left:16px;max-width:none;padding:18px}.coaching-bottom-photo-actions{display:grid;grid-template-columns:1fr}.coaching-bottom-photo-actions .coaching-team-cta{width:100%}}
     .coaching-team-section img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center 48%;filter:brightness(.72)}
     .coaching-team-section:after{position:absolute;inset:0;background:linear-gradient(0deg,rgba(24,23,22,.84),transparent 55%),linear-gradient(90deg,rgba(24,23,22,.24),transparent 70%);content:"";pointer-events:none}
     .coaching-team-caption{position:absolute;z-index:1;right:clamp(24px,5.2vw,88px);bottom:clamp(30px,5vw,64px);left:clamp(24px,5.2vw,88px);display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
@@ -287,6 +319,10 @@
     .coaching-team-cta{display:inline-flex;min-height:46px;align-items:center;justify-content:space-between;gap:28px;padding:6px 7px 6px 15px;border:1px solid rgba(244,241,238,.55);background:rgba(24,23,22,.32);color:#f4f1ee;font-size:11px;font-weight:600;transition:background .2s ease,transform .2s ease}
     .coaching-team-cta:hover,.coaching-team-cta:focus-visible{transform:translateY(-2px);background:rgba(24,23,22,.68)}
     .coaching-team-cta span{display:grid;width:32px;height:32px;place-items:center;background:#b8b0b3;color:#181716;font-size:16px}
+    .coaching-approach{min-height:clamp(228px,34.8vw,432px)}
+    .coaching-approach .coaching-team-caption{justify-content:flex-end}
+    .coaching-approach .coaching-team-note{max-width:38ch;text-align:right}
+    @media(max-width:760px){.coaching-approach .coaching-team-caption{align-items:flex-end}}
 
     :focus-visible{outline:2px solid #d0c9c7;outline-offset:4px}
 
@@ -307,7 +343,7 @@
       <div class="coaching-bottom">
         <p class="coaching-bottom-label">1-on-1 Coaching <br>Bespoke Workshops</p>
         <p class="coaching-copy">Build self-awareness, strengthen your voice and take purposeful next steps through personalized one-on-one coaching.</p>
-        <a class="coaching-cta" href="#coaching-programs">Explore coaching <span aria-hidden="true">↗</span></a>
+        <a class="coaching-cta" href="#coaching-programs">Explore Programs<span aria-hidden="true">↗</span></a>
       </div>
       <a class="coaching-scroll-cue" href="contact.html?service=coaching" aria-label="Contact ARCENI about coaching">Start a conversation <span aria-hidden="true"></span></a>
     </section>
@@ -316,7 +352,7 @@
       <div class="coaching-programs-layout">
         <article class="coaching-program-focus">
           <p class="coaching-eyebrow">Program overview</p>
-          <h2 id="coaching-program-title">About Program</h2>
+          <h2 id="coaching-program-title">Archer Program</h2>
           <p>A personalized coaching experience for youth and aspiring professionals in transition. Build self-awareness, strengthen your voice and take purposeful next steps towards your career.</p>
           <dl class="coaching-program-meta" aria-label="Archer Program details">
             <div><dt>Next intake</dt><dd>December 2026</dd></div>
@@ -327,6 +363,7 @@
           <a class="coaching-program-join" href="contact.html?service=coaching">Register your interest <span aria-hidden="true">↗</span></a>
         </article>
         <div class="coaching-program-values" aria-label="What you’ll build">
+          <header class="coaching-benefits-intro"><p>Program benefits</p><p>Build self-awareness, confidence and purpose, then turn your insight into clear next steps.</p></header>
           <article class="coaching-value-card"><span class="coaching-value-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.5"/></svg></span><h3>Self-awareness</h3><p>Recognize your strengths, values and direction.</p></article>
           <article class="coaching-value-card"><span class="coaching-value-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5.5h16v11H9l-5 3v-14Z"/><path d="M8 10h8M8 13h5"/></svg></span><h3>Confidence &amp; voice</h3><p>Express your ideas and lead with intention.</p></article>
           <article class="coaching-value-card"><span class="coaching-value-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><path d="m12 12 7-7M15 5h4v4"/></svg></span><h3>Purposeful action</h3><p>Set meaningful goals and take clear next steps.</p></article>
@@ -334,11 +371,21 @@
         </div>
       </div>
     </section>
+  </main>
+
+  <section class="coaching-team-section coaching-approach" id="coaching-approach" aria-label="Coaching approach">
+    <img src="images/Consulting/vd-photography-ek92BkvL1-I-unsplash.jpg" alt="A person writing notes during a reflective coaching exercise" loading="lazy">
+    <div class="coaching-team-caption">
+      <p class="coaching-team-note">Make space to reflect, strengthen your voice and take purposeful next steps.</p>
+    </div>
+  </section>
+
+  <div class="coaching-case-study-shell">
     <a class="coaching-section-scroll" href="#coaching-case-study" aria-label="Scroll to participant case studies">Participant stories<span aria-hidden="true"></span></a>
     <section class="coaching-case-study" id="coaching-case-study" aria-labelledby="coaching-case-study-title">
       <div class="coaching-case-study-copy">
-        <p class="coaching-eyebrow">Featured case studies · Anonymous</p>
-        <h2 id="coaching-case-study-title">Different journeys. Purposeful growth.</h2>
+        <p class="coaching-eyebrow">Featured Participants </p>
+        <h2 id="coaching-case-study-title">Reflections.</h2>
         <p>Explore participant stories about building clarity, confidence and purposeful next steps. Stories and video links will be added with each participant’s approval.</p>
       </div>
       <div class="coaching-case-study-carousel" aria-roledescription="carousel" aria-label="Anonymous Archer Program case studies">
@@ -386,7 +433,19 @@
         </div>
       </div>
     </section>
-  </main>
+  </div>
+
+  <section class="coaching-team-section coaching-bottom-photo" id="coaching-team-photo" aria-label="Coaching reflection photo">
+    <img src="images/Collective/wadi-lissa-AZvGpBp925o-unsplash.jpg" alt="A young person reflecting while writing in a journal" loading="lazy">
+    <div class="coaching-bottom-photo-cta-panel">
+      <p>Interested in The Archer Program?</p>
+      <p class="coaching-bottom-photo-description">Focused practice and patient coaching help players strengthen fundamentals, make confident decisions and grow together as a team.</p>
+      <div class="coaching-bottom-photo-actions">
+        <a class="coaching-team-cta" href="contact.html?service=coaching#contact-form">Parents: Contact us <span aria-hidden="true">↗</span></a>
+        <a class="coaching-team-cta" href="contact.html?service=coaching#contact-form">Participants: Register <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
 
   <script>
     (()=>{
