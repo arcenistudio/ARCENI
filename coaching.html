@@ -39,8 +39,11 @@
     .coaching-title{position:relative;z-index:1;max-width:1050px;margin:0 0 clamp(32px,5vw,64px);font-size:clamp(54px,8.56vw,133px);font-weight:800;line-height:.78;letter-spacing:-.095em;text-transform:uppercase}
     .coaching-title span{display:inline}
     .coaching-title .title-accent{margin-left:.12em;color:var(--accent)}
-    .coaching-bottom{display:grid;grid-template-columns:minmax(140px,.5fr) minmax(280px,1.2fr) auto;align-items:end;gap:clamp(20px,4vw,60px);padding-top:18px;border-top:1px solid var(--line)}
+    .coaching-bottom{display:grid;grid-template-columns:minmax(210px,.65fr) minmax(280px,1.2fr) auto;align-items:end;gap:clamp(20px,3.2vw,46px);padding-top:18px;border-top:1px solid var(--line)}
     .coaching-bottom-label{max-width:160px;margin:0;color:var(--muted);font-size:10px;line-height:1.55;letter-spacing:.14em;text-transform:uppercase}
+    .coaching-bottom-attribution{display:flex;min-width:0;align-items:center;gap:12px}
+    .coaching-bottom-founder-photo{width:54px;height:54px;flex:0 0 54px;border:1px solid rgba(244,241,238,.28);border-radius:50%;object-fit:cover;object-position:center 34%}
+    @media(max-width:850px){.coaching-bottom{grid-template-columns:minmax(0,1fr);gap:14px}.coaching-bottom-attribution{grid-column:1}}
     .coaching-copy{max-width:490px;margin:0;color:rgba(244,241,238,.82);font-size:14px;line-height:1.65}
     .coaching-cta{display:inline-flex;min-width:214px;min-height:54px;align-items:center;justify-content:space-between;gap:20px;padding:7px 8px 7px 18px;border:1px solid rgba(244,241,238,.28);border-radius:3px;background:rgba(244,241,238,.07);font-size:12px;font-weight:650;transition:transform .2s ease,background .2s ease,border-color .2s ease}
     .coaching-cta span{display:grid;width:38px;height:38px;place-items:center;background:#b8b0b3;color:#181716;font-size:19px;transition:transform .2s ease}
@@ -344,7 +347,7 @@
       <p class="coaching-eyebrow">ARCENI Coaching</p>
       <h1 class="coaching-title" id="coaching-title"><span>Clarity to</span> <span class="title-accent">Impact.</span></h1>
       <div class="coaching-bottom">
-        <p class="coaching-bottom-label">1-on-1 Coaching <br>Bespoke Workshops</p>
+        <div class="coaching-bottom-attribution"><img class="coaching-bottom-founder-photo" src="images/About/Almas_Casual.png" alt="Coaching founder"><div><p class="coaching-bottom-label">1-on-1 Coaching <br>Bespoke Workshops</p></div></div>
         <p class="coaching-copy">Build self-awareness, strengthen your voice and take purposeful next steps through personalized one-on-one coaching.</p>
         <a class="coaching-cta" href="#coaching-programs">Explore Programs<span aria-hidden="true">↗</span></a>
       </div>
