@@ -918,6 +918,9 @@ img{max-width:100%}
 .service-page-menu-links a{padding:13px 12px;color:rgba(244,241,238,.78);text-decoration:none;transition:background .2s ease,color .2s ease}
 .service-page-menu-links a:hover,.service-page-menu-links a:focus-visible{background:rgba(244,241,238,.08);color:#fff;outline:none}
 .service-page-menu-links a[aria-current="page"]{color:#d2b49b}
+.coaching-case-study-panel{position:relative}
+.coaching-case-study-initials{position:absolute;top:clamp(18px,2.5vw,26px);right:clamp(18px,2.5vw,26px);display:grid;width:42px;height:42px;place-items:center;border:1px solid rgba(210,180,155,.55);border-radius:50%;color:#d2b49b;font-size:10px;font-weight:650;letter-spacing:.1em}
+.coaching-case-study-panel-label{max-width:calc(100% - 54px)}
 
 @media (min-width:761px) and (max-width:1050px){
   .consulting-page .consulting-hero{min-height:max(680px,calc(100svh - 86px));padding-right:clamp(28px,5vw,56px);padding-left:clamp(28px,5vw,56px)}
