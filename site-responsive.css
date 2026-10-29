@@ -1006,6 +1006,7 @@ img{max-width:100%}
   .consulting-page .consulting-case-study-stages{grid-template-columns:repeat(3,minmax(0,1fr))}
   .contact-form{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+<<<<<<< HEAD
 
 /* Align Coaching and Basketball service-section spacing to Consulting. */
 .coaching-programs{padding:clamp(54px,7vw,92px) clamp(24px,5.2vw,88px)}
@@ -1023,3 +1024,5 @@ img{max-width:100%}
 @media(max-width:520px){
   .coaching-programs,.basketball-services{padding-top:48px;padding-right:clamp(24px,5vw,48px);padding-bottom:60px;padding-left:clamp(24px,5vw,48px)}
 }
+=======
+>>>>>>> 2772641700b7df5a7f9316f541ea94fc419d3ffe
