@@ -90,6 +90,7 @@
     @media(prefers-reduced-motion:reduce){.home-slide,.home-slide:before,.home-slider-controls button,.home-slide-cta{transition:none!important}}
     .navbar{position:relative;inset:auto;flex:0 0 86px;background:#181716}
     .home-featured{display:grid;height:auto;min-height:0;flex:1;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:0 clamp(24px,5.2vw,88px) clamp(24px,3vw,40px);overflow:visible;background:#181716}
+    .home-featured{display:grid;height:auto;min-height:0;flex:1;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:0 clamp(24px,5.2vw,88px) clamp(24px,3vw,40px);overflow:visible;background:#181716}
     .home-panel{position:relative;isolation:isolate;display:flex;min-height:calc(100svh - 110px);flex-direction:column;justify-content:flex-end;overflow:hidden;padding:clamp(22px,3vw,42px);border:1px solid rgba(244,241,238,.2);color:var(--ink);text-decoration:none}
     .home-panel::before{position:absolute;z-index:-2;inset:0;background-image:var(--slide-image);background-position:center;background-size:cover;content:"";transition:transform .7s cubic-bezier(.16,1,.3,1)}
     .home-panel::after{position:absolute;z-index:-1;inset:0;background:linear-gradient(180deg,rgba(18,17,16,.14) 0%,rgba(18,17,16,.22) 35%,rgba(18,17,16,.84) 100%);content:""}
@@ -97,40 +98,137 @@
     .home-panel-number{font-size:12px;font-weight:600;letter-spacing:.18em}
     .home-panel-kicker{max-width:12ch;text-align:right;font-size:9px;font-weight:650;letter-spacing:.18em;text-transform:uppercase}
     .home-panel-kicker--consulting{max-width:none;white-space:nowrap}
-    .home-panel h1{max-width:10ch;margin:0;font-family:Inter,Arial,sans-serif;font-size:clamp(38px,5vw,72px);font-weight:700;line-height:.92;letter-spacing:-.08em}
+    .home-panel h1{max-width:10ch;margin:0;font-family:Inter,Arial,sans-serif;font-size:clamp(21.3px,2.8vw,40.3px);font-weight:700;line-height:.92;letter-spacing:-.08em}
     .home-panel-copy{max-width:38ch;margin:18px 0 0;color:rgba(244,241,238,.85);font-size:clamp(12px,1.05vw,14px);line-height:1.7}
     .home-panel-cta{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:20px;padding-top:15px;border-top:1px solid rgba(244,241,238,.58);font-size:9px;font-weight:650;letter-spacing:.16em;text-transform:uppercase;transition:color .2s ease,border-color .2s ease}
     .home-panel-cta span{font-size:18px;font-weight:400;transition:transform .2s ease}
     .home-panel-cta:hover,.home-panel:focus-visible .home-panel-cta{border-color:var(--accent);color:var(--accent)}
     .home-panel-cta:hover span,.home-panel:focus-visible .home-panel-cta span{transform:translate(3px,-3px)}
     .home-panel:focus-visible{outline:2px solid var(--accent);outline-offset:-5px}
-    @media(max-width:760px){.home-featured{grid-template-columns:1fr;gap:10px;padding:0 22px 22px}.home-panel{min-height:clamp(420px,72svh,620px)}.navbar{position:relative;min-height:76px}.navbar-contact-link{margin-left:auto}}
+    .home-panel:focus-visible{outline:2px solid var(--accent);outline-offset:-5px}
+    .home-featured-heading{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.7fr);align-items:end;gap:20px 44px;padding:clamp(38px,6vw,74px) 0 10px;color:#f4f1ee}
+    .home-featured-heading p{margin:0;color:#b8b0b3;font-size:10px;font-weight:650;letter-spacing:.18em;text-transform:uppercase}
+    .home-featured-heading h2{margin:8px 0 0;font-size:clamp(34px,5vw,62px);font-weight:600;line-height:.96;letter-spacing:-.075em}
+    .home-featured-heading .home-featured-subtitle{max-width:42ch;justify-self:end;color:rgba(244,241,238,.7);font-size:14px;font-weight:400;letter-spacing:0;line-height:1.75;text-transform:none}
+    @keyframes home-intro-rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes home-intro-photo{from{opacity:.45;transform:scale(1.035)}to{opacity:1;transform:scale(1)}}
+    .landing>.navbar{animation:home-intro-rise .65s cubic-bezier(.16,1,.3,1) both}
+    .home-featured-heading{animation:home-intro-rise .7s .08s cubic-bezier(.16,1,.3,1) both}
+    .home-panel{animation:home-intro-rise .75s cubic-bezier(.16,1,.3,1) both}
+    .home-panel:nth-of-type(1){animation-delay:.14s}
+    .home-panel:nth-of-type(2){animation-delay:.27s}
+    .home-panel:nth-of-type(3){animation-delay:.4s}
+    .home-panel::before{animation:home-intro-photo 1.1s .18s cubic-bezier(.16,1,.3,1) both}
+    @media(max-width:760px){.home-featured{grid-template-columns:1fr;gap:10px;padding:0 22px 22px}.home-panel{min-height:clamp(420px,72svh,620px)}.navbar{position:relative;min-height:76px}.navbar-contact-link{margin-left:auto}.home-featured-heading{grid-template-columns:1fr;gap:14px;padding:38px 0 8px}.home-featured-heading .home-featured-subtitle{justify-self:start}}
     @media(max-width:430px){.home-panel{min-height:440px;padding:23px}.home-panel-top{top:23px;right:23px;left:23px}}
+    @media(prefers-reduced-motion:reduce){.landing>.navbar,.home-featured-heading,.home-panel,.home-panel::before{animation:none!important}}
     .home-copyright{margin:0;padding:0 clamp(24px,5.2vw,88px) 18px;color:rgba(244,241,238,.55);font-size:9px;letter-spacing:.08em}
+    .home-footer{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(160px,.65fr) minmax(190px,.65fr);gap:32px clamp(28px,6vw,86px);padding:clamp(42px,6vw,72px) clamp(24px,5.2vw,88px) 22px;border-top:1px solid rgba(244,241,238,.16);background:#181716;color:#f4f1ee;font-family:Inter,Arial,sans-serif}
+    .home-footer-brand{display:inline-block;margin-bottom:14px;font-size:17px;font-weight:750;letter-spacing:.18em}
+    .home-footer-brand sup{font-size:8px;letter-spacing:0;vertical-align:top}
+    .home-footer-summary{max-width:38ch;margin:0;color:rgba(244,241,238,.58);font-size:12px;line-height:1.75}
+    .home-footer-heading{margin:3px 0 15px;color:#b8b0b3;font-size:9px;font-weight:650;letter-spacing:.16em;text-transform:uppercase}
+    .home-footer-links{display:grid;gap:11px}
+    .home-footer-links a,.home-footer-contact a{width:max-content;color:rgba(244,241,238,.78);font-size:12px;transition:color .2s ease}
+    .home-footer-links a:hover,.home-footer-contact a:hover{color:#d2b49b}
+    .home-footer-contact p{max-width:28ch;margin:0 0 15px;color:rgba(244,241,238,.58);font-size:12px;line-height:1.7}
+    .home-footer-contact a{display:inline-flex;align-items:center;gap:12px;padding-bottom:5px;border-bottom:1px solid rgba(244,241,238,.36)}
+    .home-footer-bottom{grid-column:1/-1;display:flex;justify-content:space-between;gap:20px;margin-top:12px;padding-top:16px;border-top:1px solid rgba(244,241,238,.13)}
+    .home-footer-bottom .home-copyright{padding:0}
+    .home-footer-bottom span{color:rgba(244,241,238,.48);font-size:9px;letter-spacing:.08em}
+    @media(max-width:700px){.home-footer{grid-template-columns:1fr 1fr;gap:28px 20px;padding:40px 22px 18px}.home-footer-brand-block{grid-column:1/-1}.home-footer-bottom{grid-column:1/-1;flex-direction:column;gap:8px}}
+    @media(max-width:420px){.home-footer{grid-template-columns:1fr}.home-footer-brand-block,.home-footer-bottom{grid-column:1}}
+    .home-visual-hero{position:relative;isolation:isolate;display:grid;min-height:100svh;grid-template-columns:minmax(0,1fr) minmax(220px,.55fr);align-items:end;gap:30px;padding:150px clamp(24px,5.2vw,88px) clamp(54px,7vw,82px);overflow:hidden;background:#161718;color:#f4f1ee}
+    .home-visual-hero:before{position:absolute;z-index:-3;inset:0;background:linear-gradient(90deg,rgba(12,13,14,.68),rgba(12,13,14,.34) 50%,rgba(12,13,14,.2)),linear-gradient(0deg,rgba(12,13,14,.72),transparent 60%),url('images/Homepage/wadi-lissa-AZvGpBp925o-unsplash.jpg') center 42%/cover;content:"";transform:scale(1.015);animation:hero-image-settle 1.3s cubic-bezier(.16,1,.3,1) both}
+    .home-visual-hero:after{position:absolute;z-index:-2;inset:19% 0 53%;border-top:1px solid rgba(244,241,238,.24);border-bottom:1px solid rgba(244,241,238,.18);background:linear-gradient(90deg,rgba(190,112,81,.74),rgba(190,112,81,.18) 56%,transparent);content:"";mix-blend-mode:screen;opacity:.62}
+    @keyframes hero-image-settle{from{opacity:.65;transform:scale(1.06)}to{opacity:1;transform:scale(1.015)}}
+    .home-visual-nav{position:absolute;z-index:4;top:0;right:0;left:0;display:grid;min-height:76px;grid-template-columns:1fr auto;align-items:center;padding:0 clamp(24px,5.2vw,88px);border-bottom:1px solid rgba(244,241,238,.14);background:linear-gradient(180deg,rgba(17,18,19,.34),transparent)}
+    .home-visual-nav .basketball-brand{justify-self:start;font-size:16px}
+    .home-visual-nav-links{display:flex;align-items:center;gap:clamp(18px,3vw,40px)}
+    .home-visual-nav-links a{color:rgba(244,241,238,.84);font-size:10px;transition:color .2s ease}
+    .home-visual-nav-links a:hover,.home-visual-nav-links a:focus-visible{color:#d2b49b}
+    .home-visual-nav-cta{justify-self:end;display:inline-flex;min-height:38px;align-items:center;gap:12px;padding:0 16px;border-radius:24px;background:#f4f1ee;color:#181716;font-size:9px;font-weight:650;transition:transform .2s ease,background .2s ease}
+    .home-visual-nav-cta:hover,.home-visual-nav-cta:focus-visible{transform:translateY(-2px);background:#d2b49b}
+    .home-visual-word{position:absolute;z-index:-1;color:rgba(244,241,238,.94);font-size:clamp(86px,17vw,238px);font-weight:750;line-height:.8;letter-spacing:-.105em;pointer-events:none}
+    .home-visual-word-top{top:14%;left:clamp(20px,2.7vw,42px)}
+    .home-visual-word-bottom{right:clamp(20px,2.7vw,42px);bottom:-.04em;color:rgba(244,241,238,.94);font-size:clamp(78px,15vw,210px)}
+    .home-visual-copy{position:relative;z-index:1;grid-column:1;max-width:680px}
+    .home-visual-eyebrow{display:flex;align-items:center;gap:12px;margin:0 0 16px;color:#d2b49b;font-size:9px;font-weight:650;letter-spacing:.2em;text-transform:uppercase}
+    .home-visual-eyebrow:before{width:28px;height:1px;background:#d2b49b;content:""}
+    .home-visual-copy h1{max-width:9ch;margin:0;font-size:clamp(52px,8vw,108px);font-weight:550;line-height:.87;letter-spacing:-.085em;text-transform:uppercase;text-wrap:balance}
+    .home-visual-copy>p:last-of-type{max-width:48ch;margin:20px 0 0;color:rgba(244,241,238,.83);font-size:clamp(13px,1.3vw,16px);line-height:1.75}
+    .home-visual-actions{display:flex;align-items:center;gap:24px;margin-top:25px}
+    .home-visual-actions a:first-child{display:inline-flex;min-height:44px;align-items:center;gap:18px;padding:0 16px;border-radius:24px;background:#f4f1ee;color:#181716;font-size:10px;font-weight:650;transition:background .2s ease,transform .2s ease}
+    .home-visual-actions a:first-child:hover,.home-visual-actions a:first-child:focus-visible{transform:translateY(-2px);background:#d2b49b}
+    .home-visual-actions a:last-child{color:rgba(244,241,238,.88);font-size:10px;transition:color .2s ease}
+    .home-visual-actions a:last-child:hover,.home-visual-actions a:last-child:focus-visible{color:#d2b49b}
+    .home-visual-side{position:relative;z-index:1;grid-column:2;justify-self:end;max-width:260px;margin:0 34px 20px 0;text-align:right}
+    .home-visual-side p{margin:0;color:rgba(244,241,238,.93);font-size:clamp(18px,2.2vw,28px);font-weight:350;line-height:1.25;letter-spacing:-.04em;text-transform:uppercase}
+    .home-visual-side:after{display:block;width:28px;height:2px;margin:18px 0 0 auto;background:#c87857;content:""}
+    .home-visual-index{position:absolute;right:clamp(20px,3vw,42px);bottom:50%;writing-mode:vertical-rl;color:rgba(244,241,238,.65);font-size:9px;letter-spacing:.15em}
+    .home-connected-services{padding:clamp(70px,9vw,120px) var(--edge);background:#181716;color:#f4f1ee}
+    .home-connected-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,.6fr);align-items:end;gap:24px clamp(32px,6vw,84px);margin-bottom:clamp(28px,4vw,48px)}
+    .home-connected-kicker{margin:0 0 16px;color:#b8b0b3;font-size:9px;font-weight:650;letter-spacing:.18em;text-transform:uppercase}
+    .home-connected-head h2{max-width:10ch;margin:0;font-size:clamp(40px,6vw,76px);font-weight:500;line-height:.92;letter-spacing:-.08em}
+    .home-connected-head>p:last-child{max-width:42ch;margin:0 0 4px;color:rgba(244,241,238,.66);font-size:13px;line-height:1.8}
+    .home-connected-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .home-connected-card{position:relative;isolation:isolate;display:flex;min-height:clamp(390px,45vw,540px);flex-direction:column;justify-content:space-between;overflow:hidden;padding:clamp(18px,2.2vw,28px);border:1px solid rgba(244,241,238,.17);background:#252322;color:#f4f1ee;transition:transform .5s cubic-bezier(.16,1,.3,1),border-color .35s ease}
+    .home-connected-card:before{position:absolute;z-index:-2;inset:0;background:var(--connected-image) center/cover;content:"";opacity:.48;transition:transform .8s cubic-bezier(.16,1,.3,1),opacity .3s ease}
+    .home-connected-card:after{position:absolute;z-index:-1;inset:0;background:linear-gradient(180deg,rgba(18,17,16,.42),rgba(18,17,16,.08) 35%,rgba(18,17,16,.88));content:""}
+    .home-connected-card:hover{transform:translateY(-4px);border-color:rgba(244,241,238,.42)}
+    .home-connected-card:hover:before{transform:scale(1.04);opacity:.65}
+    .home-connected-topline{display:flex;align-items:center;justify-content:space-between;gap:14px;color:rgba(244,241,238,.82);font-size:9px;letter-spacing:.13em;text-transform:uppercase}
+    .home-connected-orb{display:grid;width:28px;height:28px;place-items:center;border:1px solid rgba(244,241,238,.58);border-radius:50%;font-size:12px}
+    .home-connected-copy{display:grid;gap:14px}
+    .home-connected-copy h3{margin:0;font-size:clamp(30px,3.8vw,48px);font-weight:500;line-height:.96;letter-spacing:-.07em}
+    .home-connected-copy p{max-width:36ch;margin:0;color:rgba(244,241,238,.76);font-size:12px;line-height:1.7}
+    .home-connected-meter{height:1px;background:rgba(244,241,238,.3)}.home-connected-meter span{display:block;width:45%;height:100%;background:#d2b49b;transition:width .7s cubic-bezier(.16,1,.3,1)}.home-connected-card:hover .home-connected-meter span{width:100%}
+    .home-connected-link{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid rgba(244,241,238,.28);font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}.home-connected-link span{font-size:16px;transition:transform .2s ease}.home-connected-card:hover .home-connected-link span{transform:translate(3px,-3px)}
+    @media(max-width:900px){.home-connected-head{grid-template-columns:1fr;gap:18px}.home-connected-grid{grid-template-columns:1fr 1fr}.home-connected-card:last-child{grid-column:1/-1;min-height:390px}}
+    @media(max-width:640px){.home-connected-services{padding:76px 22px}.home-connected-grid{grid-template-columns:1fr}.home-connected-card,.home-connected-card:last-child{grid-column:auto;min-height:420px}}
+    .home-original-panels{height:100svh;min-height:620px;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:104px clamp(24px,5.2vw,88px) 24px;overflow:hidden}
+    .home-original-panels .home-panel{min-height:0}
+    @media(max-width:760px){.home-original-panels{height:auto;min-height:100svh;grid-template-columns:1fr;gap:10px;padding:100px 22px 22px;overflow:visible}.home-original-panels .home-panel{min-height:clamp(420px,72svh,620px)}}
+    @media(max-width:760px){.home-visual-hero{min-height:90svh;grid-template-columns:1fr;align-content:end;gap:22px;padding:180px 24px 72px}.home-visual-nav{grid-template-columns:1fr auto;padding:0 22px}.home-visual-nav-links{position:absolute;top:75px;left:22px;gap:16px}.home-visual-nav-links a{font-size:9px}.home-visual-nav-cta{grid-column:2}.home-visual-word-top{top:20%;font-size:clamp(76px,18vw,130px)}.home-visual-word-bottom{bottom:-.01em;font-size:clamp(66px,16vw,112px)}.home-visual-copy{grid-column:1;max-width:580px}.home-visual-copy h1{font-size:clamp(50px,11vw,82px)}.home-visual-side{grid-column:1;justify-self:start;max-width:360px;margin:0;text-align:left}.home-visual-side:after{margin-left:0}.home-visual-index{right:18px;bottom:110px}}
+    @media(max-width:430px){.home-visual-nav .basketball-brand{font-size:14px}.home-visual-nav-cta{min-height:34px;padding:0 12px;font-size:8px}.home-visual-nav-links{gap:12px}.home-visual-nav-links a{font-size:8px}.home-visual-hero{min-height:100svh;padding-right:22px;padding-left:22px}.home-visual-copy h1{font-size:clamp(46px,12vw,64px)}.home-visual-actions{gap:18px}.home-visual-side p{font-size:17px}.home-visual-index{display:none}}
+    @media(prefers-reduced-motion:reduce){.home-visual-hero:before{animation:none!important}}
+    .home-basketball-feature{padding:clamp(34px,5vw,64px) clamp(12px,1.2vw,18px);background:#181716}
+    .home-basketball-feature-card{position:relative;isolation:isolate;display:flex;min-height:clamp(360px,48vw,620px);flex-direction:column;justify-content:flex-end;overflow:hidden;padding:clamp(22px,3vw,42px);color:#f4f1ee}
+    .home-basketball-feature-card:before{position:absolute;z-index:-2;inset:0;background:linear-gradient(0deg,rgba(12,13,14,.78),transparent 63%),var(--feature-image,url('images/Basketball/IMG_6604.JPG')) center 46%/cover;content:"";transition:transform .65s cubic-bezier(.16,1,.3,1)}
+    .home-basketball-feature-card:after{position:absolute;z-index:-1;inset:0;border:1px solid rgba(244,241,238,.22);content:"";pointer-events:none}
+    .home-basketball-feature-card:hover:before,.home-basketball-feature-card:focus-visible:before{transform:scale(1.025)}
+    .home-basketball-caption{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:end;gap:18px 28px}
+    .home-basketball-caption-label{grid-column:1/-1;margin:0;color:rgba(244,241,238,.86);font-size:11px;font-weight:550}
+    .home-basketball-caption h2{margin:0;font-size:clamp(38px,5vw,68px);font-weight:550;line-height:.95;letter-spacing:-.075em}
+    .home-basketball-caption-rule{height:1px;margin-bottom:9px;background:rgba(244,241,238,.62)}
+    .home-basketball-caption-link{display:flex;align-items:center;gap:12px;color:rgba(244,241,238,.84);font-size:10px;white-space:nowrap}
+    .home-basketball-caption-link span{display:grid;width:34px;height:34px;place-items:center;border:1px solid rgba(244,241,238,.58);border-radius:50%;font-size:17px;transition:background .2s ease,color .2s ease,transform .2s ease}
+    .home-basketball-feature-card:hover .home-basketball-caption-link span,.home-basketball-feature-card:focus-visible .home-basketball-caption-link span{transform:translate(2px,-2px);background:#d2b49b;color:#181716}
+    @media(max-width:600px){.home-basketball-feature{padding:22px 12px}.home-basketball-feature-card{min-height:clamp(340px,72svh,500px);padding:20px}.home-basketball-caption{grid-template-columns:1fr auto;gap:8px 12px}.home-basketball-caption-label{grid-column:1/-1}.home-basketball-caption h2{font-size:clamp(34px,9vw,48px)}.home-basketball-caption-rule{display:none}.home-basketball-caption-link{font-size:0}.home-basketball-caption-link span{font-size:17px}}
     
   </style>
   <link rel="stylesheet" href="site-responsive.css">
 </head>
 <body>
   <div class="landing">
-    <header class="navbar">
+    <header class="home-visual-nav">
       <a class="basketball-brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a>
+      <details class="service-page-menu"><summary>Explore</summary><nav class="service-page-menu-links" aria-label="Site pages"><a href="consulting.html">Consulting</a><a href="basketball.html">Basketball</a><a href="coaching.html">Coaching</a><a href="contact.html">Contact Us</a></nav></details>
     </header>
-    <section class="home-featured" aria-label="ARCENI services">
+    <section class="home-featured home-original-panels" aria-label="ARCENI services">
       <a class="home-panel" href="consulting.html" aria-label="Explore Consulting" style="--slide-image:url('images/Consulting/anastasia-vityukova-Q3qKcPAGrKw-unsplash.jpg')">
         <div class="home-panel-top"><span class="home-panel-number">I</span><span class="home-panel-kicker home-panel-kicker--consulting">Strategy to change</span></div>
         <div><h1>Consulting</h1><span class="home-panel-cta">Explore consulting <span aria-hidden="true">↗</span></span></div>
       </a>
       <a class="home-panel" href="basketball.html" aria-label="Explore Basketball" style="--slide-image:url('images/Basketball/Slytherin.jpg')">
         <div class="home-panel-top"><span class="home-panel-number">II</span><span class="home-panel-kicker home-panel-kicker--consulting">Train with purpose</span></div>
-        <div><h1>Basketball</h1><span class="home-panel-cta">Explore Basketball <span aria-hidden="true">↗</span></span></div>
+        <div><h1>Basketball</h1><span class="home-panel-cta">Explore basketball <span aria-hidden="true">↗</span></span></div>
       </a>
       <a class="home-panel" href="coaching.html" aria-label="Explore Coaching" style="--slide-image:url('images/Homepage/wadi-lissa-AZvGpBp925o-unsplash.jpg')">
         <div class="home-panel-top"><span class="home-panel-number">III</span><span class="home-panel-kicker home-panel-kicker--consulting">Clarity to impact</span></div>
-        <div><h1>Coaching</h1><span class="home-panel-cta">Explore Programs <span aria-hidden="true">↗</span></span></div>
+        <div><h1>Coaching</h1><span class="home-panel-cta">Explore programs <span aria-hidden="true">↗</span></span></div>
       </a>
     </section>
-    <p class="home-copyright">© 2026 ARCENI. All rights reserved.</p>
   </div>
 </body>
 </html>
