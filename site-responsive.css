@@ -1008,12 +1008,11 @@ img{max-width:100%}
 }
 
 /* Homepage service panels: fluid layouts and an accessible hover/focus response. */
-.landing .home-original-panels{display:grid;height:100svh;min-height:620px;flex:1 0 auto;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:0 clamp(24px,5.2vw,88px) 24px;overflow:hidden}
+.landing .home-original-panels{display:grid;height:100svh;min-height:620px;flex:1 0 auto;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:104px clamp(24px,5.2vw,88px) 24px;overflow:hidden}
 .landing .home-original-panels .home-panel h1{font-size:clamp(21.3px,2.8vw,40.3px)}
 .landing .home-original-panels .home-panel{min-width:0;min-height:0;transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s ease,border-color .3s ease}
 .landing .home-original-panels .home-panel::before{filter:grayscale(.3) saturate(.78);transition:transform .7s cubic-bezier(.16,1,.3,1),filter .45s ease}
 .landing .home-original-panels .home-panel::after{transition:opacity .35s ease}
-.landing .home-original-panels .home-panel-top{top:clamp(94px,10vw,120px)}
 .landing .home-original-panels .home-panel:hover,.landing .home-original-panels .home-panel:focus-visible{z-index:2;transform:translateY(-6px);border-color:rgba(244,241,238,.72);box-shadow:0 18px 46px rgba(0,0,0,.35)}
 .landing .home-original-panels .home-panel:hover::before,.landing .home-original-panels .home-panel:focus-visible::before{transform:scale(1.08);filter:grayscale(0) saturate(1.16) brightness(1.06)}
 .landing .home-original-panels .home-panel:hover::after,.landing .home-original-panels .home-panel:focus-visible::after{opacity:.82}
@@ -1021,7 +1020,7 @@ img{max-width:100%}
 .landing .home-original-panels .home-panel:hover .home-panel-cta span,.landing .home-original-panels .home-panel:focus-visible .home-panel-cta span{transform:translate(3px,-3px)}
 
 @media (min-width:761px) and (max-width:1200px){
-  .landing .home-original-panels{height:auto;min-height:100svh;grid-template-columns:repeat(2,minmax(0,1fr));padding-top:0;overflow:visible}
+  .landing .home-original-panels{height:auto;min-height:100svh;grid-template-columns:repeat(2,minmax(0,1fr));padding-top:104px;overflow:visible}
   .landing .home-original-panels .home-panel{min-height:clamp(430px,58svh,600px)}
   .landing .home-original-panels .home-panel:last-child{grid-column:1/-1;min-height:420px}
   .landing .home-original-panels .home-panel h1{font-size:clamp(25.6px,3.36vw,48.4px)}
@@ -1093,4 +1092,10 @@ img{max-width:100%}
   .coaching-program-meta,.consulting-program-meta,.basketball-services-meta{grid-template-columns:repeat(2,minmax(0,1fr))}
   .coaching-gallery-grid,.basketball-gallery-grid{grid-auto-rows:clamp(122px,38vw,160px)}
   .contact-form{padding:18px}
+}
+@media (orientation:landscape) and (max-height:560px) and (max-width:900px){
+  .coaching-hero,.basketball-hero{min-height:max(500px,calc(100svh - 68px));padding-top:64px;padding-bottom:58px}
+  .coaching-title,.basketball-title{margin-bottom:20px;font-size:clamp(42px,8vw,62px)}
+  .coaching-portrait,.basketball-portrait{height:62%;opacity:.48}
+  .home-original-panels .home-panel,.home-original-panels .home-panel:last-child{min-height:400px}
 }
