@@ -664,7 +664,7 @@ body.consulting-page{--paper:#181716;--ink:#f4f1ee;--muted:#B8B0B3;--line:rgba(2
   .about-page .home-founder-divider { display: none; }
   .about-page .home-founder-photo { justify-items: start; }
   .about-page .home-founder-photo img { width: clamp(130px, 36vw, 220px); }
-  .about-page .home-founder-bio h1 { font-size: clamp(36px, 9vw, 58px); }
+  .about-page .home-founder-bio h2 { font-size: clamp(36px, 9vw, 58px); }
   .about-page .home-founder-credentials { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .about-page .case-study-editorial-heading { grid-template-columns: 1fr; gap: 14px; }
   .about-page .case-study-editorial-story { grid-template-columns: 1fr; }
@@ -1098,4 +1098,17 @@ img{max-width:100%}
   .coaching-title,.basketball-title{margin-bottom:20px;font-size:clamp(42px,8vw,62px)}
   .coaching-portrait,.basketball-portrait{height:62%;opacity:.48}
   .home-original-panels .home-panel,.home-original-panels .home-panel:last-child{min-height:400px}
+}
+
+/* Shared finish: keep section links clear of the navigation and form fields usable on touch screens. */
+html{scroll-padding-top:clamp(68px,8vh,92px)}
+main section[id],section[id]{scroll-margin-top:clamp(68px,8vh,92px)}
+@media (min-width:1201px){
+  .coaching-gallery,.basketball-gallery{padding-inline:clamp(48px,6vw,88px)}
+}
+@media (max-width:760px){
+  .contact-form input,.contact-form select,.contact-form textarea,
+  .coaching-contact-form input,.coaching-contact-form select,.coaching-contact-form textarea,
+  .basketball-contact-form input,.basketball-contact-form select,.basketball-contact-form textarea{font-size:16px}
+  .home-panel,.about-brand-service,.service-page-menu>summary,.contact-submit{touch-action:manipulation}
 }
