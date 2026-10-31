@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#181716">
   <title>ARCENI Basketball | Development Is Personal</title>
   <style>
-    :root{--page:#181716;--ink:#f4f1ee;--muted:#b8b0b3;--accent:#b8b0b3;--line:rgba(244,241,238,.2)}
+    :root{--page:#181716;--ink:#f4f1ee;--muted:#B8B0B3;--accent:#B8B0B3;--line:rgba(244,241,238,.2)}
     *{box-sizing:border-box}
     body{margin:0;background:var(--page);color:var(--ink);font-family:Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased}
     a{color:inherit;text-decoration:none}
@@ -15,12 +15,12 @@
 
     .service-nav-cta{display:inline-flex;flex:none;min-height:42px;align-items:center;gap:14px;margin-left:clamp(14px,2vw,28px);padding:0 14px;border:1px solid rgba(244,241,238,.42);color:rgba(244,241,238,.9);font-size:9px;font-weight:650;letter-spacing:.13em;text-transform:uppercase;transition:background .2s ease,border-color .2s ease,color .2s ease}
     .service-nav-cta:after{font-size:16px;font-weight:400;content:"↗";transition:transform .2s ease}
-    .service-nav-cta:hover,.service-nav-cta:focus-visible{border-color:#d2b49b;background:rgba(244,241,238,.09);color:#fff}
+    .service-nav-cta:hover,.service-nav-cta:focus-visible{border-color:#B8B0B3;background:rgba(244,241,238,.09);color:#fff}
     .service-nav-cta:hover:after,.service-nav-cta:focus-visible:after{transform:translate(2px,-2px)}
     .basketball-nav-links{display:flex;align-items:center;gap:clamp(16px,2.4vw,34px);color:rgba(244,241,238,.72);font-size:10px;font-weight:550;letter-spacing:.13em;text-transform:uppercase}
     .basketball-nav-links a{position:relative;padding:7px 0;color:rgba(244,241,238,.72);transition:color .2s ease}
-    .basketball-nav-links a:after{position:absolute;right:0;bottom:1px;left:0;height:1px;background:#d2b49b;content:"";transform:scaleX(0);transform-origin:left center;transition:transform .24s cubic-bezier(.16,1,.3,1)}
-    .basketball-nav-links a:hover,.basketball-nav-links a:focus-visible{color:#d2b49b}
+    .basketball-nav-links a:after{position:absolute;right:0;bottom:1px;left:0;height:1px;background:#B8B0B3;content:"";transform:scaleX(0);transform-origin:left center;transition:transform .24s cubic-bezier(.16,1,.3,1)}
+    .basketball-nav-links a:hover,.basketball-nav-links a:focus-visible{color:#B8B0B3}
     .basketball-nav-links a:hover:after,.basketball-nav-links a:focus-visible:after,.basketball-nav-links a[aria-current=page]:after{transform:scaleX(1)}
     .basketball-nav-links a[aria-current=page]{color:#f4f1ee}
     @media(max-width:520px){.basketball-nav-links{gap:10px;font-size:8px;letter-spacing:.08em}.basketball-brand{font-size:15px}}
@@ -37,7 +37,7 @@
     .basketball-portrait{position:absolute;z-index:-1;top:0;right:6%;width:min(54vw,760px);height:90%;object-fit:cover;object-position:center 22%;opacity:.9;mask-image:linear-gradient(90deg,transparent 0%,#000 10%,#000 70%,transparent 100%),linear-gradient(180deg,transparent 0%,#000 7%,#000 80%,transparent 100%);mask-composite:intersect}
     .basketball-eyebrow{position:absolute;top:clamp(26px,4vw,58px);left:0;margin:0;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:.19em;text-transform:uppercase}
     .basketball-note{position:absolute;top:19%;right:2%;width:min(220px,20%);margin:0;color:var(--ink);font-size:13px;line-height:1.55}
-    .basketball-note:before{display:inline-block;width:28px;height:1px;margin:0 9px 4px 0;background:#b8b0b3;content:""}
+    .basketball-note:before{display:inline-block;width:28px;height:1px;margin:0 9px 4px 0;background:#B8B0B3;content:""}
     .basketball-title{position:relative;z-index:1;max-width:1050px;margin:0 0 clamp(32px,5vw,64px);font-size:clamp(54px,8.56vw,133px);font-weight:800;line-height:.78;letter-spacing:-.095em;text-transform:uppercase}
     .basketball-title span{display:inline}
     .basketball-title .title-accent{margin-left:.12em;color:var(--accent)}
@@ -45,7 +45,7 @@
     .basketball-bottom-label{max-width:160px;margin:0;color:var(--muted);font-size:10px;line-height:1.55;letter-spacing:.14em;text-transform:uppercase}
     .basketball-copy{max-width:490px;margin:0;color:rgba(244,241,238,.82);font-size:14px;line-height:1.65}
     .basketball-cta{display:inline-flex;min-width:214px;min-height:54px;align-items:center;justify-content:space-between;gap:20px;padding:7px 8px 7px 18px;border:1px solid rgba(244,241,238,.28);border-radius:3px;background:rgba(244,241,238,.07);font-size:12px;font-weight:650;transition:transform .2s ease,background .2s ease,border-color .2s ease}
-    .basketball-cta span{display:grid;width:38px;height:38px;place-items:center;background:#b8b0b3;color:#181716;font-size:19px;transition:transform .2s ease}
+    .basketball-cta span{display:grid;width:38px;height:38px;place-items:center;background:#B8B0B3;color:#181716;font-size:19px;transition:transform .2s ease}
     .basketball-cta:hover,.basketball-cta:focus-visible{transform:translateY(-2px);border-color:rgba(244,241,238,.55);background:rgba(244,241,238,.12)}
     .basketball-cta:hover span{transform:translateX(3px)}
     .basketball-scroll-cue{position:absolute;right:0;bottom:10px;display:flex;align-items:center;gap:12px;color:var(--muted);font-size:9px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;transition:color .2s ease}
@@ -63,6 +63,7 @@
     .basketball-impact-eyebrow{display:flex;align-items:center;gap:12px;margin:0 0 14px;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:.17em;text-transform:uppercase}
     .basketball-impact-eyebrow:before{width:28px;height:1px;background:var(--muted);content:""}
     .basketball-impact-heading h2{max-width:12ch;margin:14px 0;font-size:clamp(34px,5vw,58px);font-weight:650;line-height:.98;letter-spacing:-.07em}
+    .basketball-impact-heading h2 span{color:#B8B0B3}
     .basketball-impact-heading>p:last-child{max-width:480px;margin:0;color:var(--muted);font-size:14px;line-height:1.7}
     .basketball-impact-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid rgba(244,241,238,.22);border-bottom:1px solid rgba(244,241,238,.22)}
     .basketball-impact-stat{min-width:0;padding:clamp(20px,3vw,34px) 16px}
@@ -85,27 +86,27 @@
     .basketball-services-cta span{display:grid;width:34px;height:34px;place-items:center;background:#181716;color:var(--ink);font-size:16px}
     .basketball-services-list{min-width:0}
     .basketball-services-list>header{padding:0 0 20px;border-bottom:1px solid rgba(244,241,238,.2)}
-    .basketball-services-list>header strong{display:block;margin-bottom:8px;color:#d2b49b;font-size:10px;font-weight:650;letter-spacing:.16em;text-transform:uppercase}
+    .basketball-services-list>header strong{display:block;margin-bottom:8px;color:#B8B0B3;font-size:10px;font-weight:650;letter-spacing:.16em;text-transform:uppercase}
     .basketball-services-list>header p{max-width:52ch;margin:0;color:rgba(244,241,238,.72);font-size:13px;line-height:1.7}
     .basketball-service-row{display:grid;grid-template-columns:32px minmax(0,1fr);align-items:start;gap:10px 14px;padding:20px 0;border-bottom:1px solid rgba(244,241,238,.16)}
-    .basketball-service-row>span{display:grid;width:27px;height:27px;place-items:center;border:1px solid rgba(210,180,155,.5);border-radius:50%;color:#d2b49b;font-size:10px;font-weight:600}
+    .basketball-service-row>span{display:grid;width:27px;height:27px;place-items:center;border:1px solid rgba(184,176,179,.5);border-radius:50%;color:#B8B0B3;font-size:10px;font-weight:600}
     .basketball-service-row h3{margin:2px 0 6px;font-size:clamp(18px,2vw,24px);font-weight:550;letter-spacing:-.04em}
     .basketball-service-row p{grid-column:2;max-width:50ch;margin:0;color:rgba(244,241,238,.68);font-size:12px;line-height:1.65}
     @media(max-width:760px){.basketball-services-layout{grid-template-columns:1fr;gap:30px}.basketball-services-overview{padding:0 0 28px;border-right:0;border-bottom:1px solid rgba(244,241,238,.2)}}
     @media(max-width:520px){.basketball-services{padding:48px 20px 60px}.basketball-services-meta{grid-template-columns:1fr 1fr}}
 .coaching-case-study{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);align-items:stretch;gap:clamp(28px,5vw,64px);padding:clamp(58px,8vw,96px) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
     .coaching-case-study-copy{display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
-    .coaching-case-study-copy .coaching-eyebrow{position:static;margin:0 0 20px;color:#d2b49b}
+    .coaching-case-study-copy .coaching-eyebrow{position:static;margin:0 0 20px;color:#B8B0B3}
     .coaching-case-study-copy h2{max-width:11ch;margin:0;font-size:clamp(42px,6vw,74px);font-weight:600;line-height:.94;letter-spacing:-.08em}
     .coaching-case-study-copy>p:last-child{max-width:48ch;margin:22px 0 0;color:var(--muted);font-size:14px;line-height:1.75}
     .coaching-case-study-panel{display:flex;min-height:320px;flex-direction:column;justify-content:space-between;padding:clamp(24px,4vw,42px);border:1px solid rgba(244,241,238,.14);background:#211f1e}
-    .coaching-case-study-panel-label{margin:0;color:#d2b49b;font-size:10px;font-weight:650;letter-spacing:.15em;text-transform:uppercase}
+    .coaching-case-study-panel-label{margin:0;color:#B8B0B3;font-size:10px;font-weight:650;letter-spacing:.15em;text-transform:uppercase}
     .coaching-case-study-panel h3{max-width:16ch;margin:26px 0 0;font-size:clamp(24px,3vw,36px);font-weight:550;line-height:1.05;letter-spacing:-.055em}
     .coaching-case-study-details{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px;padding-top:18px;border-top:1px solid rgba(244,241,238,.15)}
     .coaching-case-study-details span{display:block;margin-bottom:7px;color:var(--muted);font-size:9px;letter-spacing:.13em;text-transform:uppercase}
     .coaching-case-study-details strong{font-size:12px;font-weight:500;line-height:1.5}
     .coaching-case-study-video{display:inline-flex;width:max-content;min-height:48px;align-items:center;gap:18px;margin-top:24px;padding:0 16px;border:1px solid rgba(244,241,238,.2);color:rgba(244,241,238,.55);font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase}
-    .coaching-case-study-video span{color:#d2b49b;font-size:16px}
+    .coaching-case-study-video span{color:#B8B0B3;font-size:16px}
     .coaching-case-study-carousel{min-width:0}
     .coaching-case-study-viewport{overflow:hidden}
     .coaching-case-study-track{display:flex;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
@@ -114,7 +115,7 @@
     .coaching-case-study-panel>div:first-child>p:last-child{max-width:54ch;margin:18px 0 0;color:rgba(244,241,238,.72);font-size:13px;line-height:1.7}
     .coaching-case-study-controls{display:flex;align-items:center;justify-content:flex-end;gap:12px;margin-top:14px}
     .coaching-case-study-controls button{display:grid;width:38px;height:38px;place-items:center;border:1px solid rgba(244,241,238,.24);background:transparent;color:#f4f1ee;font:18px Inter,Arial,sans-serif;cursor:pointer;transition:background .2s ease,color .2s ease}
-    .coaching-case-study-controls button:hover,.coaching-case-study-controls button:focus-visible{background:#d2b49b;color:#181716;outline:none}
+    .coaching-case-study-controls button:hover,.coaching-case-study-controls button:focus-visible{background:#B8B0B3;color:#181716;outline:none}
     .coaching-case-study-count{min-width:44px;color:var(--muted);font-size:10px;font-variant-numeric:tabular-nums;text-align:center}
     @media(max-width:760px){.coaching-case-study{grid-template-columns:1fr;gap:28px}.coaching-case-study-panel{min-height:300px}}
     .basketball-case-study-shell{padding:0 clamp(24px,5.2vw,88px)}
@@ -185,7 +186,7 @@
     .basketball-team-action{display:grid;gap:16px;justify-items:start}
     .basketball-team-cta{display:inline-flex;min-height:46px;align-items:center;justify-content:space-between;gap:28px;padding:6px 7px 6px 15px;border:1px solid rgba(244,241,238,.55);background:rgba(24,23,22,.32);color:#f4f1ee;font-size:11px;font-weight:600;transition:background .2s ease,transform .2s ease}
     .basketball-team-cta:hover,.basketball-team-cta:focus-visible{transform:translateY(-2px);background:rgba(24,23,22,.68)}
-    .basketball-team-cta span{display:grid;width:32px;height:32px;place-items:center;background:#b8b0b3;color:#181716;font-size:16px}
+    .basketball-team-cta span{display:grid;width:32px;height:32px;place-items:center;background:#B8B0B3;color:#181716;font-size:16px}
 
     :focus-visible{outline:2px solid #d0c9c7;outline-offset:4px}
 
@@ -235,7 +236,7 @@
       <div class="basketball-player-caption"><p class="basketball-player-note">Basketball development that helps young players grow on the court and carry confidence, discipline and teamwork into life.</p></div>
     </section>
     <section class="basketball-impact" id="basketball-impact" aria-labelledby="basketball-impact-title">
-      <div class="basketball-impact-heading"><p class="basketball-impact-eyebrow">By The Numbers</p><h2 id="basketball-impact-title">Our Impact.</h2><p>More than a decade of coaching, creating opportunities for players and teams to grow through basketball.</p></div>
+      <div class="basketball-impact-heading"><p class="basketball-impact-eyebrow">By The Numbers</p><h2 id="basketball-impact-title">Our <span>Impact.</span></h2><p>More than a decade of coaching, creating opportunities for players and teams to grow through basketball.</p></div>
       <div class="basketball-impact-stats">
         <article class="basketball-impact-stat"><strong>12<span>+</span></strong><p>Years coaching</p></article>
         <article class="basketball-impact-stat"><strong>500<span>+</span></strong><p>Players impacted</p></article>
