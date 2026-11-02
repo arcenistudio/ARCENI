@@ -1146,8 +1146,9 @@ main section[id],section[id]{scroll-margin-top:clamp(68px,8vh,92px)}
 }
 .about-page .home-founder{max-width:var(--site-content-width);margin-right:auto;margin-left:auto}
 .site-footer-inner{max-width:var(--site-content-width)}
-.consulting-page .consulting-programs,.consulting-page .coaching-programs,.basketball-page .basketball-services{max-width:none}
-.consulting-page .consulting-programs,.consulting-page .coaching-programs{width:100%;margin-left:0}
+.consulting-page .coaching-programs,.basketball-page .basketball-services{max-width:none}
+.consulting-page .consulting-programs{width:min(100%,var(--site-layout-width));max-width:var(--site-layout-width);margin-right:auto;margin-left:auto;padding-right:var(--site-gutter);padding-left:var(--site-gutter)}
+.consulting-page .coaching-programs{width:100%;margin-left:0}
 
 .arceni-page-footer{width:min(100%,var(--site-layout-width));margin:28px auto 0;padding:24px var(--site-gutter) 18px;border-top:1px solid rgba(244,241,238,.16);background:#181716;color:rgba(244,241,238,.68)}
 .arceni-footer-inner{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:22px 32px;max-width:var(--site-content-width);margin:0 auto}
