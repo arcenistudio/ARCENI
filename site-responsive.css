@@ -1159,3 +1159,12 @@ main section[id],section[id]{scroll-margin-top:clamp(68px,8vh,92px)}
 .arceni-footer-inner .arceni-footer-social{grid-column:1/-1;justify-content:flex-start;gap:12px 22px;padding-top:14px;border-top:1px solid rgba(244,241,238,.1);font-size:10px;letter-spacing:.04em;text-transform:none}
 .arceni-footer-bottom{grid-column:1/-1;display:flex;justify-content:space-between;gap:14px;padding-top:14px;border-top:1px solid rgba(244,241,238,.1);font-size:9px;letter-spacing:.08em}
 @media(max-width:600px){.arceni-page-footer{margin-top:20px;padding-top:20px}.arceni-footer-inner{grid-template-columns:1fr;gap:16px}.arceni-footer-inner nav{justify-content:flex-start;gap:12px 18px}.arceni-footer-bottom{grid-column:1;align-items:flex-start;flex-direction:column;gap:8px}}
+
+/* Center scroll cues consistently across pages. */
+.home-page .home-section-scroll:not(.home-editorial-scroll){justify-self:center;margin-right:auto;margin-left:auto}
+.home-page .home-editorial-scroll{right:auto;left:50%;transform:translateX(-50%)}
+.basketball-page .basketball-scroll-cue{margin-right:auto;margin-left:auto}
+.basketball-section-scroll,.coaching-section-scroll{margin-right:auto;margin-left:auto}
+.coaching-page .coaching-scroll-cue,.consulting-page .coaching-scroll-cue{right:auto;left:50%;align-items:center;transform:translateX(-50%);text-align:center}
+.home-page .home-back-top,.about-page .site-back-top,.basketball-page~.site-back-top,.coaching-page~.site-back-top,.consulting-page~.site-back-top,.contact-shell .site-back-top{margin-right:auto;margin-left:auto}
+.home-page .home-back-top{justify-self:center}
