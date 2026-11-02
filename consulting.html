@@ -43,8 +43,9 @@
     .consulting-program-services>header strong{display:block;margin-bottom:8px;color:#B8B0B3;font-size:10px;font-weight:650;letter-spacing:.16em;text-transform:uppercase}
     .consulting-program-services>header p{max-width:52ch;margin:0;color:rgba(244,241,238,.72);font-size:13px;line-height:1.7}
     .consulting-program-service{display:grid;grid-template-columns:32px minmax(0,1fr);align-items:start;gap:10px 14px;padding:20px 0;border-bottom:1px solid rgba(244,241,238,.16)}
-    .consulting-program-service>span{display:grid;width:27px;height:27px;place-items:center;border:1px solid rgba(184,176,179,.5);border-radius:50%;color:#B8B0B3;font-size:10px;font-weight:600}
-    .consulting-program-service h3{margin:2px 0 6px;font-size:clamp(18px,2vw,24px);font-weight:550;letter-spacing:-.04em}
+    .consulting-program-service-icon{display:grid;width:32px;height:32px;place-items:center;border:1px solid rgba(184,176,179,.5);border-radius:50%;color:#B8B0B3}
+    .consulting-program-service-icon svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+    .consulting-program-service h3{margin:2px 0 6px;font-size:20px;font-weight:550;letter-spacing:-.04em}
     .consulting-program-service p{grid-column:2;max-width:50ch;margin:0;color:rgba(244,241,238,.68);font-size:12px;line-height:1.65}
     @media(max-width:760px){.consulting-programs-layout{grid-template-columns:1fr;gap:30px}.consulting-program-focus{padding:0 0 28px;border-right:0;border-bottom:1px solid rgba(244,241,238,.2)}}
     @media(max-width:520px){.consulting-programs{padding:48px 20px 60px}.consulting-program-meta{grid-template-columns:1fr 1fr}.consulting-program-focus h2{font-size:40px}}
@@ -338,7 +339,7 @@
 </head>
 <body class="consulting-page">
   <main class="coaching-page">
-    <header class="coaching-nav"><a class="coaching-brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a><details class="service-page-menu"><summary>Explore</summary><nav class="service-page-menu-links" aria-label="Site pages"><a href="consulting.html" aria-current="page">Consulting</a><a href="basketball.html">Basketball</a><a href="coaching.html">Coaching</a><a href="contact.html">Contact Us</a></nav></details></header>
+    <header class="coaching-nav"><a class="coaching-brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a><details class="service-page-menu"><summary>Explore</summary><nav class="service-page-menu-links" aria-label="Site pages"><a href="consulting.html" aria-current="page">Consulting</a><a href="basketball.html">Basketball</a><a href="coaching.html">Coaching</a><a href="#consulting-contact">Contact Us</a></nav></details></header>
     <section class="coaching-hero" aria-labelledby="coaching-title">
       <img class="coaching-portrait" src="images/Consulting/anastasia-vityukova-Q3qKcPAGrKw-unsplash.jpg" alt="Hands writing in a notebook during a planning session">
       <p class="coaching-eyebrow">ARCENI Consulting</p>
@@ -348,7 +349,7 @@
         <p class="coaching-copy">Practical strategy and advisory to help organizations move critical work forward, strengthen teams and create lasting impact.</p>
         <a class="coaching-cta" href="#consulting-programs">Our Work <span aria-hidden="true">↗</span></a>
       </div>
-      <a class="coaching-scroll-cue" href="contact.html?service=consulting" aria-label="Contact ARCENI about consulting">Start a conversation <span aria-hidden="true"></span></a>
+      <a class="coaching-scroll-cue" href="#consulting-contact" aria-label="Contact ARCENI about consulting">Start a conversation <span aria-hidden="true"></span></a>
     </section>
   </main>
 
@@ -367,8 +368,8 @@
       </article>
       <div class="consulting-program-services" aria-label="Consulting services">
         <header><strong>What we support</strong><p>Thoughtful engagements and stronger capabilities to help you turn concepts into actionable plans.</p></header>
-        <article class="consulting-program-service"><span aria-hidden="true">01</span><div><h3>Project Management</h3><p>Align scope, people, timelines and resources. Keep delivery coordinated, surface decisions early and move projects from concept to completion.</p></div></article>
-        <article class="consulting-program-service"><span aria-hidden="true">02</span><div><h3>Capacity Building</h3><p>Develop practical skills, tools and team practices that strengthen how organizations plan, collaborate and deliver over time.</p></div></article>
+        <article class="consulting-program-service"><span class="consulting-program-service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5H5a2 2 0 0 0-2 2v13h18V7a2 2 0 0 0-2-2h-3M8 3h8v4H8zM7 12l2 2 4-4M15 13h3M7 17h2m4 0h5"/></svg></span><div><h3>Project Management</h3><p>Align scope, people, timelines and resources. Keep delivery coordinated, surface decisions early and move projects from concept to completion.</p></div></article>
+        <article class="consulting-program-service"><span class="consulting-program-service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 20h18M5 16l5-5 4 3 6-7M15 7h5v5"/></svg></span><div><h3>Capacity Building</h3><p>Develop practical skills, tools and team practices that strengthen how organizations plan, collaborate and deliver over time.</p></div></article>
       </div>
     </div>
   </section>
@@ -438,8 +439,23 @@
   <section class="coaching-team-section coaching-bottom-photo" id="consulting-feature-photo" aria-label="ARCENI Consulting contact">
     <img src="images/Consulting/anastasia-vityukova-Q3qKcPAGrKw-unsplash.jpg" alt="A person taking notes during a consulting session" loading="lazy">
   </section>
-  <section class="service-contact-section" aria-labelledby="consulting-contact-title">
-    <div class="service-contact-inner"><div class="service-contact-copy"><p class="service-contact-eyebrow">Get in touch</p><h2 id="consulting-contact-title">Let’s make practical progress.</h2><p>Share a project, a team capability need or an organizational challenge. We’ll work with you to identify a useful next step.</p></div><a class="service-contact-link" href="contact.html?service=consulting#contact-form">Contact us <span aria-hidden="true">↗</span></a></div>
+  <section class="service-contact-section" id="consulting-contact" aria-labelledby="consulting-contact-title">
+    <div class="service-contact-inner">
+      <div class="service-contact-copy"><p class="service-contact-eyebrow">Get in touch · Consulting</p><h2 id="consulting-contact-title">Let’s make practical progress.</h2><p>Share a project, a team-capacity need or an organizational challenge. We’ll work with you to identify a useful next step toward delivery and lasting impact.</p></div>
+      <form class="service-contact-form" aria-labelledby="consulting-inquiry-title" action="https://formspree.io/f/xpppdveo" method="POST">
+        <input type="hidden" name="_subject" value="ARCENI Consulting Inquiry">
+        <input type="hidden" name="service" value="consulting">
+        <div class="service-contact-form-head"><h3 id="consulting-inquiry-title">Start a consulting inquiry</h3><p>Tell us about your organization and the work you’d like to move forward.</p></div>
+        <div class="service-contact-field service-contact-field-wide"><label for="consulting-inquiry-role">I’m reaching out for</label><select id="consulting-inquiry-role" name="role" required><option value="" disabled selected>Select one</option><option>Organization</option><option>Team</option><option>Nonprofit or community group</option><option>Other</option></select></div>
+        <div class="service-contact-field"><label for="consulting-inquiry-name">Your name</label><input id="consulting-inquiry-name" name="name" type="text" autocomplete="name" placeholder="Your name" required></div>
+        <div class="service-contact-field"><label for="consulting-inquiry-email">Email address</label><input id="consulting-inquiry-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+        <div class="service-contact-field"><label for="consulting-inquiry-phone">Phone number</label><input id="consulting-inquiry-phone" name="phone" type="tel" autocomplete="tel" placeholder="Your phone number" required></div>
+        <div class="service-contact-field"><label for="consulting-inquiry-location">Location</label><input id="consulting-inquiry-location" name="location" type="text" autocomplete="address-level2" placeholder="City or town" required></div>
+        <div class="service-contact-field service-contact-field-wide"><label for="consulting-inquiry-message">Tell us about your project</label><textarea id="consulting-inquiry-message" name="message" placeholder="What are you working toward, and where would project management or capacity building help?" required></textarea></div>
+        <button class="service-contact-submit" type="submit">Send a consulting inquiry <span aria-hidden="true">↗</span></button>
+        <p class="service-contact-note" role="status">Your inquiry will be sent securely to us. We will respond soon.</p>
+      </form>
+    </div>
   </section>
 
   <script>

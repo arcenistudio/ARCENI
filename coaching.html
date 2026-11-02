@@ -179,8 +179,9 @@
     .coaching-value-card h3{grid-column:2;grid-row:1;margin:0;font-size:15px;font-weight:600;letter-spacing:-.025em}
     .coaching-value-card p{grid-column:2;grid-row:2;max-width:none;margin:0;color:rgba(244,241,238,.68);font-size:13px;line-height:1.55}
     .coaching-archer-benefit{display:grid;grid-template-columns:32px minmax(0,1fr);align-items:start;gap:10px 14px;padding:20px 0;border-bottom:1px solid rgba(244,241,238,.16)}
-    .coaching-archer-benefit>span{display:grid;width:27px;height:27px;place-items:center;border:1px solid rgba(184,176,179,.5);border-radius:50%;color:#B8B0B3;font-size:10px;font-weight:600}
-    .coaching-archer-benefit h3{margin:2px 0 6px;font-size:clamp(18px,2vw,24px);font-weight:550;letter-spacing:-.04em}
+    .coaching-archer-benefit-icon{display:grid;width:32px;height:32px;place-items:center;border:1px solid rgba(184,176,179,.5);border-radius:50%;color:#B8B0B3}
+    .coaching-archer-benefit-icon svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+    .coaching-archer-benefit h3{margin:2px 0 6px;font-size:20px;font-weight:550;letter-spacing:-.04em}
     .coaching-archer-benefit p{grid-column:2;max-width:50ch;margin:0;color:rgba(244,241,238,.68);font-size:12px;line-height:1.65}
     .coaching-collective{position:relative;display:grid;grid-template-columns:1fr;align-items:center;width:100vw;margin-left:calc(50% - 50vw);padding:clamp(54px,7vw,88px) clamp(24px,5.2vw,88px);background:radial-gradient(ellipse at 92% 0%,rgba(184,176,179,.1),transparent 34%),#211f1e;color:#f4f1ee}
     .coaching-collective:before{position:absolute;top:0;left:clamp(24px,5.2vw,88px);width:74px;height:2px;background:#B8B0B3;content:""}
@@ -339,7 +340,7 @@
 </head>
 <body>
   <main class="coaching-page">
-    <header class="coaching-nav"><a class="coaching-brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a><details class="service-page-menu"><summary>Explore</summary><nav class="service-page-menu-links" aria-label="Site pages"><a href="consulting.html">Consulting</a><a href="basketball.html">Basketball</a><a href="coaching.html" aria-current="page">Coaching</a><a href="contact.html">Contact Us</a></nav></details></header>
+    <header class="coaching-nav"><a class="coaching-brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a><details class="service-page-menu"><summary>Explore</summary><nav class="service-page-menu-links" aria-label="Site pages"><a href="consulting.html">Consulting</a><a href="basketball.html">Basketball</a><a href="coaching.html" aria-current="page">Coaching</a><a href="#coaching-contact">Contact Us</a></nav></details></header>
     <section class="coaching-hero" aria-labelledby="coaching-title">
       <img class="coaching-portrait" src="images/Collective/wadi-lissa-AZvGpBp925o-unsplash.jpg" alt="A young person reflecting while writing in a journal">
       <p class="coaching-eyebrow">ARCENI Coaching</p>
@@ -349,7 +350,7 @@
         <p class="coaching-copy">Build self-awareness, strengthen your voice and take purposeful next steps through personalized one-on-one coaching.</p>
         <a class="coaching-cta" href="#coaching-programs">Explore Programs<span aria-hidden="true">↗</span></a>
       </div>
-      <a class="coaching-scroll-cue" href="contact.html?service=coaching" aria-label="Contact ARCENI about coaching">Start a conversation <span aria-hidden="true"></span></a>
+      <a class="coaching-scroll-cue" href="#coaching-contact" aria-label="Contact ARCENI about coaching">Start a conversation <span aria-hidden="true"></span></a>
     </section>
     <a class="coaching-section-scroll" href="#coaching-programs" aria-label="Scroll to Archer Program">The Archer Program<span aria-hidden="true"></span></a>
     <section class="coaching-programs" id="coaching-programs" aria-labelledby="coaching-program-title">
@@ -367,8 +368,8 @@
         </article>
         <div class="coaching-program-values" aria-label="Archer Program benefits">
           <header class="coaching-benefits-intro"><p>Program benefits</p><p>Build self-awareness, confidence and purpose, then turn your insight into clear next steps.</p></header>
-          <article class="coaching-archer-benefit"><span>01</span><div><h3>Self-Awareness</h3><p>Recognize your strengths and values, find direction, and express your ideas with confidence.</p></div></article>
-          <article class="coaching-archer-benefit"><span>02</span><div><h3>Purposeful Action</h3><p>Set meaningful goals, take clear next steps and build steady habits to sustain your growth.</p></div></article>
+          <article class="coaching-archer-benefit"><span class="coaching-archer-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.5"/></svg></span><div><h3>Self-Awareness</h3><p>Recognize your strengths and values, find direction, and express your ideas with confidence.</p></div></article>
+          <article class="coaching-archer-benefit"><span class="coaching-archer-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span><div><h3>Purposeful Action</h3><p>Set meaningful goals, take clear next steps and build steady habits to sustain your growth.</p></div></article>
         </div>
       </div>
     </section>
@@ -440,8 +441,23 @@
   <section class="coaching-team-section coaching-bottom-photo" id="coaching-team-photo" aria-label="Coaching reflection photo">
     <img src="images/Collective/wadi-lissa-AZvGpBp925o-unsplash.jpg" alt="A young person reflecting while writing in a journal" loading="lazy">
   </section>
-  <section class="service-contact-section" aria-labelledby="coaching-contact-title">
-    <div class="service-contact-inner"><div class="service-contact-copy"><p class="service-contact-eyebrow">Get in touch</p><h2 id="coaching-contact-title">Start a conversation about coaching.</h2><p>Parents and participants can contact us about The Archer Program, upcoming intake and registration.</p></div><a class="service-contact-link" href="contact.html?service=coaching#contact-form">Contact us <span aria-hidden="true">↗</span></a></div>
+  <section class="service-contact-section" id="coaching-contact" aria-labelledby="coaching-contact-title">
+    <div class="service-contact-inner">
+      <div class="service-contact-copy"><p class="service-contact-eyebrow">Get in touch · Coaching</p><h2 id="coaching-contact-title">Join a Program.</h2><p>Ask us about The Archer Program, upcoming intakes or one-on-one coaching. Share what you’re hoping to work toward, and we’ll help you explore a useful next step.</p></div>
+      <form class="service-contact-form" aria-labelledby="coaching-inquiry-title" action="https://formspree.io/f/xpppdveo" method="POST">
+        <input type="hidden" name="_subject" value="ARCENI Coaching Inquiry">
+        <input type="hidden" name="service" value="coaching">
+        <div class="service-contact-form-head"><h3 id="coaching-inquiry-title">Start a coaching inquiry</h3><p>Tell us who the coaching is for and what kind of support you’re looking for.</p></div>
+        <div class="service-contact-field service-contact-field-wide"><label for="coaching-inquiry-role">I’m reaching out as</label><select id="coaching-inquiry-role" name="role" required><option value="" disabled selected>Select one</option><option>Participant</option><option>Parent or supporter</option><option>Professional</option><option>Organization</option><option>Other</option></select></div>
+        <div class="service-contact-field"><label for="coaching-inquiry-name">Your name</label><input id="coaching-inquiry-name" name="name" type="text" autocomplete="name" placeholder="Your name" required></div>
+        <div class="service-contact-field"><label for="coaching-inquiry-email">Email address</label><input id="coaching-inquiry-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+        <div class="service-contact-field"><label for="coaching-inquiry-phone">Phone number</label><input id="coaching-inquiry-phone" name="phone" type="tel" autocomplete="tel" placeholder="Your phone number" required></div>
+        <div class="service-contact-field"><label for="coaching-inquiry-location">Location</label><input id="coaching-inquiry-location" name="location" type="text" autocomplete="address-level2" placeholder="City or town" required></div>
+        <div class="service-contact-field service-contact-field-wide"><label for="coaching-inquiry-message">What would you like support with?</label><textarea id="coaching-inquiry-message" name="message" placeholder="You can ask about The Archer Program, an upcoming intake or one-on-one coaching." required></textarea></div>
+        <button class="service-contact-submit" type="submit">Send a coaching inquiry <span aria-hidden="true">↗</span></button>
+        <p class="service-contact-note" role="status">Your inquiry will be sent securely to us. We will respond soon.</p>
+      </form>
+    </div>
   </section>
 
   <script>

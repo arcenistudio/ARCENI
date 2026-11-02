@@ -48,7 +48,7 @@
     .basketball-cta span{display:grid;width:38px;height:38px;place-items:center;background:#B8B0B3;color:#181716;font-size:19px;transition:transform .2s ease}
     .basketball-cta:hover,.basketball-cta:focus-visible{transform:translateY(-2px);border-color:rgba(244,241,238,.55);background:rgba(244,241,238,.12)}
     .basketball-cta:hover span{transform:translateX(3px)}
-    .basketball-scroll-cue{position:absolute;right:0;bottom:10px;display:flex;align-items:center;gap:12px;color:var(--muted);font-size:9px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;transition:color .2s ease}
+    .basketball-scroll-cue{position:absolute;right:auto;bottom:10px;left:50%;display:flex;align-items:center;gap:12px;color:var(--muted);font-size:9px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;transform:translateX(-50%);transition:color .2s ease}
     .basketball-scroll-cue span,.basketball-back-top span{position:relative;display:block;width:1px;height:36px;overflow:hidden;background:rgba(244,241,238,.32)}
     .basketball-scroll-cue span:after,.basketball-back-top span:after{position:absolute;top:0;left:-3px;width:7px;height:7px;border-radius:50%;background:#f4f1ee;content:""}
     .basketball-scroll-cue:hover,.basketball-back-top:hover{color:#fff}
@@ -89,8 +89,9 @@
     .basketball-services-list>header strong{display:block;margin-bottom:8px;color:#B8B0B3;font-size:10px;font-weight:650;letter-spacing:.16em;text-transform:uppercase}
     .basketball-services-list>header p{max-width:52ch;margin:0;color:rgba(244,241,238,.72);font-size:13px;line-height:1.7}
     .basketball-service-row{display:grid;grid-template-columns:32px minmax(0,1fr);align-items:start;gap:10px 14px;padding:20px 0;border-bottom:1px solid rgba(244,241,238,.16)}
-    .basketball-service-row>span{display:grid;width:27px;height:27px;place-items:center;border:1px solid rgba(184,176,179,.5);border-radius:50%;color:#B8B0B3;font-size:10px;font-weight:600}
-    .basketball-service-row h3{margin:2px 0 6px;font-size:clamp(18px,2vw,24px);font-weight:550;letter-spacing:-.04em}
+    .basketball-service-icon{display:grid;width:32px;height:32px;place-items:center;border:1px solid rgba(184,176,179,.5);border-radius:50%;color:#B8B0B3}
+    .basketball-service-icon svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+    .basketball-service-row h3{margin:2px 0 6px;font-size:20px;font-weight:550;letter-spacing:-.04em}
     .basketball-service-row p{grid-column:2;max-width:50ch;margin:0;color:rgba(244,241,238,.68);font-size:12px;line-height:1.65}
     @media(max-width:760px){.basketball-services-layout{grid-template-columns:1fr;gap:30px}.basketball-services-overview{padding:0 0 28px;border-right:0;border-bottom:1px solid rgba(244,241,238,.2)}}
     @media(max-width:520px){.basketball-services{padding:48px 20px 60px}.basketball-services-meta{grid-template-columns:1fr 1fr}}
@@ -199,7 +200,7 @@
 </head>
 <body>
   <main class="basketball-page">
-    <header class="basketball-nav"><a class="basketball-brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a><details class="service-page-menu"><summary>Explore</summary><nav class="service-page-menu-links" aria-label="Site pages"><a href="consulting.html">Consulting</a><a href="basketball.html" aria-current="page">Basketball</a><a href="coaching.html">Coaching</a><a href="contact.html">Contact Us</a></nav></details></header>
+    <header class="basketball-nav"><a class="basketball-brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a><details class="service-page-menu"><summary>Explore</summary><nav class="service-page-menu-links" aria-label="Site pages"><a href="consulting.html">Consulting</a><a href="basketball.html" aria-current="page">Basketball</a><a href="coaching.html">Coaching</a><a href="#basketball-contact">Contact Us</a></nav></details></header>
     <section class="basketball-hero" aria-labelledby="basketball-title">
       <img class="basketball-portrait" src="images/Basketball/The Coach.png" alt="ARCENI basketball coach Almas Ismail holding a basketball">
       <p class="basketball-eyebrow">Arceni Basketball</p>
@@ -210,6 +211,10 @@
         <a class="basketball-cta" href="#basketball-services">What We Do<span aria-hidden="true">↗</span></a>
       </div>
       <a class="basketball-scroll-cue" href="#basketball-player-photo" aria-label="Scroll to player training photo">Player development <span aria-hidden="true"></span></a>
+    </section>
+    <section class="basketball-player-feature" aria-label="Player development training">
+      <img src="images/Basketball/player-development-session.jpg" alt="Coach guiding young basketball players through agility ladder drills on an outdoor court" fetchpriority="high">
+      <div class="basketball-player-caption"><p class="basketball-player-note">Improve your agility, quick feet, balance and coordination — skills to help you impact the game on the court.</p></div>
     </section>
   <section class="basketball-services" id="basketball-services" aria-labelledby="basketball-services-title">
     <div class="basketball-services-layout">
@@ -225,9 +230,9 @@
         </dl>
       </article>
       <div class="basketball-services-list" aria-label="Basketball services">
-        <header><strong>What we support</strong><p>Holistic player development and team performance with strong fundamentals and growth that supports decisionmaking and teamwork to the court.</p></header>
-        <article class="basketball-service-row"><span aria-hidden="true">01</span><div><h3>Player Development</h3><p>Strengthen fundamentals, improve game awareness and build confidence through focused individual coaching.</p></div></article>
-        <article class="basketball-service-row"><span aria-hidden="true">02</span><div><h3>Consulting Services</h3><p>Customized development and performance services to strengthen programs and impact players at different levels.</p></div></article>
+        <header><strong>What we support</strong><p>Personalized holistic player development and team performance with strong fundamentals and growth that supports decisionmaking and teamwork to the court.</p></header>
+        <article class="basketball-service-row"><span class="basketball-service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3.5 9h17M3.5 15h17M12 3c2.4 2.4 3.6 5.4 3.6 9s-1.2 6.6-3.6 9m0-18C9.6 5.4 8.4 8.4 8.4 12s1.2 6.6 3.6 9"/></svg></span><div><h3>Player Development</h3><p>Strengthen fundamentals, improve game awareness and build confidence through focused individual coaching.</p></div></article>
+        <article class="basketball-service-row"><span class="basketball-service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V9l8-5 8 5v11M2 20h20M8 20v-6h8v6M9 10h.01M15 10h.01"/></svg></span><div><h3>Consulting Services</h3><p>Customized development and performance services to strengthen programs and impact players at different levels.</p></div></article>
       </div>
     </div>
   </section>
@@ -282,8 +287,23 @@
   <section class="basketball-player-feature" id="basketball-team-photo" aria-label="Basketball contact">
     <img src="images/Basketball/Slytherin.jpg" alt="Basketball teammates gathering together in a team huddle" loading="lazy">
   </section>
-  <section class="service-contact-section" aria-labelledby="basketball-contact-title">
-    <div class="service-contact-inner"><div class="service-contact-copy"><p class="service-contact-eyebrow">Get in touch</p><h2 id="basketball-contact-title">Let’s build something together.</h2><p>Parents, players and partners can tell us how they would like to work with ARCENI Basketball.</p></div><a class="service-contact-link" href="contact.html?service=basketball#contact-form">Contact us <span aria-hidden="true">↗</span></a></div>
+  <section class="service-contact-section" id="basketball-contact" aria-labelledby="basketball-contact-title">
+    <div class="service-contact-inner">
+      <div class="service-contact-copy"><p class="service-contact-eyebrow">Get in touch · Basketball</p><h2 id="basketball-contact-title">Let’s grow your game.</h2><p>Tell us about your player-development goals, team needs or basketball program. We’ll help you find a practical next step on and off the court.</p></div>
+      <form class="service-contact-form" aria-labelledby="basketball-inquiry-title" action="https://formspree.io/f/xpppdveo" method="POST">
+        <input type="hidden" name="_subject" value="ARCENI Basketball Inquiry">
+        <input type="hidden" name="service" value="basketball">
+        <div class="service-contact-form-head"><h3 id="basketball-inquiry-title">Start a basketball inquiry</h3><p>Share a little about who you’re reaching out for and what you’re working toward.</p></div>
+        <div class="service-contact-field service-contact-field-wide"><label for="basketball-inquiry-role">I’m reaching out as</label><select id="basketball-inquiry-role" name="role" required><option value="" disabled selected>Select one</option><option>Player</option><option>Parent or supporter</option><option>Coach</option><option>Team or organization</option><option>Other</option></select></div>
+        <div class="service-contact-field"><label for="basketball-inquiry-name">Your name</label><input id="basketball-inquiry-name" name="name" type="text" autocomplete="name" placeholder="Your name" required></div>
+        <div class="service-contact-field"><label for="basketball-inquiry-email">Email address</label><input id="basketball-inquiry-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+        <div class="service-contact-field"><label for="basketball-inquiry-phone">Phone number</label><input id="basketball-inquiry-phone" name="phone" type="tel" autocomplete="tel" placeholder="Your phone number" required></div>
+        <div class="service-contact-field"><label for="basketball-inquiry-location">Location</label><input id="basketball-inquiry-location" name="location" type="text" autocomplete="address-level2" placeholder="City or town" required></div>
+        <div class="service-contact-field service-contact-field-wide"><label for="basketball-inquiry-message">Tell us about your goals</label><textarea id="basketball-inquiry-message" name="message" placeholder="What kind of player development, team support or program are you looking for?" required></textarea></div>
+        <button class="service-contact-submit" type="submit">Send a basketball inquiry <span aria-hidden="true">↗</span></button>
+        <p class="service-contact-note" role="status">Your inquiry will be sent securely to us. We will respond soon.</p>
+      </form>
+    </div>
   </section>
   <script>
     (()=>{
