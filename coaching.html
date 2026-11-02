@@ -95,11 +95,14 @@
     .coaching-value-icon svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
     .coaching-value-card h3{margin:0 0 6px;font-size:clamp(17px,2vw,22px);font-weight:550;letter-spacing:-.045em}
     .coaching-value-card p{grid-column:1/-1;margin:0;color:rgba(244,241,238,.84);font-size:13px;line-height:1.55}
-    .coaching-program-focus{grid-column:1;grid-row:1;min-width:0;padding:0 0 0 clamp(0px,3vw,32px);border-right:1px solid rgba(244,241,238,.2);background:transparent}
-    .coaching-program-values{grid-column:2;grid-row:1}
+    .coaching-program-focus{min-width:0;padding:0 0 0 clamp(0px,3vw,32px);border-right:1px solid rgba(244,241,238,.2);background:transparent}
     .coaching-program-focus .coaching-eyebrow{position:static;color:#B8B0B3}
     .coaching-program-focus h2{margin:14px 0 18px;color:#f4f1ee;font-family:Georgia,serif;font-size:clamp(38px,4.5vw,54px);font-weight:400;line-height:1;letter-spacing:-.055em}
     .coaching-program-focus>p:not(.coaching-eyebrow){max-width:500px;margin:0;padding:21px 20px;border-left:2px solid #B8B0B3;background:rgba(255,255,255,.045);color:rgba(244,241,238,.76);font-size:14px;line-height:1.75}
+    .coaching-archer-link{display:inline-flex;grid-column:1/-1;width:max-content;min-height:44px;align-items:center;gap:22px;margin:12px 0 0;padding:0 15px;border:1px solid rgba(244,241,238,.3);color:#f4f1ee;font-size:10px;font-weight:650;letter-spacing:.1em;text-transform:uppercase;transition:background .2s ease,border-color .2s ease}
+    .coaching-archer-link:after{font-size:16px;content:"↗";transition:transform .2s ease}
+    .coaching-archer-link:hover,.coaching-archer-link:focus-visible{border-color:#B8B0B3;background:rgba(244,241,238,.08)}
+    .coaching-archer-link:hover:after,.coaching-archer-link:focus-visible:after{transform:translate(2px,-2px)}
     .coaching-focus-tabs{display:grid;gap:8px;margin:22px 0 18px}
     .coaching-focus-tabs button{display:flex;min-height:62px;align-items:center;gap:12px;padding:11px 14px;border:1px solid rgba(244,241,238,.14);background:rgba(244,241,238,.035);color:var(--ink);text-align:left;cursor:pointer;transition:background .2s ease,border-color .2s ease}
     .coaching-focus-tabs button:hover,.coaching-focus-tabs button[aria-selected=true]{border-color:rgba(244,241,238,.38);background:rgba(244,241,238,.09)}
@@ -157,10 +160,6 @@
     .coaching-value-card p{grid-column:2;max-width:36ch;color:rgba(244,241,238,.68);font-size:12px;line-height:1.55}
     @media(max-width:760px){.coaching-program-values{grid-template-columns:1fr}.coaching-value-card,.coaching-value-card:nth-of-type(odd){padding:16px 0}}
     .coaching-program-values{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-content:stretch}
-    .coaching-benefits-intro{grid-column:1/-1;padding:0 0 8px}
-    .coaching-benefits-intro>p:first-child{margin:0 0 8px;color:#B8B0B3;font-size:9px;font-weight:650;letter-spacing:.16em;text-transform:uppercase}
-    .coaching-benefits-intro h3{margin:0;color:#f4f1ee;font-size:clamp(20px,2.2vw,27px);font-weight:600;letter-spacing:-.045em}
-    .coaching-benefits-intro>p:last-child{max-width:48ch;margin:9px 0 0;color:rgba(244,241,238,.68);font-size:12px;line-height:1.65}
     .coaching-value-card,.coaching-value-card:nth-of-type(odd){display:grid;grid-template-columns:36px minmax(0,1fr);grid-template-rows:auto 1fr;align-content:start;align-items:start;gap:15px 12px;min-height:174px;padding:20px;border:1px solid rgba(244,241,238,.14);background:linear-gradient(145deg,#252322,#1d1b1a);transition:transform .22s ease,border-color .22s ease,background .22s ease}
     .coaching-value-card:before{display:none}
     .coaching-value-card:hover{transform:translateY(-3px);padding-left:20px;border-color:rgba(184,176,179,.5);background:linear-gradient(145deg,#2b2827,#211f1e)}
@@ -170,34 +169,46 @@
     .coaching-value-card p{grid-column:1/-1;max-width:30ch;margin:0;color:rgba(244,241,238,.7);font-size:12px;line-height:1.6}
     @media(max-width:760px){.coaching-program-values{grid-template-columns:repeat(2,minmax(0,1fr))}.coaching-value-card,.coaching-value-card:nth-of-type(odd){min-height:160px;padding:18px}}
     .coaching-program-values{grid-template-columns:minmax(0,1fr);gap:0;align-content:start}
-    .coaching-benefits-intro{padding:0 0 22px;border-bottom:1px solid rgba(244,241,238,.2)}
-    .coaching-benefits-intro>p:first-child{margin-bottom:10px;color:#B8B0B3}
-    .coaching-benefits-intro h3{font-size:clamp(28px,3.6vw,42px);letter-spacing:-.06em}
-    .coaching-benefits-intro>p:last-child{max-width:58ch;margin-top:12px;font-size:14px;line-height:1.7}
     .coaching-value-card,.coaching-value-card:nth-of-type(odd){grid-template-columns:42px minmax(0,1fr);grid-template-rows:auto auto;align-items:center;gap:4px 16px;min-height:0;padding:20px 8px;border:0;border-bottom:1px solid rgba(244,241,238,.16);background:transparent;transition:padding .2s ease,background .2s ease}
     .coaching-value-card:hover{transform:none;padding-left:14px;background:rgba(255,255,255,.035)}
     .coaching-value-icon{grid-column:1;grid-row:1/3;width:36px;height:36px}
     .coaching-value-card h3{grid-column:2;grid-row:1;margin:0;font-size:15px;font-weight:600;letter-spacing:-.025em}
     .coaching-value-card p{grid-column:2;grid-row:2;max-width:none;margin:0;color:rgba(244,241,238,.68);font-size:13px;line-height:1.55}
-    .coaching-archer-benefit{display:grid;grid-template-columns:32px minmax(0,1fr);align-items:start;gap:10px 14px;padding:20px 12px;border-bottom:1px solid rgba(244,241,238,.16);border-radius:8px;transition:transform .2s ease,background .2s ease,border-color .2s ease}
-    .coaching-archer-benefit:hover{transform:translateY(-2px);border-color:rgba(197,181,162,.55);background:rgba(244,241,238,.045)}
-    .coaching-archer-benefit-icon{display:grid;width:32px;height:32px;place-items:center;border:1px solid rgba(184,176,179,.5);border-radius:50%;color:#B8B0B3}
+    .coaching-page .coaching-program-values{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-content:start}
+    .coaching-page .coaching-archer-benefit{display:grid;grid-template-columns:34px minmax(0,1fr);grid-template-rows:auto 1fr;align-content:start;align-items:start;gap:17px 12px;min-height:188px;padding:20px;border:1px solid rgba(244,241,238,.13);border-radius:6px;background:linear-gradient(145deg,rgba(244,241,238,.055),rgba(244,241,238,.018));transition:transform .2s ease,background .2s ease,border-color .2s ease}
+    .coaching-page .coaching-archer-benefit:hover{transform:translateY(-3px);border-color:rgba(184,176,179,.5);background:linear-gradient(145deg,rgba(244,241,238,.09),rgba(244,241,238,.03))}
+    .coaching-archer-benefit-icon{display:grid;width:34px;height:34px;place-items:center;border:1px solid rgba(184,176,179,.5);border-radius:50%;background:rgba(184,176,179,.08);color:#B8B0B3}
     .coaching-archer-benefit-icon svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-    .coaching-archer-benefit h3{margin:2px 0 6px;font-size:20px;font-weight:550;letter-spacing:-.04em}
-    .coaching-archer-benefit p{grid-column:2;max-width:50ch;margin:0;color:rgba(244,241,238,.68);font-size:12px;line-height:1.65}
-    .coaching-archer-coach{display:grid;grid-template-columns:88px minmax(0,1fr);align-items:center;gap:18px;margin:26px 0 0;padding:24px 12px 12px;border-top:1px solid rgba(244,241,238,.2);border-radius:8px;transition:transform .2s ease,background .2s ease,border-color .2s ease}
-    .coaching-archer-coach:hover{transform:translateY(-2px);border-color:rgba(197,181,162,.55);background:rgba(244,241,238,.045)}
-    .coaching-archer-coach img{display:block;width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:center}
-    .coaching-archer-coach h3{margin:0 0 4px;font-size:15px;font-weight:600;letter-spacing:-.025em}
-    .coaching-archer-coach p{margin:0;color:rgba(244,241,238,.68);font-size:12px;line-height:1.6}
-    .coaching-archer-coach .coaching-archer-coach-role{margin-bottom:7px;color:#B8B0B3;font-size:9px;font-weight:600;letter-spacing:.13em;text-transform:uppercase}
+    .coaching-archer-benefit h3{align-self:center;margin:0;font-size:17px;font-weight:600;letter-spacing:-.035em}
+    .coaching-archer-benefit p{grid-column:1/-1;max-width:34ch;margin:0;color:rgba(244,241,238,.68);font-size:12px;line-height:1.7}
+    .coaching-faq{padding:clamp(60px,8vw,104px) clamp(24px,5.2vw,88px);border-top:1px solid var(--line);background:radial-gradient(ellipse at 92% 0%,rgba(184,176,179,.08),transparent 34%),#211f1e;color:#f4f1ee}
+    .coaching-faq-inner{width:100%;max-width:1160px;margin:0 auto}
+    .coaching-faq-heading .coaching-eyebrow{position:static;color:#B8B0B3}
+    .coaching-faq-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:32px}
+    .coaching-faq-heading>div{max-width:680px}
+    .coaching-faq-heading h2{max-width:12ch;margin:14px 0 0;font-size:clamp(38px,5.4vw,64px);font-weight:550;line-height:.96;letter-spacing:-.075em}
+    .coaching-faq-heading>p:last-child{max-width:38ch;margin:0 0 4px;color:rgba(244,241,238,.68);font-size:13px;line-height:1.7}
+    .coaching-faq-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:12px}
+    .coaching-faq-item{min-width:0;padding:0 20px;border:1px solid rgba(244,241,238,.12);border-radius:8px;background:linear-gradient(145deg,#292726,#242221);transition:transform .2s ease,border-color .2s ease,background .2s ease,box-shadow .2s ease}
+    .coaching-faq-item:hover,.coaching-faq-item:focus-within{transform:translateY(-3px);border-color:rgba(184,176,179,.72);background:linear-gradient(145deg,#302e2d,#272524);box-shadow:0 10px 24px rgba(0,0,0,.2)}
+    .coaching-faq-item[open]{border-color:rgba(184,176,179,.42);background:linear-gradient(145deg,#2c2a29,#252322)}
+    .coaching-faq-item summary{position:relative;display:flex;min-height:82px;align-items:center;justify-content:space-between;gap:18px;padding:16px 0;color:#f4f1ee;font-size:14px;font-weight:550;line-height:1.5;list-style:none;cursor:pointer}
+    .coaching-faq-item summary::-webkit-details-marker{display:none}
+    .coaching-faq-item summary:after{display:grid;width:28px;height:28px;flex:none;place-items:center;border:1px solid rgba(184,176,179,.38);border-radius:50%;color:#B8B0B3;font-size:18px;font-weight:400;content:"+";transition:transform .2s ease}
+    .coaching-faq-item:hover summary:after,.coaching-faq-item:focus-within summary:after{border-color:#B8B0B3;background:#B8B0B3;color:#211f1e}
+    .coaching-faq-item[open] summary:after{transform:rotate(45deg)}
+    .coaching-faq-item summary:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+    .coaching-faq-item p{max-width:66ch;margin:0;padding:0 0 20px;color:rgba(244,241,238,.68);font-size:13px;line-height:1.75}
+    .coaching-faq-item a{color:#f4f1ee;text-decoration:underline;text-decoration-color:rgba(244,241,238,.4);text-underline-offset:3px}
+    .coaching-faq-item a:hover,.coaching-faq-item a:focus-visible{text-decoration-color:currentColor}
     @media(max-width:760px){
       .coaching-page .coaching-programs-layout{grid-template-columns:minmax(0,1fr);gap:20px}
       .coaching-page .coaching-program-focus{grid-column:1;grid-row:auto;padding:0 0 24px;border-right:0;border-bottom:1px solid rgba(244,241,238,.2)}
       .coaching-page .coaching-program-values{grid-column:1;grid-row:auto;grid-template-columns:minmax(0,1fr)}
       .coaching-page .coaching-archer-benefit{grid-column:1/-1;grid-row:auto}
     }
-    @media(max-width:420px){.coaching-archer-coach{grid-template-columns:72px minmax(0,1fr);gap:14px}.coaching-archer-coach img{width:72px;height:72px}}
+    @media(min-width:761px) and (max-width:960px){.coaching-page .coaching-program-values{grid-template-columns:minmax(0,1fr)}}
+    @media(max-width:760px){.coaching-faq{padding:54px clamp(20px,5vw,36px)}.coaching-faq-heading{align-items:flex-start;flex-direction:column;gap:14px;margin-bottom:24px}.coaching-faq-heading h2{max-width:14ch}.coaching-faq-list{grid-template-columns:minmax(0,1fr);gap:10px}.coaching-faq-item{padding:0 17px}.coaching-faq-item summary{min-height:68px}}
     .coaching-collective{position:relative;display:grid;grid-template-columns:1fr;align-items:center;width:100vw;margin-left:calc(50% - 50vw);padding:clamp(54px,7vw,88px) clamp(24px,5.2vw,88px);background:radial-gradient(ellipse at 92% 0%,rgba(184,176,179,.1),transparent 34%),#211f1e;color:#f4f1ee}
     .coaching-collective:before{position:absolute;top:0;left:clamp(24px,5.2vw,88px);width:74px;height:2px;background:#B8B0B3;content:""}
     .coaching-collective-intro{display:grid;width:100%;max-width:1440px;grid-template-columns:minmax(0,1fr) minmax(280px,.8fr);grid-template-rows:auto 1fr auto;align-items:center;gap:18px clamp(36px,7vw,104px);margin:0 auto;padding:clamp(20px,3vw,38px) 0}
@@ -345,6 +356,7 @@
     .coaching-hero-feature img{filter:grayscale(1) brightness(.88)}
     .coaching-hero-feature .coaching-team-note{max-width:42ch}
     .coaching-page .coaching-hero-feature{width:calc(100% + 2 * clamp(24px,5.2vw,88px));margin-left:calc(0px - clamp(24px,5.2vw,88px))}
+    .coaching-faq-photo img{filter:grayscale(1) brightness(.88)}
 
     :focus-visible{outline:2px solid #d0c9c7;outline-offset:4px}
 
@@ -382,8 +394,8 @@
     <section class="coaching-programs" id="coaching-programs" aria-labelledby="coaching-program-title">
       <div class="coaching-programs-layout">
         <article class="coaching-program-focus">
-          <p class="coaching-eyebrow">Program overview</p>
-          <h2 id="coaching-program-title">The Archer</h2>
+          <p class="coaching-eyebrow">1-on-1 Coaching</p>
+          <h2 id="coaching-program-title">Archer Program</h2>
           <p>A personalized coaching experience for youth and aspiring professionals in transition. Build self-awareness, strengthen your voice and take purposeful next steps towards your career.</p>
           <dl class="coaching-program-meta" aria-label="Archer Program details">
             <div><dt>Next intake</dt><dd>Dec 2026</dd></div>
@@ -391,24 +403,61 @@
             <div><dt>For</dt><dd>Youth, Professionals</dd></div>
             <div><dt>Duration</dt><dd>3–6 months</dd></div>
           </dl>
-          <aside class="coaching-archer-coach" aria-label="Meet your coach">
-            <img src="images/About/Almas_Casual.png" alt="Almas Ismail, ARCENI founder and coach" loading="lazy">
-            <div>
-              <p class="coaching-archer-coach-role">Meet your coach</p>
-              <h3><a href="about.html">Almas Ismail</a></h3>
-              <p>He is the founder and lead at ARCENI, supporting young people and aspiring professionals in exploring their identity and potential to impact their work and society.</p>
-            </div>
-          </aside>
         </article>
         <div class="coaching-program-values" aria-label="Archer Program benefits">
-          <header class="coaching-benefits-intro"><p>Program benefits</p><p>Build self-awareness, confidence and purpose, then turn your insight into clear next steps.</p></header>
           <article class="coaching-archer-benefit"><span class="coaching-archer-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.5"/></svg></span><div><h3>Self-Awareness</h3><p>Recognize your strengths and values, find direction, and express your ideas with confidence.</p></div></article>
-          <article class="coaching-archer-benefit"><span class="coaching-archer-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span><div><h3>Purposeful Action</h3><p>Set meaningful goals, take clear next steps and build steady habits to sustain your growth.</p></div></article>
+            <article class="coaching-archer-benefit"><span class="coaching-archer-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span><div><h3>Purposeful Action</h3><p>Set meaningful goals, take clear next steps and build steady habits to sustain your growth.</p></div></article>
+          <article class="coaching-archer-benefit"><span class="coaching-archer-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2.2 4.8-4.8 2.2 2.2-4.8 4.8-2.2Z"/></svg></span><div><h3>Career Exploration</h3><p>Explore career paths and opportunities that align with your interests, values and strengths.</p></div></article>
+          <article class="coaching-archer-benefit"><span class="coaching-archer-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H6l-3 2v-9.5A7.5 7.5 0 0 1 10.5 4H12"/><path d="m15 4 2 2 4-4"/></svg></span><div><h3>Confidence &amp; Voice</h3><p>Communicate your ideas clearly, advocate for yourself and contribute with greater confidence.</p></div></article>
         </div>
-      </div>
-    </section>
+      </section>
     <a class="coaching-section-scroll" href="#coaching-approach" aria-label="Scroll">Scroll<span aria-hidden="true"></span></a>
   </main>
+
+  <section class="coaching-team-section coaching-approach coaching-faq-photo" id="coaching-faq-photo" aria-label="Coaching reflection">
+    <img src="images/Collective/varya-vazikova-MemSZYmMfrc-unsplash.jpg" alt="A person reflecting while writing in a notebook" loading="lazy">
+    <div class="coaching-team-caption">
+      <p class="coaching-team-note">Make space to reflect, strengthen your voice and take purposeful next steps.</p>
+    </div>
+  </section>
+
+  <section class="coaching-faq" id="coaching-faq" aria-labelledby="coaching-faq-title">
+    <div class="coaching-faq-inner">
+      <header class="coaching-faq-heading">
+        <div>
+          <p class="coaching-eyebrow">The Archer Program</p>
+          <h2 id="coaching-faq-title">FAQs.</h2>
+        </div>
+        <p>Whether you’re supporting a young person, finding your own direction, or ready to bring a project to life, start with the questions that feel familiar. <a href="#coaching-contact">Talk with us.</a></p>
+      </header>
+      <div class="coaching-faq-list">
+        <details class="coaching-faq-item" name="coaching-faq">
+          <summary>I’m worried about my child’s future, but I don’t want to pressure them. Can The Archer help?</summary>
+          <p>The Archer gives young people space to reflect, identify their strengths and interests, and shape goals in their own words. A parent or supporter can help start the conversation, while the young person remains at the center of the coaching process.</p>
+        </details>
+        <details class="coaching-faq-item" name="coaching-faq">
+          <summary>My child has potential but feels stuck or overwhelmed. What would coaching look like?</summary>
+          <p>Coaching offers a supportive space to slow down, explore what matters, and break a big question into manageable next steps. It isn’t a promise of a quick fix or a substitute for clinical or mental-health care when that is what someone needs.</p>
+        </details>
+        <details class="coaching-faq-item" name="coaching-faq">
+          <summary>I’m a young professional in transition. Do I need to know what I want to do next?</summary>
+          <p>No. You can begin with uncertainty. The Archer helps you take stock of your strengths, values and experience, then explore options and define a next step that feels realistic and meaningful.</p>
+        </details>
+        <details class="coaching-faq-item" name="coaching-faq">
+          <summary>I’m a young person with an idea for a project. Is The Archer only about choosing a career?</summary>
+          <p>No. The process can also help you clarify what you want to contribute, build confidence in your ideas, and map practical first steps for a project or initiative.</p>
+        </details>
+        <details class="coaching-faq-item" name="coaching-faq">
+          <summary>How do I know if I’m ready for The Archer?</summary>
+          <p>You don’t need a finished plan. It helps to be open to reflection, conversation and trying steps between sessions. If you’re unsure, <a href="#coaching-contact">get in touch</a> and we can talk through what support might fit.</p>
+        </details>
+        <details class="coaching-faq-item" name="coaching-faq">
+          <summary>How long is the program, and how can we get started?</summary>
+          <p>The Archer typically runs for 3–6 months and can be delivered in person or virtually. The next intake is planned for December 2026. <a href="#coaching-contact">Send an inquiry</a> to ask about availability and next steps.</p>
+        </details>
+      </div>
+    </div>
+  </section>
 
   <section class="coaching-team-section coaching-approach" id="coaching-approach" aria-label="Coaching approach">
     <img src="images/Consulting/vd-photography-ek92BkvL1-I-unsplash.jpg" alt="A person writing notes during a reflective coaching exercise" loading="lazy">
@@ -470,6 +519,7 @@
         </div>
       </div>
     </section>
+    <a class="coaching-section-scroll" href="#coaching-team-photo" aria-label="Scroll">Scroll<span aria-hidden="true"></span></a>
   </div>
 
   <section class="coaching-team-section coaching-bottom-photo" id="coaching-team-photo" aria-label="Coaching reflection photo">

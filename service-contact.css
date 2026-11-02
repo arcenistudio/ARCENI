@@ -4,14 +4,17 @@
 .service-contact-eyebrow{margin:0 0 18px;color:#B8B0B3;font-size:10px;font-weight:600;letter-spacing:.19em;text-transform:uppercase}
 .service-contact-copy h2{margin:0;font-size:clamp(40px,6.5vw,76px);font-weight:600;line-height:.92;letter-spacing:-.08em}
 .service-contact-copy>p:last-child{max-width:44ch;margin:20px 0 0;color:rgba(244,241,238,.72);font-size:14px;line-height:1.75}
-.service-contact-form{display:grid;min-width:0;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;padding:clamp(22px,3.8vw,40px);border:1px solid rgba(244,241,238,.16);background:linear-gradient(145deg,#262423,#1d1b1a)}
+.service-contact-form{display:grid;min-width:0;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;padding:clamp(22px,3.8vw,40px);border:1px solid rgba(244,241,238,.16);background:linear-gradient(145deg,#262423,#1d1b1a);transition:transform .22s ease,border-color .22s ease,background .22s ease,box-shadow .22s ease}
+.service-contact-form:hover,.service-contact-form:focus-within{transform:translateY(-3px);border-color:rgba(184,176,179,.58);background:linear-gradient(145deg,#2c2928,#211f1e);box-shadow:0 16px 38px rgba(0,0,0,.22)}
 .service-contact-form-head,.service-contact-field-wide,.service-contact-submit,.service-contact-note{grid-column:1/-1}
 .service-contact-form-head{padding-bottom:17px;border-bottom:1px solid rgba(244,241,238,.15)}
 .service-contact-form-head h3{margin:0;font-size:clamp(23px,3vw,30px);font-weight:600;letter-spacing:-.055em}
 .service-contact-form-head p{margin:7px 0 0;color:#B8B0B3;font-size:12px;line-height:1.6}
 .service-contact-field{display:grid;min-width:0;gap:7px}
-.service-contact-field label{font-size:10px;font-weight:600;letter-spacing:.04em}
-.service-contact-field input,.service-contact-field select,.service-contact-field textarea{width:100%;min-height:46px;padding:12px;border:1px solid rgba(244,241,238,.2);border-radius:2px;background:#191817;color:#f4f1ee;font:400 12px Inter,Arial,sans-serif}
+.service-contact-field label{font-size:10px;font-weight:600;letter-spacing:.04em;transition:color .18s ease}
+.service-contact-field:hover label,.service-contact-field:focus-within label{color:#d4c5b4}
+.service-contact-field input,.service-contact-field select,.service-contact-field textarea{width:100%;min-height:46px;padding:12px;border:1px solid rgba(244,241,238,.2);border-radius:2px;background:#191817;color:#f4f1ee;font:400 12px Inter,Arial,sans-serif;transition:border-color .18s ease,background .18s ease,box-shadow .18s ease}
+.service-contact-field :is(input,select,textarea):hover{border-color:rgba(184,176,179,.68);background:#211f1e;box-shadow:0 3px 12px rgba(0,0,0,.14)}
 .service-contact-field textarea{min-height:112px;resize:vertical}
 .service-contact-field input::placeholder,.service-contact-field textarea::placeholder{color:#aaa2a4}
 .service-contact-field :is(input,select,textarea):focus{outline:2px solid #B8B0B3;outline-offset:2px}
@@ -23,4 +26,4 @@
 .service-contact-note{margin:0;color:#B8B0B3;font-size:10px;line-height:1.6}
 @media(max-width:850px){.service-contact-inner{grid-template-columns:minmax(0,1fr);gap:30px}.service-contact-copy{max-width:700px}.service-contact-copy h2{max-width:12ch}}
 @media(max-width:700px){.service-contact-section{padding:58px max(18px,env(safe-area-inset-right)) 58px max(18px,env(safe-area-inset-left))}.service-contact-form{grid-template-columns:minmax(0,1fr);gap:14px;padding:20px}.service-contact-form-head,.service-contact-field-wide,.service-contact-submit,.service-contact-note,.service-contact-field{grid-column:1}}
-@media(prefers-reduced-motion:reduce){.service-contact-submit{transition:none}.service-contact-submit:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){.service-contact-form,.service-contact-submit{transition:none}.service-contact-form:hover,.service-contact-form:focus-within,.service-contact-submit:hover{transform:none}}

@@ -1,5 +1,5 @@
 (()=>{
-  const header=document.querySelector('header.home-nav,header.topbar,header.basketball-nav,header.coaching-nav,header.contact-nav');
+  const header=document.querySelector('header.home-nav,header.topbar,header.basketball-nav,header.coaching-nav,header.archer-nav,header.contact-nav');
   if(!header) throw new Error('ARCENI menu requires a page header.');
 
   const trigger=document.createElement('button');

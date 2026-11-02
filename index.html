@@ -71,14 +71,17 @@
     .home-contact-eyebrow{margin:0 0 18px;color:var(--accent);font-size:10px;font-weight:600;letter-spacing:.19em;text-transform:uppercase}
     .home-contact-intro h2{margin:0;font-size:clamp(40px,6.5vw,76px);font-weight:600;line-height:.92;letter-spacing:-.08em}
     .home-contact-intro>p:last-child{max-width:44ch;margin:20px 0 0;color:rgba(244,241,238,.72);font-size:14px;line-height:1.75}
-    .home-contact-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;padding:clamp(22px,3.8vw,40px);border:1px solid rgba(244,241,238,.16);background:linear-gradient(145deg,#262423,#1d1b1a)}
+    .home-contact-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;padding:clamp(22px,3.8vw,40px);border:1px solid rgba(244,241,238,.16);background:linear-gradient(145deg,#262423,#1d1b1a);transition:transform .22s ease,border-color .22s ease,background .22s ease,box-shadow .22s ease}
+    .home-contact-form:hover,.home-contact-form:focus-within{transform:translateY(-3px);border-color:rgba(184,176,179,.58);background:linear-gradient(145deg,#2c2928,#211f1e);box-shadow:0 16px 38px rgba(0,0,0,.22)}
     .home-contact-form-head,.home-contact-field-wide,.home-contact-submit,.home-contact-note{grid-column:1/-1}
     .home-contact-form-head{padding-bottom:17px;border-bottom:1px solid rgba(244,241,238,.15)}
     .home-contact-form-head h3{margin:0;font-size:clamp(23px,3vw,30px);font-weight:600;letter-spacing:-.055em}
     .home-contact-form-head p{margin:7px 0 0;color:var(--muted);font-size:12px;line-height:1.6}
     .home-contact-field{display:grid;min-width:0;gap:7px}
-    .home-contact-field label{font-size:10px;font-weight:600;letter-spacing:.04em}
-    .home-contact-field input,.home-contact-field select,.home-contact-field textarea{width:100%;min-height:46px;padding:12px;border:1px solid rgba(244,241,238,.2);border-radius:2px;background:#191817;color:var(--ink);font:400 12px Inter,Arial,sans-serif}
+    .home-contact-field label{font-size:10px;font-weight:600;letter-spacing:.04em;transition:color .18s ease}
+    .home-contact-field:hover label,.home-contact-field:focus-within label{color:#d4c5b4}
+    .home-contact-field input,.home-contact-field select,.home-contact-field textarea{width:100%;min-height:46px;padding:12px;border:1px solid rgba(244,241,238,.2);border-radius:2px;background:#191817;color:var(--ink);font:400 12px Inter,Arial,sans-serif;transition:border-color .18s ease,background .18s ease,box-shadow .18s ease}
+    .home-contact-field :is(input,select,textarea):hover{border-color:rgba(184,176,179,.68);background:#211f1e;box-shadow:0 3px 12px rgba(0,0,0,.14)}
     .home-contact-field textarea{min-height:112px;resize:vertical}
     .home-contact-field input::placeholder,.home-contact-field textarea::placeholder{color:#aaa2a4}
     .home-contact-field :is(input,select,textarea):focus{outline:2px solid var(--accent);outline-offset:2px}
@@ -95,7 +98,7 @@
     @media(max-width:420px){.home-nav{height:70px}.home-panel{grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr);min-height:clamp(250px,33svh,310px);padding:18px}.home-panel h2{font-size:clamp(24px,7.5vw,30px)}.home-footer{align-items:flex-start;flex-direction:column;gap:7px}}
     @media(max-width:760px) and (max-height:600px){.home-editorial-hero{min-height:100svh}.home-nav{height:62px}.home-editorial-inner{padding:20px max(20px,env(safe-area-inset-right)) 64px max(20px,env(safe-area-inset-left))}.home-editorial-eyebrow{margin-bottom:12px}.home-editorial-title{font-size:clamp(34px,7vw,46px)}.home-editorial-subheading{margin-top:12px;font-size:14px;line-height:1.5}.home-editorial-cta{min-height:42px;margin-top:12px}.home-editorial-scroll{bottom:8px}}
     .home-page .home-contact{width:min(100%,var(--site-layout-width));padding-right:var(--site-gutter);padding-left:var(--site-gutter)}
-    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}.home-contact-form:hover,.home-contact-form:focus-within{transform:none}}
   </style>
 </head>
 <body>
@@ -109,7 +112,7 @@
       <div class="home-editorial-inner">
         <div class="home-editorial-copy">
           <p class="home-editorial-eyebrow">Est. 2018 · Nairobi · Kenya</p>
-          <h1 class="home-editorial-title" id="home-editorial-title">Bold ideas.<br>Shared value.<br><span>Real impact.</span></h1>
+          <h1 class="home-editorial-title" id="home-editorial-title">Bold ideas,<br>shared value<br><span>and impact</span></h1>
           <p class="home-editorial-subheading">ARCENI helps organizations and individuals turn simple ideas into lasting impact.</p>
           <a class="home-editorial-cta" href="#home-services">What We Do</a>
         </div>

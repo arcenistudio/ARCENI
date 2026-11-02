@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#181716">
+  <meta name="description" content="The Archer is a personalized coaching experience to help young people and aspiring professionals find clarity, confidence and a purposeful next step.">
+  <title>The Archer Program | ARCENI</title>
+  <style>
+    :root{--page:#181716;--ink:#f4f1ee;--muted:#B8B0B3;--line:rgba(244,241,238,.2);--accent:#B8B0B3}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--page);color:var(--ink);font-family:Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .archer-page{width:min(100%,1240px);margin:0 auto;padding:0 clamp(20px,2.78vw,40px)}
+    .archer-nav{position:relative;z-index:2;display:flex;height:78px;align-items:center;justify-content:space-between}
+    .archer-brand{font-size:18px;font-weight:750;letter-spacing:.17em}
+    .archer-brand sup{margin-left:2px;font-size:9px;letter-spacing:0;vertical-align:top}
+    .archer-back{color:rgba(244,241,238,.72);font-size:10px;font-weight:550;letter-spacing:.13em;text-transform:uppercase;transition:color .2s ease}
+    .archer-back:hover,.archer-back:focus-visible{color:var(--ink)}
+    .archer-hero{position:relative;isolation:isolate;display:grid;min-height:min(760px,calc(100svh - 78px));grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);align-items:center;gap:clamp(28px,6vw,80px);padding:clamp(48px,8vw,100px) 0}
+    .archer-hero:before{position:absolute;z-index:-1;inset:0;background:radial-gradient(ellipse at 82% 45%,rgba(184,176,179,.11),transparent 42%);content:""}
+    .archer-hero-copy{max-width:680px}
+    .archer-eyebrow{margin:0 0 20px;color:var(--muted);font-size:10px;font-weight:650;letter-spacing:.19em;text-transform:uppercase}
+    .archer-hero h1{max-width:10ch;margin:0;font-size:clamp(52px,8vw,104px);font-weight:650;line-height:.91;letter-spacing:-.085em}
+    .archer-hero h1 span{color:var(--accent)}
+    .archer-intro{max-width:52ch;margin:24px 0 0;color:rgba(244,241,238,.75);font-size:16px;line-height:1.75}
+    .archer-points{display:grid;gap:12px;margin:30px 0 0;padding:0;list-style:none}
+    .archer-points li{display:grid;grid-template-columns:19px minmax(0,1fr);align-items:start;gap:12px;color:rgba(244,241,238,.86);font-size:13px;line-height:1.6}
+    .archer-points li:before{display:grid;width:19px;height:19px;place-items:center;border:1px solid rgba(184,176,179,.55);border-radius:50%;color:var(--accent);font-size:11px;content:"+"}
+    .archer-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin-top:32px}
+    .archer-cta{display:inline-flex;min-height:52px;align-items:center;justify-content:space-between;gap:24px;padding:6px 7px 6px 17px;background:var(--accent);color:#181716;font-size:11px;font-weight:650;transition:transform .2s ease,background .2s ease}
+    .archer-cta:hover,.archer-cta:focus-visible{transform:translateY(-2px);background:#d1cacc}
+    .archer-cta span{display:grid;width:38px;height:38px;place-items:center;background:#181716;color:var(--ink);font-size:17px}
+    .archer-secondary-link{color:rgba(244,241,238,.72);font-size:11px;text-decoration:underline;text-decoration-color:rgba(244,241,238,.35);text-underline-offset:4px}
+    .archer-secondary-link:hover,.archer-secondary-link:focus-visible{color:var(--ink);text-decoration-color:currentColor}
+    .archer-hero-image{position:relative;min-height:430px;overflow:hidden;background:#262321}
+    .archer-hero-image:after{position:absolute;inset:0;background:linear-gradient(180deg,transparent 58%,rgba(24,23,22,.55));content:""}
+    .archer-hero-image img{display:block;width:100%;height:100%;min-height:430px;object-fit:cover;object-position:center 36%;filter:grayscale(.25) brightness(.8)}
+    .archer-image-note{position:absolute;z-index:1;right:22px;bottom:20px;left:22px;margin:0;color:rgba(244,241,238,.84);font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+    .archer-pivot{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);align-items:center;gap:clamp(30px,7vw,100px);padding:clamp(58px,8vw,100px) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .archer-pivot-label{margin:0;color:var(--muted);font-size:10px;font-weight:650;letter-spacing:.19em;text-transform:uppercase}
+    .archer-pivot h2{max-width:18ch;margin:12px 0 0;font-size:clamp(34px,5vw,62px);font-weight:550;line-height:.98;letter-spacing:-.07em}
+    .archer-pivot h2 span{color:var(--accent)}
+    .archer-pivot-copy{max-width:58ch;margin:0;color:rgba(244,241,238,.76);font-size:15px;line-height:1.8}
+    .archer-fit{padding:clamp(48px,7vw,82px) 0;border-bottom:1px solid var(--line)}
+    .archer-fit-heading{max-width:680px;margin-bottom:30px}
+    .archer-fit-heading h2{margin:14px 0 10px;font-size:clamp(34px,5vw,58px);font-weight:550;line-height:.98;letter-spacing:-.07em}
+    .archer-fit-heading>p:last-child{max-width:54ch;margin:0;color:var(--muted);font-size:14px;line-height:1.7}
+    .archer-fit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2.4vw,30px)}
+    .archer-fit-column{min-width:0;padding:clamp(22px,3vw,34px);border:1px solid rgba(244,241,238,.15);background:linear-gradient(145deg,#211f1e,#1c1a19)}
+    .archer-fit-column h3{margin:0 0 20px;font-size:clamp(20px,2.4vw,28px);font-weight:550;letter-spacing:-.045em}
+    .archer-fit-column ul{display:grid;gap:0;margin:0;padding:0;list-style:none}
+    .archer-fit-column li{position:relative;padding:15px 0 15px 22px;border-top:1px solid rgba(244,241,238,.13);color:rgba(244,241,238,.74);font-size:13px;line-height:1.65}
+    .archer-fit-column li:before{position:absolute;top:15px;left:0;color:#B8B0B3;content:"+"}
+    .archer-fit-column-not-fit li:before{content:"–"}
+    .archer-fit-contact{margin:22px 0 0;color:var(--muted);font-size:12px;line-height:1.6}
+    .archer-fit-contact a{color:#f4f1ee;text-decoration:underline;text-decoration-color:rgba(244,241,238,.45);text-underline-offset:3px}
+    .archer-fit-contact a:hover,.archer-fit-contact a:focus-visible{text-decoration-color:currentColor}
+    .archer-next-step{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:28px 0 38px}
+    .archer-next-step p{margin:0;color:var(--muted);font-size:12px;line-height:1.6}
+    .archer-next-step>a{flex:none;color:var(--ink);font-size:10px;font-weight:650;letter-spacing:.11em;text-transform:uppercase;text-decoration:underline;text-decoration-color:rgba(244,241,238,.4);text-underline-offset:5px}
+    .archer-next-step>a:hover,.archer-next-step>a:focus-visible{text-decoration-color:currentColor}
+    :focus-visible{outline:2px solid #d0c9c7;outline-offset:4px}
+    @media(max-width:760px){.archer-hero{min-height:0;grid-template-columns:1fr;gap:34px;padding:54px 0 62px}.archer-hero h1{max-width:11ch;font-size:clamp(48px,11vw,78px)}.archer-hero-image,.archer-hero-image img{min-height:clamp(280px,72vw,440px)}.archer-pivot{grid-template-columns:1fr;gap:20px}.archer-fit-grid{grid-template-columns:minmax(0,1fr)}.archer-fit-heading{margin-bottom:22px}.archer-next-step{align-items:flex-start;flex-direction:column}}
+    @media(max-width:420px){.archer-nav{height:68px}.archer-back{font-size:8px;letter-spacing:.08em}.archer-hero{padding-top:44px}.archer-hero h1{font-size:clamp(44px,12vw,60px)}.archer-actions{align-items:stretch;flex-direction:column}.archer-cta{width:100%}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.archer-cta{transition:none}}
+  </style>
+  <link rel="stylesheet" href="site-menu.css">
+  <script src="site-menu.js" defer></script>
+</head>
+<body>
+  <main class="archer-page">
+    <header class="archer-nav">
+      <a class="archer-brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a>
+      <a class="archer-back" href="coaching.html">← Coaching</a>
+    </header>
+    <section class="archer-hero" aria-labelledby="archer-title">
+      <div class="archer-hero-copy">
+        <p class="archer-eyebrow">The Archer · A coaching experience</p>
+        <h1 id="archer-title">You don’t have to have it <span>all figured out.</span></h1>
+        <p class="archer-intro">If you’re at a crossroads, you don’t need someone else to choose your future. You need space to understand what matters to you and support to take your next step.</p>
+        <ul class="archer-points" aria-label="What The Archer helps you do">
+          <li>Recognize your strengths, values and interests.</li>
+          <li>Build confidence in your voice and decisions.</li>
+          <li>Turn reflection into meaningful goals and practical next steps.</li>
+        </ul>
+        <div class="archer-actions">
+          <a class="archer-cta" href="coaching.html#coaching-contact">Talk with us about The Archer<span aria-hidden="true">↗</span></a>
+          <a class="archer-secondary-link" href="#archer-fit">See if the program is right for you</a>
+        </div>
+      </div>
+      <div class="archer-hero-image">
+        <img src="images/Collective/wadi-lissa-AZvGpBp925o-unsplash.jpg" alt="A young person reflecting while writing in a journal" fetchpriority="high">
+        <p class="archer-image-note">Clarity grows when you make space to reflect.</p>
+      </div>
+    </section>
+    <section class="archer-pivot" aria-labelledby="archer-pivot-title">
+      <div>
+        <p class="archer-pivot-label">The pivot</p>
+        <h2 id="archer-pivot-title">From feeling stuck to <span>moving with purpose.</span></h2>
+      </div>
+      <p class="archer-pivot-copy">The Archer turns “I don’t know what comes next” into a clearer understanding of who you are, what matters to you and one meaningful step you can take. It’s not about having every answer. It’s about building the confidence to move forward on your own terms.</p>
+    </section>
+    <section class="archer-fit" id="archer-fit" aria-labelledby="archer-fit-title">
+      <header class="archer-fit-heading">
+        <p class="archer-eyebrow">The Archer Program · FAQ</p>
+        <h2 id="archer-fit-title">Is The Archer right for you?</h2>
+        <p>The program works best when the coaching approach and timing match what you need right now.</p>
+      </header>
+      <div class="archer-fit-grid">
+        <article class="archer-fit-column">
+          <h3>This is perfect for you if...</h3>
+          <ul>
+            <li>You’re a young person or aspiring professional navigating a transition or exploring what comes next.</li>
+            <li>You want to better understand your strengths, values and interests.</li>
+            <li>You’re open to reflection, new perspectives and setting goals that feel meaningful to you.</li>
+            <li>You can make space to take part in coaching and try purposeful next steps over time.</li>
+          </ul>
+        </article>
+        <article class="archer-fit-column archer-fit-column-not-fit">
+          <h3>This is not for you if...</h3>
+          <ul>
+            <li>You’re looking for a guaranteed job placement or someone to make career decisions for you.</li>
+            <li>You need an immediate solution rather than a process of reflection and action.</li>
+            <li>You’re not able to commit time to coaching and follow-through at this point.</li>
+            <li>You need support beyond what a coaching program can provide right now.</li>
+          </ul>
+          <p class="archer-fit-contact">Not sure where you fit? <a href="coaching.html#coaching-contact">Get in touch</a> and we can talk through your goals.</p>
+        </article>
+      </div>
+    </section>
+    <footer class="archer-next-step">
+      <p>Personalized coaching for youth and aspiring professionals navigating transition.</p>
+      <a href="coaching.html#coaching-contact">Start a conversation ↗</a>
+    </footer>
+  </main>
+</body>
+</html>

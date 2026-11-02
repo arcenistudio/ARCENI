@@ -29,15 +29,18 @@
     .contact-service-link{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:15px 0;border-bottom:1px solid var(--line);color:rgba(244,241,238,.72);font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:color .2s ease}
     .contact-service-link:hover,.contact-service-link:focus-visible{color:var(--accent)}
     .contact-service-link span:last-child{font-size:17px}
-    .contact-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding:clamp(24px,4vw,46px);border:1px solid rgba(244,241,238,.15);background:linear-gradient(145deg,#262423,#1d1b1a);box-shadow:0 24px 64px rgba(0,0,0,.22)}
+    .contact-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding:clamp(24px,4vw,46px);border:1px solid rgba(244,241,238,.15);background:linear-gradient(145deg,#262423,#1d1b1a);box-shadow:0 24px 64px rgba(0,0,0,.22);transition:transform .22s ease,border-color .22s ease,background .22s ease,box-shadow .22s ease}
+    .contact-form:hover,.contact-form:focus-within{transform:translateY(-3px);border-color:rgba(184,176,179,.58);background:linear-gradient(145deg,#2c2928,#211f1e);box-shadow:0 30px 72px rgba(0,0,0,.3)}
     .contact-form-head{grid-column:1/-1;padding-bottom:20px;border-bottom:1px solid rgba(244,241,238,.15)}
     .contact-form-head span{color:var(--accent);font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
     .contact-form-head h2{margin:9px 0 0;font-size:clamp(24px,3vw,34px);font-weight:600;letter-spacing:-.06em}
     .contact-form-head p{margin:8px 0 0;color:var(--muted);font-size:12px;line-height:1.6}
     .contact-field{display:grid;min-width:0;gap:7px}
     .contact-field.wide{grid-column:1/-1}
-    .contact-field label{font-size:10px;font-weight:600;letter-spacing:.04em}
-    .contact-field input,.contact-field select,.contact-field textarea{width:100%;min-height:48px;padding:12px;border:1px solid rgba(244,241,238,.2);border-radius:2px;background:#191817;color:var(--ink);font:400 12px Inter,Arial,sans-serif}
+    .contact-field label{font-size:10px;font-weight:600;letter-spacing:.04em;transition:color .18s ease}
+    .contact-field:hover label,.contact-field:focus-within label{color:#d4c5b4}
+    .contact-field input,.contact-field select,.contact-field textarea{width:100%;min-height:48px;padding:12px;border:1px solid rgba(244,241,238,.2);border-radius:2px;background:#191817;color:var(--ink);font:400 12px Inter,Arial,sans-serif;transition:border-color .18s ease,background .18s ease,box-shadow .18s ease}
+    .contact-field :is(input,select,textarea):hover{border-color:rgba(184,176,179,.68);background:#211f1e;box-shadow:0 3px 12px rgba(0,0,0,.14)}
     .contact-field textarea{min-height:118px;resize:vertical}
     .contact-field input::placeholder,.contact-field textarea::placeholder{color:#aaa2a4}
     .contact-field :is(input,select,textarea):focus{outline:2px solid var(--accent);outline-offset:2px}
@@ -48,7 +51,7 @@
     .contact-note{grid-column:1/-1;margin:0;color:var(--muted);font-size:10px;line-height:1.6}
     @media(max-width:850px){.contact-main{grid-template-columns:1fr;gap:36px;padding:54px 0}.contact-intro{max-width:720px}.contact-intro h1{max-width:13ch}.contact-services{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 20px}.contact-service-link{padding:13px 0}}
     @media(max-width:600px){.contact-shell{padding-right:20px;padding-left:20px}.contact-nav{min-height:76px;align-items:center;flex-direction:row;justify-content:space-between;gap:12px;padding:12px 0}.contact-main{min-height:calc(100svh - 76px);gap:30px;padding:42px 0}.contact-intro h1{font-size:clamp(44px,13vw,68px)}.contact-intro>p:last-of-type{font-size:14px}.contact-services{grid-template-columns:1fr;gap:0;margin-top:28px}.contact-service-link{padding:12px 0}.contact-form{grid-template-columns:1fr;padding:20px}.contact-form-head,.contact-field.wide,.contact-submit,.contact-note{grid-column:1}.contact-field{grid-column:1}}
-    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}.contact-form:hover,.contact-form:focus-within{transform:none}}
   </style>
   <link rel="stylesheet" href="site-responsive.css">
   <link rel="stylesheet" href="site-scroll.css">
