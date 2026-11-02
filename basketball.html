@@ -48,13 +48,13 @@
     .basketball-cta span{display:grid;width:38px;height:38px;place-items:center;background:#B8B0B3;color:#181716;font-size:19px;transition:transform .2s ease}
     .basketball-cta:hover,.basketball-cta:focus-visible{transform:translateY(-2px);border-color:rgba(244,241,238,.55);background:rgba(244,241,238,.12)}
     .basketball-cta:hover span{transform:translateX(3px)}
-    .basketball-scroll-cue{position:absolute;right:auto;bottom:10px;left:50%;display:flex;align-items:center;gap:12px;color:var(--muted);font-size:9px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;transform:translateX(-50%);transition:color .2s ease}
+    .basketball-scroll-cue{display:flex;width:max-content;align-items:center;gap:12px;margin:18px 0 18px auto;color:var(--muted);font-size:9px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;transition:color .2s ease}
     .basketball-scroll-cue span,.basketball-back-top span{position:relative;display:block;width:1px;height:36px;overflow:hidden;background:rgba(244,241,238,.32)}
     .basketball-scroll-cue span:after,.basketball-back-top span:after{position:absolute;top:0;left:-3px;width:7px;height:7px;border-radius:50%;background:#f4f1ee;content:""}
     .basketball-scroll-cue:hover,.basketball-back-top:hover{color:#fff}
     .basketball-back-top{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:12px;padding:20px;color:var(--muted);font-size:9px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;transition:color .2s ease}
     .basketball-back-top span:after{animation-direction:reverse}
-    .basketball-section-scroll{display:flex;width:max-content;flex-direction:column;align-items:center;gap:8px;margin:18px auto 22px;color:var(--muted);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;transition:color .2s ease}
+    .basketball-section-scroll{display:flex;width:max-content;flex-direction:column;align-items:center;gap:8px;margin:18px 0 22px auto;color:var(--muted);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;transition:color .2s ease}
     .basketball-section-scroll span{position:relative;display:block;width:1px;height:38px;overflow:hidden;background:rgba(244,241,238,.28);font-size:0}
     .basketball-section-scroll span:after{position:absolute;top:0;left:-3px;width:7px;height:7px;border-radius:50%;background:#f4f1ee;content:""}
     .basketball-section-scroll:hover{color:#f4f1ee}
@@ -66,7 +66,8 @@
     .basketball-impact-heading h2 span{color:#B8B0B3}
     .basketball-impact-heading>p:last-child{max-width:480px;margin:0;color:var(--muted);font-size:14px;line-height:1.7}
     .basketball-impact-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid rgba(244,241,238,.22);border-bottom:1px solid rgba(244,241,238,.22)}
-    .basketball-impact-stat{min-width:0;padding:clamp(20px,3vw,34px) 16px}
+    .basketball-impact-stat{min-width:0;padding:clamp(20px,3vw,34px) 16px;border-radius:8px;transition:transform .2s ease,background .2s ease,border-color .2s ease}
+    .basketball-impact-stat:hover{transform:translateY(-2px);background:rgba(244,241,238,.045)}
     .basketball-impact-stat+ .basketball-impact-stat{border-left:1px solid rgba(244,241,238,.18)}
     .basketball-impact-stat strong{display:block;white-space:nowrap;font-size:clamp(34px,5vw,64px);font-weight:650;line-height:1;letter-spacing:-.07em}
     .basketball-impact-stat strong span{color:var(--accent)}
@@ -76,9 +77,11 @@
     .basketball-services-overview{min-width:0;padding-right:clamp(22px,4vw,56px);border-right:1px solid rgba(244,241,238,.2)}
     .basketball-services-eyebrow{margin:0 0 14px;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
     .basketball-services-overview h2{margin:0 0 18px;font-family:Georgia,serif;font-size:clamp(38px,4.5vw,58px);font-weight:400;line-height:.98;letter-spacing:-.055em}
-    .basketball-services-overview>p:not(.basketball-services-eyebrow){max-width:54ch;margin:0;padding:20px;border-left:2px solid var(--accent);background:rgba(255,255,255,.045);color:rgba(244,241,238,.76);font-size:14px;line-height:1.75}
+    .basketball-services-overview>p:not(.basketball-services-eyebrow){max-width:54ch;margin:0;padding:20px;border-left:2px solid var(--accent);background:rgba(255,255,255,.045);color:rgba(244,241,238,.76);font-size:14px;line-height:1.75;transition:transform .2s ease,background .2s ease,border-color .2s ease}
+    .basketball-services-overview>p:not(.basketball-services-eyebrow):hover{transform:translateY(-2px);border-color:rgba(197,181,162,.7);background:rgba(255,255,255,.075)}
     .basketball-services-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 18px;margin:22px 0 0}
-    .basketball-services-meta div{padding:12px 0;border-top:1px solid rgba(244,241,238,.2)}
+    .basketball-services-meta div{padding:12px 10px;border-top:1px solid rgba(244,241,238,.2);border-radius:8px;transition:transform .2s ease,background .2s ease,border-color .2s ease}
+    .basketball-services-meta div:hover{transform:translateY(-2px);border-color:rgba(197,181,162,.55);background:rgba(244,241,238,.055)}
     .basketball-services-meta dt{margin-bottom:5px;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
     .basketball-services-meta dd{margin:0;color:var(--ink);font-size:13px;line-height:1.5}
     .basketball-services-cta{display:inline-flex;min-height:48px;align-items:center;gap:18px;margin-top:24px;padding:6px 7px 6px 16px;background:var(--accent);color:#181716;font-size:11px;font-weight:650;transition:transform .2s ease,background .2s ease}
@@ -88,7 +91,8 @@
     .basketball-services-list>header{padding:0 0 20px;border-bottom:1px solid rgba(244,241,238,.2)}
     .basketball-services-list>header strong{display:block;margin-bottom:8px;color:#B8B0B3;font-size:10px;font-weight:650;letter-spacing:.16em;text-transform:uppercase}
     .basketball-services-list>header p{max-width:52ch;margin:0;color:rgba(244,241,238,.72);font-size:13px;line-height:1.7}
-    .basketball-service-row{display:grid;grid-template-columns:32px minmax(0,1fr);align-items:start;gap:10px 14px;padding:20px 0;border-bottom:1px solid rgba(244,241,238,.16)}
+    .basketball-service-row{display:grid;grid-template-columns:32px minmax(0,1fr);align-items:start;gap:10px 14px;padding:20px 12px;border-bottom:1px solid rgba(244,241,238,.16);border-radius:8px;transition:transform .2s ease,background .2s ease,border-color .2s ease}
+    .basketball-service-row:hover{transform:translateY(-2px);border-color:rgba(197,181,162,.55);background:rgba(244,241,238,.045)}
     .basketball-service-icon{display:grid;width:32px;height:32px;place-items:center;border:1px solid rgba(184,176,179,.5);border-radius:50%;color:#B8B0B3}
     .basketball-service-icon svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
     .basketball-service-row h3{margin:2px 0 6px;font-size:20px;font-weight:550;letter-spacing:-.04em}
@@ -199,8 +203,8 @@
   <link rel="stylesheet" href="service-contact.css">
 </head>
 <body>
-  <main class="basketball-page">
-    <header class="basketball-nav"><a class="basketball-brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a><details class="service-page-menu"><summary>Explore</summary><nav class="service-page-menu-links" aria-label="Site pages"><a href="consulting.html">Consulting</a><a href="basketball.html" aria-current="page">Basketball</a><a href="coaching.html">Coaching</a><a href="#basketball-contact">Contact Us</a></nav></details></header>
+  <main class="basketball-page" id="basketball-top">
+    <header class="basketball-nav"><a class="basketball-brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a><a class="site-home-cta" href="index.html">Home</a></header>
     <section class="basketball-hero" aria-labelledby="basketball-title">
       <img class="basketball-portrait" src="images/Basketball/The Coach.png" alt="ARCENI basketball coach Almas Ismail holding a basketball">
       <p class="basketball-eyebrow">Arceni Basketball</p>
@@ -210,9 +214,9 @@
         <p class="basketball-copy">Build strong fundamentals, sharpen game awareness and bring character, discipline, teamwork and grit on and off the court.</p>
         <a class="basketball-cta" href="#basketball-services">What We Do<span aria-hidden="true">↗</span></a>
       </div>
-      <a class="basketball-scroll-cue" href="#basketball-player-photo" aria-label="Scroll to player training photo">Player development <span aria-hidden="true"></span></a>
     </section>
-    <section class="basketball-player-feature" aria-label="Player development training">
+    <a class="basketball-scroll-cue" href="#basketball-player-training-photo" aria-label="Scroll to player development training">Player development <span aria-hidden="true"></span></a>
+    <section class="basketball-player-feature" id="basketball-player-training-photo" aria-label="Player development training">
       <img src="images/Basketball/player-development-session.jpg" alt="Coach guiding young basketball players through agility ladder drills on an outdoor court" fetchpriority="high">
       <div class="basketball-player-caption"><p class="basketball-player-note">Improve your agility, quick feet, balance and coordination — skills to help you impact the game on the court.</p></div>
     </section>
@@ -230,7 +234,7 @@
         </dl>
       </article>
       <div class="basketball-services-list" aria-label="Basketball services">
-        <header><strong>What we support</strong><p>Personalized holistic player development and team performance with strong fundamentals and growth that supports decisionmaking and teamwork to the court.</p></header>
+        <header><strong>What to Expect</strong><p>Personalized player development and team performance with strong fundamentals and growth that supports decisionmaking and teamwork to the court.</p></header>
         <article class="basketball-service-row"><span class="basketball-service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3.5 9h17M3.5 15h17M12 3c2.4 2.4 3.6 5.4 3.6 9s-1.2 6.6-3.6 9m0-18C9.6 5.4 8.4 8.4 8.4 12s1.2 6.6 3.6 9"/></svg></span><div><h3>Player Development</h3><p>Strengthen fundamentals, improve game awareness and build confidence through focused individual coaching.</p></div></article>
         <article class="basketball-service-row"><span class="basketball-service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V9l8-5 8 5v11M2 20h20M8 20v-6h8v6M9 10h.01M15 10h.01"/></svg></span><div><h3>Consulting Services</h3><p>Customized development and performance services to strengthen programs and impact players at different levels.</p></div></article>
       </div>
@@ -305,6 +309,7 @@
       </form>
     </div>
   </section>
+  <a class="site-back-top" href="#basketball-top" aria-label="Back to top">Back to top <span aria-hidden="true"></span></a>
   <script>
     (()=>{
       const carousel=document.querySelector('.coaching-case-study-carousel');

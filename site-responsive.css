@@ -1113,6 +1113,15 @@ main section[id],section[id]{scroll-margin-top:clamp(68px,8vh,92px)}
   .home-panel,.about-brand-service,.service-page-menu>summary,.contact-submit{touch-action:manipulation}
 }
 
+/* Compact Home link for navigation on every inner page. */
+.site-home-cta{display:inline-flex;flex:0 0 auto;min-height:42px;align-items:center;gap:14px;margin-left:auto;padding:0 15px;border:1px solid rgba(244,241,238,.42);color:rgba(244,241,238,.92);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;transition:background .2s ease,border-color .2s ease,color .2s ease}
+.site-home-cta:after{font-size:17px;font-weight:400;content:"↗";transition:transform .2s ease}
+.site-home-cta:hover,.site-home-cta:focus-visible{border-color:#B8B0B3;background:#B8B0B3;color:#181716;outline:none}
+.site-home-cta:hover:after,.site-home-cta:focus-visible:after{transform:translate(2px,-2px)}
+.site-home-cta+.site-header-social{margin-left:16px}
+@media(max-width:760px){.site-home-cta{min-height:39px;padding-inline:12px;font-size:9px}}
+@media(max-width:420px){.site-home-cta{min-height:36px;gap:8px;padding-inline:9px;font-size:8px;letter-spacing:.1em}}
+
 /* Align page content to the 1,240px reference layout and its 40px desktop gutters. */
 :root{--site-layout-width:1240px;--site-content-width:1160px;--site-gutter:clamp(20px,2.78vw,40px)}
 .shell,.home-shell{max-width:var(--site-layout-width);padding-right:var(--site-gutter);padding-left:var(--site-gutter)}

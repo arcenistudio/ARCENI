@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#181716">
-  <title>ARCENI Consulting | Strategy to Change</title>
+  <title>ARCENI Consulting | Strategy to Impact</title>
   <meta name="description" content="Practical strategy and advisory to help organizations move critical work forward, strengthen teams and create lasting impact.">
   <style>
     :root{--page:#181716;--ink:#f4f1ee;--muted:#B8B0B3;--accent:#B8B0B3;--line:rgba(244,241,238,.2)}
@@ -30,9 +30,11 @@
     .consulting-program-focus{min-width:0;padding-right:clamp(22px,4vw,56px);border-right:1px solid rgba(244,241,238,.2)}
     .consulting-program-eyebrow{margin:0 0 14px;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
     .consulting-program-focus h2{margin:0 0 18px;font-family:Georgia,serif;font-size:clamp(38px,4.5vw,58px);font-weight:400;line-height:.98;letter-spacing:-.055em}
-    .consulting-program-focus>p:not(.consulting-program-eyebrow){max-width:54ch;margin:0;padding:20px;border-left:2px solid #B8B0B3;background:rgba(255,255,255,.045);color:rgba(244,241,238,.76);font-size:14px;line-height:1.75}
+    .consulting-program-focus>p:not(.consulting-program-eyebrow){max-width:54ch;margin:0;padding:20px;border-left:2px solid #B8B0B3;background:rgba(255,255,255,.045);color:rgba(244,241,238,.76);font-size:14px;line-height:1.75;transition:transform .2s ease,background .2s ease,border-color .2s ease}
+    .consulting-program-focus>p:not(.consulting-program-eyebrow):hover{transform:translateY(-2px);border-color:rgba(197,181,162,.7);background:rgba(255,255,255,.075)}
     .consulting-program-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 18px;margin:22px 0 0}
-    .consulting-program-meta div{padding:12px 0;border-top:1px solid rgba(244,241,238,.2)}
+    .consulting-program-meta div{padding:12px 10px;border-top:1px solid rgba(244,241,238,.2);border-radius:8px;transition:transform .2s ease,background .2s ease,border-color .2s ease}
+    .consulting-program-meta div:hover{transform:translateY(-2px);border-color:rgba(197,181,162,.55);background:rgba(244,241,238,.055)}
     .consulting-program-meta dt{margin-bottom:5px;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
     .consulting-program-meta dd{margin:0;color:var(--ink);font-size:13px;line-height:1.5}
     .consulting-program-cta{display:inline-flex;min-height:48px;align-items:center;gap:18px;margin-top:24px;padding:6px 7px 6px 16px;background:#B8B0B3;color:#181716;font-size:11px;font-weight:650;transition:transform .2s ease,background .2s ease}
@@ -42,7 +44,8 @@
     .consulting-program-services>header{padding:0 0 20px;border-bottom:1px solid rgba(244,241,238,.2)}
     .consulting-program-services>header strong{display:block;margin-bottom:8px;color:#B8B0B3;font-size:10px;font-weight:650;letter-spacing:.16em;text-transform:uppercase}
     .consulting-program-services>header p{max-width:52ch;margin:0;color:rgba(244,241,238,.72);font-size:13px;line-height:1.7}
-    .consulting-program-service{display:grid;grid-template-columns:32px minmax(0,1fr);align-items:start;gap:10px 14px;padding:20px 0;border-bottom:1px solid rgba(244,241,238,.16)}
+    .consulting-program-service{display:grid;grid-template-columns:32px minmax(0,1fr);align-items:start;gap:10px 14px;padding:20px 12px;border-bottom:1px solid rgba(244,241,238,.16);border-radius:8px;transition:transform .2s ease,background .2s ease,border-color .2s ease}
+    .consulting-program-service:hover{transform:translateY(-2px);border-color:rgba(197,181,162,.55);background:rgba(244,241,238,.045)}
     .consulting-program-service-icon{display:grid;width:32px;height:32px;place-items:center;border:1px solid rgba(184,176,179,.5);border-radius:50%;color:#B8B0B3}
     .consulting-program-service-icon svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
     .consulting-program-service h3{margin:2px 0 6px;font-size:20px;font-weight:550;letter-spacing:-.04em}
@@ -77,7 +80,7 @@
     .coaching-scroll-cue:hover,.coaching-back-top:hover{color:#fff}
     .coaching-back-top{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:12px;padding:20px;color:var(--muted);font-size:9px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;transition:color .2s ease}
     .coaching-back-top span:after{animation-direction:reverse}
-    .coaching-section-scroll{display:flex;width:max-content;flex-direction:column;align-items:center;gap:8px;margin:18px auto 22px;color:var(--muted);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;transition:color .2s ease}
+    .coaching-section-scroll{display:flex;width:max-content;flex-direction:column;align-items:center;gap:8px;margin:18px 0 22px auto;color:var(--muted);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;transition:color .2s ease}
     .coaching-section-scroll span{position:relative;display:block;width:1px;height:38px;overflow:hidden;background:rgba(244,241,238,.28);font-size:0}
     .coaching-section-scroll span:after{position:absolute;top:0;left:-3px;width:7px;height:7px;border-radius:50%;background:#f4f1ee;content:""}
     .coaching-section-scroll:hover{color:#f4f1ee}
@@ -326,6 +329,8 @@
     .consulting-approach .coaching-team-caption{justify-content:flex-end}
     .consulting-approach .coaching-team-note{max-width:38ch;text-align:right}
     @media(max-width:760px){.consulting-approach .coaching-team-caption{align-items:flex-end}}
+    .consulting-hero-feature img{filter:grayscale(1) brightness(.88)}
+    .consulting-hero-feature .coaching-team-note{max-width:42ch}
 
     :focus-visible{outline:2px solid #d0c9c7;outline-offset:4px}
 
@@ -338,12 +343,12 @@
   <link rel="stylesheet" href="service-contact.css">
 </head>
 <body class="consulting-page">
-  <main class="coaching-page">
-    <header class="coaching-nav"><a class="coaching-brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a><details class="service-page-menu"><summary>Explore</summary><nav class="service-page-menu-links" aria-label="Site pages"><a href="consulting.html" aria-current="page">Consulting</a><a href="basketball.html">Basketball</a><a href="coaching.html">Coaching</a><a href="#consulting-contact">Contact Us</a></nav></details></header>
+  <main class="coaching-page" id="consulting-top">
+    <header class="coaching-nav"><a class="coaching-brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a><a class="site-home-cta" href="index.html">Home</a></header>
     <section class="coaching-hero" aria-labelledby="coaching-title">
       <img class="coaching-portrait" src="images/Consulting/anastasia-vityukova-Q3qKcPAGrKw-unsplash.jpg" alt="Hands writing in a notebook during a planning session">
       <p class="coaching-eyebrow">ARCENI Consulting</p>
-      <h1 class="coaching-title" id="coaching-title"><span>Strategy to</span> <span class="title-accent">Change.</span></h1>
+      <h1 class="coaching-title" id="coaching-title"><span>Strategy to</span> <span class="title-accent">Impact.</span></h1>
       <div class="coaching-bottom">
         <p class="coaching-bottom-label">Project Management<br>Capacity Building</p>
         <p class="coaching-copy">Practical strategy and advisory to help organizations move critical work forward, strengthen teams and create lasting impact.</p>
@@ -352,6 +357,13 @@
       <a class="coaching-scroll-cue" href="#consulting-contact" aria-label="Contact ARCENI about consulting">Start a conversation <span aria-hidden="true"></span></a>
     </section>
   </main>
+
+  <section class="coaching-team-section consulting-approach consulting-hero-feature" id="consulting-hero-feature" aria-label="Consulting strategy and impact">
+    <img src="images/Consulting/consulting-collaboration.jpg" alt="Colleagues sharing ideas and discussing a project around a laptop" loading="lazy">
+    <div class="coaching-team-caption">
+      <p class="coaching-team-note">We turn ambitious ideas into clear priorities, coordinated delivery and lasting organizational capability.</p>
+    </div>
+  </section>
 
   <section class="consulting-programs" id="consulting-programs" aria-labelledby="consulting-program-title">
     <div class="consulting-programs-layout">
@@ -367,7 +379,7 @@
         </dl>
       </article>
       <div class="consulting-program-services" aria-label="Consulting services">
-        <header><strong>What we support</strong><p>Thoughtful engagements and stronger capabilities to help you turn concepts into actionable plans.</p></header>
+        <header><strong>What to Expect</strong><p>Thoughtful engagements and stronger capabilities to help you turn concepts into actionable plans.</p></header>
         <article class="consulting-program-service"><span class="consulting-program-service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5H5a2 2 0 0 0-2 2v13h18V7a2 2 0 0 0-2-2h-3M8 3h8v4H8zM7 12l2 2 4-4M15 13h3M7 17h2m4 0h5"/></svg></span><div><h3>Project Management</h3><p>Align scope, people, timelines and resources. Keep delivery coordinated, surface decisions early and move projects from concept to completion.</p></div></article>
         <article class="consulting-program-service"><span class="consulting-program-service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 20h18M5 16l5-5 4 3 6-7M15 7h5v5"/></svg></span><div><h3>Capacity Building</h3><p>Develop practical skills, tools and team practices that strengthen how organizations plan, collaborate and deliver over time.</p></div></article>
       </div>
@@ -458,6 +470,7 @@
     </div>
   </section>
 
+  <a class="site-back-top" href="#consulting-top" aria-label="Back to top">Back to top <span aria-hidden="true"></span></a>
   <script>
     (()=>{
       const carousel=document.querySelector('.coaching-case-study-carousel');

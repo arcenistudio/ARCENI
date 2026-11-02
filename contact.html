@@ -51,10 +51,11 @@
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
   </style>
   <link rel="stylesheet" href="site-responsive.css">
+  <link rel="stylesheet" href="site-scroll.css">
 </head>
 <body>
-  <div class="contact-shell">
-    <header class="contact-nav"><a class="contact-brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a><details class="service-page-menu"><summary>Explore</summary><nav class="service-page-menu-links" aria-label="Site pages"><a href="consulting.html">Consulting</a><a href="basketball.html">Basketball</a><a href="coaching.html">Coaching</a><a href="contact.html" aria-current="page">Contact Us</a></nav></details></header>
+  <div class="contact-shell" id="contact-top">
+    <header class="contact-nav"><a class="contact-brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a><a class="site-home-cta" href="index.html">Home</a></header>
     <main class="contact-main">
       <section class="contact-intro" aria-labelledby="contact-title"><p class="contact-eyebrow">Get in touch</p><h1 id="contact-title">Let’s start a conversation.</h1><p>Tell us what you’re working toward. Choose a service and share a little about what you need; we’ll help you find a practical next step.</p><nav class="contact-services" aria-label="Choose a service"><a class="contact-service-link" href="#contact-form" data-service-link="consulting">Consulting <span aria-hidden="true">↗</span></a><a class="contact-service-link" href="#contact-form" data-service-link="coaching">Coaching <span aria-hidden="true">↗</span></a><a class="contact-service-link" href="#contact-form" data-service-link="basketball">Basketball <span aria-hidden="true">↗</span></a></nav></section>
       <form class="contact-form" id="contact-form" action="https://formspree.io/f/xpppdveo" method="POST">
@@ -71,6 +72,7 @@
         <p class="contact-note" role="status">Your inquiry will be sent securely to us. We will respond soon.</p>
       </form>
     </main>
+    <a class="site-back-top" href="#contact-top" aria-label="Back to top">Back to top <span aria-hidden="true"></span></a>
   </div>
   <script>
     (()=>{
