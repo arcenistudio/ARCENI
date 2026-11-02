@@ -191,6 +191,9 @@
     .coaching-archer-coach h3{margin:0 0 4px;font-size:15px;font-weight:600;letter-spacing:-.025em}
     .coaching-archer-coach p{margin:0;color:rgba(244,241,238,.68);font-size:12px;line-height:1.6}
     .coaching-archer-coach .coaching-archer-coach-role{margin-bottom:7px;color:#B8B0B3;font-size:9px;font-weight:600;letter-spacing:.13em;text-transform:uppercase}
+    .coaching-archer-read-more{display:inline-flex;align-items:center;gap:7px;margin-top:8px;color:#B8B0B3;font-size:11px;font-weight:600;text-underline-offset:3px}
+    .coaching-archer-read-more:after{content:"↗";transition:transform .2s ease}
+    .coaching-archer-read-more:hover:after,.coaching-archer-read-more:focus-visible:after{transform:translate(2px,-2px)}
     @media(max-width:760px){
       .coaching-page .coaching-programs-layout{grid-template-columns:minmax(0,1fr);gap:20px}
       .coaching-page .coaching-program-focus{grid-column:1;grid-row:auto;padding:0 0 24px;border-right:0;border-bottom:1px solid rgba(244,241,238,.2)}
@@ -355,10 +358,12 @@
   <link rel="stylesheet" href="site-scroll.css">
  <link rel="stylesheet" href="site-responsive.css">
   <link rel="stylesheet" href="service-contact.css">
+  <link rel="stylesheet" href="site-menu.css">
+  <script src="site-menu.js" defer></script>
 </head>
 <body>
   <main class="coaching-page" id="coaching-top">
-    <header class="coaching-nav"><a class="coaching-brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a><a class="site-home-cta" href="index.html">Home</a></header>
+    <header class="coaching-nav"><a class="coaching-brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a></header>
     <section class="coaching-hero" aria-labelledby="coaching-title">
       <img class="coaching-portrait" src="images/Collective/wadi-lissa-AZvGpBp925o-unsplash.jpg" alt="A young person reflecting while writing in a journal">
       <p class="coaching-eyebrow">ARCENI Coaching</p>
@@ -381,7 +386,7 @@
       <div class="coaching-programs-layout">
         <article class="coaching-program-focus">
           <p class="coaching-eyebrow">Program overview</p>
-          <h2 id="coaching-program-title">Archer Program</h2>
+          <h2 id="coaching-program-title">The Archer</h2>
           <p>A personalized coaching experience for youth and aspiring professionals in transition. Build self-awareness, strengthen your voice and take purposeful next steps towards your career.</p>
           <dl class="coaching-program-meta" aria-label="Archer Program details">
             <div><dt>Next intake</dt><dd>Dec 2026</dd></div>
@@ -393,8 +398,9 @@
             <img src="images/About/Almas_Casual.png" alt="Almas Ismail, ARCENI founder and coach" loading="lazy">
             <div>
               <p class="coaching-archer-coach-role">Meet your coach</p>
-              <h3>Almas Ismail</h3>
+              <h3><a href="about.html">Almas Ismail</a></h3>
               <p>He is the founder and lead at ARCENI, supporting young people and aspiring professionals in exploring their identity and potential to impact their work and society.</p>
+              <a class="coaching-archer-read-more" href="about.html">Read more</a>
             </div>
           </aside>
         </article>
@@ -493,6 +499,14 @@
   </section>
 
   <a class="site-back-top" href="#coaching-top" aria-label="Back to top">Back to top <span aria-hidden="true"></span></a>
+  <footer class="arceni-page-footer">
+    <div class="arceni-footer-inner">
+      <a class="arceni-footer-brand" href="index.html">ARCENI<sup>®</sup></a>
+      <nav aria-label="Footer navigation"><a href="about.html">About</a><a href="consulting.html">Consulting</a><a href="basketball.html">Basketball</a><a href="coaching.html">Coaching</a><a href="contact.html">Contact</a></nav>
+      <nav class="arceni-footer-social" aria-label="Social media"><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.linkedin.com/company/arceni/" target="_blank" rel="noopener noreferrer">LinkedIn</a></nav>
+      <div class="arceni-footer-bottom"><span>Nairobi · Kenya · Global</span><span>© 2026 ARCENI · All rights reserved</span></div>
+    </div>
+  </footer>
   <script>
     (()=>{
       const carousel=document.querySelector('.coaching-case-study-carousel');

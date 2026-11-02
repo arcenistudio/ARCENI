@@ -1,0 +1,32 @@
+.arceni-menu-trigger{display:inline-flex;flex:0 0 auto;min-height:42px;align-items:center;justify-content:center;gap:9px;padding:0 13px;border:1px solid rgba(244,241,238,.36);background:transparent;color:#f4f1ee;font:600 10px Inter,Arial,sans-serif;letter-spacing:.11em;text-transform:uppercase;cursor:pointer;transition:background .2s ease,border-color .2s ease,color .2s ease}
+.arceni-menu-trigger:hover,.arceni-menu-trigger:focus-visible{border-color:#b8b0b3;background:#b8b0b3;color:#181716}
+.arceni-menu-trigger:focus-visible,.arceni-menu-close:focus-visible,.arceni-menu-dialog a:focus-visible,.arceni-menu-services-toggle:focus-visible{outline:2px solid #d0c9c7;outline-offset:4px}
+.arceni-menu-trigger-icon{display:grid;width:15px;gap:4px}
+.arceni-menu-trigger-icon span{display:block;width:100%;height:1px;background:currentColor;transition:transform .2s ease}
+.arceni-menu-dialog{position:fixed;inset:0 0 0 auto;width:min(100%,480px);max-width:none;height:100vh;height:100dvh;max-height:none;margin:0;padding:0;overflow:hidden;border:0;background:#242323;color:#f4f1ee;opacity:0;transform:translateX(100%);transition:opacity .28s ease,transform .38s cubic-bezier(.16,1,.3,1)}
+.arceni-menu-dialog[open]{opacity:1;transform:translateX(0)}
+.arceni-menu-dialog::backdrop{background:rgba(0,0,0,.64);backdrop-filter:blur(3px)}
+.arceni-menu-panel{display:flex;width:100%;height:100%;min-height:0;flex-direction:column;overflow-y:auto;padding:clamp(20px,5vw,36px);padding-top:max(clamp(20px,5vw,36px),env(safe-area-inset-top));padding-bottom:max(clamp(20px,5vw,36px),env(safe-area-inset-bottom))}
+.arceni-menu-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:clamp(32px,8vh,64px)}
+.arceni-menu-brand{color:#f4f1ee;font-size:18px;font-weight:750;letter-spacing:.12em}
+.arceni-menu-brand sup{margin-left:2px;font-size:9px;letter-spacing:0}
+.arceni-menu-close{display:grid;width:38px;height:38px;place-items:center;border:0;background:transparent;color:#f4f1ee;cursor:pointer}
+.arceni-menu-close svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round}
+.arceni-menu-nav{display:grid;align-content:start}
+.arceni-menu-link,.arceni-menu-services-toggle{display:flex;width:100%;min-height:54px;align-items:center;justify-content:space-between;gap:18px;padding:11px 2px;border:0;border-bottom:1px solid rgba(244,241,238,.08);background:transparent;color:#f4f1ee;text-align:left}
+.arceni-menu-link{font-size:clamp(17px,4.7vw,20px);font-weight:400}
+.arceni-menu-services-toggle{font:400 clamp(17px,4.7vw,20px) Inter,Arial,sans-serif;cursor:pointer}
+.arceni-menu-link:hover,.arceni-menu-services-toggle:hover{color:#d0c9c5}
+.arceni-menu-chevron{width:9px;height:9px;flex:0 0 auto;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg);transition:transform .2s ease}
+.arceni-menu-services-toggle[aria-expanded=true] .arceni-menu-chevron{transform:rotate(135deg)}
+.arceni-menu-services-list{display:grid;gap:0;padding:6px 0 12px 0}
+.arceni-menu-services-list[hidden]{display:none}
+.arceni-menu-service-link{display:flex;min-height:44px;align-items:center;justify-content:space-between;gap:14px;padding:8px 2px 8px 14px;border-bottom:1px solid rgba(244,241,238,.065);color:rgba(244,241,238,.76);font-size:13px}
+.arceni-menu-service-link:after{font-size:15px;content:"↗";transition:transform .2s ease}
+.arceni-menu-service-link:hover:after{transform:translate(2px,-2px)}
+.arceni-menu-social{display:flex;flex-wrap:wrap;gap:24px;margin-top:auto;padding-top:38px}
+.arceni-menu-social a{color:rgba(244,241,238,.62);font-size:12px;transition:color .2s ease}
+.arceni-menu-social a:hover{color:#f4f1ee}
+.about-page .site-header-social{margin-left:auto}
+@media(max-width:600px){.about-page .site-header-social{display:none}.arceni-menu-trigger{min-height:40px;padding-inline:11px}.arceni-menu-dialog{width:100%}}
+@media(prefers-reduced-motion:reduce){.arceni-menu-trigger,.arceni-menu-trigger-icon span,.arceni-menu-dialog,.arceni-menu-chevron,.arceni-menu-service-link:after{transition:none}}

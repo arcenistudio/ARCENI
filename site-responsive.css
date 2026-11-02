@@ -571,7 +571,7 @@ body.consulting-page{--paper:#181716;--ink:#f4f1ee;--muted:#B8B0B3;--line:rgba(2
   .about-page .home-founder {
     grid-template-columns: minmax(180px, .55fr) 1px minmax(0, 1.45fr);
     gap: clamp(22px, 4vw, 42px);
-    padding: clamp(24px, 3vw, 38px);
+    padding: 0;
   }
   .about-page .home-founder-credentials { grid-template-columns: 1fr; }
 }
@@ -659,7 +659,7 @@ body.consulting-page{--paper:#181716;--ink:#f4f1ee;--muted:#B8B0B3;--line:rgba(2
     grid-template-columns: minmax(0, 1fr);
     gap: 24px;
     margin: 28px 0 44px;
-    padding: clamp(22px, 5vw, 36px);
+    padding: 0;
   }
   .about-page .home-founder-divider { display: none; }
   .about-page .home-founder-photo { justify-items: start; }
@@ -1113,15 +1113,6 @@ main section[id],section[id]{scroll-margin-top:clamp(68px,8vh,92px)}
   .home-panel,.about-brand-service,.service-page-menu>summary,.contact-submit{touch-action:manipulation}
 }
 
-/* Compact Home link for navigation on every inner page. */
-.site-home-cta{display:inline-flex;flex:0 0 auto;min-height:42px;align-items:center;gap:14px;margin-left:auto;padding:0 15px;border:1px solid rgba(244,241,238,.42);color:rgba(244,241,238,.92);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;transition:background .2s ease,border-color .2s ease,color .2s ease}
-.site-home-cta:after{font-size:17px;font-weight:400;content:"↗";transition:transform .2s ease}
-.site-home-cta:hover,.site-home-cta:focus-visible{border-color:#B8B0B3;background:#B8B0B3;color:#181716;outline:none}
-.site-home-cta:hover:after,.site-home-cta:focus-visible:after{transform:translate(2px,-2px)}
-.site-home-cta+.site-header-social{margin-left:16px}
-@media(max-width:760px){.site-home-cta{min-height:39px;padding-inline:12px;font-size:9px}}
-@media(max-width:420px){.site-home-cta{min-height:36px;gap:8px;padding-inline:9px;font-size:8px;letter-spacing:.1em}}
-
 /* Align page content to the 1,240px reference layout and its 40px desktop gutters. */
 :root{--site-layout-width:1240px;--site-content-width:1160px;--site-gutter:clamp(20px,2.78vw,40px)}
 .shell,.home-shell{max-width:var(--site-layout-width);padding-right:var(--site-gutter);padding-left:var(--site-gutter)}
@@ -1129,7 +1120,7 @@ main section[id],section[id]{scroll-margin-top:clamp(68px,8vh,92px)}
 .coaching-page,.consulting-page .coaching-page,.basketball-page{width:min(100%,var(--site-layout-width));max-width:var(--site-layout-width);margin-right:auto;margin-left:auto;padding-right:var(--site-gutter);padding-left:var(--site-gutter)}
 .contact-shell{width:min(100%,var(--site-layout-width));max-width:var(--site-layout-width);padding-right:var(--site-gutter);padding-left:var(--site-gutter)}
 .about-page .shell{width:min(100%,var(--site-layout-width));max-width:var(--site-layout-width);padding-right:var(--site-gutter);padding-left:var(--site-gutter)}
-.about-brand-hero-inner{width:min(100%,var(--site-layout-width));max-width:var(--site-layout-width);padding-right:var(--site-gutter);padding-left:var(--site-gutter)}
+.
 .coaching-gallery-inner,.basketball-gallery-inner,.coaching-gallery-grid,.basketball-gallery-grid,
 .coaching-programs-layout,.consulting-programs-layout,.basketball-services-layout,
 .coaching-collective-intro,.coaching-process-inner,.coaching-archer-inner,
@@ -1157,3 +1148,14 @@ main section[id],section[id]{scroll-margin-top:clamp(68px,8vh,92px)}
 .site-footer-inner{max-width:var(--site-content-width)}
 .consulting-page .consulting-programs,.consulting-page .coaching-programs,.basketball-page .basketball-services{max-width:none}
 .consulting-page .consulting-programs,.consulting-page .coaching-programs{width:100%;margin-left:0}
+
+.arceni-page-footer{width:min(100%,var(--site-layout-width));margin:28px auto 0;padding:24px var(--site-gutter) 18px;border-top:1px solid rgba(244,241,238,.16);background:#181716;color:rgba(244,241,238,.68)}
+.arceni-footer-inner{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:22px 32px;max-width:var(--site-content-width);margin:0 auto}
+.arceni-footer-brand{color:#f4f1ee;font-size:16px;font-weight:650;letter-spacing:.2em}
+.arceni-footer-brand sup{font-size:7px;letter-spacing:0}
+.arceni-footer-inner nav{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:12px 24px;font-size:9px;font-weight:550;letter-spacing:.12em;text-transform:uppercase}
+.arceni-footer-inner nav a{transition:color .2s ease}
+.arceni-footer-inner nav a:hover,.arceni-footer-inner nav a:focus-visible{color:#f4f1ee}
+.arceni-footer-inner .arceni-footer-social{grid-column:1/-1;justify-content:flex-start;gap:12px 22px;padding-top:14px;border-top:1px solid rgba(244,241,238,.1);font-size:10px;letter-spacing:.04em;text-transform:none}
+.arceni-footer-bottom{grid-column:1/-1;display:flex;justify-content:space-between;gap:14px;padding-top:14px;border-top:1px solid rgba(244,241,238,.1);font-size:9px;letter-spacing:.08em}
+@media(max-width:600px){.arceni-page-footer{margin-top:20px;padding-top:20px}.arceni-footer-inner{grid-template-columns:1fr;gap:16px}.arceni-footer-inner nav{justify-content:flex-start;gap:12px 18px}.arceni-footer-bottom{grid-column:1;align-items:flex-start;flex-direction:column;gap:8px}}
