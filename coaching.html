@@ -174,13 +174,16 @@
     .coaching-value-icon{grid-column:1;grid-row:1/3;width:36px;height:36px}
     .coaching-value-card h3{grid-column:2;grid-row:1;margin:0;font-size:15px;font-weight:600;letter-spacing:-.025em}
     .coaching-value-card p{grid-column:2;grid-row:2;max-width:none;margin:0;color:rgba(244,241,238,.68);font-size:13px;line-height:1.55}
-    .coaching-page .coaching-program-values{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-content:start}
-    .coaching-page .coaching-archer-benefit{display:grid;grid-template-columns:34px minmax(0,1fr);grid-template-rows:auto 1fr;align-content:start;align-items:start;gap:17px 12px;min-height:188px;padding:20px;border:1px solid rgba(244,241,238,.13);border-radius:6px;background:linear-gradient(145deg,rgba(244,241,238,.055),rgba(244,241,238,.018));transition:transform .2s ease,background .2s ease,border-color .2s ease}
-    .coaching-page .coaching-archer-benefit:hover{transform:translateY(-3px);border-color:rgba(184,176,179,.5);background:linear-gradient(145deg,rgba(244,241,238,.09),rgba(244,241,238,.03))}
-    .coaching-archer-benefit-icon{display:grid;width:34px;height:34px;place-items:center;border:1px solid rgba(184,176,179,.5);border-radius:50%;background:rgba(184,176,179,.08);color:#B8B0B3}
+    .coaching-page .coaching-program-values{grid-template-columns:minmax(0,1fr);gap:0;align-content:start}
+    .coaching-program-benefits>header{padding:0 0 20px;border-bottom:1px solid rgba(244,241,238,.2)}
+    .coaching-program-benefits>header strong{display:block;margin-bottom:8px;color:#B8B0B3;font-size:10px;font-weight:650;letter-spacing:.16em;text-transform:uppercase}
+    .coaching-program-benefits>header p{max-width:52ch;margin:0;color:rgba(244,241,238,.72);font-size:13px;line-height:1.7}
+    .coaching-page .coaching-archer-benefit{display:grid;grid-template-columns:32px minmax(0,1fr);align-items:start;gap:10px 14px;padding:20px 12px;border:0;border-bottom:1px solid rgba(244,241,238,.16);border-radius:8px;transition:transform .2s ease,background .2s ease,border-color .2s ease}
+    .coaching-page .coaching-archer-benefit:hover{transform:translateY(-2px);border-color:rgba(197,181,162,.55);background:rgba(244,241,238,.045)}
+    .coaching-archer-benefit-icon{display:grid;width:32px;height:32px;place-items:center;border:1px solid rgba(184,176,179,.5);border-radius:50%;color:#B8B0B3}
     .coaching-archer-benefit-icon svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-    .coaching-archer-benefit h3{align-self:center;margin:0;font-size:17px;font-weight:600;letter-spacing:-.035em}
-    .coaching-archer-benefit p{grid-column:1/-1;max-width:34ch;margin:0;color:rgba(244,241,238,.68);font-size:12px;line-height:1.7}
+    .coaching-archer-benefit h3{margin:2px 0 6px;font-size:20px;font-weight:550;letter-spacing:-.04em}
+    .coaching-archer-benefit p{grid-column:2;max-width:50ch;margin:0;color:rgba(244,241,238,.68);font-size:12px;line-height:1.65}
     .coaching-faq{padding:clamp(60px,8vw,104px) clamp(24px,5.2vw,88px);border-top:1px solid var(--line);background:radial-gradient(ellipse at 92% 0%,rgba(184,176,179,.08),transparent 34%),#211f1e;color:#f4f1ee}
     .coaching-faq-inner{width:100%;max-width:1160px;margin:0 auto}
     .coaching-faq-heading .coaching-eyebrow{position:static;color:#B8B0B3}
@@ -404,11 +407,10 @@
             <div><dt>Duration</dt><dd>3–6 months</dd></div>
           </dl>
         </article>
-        <div class="coaching-program-values" aria-label="Archer Program benefits">
+        <div class="coaching-program-values coaching-program-benefits" aria-label="Archer Program benefits">
+          <header><strong>Program Benefits</strong><p>Build self-awareness, set meaningful goals and take purposeful next steps toward your career.</p></header>
           <article class="coaching-archer-benefit"><span class="coaching-archer-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.5"/></svg></span><div><h3>Self-Awareness</h3><p>Recognize your strengths and values, find direction, and express your ideas with confidence.</p></div></article>
-            <article class="coaching-archer-benefit"><span class="coaching-archer-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span><div><h3>Purposeful Action</h3><p>Set meaningful goals, take clear next steps and build steady habits to sustain your growth.</p></div></article>
-          <article class="coaching-archer-benefit"><span class="coaching-archer-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2.2 4.8-4.8 2.2 2.2-4.8 4.8-2.2Z"/></svg></span><div><h3>Career Exploration</h3><p>Explore career paths and opportunities that align with your interests, values and strengths.</p></div></article>
-          <article class="coaching-archer-benefit"><span class="coaching-archer-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H6l-3 2v-9.5A7.5 7.5 0 0 1 10.5 4H12"/><path d="m15 4 2 2 4-4"/></svg></span><div><h3>Confidence &amp; Voice</h3><p>Communicate your ideas clearly, advocate for yourself and contribute with greater confidence.</p></div></article>
+          <article class="coaching-archer-benefit"><span class="coaching-archer-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span><div><h3>Purposeful Action</h3><p>Set meaningful goals, take clear next steps and build steady habits to sustain your growth.</p></div></article>
         </div>
       </section>
     <a class="coaching-section-scroll" href="#coaching-approach" aria-label="Scroll">Scroll<span aria-hidden="true"></span></a>

@@ -181,6 +181,7 @@
     @media(max-width:600px){.basketball-player-caption{right:16px;bottom:16px;left:16px;align-items:stretch;flex-direction:column;gap:12px}.basketball-bottom-photo-cta-panel{right:16px;bottom:18px;left:16px;max-width:none;padding:18px}.basketball-bottom-photo-actions{display:grid;grid-template-columns:1fr}.basketball-bottom-photo-actions .basketball-team-cta{width:100%}}
     .basketball-team-section{position:relative;width:100vw;min-height:clamp(380px,58vw,720px);margin-left:calc(50% - 50vw);overflow:hidden;background:#181716}
     #basketball-team-photo{min-height:clamp(266px,40.6vw,504px)}
+    #basketball-faq-photo{min-height:calc(clamp(266px,40.6vw,504px) * 1.3)}
     .basketball-team-section img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center 48%;filter:brightness(.72)}
     .basketball-team-section:after{position:absolute;inset:0;background:linear-gradient(0deg,rgba(24,23,22,.84),transparent 55%),linear-gradient(90deg,rgba(24,23,22,.24),transparent 70%);content:"";pointer-events:none}
     .basketball-team-caption{position:absolute;z-index:1;right:clamp(24px,5.2vw,88px);bottom:clamp(30px,5vw,64px);left:clamp(24px,5.2vw,88px);display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
@@ -192,6 +193,27 @@
     .basketball-team-cta{display:inline-flex;min-height:46px;align-items:center;justify-content:space-between;gap:28px;padding:6px 7px 6px 15px;border:1px solid rgba(244,241,238,.55);background:rgba(24,23,22,.32);color:#f4f1ee;font-size:11px;font-weight:600;transition:background .2s ease,transform .2s ease}
     .basketball-team-cta:hover,.basketball-team-cta:focus-visible{transform:translateY(-2px);background:rgba(24,23,22,.68)}
     .basketball-team-cta span{display:grid;width:32px;height:32px;place-items:center;background:#B8B0B3;color:#181716;font-size:16px}
+    .basketball-faq{padding:clamp(58px,8vw,100px) clamp(24px,5.2vw,88px);border-top:1px solid var(--line);background:radial-gradient(ellipse at 92% 0%,rgba(184,176,179,.08),transparent 34%),#211f1e;color:#f4f1ee}
+    .basketball-faq-inner{width:100%;max-width:1160px;margin:0 auto}
+    .basketball-faq-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:32px}
+    .basketball-faq-heading>div{max-width:680px}
+    .basketball-faq-eyebrow{margin:0;color:#B8B0B3;font-size:10px;font-weight:600;letter-spacing:.17em;text-transform:uppercase}
+    .basketball-faq-heading h2{margin:14px 0 0;font-size:clamp(38px,5.4vw,64px);font-weight:550;line-height:.96;letter-spacing:-.075em}
+    .basketball-faq-heading>p:last-child{max-width:40ch;margin:0 0 4px;color:rgba(244,241,238,.68);font-size:13px;line-height:1.7}
+    .basketball-faq-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:12px}
+    .basketball-faq-item{min-width:0;padding:0 20px;border:1px solid rgba(244,241,238,.12);border-radius:8px;background:linear-gradient(145deg,#292726,#242221);transition:transform .2s ease,border-color .2s ease,background .2s ease,box-shadow .2s ease}
+    .basketball-faq-item:hover,.basketball-faq-item:focus-within{transform:translateY(-3px);border-color:rgba(184,176,179,.65);background:linear-gradient(145deg,#302e2d,#272524);box-shadow:0 10px 24px rgba(0,0,0,.2)}
+    .basketball-faq-item[open]{border-color:rgba(184,176,179,.42);background:linear-gradient(145deg,#2c2a29,#252322)}
+    .basketball-faq-item summary{display:flex;min-height:78px;align-items:center;justify-content:space-between;gap:18px;padding:15px 0;color:#f4f1ee;font-size:14px;font-weight:550;line-height:1.5;list-style:none;cursor:pointer}
+    .basketball-faq-item summary::-webkit-details-marker{display:none}
+    .basketball-faq-item summary:after{display:grid;width:28px;height:28px;flex:none;place-items:center;border:1px solid rgba(184,176,179,.38);border-radius:50%;color:#B8B0B3;font-size:18px;font-weight:400;content:"+";transition:transform .2s ease}
+    .basketball-faq-item:hover summary:after,.basketball-faq-item:focus-within summary:after{border-color:#B8B0B3;background:#B8B0B3;color:#211f1e}
+    .basketball-faq-item[open] summary:after{transform:rotate(45deg)}
+    .basketball-faq-item summary:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+    .basketball-faq-item p{max-width:66ch;margin:0;padding:0 0 20px;color:rgba(244,241,238,.68);font-size:13px;line-height:1.75}
+    .basketball-faq-item a{color:#f4f1ee;text-decoration:underline;text-decoration-color:rgba(244,241,238,.4);text-underline-offset:3px}
+    .basketball-faq-item a:hover,.basketball-faq-item a:focus-visible{text-decoration-color:currentColor}
+    @media(max-width:760px){.basketball-faq{padding:54px clamp(20px,5vw,36px)}.basketball-faq-heading{align-items:flex-start;flex-direction:column;gap:14px;margin-bottom:24px}.basketball-faq-heading h2{max-width:14ch}.basketball-faq-list{grid-template-columns:minmax(0,1fr);gap:10px}.basketball-faq-item{padding:0 17px}.basketball-faq-item summary{min-height:68px}}
 
     :focus-visible{outline:2px solid #d0c9c7;outline-offset:4px}
 
@@ -217,10 +239,11 @@
         <a class="basketball-cta" href="#basketball-services">What We Do<span aria-hidden="true">↗</span></a>
       </div>
     </section>
-    <a class="basketball-scroll-cue" href="#basketball-player-training-photo" aria-label="Scroll">Scroll <span aria-hidden="true"></span></a>
-    <section class="basketball-player-feature" id="basketball-player-training-photo" aria-label="Player development training">
-      <img src="images/Basketball/player-development-session.jpg" alt="Coach guiding young basketball players through agility ladder drills on an outdoor court" fetchpriority="high">
+    <section class="basketball-player-feature" id="basketball-hero-photo" aria-label="Basketball coaching session">
+      <img src="images/Basketball/hero-training-IMG_5089.JPG" alt="Basketball coach working with a young player on ball-handling skills outdoors" loading="lazy">
+      <div class="basketball-player-caption"><p class="basketball-player-note">Focused coaching helps players build stronger fundamentals and confident play.</p></div>
     </section>
+    <a class="basketball-scroll-cue" href="#basketball-services" aria-label="Scroll">Scroll <span aria-hidden="true"></span></a>
   <section class="basketball-services" id="basketball-services" aria-labelledby="basketball-services-title">
     <div class="basketball-services-layout">
       <article class="basketball-services-overview">
@@ -243,7 +266,8 @@
   </section>
   <a class="basketball-section-scroll" href="#basketball-player-photo" aria-label="Scroll">Scroll<span aria-hidden="true"></span></a>
     <section class="basketball-player-feature" id="basketball-player-photo" aria-label="Player development photo">
-      <img src="images/Basketball/IMG_5089-Lisa-Development.JPG" alt="Coach supporting a young player during an outdoor basketball training session" loading="lazy">
+      <img src="images/Basketball/basketball-action-IMG_3167.JPG" alt="A player practicing a jump shot with a coach on an outdoor basketball court" loading="lazy">
+      <div class="basketball-player-caption"><p class="basketball-player-note">Focused practice helps turn strong fundamentals into confident game-time decisions.</p></div>
     </section>
     <section class="basketball-impact" id="basketball-impact" aria-labelledby="basketball-impact-title">
       <div class="basketball-impact-heading"><p class="basketball-impact-eyebrow">By The Numbers</p><h2 id="basketball-impact-title">Our <span>Impact.</span></h2><p>More than a decade of coaching, creating opportunities for players and teams to grow through basketball.</p></div>
@@ -255,6 +279,7 @@
     </section>
     <section class="basketball-player-feature" id="basketball-player-photo-impact" aria-label="Basketball player development practice">
       <img src="images/Basketball/IMG_2199.JPG" alt="A basketball player shoots as a coach watches from the court" loading="lazy">
+      <div class="basketball-player-caption"><p class="basketball-player-note">Practice creates space to refine technique and trust your shot.</p></div>
     </section>
 
   </main>
@@ -290,6 +315,48 @@
   </div>
   <section class="basketball-player-feature" id="basketball-team-photo" aria-label="Basketball contact">
     <img src="images/Basketball/Slytherin.jpg" alt="Basketball teammates gathering together in a team huddle" loading="lazy">
+    <div class="basketball-player-caption"><p class="basketball-player-note">Teamwork starts with trust, communication and showing up for one another.</p></div>
+  </section>
+  <section class="basketball-faq" id="basketball-faq" aria-labelledby="basketball-faq-title">
+    <div class="basketball-faq-inner">
+      <header class="basketball-faq-heading">
+        <div>
+          <p class="basketball-faq-eyebrow">Frequently Asked Questions</p>
+          <h2 id="basketball-faq-title">FAQs</h2>
+        </div>
+        <p>Whether you’re a parent, a player, or looking for support for your organization or event, start with the questions that matter to you.</p>
+      </header>
+      <div class="basketball-faq-list">
+        <details class="basketball-faq-item" name="basketball-faq">
+          <summary>How do we find out if your program is a good fit for my child?</summary>
+          <p>Share your child’s age, experience and goals with us. We can talk through their needs and the available player-development options before you decide whether to enroll. <a href="#basketball-contact">Send an inquiry</a> to start the conversation.</p>
+        </details>
+        <details class="basketball-faq-item" name="basketball-faq">
+          <summary>Does my child need to be an experienced player?</summary>
+          <p>Not necessarily. Training is player-centered, and the starting point depends on each player’s current skills and goals. Get in touch to discuss your child’s experience and what support may be appropriate.</p>
+        </details>
+        <details class="basketball-faq-item" name="basketball-faq">
+          <summary>What can players work on to improve their game?</summary>
+          <p>Development can focus on fundamentals, game awareness, confidence and decision-making. We’ll discuss your goals and identify areas to work on through focused, personalized coaching.</p>
+        </details>
+        <details class="basketball-faq-item" name="basketball-faq">
+          <summary>Can you support a team or organization with development consulting?</summary>
+          <p>Yes. Consulting can be tailored to a team’s or organization’s development and performance needs. <a href="#basketball-contact">Tell us about your program</a>, who it serves and what you hope to strengthen.</p>
+        </details>
+        <details class="basketball-faq-item" name="basketball-faq">
+          <summary>Are speaking engagements on player development available?</summary>
+          <p>Yes. Send details about your event, intended audience, date and the player-development topics you have in mind, and we can discuss the opportunity.</p>
+        </details>
+        <details class="basketball-faq-item" name="basketball-faq">
+          <summary>How do I ask about enrollment, consulting or a speaking engagement?</summary>
+          <p>Use the <a href="#basketball-contact">basketball inquiry form</a> and select the role that best describes you. Include your goals, timeline and any relevant context so we can follow up with next steps.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+  <section class="basketball-player-feature" id="basketball-faq-photo" aria-label="Basketball player development training">
+    <img src="images/Basketball/faq-training-IMG_6604.JPG" alt="A coach leads basketball players through agility ladder drills on an outdoor court" loading="lazy">
+    <div class="basketball-player-caption"><p class="basketball-player-note">Agility, balance and coordination help players move with control and purpose.</p></div>
   </section>
   <section class="service-contact-section" id="basketball-contact" aria-labelledby="basketball-contact-title">
     <div class="service-contact-inner">
