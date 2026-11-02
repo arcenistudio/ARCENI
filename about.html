@@ -19,6 +19,25 @@
     .home-founder-photo{display:grid;justify-items:center;gap:18px}.home-founder-photo img{width:clamp(170px,21vw,250px);aspect-ratio:1;border-radius:50%;object-fit:cover;transition:transform .35s cubic-bezier(.16,1,.3,1)}.home-founder-photo img:hover{transform:scale(1.045)}.home-founder-photo p{margin:0;color:#989091;font-size:10px;letter-spacing:.16em;text-align:center;text-transform:uppercase}
     .home-founder-divider{width:1px;height:min(42vh,340px);background:var(--line)}.home-founder-bio{display:grid;grid-template-columns:1fr;gap:17px;min-width:0;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none}.home-founder-bio>p{max-width:700px;margin:0;color:var(--muted);font-size:14px;line-height:1.8}.home-founder-credentials{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px 12px;padding-top:7px;border-top:1px solid var(--line)}.home-founder-credential{padding:10px 8px;border:1px solid transparent;border-radius:10px;color:var(--muted);font-size:11px;line-height:1.55;transition:transform .25s ease,background-color .25s ease,border-color .25s ease}.home-founder-credential:hover{transform:translateY(-2px);border-color:var(--line);background:rgba(244,241,238,.06)}.home-founder-credential strong{display:block;margin-bottom:4px;color:#B8B0B3;font-size:9px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
     .home-founder-bio h2{margin:0;color:var(--ink);font-size:clamp(38px,5vw,62px);font-weight:500;line-height:.98;letter-spacing:-.075em}.home-founder-bio h2 span{color:#B8B0B3}
+    body.about-page .home-founder{grid-template-columns:minmax(0,1fr)}
+    .about-philosophy{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);align-items:start;gap:clamp(32px,6vw,80px);margin:0 0 70px;padding:clamp(56px,7vw,88px) 0;border-top:1px solid var(--line)}
+    .about-philosophy-intro{position:sticky;top:32px}
+    .about-philosophy-photo{display:grid;justify-items:start;gap:14px;margin:0 0 32px}
+    .about-philosophy-photo img{width:clamp(140px,17vw,200px);aspect-ratio:1;border-radius:50%;object-fit:cover;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+    .about-philosophy-photo img:hover{transform:scale(1.045)}
+    .about-philosophy-photo figcaption{color:#989091;font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+    .about-philosophy-eyebrow{margin:0 0 16px;color:var(--soft);font-size:10px;font-weight:500;letter-spacing:.16em;line-height:1.4;text-transform:uppercase}
+    .about-philosophy-intro h2{margin:0;font-size:clamp(38px,5vw,62px);font-weight:500;line-height:.98;letter-spacing:-.075em}
+    .about-philosophy-intro>p:last-child{max-width:42ch;margin:20px 0 0;color:var(--muted);font-size:14px;line-height:1.8}
+    .about-philosophy-list{position:relative;display:grid;gap:0;margin:0;padding:0;list-style:none;counter-reset:philosophy}
+    .about-philosophy-list:before{position:absolute;top:20px;bottom:20px;left:19px;width:1px;background:rgba(184,176,179,.38);content:""}
+    .about-philosophy-item{position:relative;display:grid;grid-template-columns:40px minmax(0,1fr);align-content:start;column-gap:20px;min-width:0;padding:0 0 28px;counter-increment:philosophy}
+    .about-philosophy-item:before{z-index:1;display:grid;width:40px;height:40px;place-items:center;border:1px solid rgba(184,176,179,.65);border-radius:50%;background:var(--bg);color:var(--soft);font-size:10px;font-weight:600;letter-spacing:.08em;content:"0" counter(philosophy)}
+    .about-philosophy-item h3{grid-column:2;margin:2px 0 8px;font-size:19px;font-weight:550;letter-spacing:-.04em}
+    .about-philosophy-item p{grid-column:2;margin:0;color:rgba(244,241,238,.68);font-size:12px;line-height:1.7}
+    .about-philosophy-item:last-child{padding-bottom:0}
+    @media(max-width:850px){.about-philosophy{grid-template-columns:minmax(0,1fr);gap:30px}.about-philosophy-intro{position:static}.about-philosophy-intro>p:last-child{max-width:58ch}}
+    @media(max-width:560px){.about-philosophy{padding-top:48px;padding-bottom:56px}.about-philosophy-item{grid-template-columns:34px minmax(0,1fr);column-gap:14px;padding-bottom:24px}.about-philosophy-item:before{width:34px;height:34px}.about-philosophy-list:before{top:17px;bottom:17px;left:16px}}
     .back-home{position:fixed;right:clamp(22px,4vw,56px);bottom:112px;display:grid;width:48px;height:48px;place-items:center;border:1px solid var(--line);border-radius:50%;background:#1D1D1F;color:#F4F1EE;font-size:21px;transition:transform .2s ease,background .2s ease}.back-home:hover{transform:translateY(-3px);background:#514B4F}
 
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
@@ -34,9 +53,37 @@
   </main>
   <main class="shell">
     <section class="home-founder" aria-label="About the founder">
-      <div class="home-founder-photo"><img src="images/About/Almas_Casual.png" alt="Portrait of Almas Ismail"><p>Founder · Almas Ismail</p></div>
-      <div class="home-founder-divider" aria-hidden="true"></div>
-      <article class="home-founder-bio"><h2>THE <span>FOUNDER</span></h2><p>He established ARCENI with one conviction: “To drive bold ideas, create shared value and impact.” He brings his experience in project management, coaching and leadership to the firm’s flagship engagements, leading with commitment, integrity and high standards. The firm partners with organizations to move projects from concept to completion, coaches young people and athletes to find purpose and impact through their work.</p><div class="home-founder-credentials" aria-label="Background"><div class="home-founder-credential"><strong>Education</strong>B.A. in Economics, University at Buffalo</div><div class="home-founder-credential"><strong>Graduate study</strong>M.B.A. in Project Management</div><div class="home-founder-credential"><strong>Practice</strong>Consulting · Training · Advisory</div><div class="home-founder-credential"><strong>Coaching</strong>Leadership · Personal Development · Basketball</div></div></article>
+      <article class="home-founder-bio"><h2>ALMAS <span>ISMAIL</span></h2><p>He established ARCENI with one conviction: “To drive bold ideas, create shared value and impact.” He brings his experience in project management, coaching and leadership to the firm’s flagship engagements, leading with commitment, integrity and high standards. The firm partners with organizations to move projects from concept to completion, coaches young people and athletes to find purpose and impact through their work.</p><div class="home-founder-credentials" aria-label="Background"><div class="home-founder-credential"><strong>Education</strong>B.A. in Economics, University at Buffalo</div><div class="home-founder-credential"><strong>Graduate study</strong>M.B.A. in Project Management</div><div class="home-founder-credential"><strong>Practice</strong>Consulting · Training · Advisory</div><div class="home-founder-credential"><strong>Coaching</strong>Leadership · Personal Development · Basketball</div></div></article>
+    </section>
+    <section class="about-philosophy" id="about-philosophy" aria-labelledby="about-philosophy-title">
+      <header class="about-philosophy-intro">
+        <figure class="about-philosophy-photo"><img src="images/About/Almas_Casual.png" alt="Portrait of Almas Ismail"><figcaption>Founder · Almas Ismail</figcaption></figure>
+        <p class="about-philosophy-eyebrow">Our philosophy</p>
+        <h2 id="about-philosophy-title">Philosophy</h2>
+        <p>We believe that the best ideas come from deep curiosity, passion for change and collaboration — and we act as catalysts in the transformation you seek. We adopt the PSCRL Framework to guide our engagements:</p>
+      </header>
+      <ol class="about-philosophy-list" aria-label="The PSCRL Framework">
+        <li class="about-philosophy-item">
+          <h3>Purpose</h3>
+          <p>Every journey of impact begins with purpose—a discovery. Understanding yourself and your organization’s DNA is crucial to achieving your potential.</p>
+        </li>
+        <li class="about-philosophy-item">
+          <h3>Simplicity</h3>
+          <p>The root of many problems can be tackled through simple strategies and approaches that lead to bigger transformations.</p>
+        </li>
+        <li class="about-philosophy-item">
+          <h3>Collaboration</h3>
+          <p>We don’t let you walk the journey alone. Change and transitions are difficult to manage or implement. We work with you to get you the value you seek and where you want to go.</p>
+        </li>
+        <li class="about-philosophy-item">
+          <h3>Results</h3>
+          <p>For us, consulting is not just offering advice, but helping you get the results required to accomplish your goals. We deploy a phasing approach to help you implement projects and resolve similar issues when they arise.</p>
+        </li>
+        <li class="about-philosophy-item">
+          <h3>Legacy</h3>
+          <p>Building something bigger than yourself is the essence of it all. Pushing to leave something better than we found it is our mantra—that is what progress means to us.</p>
+        </li>
+      </ol>
     </section>
   </main>
   <a class="site-back-top" href="#about-top" aria-label="Back to top">Back to top <span aria-hidden="true"></span></a>
