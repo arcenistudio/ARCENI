@@ -29,7 +29,6 @@
           <a class="arceni-menu-service-link" href="coaching.html">Coaching</a>
           <a class="arceni-menu-service-link" href="basketball.html">Basketball</a>
         </div>
-        <a class="arceni-menu-link" href="about.html">About<span class="arceni-menu-chevron" aria-hidden="true"></span></a>
         <a class="arceni-menu-link" href="contact.html">Contact<span class="arceni-menu-chevron" aria-hidden="true"></span></a>
       </nav>
       <nav class="arceni-menu-social" aria-label="Social media">
