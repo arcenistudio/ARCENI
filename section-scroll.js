@@ -1,13 +1,14 @@
 (() => {
-  const sections = Array.from(document.querySelectorAll('section, footer'))
+  const sections = Array.from(document.querySelectorAll('section, main > form, .contact-main > form, footer'))
     .filter(section => section.getClientRects().length)
+    .filter(section => !section.parentElement.closest('section'))
     .sort((a, b) => a.getBoundingClientRect().top + window.scrollY - (b.getBoundingClientRect().top + window.scrollY));
 
   if (sections.length < 2) return;
 
   const nav = document.createElement('div');
   nav.className = 'section-scroll-nav';
-  nav.innerHTML = '<button class="section-scroll-control" type="button"><span class="section-scroll-label">scroll</span><span class="section-scroll-icon" aria-hidden="true">↓</span></button>';
+  nav.innerHTML = '<button class="section-scroll-control" type="button"><span class="section-scroll-label">Scroll</span><span class="section-scroll-icon" aria-hidden="true"></span></button>';
   document.body.appendChild(nav);
 
   const button = nav.querySelector('button');
@@ -18,7 +19,9 @@
 
   const sectionTitle = section => {
     const heading = section.querySelector('h1, h2, h3');
-    return heading ? heading.textContent.replace(/\s+/g, ' ').trim() : 'section';
+    const labelledBy = section.getAttribute('aria-labelledby');
+    const label = labelledBy ? document.getElementById(labelledBy)?.textContent : section.getAttribute('aria-label');
+    return (heading?.textContent || label || (section.tagName === 'FOOTER' ? 'footer' : 'section')).replace(/\s+/g, ' ').trim();
   };
 
   const update = () => {
@@ -28,19 +31,27 @@
       if (section.getBoundingClientRect().top + window.scrollY <= marker) activeIndex = index;
     });
 
-    const targetIndex = Math.max(0, Math.min(sections.length - 1, activeIndex + (direction === 'down' ? 1 : -1)));
+    const scrollDirection = activeIndex === 0
+      ? 'down'
+      : activeIndex === sections.length - 1
+        ? 'up'
+        : direction;
+    const targetIndex = Math.max(0, Math.min(sections.length - 1, activeIndex + (scrollDirection === 'down' ? 1 : -1)));
     const target = sections[targetIndex];
     if (!target) return;
 
-    icon.textContent = direction === 'down' ? '↓' : '↑';
-    button.dataset.direction = direction;
-    button.setAttribute('aria-label', `Scroll ${direction} to ${sectionTitle(target)}`);
+    icon.textContent = scrollDirection === 'down' ? '\u2193' : '\u2191';
+    button.dataset.direction = scrollDirection;
+    button.setAttribute('aria-label', `Scroll ${scrollDirection} to ${sectionTitle(target)}`);
     button.dataset.target = String(targetIndex);
   };
 
   button.addEventListener('click', () => {
     const target = sections[Number(button.dataset.target)];
-    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (target) {
+      const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth';
+      target.scrollIntoView({ behavior, block: 'start' });
+    }
   });
 
   window.addEventListener('scroll', () => {

@@ -1,8 +1,8 @@
 .section-scroll-nav {
   position: fixed;
   z-index: 45;
-  right: max(40px, calc((100vw - 1400px) / 2));
-  bottom: 30px;
+  right: max(22px, calc((100vw - 1400px) / 2));
+  bottom: max(22px, env(safe-area-inset-bottom));
   display: flex;
   justify-content: flex-end;
   pointer-events: none;
@@ -15,10 +15,9 @@
   padding: 0;
   border: 0;
   background: transparent;
-  color: var(--ink-dim, #77756f);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: .25em;
+  color: rgba(244, 241, 238, .72);
+  font: 600 9px Inter, Arial, sans-serif;
+  letter-spacing: .14em;
   text-transform: uppercase;
   cursor: pointer;
   pointer-events: auto;
@@ -31,25 +30,26 @@
 }
 
 .section-scroll-icon {
-  width: 34px;
-  height: 34px;
+  width: 42px;
+  height: 42px;
   display: grid;
   place-items: center;
-  border: 1px solid var(--line-2, rgba(255,255,255,.18));
+  border: 1px solid rgba(244,241,238,.28);
   border-radius: 50%;
   color: inherit;
   font-family: Arial, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   letter-spacing: 0;
   transition: background .25s ease, border-color .25s ease, transform .25s ease;
 }
 
 .section-scroll-control:hover .section-scroll-icon,
 .section-scroll-control:focus-visible .section-scroll-icon {
-  transform: translateY(3px);
-  border-color:#64635e;
+  border-color: #b8b0b3;
   background: rgba(255, 255, 255, .08);
   color: #fff;
+  outline: 2px solid #d0c9c7;
+  outline-offset: 3px;
 }
 
 .section-scroll-control[data-direction="up"]:hover .section-scroll-icon,
@@ -58,7 +58,7 @@
 }
 
 @media (max-width: 960px) {
-  .section-scroll-nav { right: 22px; bottom: 20px; }
+  .section-scroll-nav { right: 18px; bottom: max(18px, env(safe-area-inset-bottom)); }
 }
 
 @media (prefers-reduced-motion: reduce) {

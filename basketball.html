@@ -224,7 +224,9 @@
  <link rel="stylesheet" href="site-responsive.css">
   <link rel="stylesheet" href="service-contact.css">
   <link rel="stylesheet" href="site-menu.css">
+  <link rel="stylesheet" href="section-scroll.css">
   <script src="site-menu.js" defer></script>
+  <script src="section-scroll.js" defer></script>
 </head>
 <body>
   <main class="basketball-page" id="basketball-top">
@@ -243,7 +245,6 @@
       <img src="images/Basketball/hero-training-IMG_5089.JPG" alt="Basketball coach working with a young player on ball-handling skills outdoors" loading="lazy">
       <div class="basketball-player-caption"><p class="basketball-player-note">Focused coaching helps players build stronger fundamentals and confident play.</p></div>
     </section>
-    <a class="basketball-scroll-cue" href="#basketball-services" aria-label="Scroll">Scroll <span aria-hidden="true"></span></a>
   <section class="basketball-services" id="basketball-services" aria-labelledby="basketball-services-title">
     <div class="basketball-services-layout">
       <article class="basketball-services-overview">
@@ -264,7 +265,6 @@
       </div>
     </div>
   </section>
-  <a class="basketball-section-scroll" href="#basketball-player-photo" aria-label="Scroll">Scroll<span aria-hidden="true"></span></a>
     <section class="basketball-player-feature" id="basketball-player-photo" aria-label="Player development photo">
       <img src="images/Basketball/basketball-action-IMG_3167.JPG" alt="A player practicing a jump shot with a coach on an outdoor basketball court" loading="lazy">
       <div class="basketball-player-caption"><p class="basketball-player-note">Focused practice helps turn strong fundamentals into confident game-time decisions.</p></div>
@@ -284,34 +284,35 @@
 
   </main>
   <div class="basketball-case-study-shell">
-    <a class="basketball-section-scroll" href="#coaching-case-study" aria-label="Scroll">Scroll<span aria-hidden="true"></span></a>
-    <section class="coaching-case-study" id="coaching-case-study" aria-labelledby="coaching-case-study-title">
+    <section class="coaching-case-study" id="basketball-reflections" aria-labelledby="basketball-reflections-title">
       <div class="coaching-case-study-copy">
         <p class="coaching-eyebrow">Featured Participants</p>
-        <h2 id="coaching-case-study-title">Reflections.</h2>
+        <h2 id="basketball-reflections-title">Reflections.</h2>
         <p>Explore player stories about developing skills, confidence and purpose on and off the court. Stories and video links will be added with each player’s approval.</p>
       </div>
       <div class="coaching-case-study-carousel" aria-roledescription="carousel" aria-label="Anonymous basketball player stories">
         <div class="coaching-case-study-viewport">
           <div class="coaching-case-study-track">
-            <article class="coaching-case-study-panel" aria-roledescription="slide" aria-label="Player 1 of 3"><span class="coaching-case-study-initials" aria-label="Anonymous basketball player">BP</span>
+            <article class="coaching-case-study-panel" aria-roledescription="slide" aria-label="Player 1 of 3">
+              <span class="coaching-case-study-initials" aria-label="Anonymous basketball player">BP</span>
               <div><p class="coaching-case-study-panel-label">Basketball · Player 01</p><h3>Building fundamentals and game awareness.</h3><p>Approved details about this player’s basketball journey will be added here.</p></div>
               <div><div class="coaching-case-study-details"><div><span>Player</span><strong>Anonymous</strong></div><div><span>Category</span><strong>Development</strong></div></div><span class="coaching-case-study-video" aria-disabled="true">Video link pending <span aria-hidden="true">↗</span></span></div>
             </article>
-            <article class="coaching-case-study-panel" aria-roledescription="slide" aria-label="Player 2 of 3" aria-hidden="true"><span class="coaching-case-study-initials" aria-label="Anonymous basketball player">BP</span>
+            <article class="coaching-case-study-panel" aria-roledescription="slide" aria-label="Player 2 of 3" aria-hidden="true">
+              <span class="coaching-case-study-initials" aria-label="Anonymous basketball player">BP</span>
               <div><p class="coaching-case-study-panel-label">Basketball · Player 02</p><h3>Growing confidence and teamwork.</h3><p>Approved details about this player’s basketball journey will be added here.</p></div>
               <div><div class="coaching-case-study-details"><div><span>Player</span><strong>Anonymous</strong></div><div><span>Category</span><strong>Performance</strong></div></div><span class="coaching-case-study-video" aria-disabled="true">Video link pending <span aria-hidden="true">↗</span></span></div>
             </article>
-            <article class="coaching-case-study-panel" aria-roledescription="slide" aria-label="Player 3 of 3" aria-hidden="true"><span class="coaching-case-study-initials" aria-label="Anonymous basketball player">BP</span>
+            <article class="coaching-case-study-panel" aria-roledescription="slide" aria-label="Player 3 of 3" aria-hidden="true">
+              <span class="coaching-case-study-initials" aria-label="Anonymous basketball player">BP</span>
               <div><p class="coaching-case-study-panel-label">Basketball · Player 03</p><h3>Turning practice into purposeful play.</h3><p>Approved details about this player’s basketball journey will be added here.</p></div>
               <div><div class="coaching-case-study-details"><div><span>Player</span><strong>Anonymous</strong></div><div><span>Category</span><strong>Development</strong></div></div><span class="coaching-case-study-video" aria-disabled="true">Video link pending <span aria-hidden="true">↗</span></span></div>
             </article>
           </div>
         </div>
-        <div class="coaching-case-study-controls" aria-label="Case study controls"><button type="button" data-case-prev aria-label="Previous case study">←</button><span class="coaching-case-study-count" aria-live="polite">1 / 3</span><button type="button" data-case-next aria-label="Next case study">→</button></div>
+        <div class="coaching-case-study-controls" aria-label="Case study controls"><button type="button" data-case-prev aria-label="Previous reflection">←</button><span class="coaching-case-study-count" aria-live="polite">1 / 3</span><button type="button" data-case-next aria-label="Next reflection">→</button></div>
       </div>
     </section>
-    <a class="basketball-section-scroll" href="#basketball-team-photo" aria-label="Scroll">Scroll<span aria-hidden="true"></span></a>
   </div>
   <section class="basketball-player-feature" id="basketball-team-photo" aria-label="Basketball contact">
     <img src="images/Basketball/Slytherin.jpg" alt="Basketball teammates gathering together in a team huddle" loading="lazy">
@@ -328,27 +329,27 @@
       </header>
       <div class="basketball-faq-list">
         <details class="basketball-faq-item" name="basketball-faq">
-          <summary>How do we find out if your program is a good fit for my child?</summary>
+          <summary>Is your program a good fit for my child?</summary>
           <p>Share your child’s age, experience and goals with us. We can talk through their needs and the available player-development options before you decide whether to enroll. <a href="#basketball-contact">Send an inquiry</a> to start the conversation.</p>
         </details>
         <details class="basketball-faq-item" name="basketball-faq">
-          <summary>Does my child need to be an experienced player?</summary>
+          <summary>Do I need to be an experienced player to work with you?</summary>
           <p>Not necessarily. Training is player-centered, and the starting point depends on each player’s current skills and goals. Get in touch to discuss your child’s experience and what support may be appropriate.</p>
         </details>
         <details class="basketball-faq-item" name="basketball-faq">
-          <summary>I'm a player seeking to get better, how can you improve my game?</summary>
+          <summary>How can you help me improve my game?</summary>
           <p>We focus on fundamentals, game awareness, confidence and decision-making. We’ll discuss your goals and identify areas to work on through focused, personalized coaching.</p>
         </details>
         <details class="basketball-faq-item" name="basketball-faq">
-          <summary>Can you support a team or organization with development?</summary>
+          <summary>Can you support a team or organization?</summary>
           <p>Yes. Our consulting services can be tailored to a team’s or organization’s development and performance needs. <a href="#basketball-contact">Tell us about your program</a>, who it serves and what you hope to strengthen.</p>
         </details>
         <details class="basketball-faq-item" name="basketball-faq">
-          <summary>Are speaking engagements on player development available?</summary>
+          <summary>Do you do speaking engagements on player development?</summary>
           <p>Yes. Send details about your event, intended audience, date and the player-development topics you have in mind, and we can discuss the opportunity.</p>
         </details>
         <details class="basketball-faq-item" name="basketball-faq">
-          <summary>How do I ask about enrollment, consulting or a speaking engagement?</summary>
+          <summary>How can I register to engage with you?</summary>
           <p>Use the <a href="#basketball-contact">basketball inquiry form</a> and select the role that best describes you. Include your goals, timeline and any relevant context so we can follow up with next steps.</p>
         </details>
       </div>
@@ -376,7 +377,6 @@
       </form>
     </div>
   </section>
-  <a class="site-back-top" href="#basketball-top" aria-label="Back to top">Back to top <span aria-hidden="true"></span></a>
   <footer class="arceni-page-footer">
     <div class="arceni-footer-inner">
       <a class="arceni-footer-brand" href="index.html">ARCENI<sup>®</sup></a>
@@ -386,22 +386,20 @@
     </div>
   </footer>
   <script>
-    (()=>{
-      const carousel=document.querySelector('.coaching-case-study-carousel');
-      if(!carousel)return;
-      const track=carousel.querySelector('.coaching-case-study-track');
-      const slides=[...carousel.querySelectorAll('.coaching-case-study-panel')];
-      const count=carousel.querySelector('.coaching-case-study-count');
-      let current=0;
-      const show=index=>{
-        current=(index+slides.length)%slides.length;
-        slides.forEach((slide,i)=>slide.setAttribute('aria-hidden',String(i!==current)));
-        track.style.transform=`translateX(-${current*100}%)`;
-        count.textContent=`${current+1} / ${slides.length}`;
+    document.querySelectorAll('.coaching-case-study-carousel').forEach(carousel => {
+      const track = carousel.querySelector('.coaching-case-study-track');
+      const slides = [...carousel.querySelectorAll('.coaching-case-study-panel')];
+      const count = carousel.querySelector('.coaching-case-study-count');
+      let current = 0;
+      const show = index => {
+        current = (index + slides.length) % slides.length;
+        slides.forEach((slide, i) => slide.setAttribute('aria-hidden', String(i !== current)));
+        track.style.transform = `translateX(-${current * 100}%)`;
+        count.textContent = `${current + 1} / ${slides.length}`;
       };
-      carousel.querySelector('[data-case-prev]').addEventListener('click',()=>show(current-1));
-      carousel.querySelector('[data-case-next]').addEventListener('click',()=>show(current+1));
-    })();
+      carousel.querySelector('[data-case-prev]').addEventListener('click', () => show(current - 1));
+      carousel.querySelector('[data-case-next]').addEventListener('click', () => show(current + 1));
+    });
   </script>
   <script src="site-scroll.js"></script>
 </body>
