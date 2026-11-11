@@ -729,14 +729,14 @@
     .basketball-introduction-label{margin:0;color:var(--muted);font-size:10px;font-weight:650;letter-spacing:.18em;text-transform:uppercase}
     .basketball-introduction h2{max-width:12ch;margin:18px 0 0;font-size:clamp(34px,5vw,58px);font-weight:650;line-height:.98;letter-spacing:-.07em}
     .basketball-introduction h2 span{color:#B8B0B3}
-    .basketball-introduction-copy{max-width:62ch}
-    .basketball-introduction-copy>p:first-child{margin:0;color:var(--ink);font-size:18px;line-height:1.35;letter-spacing:-.04em}
-    .basketball-introduction-copy>p:nth-child(2){max-width:58ch;margin:24px 0 0;color:var(--muted);font-size:14px;line-height:1.8}
+    .basketball-introduction-copy{width:100%;max-width:none}
+    .basketball-introduction-copy>p:first-child{max-width:none;margin:0;color:var(--muted);font-size:14px;font-weight:400;line-height:1.8;letter-spacing:normal}
+    .basketball-introduction-copy>p:nth-child(2){max-width:none;margin:24px 0 0;color:var(--muted);font-size:14px;font-weight:400;line-height:1.8;letter-spacing:normal}
     .basketball-introduction-points{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:34px 0 0;padding:0;list-style:none}
     .basketball-introduction-points li{min-height:112px;padding:17px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.012))}
     .basketball-introduction-points strong{display:block;margin-bottom:10px;color:var(--soft);font-size:10px;font-weight:650;letter-spacing:.15em;text-transform:uppercase}
     .basketball-introduction-points span{color:var(--muted);font-size:12px;line-height:1.65}
-    @media(max-width:760px){.basketball-introduction{grid-template-columns:1fr;gap:30px;padding:58px 0 70px}.basketball-introduction h2{max-width:12ch}.basketball-introduction-copy>p:first-child{font-size:18px}.basketball-introduction-points{grid-template-columns:1fr;margin-top:26px}}
+    @media(max-width:760px){.basketball-introduction{grid-template-columns:1fr;gap:30px;padding:58px 0 70px}.basketball-introduction h2{max-width:12ch}.basketball-introduction-copy>p:first-child{font-size:14px}.basketball-introduction-points{grid-template-columns:1fr;margin-top:26px}}
     /* Gallery: equal 2 x 3 photo grid */
     .basketball-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,clamp(180px,24vw,320px))}
     .basketball-photo-grid-item:first-child,.basketball-photo-grid-item:nth-child(2){grid-column:auto;grid-row:auto}
@@ -780,6 +780,7 @@
     #basketball-contact .service-contact-inner{display:grid;width:100%;max-width:1160px;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);align-items:start;gap:clamp(32px,7vw,100px);margin:0 auto}
     #basketball-contact .service-contact-copy{grid-column:1;grid-row:1;max-width:560px}
     #basketball-contact .service-contact-copy h2{font-size:58px}
+    #basketball-contact .service-contact-copy h2 .contact-title-accent{color:#B8B0B3}
     #basketball-contact .service-contact-subtitle{margin-top:24px;font-size:14px;line-height:1.7}
     .basketball-faq-standalone .basketball-faq-item{counter-increment:none}
     .basketball-faq-standalone .basketball-faq-item summary{grid-template-columns:minmax(0,1fr) 30px;gap:16px}
@@ -853,6 +854,13 @@
     /* Responsive layout pass: desktop, tablet and mobile */
     .basketball-page{overflow-x:hidden}
     .basketball-page img{max-width:100%}
+    .basketball-introduction{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(34px,8vw,120px);padding:clamp(64px,9vw,124px) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .basketball-introduction-label{margin:0;color:var(--muted);font-size:10px;font-weight:650;letter-spacing:.18em;text-transform:uppercase}
+    .basketball-introduction h2{max-width:12ch;margin:18px 0 0;font-size:clamp(34px,5vw,58px);font-weight:650;line-height:.98;letter-spacing:-.07em}
+    .basketball-introduction h2 span{color:#B8B0B3}
+    .basketball-introduction-copy{max-width:62ch}
+    .basketball-introduction-copy>p:first-child{max-width:58ch;margin:0;color:var(--muted);font-size:14px;font-weight:400;line-height:1.8;letter-spacing:normal}
+    .basketball-introduction-copy>p:nth-child(2){max-width:58ch;margin:24px 0 0;color:var(--muted);font-size:14px;font-weight:400;line-height:1.8;letter-spacing:normal}
     @media(max-width:1100px){
       .basketball-page{--site-gutter:clamp(20px,4vw,48px)}
       .basketball-bottom{grid-template-columns:minmax(170px,.7fr) minmax(0,1.3fr) auto;gap:24px}
@@ -871,6 +879,9 @@
     }
     @media(max-width:760px){
       .basketball-page{--site-gutter:20px}
+      .basketball-introduction{grid-template-columns:1fr;gap:30px;padding:58px 0 70px}
+      .basketball-introduction h2{max-width:12ch}
+      .basketball-introduction-copy>p:first-child{font-size:14px}
       .basketball-nav{padding-inline:20px}
       .basketball-hero{min-height:clamp(620px,100svh,820px);padding-bottom:44px}
       .basketball-title{font-size:clamp(54px,15vw,92px);line-height:.86}
@@ -918,6 +929,15 @@
         <p class="basketball-bottom-label">Player development<br>consulting</p>
         <p class="basketball-copy">Build strong fundamentals, sharpen your overall game and bring character, discipline, teamwork and grit on and off the court.</p>
         <a class="basketball-cta" href="#basketball-contact-form">Get Started<span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+    <section class="basketball-introduction" id="basketball-introduction" aria-labelledby="basketball-introduction-title">
+      <div>
+        <p class="basketball-introduction-label">ABOUT US /</p>
+        <h2 id="basketball-introduction-title">Development <span>is personal.</span></h2>
+      </div>
+      <div class="basketball-introduction-copy">
+        <p> The Arceni Basketball provides personalized training, <strong>holistic development</strong> and leadership to gain a competitive edge on and off the court. We believe sports, basketball in particular – is an entire universe in itself, where hearts beat, passion breathes, growth and untapped human potential lies. For us, it's not always about wins, but the pursuit for growth, greatness – as an individual, a team, community and society.</p>
       </div>
     </section>
     <section class="basketball-hero-gallery" id="basketball-hero-gallery" aria-labelledby="basketball-hero-gallery-title">
@@ -987,7 +1007,7 @@
   </section>
   <section class="service-contact-section" id="basketball-contact" aria-labelledby="basketball-contact-title">
     <div class="service-contact-inner">
-      <div class="service-contact-copy"><p class="service-contact-eyebrow">Contact Us ·</p><h2 id="basketball-contact-title">Let’s grow your game.</h2><p class="service-contact-subtitle">Tell us about your player-development goals, team needs or basketball program. We’ll help you find a practical next step on and off the court.</p><div class="basketball-contact-details" aria-label="ARCENI basketball services and approach"><div class="basketball-contact-detail"><span class="basketball-contact-detail-label">Services</span><span class="basketball-contact-detail-value">Player Development<br>Consulting</span></div><div class="basketball-contact-detail"><span class="basketball-contact-detail-label">For</span><span class="basketball-contact-detail-value">Players, Teams, Organizations</span></div><div class="basketball-contact-detail"><span class="basketball-contact-detail-label">Approach</span><span class="basketball-contact-detail-value">Practical, Player-Centered</span></div><div class="basketball-contact-detail"><span class="basketball-contact-detail-label">Focus</span><span class="basketball-contact-detail-value">Development, Performance</span></div></div></div>
+      <div class="service-contact-copy"><p class="service-contact-eyebrow">Contact Us ·</p><h2 id="basketball-contact-title">Grow <span class="contact-title-accent">your</span> game.</h2><p class="service-contact-subtitle">Tell us about your player-development goals, team needs or basketball program. We’ll help you find a practical next step on and off the court.</p><div class="basketball-contact-details" aria-label="ARCENI basketball services and approach"><div class="basketball-contact-detail"><span class="basketball-contact-detail-label">Services</span><span class="basketball-contact-detail-value">Player Development<br>Consulting</span></div><div class="basketball-contact-detail"><span class="basketball-contact-detail-label">For</span><span class="basketball-contact-detail-value">Players, Teams, Organizations</span></div><div class="basketball-contact-detail"><span class="basketball-contact-detail-label">Approach</span><span class="basketball-contact-detail-value">Practical, Player-Centered</span></div><div class="basketball-contact-detail"><span class="basketball-contact-detail-label">Focus</span><span class="basketball-contact-detail-value">Development, Performance</span></div></div></div>
       <form class="service-contact-form" id="basketball-contact-form" aria-labelledby="basketball-inquiry-title" action="https://formspree.io/f/xpppdveo" method="POST">
         <input type="hidden" name="_subject" value="ARCENI Basketball Inquiry">
         <input type="hidden" name="service" value="basketball">
@@ -1039,7 +1059,7 @@
   <script>
     const existingServices = document.querySelector('#basketball-services');
     const heroServicesCta = document.querySelector('.basketball-cta');
-    if (heroServicesCta) heroServicesCta.setAttribute('href', '#basketball-impact');
+    if (heroServicesCta) heroServicesCta.setAttribute('href', '#basketball-contact-form');
     if (false && existingServices && !document.querySelector('#basketball-services-gallery')) {
       existingServices.insertAdjacentHTML('beforebegin', '<section class="basketball-services-gallery" id="basketball-services-gallery" aria-labelledby="basketball-services-gallery-title"><div class="basketball-services-gallery-inner"><header class="basketball-services-gallery-heading"><h2 id="basketball-services-gallery-title">Services</h2><p>Focused support for players, teams and organizations ready to grow with purpose.</p></header><div class="basketball-services-gallery-grid"><a class="basketball-services-gallery-card" href="#basketball-contact"><div class="basketball-services-gallery-media"><img src="images/Basketball/IMG_2199.JPG" alt="Basketball player developing shooting skills with a coach" loading="lazy"><span class="basketball-services-gallery-arrow" aria-hidden="true">↗</span></div><div class="basketball-services-gallery-label">Player Development <span>— Individual coaching</span></div></a><a class="basketball-services-gallery-card" href="#basketball-contact"><div class="basketball-services-gallery-media"><img src="images/Basketball/hero-training-IMG_5089.JPG" alt="Coach consulting with a basketball player during training" loading="lazy"><span class="basketball-services-gallery-arrow" aria-hidden="true">↗</span></div><div class="basketball-services-gallery-label">Consulting Services <span>— Teams &amp; organizations</span></div></a></div></div></section>');
     }
