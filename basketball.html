@@ -71,6 +71,17 @@
     .basketball-impact-stat strong{display:block;white-space:nowrap;font-size:clamp(34px,5vw,64px);font-weight:650;line-height:1;letter-spacing:-.07em}
     .basketball-impact-stat strong span{color:var(--accent)}
     .basketball-impact-stat p{margin:10px 0 0;color:var(--muted);font-size:11px;line-height:1.5}
+    .basketball-impact-profile{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:0}
+    .basketball-impact-profile-item{min-height:142px;padding:18px;border:1px solid rgba(244,241,238,.18);border-radius:12px;background:rgba(255,255,255,.035);transition:transform .2s ease,border-color .2s ease,background .2s ease}
+    .basketball-impact-profile-item:hover{transform:translateY(-3px);border-color:rgba(184,176,179,.65);background:rgba(255,255,255,.07)}
+    .basketball-impact-profile-icon{display:grid;place-items:center;width:34px;height:34px;margin-bottom:22px;border:1px solid rgba(244,241,238,.22);border-radius:50%;color:var(--accent)}
+    .basketball-impact-profile-icon svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+    .basketball-impact-profile-item>span:not(.basketball-impact-profile-icon){display:block;margin-bottom:8px;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+    .basketball-impact-profile-item strong{display:block;color:var(--ink);font-size:13px;line-height:1.45;font-weight:600}
+    .basketball-metrics{display:block;padding:clamp(54px,8vw,104px) 0;border-top:1px solid var(--line)}
+    .basketball-metrics-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:28px}
+    .basketball-metrics-heading h2{margin:0;font-size:clamp(34px,5vw,58px);font-weight:650;line-height:.98;letter-spacing:-.07em}
+    .basketball-metrics-heading p{max-width:360px;margin:0;color:var(--muted);font-size:14px;line-height:1.7}
     .basketball-services{width:100vw;margin-left:calc(50% - 50vw);padding:clamp(54px,7vw,92px) clamp(24px,5.2vw,88px);border-top:1px solid var(--line);color:var(--ink)}
     .basketball-services-layout{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(34px,6vw,82px);max-width:1440px;margin:0 auto}
     .basketball-services-overview{min-width:0;padding-right:clamp(22px,4vw,56px);border-right:1px solid rgba(244,241,238,.2)}
@@ -812,11 +823,13 @@
     .basketball-faq-standalone .basketball-faq-item p{padding:0 0 20px;font-size:13px}
     @media(max-width:760px){.basketball-faq-standalone{padding:54px 0 70px}.basketball-faq-standalone .basketball-faq-list{grid-template-columns:1fr}.basketball-faq-standalone .basketball-faq-item{padding:0}.basketball-faq-standalone .basketball-faq-item:nth-child(odd){border-right:1px solid rgba(244,241,238,.18)}}
     @media(max-width:760px){.basketball-faq-standalone-heading{grid-template-columns:1fr;gap:16px}.basketball-faq-standalone-heading h2{font-size:clamp(42px,11vw,62px)}.basketball-faq-standalone-heading>p{justify-self:start}}
+    .basketball-faq-standalone{display:grid;grid-template-columns:minmax(190px,.7fr) minmax(0,1.3fr);column-gap:clamp(28px,7vw,96px);align-items:start}.basketball-faq-standalone-heading{display:block;grid-column:1;grid-row:1;margin:0;padding:0;border:0}.basketball-faq-standalone-heading h2{font-size:clamp(42px,6vw,72px);line-height:.88}.basketball-faq-standalone-heading>p{max-width:30ch;margin:22px 0 24px;justify-self:start}.basketball-faq-standalone .basketball-faq-list{grid-column:2;grid-row:1;grid-template-columns:1fr;gap:0}.basketball-faq-standalone .basketball-faq-item{padding:0;border:0;border-bottom:1px solid rgba(244,241,238,.18);border-radius:0;background:transparent}.basketball-faq-standalone .basketball-faq-item:first-child{border-top:1px solid rgba(244,241,238,.18)}.basketball-faq-standalone .basketball-faq-item:hover,.basketball-faq-standalone .basketball-faq-item:focus-within,.basketball-faq-standalone .basketball-faq-item[open]{border-color:rgba(244,241,238,.34);background:transparent;transform:none}.basketball-faq-standalone .basketball-faq-item summary{min-height:0;padding:20px 0;font-size:14px}.basketball-faq-audience-pills{display:flex;flex-wrap:wrap;gap:8px}.basketball-faq-audience-pills span{display:inline-flex;padding:8px 12px;border:1px solid rgba(244,241,238,.4);border-radius:999px;color:var(--ink);font-size:10px;line-height:1.2}.basketball-faq-support{grid-column:2;grid-row:2;margin-top:28px;padding:24px 26px;background:linear-gradient(145deg,#292726,#211f1e)}.basketball-faq-support h3{margin:0;font-size:18px;font-weight:550}.basketball-faq-support p{max-width:48ch;margin:10px 0 18px;color:var(--muted);font-size:12px;line-height:1.6}.basketball-faq-support a{display:inline-flex;align-items:center;gap:12px;padding:11px 14px;background:var(--accent);color:#181716;font-size:10px;font-weight:700;text-decoration:none}.basketball-faq-support a span{font-size:15px}@media(max-width:760px){.basketball-faq-standalone{display:block}.basketball-faq-standalone-heading{margin-bottom:30px}.basketball-faq-support{margin-top:28px}}
      @media(min-width:761px){.basketball-faq-standalone .basketball-faq-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
     .basketball-faq-standalone .basketball-faq-item,.basketball-faq-standalone .basketball-faq-item:hover,.basketball-faq-standalone .basketball-faq-item:focus-within,.basketball-faq-standalone .basketball-faq-item[open]{padding:0;border:0;border-bottom:1px solid rgba(244,241,238,.22);border-radius:0;background:transparent;box-shadow:none;transform:none}
     .basketball-faq-standalone .basketball-faq-item:nth-child(odd){border-right:0}
     #basketball-contact .basketball-faq-list{gap:0;border-top:1px solid rgba(244,241,238,.22)}
     #basketball-contact .basketball-faq-item{padding:0;border:0;border-bottom:1px solid rgba(244,241,238,.22);border-radius:0;background:transparent;box-shadow:none;transform:none}
+    .basketball-faq-standalone{display:block}.basketball-faq-standalone-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:clamp(30px,5vw,54px);padding-bottom:clamp(24px,4vw,42px);border-bottom:1px solid rgba(244,241,238,.22)}.basketball-faq-standalone-heading>div{max-width:680px}.basketball-faq-standalone-heading h2{max-width:12ch;font-size:clamp(38px,5.4vw,58px);line-height:.95}.basketball-faq-standalone-heading>p{max-width:38ch;margin:0 0 4px;justify-self:end}.basketball-faq-standalone .basketball-faq-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.basketball-faq-standalone .basketball-faq-item{padding:0 20px;border:1px solid rgba(244,241,238,.12);border-radius:8px;background:linear-gradient(145deg,#292726,#211f1e);transition:transform .2s ease,border-color .2s ease,background .2s ease}.basketball-faq-standalone .basketball-faq-item:first-child{border-top:1px solid rgba(244,241,238,.12)}.basketball-faq-standalone .basketball-faq-item:hover,.basketball-faq-standalone .basketball-faq-item:focus-within{transform:translateY(-3px);border-color:rgba(184,176,179,.58)}.basketball-faq-standalone .basketball-faq-item[open]{border-color:rgba(184,176,179,.72);background:linear-gradient(145deg,#2c2a29,#211f1e)}.basketball-faq-standalone .basketball-faq-item summary{min-height:82px;padding:16px 0;font-size:14px}.basketball-faq-standalone .basketball-faq-item summary:after{display:grid;width:28px;height:28px;place-items:center;border:1px solid rgba(244,241,238,.28);border-radius:50%;color:var(--ink);content:'+';font-size:18px}.basketball-faq-standalone .basketball-faq-item[open] summary:after{content:'−';color:var(--accent)}@media(max-width:760px){.basketball-faq-standalone-heading{display:block;margin-bottom:30px}.basketball-faq-standalone-heading>p{margin-top:20px;justify-self:start}.basketball-faq-standalone .basketball-faq-list{grid-template-columns:1fr}}
     #basketball-contact .basketball-faq-item:hover,#basketball-contact .basketball-faq-item:focus-within,#basketball-contact .basketball-faq-item[open]{border-color:rgba(244,241,238,.22);background:transparent;box-shadow:none;transform:none}
     #basketball-contact .basketball-faq-item summary{min-height:76px;padding:15px 0}
     #basketball-contact .basketball-faq-item summary:after{border-color:rgba(184,176,179,.55);background:transparent;color:#B8B0B3}
@@ -881,6 +894,7 @@
       .basketball-cta{grid-column:2;grid-row:2;justify-self:end}
       .basketball-impact{grid-template-columns:1fr;row-gap:32px}
       .basketball-impact-heading>p:last-child{max-width:54ch}
+      .basketball-metrics-heading{display:block}.basketball-metrics-heading p{margin-top:18px}
       .basketball-coach-section{gap:48px}
     }
     @media(max-width:760px){
@@ -915,6 +929,76 @@
       #basketball-contact .service-contact-form-head h3{font-size:24px}
       .basketball-page .arceni-footer-inner{min-width:0}
     }
+    /* Basketball landing view: keep the navigation, hero and the photo immediately after it. */
+    .basketball-page>section:not(.basketball-hero):not(.basketball-impact-photo):not(.basketball-about-photo):not(.basketball-metrics-new):not(.basketball-gallery-new):not(.basketball-cta-new):not(.basketball-faq-standalone):not(.basketball-registration){display:none!important}
+    .basketball-page>.basketball-impact-photo{display:block!important}
+    .basketball-page>footer{display:none!important}
+    .basketball-page>.basketball-impact-photo{display:none!important}
+    .basketball-page>.basketball-about-photo,.basketball-page>.basketball-metrics-new{display:block!important}.basketball-page>.basketball-metrics-new{display:grid!important}.basketball-page>.basketball-gallery-new,.basketball-page>.basketball-cta-new{display:block!important}
+    .basketball-page #basketball-team-photo{display:block!important}
+    .basketball-metrics-new{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:center;gap:clamp(34px,7vw,100px);padding:clamp(54px,8vw,100px) 0;border:0}
+    .basketball-about-photo{position:relative;overflow:hidden;margin:0;padding:0;background:#171615}.basketball-about-photo img{display:block;width:100%;height:clamp(300px,48vw,620px);object-fit:cover;object-position:center 52%;filter:saturate(.86)}.basketball-about-photo p{position:absolute;right:clamp(20px,5vw,64px);bottom:clamp(22px,4vw,46px);max-width:360px;margin:0;color:rgba(255,255,255,.9);font-size:14px;line-height:1.6;text-align:right;text-shadow:0 2px 14px rgba(0,0,0,.45)}
+    .basketball-metrics-new-heading{display:block;min-width:0;margin:0}.basketball-metrics-new-heading h2{max-width:10ch;margin:0;font-size:clamp(38px,5vw,62px);font-weight:650;line-height:.9;letter-spacing:-.07em}.basketball-metrics-new-heading h2 span{color:var(--muted)}.basketball-metrics-new-heading>p:last-child{max-width:500px;margin:24px 0 0;color:var(--muted);font-size:14px;line-height:1.7}
+    .basketball-metrics-new-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));min-width:0;border:0}
+    .basketball-metric-new{min-width:0;padding:clamp(20px,3vw,34px) 16px;border:0;background:transparent;border-radius:8px;transition:transform .2s ease,background .2s ease}
+    .basketball-metric-new:hover{transform:translateY(-2px);background:rgba(255,255,255,.045)}
+    .basketball-metric-new+.basketball-metric-new{border-left:0}
+    .basketball-metric-new:first-child{padding-left:16px}
+    .basketball-metric-new strong{display:block;color:var(--ink);white-space:nowrap;font-size:clamp(34px,5vw,64px);font-weight:650;line-height:1;letter-spacing:-.07em}
+    .basketball-metric-new p{margin:10px 0 0;color:var(--muted);font-size:11px;line-height:1.5}
+    .basketball-gallery-new{padding:clamp(58px,8vw,110px) 0;border-bottom:1px solid var(--line)}
+    .basketball-gallery-new-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:28px}
+    .basketball-gallery-new-heading h2{max-width:8ch;margin:0;font-size:clamp(44px,7vw,84px);font-weight:650;line-height:.86;letter-spacing:-.08em}
+    .basketball-gallery-new-heading h2 span{color:#B8B0B3}
+    .basketball-gallery-new-heading p{max-width:330px;margin:0;color:var(--muted);font-size:14px;line-height:1.7}
+    .basketball-gallery-new-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:clamp(170px,18vw,270px);gap:10px}
+    .basketball-gallery-new-item{position:relative;grid-column:span 4;display:block;overflow:hidden;background:#151515}
+    .basketball-gallery-new-item:nth-child(1),.basketball-gallery-new-item:nth-child(4){grid-column:span 5}
+    .basketball-gallery-new-item:nth-child(2),.basketball-gallery-new-item:nth-child(5){grid-column:span 3}
+    .basketball-gallery-new-item:nth-child(3),.basketball-gallery-new-item:nth-child(6){grid-column:span 4}
+    .basketball-gallery-new-item img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(.8);transition:transform .5s ease,filter .5s ease}
+    .basketball-gallery-new-item:after{position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.62));content:""}
+    .basketball-gallery-new-item:hover img{transform:scale(1.06);filter:saturate(1)}
+    .basketball-gallery-new-item span{position:absolute;z-index:1;right:16px;bottom:14px;left:16px;color:#fff;font-size:10px;font-weight:600;letter-spacing:.13em;text-transform:uppercase}
+    .basketball-cta-new{padding:clamp(70px,10vw,140px) 0;border-bottom:1px solid var(--line)}
+    .basketball-cta-new-inner{display:flex;align-items:end;justify-content:space-between;gap:36px;padding:clamp(30px,5vw,70px);border:1px solid rgba(244,241,238,.18);background:linear-gradient(135deg,#242221,#171615)}
+    .basketball-cta-new-kicker{margin:0 0 16px;color:#b8b0b3;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
+    .basketball-cta-new h2{max-width:9ch;margin:0;color:var(--ink);font-size:clamp(44px,7vw,88px);font-weight:650;line-height:.86;letter-spacing:-.08em}
+    .basketball-cta-new p{max-width:34ch;margin:0 0 22px;color:rgba(244,241,238,.75);font-size:14px;line-height:1.7}
+    .basketball-cta-new a{display:inline-flex;align-items:center;gap:14px;padding:15px 20px;border:1px solid var(--accent);border-radius:999px;background:var(--accent);color:#181716;font-size:11px;font-weight:700;letter-spacing:.04em;text-decoration:none;transition:transform .2s ease,background .2s ease}
+    .basketball-cta-new a:hover{transform:translateY(-2px);background:#d1f13f}
+    .basketball-gallery-new-viewport{overflow:hidden}
+    .basketball-gallery-new-track{display:flex;gap:10px;transition:transform .65s cubic-bezier(.2,.7,.2,1);will-change:transform}
+    .basketball-gallery-new-grid{display:flex;gap:10px;overflow:visible;grid-auto-rows:auto}
+    .basketball-gallery-new-item,.basketball-gallery-new-item:nth-child(n){flex:0 0 100%;width:auto;height:clamp(360px,52vw,650px);grid-column:auto}
+    .basketball-gallery-new-item span{right:clamp(20px,5vw,64px);bottom:clamp(68px,8vw,92px);left:clamp(20px,5vw,64px);font-size:11px}
+    .basketball-gallery-new-item p{position:absolute;z-index:1;right:clamp(20px,5vw,64px);bottom:clamp(22px,4vw,46px);left:auto;max-width:380px;margin:0;color:rgba(255,255,255,.94);font-size:14px;line-height:1.6;text-align:right;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+    .basketball-page .arceni-page-footer{border-top:1px solid var(--line);background:#171615;color:var(--ink)}.basketball-page .arceni-footer-inner{padding:clamp(40px,6vw,72px) 0 24px}.basketball-page .arceni-page-footer a{color:inherit}.basketball-page .arceni-footer-brand{font-size:clamp(28px,4vw,42px);letter-spacing:-.06em;text-decoration:none}.basketball-page .arceni-footer-bottom{border-top:1px solid rgba(244,241,238,.16);margin-top:32px;padding-top:18px;color:var(--muted);font-size:10px}
+    .basketball-gallery-new-controls{display:flex;align-items:center;justify-content:flex-end;gap:12px;margin-top:18px}
+    .basketball-gallery-new-controls button{display:grid;place-items:center;width:38px;height:38px;border:1px solid rgba(244,241,238,.24);border-radius:50%;background:transparent;color:var(--ink);font-size:18px;cursor:pointer;transition:background .2s ease,color .2s ease,border-color .2s ease}
+    .basketball-gallery-new-controls button:hover,.basketball-gallery-new-controls button:focus-visible{border-color:var(--accent);background:var(--accent);color:#181716}
+    .basketball-gallery-new-count{min-width:54px;color:var(--muted);font-size:10px;font-variant-numeric:tabular-nums;text-align:center}
+    .basketball-gallery-new-item:after{display:none}
+    @media(max-width:760px){.basketball-gallery-new-item,.basketball-gallery-new-item:nth-child(n){flex-basis:100%;height:clamp(360px,100vw,560px)}.basketball-gallery-new-item p{font-size:13px}}
+    @media(max-width:760px){.basketball-metrics-new-grid{grid-template-columns:1fr;gap:24px}.basketball-metric-new{padding:0 0 24px;border-left:0;border-bottom:1px solid rgba(244,241,238,.2)}.basketball-metric-new:last-child{padding-bottom:0;border-bottom:0}.basketball-gallery-new-heading,.basketball-cta-new-inner{display:block}.basketball-gallery-new-heading p{margin-top:22px}.basketball-gallery-new-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:clamp(180px,42vw,280px)}.basketball-gallery-new-item,.basketball-gallery-new-item:nth-child(n){grid-column:span 1}.basketball-gallery-new-item:nth-child(1),.basketball-gallery-new-item:nth-child(4){grid-column:span 2}.basketball-cta-new p{margin-top:24px}}
+    .basketball-registration{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);align-items:start;gap:clamp(32px,7vw,100px);margin:0;padding:clamp(58px,8vw,104px) 0;background:transparent}
+    .basketball-registration-header{max-width:560px;margin-bottom:0}
+    .basketball-registration-kicker{margin:0 0 16px;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
+    .basketball-registration h2{max-width:12ch;margin:0;font-size:clamp(40px,6.5vw,76px);font-weight:600;line-height:.92;letter-spacing:-.08em}.basketball-registration h2 .registration-title-accent{color:var(--muted)}
+    .basketball-registration-intro{max-width:44ch;margin:20px 0 0;color:rgba(244,241,238,.72);font-size:14px;line-height:1.75}
+    .basketball-registration-form{display:grid;min-width:0;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;padding:clamp(22px,3.8vw,40px);border:1px solid rgba(244,241,238,.16);background:linear-gradient(145deg,#262423,#1d1b1a);transition:transform .22s ease,border-color .22s ease,background .22s ease,box-shadow .22s ease}
+    .basketball-registration-form:hover,.basketball-registration-form:focus-within{transform:translateY(-3px);border-color:rgba(184,176,179,.58);background:linear-gradient(145deg,#2c2928,#211f1e);box-shadow:0 16px 38px rgba(0,0,0,.22)}
+    .basketball-registration-fields{display:grid;grid-column:1/-1;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;width:100%}
+    .basketball-registration-field{display:flex;flex-direction:column;gap:9px}.basketball-registration-field.full{grid-column:1/-1}
+    .basketball-registration-field label{color:var(--ink);font-size:10px;font-weight:600;letter-spacing:.04em}
+    .basketball-registration-field input,.basketball-registration-field select,.basketball-registration-field textarea{width:100%;border:1px solid rgba(244,241,238,.22);border-radius:2px;padding:14px;background:#181716;color:var(--ink);font:inherit;font-size:14px}
+    .basketball-registration-field textarea{min-height:130px;resize:vertical}.basketball-registration-field input:focus,.basketball-registration-field select:focus,.basketball-registration-field textarea:focus{outline:2px solid var(--accent);outline-offset:2px}
+    .basketball-registration-actions{display:contents}.basketball-registration-note{grid-column:1/-1;order:3;margin:0;color:var(--muted);font-size:10px;line-height:1.6}
+    .basketball-registration-form button{grid-column:1/-1;display:flex;min-height:50px;align-items:center;justify-content:space-between;padding:6px 7px 6px 16px;border:1px solid var(--muted);border-radius:0;background:var(--muted);color:#181716;font-size:11px;font-weight:700;cursor:pointer}.basketball-registration-form button:hover{background:#e1c9b4}.basketball-registration-form button span{display:grid;width:34px;height:34px;place-items:center;background:#181716;color:var(--ink);font-size:17px}
+    .basketball-registration-status{min-height:20px;margin:18px 0 0;color:var(--accent);font-size:12px}
+    @media(max-width:850px){.basketball-registration{grid-template-columns:1fr;gap:36px}.basketball-registration-fields{grid-template-columns:1fr}.basketball-registration-field.full{grid-column:auto}.basketball-registration-actions{display:block}.basketball-registration-form button{margin-top:20px}}
+    @media(max-width:760px){.basketball-page>.basketball-metrics-new{display:block!important}.basketball-metrics-new-heading>p:last-child{margin-top:20px}.basketball-metrics-new-grid{margin-top:32px}}
+    @media(max-width:760px){.basketball-metric-new+.basketball-metric-new{border-top:0;border-left:0}}
   </style>
   <link rel="stylesheet" href="site-scroll.css">
  <link rel="stylesheet" href="site-responsive.css">
@@ -923,6 +1007,15 @@
   <link rel="stylesheet" href="section-scroll.css">
   <script src="site-menu.js" defer></script>
   <script src="section-scroll.js" defer></script>
+<style>
+  .basketball-faq-standalone .basketball-faq-list{counter-reset:faq-card}
+  .basketball-faq-standalone .basketball-faq-item{counter-increment:faq-card;padding:0 clamp(20px,2.5vw,30px)}
+  .basketball-faq-standalone .basketball-faq-item summary{display:grid;grid-template-columns:32px minmax(0,1fr) 28px;align-items:center;column-gap:14px;padding:20px 0}
+  .basketball-faq-standalone .basketball-faq-item summary:before{display:block;content:counter(faq-card,decimal-leading-zero);color:var(--muted);font-size:11px;font-variant-numeric:tabular-nums}
+  .basketball-faq-standalone .basketball-faq-item summary:after{grid-column:3;grid-row:1}
+  .basketball-faq-standalone .basketball-faq-item p{padding:0 0 22px 46px}
+  .basketball-faq-standalone .basketball-faq-item:hover,.basketball-faq-standalone .basketball-faq-item:focus-within,.basketball-faq-standalone .basketball-faq-item[open]{transform:none;border-color:rgba(244,241,238,.12);background:transparent}
+</style>
 </head>
 <body>
   <main class="basketball-page" id="basketball-top">
@@ -936,6 +1029,25 @@
         <p class="basketball-copy">Build strong fundamentals, sharpen your overall game and bring character, discipline, teamwork and grit on and off the court.</p>
         <a class="basketball-cta" href="#basketball-contact-form">Get Started<span aria-hidden="true">↗</span></a>
       </div>
+    </section>
+    <section class="basketball-about-photo" aria-label="ARCENI Basketball training photo"><img src="images/Basketball/IMG_5089.JPG" alt="Basketball coach guiding a player during outdoor training" loading="lazy"><p>Focused coaching turns every practice into a clear next step for the player.</p></section>
+    <section class="basketball-metrics-new" aria-labelledby="basketball-metrics-title">
+      <div class="basketball-metrics-new-heading"><div class="basketball-metrics-new-title"><p class="basketball-impact-eyebrow">About Us</p><h2 id="basketball-metrics-title">Development is <span>Personal.</span></h2></div><p>The Arceni Basketball provides personalized training, holistic development and leadership to gain a competitive edge on and off the court. With more than a decade of coaching, our programs have created opportunities for players and teams to grow through basketball.</p></div>
+      <div class="basketball-metrics-new-grid">
+        <article class="basketball-metric-new"><strong>12+</strong><p>Years Coaching</p></article>
+        <article class="basketball-metric-new"><strong>500+</strong><p>Players Impacted</p></article>
+        <article class="basketball-metric-new"><strong>10+</strong><p>Teams Impacted</p></article>
+      </div>
+    </section>
+    <section class="basketball-gallery-new" aria-label="ARCENI Basketball gallery">
+      <div class="basketball-gallery-new-viewport"><div class="basketball-gallery-new-track"><div class="basketball-gallery-new-grid">
+        <a class="basketball-gallery-new-item" href="#basketball-contact-form"><img src="images/Basketball/IMG_2199.JPG" alt="Basketball player practicing a jump shot with a coach" loading="lazy"><p>Focused repetition builds strong fundamentals and confident game-time decisions.</p></a>
+        <a class="basketball-gallery-new-item" href="#basketball-contact-form"><img src="images/Basketball/IMG_5051.JPG" alt="Basketball coach and player training together on an outdoor court" loading="lazy"><p>Personalized coaching gives every player a clear and practical next step.</p></a>
+        <a class="basketball-gallery-new-item" href="#basketball-contact-form"><img src="images/Basketball/Slytherin.jpg" alt="Basketball teammates gathered together in a huddle" loading="lazy"><p>Trust, communication and shared standards create stronger teams.</p></a>
+        <a class="basketball-gallery-new-item" href="#basketball-contact-form"><img src="images/Basketball/faq-training-IMG_6604.JPG" alt="Basketball players completing agility ladder drills" loading="lazy"><p>Coordination and balance help players respond with control and purpose.</p></a>
+        <a class="basketball-gallery-new-item" href="#basketball-contact-form"><img src="images/Basketball/basketball-action-IMG_3167.JPG" alt="Basketball player in action during a game" loading="lazy"><p>Preparation gives players the confidence to make decisions when the game speeds up.</p></a>
+        <a class="basketball-gallery-new-item" href="#basketball-contact-form"><img src="images/Basketball/IMG_4640.JPG" alt="Basketball coach and player sharing feedback outdoors" loading="lazy"><p>Conversation, reflection and trust help players understand the work behind their growth.</p></a>
+      </div></div></div><div class="basketball-gallery-new-controls"><button type="button" data-gallery-new-prev aria-label="Previous gallery photo">←</button><span class="basketball-gallery-new-count" aria-live="polite">01 / 06</span><button type="button" data-gallery-new-next aria-label="Next gallery photo">→</button></div>
     </section>
     <section class="basketball-introduction" id="basketball-introduction" aria-labelledby="basketball-introduction-title">
       <div>
@@ -960,7 +1072,16 @@
       <div class="basketball-player-caption"><p class="basketball-player-note">Focused practice helps turn strong fundamentals into confident game-time decisions.</p></div>
     </section>
     <section class="basketball-impact" id="basketball-impact" aria-labelledby="basketball-impact-title">
-      <div class="basketball-impact-heading"><p class="basketball-impact-eyebrow">By the numbers</p><h2 id="basketball-impact-title">Our <span>Impact.</span></h2><p>The Arceni Basketball provides personalized training, <strong>holistic development</strong> and leadership to gain a competitive edge on and off the court. With more than a decade of coaching, our programs have created opportunities for players and teams to grow through basketball.</p></div>
+      <div class="basketball-impact-heading"><p class="basketball-impact-eyebrow">Our approach</p><h2 id="basketball-impact-title">Our <span>Impact.</span></h2><p>The Arceni Basketball provides personalized training, <strong>holistic development</strong> and leadership to gain a competitive edge on and off the court. With more than a decade of coaching, our programs have created opportunities for players and teams to grow through basketball.</p></div>
+      <div class="basketball-impact-profile" aria-label="ARCENI basketball services and approach">
+        <div class="basketball-impact-profile-item"><span class="basketball-impact-profile-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 8h16M6 8V5h12v3M5 8v11h14V8M9 12h6M9 16h6"/></svg></span><span>Services</span><strong>Player Development<br>Consulting</strong></div>
+        <div class="basketball-impact-profile-item"><span class="basketball-impact-profile-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3.5 19c.5-3 2.2-4.5 5.5-4.5s5 1.5 5.5 4.5M14 15.5c2.8-.5 5.2.7 6 3.5"/></svg></span><span>For</span><strong>Players, Teams, Organizations</strong></div>
+        <div class="basketball-impact-profile-item"><span class="basketball-impact-profile-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V9l8-4 8 4v10M7 19v-6h10v6M10 9h4M12 5v4"/></svg></span><span>Approach</span><strong>Practical, Player-Centered</strong></div>
+        <div class="basketball-impact-profile-item"><span class="basketball-impact-profile-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18l5-6 4 3 7-9M16 6h4v4"/></svg></span><span>Focus</span><strong>Development, Performance</strong></div>
+      </div>
+    </section>
+    <section class="basketball-metrics" id="basketball-metrics" aria-labelledby="basketball-metrics-title">
+      <div class="basketball-metrics-heading"><h2 id="basketball-metrics-title">By the <span>numbers.</span></h2><p>A decade of coaching, development and shared progress across players, teams and organizations.</p></div>
       <div class="basketball-impact-stats">
         <article class="basketball-impact-stat"><strong><span>12+</span></strong><p>Years Coaching</p></article>
         <article class="basketball-impact-stat"><strong><span>500+</span></strong><p>Players Impacted</p></article>
@@ -1029,14 +1150,14 @@
       </form>
     </div>
   </section>
-  <footer class="arceni-page-footer">
+  <!-- footer removed
     <div class="arceni-footer-inner">
       <a class="arceni-footer-brand" href="index.html">ARCENI<sup>®</sup></a>
       <nav aria-label="Footer navigation"><a href="consulting.html">Consulting</a><a href="basketball.html">Basketball</a><a href="coaching.html">Coaching</a><a href="contact.html">Contact</a></nav>
       <nav class="arceni-footer-social" aria-label="Social media"><a href="https://www.instagram.com/arcenibasketball" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.youtube.com/@arcenibasketball" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.linkedin.com/company/arcenibasketball/" target="_blank" rel="noopener noreferrer">LinkedIn</a></nav>
       <div class="arceni-footer-bottom"><span>Nairobi · Kenya · Global</span><span>© 2026 ARCENI · All rights reserved</span></div>
     </div>
-  </footer>
+  -->
   <script>
     document.querySelectorAll('.coaching-case-study-carousel').forEach(carousel => {
       const track = carousel.querySelector('.coaching-case-study-track');
@@ -1390,6 +1511,8 @@
     const standaloneFaqAfterPhoto = document.querySelector('#basketball-faq-standalone');
     const slytherinAfterContact = document.querySelector('#basketball-team-photo');
     const contactBeforeSlytherin = document.querySelector('#basketball-contact');
+    const registrationBeforeSlytherin = document.querySelector('#basketball-registration');
+    if (slytherinAfterContact && registrationBeforeSlytherin) registrationBeforeSlytherin.parentNode.insertBefore(slytherinAfterContact, registrationBeforeSlytherin);
     if (trainingPhotoAfterFaq && standaloneFaqAfterPhoto) {
       standaloneFaqAfterPhoto.parentNode.insertBefore(trainingPhotoAfterFaq, standaloneFaqAfterPhoto.nextSibling);
     }
@@ -1397,5 +1520,44 @@
       contactBeforeSlytherin.parentNode.insertBefore(slytherinAfterContact, contactBeforeSlytherin.nextSibling);
     }
   </script>
+  <script>
+    const newGallery = document.querySelector('.basketball-gallery-new');
+    if (newGallery) {
+      const newTrack = newGallery.querySelector('.basketball-gallery-new-track');
+      const newSlides = [...newGallery.querySelectorAll('.basketball-gallery-new-item')];
+      const newCount = newGallery.querySelector('.basketball-gallery-new-count');
+      const newPrev = newGallery.querySelector('[data-gallery-new-prev]');
+      const newNext = newGallery.querySelector('[data-gallery-new-next]');
+      let newIndex = 0;
+      let newTimer;
+      const renderNewGallery = () => {
+        const slideWidth = newSlides[0].getBoundingClientRect().width;
+        newTrack.style.transform = `translateX(-${newIndex * (slideWidth + 10)}px)`;
+        newCount.textContent = `${String(newIndex + 1).padStart(2, '0')} / ${String(newSlides.length).padStart(2, '0')}`;
+      };
+      const moveNewGallery = direction => { newIndex = (newIndex + direction + newSlides.length) % newSlides.length; renderNewGallery(); };
+      const startNewTimer = () => { clearInterval(newTimer); newTimer = setInterval(() => moveNewGallery(1), 5200); };
+      newPrev.addEventListener('click', () => { moveNewGallery(-1); startNewTimer(); });
+      newNext.addEventListener('click', () => { moveNewGallery(1); startNewTimer(); });
+      newGallery.addEventListener('mouseenter', () => clearInterval(newTimer));
+      newGallery.addEventListener('mouseleave', startNewTimer);
+      newGallery.addEventListener('focusin', () => clearInterval(newTimer));
+      newGallery.addEventListener('focusout', startNewTimer);
+      window.addEventListener('resize', renderNewGallery);
+      renderNewGallery();
+      startNewTimer();
+    }
+  </script>
+  <section class="basketball-registration" id="basketball-registration" aria-labelledby="basketball-registration-title">
+    <div class="basketball-registration-header"><p class="basketball-registration-kicker">Work with ARCENI Basketball</p><h2 id="basketball-registration-title">Let’s grow your game.</h2><p class="basketball-registration-intro">Tell us about your player-development goals, team needs or basketball program. We’ll help you find a practical next step on and off the court.</p></div>
+    <form class="basketball-registration-form" id="basketball-registration-form">
+      <div class="basketball-registration-fields"><div class="basketball-registration-field"><label for="registration-type">I’m registering as</label><select id="registration-type" name="registration-type" required><option value="" selected disabled>Select one</option><option>Parent or guardian</option><option>Organization</option></select></div><div class="basketball-registration-field"><label for="registration-name">Your name</label><input id="registration-name" name="name" type="text" autocomplete="name" required></div><div class="basketball-registration-field"><label for="registration-email">Email address</label><input id="registration-email" name="email" type="email" autocomplete="email" required></div><div class="basketball-registration-field"><label for="registration-phone">Phone number</label><input id="registration-phone" name="phone" type="tel" autocomplete="tel"></div><div class="basketball-registration-field full"><label for="registration-message">Tell me about your goals</label><textarea id="registration-message" name="message" placeholder="Player development, team support or organization needs"></textarea></div></div>
+      <div class="basketball-registration-actions"><p class="basketball-registration-note">Your details are used only to respond to this registration.</p><button type="submit">Submit registration <span aria-hidden="true">↗</span></button></div><p class="basketball-registration-status" id="basketball-registration-status" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+  <script>const registrationForm=document.querySelector('#basketball-registration-form');const registrationStatus=document.querySelector('#basketball-registration-status');if(registrationForm){registrationForm.addEventListener('submit',event=>{event.preventDefault();registrationStatus.textContent='Thank you — your registration has been received. I’ll be in touch soon.';registrationForm.reset()})}</script>
+  <script>const registrationTitle=document.querySelector('#basketball-registration-title');if(registrationTitle)registrationTitle.innerHTML="Let’s grow <span class='registration-title-accent'>your</span> game.";</script>
+  <script>const registrationType=document.querySelector('#registration-type');if(registrationType&&!registrationType.querySelector('option[value="player"]')){const playerOption=document.createElement('option');playerOption.value='player';playerOption.textContent='Player';registrationType.insertBefore(playerOption,registrationType.options[1]);}</script>
+  <script>const registrationMessage=document.querySelector('#registration-message');if(registrationMessage&&!document.querySelector('#registration-location')){const locationField=document.createElement('div');locationField.className='basketball-registration-field';locationField.innerHTML='<label for="registration-location">Location</label><input id="registration-location" name="location" type="text" autocomplete="address-level2" placeholder="City or town" required>';registrationMessage.closest('.basketball-registration-field').before(locationField);}</script>
 </body>
 </html>
