@@ -483,6 +483,34 @@
     const minimalHomeFooter=document.querySelector('body > footer');
     if(minimalHomeFooter){minimalHomeFooter.className='minimal-footer';minimalHomeFooter.innerHTML='<span>© 2026 ARCENI · All rights reserved</span><span>Nairobi · Kenya · Global</span>';const minimalHomeFooterStyle=document.createElement('style');minimalHomeFooterStyle.textContent='.minimal-footer{display:flex!important;align-items:center;justify-content:space-between;gap:20px;width:100%;margin:0;padding:24px max(20px,calc((100% - 1160px) / 2));border-top:1px solid #d8d2cf;background:#f1eeeb;color:#716b68;font-size:10px}.minimal-footer span:last-child{color:#171615}@media(max-width:520px){.minimal-footer{align-items:flex-start;flex-direction:column;padding:20px}}';document.head.appendChild(minimalHomeFooterStyle)}
   </script>
+  <style>#basketball{background:#f4f1ee;border-color:#d8d2cf}#basketball:hover,#basketball:focus-within{border-color:#b8b0b3}#basketball .card-label{text-shadow:none;font-size:10px;font-weight:700;letter-spacing:.15em}</style>
   <script>document.querySelectorAll('#archer .card-link,#catalyst .card-link').forEach(link=>{link.textContent='Request info \u2197';link.href='contact.html'});</script>
+  <script>
+    const mobileProgramCards=document.querySelectorAll('.program-grid .card');
+    const enableMobileProgramCardLinks=()=>{
+      const isMobile=window.matchMedia('(max-width: 800px)').matches;
+      mobileProgramCards.forEach(card=>{
+        const cta=card.querySelector('.card-link');
+        if(!cta)return;
+        card.classList.toggle('is-mobile-link',isMobile);
+        if(isMobile&&!card.dataset.mobileLinkBound){
+          const activateCard=event=>{
+            if(event.target.closest('a,button,input,textarea,select'))return;
+            window.location.href=cta.href;
+          };
+          card.addEventListener('click',activateCard);
+          card.addEventListener('keydown',event=>{
+            if((event.key==='Enter'||event.key===' ')&&!event.target.closest('a,button,input,textarea,select')){
+              event.preventDefault();
+              window.location.href=cta.href;
+            }
+          });
+          card.dataset.mobileLinkBound='true';
+        }
+      });
+    };
+    enableMobileProgramCardLinks();
+    window.addEventListener('resize',enableMobileProgramCardLinks);
+  </script>
  </body>
 </html>
