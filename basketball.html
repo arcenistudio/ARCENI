@@ -65,9 +65,47 @@
   <style>
     @media(max-width:700px){.bball-hero{isolation:isolate}.bball-portrait{inset:0;width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;object-position:center center;opacity:.34;mask-image:none;mix-blend-mode:normal}}
   </style>
+  <style>
+    .bball-impact-section{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:center;column-gap:clamp(32px,7vw,92px);row-gap:18px;padding:clamp(54px,8vw,104px) max(20px,calc((100% - var(--max)) / 2));border-top:1px solid var(--line);background:#181716;color:#f4f1ee}
+    .bball-impact-heading{display:block;padding:0;border:0}
+    .bball-impact-eyebrow{display:flex;align-items:center;gap:12px;margin:0 0 14px;color:#b8b0b3;font-size:10px;font-weight:600;letter-spacing:.17em;text-transform:uppercase}
+    .bball-impact-eyebrow:before{width:28px;height:1px;background:#b8b0b3;content:""}
+    .bball-impact-heading h2{max-width:12ch;margin:14px 0;font-size:clamp(34px,5vw,58px);font-weight:650;line-height:.98;letter-spacing:-.07em}
+    .bball-impact-heading h2 span{color:#b8b0b3}
+    .bball-impact-heading>p{max-width:480px;margin:0;color:rgba(244,241,238,.68);font-size:14px;line-height:1.7}
+    .bball-impact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid rgba(244,241,238,.22);border-bottom:1px solid rgba(244,241,238,.22)}
+    .bball-impact-card{min-width:0;min-height:0;padding:clamp(20px,3vw,34px) 16px;border:0;border-radius:0;background:transparent}
+    .bball-impact-card+.bball-impact-card{border-left:1px solid rgba(244,241,238,.18);padding-left:16px}
+    .bball-impact-card strong{display:block;white-space:nowrap;color:#b8b0b3;font-size:clamp(34px,5vw,64px);font-weight:650;line-height:1;letter-spacing:-.07em}
+    .bball-impact-card h3{display:none}
+    .bball-impact-card p{margin:10px 0 0;color:rgba(244,241,238,.68);font-size:11px;line-height:1.5}
+    @media(max-width:900px){.bball-impact-section{grid-template-columns:1fr;row-gap:32px}.bball-impact-heading>p{max-width:54ch}}
+    @media(max-width:700px){.bball-portrait{inset:auto 0 0 auto;width:70%;height:70%;max-width:280px;max-height:none;object-fit:contain;object-position:right bottom;opacity:.34}.bball-title{font-size:clamp(43px,12vw,66px)}.bball-impact-section{padding-top:64px;padding-bottom:64px}.bball-impact-grid{grid-template-columns:1fr}.bball-impact-card{padding:22px 0}.bball-impact-card+.bball-impact-card{padding-left:0;border-top:1px solid rgba(244,241,238,.18);border-left:0}}
+    @media(max-width:380px){.bball-title{font-size:40px}.bball-portrait{width:70%;height:70%}}
+  </style>
   <style>.bball-title{max-width:1050px;color:#f4f1ee;font-size:clamp(54px,8.56vw,133px);font-weight:800;line-height:.78;letter-spacing:-.095em;text-transform:uppercase}.bball-title span:first-child{color:#fff!important}.bball-title .title-accent,.bball-title span:last-child{margin-left:.12em;color:var(--accent)!important}</style>
   <style>.bball-contact-links{display:none!important}</style>
   <style>.bball-nav-cta{transition:transform .2s ease,background .2s ease}.bball-nav-cta:hover,.bball-nav-cta:focus-visible{background:#4b4643;color:#fff;transform:translateY(-2px)}</style>
+  <style>
+    @media(max-width:700px){.bball-portrait{inset:auto 0 0 auto;width:70%;height:70%;max-width:280px;max-height:none;object-fit:contain;object-position:right bottom;opacity:.34}.bball-title{font-size:clamp(43px,12vw,66px)}}
+    @media(max-width:380px){.bball-title{font-size:40px}.bball-portrait{width:70%;height:70%}}
+    .bball-impact-section{background:#fff;color:var(--ink)}
+    .bball-impact-eyebrow{color:var(--muted)}
+    .bball-impact-eyebrow:before{background:var(--muted)}
+    .bball-impact-heading h2 span{color:var(--accent)}
+    .bball-impact-heading>p{color:var(--muted)}
+    .bball-impact-grid{border-color:var(--line)}
+    .bball-impact-card+.bball-impact-card{border-left-color:var(--line)}
+    .bball-impact-card strong{color:var(--ink)}
+    .bball-impact-card p{color:var(--muted)}
+    .bball-impact-heading>.bball-impact-eyebrow{margin-bottom:20px;font-size:10px;font-weight:700;letter-spacing:.18em}
+    .bball-impact-heading>p:not(.bball-impact-eyebrow){font-size:15px}
+    .bball-impact-heading h2{max-width:10ch;margin:0;font-size:clamp(42px,6vw,76px);font-weight:750;line-height:.84;letter-spacing:-.1em}
+    .bball-impact-heading>p:not(.bball-impact-eyebrow){margin-top:16px}
+    @media(max-width:700px){.bball-impact-heading h2{font-size:clamp(42px,12vw,64px)}}
+    @media(max-width:700px){.bball-impact-card+.bball-impact-card{border-top-color:var(--line)}}
+    @media(max-width:700px){.bball-portrait{inset:0;width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;object-position:center center;opacity:.45}}
+  </style>
 </head>
 <body>
   <main class="bball-page" id="bball-top">
@@ -79,12 +117,28 @@
       <div class="bball-bottom">
         <p class="bball-label">Player development<br>Consulting</p>
         <p class="bball-copy">Build strong fundamentals, sharpen your overall game and bring character, discipline, teamwork and grit on and off the court.</p>
-        <a class="bball-cta" href="#bball-approach">Philosophy <span aria-hidden="true">↗</span></a>
+        <a class="bball-cta" href="#bball-approach">What We Do <span aria-hidden="true">↗</span></a>
       </div>
     </section>
     <figure class="bball-photo-break" aria-label="ARCENI Basketball training in motion">
       <img src="images/Basketball/IMG_5089.JPG" alt="ARCENI Basketball coach training a player on court" loading="lazy">
       <figcaption><strong>Practice with purpose.</strong><span>Every rep builds confidence, awareness and a stronger foundation for the game.</span></figcaption>
+    </figure>
+    <section class="bball-impact-section" id="bball-impact" aria-labelledby="bball-impact-title">
+      <div class="bball-impact-heading">
+        <p class="bball-impact-eyebrow">By the numbers</p>
+        <h2 id="bball-impact-title">Our <span>Impact.</span></h2>
+        <p>With more than a decade of coaching, our programs create opportunities for players and teams to grow through basketball.</p>
+      </div>
+      <div class="bball-impact-grid" aria-label="ARCENI Basketball impact metrics">
+        <article class="bball-impact-card"><strong>12+</strong><p>Years Coaching Experience</p></article>
+        <article class="bball-impact-card"><strong>500+</strong><p>Players Impacted</p></article>
+        <article class="bball-impact-card"><strong>10+</strong><p>Teams Impacted</p></article>
+      </div>
+    </section>
+    <figure class="bball-photo-break bball-photo-break--impact" aria-label="ARCENI Basketball player development in action">
+      <img src="images/Basketball/IMG_2199.JPG" alt="ARCENI Basketball coach guiding a player during shooting practice" loading="lazy">
+      <figcaption><strong>Growth in motion.</strong><span>Focused practice, honest feedback and shared purpose turn development into lasting impact.</span></figcaption>
     </figure>
     <section class="bball-coach" aria-labelledby="bball-coach-title">
       <img class="bball-coach-photo" src="images/Basketball/The Coach.png" alt="ARCENI Basketball coach holding a basketball" loading="lazy">
@@ -118,7 +172,7 @@
     </section>
     <section class="bball-intro" id="bball-approach" aria-labelledby="bball-intro-title">
       <div class="bball-intro-heading"><p class="bball-intro-eyebrow">The ARCENI approach</p><h2 id="bball-intro-title">Build the game.<br><span>Grow the person.</span></h2></div>
-      <div class="bball-intro-copy"><p>Sports, basketball in particular, we believe -- is a safe space, where you can engage, learn about yourself, your capabilities – a place where anything you set your mind to can be manifested. It's not always about wins, but the pursuit for growth, greatness – as an individual, a team, community and society.</p><p>Our philosophy is enshrined in building a strong foundation for aspiring basketball players, fostering communities that embody character, discipline, teamwork and grit. I believe that players grow best when development starts with understanding who they are, how they play, and where they want to go. On court, the work is practical and focused: learn the skill, apply it under pressure, and carry that growth into competition and everyday life.</p><a class="bball-intro-link" href="basketball.html#basketball-contact-form">Join a program ↗</a></div>
+      <div class="bball-intro-copy"><p>Sports, basketball in particular, we believe -- is a safe space, where you can engage, learn about yourself, your capabilities – a place where anything you set your mind to can be manifested. It's not always about wins, but the pursuit for growth, greatness – as an individual, a team, community and society.</p><p>Our philosophy is enshrined in building a strong foundation for aspiring basketball players, fostering communities that embody character, discipline, teamwork and grit. On court, the work is practical and focused: learn the skill, apply it under pressure, and carry that growth into competition and everyday life.</p><a class="bball-intro-link" href="basketball.html#basketball-contact-form">Join a program ↗</a></div>
     </section>
     <figure class="bball-photo-break bball-photo-break--approach" aria-label="ARCENI Basketball players training together">
       <img src="images/Basketball/Slytherin.jpg" alt="ARCENI Basketball team huddle" loading="lazy">
@@ -178,5 +232,12 @@
   </script>
   <script src="site-nav.js"></script>
   <script>const basketballContactTitle=document.querySelector('#bball-contact-title');if(basketballContactTitle)basketballContactTitle.textContent='Let’s grow your game.';</script>
+  <script>
+    const basketballApproach=document.querySelector('#bball-approach');
+    const basketballImpact=document.querySelector('#bball-impact');
+    const basketballImpactPhoto=document.querySelector('.bball-photo-break--impact');
+    if(basketballApproach&&basketballImpact)basketballImpact.insertAdjacentElement('beforebegin',basketballApproach);
+    if(basketballImpactPhoto&&basketballImpact)basketballImpact.insertAdjacentElement('beforebegin',basketballImpactPhoto);
+  </script>
 </body>
 </html>

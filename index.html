@@ -272,6 +272,23 @@
     .hero-portrait{right:6%;bottom:0;width:min(48vw,620px);max-height:88%;object-fit:contain;object-position:center bottom;filter:saturate(.72) contrast(.96);mix-blend-mode:screen;opacity:.72;mask-image:linear-gradient(90deg,transparent 0%,#000 12%,#000 74%,transparent 100%),linear-gradient(180deg,transparent 0%,#000 8%,#000 84%,transparent 100%);mask-composite:intersect}
     .menu-button,.header-cta-mobile{display:none!important}.main-nav{display:flex!important;order:2}.main-nav>.nav-link,.main-nav>.programs{display:none!important}.main-nav .header-cta{display:inline-flex!important}
   </style>
+  <style>
+    .consulting-grid{grid-template-columns:1fr}
+    .consulting-grid .card{display:grid;grid-template-columns:minmax(280px,.9fr) minmax(0,1.1fr)}
+    .consulting-grid .card-image{height:100%;min-height:300px}
+    .consulting-grid .card-sectors{max-width:52ch;margin:20px 0 0;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:12px;line-height:1.65}.consulting-grid .card-sectors strong{display:block;margin-bottom:5px;color:var(--ink);font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+    #consulting-services .consulting-grid .card{background:var(--soft);border-color:#d8d2cf}
+    #programs .program-grid .card,#basketball{background:var(--soft)}
+    #consulting-services .consulting-grid .card:hover{border-color:var(--accent)}
+    .trusted-by{display:grid;grid-template-columns:auto repeat(3,minmax(0,1fr));align-items:center;gap:0;margin-top:clamp(28px,4vw,48px);padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .trusted-by-label{margin:0;padding-right:28px;color:var(--muted);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+    .trusted-by-name{padding:0 22px;border-left:1px solid var(--line);color:var(--ink);font-size:clamp(14px,1.7vw,19px);font-weight:600;letter-spacing:-.035em}
+    .trusted-by-name:first-of-type{border-left:0}
+    .trusted-by-name span{display:block;margin-top:5px;color:var(--muted);font-size:9px;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+    @media(max-width:800px){.trusted-by{grid-template-columns:1fr 1fr;gap:18px 0}.trusted-by-label{grid-column:1/-1;padding:0}.trusted-by-name{padding:0 14px}.trusted-by-name:nth-of-type(2){border-left:0;padding-left:0}}
+    @media(max-width:480px){.trusted-by{grid-template-columns:1fr}.trusted-by-name,.trusted-by-name:nth-of-type(2){padding:14px 0;border-left:0;border-top:1px solid var(--line)}.trusted-by-name:first-of-type{border-top:0}}
+    @media(max-width:800px){.consulting-grid .card{display:block}.consulting-grid .card-image{height:clamp(230px,30vw,390px);min-height:0}}
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -287,22 +304,31 @@
         <button class="programs-toggle" type="button" aria-expanded="false">Programs <span>⌄</span></button>
         <div class="dropdown" role="menu">
           <a href="#basketball" role="menuitem">Basketball</a>
-          <a href="index.html#contact" role="menuitem">Consulting</a>
+          <a href="#consulting-services" role="menuitem">Consulting</a>
         </div>
       </div>
       <a class="nav-link" href="#about">About</a>
       <a class="header-cta" href="contact.html">Partner With Us ↗</a>
     </nav>
-    <a class="header-cta header-cta-mobile" href="contact.html">Contact ↗</a>
+    <a class="header-cta header-cta-mobile" href="contact.html">Partner With Us ↗</a>
   </header>
 
   <main>
+    <section class="section" id="consulting-services" aria-labelledby="consulting-services-title">
+      <div class="section-heading"><h2 id="consulting-services-title">Consulting.</h2><p>Our consulting firm partners with organizations to move work from concept to delivery. We combine project management with practical capacity building so teams can make progress and sustain it.</p></div>
+      <div class="program-grid consulting-grid">
+        <article class="card"><img class="card-image" src="images/Consulting/project-management.jpg" alt="Person mapping project ideas on a glass board with colorful markers"><div class="card-body"><p class="card-label">Strategy &amp; delivery</p><h3>Project Management</h3><p>We work with you to align scope, people, timelines and resources. Keep delivery coordinated, surface decisions early and move projects from concept to completion.</p><p class="card-sectors"><strong>Key sectors</strong>Education · Sports · Leadership · Construction · Community Development</p></div></article>
+      </div>
+      <div class="trusted-by" aria-label="Organizations ARCENI has worked with"><p class="trusted-by-label">Worked With</p><div class="trusted-by-name">Transformaction Ballet<span>Organization partner</span></div><div class="trusted-by-name">NGO Committee on Migration<span>Organization partner</span></div><div class="trusted-by-name">Autizan<span>Organization partner</span></div></div>
+      <div class="programs-footer"><p class="programs-disclaimer">The scope, timelines and deliverables are agreed with each client based on the project needs. Services are tailored to each organization’s context, priorities and available resources.</p><div class="programs-actions"><a class="button" href="contact.html">Book a Consultation</a><a class="button secondary" href="contact.html">View Case Studies</a></div></div>
+    </section>
+
     <section class="section" id="programs" aria-labelledby="programs-title">
       <div class="section-heading"><h2 id="programs-title">Programs.</h2><p>Transformational coaching and leadership programs designed to help people explore purpose, build clarity and become agents of change.</p></div>
       <div class="program-grid">
         <article class="card" id="basketball"><img class="card-image" src="images/Basketball/Slytherin.jpg" alt="Basketball players gathered together in a team huddle"><div class="card-body"><p class="card-label">development</p><h3>The Basketball</h3><p>The Arceni Basketball provides personalized training, holistic development and leadership to gain a competitive edge on and off the court.</p><a class="card-link" href="basketball.html">Explore Basketball ↗</a></div></article>
 
-          <article class="card" id="archer"><img class="card-image" src="images/Collective/wadi-lissa-AZvGpBp925o-unsplash.jpg" alt="Young people collaborating around a table"><div class="card-body"><p class="card-label">1-on-1 Coaching</p><h3>The Archer</h3><p>The Arceni Changemakers Program (ARCHER) helps individuals build self awareness, strengthen your voice and take purposeful steps in your life and career.</p><a class="card-link" href="archer.html">Explore ARCHER ↗</a></div></article>
+          <article class="card" id="archer"><img class="card-image" src="images/Collective/wadi-lissa-AZvGpBp925o-unsplash.jpg" alt="Young people collaborating around a table"><div class="card-body"><p class="card-label">1-on-1 Coaching</p><h3>The Archer</h3><p>The Arceni Changemakers Program (ARCHER) helps individuals build self awareness, strengthen their voice and take purposeful steps in your life and career.</p><a class="card-link" href="archer.html">Explore ARCHER ↗</a></div></article>
         
         <article class="card" id="catalyst"><img class="card-image" src="images/Consulting/consulting-collaboration.jpg" alt="Basketball players gathered together in a team huddle"><div class="card-body"><p class="card-label">Workshops</p><h3>The Catalyst</h3><p>The Arceni Catalyst Workshops provides bespoke sessions, candid conversations on life, purpose and impact.</p><a class="card-link" href="catalyst.html">Coming Soon ↗</a></div></article>
         
@@ -370,14 +396,14 @@
     }
   </script>
   <script>
-    const programsFooter=document.querySelector('.programs-footer');
+    const programsFooter=document.querySelector('#programs .programs-footer');
     if(programsFooter){
       const disclaimer=programsFooter.querySelector('.programs-disclaimer');
       const actions=programsFooter.querySelector('.programs-actions');
       const links=programsFooter.querySelectorAll('.button');
       if(disclaimer)disclaimer.textContent='Our programs are shaped around each person’s goals, experience and stage of growth, with practical support for development, confidence and purposeful progress.';
       if(actions)actions.setAttribute('aria-label','Program actions');
-      if(links[0]){links[0].href='contact.html';links[0].textContent='Join a program';}
+      if(links[0]){links[0].href='#impact-stories';links[0].textContent='View Impact Stories';}
       if(links[1]){links[1].href='contact.html';links[1].textContent='Start a Conversation';}
     }
   </script>
@@ -416,7 +442,7 @@
       programsMenu.replaceWith(programsLink);
     }
     if(aboutLink)aboutLink.remove();
-    if(contactLink){contactLink.href='contact.html';contactLink.textContent='Contact ↗';}
+    if(contactLink){contactLink.href='contact.html';contactLink.textContent='Partner With Us ↗';}
   </script>
   <script>
     const heroTitle=document.querySelector('#hero-title');
@@ -512,5 +538,18 @@
     enableMobileProgramCardLinks();
     window.addEventListener('resize',enableMobileProgramCardLinks);
   </script>
- </body>
+  <script>
+    document.querySelectorAll('#consulting-services .programs-actions a').forEach(link=>link.href='contact.html');
+  </script>
+  <script>
+    const impactStoriesLink=document.querySelector('#programs .programs-actions a:first-child');
+    if(impactStoriesLink){impactStoriesLink.href='#impact-stories';impactStoriesLink.textContent='View Impact Stories';}
+  </script>
+  <script>
+    const consultingActions=document.querySelectorAll('#consulting-services .programs-actions .button');
+    if(consultingActions[0]){consultingActions[0].outerHTML='<span class="button">View Case Studies</span>';}
+    if(consultingActions[1]){consultingActions[1].textContent='Book a Consultation';consultingActions[1].href='contact.html';}
+    document.querySelector('.header-cta-mobile')?.replaceChildren(document.createTextNode('Partner With Us ↗'));
+  </script>
+</body>
 </html>
