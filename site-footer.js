@@ -7,4 +7,14 @@
   document.head.appendChild(style);
   footer.className = 'site-footer';
   footer.innerHTML = '<div class="site-footer-brand"><strong>ARCENI</strong><p>Turning bold ideas into shared value and meaningful impact through consulting, training and development.</p></div><div class="site-footer-column"><h3>Company</h3><a href="index.html#home">Home</a><a href="index.html#programs">Programs</a><a href="index.html#consulting">Consulting</a><a href="contact.html">Contact</a></div><div class="site-footer-column"><h3>Connect</h3><a href="contact.html">Start a conversation ↗</a><a href="contact.html">Join a waitlist ↗</a><a href="mailto:hello@arceni.org">Email ARCENI ↗</a></div><div class="site-footer-newsletter"><h3>Newsletter</h3><p>Get updates and insights from ARCENI.</p><form action="https://formspree.io/f/xpppdveo" method="POST"><input name="newsletter_email" type="email" placeholder="Enter your email..." aria-label="Email address" required><button type="submit" aria-label="Subscribe">→</button></form></div><div class="site-footer-bottom"><span>© 2026 ARCENI · All rights reserved</span><span>Nairobi · Kenya · Global</span></div>';
+  const companyColumn = footer.querySelector('.site-footer-column');
+  if (companyColumn && !companyColumn.querySelector('a[href="archer.html"]')) {
+    companyColumn.insertAdjacentHTML('beforeend', '<a href="archer.html">ARCHER</a><a href="basketball.html">Basketball</a>');
+  }
+  if (companyColumn) companyColumn.innerHTML = '<h3>Programs</h3><a href="archer.html">The Archer</a><a href="basketball.html">The Basketball</a>';
+  footer.className = 'minimal-footer';
+  footer.innerHTML = '<span>© 2026 ARCENI · All rights reserved</span><span>Nairobi · Kenya · Global</span>';
+  const minimalFooterStyle = document.createElement('style');
+  minimalFooterStyle.textContent = '.minimal-footer{display:flex!important;align-items:center;justify-content:space-between;gap:20px;width:100%;margin:0;padding:24px max(20px,calc((100% - 1160px) / 2));border-top:1px solid #d8d2cf;background:#f1eeeb;color:#716b68;font-size:10px}.minimal-footer span:last-child{color:#171615}@media(max-width:520px){.minimal-footer{align-items:flex-start;flex-direction:column;padding:20px}}';
+  document.head.appendChild(minimalFooterStyle);
 })();
