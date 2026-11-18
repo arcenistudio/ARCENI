@@ -2,101 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#181716">
-  <meta name="description" content="Contact ARCENI about coaching, consulting or basketball development.">
-  <title>Contact ARCENI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Start a conversation with ARCENI about consulting, training and development.">
+  <title>Contact — ARCENI</title>
   <style>
-    :root{--page:#181716;--ink:#f4f1ee;--muted:#B8B0B3;--accent:#B8B0B3;--line:rgba(244,241,238,.2)}
+    :root{--ink:#171615;--muted:#68615e;--soft:#f4f1ee;--line:#ded9d4;--accent:#b8b0b3;--max:1240px}
     *{box-sizing:border-box}
-    html{min-width:320px;background:var(--page)}
-    body{min-width:320px;min-height:100svh;margin:0;background:var(--page);color:var(--ink);font-family:Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:#fff;color:var(--ink);font-family:Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased}
     a{color:inherit;text-decoration:none}
-    .contact-shell{width:min(100%,1440px);min-height:100svh;margin:0 auto;padding:0 clamp(24px,5.2vw,88px)}
-    .contact-nav{position:relative;display:flex;min-height:86px;align-items:center;justify-content:space-between;gap:24px}
-    .contact-brand{flex:none;font-size:18px;font-weight:750;letter-spacing:.17em}
-    .contact-brand sup{margin-left:2px;font-size:9px;letter-spacing:0;vertical-align:top}
-    .contact-nav-links{position:absolute;left:50%;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(12px,2.2vw,30px);color:rgba(244,241,238,.72);font-size:10px;font-weight:550;letter-spacing:.13em;text-transform:uppercase;transform:translateX(-50%)}
-    .contact-nav-links a{transition:color .2s ease;text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:1px;text-underline-offset:5px}
-    .contact-nav-links a:hover,.contact-nav-links a:focus-visible,.contact-nav-links a[aria-current=page]{color:var(--ink);text-decoration-color:currentColor}
-    .contact-main{display:grid;min-height:calc(100svh - 86px);grid-template-columns:minmax(0,.85fr) minmax(360px,1.15fr);align-items:center;gap:clamp(36px,7vw,100px);padding:clamp(50px,8vw,104px) 0}
-    .contact-intro{max-width:590px}
-    .contact-eyebrow{display:flex;align-items:center;gap:12px;margin:0 0 22px;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:.19em;text-transform:uppercase}
-    .contact-eyebrow:before{width:28px;height:1px;background:var(--accent);content:""}
-    .contact-intro h1{max-width:10ch;margin:0;font-size:clamp(48px,7vw,90px);font-weight:650;line-height:.9;letter-spacing:-.085em}
-    .contact-intro>p:last-of-type{max-width:44ch;margin:24px 0 0;color:rgba(244,241,238,.74);font-size:15px;line-height:1.75}
-    .contact-services{display:grid;gap:0;margin-top:clamp(32px,5vw,60px);border-top:1px solid var(--line)}
-    .contact-service-link{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:15px 0;border-bottom:1px solid var(--line);color:rgba(244,241,238,.72);font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:color .2s ease}
-    .contact-service-link:hover,.contact-service-link:focus-visible{color:var(--accent)}
-    .contact-service-link span:last-child{font-size:17px}
-    .contact-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding:clamp(24px,4vw,46px);border:1px solid rgba(244,241,238,.15);background:linear-gradient(145deg,#262423,#1d1b1a);box-shadow:0 24px 64px rgba(0,0,0,.22);transition:transform .22s ease,border-color .22s ease,background .22s ease,box-shadow .22s ease}
-    .contact-form:hover,.contact-form:focus-within{transform:translateY(-3px);border-color:rgba(184,176,179,.58);background:linear-gradient(145deg,#2c2928,#211f1e);box-shadow:0 30px 72px rgba(0,0,0,.3)}
-    .contact-form-head{grid-column:1/-1;padding-bottom:20px;border-bottom:1px solid rgba(244,241,238,.15)}
-    .contact-form-head span{color:var(--accent);font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
-    .contact-form-head h2{margin:9px 0 0;font-size:clamp(24px,3vw,34px);font-weight:600;letter-spacing:-.06em}
-    .contact-form-head p{margin:8px 0 0;color:var(--muted);font-size:12px;line-height:1.6}
-    .contact-field{display:grid;min-width:0;gap:7px}
-    .contact-field.wide{grid-column:1/-1}
-    .contact-field label{font-size:10px;font-weight:600;letter-spacing:.04em;transition:color .18s ease}
-    .contact-field:hover label,.contact-field:focus-within label{color:#d4c5b4}
-    .contact-field input,.contact-field select,.contact-field textarea{width:100%;min-height:48px;padding:12px;border:1px solid rgba(244,241,238,.2);border-radius:2px;background:#191817;color:var(--ink);font:400 12px Inter,Arial,sans-serif;transition:border-color .18s ease,background .18s ease,box-shadow .18s ease}
-    .contact-field :is(input,select,textarea):hover{border-color:rgba(184,176,179,.68);background:#211f1e;box-shadow:0 3px 12px rgba(0,0,0,.14)}
-    .contact-field textarea{min-height:118px;resize:vertical}
-    .contact-field input::placeholder,.contact-field textarea::placeholder{color:#aaa2a4}
-    .contact-field :is(input,select,textarea):focus{outline:2px solid var(--accent);outline-offset:2px}
-    .contact-field select option{background:#191817;color:var(--ink)}
-    .contact-submit{grid-column:1/-1;display:flex;min-height:52px;align-items:center;justify-content:space-between;padding:6px 7px 6px 16px;border:1px solid var(--accent);background:var(--accent);color:#181716;font:600 11px Inter,Arial,sans-serif;cursor:pointer;transition:background .2s ease,transform .2s ease}
-    .contact-submit:hover,.contact-submit:focus-visible{transform:translateY(-2px);background:#e1c9b4}
-    .contact-submit span{display:grid;width:36px;height:36px;place-items:center;background:#181716;color:var(--ink);font-size:17px}
-    .contact-note{grid-column:1/-1;margin:0;color:var(--muted);font-size:10px;line-height:1.6}
-    @media(max-width:850px){.contact-main{grid-template-columns:1fr;gap:36px;padding:54px 0}.contact-intro{max-width:720px}.contact-intro h1{max-width:13ch}.contact-services{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 20px}.contact-service-link{padding:13px 0}}
-    @media(max-width:600px){.contact-shell{padding-right:20px;padding-left:20px}.contact-nav{min-height:76px;align-items:center;flex-direction:row;justify-content:space-between;gap:12px;padding:12px 0}.contact-main{min-height:calc(100svh - 76px);gap:30px;padding:42px 0}.contact-intro h1{font-size:clamp(44px,13vw,68px)}.contact-intro>p:last-of-type{font-size:14px}.contact-services{grid-template-columns:1fr;gap:0;margin-top:28px}.contact-service-link{padding:12px 0}.contact-form{grid-template-columns:1fr;padding:20px}.contact-form-head,.contact-field.wide,.contact-submit,.contact-note{grid-column:1}.contact-field{grid-column:1}}
-    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}.contact-form:hover,.contact-form:focus-within{transform:none}}
+    .site-header{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:24px;width:100%;padding:20px clamp(20px,5vw,72px);border-bottom:1px solid rgba(23,22,21,.1);background:rgba(255,255,255,.94);backdrop-filter:blur(14px)}
+    .brand{font-size:19px;font-weight:400;letter-spacing:.16em}.brand sup{font-size:9px;letter-spacing:0}
+    .main-nav{display:flex;align-items:center;gap:clamp(16px,2.5vw,34px);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+    .nav-link,.programs-toggle{position:relative;padding:8px 0;border:0;background:none;color:var(--muted);font:inherit;cursor:pointer}.nav-link:hover,.nav-link:focus-visible,.programs-toggle:hover,.programs-toggle:focus-visible,.nav-link[aria-current=page]{color:var(--ink)}
+    .programs{position:relative}.programs-toggle span{margin-left:6px;font-size:12px}.dropdown{position:absolute;top:calc(100% + 12px);left:50%;display:grid;min-width:190px;gap:4px;padding:10px;border:1px solid var(--line);background:#fff;box-shadow:0 18px 40px rgba(23,22,21,.12);opacity:0;pointer-events:none;transform:translate(-50%,8px);transition:opacity .2s ease,transform .2s ease}.programs:hover .dropdown,.programs:focus-within .dropdown,.dropdown.is-open{opacity:1;pointer-events:auto;transform:translate(-50%,0)}.dropdown a{padding:11px 12px;color:var(--muted);font-size:10px;letter-spacing:.08em}.dropdown a:hover,.dropdown a:focus-visible{background:var(--soft);color:var(--ink)}
+    .header-cta,.button{display:inline-flex;align-items:center;justify-content:center;gap:14px;padding:13px 17px;border:1px solid var(--ink);background:var(--ink);color:#fff;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.header-cta:hover,.header-cta:focus-visible,.button:hover,.button:focus-visible{background:#4b4643}.menu-button{display:none;border:0;background:none;font:inherit;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .contact-main{width:min(100% - clamp(40px,10vw,144px),var(--max));margin:0 auto}.contact-hero{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(30px,6vw,86px);padding:clamp(80px,11vw,150px) 0 clamp(70px,9vw,120px)}.eyebrow{margin:0 0 20px;color:var(--muted);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}.contact-intro h1{max-width:8ch;margin:0;font-size:clamp(58px,9vw,112px);font-weight:750;line-height:.82;letter-spacing:-.1em}.contact-intro h1 span{color:var(--accent)}.contact-intro>p:last-child{max-width:38ch;margin:28px 0 0;color:var(--muted);font-size:15px;line-height:1.75}.contact-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding:clamp(22px,3vw,34px);border:1px solid var(--line);background:#fff}.contact-form-head{grid-column:1/-1;padding-bottom:18px;border-bottom:1px solid var(--line)}.contact-form-head span{color:var(--muted);font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}.contact-form-head h2{margin:9px 0 0;font-size:clamp(24px,3vw,34px);letter-spacing:-.06em}.contact-field{display:grid;gap:7px;min-width:0}.contact-field.wide,.contact-submit,.contact-note{grid-column:1/-1}.contact-field label{font-size:10px;font-weight:600}.contact-field input,.contact-field select,.contact-field textarea{width:100%;min-height:44px;padding:11px 12px;border:1px solid var(--line);border-radius:0;background:#fff;color:var(--ink);font:inherit;font-size:12px}.contact-field textarea{min-height:128px;resize:vertical}.contact-field :is(input,select,textarea):focus{outline:2px solid var(--accent);outline-offset:2px}.contact-submit{display:flex;align-items:center;justify-content:space-between;min-height:48px;padding:0 14px;border:0;background:var(--ink);color:#fff;font:inherit;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}.contact-submit span{font-size:17px}.contact-note{margin:0;color:var(--muted);font-size:10px;line-height:1.6}
+    .site-footer{padding:clamp(46px,7vw,84px) max(20px,calc((100% - var(--max)) / 2)) 24px;background:#181716;color:#f4f1ee}.footer-grid{display:grid;grid-template-columns:1.1fr .8fr .8fr 1fr;gap:clamp(24px,5vw,72px);padding-bottom:42px}.footer-brand strong{font-size:20px;letter-spacing:.2em}.footer-brand p,.footer-column a,.footer-newsletter p{color:#b8b0b3;font-size:12px;line-height:1.7}.footer-brand p{max-width:26ch;margin:18px 0 0}.footer-column h2,.footer-newsletter h2{margin:0 0 14px;font-size:10px;letter-spacing:.14em;text-transform:uppercase}.footer-column{display:grid;align-content:start;gap:8px}.footer-column a:hover,.footer-column a:focus-visible{color:#fff}.footer-newsletter p{margin:0 0 12px}.footer-newsletter form{display:flex;border-bottom:1px solid rgba(244,241,238,.3)}.footer-newsletter input{flex:1;min-width:0;padding:9px 2px;border:0;background:transparent;color:#fff;font:inherit;font-size:12px;outline:0}.footer-newsletter input::placeholder{color:#b8b0b3}.footer-newsletter button{padding:6px 0 6px 10px;border:0;background:none;color:#fff;font-size:16px;cursor:pointer}.footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:16px;border-top:1px solid rgba(244,241,238,.16);color:#b8b0b3;font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+    @media(max-width:800px){.main-nav{display:none}.main-nav.is-open{position:absolute;top:100%;right:20px;left:20px;display:grid;gap:2px;padding:12px;border:1px solid var(--line);background:#fff;box-shadow:0 18px 40px rgba(23,22,21,.12)}.main-nav.is-open .nav-link,.main-nav.is-open .programs-toggle{padding:12px;text-align:left}.menu-button{display:block}.header-cta{display:none}.contact-main{width:calc(100% - 40px)}.contact-hero{grid-template-columns:1fr;gap:36px;padding:72px 0 64px}.contact-intro h1{font-size:clamp(58px,15vw,88px)}.footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.footer-brand,.footer-newsletter{grid-column:1/-1}}
+    @media(max-width:520px){.site-header{padding:17px 20px}.contact-form{grid-template-columns:1fr;padding:18px}.contact-field.wide,.contact-submit,.contact-note{grid-column:1}.footer-grid{grid-template-columns:1fr;gap:28px}.footer-column{grid-column:auto}.footer-bottom{align-items:flex-start;flex-direction:column}}
+    .site-header{width:min(100% - clamp(40px,10vw,144px),var(--max));margin:0 auto;padding:20px 0}@media(max-width:800px){.site-header{width:calc(100% - 40px);padding:17px 0}}
   </style>
-  <link rel="stylesheet" href="site-responsive.css">
-  <link rel="stylesheet" href="site-scroll.css">
-  <link rel="stylesheet" href="section-scroll.css">
-  <link rel="stylesheet" href="site-menu.css">
-  <script src="site-menu.js" defer></script>
-  <script src="section-scroll.js" defer></script>
 </head>
 <body>
-  <div class="contact-shell" id="contact-top">
-    <header class="contact-nav"><a class="contact-brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a></header>
-    <main class="contact-main">
-      <section class="contact-intro" aria-labelledby="contact-title"><p class="contact-eyebrow">Get in touch</p><h1 id="contact-title">Let’s start a conversation.</h1><p>Tell us what you’re working toward. Choose a service and share a little about what you need; we’ll help you find a practical next step.</p><nav class="contact-services" aria-label="Choose a service"><a class="contact-service-link" href="#contact-form" data-service-link="consulting">Consulting <span aria-hidden="true">↗</span></a><a class="contact-service-link" href="#contact-form" data-service-link="coaching">Coaching <span aria-hidden="true">↗</span></a><a class="contact-service-link" href="#contact-form" data-service-link="basketball">Basketball <span aria-hidden="true">↗</span></a></nav></section>
-      <form class="contact-form" id="contact-form" action="https://formspree.io/f/xpppdveo" method="POST">
-        <input type="hidden" name="_subject" value="ARCENI Service Inquiry">
-        <div class="contact-form-head"><span>Arceni · Service Inquiry</span><h2>How can we help?</h2><p>We’ll use your note to understand where you’d like to begin.</p></div>
-        <div class="contact-field wide"><label for="inquiry-service">I’m interested in</label><select id="inquiry-service" name="service" required><option value="" disabled selected>Select a service</option><option value="consulting">Consulting</option><option value="coaching">Coaching</option><option value="basketball">Basketball</option></select></div>
-        <div class="contact-field"><label for="inquiry-name">Your name</label><input id="inquiry-name" name="name" type="text" autocomplete="name" placeholder="Your name" required></div>
-        <div class="contact-field"><label for="inquiry-email">Email address</label><input id="inquiry-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
-        <div class="contact-field"><label for="inquiry-phone">Phone number</label><input id="inquiry-phone" name="phone" type="tel" autocomplete="tel" placeholder="Your phone number" required></div>
-        <div class="contact-field"><label for="inquiry-location">Location</label><input id="inquiry-location" name="location" type="text" autocomplete="address-level2" placeholder="City or town" required></div>
-        <div class="contact-field wide"><label for="inquiry-role">I’m reaching out as</label><select id="inquiry-role" name="role" required><option value="" disabled selected>Select one</option><option>Individual</option><option>Parent or supporter</option><option>Team or organization</option><option>Nonprofit or community group</option><option>Other</option></select></div>
-        <div class="contact-field wide"><label for="inquiry-message">Tell us a little more</label><textarea id="inquiry-message" name="message" placeholder="What would you like help with?" required></textarea></div>
-        <button class="contact-submit" type="submit">Send an inquiry <span aria-hidden="true">↗</span></button>
-        <p class="contact-note" role="status">Your inquiry will be sent securely to us. We will respond soon.</p>
-      </form>
-    </main>
-    <footer class="arceni-page-footer">
-      <div class="arceni-footer-inner">
-        <a class="arceni-footer-brand" href="index.html">ARCENI<sup>®</sup></a>
-        <nav aria-label="Footer navigation"><a href="consulting.html">Consulting</a><a href="basketball.html">Basketball</a><a href="coaching.html">Coaching</a><a href="contact.html">Contact</a></nav>
-        <nav class="arceni-footer-social" aria-label="Social media"><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.linkedin.com/company/arceni/" target="_blank" rel="noopener noreferrer">LinkedIn</a></nav>
-        <div class="arceni-footer-bottom"><span>Nairobi · Kenya · Global</span><span>© 2026 ARCENI · All rights reserved</span></div>
+  <header class="site-header">
+    <a class="brand" href="index.html#home" aria-label="ARCENI home">ARCENI<sup>®</sup></a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-navigation">Menu</button>
+    <nav class="main-nav" id="main-navigation" aria-label="Main navigation">
+      <a class="nav-link" href="index.html#home">Home</a>
+      <div class="programs">
+        <button class="programs-toggle" type="button" aria-expanded="false">Programs <span>⌄</span></button>
+        <div class="dropdown" role="menu"><a href="basketball.html" role="menuitem">Basketball</a><a href="consulting.html" role="menuitem">Consulting</a></div>
       </div>
-    </footer>
-  </div>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="header-cta" href="contact.html" aria-current="page">Contact ↗</a>
+    </nav>
+  </header>
+
+  <main class="contact-main">
+    <section class="contact-hero" aria-labelledby="contact-title">
+      <div class="contact-intro"><p class="eyebrow">Start a conversation</p><h1 id="contact-title">Let’s make <span>progress.</span></h1><p>Share a project, make an inquiry or join an ARCENI program. We’ll help you identify a useful next step toward delivery and lasting impact.</p></div>
+      <form class="contact-form" action="https://formspree.io/f/xpppdveo" method="POST">
+        <div class="contact-form-head"><span>ARCENI · Client inquiry</span><h2>How can we help?</h2></div>
+        <div class="contact-field wide"><label for="inquiry-type">I’m interested in</label><select id="inquiry-type" name="inquiry_type" required><option value="">Choose a service</option><option>Project Management</option><option>Capacity Building</option><option>The Archer</option><option>The Basketball</option><option>The Catalyst</option><option>General inquiry</option></select></div>
+        <div class="contact-field"><label for="name">Your name</label><input id="name" name="name" type="text" placeholder="Your name" required></div>
+        <div class="contact-field"><label for="email">Email address</label><input id="email" name="email" type="email" placeholder="you@example.com" required></div>
+        <div class="contact-field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" inputmode="tel" placeholder="+254 700 000 000"></div>
+        <div class="contact-field"><label for="location">Location</label><input id="location" name="location" type="text" placeholder="City / country"></div>
+        <div class="contact-field wide"><label for="message">Tell us a little more</label><textarea id="message" name="message" placeholder="What are you working on?"></textarea></div>
+        <button class="contact-submit" type="submit">Send an inquiry <span aria-hidden="true">↗</span></button><p class="contact-note">Your inquiry will be sent securely to us. We will respond as soon as possible.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid"><div class="footer-brand"><strong>ARCENI</strong><p>Consulting, Training &amp; Advisory.</p></div><div class="footer-column"><h2>Company</h2><a href="index.html#home">Home</a><a href="index.html#programs">Programs</a><a href="about.html">About</a><a href="contact.html">Contact</a></div><div class="footer-column"><h2>Connect</h2><a href="contact.html">Start a conversation ↗</a><a href="mailto:hello@arceni.org">Email ARCENI ↗</a></div><div class="footer-newsletter"><h2>Newsletter</h2><p>Get updates and insights from ARCENI.</p><form action="mailto:hello@arceni.org" method="POST" enctype="text/plain"><input name="email" type="email" placeholder="Enter your email..." aria-label="Email address" required><button type="submit" aria-label="Subscribe">→</button></form></div></div>
+    <div class="footer-bottom"><span>© 2026 ARCENI · All rights reserved</span><span>Nairobi · Kenya · Global</span></div>
+  </footer>
   <script>
-    (()=>{
-      const service=document.querySelector('#inquiry-service');
-      const allowed=new Set(['consulting','coaching','basketball']);
-      const initial=new URLSearchParams(location.search).get('service');
-      const choose=value=>{if(allowed.has(value)){service.value=value;service.focus();}};
-      choose(initial);
-      document.querySelectorAll('[data-service-link]').forEach(link=>link.addEventListener('click',()=>choose(link.dataset.serviceLink)));
-    })();
+    const menuButton=document.querySelector('.menu-button');const nav=document.querySelector('.main-nav');menuButton?.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')==='true';menuButton.setAttribute('aria-expanded',String(!open));nav.classList.toggle('is-open',!open)});
+    const programsToggle=document.querySelector('.programs-toggle');const dropdown=document.querySelector('.dropdown');programsToggle?.addEventListener('click',()=>{const open=programsToggle.getAttribute('aria-expanded')==='true';programsToggle.setAttribute('aria-expanded',String(!open));dropdown.classList.toggle('is-open',!open)});
   </script>
+  <script>
+    const contactNav=document.querySelector('.main-nav');
+    if(contactNav)contactNav.innerHTML='<a class="header-cta" href="contact.html" aria-current="page">Contact ↗</a>';
+    document.querySelector('.menu-button')?.remove();
+  </script>
+  <script src="site-layout.js"></script>
+  <script src="site-footer.js"></script>
+  <script src="site-nav.js"></script>
 </body>
 </html>

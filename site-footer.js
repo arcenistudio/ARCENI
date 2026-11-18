@@ -1,10 +1,10 @@
-document.querySelectorAll('.site-newsletter-form').forEach(form => {
-  form.addEventListener('submit', event => {
-    event.preventDefault();
-    const email = new FormData(form).get('email');
-    const status = form.querySelector('.site-newsletter-status');
-    status.textContent = 'Opening your email app to complete the subscription.';
-    window.location.href = `mailto:?subject=${encodeURIComponent('Newsletter subscription request')}&body=${encodeURIComponent(`Please add ${email} to the newsletter mailing list.`)}`;
-  });
-});
+(() => {
+  const footer = document.querySelector('footer');
+  if (!footer) return;
 
+  const style = document.createElement('style');
+  style.textContent = `.site-footer{display:grid!important;grid-template-columns:minmax(0,1.25fr) repeat(2,minmax(110px,.65fr)) minmax(220px,1.1fr);gap:clamp(24px,5vw,72px);width:100%;max-width:none;margin:0;padding:clamp(42px,6vw,76px) max(clamp(20px,5vw,72px),calc((100% - 1160px) / 2)) 24px;border-top:1px solid #d8d2cf;background:#f1eeeb;color:#171615}.site-footer-brand{max-width:260px}.site-footer-brand strong{display:block;font-size:19px;font-weight:400;letter-spacing:.16em}.site-footer-brand p{margin:18px 0 0;color:#716b68;font-size:12px;line-height:1.6}.site-footer-column h3,.site-footer-newsletter h3{margin:0 0 18px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.site-footer-column a{display:block;margin:0 0 13px;color:#716b68;font-size:11px}.site-footer-column a:hover{color:#171615}.site-footer-newsletter p{max-width:260px;margin:0 0 18px;color:#716b68;font-size:12px;line-height:1.6}.site-footer-newsletter form{display:flex;align-items:center;max-width:300px;border:1px solid #d8d2cf;background:#fff}.site-footer-newsletter input{min-width:0;flex:1;padding:13px;border:0;background:transparent;color:#171615;font:inherit;font-size:11px;outline:0}.site-footer-newsletter button{display:grid;width:40px;height:38px;margin-right:2px;place-items:center;border:0;background:#171615;color:#fff;font-size:16px;cursor:pointer}.site-footer-bottom{grid-column:1 / -1;display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:clamp(22px,4vw,46px);padding-top:18px;border-top:1px solid #d8d2cf;color:#716b68;font-size:10px}.site-footer-bottom span:last-child{color:#171615}@media(max-width:800px){.site-footer{grid-template-columns:repeat(2,minmax(0,1fr));padding-right:22px;padding-left:22px}.site-footer-brand,.site-footer-newsletter,.site-footer-bottom{grid-column:1 / -1}.site-footer-newsletter form{max-width:none}}@media(max-width:520px){.site-footer{grid-template-columns:1fr;gap:30px}.site-footer-column{grid-column:auto}.site-footer-bottom{align-items:flex-start;flex-direction:column}}`;
+  document.head.appendChild(style);
+  footer.className = 'site-footer';
+  footer.innerHTML = '<div class="site-footer-brand"><strong>ARCENI</strong><p>Turning bold ideas into shared value and meaningful impact through consulting, training and development.</p></div><div class="site-footer-column"><h3>Company</h3><a href="index.html#home">Home</a><a href="index.html#programs">Programs</a><a href="index.html#consulting">Consulting</a><a href="contact.html">Contact</a></div><div class="site-footer-column"><h3>Connect</h3><a href="contact.html">Start a conversation ↗</a><a href="contact.html">Join a waitlist ↗</a><a href="mailto:hello@arceni.org">Email ARCENI ↗</a></div><div class="site-footer-newsletter"><h3>Newsletter</h3><p>Get updates and insights from ARCENI.</p><form action="https://formspree.io/f/xpppdveo" method="POST"><input name="newsletter_email" type="email" placeholder="Enter your email..." aria-label="Email address" required><button type="submit" aria-label="Subscribe">→</button></form></div><div class="site-footer-bottom"><span>© 2026 ARCENI · All rights reserved</span><span>Nairobi · Kenya · Global</span></div>';
+})();
