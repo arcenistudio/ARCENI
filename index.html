@@ -13,6 +13,16 @@
     @media(max-width:800px){.site-header{padding:17px 20px}.main-nav{display:none}.menu-button{display:block}.main-nav.is-open{position:absolute;top:100%;right:20px;left:20px;display:grid;gap:2px;padding:12px;border:1px solid rgba(255,255,255,.2);background:#171615;box-shadow:0 18px 40px rgba(0,0,0,.25)}.main-nav.is-open a{padding:12px}.homepage-hero{padding:96px 20px 36px}.homepage-hero:before{background-position:62% center}.homepage-hero-bottom{grid-template-columns:1fr;gap:22px;margin-top:54px}.homepage-hero-copy{max-width:38ch}.homepage-hero-actions{width:100%;flex-direction:column;align-items:stretch}.homepage-hero-actions a{width:100%}}@media(max-width:520px){.homepage-hero h1{font-size:clamp(52px,15vw,82px)}.homepage-hero-copy{font-size:14px}}
   </style>
   <style>
+    .site-preloader{position:fixed;z-index:9999;inset:0;display:grid;place-items:center;background:#fff;color:var(--ink);animation:homepagePreloaderCurtain .8s cubic-bezier(.76,0,.24,1) 1.2s forwards}
+    .site-preloader-wordmark{font-size:clamp(22px,3vw,34px);font-weight:400;letter-spacing:.28em;opacity:0;transform:translateX(-18px);filter:blur(8px);animation:homepagePreloaderWordmark .8s cubic-bezier(.22,1,.36,1) forwards}
+    .site-preloader-wordmark sup{font-size:.42em;letter-spacing:0}
+    .homepage-hero h1{opacity:0;transform:translateY(24px);animation:homepageHeadlineIn .8s cubic-bezier(.22,1,.36,1) 1.2s forwards}
+    @keyframes homepagePreloaderWordmark{from{opacity:0;letter-spacing:.28em;transform:translateX(-18px);filter:blur(8px)}to{opacity:1;letter-spacing:.18em;transform:translateX(0);filter:blur(0)}}
+    @keyframes homepagePreloaderCurtain{to{clip-path:inset(0 0 100% 0);opacity:0}}
+    @keyframes homepageHeadlineIn{to{opacity:1;transform:translateY(0)}}
+    @media(prefers-reduced-motion:reduce){.site-preloader{display:none}.homepage-hero h1{opacity:1;transform:none;animation:none}}
+  </style>
+  <style>
     .homepage-hero-content{max-width:none}
     .homepage-hero h1{max-width:14ch}
     .homepage-hero-bottom{grid-template-columns:minmax(0,1fr) auto;gap:clamp(24px,5vw,76px);padding-top:0;border-top:0}
@@ -35,16 +45,6 @@
     .site-header .header-cta:hover,.site-header .header-cta:focus-visible{background:#4b4643;border-color:#4b4643;color:#fff!important}
     .site-header .menu-button{color:var(--ink)}
     @media(max-width:800px){.site-header .main-nav.is-open{border-color:var(--line);background:#fff}.site-header .main-nav.is-open a{color:var(--ink)}}
-  </style>
-  <style>
-    .site-preloader{position:fixed;z-index:9999;inset:0;display:grid;place-items:center;background:#fff;color:var(--ink);animation:homepagePreloaderCurtain .8s cubic-bezier(.76,0,.24,1) 1.2s forwards}
-    .site-preloader-wordmark{font-size:clamp(22px,3vw,34px);font-weight:400;letter-spacing:.28em;opacity:0;transform:translateX(-18px);filter:blur(8px);animation:homepagePreloaderWordmark .8s cubic-bezier(.22,1,.36,1) forwards}
-    .site-preloader-wordmark sup{font-size:.42em;letter-spacing:0}
-    .homepage-hero h1{opacity:0;transform:translateY(24px);animation:homepageHeadlineIn .8s cubic-bezier(.22,1,.36,1) 1.2s forwards}
-    @keyframes homepagePreloaderWordmark{from{opacity:0;letter-spacing:.28em;transform:translateX(-18px);filter:blur(8px)}to{opacity:1;letter-spacing:.18em;transform:translateX(0);filter:blur(0)}}
-    @keyframes homepagePreloaderCurtain{to{clip-path:inset(0 0 100% 0);opacity:0}}
-    @keyframes homepageHeadlineIn{to{opacity:1;transform:translateY(0)}}
-    @media(prefers-reduced-motion:reduce){.site-preloader{display:none}.homepage-hero h1{opacity:1;transform:none;animation:none}}
   </style>
   <style>
     .homepage-hero:after{display:none}
@@ -104,7 +104,11 @@
   .homepage-consulting-body{grid-template-columns:1fr 1fr}
   .homepage-consulting-body>p:not(.homepage-consulting-sectors){padding-top:18px;border-top:1px solid var(--line)}
   .homepage-consulting-sectors{border-top:1px solid var(--line);padding-top:18px;margin-top:56px}
-  @media (max-width:800px){.homepage-consulting-sectors{margin-top:56px}}
+   @media (max-width:800px){.homepage-consulting-sectors{margin-top:56px}}
+   html{scroll-padding-top:24px}
+   .homepage-consulting,.homepage-programs,.homepage-philosophy,.homepage-archer{scroll-margin-top:24px}
+   @media (min-width:801px) and (max-width:1100px){.homepage-consulting-card{grid-template-columns:1fr}.homepage-consulting-card figure{height:clamp(320px,48vw,480px);min-height:0}.homepage-consulting-body{padding:clamp(30px,5vw,48px)}}
+   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
