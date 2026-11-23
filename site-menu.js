@@ -1,4 +1,4 @@
-(()=>{
+﻿(()=>{
   const header=document.querySelector('header.home-nav,header.topbar,header.basketball-nav,header.coaching-nav,header.archer-nav,header.contact-nav,header.workshop-nav');
   if(!header) throw new Error('ARCENI menu requires a page header.');
 
@@ -26,7 +26,7 @@
         <button class="arceni-menu-services-toggle" type="button" aria-expanded="true" aria-controls="arceni-menu-services">Our Work<span class="arceni-menu-chevron" aria-hidden="true"></span></button>
         <div class="arceni-menu-services-list" id="arceni-menu-services">
           <a class="arceni-menu-service-link" href="consulting.html">Consulting</a>
-          <a class="arceni-menu-service-link" href="coaching.html">Coaching</a>
+          <a class="arceni-menu-service-link" href="programs.html">Coaching</a>
           <a class="arceni-menu-service-link" href="basketball.html">Basketball</a>
         </div>
         <a class="arceni-menu-link" href="contact.html">Contact<span class="arceni-menu-chevron" aria-hidden="true"></span></a>

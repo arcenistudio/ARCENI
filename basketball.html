@@ -164,7 +164,37 @@
       @media(max-width:700px){.bball-title{font-size:clamp(54px,15vw,82px) !important}.bball-nav{min-height:64px}.bball-hero{min-height:calc(100svh - 64px)}}
       @media(max-width:380px){.bball-title{font-size:50px !important}}
     </style>
-  </head>
+  <style>
+    .bball-nav{position:absolute;top:0;right:0;left:0;z-index:5;width:100%;border-bottom-color:rgba(244,241,238,.2);background:rgba(24,23,22,.16);color:#f4f1ee}
+    .bball-nav-links a:first-child{display:none!important}
+    .bball-nav-links{color:rgba(244,241,238,.78)}.bball-nav-links a:hover{color:#fff}
+    .bball-hero{min-height:100svh;padding-top:clamp(120px,14vw,190px)}
+    @media(max-width:700px){.bball-hero{min-height:100svh;padding-top:100px}}
+  </style>
+  <style>
+    .bball-nav{padding:20px max(clamp(20px,5vw,72px),calc((100% - var(--max))/2));min-height:0}
+    .bball-menu-button{display:none;border:0;background:none;color:#fff;font:inherit;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+    .bball-nav-links{margin-left:auto}.bball-nav-cta{background:#f4f1ee;color:var(--ink)}
+    @media(max-width:800px){.bball-nav{padding:17px 20px}.bball-menu-button{display:none}.bball-nav-links{margin-left:auto}.bball-nav-cta{display:inline-flex!important}}
+  </style>
+  <style>
+    .bball-nav{position:static;background:#181716;border-bottom-color:rgba(244,241,238,.2);color:#f4f1ee}
+    .bball-brand{color:#f4f1ee}
+    .bball-nav-links{color:rgba(244,241,238,.78)}
+    .bball-nav-links a:hover{color:#fff}
+    .bball-hero{min-height:calc(100svh - 76px);padding-top:clamp(80px,10vw,140px)}
+    @media(max-width:700px){.bball-nav{min-height:64px}.bball-hero{min-height:calc(100svh - 64px);padding-top:76px}}
+  </style>
+  <style>
+    .bball-nav{background:#fff;border-bottom-color:rgba(23,22,21,.12);color:var(--ink)}
+    .bball-brand{color:var(--ink)}
+    .bball-nav-links{color:var(--muted)}
+    .bball-nav-links a{color:var(--muted)}
+    .bball-nav-links a:hover,.bball-nav-links a:focus-visible{color:var(--ink)}
+    .bball-nav-links a.bball-nav-cta{background:var(--ink);border-color:var(--ink);color:#fff}
+    .bball-nav-links a.bball-nav-cta:hover,.bball-nav-links a.bball-nav-cta:focus-visible{background:#4b4643;border-color:#4b4643;color:#fff}
+  </style>
+</head>
 <body>
   <div class="bball-preloader" role="status" aria-label="Loading ARCENI Basketball"><img class="bball-preloader-logo" src="images/arceni-basketball-landscape.jpg" alt="ARCENI Basketball"></div>
   <main class="bball-page" id="bball-top">
@@ -434,6 +464,11 @@
     if(bballPreloader&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
       window.setTimeout(()=>bballPreloader.remove(),2050);
     }
+  </script>
+  <script>
+    const basketballHomepageNav=document.querySelector('.bball-nav');
+    const basketballNavStyle=document.createElement('style');basketballNavStyle.textContent='.bball-nav-links a.bball-nav-cta{display:inline-flex!important}';document.head.append(basketballNavStyle);
+    if(basketballHomepageNav){basketballHomepageNav.innerHTML='<a class="bball-brand" href="index.html#home" aria-label="ARCENI home">ARCENI<sup>®</sup></a><nav class="bball-nav-links" aria-label="Main navigation"><a class="bball-nav-cta" href="#bball-contact">Partner With Us ↗</a></nav>';}
   </script>
 </body>
 </html>
