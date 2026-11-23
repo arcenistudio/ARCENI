@@ -310,12 +310,36 @@
     .homepage-hero-content{position:relative;width:min(100% - clamp(40px,10vw,144px),var(--max));margin:0 auto;padding:clamp(70px,10vw,132px) 0 clamp(54px,7vw,90px)}
     .homepage-hero .eyebrow{color:#fff}.homepage-hero h1{max-width:14ch;margin:0;font-size:clamp(36px,5.6vw,78px);font-weight:750;line-height:.84;letter-spacing:-.1em}.homepage-hero h1 span{color:#d5cdd0}.homepage-hero-copy{max-width:520px;margin:28px 0 0;color:rgba(255,255,255,.78);font-size:15px;line-height:1.7}.homepage-hero-actions{position:absolute;right:0;bottom:clamp(54px,7vw,90px);display:flex;flex-wrap:wrap;gap:10px}.homepage-hero-actions a{display:inline-flex;align-items:center;justify-content:space-between;gap:24px;min-width:170px;padding:13px 16px;border:1px solid #fff;background:#fff;color:#171615;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;transition:background .2s ease,color .2s ease,transform .2s ease}.homepage-hero-actions a:last-child{background:transparent;color:#fff}.homepage-hero-actions a:hover,.homepage-hero-actions a:focus-visible{background:#b8b0b3;border-color:#b8b0b3;color:#171615;transform:translateY(-2px)}
     .homepage-photo-break{width:100%;margin:0;padding:clamp(30px,5vw,70px) 0 clamp(72px,10vw,140px)}.homepage-photo-break img{display:block;width:100%;height:clamp(300px,48vw,600px);object-fit:cover;object-position:center}.homepage-photo-break figcaption{display:flex;justify-content:space-between;gap:24px;width:min(100% - clamp(40px,10vw,144px),var(--max));margin:0 auto;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:11px;line-height:1.6}.homepage-photo-break figcaption strong{color:var(--ink);font-size:10px;letter-spacing:.12em;text-transform:uppercase}@media(max-width:520px){.homepage-photo-break{padding:20px 0 64px}.homepage-photo-break img{height:clamp(240px,65vw,360px)}.homepage-photo-break figcaption{display:block;width:calc(100% - 40px)}.homepage-photo-break figcaption strong{display:block;margin-bottom:6px}}
-    @media(max-width:800px){.homepage-hero{min-height:calc(100svh - 64px)}.homepage-hero-content{width:calc(100% - 40px);padding-bottom:52px}.homepage-hero h1{max-width:13ch;font-size:clamp(34px,9.1vw,55px)}.homepage-hero-actions{position:static;width:100%;flex-direction:column;margin-top:28px}.homepage-hero-actions a{width:100%;max-width:300px}}
+    @media(max-width:800px){.homepage-hero{min-height:calc(100svh - 64px)}.homepage-hero-content{width:calc(100% - 40px);padding-bottom:52px}.homepage-hero h1{max-width:13ch;font-size:clamp(44px,11.8vw,72px)}.homepage-hero-actions{position:static;width:100%;flex-direction:column;margin-top:28px}.homepage-hero-actions a{width:100%;max-width:300px}}
   </style>
   <style>
     /* Give the two homepage service sections distinct visual anchors. */
     #consulting-services .section-heading h2,
     #programs .section-heading h2 { color: #68615e; }
+    .homepage-cta {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(260px, .75fr);
+      align-items: end;
+      gap: clamp(36px, 8vw, 120px);
+      width: 100%;
+      max-width: none;
+      min-height: clamp(252px, 35vw, 408px);
+      padding-top: clamp(44px, 5vw, 70px);
+      padding-bottom: clamp(44px, 5vw, 70px);
+      padding-right: max(clamp(20px,5vw,72px),calc((100% - var(--max)) / 2));
+      padding-left: max(clamp(20px,5vw,72px),calc((100% - var(--max)) / 2));
+      background: url('images/homepage-contact-bg.jpg') center / cover no-repeat;
+    }
+    .homepage-cta > div:last-child {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+    }
+    .homepage-cta > div:last-child p { margin: 0; }
+    @media (max-width: 700px) {
+      .homepage-cta { grid-template-columns: 1fr; gap: 28px; }
+    }
   </style>
   </head>
 <body>
@@ -371,9 +395,6 @@
        </div>
        <div class="programs-footer">
          <p class="programs-disclaimer">The scope, timelines and deliverables are agreed with each client based on the project needs. Services are tailored to each organization’s context, priorities and available resources.</p>
-         <div class="programs-actions" aria-label="Consulting actions">
-           <a class="button" href="consulting.html#consulting-contact">Book a Consultation</a>
-         </div>
        </div>
      </section>
 
@@ -827,6 +848,17 @@
     document.querySelector('#homepage-testimonials')?.remove();
   </script>
   <script>
+    const programsFooterCta=document.querySelector('#programs .programs-footer');
+    if(programsFooterCta&&!programsFooterCta.querySelector('.programs-actions')){
+      programsFooterCta.insertAdjacentHTML('beforeend','<div class="programs-actions" aria-label="Program actions"><a class="button" href="contact.html">Contact Us <span aria-hidden="true">&rarr;</span></a></div>');
+    }
+  </script>
+  <script>
     document.querySelectorAll('.programs-actions a,.consulting-actions a').forEach(link=>{if(link.textContent.includes('Case Studies'))link.remove();});
+    document.querySelectorAll('a.button').forEach(link=>{
+      if(link.textContent.includes('Book a Consultation'))link.innerHTML='Book a Consultation <span aria-hidden="true">↗</span>';
+    });
+    const joinProgramLink=document.querySelector('#programs .programs-actions a');
+    if(joinProgramLink)joinProgramLink.innerHTML='Book a Consultation <span aria-hidden="true">↗</span>';
   </script>
 </html>
