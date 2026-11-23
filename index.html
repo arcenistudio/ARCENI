@@ -315,7 +315,7 @@
   <style>
     /* Give the two homepage service sections distinct visual anchors. */
     #consulting-services .section-heading h2,
-    #programs .section-heading h2 { color: #68615e; }
+    #programs .section-heading h2 { color: #000; }
     .homepage-cta {
       display: grid;
       grid-template-columns: minmax(0, 1.25fr) minmax(260px, .75fr);
@@ -339,6 +339,42 @@
     .homepage-cta > div:last-child p { margin: 0; }
     @media (max-width: 700px) {
       .homepage-cta { grid-template-columns: 1fr; gap: 28px; }
+    }
+    .homepage-photo-after-programs {
+      width: 100%;
+      margin: 0;
+      padding: clamp(30px, 5vw, 70px) 0 clamp(72px, 10vw, 140px);
+    }
+    .homepage-photo-after-programs img {
+      display: block;
+      width: 100%;
+      height: clamp(260px, 42vw, 560px);
+      object-fit: cover;
+      object-position: center;
+    }
+    .homepage-photo-after-programs figcaption {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      width: min(100% - clamp(40px, 10vw, 144px), var(--max));
+      margin: 0 auto;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.6;
+    }
+    .homepage-photo-after-programs figcaption strong {
+      color: var(--ink);
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    @media (max-width: 520px) {
+      .homepage-photo-after-programs { padding: 20px 0 64px; }
+      .homepage-photo-after-programs img { height: clamp(220px, 62vw, 340px); }
+      .homepage-photo-after-programs figcaption { display: block; width: calc(100% - 40px); }
+      .homepage-photo-after-programs figcaption strong { display: block; margin-bottom: 6px; }
     }
   </style>
   </head>
@@ -381,7 +417,7 @@
       <div class="programs-footer"><p class="programs-disclaimer">For projects, the scope, timelines and deliverables are agreed with each client based on the project needs. Services are tailored to each organization’s context, priorities and available resources.</p><div class="programs-actions"><a class="button" href="contact.html">Book a Consultation</a></div></div>
     </section>
 
-    <figure class="homepage-photo-break" aria-labelledby="homepage-photo-caption"><img src="images/homepage-consulting-photo.jpg" alt="Professional carrying a newspaper and leather briefcase"><figcaption id="homepage-photo-caption"><strong>Perspective into action</strong><span>Bringing clarity, preparation and purposeful progress to the work ahead.</span></figcaption></figure>
+    <figure class="homepage-photo-break" aria-labelledby="homepage-photo-caption"><img src="images/homepage-consulting-photo.jpg" alt="Professional carrying a newspaper and leather briefcase"><figcaption id="homepage-photo-caption"><strong>Perspective into action</strong><span>Bringing clarity, preparation and purposeful impact to the work ahead.</span></figcaption></figure>
 
     <section class="section" id="programs" aria-labelledby="programs-title">
       <div class="section-heading"><h2 id="programs-title">Programs.</h2><p>We provide transformational coaching and leadership programs, designed to help individuals explore purpose, build clarity and become agents of change.</p></div>
@@ -397,6 +433,14 @@
          <p class="programs-disclaimer">The scope, timelines and deliverables are agreed with each client based on the project needs. Services are tailored to each organization’s context, priorities and available resources.</p>
        </div>
      </section>
+
+     <figure class="homepage-photo-after-programs" aria-labelledby="homepage-photo-after-programs-caption">
+       <img src="images/homepage-contact-bg.jpg" alt="Nairobi skyline at golden hour">
+       <figcaption id="homepage-photo-after-programs-caption">
+         <strong>Built for meaningful impact</strong>
+         <span>Ideas, people and partnerships moving forward together.</span>
+       </figcaption>
+     </figure>
 
   </main>
   <footer id="homepage-footer"><span>© 2026 ARCENI</span><span>Nairobi · Kenya · Global</span></footer>
