@@ -316,6 +316,38 @@
     /* Give the two homepage service sections distinct visual anchors. */
     #consulting-services .section-heading h2,
     #programs .section-heading h2 { color: #000; }
+    #programs .program-grid .card { background: var(--soft) !important; }
+    #programs #basketball .card-link,
+    #programs #archer .card-link,
+    #programs #catalyst .card-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-width: 170px;
+      width: fit-content;
+      margin-top: 24px;
+      padding: 13px 16px;
+      border: 1px solid var(--ink);
+      background: transparent;
+      color: var(--ink);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background .2s ease, color .2s ease, transform .2s ease;
+    }
+    #programs #basketball .card-link:hover,
+    #programs #basketball .card-link:focus-visible,
+    #programs #archer .card-link:hover,
+    #programs #archer .card-link:focus-visible,
+    #programs #catalyst .card-link:hover,
+    #programs #catalyst .card-link:focus-visible {
+      background: var(--ink);
+      color: #fff;
+      transform: translateY(-2px);
+    }
     .homepage-cta {
       display: grid;
       grid-template-columns: minmax(0, 1.25fr) minmax(260px, .75fr);
@@ -896,6 +928,9 @@
     if(programsFooterCta&&!programsFooterCta.querySelector('.programs-actions')){
       programsFooterCta.insertAdjacentHTML('beforeend','<div class="programs-actions" aria-label="Program actions"><a class="button" href="contact.html">Contact Us <span aria-hidden="true">&rarr;</span></a></div>');
     }
+  </script>
+  <script>
+    document.querySelectorAll('#basketball .instagram-link, #basketball a[href*="instagram.com"]').forEach(link=>link.remove());
   </script>
   <script>
     document.querySelectorAll('.programs-actions a,.consulting-actions a').forEach(link=>{if(link.textContent.includes('Case Studies'))link.remove();});

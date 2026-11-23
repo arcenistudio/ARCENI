@@ -119,7 +119,42 @@
   <style>
     .bball-instagram{display:grid;grid-template-columns:minmax(0,.8fr) minmax(300px,1.2fr);align-items:start;gap:clamp(34px,7vw,96px);padding:clamp(72px,10vw,140px) max(20px,calc((100% - var(--max)) / 2));border-top:1px solid var(--line);background:#fff}.bball-instagram-heading h2{max-width:10ch;margin:0;font-size:clamp(42px,6vw,76px);font-weight:750;line-height:.84;letter-spacing:-.1em}.bball-instagram-heading h2 span{color:var(--accent)}.bball-instagram-heading p{max-width:38ch;margin:24px 0 0;color:var(--muted);font-size:14px;line-height:1.7}.bball-instagram-link{display:inline-flex;margin-top:24px;padding-bottom:7px;border-bottom:1px solid var(--ink);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.bball-instagram-link:hover{color:var(--muted)}.bball-instagram-frame{width:min(100%,540px);min-height:620px;border:1px solid var(--line);background:var(--soft)}.bball-instagram-frame iframe{display:block;width:100%;min-height:620px;border:0}@media(max-width:700px){.bball-instagram{display:block;padding:64px 20px}.bball-instagram-frame{width:100%;min-height:560px;margin-top:36px}.bball-instagram-frame iframe{min-height:560px}}
   </style>
-</head>
+  <style>
+    .bball-photo-break {
+      width: 100% !important;
+      max-width: none;
+      margin-right: 0;
+      margin-left: 0;
+    }
+  </style>
+  <style>
+    .bball-intro-link {
+      display: inline-flex;
+      min-width: 190px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-top: 14px;
+      padding: 14px 16px;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .bball-intro-link:hover,
+    .bball-intro-link:focus-visible {
+      background: #4b4643;
+      border-color: #4b4643;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+  </style>
+  </head>
 <body>
   <div class="bball-preloader" role="status" aria-label="Loading ARCENI Basketball"><img class="bball-preloader-logo" src="images/arceni-basketball-landscape.jpg" alt="ARCENI Basketball"></div>
   <main class="bball-page" id="bball-top">
@@ -211,7 +246,7 @@
     </figure>
     <section class="bball-contact" id="bball-contact" aria-labelledby="bball-contact-title">
       <div class="bball-contact-intro"><p class="bball-contact-eyebrow">Start your development journey</p><h2 id="bball-contact-title">Let’s grow <span class="title-accent">your</span> game.</h2><p>Tell us about your player-development goals, team needs or basketball program. We’ll help you find a practical next step on and off the court.</p><div class="bball-contact-links"><a href="#bball-contact">Player development <span>↗</span></a><a href="#bball-contact">Team &amp; organization support <span>↗</span></a><a href="#bball-contact">Program inquiry <span>↗</span></a></div></div>
-      <form class="bball-contact-form" action="https://formspree.io/f/xpppdveo" method="POST"><div class="bball-contact-form-head"><span>ARCENI Basketball · Client inquiry</span><h3>How can we help?</h3></div><div class="bball-contact-field wide"><label for="bball-inquiry-type">I’m reaching out as</label><select id="bball-inquiry-type" name="inquiry_type" required><option value="">Choose one</option><option>Player</option><option>Parent or guardian</option><option>Coach</option><option>Team or organization</option><option>General inquiry</option></select></div><div class="bball-contact-field"><label for="bball-inquiry-name">Your name</label><input id="bball-inquiry-name" name="name" type="text" autocomplete="name" placeholder="Your name" required></div><div class="bball-contact-field"><label for="bball-inquiry-email">Email address</label><input id="bball-inquiry-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div><div class="bball-contact-field"><label for="bball-inquiry-phone">Phone number</label><input id="bball-inquiry-phone" name="phone" type="tel" autocomplete="tel" placeholder="Your phone number"></div><div class="bball-contact-field"><label for="bball-inquiry-location">Location</label><input id="bball-inquiry-location" name="location" type="text" autocomplete="address-level2" placeholder="City / country"></div><div class="bball-contact-field wide"><label for="bball-inquiry-message">Tell us about your goals</label><textarea id="bball-inquiry-message" name="message" placeholder="What kind of player development or team support are you looking for?"></textarea></div><button class="bball-contact-submit" type="submit">Send an inquiry <span aria-hidden="true">↗</span></button><p class="bball-contact-note">Your inquiry will be sent securely to ARCENI. We’ll respond as soon as possible.</p></form>
+      <form class="bball-contact-form" action="https://formspree.io/f/xpppdveo" method="POST"><div class="bball-contact-form-head"><span>ARCENI Basketball · Client inquiry</span><h3>Contact Us</h3></div><div class="bball-contact-field wide"><label for="bball-inquiry-type">I’m reaching out as</label><select id="bball-inquiry-type" name="inquiry_type" required><option value="">Choose one</option><option>Player</option><option>Parent or guardian</option><option>Coach</option><option>Team or organization</option><option>General inquiry</option></select></div><div class="bball-contact-field"><label for="bball-inquiry-name">Your name</label><input id="bball-inquiry-name" name="name" type="text" autocomplete="name" placeholder="Your name" required></div><div class="bball-contact-field"><label for="bball-inquiry-email">Email address</label><input id="bball-inquiry-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div><div class="bball-contact-field"><label for="bball-inquiry-phone">Phone number</label><input id="bball-inquiry-phone" name="phone" type="tel" autocomplete="tel" placeholder="Your phone number"></div><div class="bball-contact-field"><label for="bball-inquiry-location">Location</label><input id="bball-inquiry-location" name="location" type="text" autocomplete="address-level2" placeholder="City / country"></div><div class="bball-contact-field wide"><label for="bball-inquiry-message">Tell us about your goals</label><textarea id="bball-inquiry-message" name="message" placeholder="What kind of player development or team support are you looking for?"></textarea></div><button class="bball-contact-submit" type="submit">Send an inquiry <span aria-hidden="true">↗</span></button><p class="bball-contact-note">Your inquiry will be sent securely to ARCENI. We’ll respond as soon as possible.</p></form>
     </section>
     <section class="bball-faq" id="bball-faq" aria-labelledby="bball-faq-title"><div class="bball-faq-heading"><p class="bball-contact-eyebrow">Player development FAQ</p><h2 id="bball-faq-title">Questions?</h2><p>Everything starts with understanding the player, the team and the outcome you want to build.</p></div><div class="bball-faq-list"><details class="bball-faq-item" open><summary><span>Who is ARCENI Basketball for?</span><span class="bball-faq-icon" aria-hidden="true"></span></summary><div class="bball-faq-answer">Players, parents, coaches and teams looking for practical development rooted in fundamentals, character, discipline, teamwork and grit.</div></details><details class="bball-faq-item"><summary><span>What does a session focus on?</span><span class="bball-faq-icon" aria-hidden="true"></span></summary><div class="bball-faq-answer">Sessions are shaped around the player’s goals and may include skill development, decision-making, movement, confidence, game application and competitive habits.</div></details><details class="bball-faq-item"><summary><span>Can teams train with ARCENI?</span><span class="bball-faq-icon" aria-hidden="true"></span></summary><div class="bball-faq-answer">Yes. Team engagements can support shared standards, communication, systems, leadership and a stronger development culture on and off the court.</div></details><details class="bball-faq-item"><summary><span>How do I join a program?</span><span class="bball-faq-icon" aria-hidden="true"></span></summary><div class="bball-faq-answer">Use the contact form to share your goals, experience and location. We will help identify the right next step and available pathway.</div></details></div></section>
   </main>
@@ -313,9 +348,7 @@
       }
       document.querySelector('.bball-instagram-link')?.remove();
       const contactForm=document.querySelector('.bball-contact-form');
-      if(contactForm){
-        contactForm.remove();
-      }
+      document.querySelector('.bball-contact-links')?.remove();
       document.querySelectorAll('.bball-contact-links a').forEach((link,index)=>{
         if(index>1){link.remove();return;}
         link.href='contact.html';
@@ -380,6 +413,11 @@
     const finalContactSection=document.querySelector('#bball-contact');
     const finalSlytherinSection=document.querySelector('.bball-photo-break--approach');
     if(finalContactSection&&finalSlytherinSection)finalContactSection.insertAdjacentElement('afterend',finalSlytherinSection);
+  </script>
+  <script>
+    document.querySelector('.bball-intro-link')?.remove();
+    const getStartedCta=document.querySelector('.bball-nav-cta');
+    if(getStartedCta){getStartedCta.href='#bball-contact';getStartedCta.textContent='Get Started ↗';}
   </script>
   <script>
     const bballPreloader=document.querySelector('.bball-preloader');
