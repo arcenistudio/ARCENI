@@ -91,15 +91,20 @@
      @media(max-width:520px){.homepage-photo-section img{height:clamp(240px,65vw,360px)}.homepage-photo-section figcaption{display:block;width:calc(100% - 40px)}.homepage-photo-section figcaption strong{display:block;margin-bottom:6px}}
   </style>
 <style>
-  .homepage-program-card:nth-child(2) a{padding:12px 16px;border:1px solid var(--ink);background:transparent;color:var(--ink);border-radius:0;transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s ease}
+  .homepage-programs-heading h2{max-width:8ch;margin:0;font-size:62px;line-height:.84;letter-spacing:-.1em}.homepage-program-card:nth-child(2) a{padding:12px 16px;border:1px solid var(--ink);background:transparent;color:var(--ink);border-radius:0;transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s ease}
   .homepage-program-card:nth-child(2) a:hover,.homepage-program-card:nth-child(2) a:focus-visible{background:var(--ink);border-color:var(--ink);color:#fff;transform:translateY(-2px)}
+  html,body{overflow-x:hidden}.homepage-program-card img,.homepage-consulting-card img,.homepage-photo-section img,.homepage-impact-photo img{max-width:100%}
+  @media (min-width:801px) and (max-width:1100px){.site-header{padding-inline:28px}.homepage-hero{padding-inline:28px}.homepage-hero h1{max-width:11ch;font-size:clamp(50px,7.2vw,78px)}.homepage-hero-bottom{grid-template-columns:1fr;gap:28px}.homepage-hero-actions{justify-content:flex-start}.homepage-consulting-heading,.homepage-programs-heading{align-items:start}.homepage-consulting-body{column-gap:32px}.homepage-consulting-trusted-name{padding-inline:14px;font-size:12px}}
+  @media (max-width:800px){.homepage-consulting-heading,.homepage-programs-heading{gap:20px}.homepage-photo-section figcaption,.homepage-impact-photo figcaption{gap:12px}}
+  @media (max-width:800px){.site-header{gap:12px}.site-header .main-nav{display:flex;gap:0;margin-left:auto}.site-header .main-nav .header-cta{padding:11px 12px;font-size:9px;white-space:nowrap}}
+  @media (max-width:800px){.homepage-hero{padding:76px 20px 28px}.homepage-hero-bottom{gap:18px;margin-top:28px}.homepage-hero-copy{line-height:1.55}.homepage-hero-actions{gap:8px}}
+  @media (max-width:520px){.homepage-hero{padding-bottom:24px}.homepage-hero h1{line-height:.84}}
 </style>
 </head>
 <body>
   <div class="site-preloader" role="status" aria-label="Loading ARCENI"><span class="site-preloader-wordmark">ARCENI<sup>®</sup></span></div>
   <header class="site-header">
     <a class="brand" href="#home" aria-label="ARCENI home">ARCENI<sup>®</sup></a>
-    <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-navigation">Menu</button>
     <nav class="main-nav" id="main-navigation" aria-label="Main navigation">
       <a class="header-cta" href="contact.html">Partner With Us ↗</a>
     </nav>
