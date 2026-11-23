@@ -154,6 +154,16 @@
       transform: translateY(-2px);
     }
   </style>
+    <style>
+      .bball-nav{position:static;min-height:76px;border-bottom-color:rgba(23,22,21,.1);background:rgba(255,255,255,.94);backdrop-filter:blur(14px);color:var(--ink)}
+      .bball-brand{color:var(--ink)}
+      .bball-nav-cta{min-width:150px;padding:13px 17px;border:1px solid var(--ink);background:var(--ink);color:#fff}
+      .bball-nav-cta:hover,.bball-nav-cta:focus-visible{border-color:#4b4643;background:#4b4643;color:#fff}
+      .bball-hero{min-height:calc(100svh - 76px)}
+      .bball-title{font-size:clamp(49px,7.79vw,121px) !important}
+      @media(max-width:700px){.bball-title{font-size:clamp(54px,15vw,82px) !important}.bball-nav{min-height:64px}.bball-hero{min-height:calc(100svh - 64px)}}
+      @media(max-width:380px){.bball-title{font-size:50px !important}}
+    </style>
   </head>
 <body>
   <div class="bball-preloader" role="status" aria-label="Loading ARCENI Basketball"><img class="bball-preloader-logo" src="images/arceni-basketball-landscape.jpg" alt="ARCENI Basketball"></div>

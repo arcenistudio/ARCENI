@@ -425,7 +425,16 @@
       .homepage-photo-after-programs figcaption strong { display: block; margin-bottom: 6px; }
     }
   </style>
-  </head>
+  <style>
+    .site-header{position:sticky;top:0;right:auto;left:auto;z-index:20;border-bottom-color:rgba(23,22,21,.1);background:rgba(255,255,255,.94);color:var(--ink);backdrop-filter:blur(14px)}
+    .site-header .nav-link,.site-header .programs-toggle{color:var(--muted)}
+    .site-header .brand,.site-header .menu-button{color:var(--ink)}
+    .site-header .header-cta{min-width:150px!important;padding:13px 17px;border:1px solid var(--ink);background:var(--ink);color:#fff}
+    .site-header .header-cta:hover,.site-header .header-cta:focus-visible{background:#4b4643;color:#fff}
+    .homepage-hero{min-height:clamp(520px,78vh,820px)}
+    @media(max-width:800px){.homepage-hero{min-height:calc(100svh - 64px)}}
+  </style>
+</head>
 <body>
   <div class="site-preloader" role="status" aria-label="Loading ARCENI"><span class="site-preloader-wordmark">ARCENI<sup>®</sup></span></div>
   <header class="site-header">
