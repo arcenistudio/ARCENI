@@ -317,6 +317,22 @@
     #consulting-services .section-heading h2,
     #programs .section-heading h2 { color: #000; }
     #programs .program-grid .card { background: var(--soft) !important; }
+    #programs .program-grid #catalyst { display: none; }
+    @media(min-width:801px){#programs .program-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+    #workshops .workshops-grid{grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr);}
+    #workshops .workshop-card{display:block;}
+    #workshops .workshop-card .card-image{display:none;}
+    #workshops #workshop-catalyst{display:none;}
+    #workshops .workshops-eyebrow{margin:0 0 24px;color:var(--muted);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;}
+    #workshops .section-heading h2 span{color:var(--accent);}
+    #workshops .workshop-upcoming-card{display:flex;flex-direction:column;justify-content:space-between;padding:clamp(24px,3vw,36px);background:var(--soft);color:var(--ink);}
+    #workshops .workshop-upcoming-card .card-label{color:var(--muted);}
+    #workshops .workshop-upcoming-card p:not(.card-label){color:var(--muted);}
+    #workshops .workshop-upcoming-card .card-link{display:none;}
+    #workshops{display:none !important;}
+    #workshops .workshop-date{margin:0 0 22px;color:var(--ink);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;}
+    @media(min-width:801px){#workshops{display:grid;grid-template-columns:minmax(220px,.65fr) minmax(0,1.35fr);column-gap:clamp(32px,7vw,100px);align-items:start;}#workshops .section-heading{display:block;grid-column:1;margin:0;}#workshops .section-heading p{max-width:380px;margin:24px 0 0;}#workshops .workshops-grid{grid-column:2;grid-template-columns:1fr;margin:0;}#workshops .workshop-upcoming-card{min-height:220px;}#workshops .programs-footer{grid-column:1 / -1;}}
+    @media(max-width:800px){#workshops .workshops-grid{grid-template-columns:1fr;}#workshops .workshop-card{display:block;}#workshops .workshop-card .card-image{height:clamp(240px,60vw,380px);min-height:0;}}
     #programs #basketball .card-link,
     #programs #archer .card-link,
     #programs #catalyst .card-link {
@@ -464,6 +480,15 @@
        <div class="programs-footer">
          <p class="programs-disclaimer">The scope, timelines and deliverables are agreed with each client based on the project needs. Services are tailored to each organization’s context, priorities and available resources.</p>
        </div>
+     </section>
+
+     <section class="section" id="workshops" aria-labelledby="workshops-title">
+       <div class="section-heading"><div><p class="workshops-eyebrow">The ARCENI Approach</p><h2 id="workshops-title">Make space for <span>change.</span></h2></div><p>Thoughtful workshops for reflection, shared learning and practical action — helping people build confidence and move forward together.</p></div>
+       <div class="program-grid workshops-grid">
+         <article class="card workshop-card" id="workshop-catalyst"><img class="card-image" src="images/Consulting/consulting-collaboration.jpg" alt="People collaborating around a table during a workshop"><div class="card-body"><p class="card-label">Team learning &amp; development</p><h3>The Catalyst</h3><p>Bespoke workshops for candid conversations on life, purpose and impact, designed around the needs of your team or community.</p><a class="card-link" href="contact.html">Discuss a Workshop â†—</a></div></article>
+         <article class="card workshop-upcoming-card"><div><p class="card-label">Coming soon · Workshop</p><p class="workshop-date">December 2026</p><h3>Identity and belonging.</h3><p>A thoughtful space to explore who we are, where we belong and how identity shapes the way we show up in the world.</p></div><a class="card-link" href="catalyst.html#upcoming-events">Request details â†—</a></article>
+       </div>
+       <div class="programs-footer"><p class="programs-disclaimer">Workshop scope, format and facilitation are shaped with each partner to create a practical, relevant experience.</p><div class="programs-actions"><a class="button" href="contact.html">Plan a Workshop</a></div></div>
      </section>
 
      <figure class="homepage-photo-after-programs" aria-labelledby="homepage-photo-after-programs-caption">
