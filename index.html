@@ -271,13 +271,23 @@
     .mega-menu{display:none!important}.main-nav>.nav-link,.main-nav>.programs{display:block}.main-nav.is-open .mega-menu{display:none!important}.main-nav.is-open .nav-link,.main-nav.is-open .programs-toggle{display:block}
     .hero-portrait{right:6%;bottom:0;width:min(48vw,620px);max-height:88%;object-fit:contain;object-position:center bottom;filter:saturate(.72) contrast(.96);mix-blend-mode:screen;opacity:.72;mask-image:linear-gradient(90deg,transparent 0%,#000 12%,#000 74%,transparent 100%),linear-gradient(180deg,transparent 0%,#000 8%,#000 84%,transparent 100%);mask-composite:intersect}
     .menu-button,.header-cta-mobile{display:none!important}.main-nav{display:flex!important;order:2}.main-nav>.nav-link,.main-nav>.programs{display:none!important}.main-nav .header-cta{display:inline-flex!important}
+    .site-preloader{position:fixed;z-index:9999;inset:0;display:grid;place-items:center;background:#fff;color:var(--ink);animation:preloaderCurtain .8s cubic-bezier(.76,0,.24,1) 1.2s forwards}
+    .site-preloader-logo{display:block;width:min(72vw,720px);max-height:35vh;height:auto;object-fit:contain;opacity:0;transform:translateX(-18px);filter:blur(8px);animation:preloaderLogoIn .8s cubic-bezier(.22,1,.36,1) forwards}
+    .site-preloader-wordmark{font-size:clamp(22px,3vw,34px);font-weight:400;letter-spacing:.28em;opacity:0;transform:translateX(-18px);filter:blur(8px);animation:preloaderWordmark .8s cubic-bezier(.22,1,.36,1) forwards}
+    .site-preloader-wordmark sup{font-size:.42em;letter-spacing:0}
+    .hero h1,#consulting-services-title{opacity:0;transform:translateY(24px);animation:heroHeadlineIn .8s cubic-bezier(.22,1,.36,1) 1.2s forwards}
+    @keyframes preloaderWordmark{from{opacity:0;letter-spacing:.28em;transform:translateX(-18px);filter:blur(8px)}to{opacity:1;letter-spacing:.18em;transform:translateX(0);filter:blur(0)}}
+    @keyframes preloaderLogoIn{from{opacity:0;transform:translateX(-18px);filter:blur(8px)}to{opacity:1;transform:translateX(0);filter:blur(0)}}
+    @keyframes preloaderCurtain{to{clip-path:inset(0 0 100% 0);opacity:0}}
+    @keyframes heroHeadlineIn{to{opacity:1;transform:translateY(0)}}
+    @media(prefers-reduced-motion:reduce){.site-preloader{display:none}.hero h1,#consulting-services-title{opacity:1;transform:none;animation:none}}
   </style>
   <style>
     .consulting-grid{grid-template-columns:1fr}
     .consulting-grid .card{display:grid;grid-template-columns:minmax(280px,.9fr) minmax(0,1.1fr)}
     .consulting-grid .card-image{height:100%;min-height:300px}
     .consulting-grid .card-sectors{max-width:52ch;margin:20px 0 0;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:12px;line-height:1.65}.consulting-grid .card-sectors strong{display:block;margin-bottom:5px;color:var(--ink);font-size:10px;letter-spacing:.12em;text-transform:uppercase}
-    #consulting-services .consulting-grid .card{background:#fff;border-color:#d8d2cf}
+    #consulting-services .consulting-grid .card{background:var(--soft);border-color:#d8d2cf}
     #programs .program-grid .card,#basketball{background:#fff}
     #consulting-services .consulting-grid .card:hover{border-color:var(--accent)}
     .trusted-by{display:grid;grid-template-columns:auto repeat(3,minmax(0,1fr));align-items:center;gap:0;margin-top:clamp(28px,4vw,48px);padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -288,9 +298,28 @@
     @media(max-width:800px){.trusted-by{grid-template-columns:1fr 1fr;gap:18px 0}.trusted-by-label{grid-column:1/-1;padding:0}.trusted-by-name{padding:0 14px}.trusted-by-name:nth-of-type(2){border-left:0;padding-left:0}}
     @media(max-width:480px){.trusted-by{grid-template-columns:1fr}.trusted-by-name,.trusted-by-name:nth-of-type(2){padding:14px 0;border-left:0;border-top:1px solid var(--line)}.trusted-by-name:first-of-type{border-top:0}}
     @media(max-width:800px){.consulting-grid .card{display:block}.consulting-grid .card-image{height:clamp(230px,30vw,390px);min-height:0}}
+    .program-grid,.consulting-grid{perspective:1200px}
+    .section .card{opacity:0;transform:perspective(900px) rotateY(-12deg) translateY(24px);transform-origin:center center;transition:opacity .7s ease,transform .8s cubic-bezier(.22,1,.36,1),box-shadow .3s ease,border-color .3s ease}
+    .section.is-visible .card{opacity:1;transform:none}
+    .section.is-visible .card:nth-child(2){transition-delay:90ms}.section.is-visible .card:nth-child(3){transition-delay:180ms}
+    .section.is-visible .card:hover,.section.is-visible .card:focus-within{transform:translateY(-6px)}
+    @media(prefers-reduced-motion:reduce){.section .card,.section.is-visible .card{opacity:1;transform:none;transition:none}}
+    .homepage-hero{position:relative;isolation:isolate;display:flex;min-height:clamp(520px,78vh,820px);align-items:flex-end;width:100%;overflow:hidden;background:#181716;color:#fff}
+    .homepage-hero-image{position:absolute;z-index:-2;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;filter:saturate(.82)}
+    .homepage-hero:after{position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.62),rgba(0,0,0,.12) 72%),linear-gradient(0deg,rgba(0,0,0,.52),transparent 58%);content:""}
+    .homepage-hero-content{position:relative;width:min(100% - clamp(40px,10vw,144px),var(--max));margin:0 auto;padding:clamp(70px,10vw,132px) 0 clamp(54px,7vw,90px)}
+    .homepage-hero .eyebrow{color:#fff}.homepage-hero h1{max-width:14ch;margin:0;font-size:clamp(36px,5.6vw,78px);font-weight:750;line-height:.84;letter-spacing:-.1em}.homepage-hero h1 span{color:#d5cdd0}.homepage-hero-copy{max-width:520px;margin:28px 0 0;color:rgba(255,255,255,.78);font-size:15px;line-height:1.7}.homepage-hero-actions{position:absolute;right:0;bottom:clamp(54px,7vw,90px);display:flex;flex-wrap:wrap;gap:10px}.homepage-hero-actions a{display:inline-flex;align-items:center;justify-content:space-between;gap:24px;min-width:170px;padding:13px 16px;border:1px solid #fff;background:#fff;color:#171615;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;transition:background .2s ease,color .2s ease,transform .2s ease}.homepage-hero-actions a:last-child{background:transparent;color:#fff}.homepage-hero-actions a:hover,.homepage-hero-actions a:focus-visible{background:#b8b0b3;border-color:#b8b0b3;color:#171615;transform:translateY(-2px)}
+    .homepage-photo-break{width:100%;margin:0;padding:clamp(30px,5vw,70px) 0 clamp(72px,10vw,140px)}.homepage-photo-break img{display:block;width:100%;height:clamp(300px,48vw,600px);object-fit:cover;object-position:center}.homepage-photo-break figcaption{display:flex;justify-content:space-between;gap:24px;width:min(100% - clamp(40px,10vw,144px),var(--max));margin:0 auto;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:11px;line-height:1.6}.homepage-photo-break figcaption strong{color:var(--ink);font-size:10px;letter-spacing:.12em;text-transform:uppercase}@media(max-width:520px){.homepage-photo-break{padding:20px 0 64px}.homepage-photo-break img{height:clamp(240px,65vw,360px)}.homepage-photo-break figcaption{display:block;width:calc(100% - 40px)}.homepage-photo-break figcaption strong{display:block;margin-bottom:6px}}
+    @media(max-width:800px){.homepage-hero{min-height:calc(100svh - 64px)}.homepage-hero-content{width:calc(100% - 40px);padding-bottom:52px}.homepage-hero h1{max-width:13ch;font-size:clamp(34px,9.1vw,55px)}.homepage-hero-actions{position:static;width:100%;flex-direction:column;margin-top:28px}.homepage-hero-actions a{width:100%;max-width:300px}}
   </style>
-</head>
+  <style>
+    /* Give the two homepage service sections distinct visual anchors. */
+    #consulting-services .section-heading h2,
+    #programs .section-heading h2 { color: #68615e; }
+  </style>
+  </head>
 <body>
+  <div class="site-preloader" role="status" aria-label="Loading ARCENI"><span class="site-preloader-wordmark">ARCENI<sup>®</sup></span></div>
   <header class="site-header">
     <a class="brand" href="#home" aria-label="ARCENI home">ARCENI<sup>®</sup></a>
     <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-navigation">Menu</button>
@@ -313,18 +342,25 @@
     <a class="header-cta header-cta-mobile" href="contact.html">Partner With Us ↗</a>
   </header>
 
+  <section class="homepage-hero" id="home" aria-labelledby="homepage-hero-title">
+    <img class="homepage-hero-image" src="images/homepage-hero.jpg" alt="Nairobi skyline above a tree-lined city landscape">
+    <div class="homepage-hero-content"><p class="eyebrow">Consulting, Training &amp; Advisory</p><h1 id="homepage-hero-title">We drive bold ideas, shared value <span>and impact.</span></h1><p class="homepage-hero-copy">ARCENI is an impact consultancy helping mission-driven organizations execute sustainable impact projects.</p><div class="homepage-hero-actions"><a href="#consulting-services">Consulting <span aria-hidden="true">↗</span></a><a href="#programs">Programs <span aria-hidden="true">↗</span></a></div></div>
+  </section>
+
   <main>
     <section class="section" id="consulting-services" aria-labelledby="consulting-services-title">
-      <div class="section-heading"><h2 id="consulting-services-title">Consulting.</h2><p>The Arceni Consulting partners with organizations to move work from concept to delivery. We combine project management with practical capacity building so teams can make progress and sustain it.</p></div>
+      <div class="section-heading"><h2 id="consulting-services-title">Consulting.</h2><p>Our consulting firm partners with organizations to move work from concept to delivery. We combine project management with practical capacity building so teams can make progress and sustain it.</p></div>
       <div class="program-grid consulting-grid">
-        <article class="card"><img class="card-image" src="images/Consulting/project-management.jpg" alt="Person mapping project ideas on a glass board with colorful markers"><div class="card-body"><p class="card-label">Strategy &amp; delivery</p><h3>Project Management</h3><p>Align your scope, people, timelines and resources. Keep delivery coordinated, surface decisions early and move projects from concept to completion.</p><p class="card-sectors"><strong>Key sectors</strong>Education · Sports · Leadership · Development</p></div></article>
+        <article class="card"><img class="card-image" src="images/Consulting/project-management.jpg" alt="Person mapping project ideas on a glass board with colorful markers"><div class="card-body"><p class="card-label">Strategy &amp; delivery</p><h3>Project Management</h3><p>Align your scope, people, timelines and resources. Keep delivery coordinated, surface decisions early and move projects from concept to completion.</p><p class="card-sectors"><strong>Key sectors</strong>Development · Education · Sports · Leadership</p></div></article>
       </div>
       <div class="trusted-by" aria-label="Organizations ARCENI has worked with"><p class="trusted-by-label">Worked With</p><div class="trusted-by-name">Transformación Ballet<span>Organization partner</span></div><div class="trusted-by-name">NGO Committee on Migration<span>Organization partner</span></div><div class="trusted-by-name">Autizan<span>Organization partner</span></div></div>
-      <div class="programs-footer"><p class="programs-disclaimer">For projects, the scope, timelines and deliverables are agreed with each client based on the project needs. Services are tailored to each organization’s context, priorities and available resources.</p><div class="programs-actions"><a class="button" href="contact.html">Book a Consultation</a><a class="button secondary" href="contact.html">Case Studies</a></div></div>
+      <div class="programs-footer"><p class="programs-disclaimer">For projects, the scope, timelines and deliverables are agreed with each client based on the project needs. Services are tailored to each organization’s context, priorities and available resources.</p><div class="programs-actions"><a class="button" href="contact.html">Book a Consultation</a></div></div>
     </section>
 
+    <figure class="homepage-photo-break" aria-labelledby="homepage-photo-caption"><img src="images/homepage-consulting-photo.jpg" alt="Professional carrying a newspaper and leather briefcase"><figcaption id="homepage-photo-caption"><strong>Perspective into action</strong><span>Bringing clarity, preparation and purposeful progress to the work ahead.</span></figcaption></figure>
+
     <section class="section" id="programs" aria-labelledby="programs-title">
-      <div class="section-heading"><h2 id="programs-title">Programs.</h2><p>The Arceni Coaching provides transformational and leadership programs, designed to help individuals explore purpose, build clarity and become agents of change.</p></div>
+      <div class="section-heading"><h2 id="programs-title">Programs.</h2><p>We provide transformational coaching and leadership programs, designed to help individuals explore purpose, build clarity and become agents of change.</p></div>
       <div class="program-grid">
         <article class="card" id="basketball"><img class="card-image" src="images/Basketball/Slytherin.jpg" alt="Basketball players gathered together in a team huddle"><div class="card-body"><p class="card-label">development</p><h3>The Basketball</h3><p>The Arceni Basketball provides personalized training, holistic development and leadership to gain a competitive edge on and off the court.</p><a class="card-link" href="basketball.html">Explore Basketball ↗</a></div></article>
 
@@ -337,13 +373,12 @@
          <p class="programs-disclaimer">The scope, timelines and deliverables are agreed with each client based on the project needs. Services are tailored to each organization’s context, priorities and available resources.</p>
          <div class="programs-actions" aria-label="Consulting actions">
            <a class="button" href="consulting.html#consulting-contact">Book a Consultation</a>
-           <a class="button secondary" href="consulting.html#coaching-case-study">Case Studies</a>
          </div>
        </div>
      </section>
 
   </main>
-  <footer><span>© 2026 ARCENI</span><span>Nairobi · Kenya · Global</span></footer>
+  <footer id="homepage-footer"><span>© 2026 ARCENI</span><span>Nairobi · Kenya · Global</span></footer>
   <script>
     const menuButton=document.querySelector('.menu-button');
     const nav=document.querySelector('.main-nav');
@@ -403,7 +438,7 @@
       const links=programsFooter.querySelectorAll('.button');
       if(disclaimer)disclaimer.textContent='Our programs are shaped around each person’s goals, experience and stage of growth, with practical support for development, confidence and purposeful progress.';
       if(actions)actions.setAttribute('aria-label','Program actions');
-      if(links[0]){links[0].href='#impact-stories';links[0].textContent='Impact Stories';}
+      if(links[0]){links[0].href='contact.html';links[0].textContent='Book a Consultation';}
       if(links[1]){links[1].href='contact.html';links[1].textContent='Start a Conversation';}
     }
   </script>
@@ -543,12 +578,12 @@
   </script>
   <script>
     const impactStoriesLink=document.querySelector('#programs .programs-actions a:first-child');
-    if(impactStoriesLink){impactStoriesLink.href='#impact-stories';impactStoriesLink.textContent='Impact Stories';}
+    if(impactStoriesLink){impactStoriesLink.href='contact.html';impactStoriesLink.textContent='Book a Consultation';}
   </script>
   <script>
     const consultingActions=document.querySelectorAll('#consulting-services .programs-actions .button');
-    if(consultingActions[0]){consultingActions[0].outerHTML='<span class="button">Case Studies</span>';}
-    if(consultingActions[1]){consultingActions[1].textContent='Book a Consultation';consultingActions[1].href='contact.html';}
+    if(consultingActions[0]){consultingActions[0].textContent='Book a Consultation';consultingActions[0].href='contact.html';}
+    if(consultingActions[1]){consultingActions[1].remove();}
     document.querySelector('.header-cta-mobile')?.replaceChildren(document.createTextNode('Partner With Us ↗'));
   </script>
   <style>
@@ -643,7 +678,7 @@
     @media(min-width:801px){#consulting-services{display:grid;grid-template-columns:minmax(220px,.65fr) minmax(0,1.35fr);column-gap:clamp(32px,7vw,100px);align-items:start}#consulting-services .section-heading{grid-column:1;display:block;margin:0;padding:0}#consulting-services .section-heading p{margin-top:24px}#consulting-services .consulting-grid{grid-column:2;margin:0}#consulting-services .trusted-by,#consulting-services .programs-footer{grid-column:1 / -1}}
     @media(min-width:801px){#consulting-services .trusted-by-name{font-size:clamp(12px,1.55vw,17px)}}
     @media(max-width:800px){#consulting-services .section-heading{display:block}}
-    #consulting-services .consulting-grid .card{display:block;background:#fff}
+    #consulting-services .consulting-grid .card{display:block;background:var(--soft)}
     #consulting-services .consulting-grid .card-image{height:clamp(250px,28vw,360px);min-height:0}
     @media(min-width:801px){#consulting-services{display:block}#consulting-services .section-heading{display:flex;margin-bottom:clamp(30px,5vw,58px);padding:0}#consulting-services .section-heading p{margin-top:0}#consulting-services .consulting-grid{max-width:var(--max);margin-right:auto;margin-left:auto}}
     @media(max-width:800px){#consulting-services .consulting-grid .card-image{height:clamp(230px,58vw,360px)}}
@@ -691,6 +726,107 @@
       consultingSection.append(cue);
     }
   </script>
+  <style>
+    .homepage-testimonials{padding:clamp(56px,8vw,104px) 0;border-top:1px solid var(--line)}
+    .homepage-testimonials-heading{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:clamp(28px,5vw,52px)}
+    .homepage-testimonials-heading h2{max-width:9ch;margin:0;font-size:clamp(42px,6vw,76px);line-height:.86;letter-spacing:-.1em}
+    .homepage-testimonials-heading p{max-width:38ch;margin:0;color:var(--muted);font-size:14px;line-height:1.7}
+    .homepage-testimonials-viewport{overflow:hidden}
+    .homepage-testimonials-track{display:flex;gap:14px;transition:transform .55s cubic-bezier(.2,.7,.2,1);will-change:transform}
+    .homepage-testimonial-card{display:flex;flex:0 0 calc((100% - 28px)/3);min-height:300px;flex-direction:column;justify-content:space-between;padding:clamp(24px,3vw,38px);border:1px solid var(--line);background:var(--soft)}
+    .homepage-testimonial-card:nth-child(2){background:#181716;color:#fff;border-color:#181716}.homepage-testimonial-card:nth-child(2) .homepage-testimonial-meta{color:rgba(255,255,255,.62)}
+    .homepage-testimonial-card:before{content:'Testimonial';color:var(--muted);font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}.homepage-testimonial-card:nth-child(2):before{color:#b8b0b3}
+    .homepage-testimonial-card blockquote{max-width:28ch;margin:28px 0 34px;font-size:clamp(20px,2.4vw,31px);font-weight:600;line-height:1.02;letter-spacing:-.055em}.homepage-testimonial-card:nth-child(2) blockquote{color:#fff}
+    .homepage-testimonial-meta{margin:0;color:var(--muted);font-size:9px;font-weight:700;letter-spacing:.12em;line-height:1.5;text-transform:uppercase}
+    .homepage-testimonial-controls{display:flex;align-items:center;justify-content:flex-end;gap:12px;margin-top:18px}.homepage-testimonial-controls button{display:grid;width:40px;height:40px;place-items:center;border:1px solid var(--ink);background:#fff;color:var(--ink);font:18px Inter,Arial,sans-serif;cursor:pointer}.homepage-testimonial-controls button:hover,.homepage-testimonial-controls button:focus-visible{background:var(--ink);color:#fff}.homepage-testimonial-count{min-width:54px;color:var(--muted);font-size:10px;font-variant-numeric:tabular-nums;letter-spacing:.12em;text-align:center}
+    @media(max-width:800px){.homepage-testimonials{padding:64px 0}.homepage-testimonials-heading{display:block}.homepage-testimonials-heading p{margin-top:18px}.homepage-testimonial-card{flex-basis:100%;min-height:280px}}
+  </style>
+  <script>
+    const homepageConsulting=document.querySelector('#consulting');
+    if(homepageConsulting&&!document.querySelector('#homepage-testimonials')){
+      homepageConsulting.insertAdjacentHTML('afterend','<section class="homepage-testimonials" id="homepage-testimonials" aria-labelledby="homepage-testimonials-title"><div class="homepage-testimonials-heading"><div><p class="eyebrow">Client reflections</p><h2 id="homepage-testimonials-title">What people say.</h2></div><p>Reflections from people and organizations who have worked with ARCENI to build clarity, confidence and purposeful progress.</p></div><div class="homepage-testimonials-viewport"><div class="homepage-testimonials-track"><article class="homepage-testimonial-card"><blockquote>ARCENI helped us turn a big idea into clear next steps and gave our team the confidence to keep moving.</blockquote><p class="homepage-testimonial-meta">ARCENI partner · Organization development</p></article><article class="homepage-testimonial-card"><blockquote>The work gave me a clearer sense of direction, a stronger voice and a practical way to move forward.</blockquote><p class="homepage-testimonial-meta">ARCENI participant · Personal development</p></article><article class="homepage-testimonial-card"><blockquote>We found a practical approach that connected our people, priorities and progress.</blockquote><p class="homepage-testimonial-meta">ARCENI partner · Team development</p></article></div></div><div class="homepage-testimonial-controls"><button type="button" data-homepage-testimonial-prev aria-label="Previous testimonial">←</button><span class="homepage-testimonial-count" aria-live="polite">01 / 03</span><button type="button" data-homepage-testimonial-next aria-label="Next testimonial">→</button></div></section>');
+    }
+    const homepageTestimonials=document.querySelector('#homepage-testimonials');
+    if(homepageTestimonials){
+      const track=homepageTestimonials.querySelector('.homepage-testimonials-track');
+      const cards=[...homepageTestimonials.querySelectorAll('.homepage-testimonial-card')];
+      const count=homepageTestimonials.querySelector('.homepage-testimonial-count');
+      const previous=homepageTestimonials.querySelector('[data-homepage-testimonial-prev]');
+      const next=homepageTestimonials.querySelector('[data-homepage-testimonial-next]');
+      let current=0;let timer;
+      const render=()=>{const width=cards[0].getBoundingClientRect().width;const gap=14;const visible=window.matchMedia('(max-width:800px)').matches?1:3;const step=visible===1?width+gap:(width+gap);track.style.transform=`translateX(-${current*step}px)`;count.textContent=`${String(current+1).padStart(2,'0')} / ${String(cards.length).padStart(2,'0')}`};
+      const move=direction=>{current=(current+direction+cards.length)%cards.length;render()};
+      const start=()=>{clearInterval(timer);timer=setInterval(()=>move(1),6000)};
+      previous.addEventListener('click',()=>{move(-1);start()});next.addEventListener('click',()=>{move(1);start()});window.addEventListener('resize',render);homepageTestimonials.addEventListener('mouseenter',()=>clearInterval(timer));homepageTestimonials.addEventListener('mouseleave',start);render();start();
+    }
+  </script>
+  <script>
+    const sitePreloader=document.querySelector('.site-preloader');
+    if(sitePreloader&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      window.setTimeout(()=>sitePreloader.remove(),2050);
+    }
+  </script>
 </body>
   <script>document.querySelector('.homepage-scroll-cue')?.remove();</script>
+  <script>
+    const finalHomepageConsulting=document.querySelector('#consulting, #consulting-services');
+    if(finalHomepageConsulting&&!document.querySelector('#homepage-testimonials')){
+      finalHomepageConsulting.insertAdjacentHTML('afterend','<section class="homepage-testimonials" id="homepage-testimonials" aria-labelledby="homepage-testimonials-title"><div class="homepage-testimonials-heading"><div><p class="eyebrow">Client reflections</p><h2 id="homepage-testimonials-title">What people say.</h2></div><p>Reflections from people and organizations who have worked with ARCENI to build clarity, confidence and purposeful progress.</p></div><div class="homepage-testimonials-viewport"><div class="homepage-testimonials-track"><article class="homepage-testimonial-card"><blockquote>ARCENI helped us turn a big idea into clear next steps and gave our team the confidence to keep moving.</blockquote><p class="homepage-testimonial-meta">ARCENI partner · Organization development</p></article><article class="homepage-testimonial-card"><blockquote>The work gave me a clearer sense of direction, a stronger voice and a practical way to move forward.</blockquote><p class="homepage-testimonial-meta">ARCENI participant · Personal development</p></article><article class="homepage-testimonial-card"><blockquote>We found a practical approach that connected our people, priorities and progress.</blockquote><p class="homepage-testimonial-meta">ARCENI partner · Team development</p></article></div></div><div class="homepage-testimonial-controls"><button type="button" data-homepage-testimonial-prev aria-label="Previous testimonial">←</button><span class="homepage-testimonial-count" aria-live="polite">01 / 03</span><button type="button" data-homepage-testimonial-next aria-label="Next testimonial">→</button></div></section>');
+    }
+    const finalHomepageTestimonials=document.querySelector('#homepage-testimonials');
+    if(finalHomepageTestimonials&&!finalHomepageTestimonials.dataset.ready){
+      finalHomepageTestimonials.dataset.ready='true';
+      const track=finalHomepageTestimonials.querySelector('.homepage-testimonials-track');
+      const cards=[...finalHomepageTestimonials.querySelectorAll('.homepage-testimonial-card')];
+      const count=finalHomepageTestimonials.querySelector('.homepage-testimonial-count');
+      const previous=finalHomepageTestimonials.querySelector('[data-homepage-testimonial-prev]');
+      const next=finalHomepageTestimonials.querySelector('[data-homepage-testimonial-next]');
+      let current=0;let timer;
+      const render=()=>{const width=cards[0].getBoundingClientRect().width;const step=width+14;track.style.transform=`translateX(-${current*step}px)`;count.textContent=`${String(current+1).padStart(2,'0')} / ${String(cards.length).padStart(2,'0')}`};
+      const move=direction=>{current=(current+direction+cards.length)%cards.length;render()};
+      const start=()=>{clearInterval(timer);timer=setInterval(()=>move(1),6000)};
+      previous.addEventListener('click',()=>{move(-1);start()});next.addEventListener('click',()=>{move(1);start()});window.addEventListener('resize',render);finalHomepageTestimonials.addEventListener('mouseenter',()=>clearInterval(timer));finalHomepageTestimonials.addEventListener('mouseleave',start);render();start();
+    }
+  </script>
+  <style>
+    .homepage-testimonials{width:100%;padding:clamp(34px,5vw,72px) 0 0;border-top:0;overflow:hidden}
+    .homepage-testimonials-heading{display:none}
+    .homepage-testimonials-viewport{width:100vw;margin-left:calc(50% - 50vw);overflow:hidden}
+    .homepage-testimonials-track{gap:0}
+    .homepage-testimonial-card{position:relative;display:flex;flex:0 0 100%;min-height:clamp(420px,52vw,620px);justify-content:flex-end;padding:clamp(28px,8vw,110px) max(20px,calc((100% - var(--max)) / 2));overflow:hidden;border:0;border-radius:0;background:#181716!important;color:#fff!important}
+    .homepage-testimonial-card:after{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.66) 0%,rgba(0,0,0,.38) 48%,rgba(0,0,0,.22) 100%),linear-gradient(0deg,rgba(0,0,0,.7),transparent 62%);content:""}
+    .homepage-testimonial-card:nth-child(1){background:url('images/Consulting/project-management.jpg') center/cover!important}.homepage-testimonial-card:nth-child(2){background:url('images/Consulting/consulting-collaboration.jpg') center/cover!important}.homepage-testimonial-card:nth-child(3){background:url('images/Consulting/Transformacion.png') center/cover!important}
+    .homepage-testimonial-card:before{position:absolute;z-index:1;top:clamp(28px,5vw,70px);left:max(20px,calc((100% - var(--max)) / 2));margin:0;color:#fff!important;content:'Consulting';font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+    .homepage-testimonial-card .case-study-slide-top{position:absolute;z-index:1;top:clamp(28px,5vw,70px);right:max(20px,calc((100% - var(--max)) / 2));color:#fff;font-size:10px;font-weight:700;letter-spacing:.12em;text-align:right;text-transform:uppercase}
+    .homepage-testimonial-card .case-study-slide-content{position:relative;z-index:1;display:flex;width:min(100%,620px);flex-direction:column;align-items:flex-start;margin-right:auto;color:#fff}
+    .homepage-testimonial-card blockquote{max-width:10ch;margin:0 0 22px;color:#fff!important;font-size:clamp(48px,7vw,94px);font-weight:700;line-height:.82;letter-spacing:-.09em}
+    .homepage-testimonial-card .case-study-slide-copy{max-width:38ch;margin:0 0 34px;color:rgba(255,255,255,.78);font-size:13px;line-height:1.6}
+    .homepage-testimonial-card .case-study-slide-link{color:#d98252;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:underline;text-underline-offset:5px}
+    .homepage-testimonial-card .homepage-testimonial-meta{display:none}
+    .homepage-testimonial-controls{position:relative;z-index:2;width:min(100% - clamp(40px,10vw,144px),var(--max));margin:-58px auto 0;color:#fff}
+    .homepage-testimonial-controls button{border-color:#fff;background:transparent;color:#fff}.homepage-testimonial-controls button:hover,.homepage-testimonial-controls button:focus-visible{background:#fff;color:var(--ink)}.homepage-testimonial-count{color:#fff}
+    @media(max-width:800px){.homepage-testimonial-card{min-height:520px;padding:100px 20px 90px}.homepage-testimonial-card:before{left:20px;top:28px}.homepage-testimonial-card .case-study-slide-top{top:28px;right:20px}.homepage-testimonial-controls{width:calc(100% - 40px);margin:-70px auto 0}}
+  </style>
+  <script>
+    const caseStudySlides=[
+      {title:'Project Management',copy:'For each project we establish relationships with partners while making the scope, priorities and next steps clear.',year:'2024',href:'consulting.html#consulting-contact'},
+      {title:'Capacity Building',copy:'Practical tools, stronger systems and shared ways of working help teams move from intention to delivery.',year:'2025',href:'consulting.html#capacity-building'},
+      {title:'The Basketball',copy:'Player development through purposeful coaching, character, discipline, teamwork and grit on and off the court.',year:'2025',href:'basketball.html'}
+    ];
+    document.querySelectorAll('.homepage-testimonial-card').forEach((card,index)=>{
+      const slide=caseStudySlides[index];
+      if(slide)card.innerHTML='<div class="case-study-slide-top">Completed<br>'+slide.year+'</div><div class="case-study-slide-content"><blockquote>'+slide.title+'</blockquote><p class="case-study-slide-copy">'+slide.copy+'</p><a class="case-study-slide-link" href="'+slide.href+'">See project ↗</a></div>';
+    });
+  </script>
+  <script>
+    const testimonialCarousel=document.querySelector('#homepage-testimonials');
+    const consultingCardContainer=document.querySelector('#consulting-services .consulting-grid, #consulting-services .consulting-feature-card, #consulting .consulting-grid, #consulting .consulting-feature-card');
+    if(testimonialCarousel&&consultingCardContainer)consultingCardContainer.insertAdjacentElement('afterend',testimonialCarousel);
+  </script>
+  <script>
+    document.querySelector('#homepage-testimonials')?.remove();
+  </script>
+  <script>
+    document.querySelectorAll('.programs-actions a,.consulting-actions a').forEach(link=>{if(link.textContent.includes('Case Studies'))link.remove();});
+  </script>
 </html>

@@ -64,6 +64,16 @@
   </style>
   <style>
     @media(max-width:700px){.bball-hero{isolation:isolate}.bball-portrait{inset:0;width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;object-position:center center;opacity:.34;mask-image:none;mix-blend-mode:normal}}
+    .bball-preloader{position:fixed;z-index:9999;inset:0;display:grid;place-items:center;background:#fff;color:#171615;animation:bballPreloaderCurtain .8s cubic-bezier(.76,0,.24,1) 1.2s forwards}
+    .bball-preloader-logo{display:block;width:min(50.4vw,504px);max-height:35vh;height:auto;object-fit:contain;opacity:0;transform:translateX(-18px);filter:blur(8px);animation:bballPreloaderLogoIn .8s cubic-bezier(.22,1,.36,1) forwards}
+    .bball-preloader-wordmark{font-size:clamp(22px,3vw,34px);font-weight:400;letter-spacing:.28em;opacity:0;transform:translateX(-18px);filter:blur(8px);animation:bballPreloaderWordmark .8s cubic-bezier(.22,1,.36,1) forwards}
+    .bball-preloader-wordmark sup{font-size:.42em;letter-spacing:0}
+    .bball-title{opacity:0;transform:translateY(24px);animation:bballHeroIn .8s cubic-bezier(.22,1,.36,1) 1.2s forwards}
+    @keyframes bballPreloaderWordmark{from{opacity:0;letter-spacing:.28em;transform:translateX(-18px);filter:blur(8px)}to{opacity:1;letter-spacing:.18em;transform:translateX(0);filter:blur(0)}}
+    @keyframes bballPreloaderLogoIn{from{opacity:0;transform:translateX(-18px);filter:blur(8px)}to{opacity:1;transform:translateX(0);filter:blur(0)}}
+    @keyframes bballPreloaderCurtain{to{clip-path:inset(0 0 100% 0);opacity:0}}
+    @keyframes bballHeroIn{to{opacity:1;transform:translateY(0)}}
+    @media(prefers-reduced-motion:reduce){.bball-preloader{display:none}.bball-title{opacity:1;transform:none;animation:none}}
   </style>
   <style>
     .bball-impact-section{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:center;column-gap:clamp(32px,7vw,92px);row-gap:18px;padding:clamp(54px,8vw,104px) max(20px,calc((100% - var(--max)) / 2));border-top:1px solid var(--line);background:#181716;color:#f4f1ee}
@@ -111,6 +121,7 @@
   </style>
 </head>
 <body>
+  <div class="bball-preloader" role="status" aria-label="Loading ARCENI Basketball"><img class="bball-preloader-logo" src="images/arceni-basketball-landscape.jpg" alt="ARCENI Basketball"></div>
   <main class="bball-page" id="bball-top">
     <header class="bball-nav"><a class="bball-brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a></header>
     <section class="bball-hero" aria-labelledby="bball-title">
@@ -184,9 +195,7 @@
         <p>Follow the work as players build sharper skills, stronger habits and confidence through every session.</p>
         <a class="bball-instagram-link" href="https://www.instagram.com/arcenibasketball/" target="_blank" rel="noopener">Visit our Instagram ↗</a>
       </div>
-      <div class="bball-instagram-frame">
-        <iframe src="https://www.instagram.com/arcenibasketball/embed" title="Latest Instagram content from ARCENI Basketball" loading="lazy" allowfullscreen></iframe>
-      </div>
+      <img class="bball-instagram-photo" src="images/Basketball/IMG_8206.JPG" alt="ARCENI Basketball coach walking across the court with a basketball" loading="lazy">
     </section>
     <figure class="bball-photo-break bball-photo-break--approach" aria-label="ARCENI Basketball players training together">
       <img src="images/Basketball/Slytherin.jpg" alt="ARCENI Basketball team huddle" loading="lazy">
@@ -282,6 +291,101 @@
   <script>
     const basketballContactHeading=document.querySelector('#bball-contact-title');
     if(basketballContactHeading)basketballContactHeading.innerHTML='Let’s grow <span class="title-accent">your</span> game.';
+  </script>
+  <style>
+    .bball-instagram-photo{display:block;width:100%;max-height:620px;aspect-ratio:4/3;object-fit:cover;object-position:center;border:1px solid var(--line)}
+    .bball-contact-cta-panel{display:flex;flex-direction:column;justify-content:center;gap:14px;padding:clamp(28px,4vw,48px);border:1px solid var(--line);background:var(--soft)}
+    .bball-contact-cta-panel h3{margin:0;font-size:clamp(28px,4vw,48px);line-height:.95;letter-spacing:-.07em}
+    .bball-contact-cta-panel p:not(.bball-contact-eyebrow){max-width:40ch;margin:0;color:var(--muted);font-size:14px;line-height:1.7}
+    .bball-contact-cta-panel .bball-cta{align-self:flex-start;margin-top:10px}
+    .bball-contact-links{display:grid!important}
+    .bball-title{font-size:clamp(70px,11.13vw,173px)}
+    @media(max-width:700px){.bball-title{font-size:clamp(56px,15.6vw,86px)}}
+    @media(max-width:380px){.bball-title{font-size:52px}}
+    @media(min-width:701px){.bball-contact-links{width:min(100%,420px);margin-left:auto}}
+    @media(max-width:700px){.bball-instagram-photo{margin-top:36px}.bball-contact-cta-panel{min-height:280px}}
+  </style>
+  <script>
+    (()=>{
+      const instagramFrame=document.querySelector('.bball-instagram-frame');
+      if(instagramFrame){
+        instagramFrame.outerHTML='<img class="bball-instagram-photo" src="images/Basketball/IMG_8206.JPG" alt="ARCENI Basketball coach walking across the court with a basketball" loading="lazy">';
+      }
+      document.querySelector('.bball-instagram-link')?.remove();
+      const contactForm=document.querySelector('.bball-contact-form');
+      if(contactForm){
+        contactForm.remove();
+      }
+      document.querySelectorAll('.bball-contact-links a').forEach((link,index)=>{
+        if(index>1){link.remove();return;}
+        link.href='contact.html';
+        link.innerHTML=(index===0?'For Players':'For Organisations')+' <span>↗</span>';
+      });
+    })();
+  </script>
+  <style>
+    @media(min-width:701px){.bball-contact{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}.bball-contact-links{grid-column:2;grid-row:1;width:100%;margin:0!important;align-self:center}}
+    @media(max-width:700px){.bball-contact-links{grid-column:1;grid-row:auto}}
+  </style>
+  <script>
+    const basketballContactLinks=document.querySelector('.bball-contact-links');
+    const contactSectionForLinks=document.querySelector('#bball-contact');
+    if(basketballContactLinks&&contactSectionForLinks)contactSectionForLinks.append(basketballContactLinks);
+  </script>
+  <script>
+    const slytherinPhotoSection=document.querySelector('.bball-photo-break--approach');
+    const lowerPhotoSection=document.querySelector('.bball-photo-break--conversation');
+    if(slytherinPhotoSection&&lowerPhotoSection){
+      const swapMarker=document.createComment('photo-section-swap');
+      slytherinPhotoSection.replaceWith(swapMarker);
+      lowerPhotoSection.replaceWith(slytherinPhotoSection);
+      swapMarker.replaceWith(lowerPhotoSection);
+    }
+  </script>
+  <style>
+    .bball-contact-links a{align-items:flex-start;gap:22px}
+    .bball-contact-link-copy{display:grid;gap:7px}
+    .bball-contact-link-copy strong{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .bball-contact-link-copy small{max-width:34ch;color:var(--muted);font-size:12px;font-weight:400;letter-spacing:0;line-height:1.5;text-transform:none}
+    .bball-contact-link-number{color:var(--muted);font-size:10px;font-variant-numeric:tabular-nums;letter-spacing:.12em}
+  </style>
+  <script>
+    document.querySelectorAll('.bball-contact-links a').forEach((link,index)=>{
+      const copy=link.querySelector('.bball-contact-link-copy');
+      if(copy&&!link.querySelector('.bball-contact-link-number'))copy.insertAdjacentHTML('afterbegin','<span class="bball-contact-link-number">'+String(index+1).padStart(2,'0')+'</span>');
+    });
+  </script>
+  <script>
+    document.querySelectorAll('.bball-contact-links a').forEach((link,index)=>{
+      const isPlayer=index===0;
+      link.innerHTML='<span class="bball-contact-link-copy"><strong>'+(isPlayer?'For Players':'For Organisations')+'</strong><small>'+(isPlayer?'Personalised player development, coaching and a clear path to your next level.':'Team, programme and organisation support built around your goals and people.')+'</small></span><span aria-hidden="true">↗</span>';
+    });
+  </script>
+  <script>
+    document.querySelectorAll('.bball-contact-links a').forEach((link,index)=>{
+      const copy=link.querySelector('.bball-contact-link-copy');
+      if(copy&&!link.querySelector('.bball-contact-link-number'))copy.insertAdjacentHTML('afterbegin','<span class="bball-contact-link-number">'+String(index+1).padStart(2,'0')+'</span>');
+    });
+  </script>
+  <style>
+    @media(min-width:701px){
+      .bball-contact-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;border-top:0}
+      .bball-contact-links a{min-height:210px;align-items:flex-start;flex-direction:column;justify-content:space-between;gap:18px;padding:18px;border:1px solid var(--line);background:var(--soft)}
+      .bball-contact-link-copy{gap:12px}
+    }
+    @media(max-width:700px){.bball-contact-links{grid-template-columns:1fr}}
+  </style>
+  <script>
+    document.querySelector('#bball-instagram')?.remove();
+    const finalContactSection=document.querySelector('#bball-contact');
+    const finalSlytherinSection=document.querySelector('.bball-photo-break--approach');
+    if(finalContactSection&&finalSlytherinSection)finalContactSection.insertAdjacentElement('afterend',finalSlytherinSection);
+  </script>
+  <script>
+    const bballPreloader=document.querySelector('.bball-preloader');
+    if(bballPreloader&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      window.setTimeout(()=>bballPreloader.remove(),2050);
+    }
   </script>
 </body>
 </html>
