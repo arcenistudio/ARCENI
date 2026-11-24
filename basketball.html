@@ -470,5 +470,9 @@
     const basketballNavStyle=document.createElement('style');basketballNavStyle.textContent='.bball-nav-links a.bball-nav-cta{display:inline-flex!important}';document.head.append(basketballNavStyle);
     if(basketballHomepageNav){basketballHomepageNav.innerHTML='<a class="bball-brand" href="index.html#home" aria-label="ARCENI home">ARCENI<sup>®</sup></a><nav class="bball-nav-links" aria-label="Main navigation"><a class="bball-nav-cta" href="#bball-contact">Partner With Us ↗</a></nav>';}
   </script>
+  <style>
+    .bball-page{position:relative}.bball-nav{position:absolute;top:0;right:0;left:0;z-index:5;border-bottom-color:rgba(244,241,238,.2);background:rgba(24,23,22,.18);color:#f4f1ee}.bball-brand{color:#f4f1ee}.bball-nav-links{color:rgba(244,241,238,.78)}.bball-nav-links a:hover,.bball-nav-links a:focus-visible{color:#fff}.bball-nav-cta{background:#f4f1ee!important;border-color:#f4f1ee!important;color:var(--ink)!important}.bball-nav-cta:hover,.bball-nav-cta:focus-visible{background:var(--accent)!important;border-color:var(--accent)!important;color:var(--ink)!important}.bball-hero{min-height:100svh;padding-top:clamp(110px,13vw,180px)}
+    @media(max-width:700px){.bball-nav{min-height:64px;background:rgba(24,23,22,.18)}.bball-hero{min-height:100svh;padding-top:96px}}
+  </style>
 </body>
 </html>
