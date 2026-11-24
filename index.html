@@ -110,6 +110,28 @@
    @media (min-width:801px) and (max-width:1100px){.homepage-consulting-card{grid-template-columns:1fr}.homepage-consulting-card figure{height:clamp(320px,48vw,480px);min-height:0}.homepage-consulting-body{padding:clamp(30px,5vw,48px)}}
    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
+<style>
+  /* Homepage hero and navigation treatment */
+  .site-header{position:static;background:#fff;border-bottom-color:rgba(23,22,21,.12);backdrop-filter:none}
+  .site-header .brand{color:var(--ink)}
+  .site-header .main-nav a{color:var(--muted)}
+  .site-header .main-nav a:hover,.site-header .main-nav a:focus-visible{color:var(--ink)}
+  .site-header .header-cta{background:var(--ink);border-color:var(--ink);color:#fff!important}
+  .site-header .header-cta:hover,.site-header .header-cta:focus-visible{background:#4b4643;border-color:#4b4643;color:#fff!important}
+  .homepage-hero{min-height:calc(100svh - 76px);padding-top:clamp(80px,10vw,140px)}
+  .homepage-hero-content{max-width:1120px}
+  .homepage-hero h1{max-width:14ch;font-size:78px;line-height:.94;letter-spacing:-.055em}
+  .homepage-hero-bottom{grid-template-columns:minmax(0,1fr) auto;gap:clamp(24px,5vw,76px);margin-top:clamp(36px,5vw,68px);padding-top:20px;border-top:1px solid rgba(244,241,238,.34)}
+  @media (max-width:800px){
+    .homepage-hero{min-height:calc(100svh - 64px);padding-top:76px}
+    .homepage-hero h1{max-width:14ch;font-size:clamp(52px,14vw,78px)}
+    .homepage-hero-bottom{grid-template-columns:1fr;gap:28px}
+  }
+  </style>
+  <style>
+    .homepage-hero-actions a.consultation-cta{background:var(--ink);border-color:var(--ink);color:#fff}
+    .homepage-hero-actions a.consultation-cta:hover,.homepage-hero-actions a.consultation-cta:focus-visible{background:#4b4643;border-color:#4b4643;color:#fff}
+  </style>
 </head>
 <body>
   <div class="site-preloader" role="status" aria-label="Loading ARCENI"><span class="site-preloader-wordmark">ARCENI<sup>®</sup></span></div>
@@ -122,23 +144,14 @@
   <main>
     <section class="homepage-hero" id="home" aria-labelledby="homepage-hero-title">
       <div class="homepage-hero-content">
-        <p class="eyebrow">Consulting, Training &amp; Advisory</p>
+        <p class="eyebrow">Est. 2018</p>
         <h1 id="homepage-hero-title">We drive bold ideas, shared value <span>and impact.</span></h1>
-        <div class="homepage-hero-bottom">
-          <p class="homepage-hero-copy">ARCENI is an impact consultancy helping mission-driven organizations execute sustainable impact projects.</p>
-          <div class="homepage-hero-actions" aria-label="Homepage actions"><a href="#consulting-services">Consulting <span aria-hidden="true">↗</span></a><a class="secondary" href="#programs">Programs <span aria-hidden="true">↗</span></a></div>
+         <div class="homepage-hero-bottom">
+           <p class="homepage-hero-copy">ARCENI is an impact consultancy helping mission-driven organizations execute sustainable impact projects.</p>
+           <div class="homepage-hero-actions" aria-label="Homepage actions"><a href="programs.html">Our Programs <span aria-hidden="true">↗</span></a><a class="secondary consultation-cta" href="consulting.html">Book a Consultation <span aria-hidden="true">↗</span></a></div>
         </div>
       </div>
     </section>
-    <section class="homepage-consulting" id="consulting-services" aria-labelledby="homepage-consulting-title">
-      <div class="homepage-consulting-heading"><h2 id="homepage-consulting-title">Consulting.</h2><p>We combine project management with practical capacity building so teams can make progress and sustain it. Our consulting firm partners with organizations to move work from concept to delivery. </p></div>
-      <article class="homepage-consulting-card"><figure><img src="images/Consulting/project-management.jpg" alt="Person mapping project ideas on a glass board with colorful markers" loading="lazy"></figure><div class="homepage-consulting-body"><small>Strategy &amp; delivery</small><h3>Project Management</h3><p>Align your scope, people, timelines and resources. Keep delivery coordinated, surface decisions early and move projects from concept to completion.</p><p class="homepage-consulting-sectors"><strong>Key sectors</strong> Development · Education · Sports · Leadership</p><div class="homepage-consulting-fit"><small>Perfect for</small><p>Organizations launching a new initiative, teams needing delivery support, or project leads looking for a clear and practical operating path to execution.</p><div class="homepage-consulting-tags"><span>Project Sprints</span><span>Project Delivery</span><span>Advisory Services</span></div></div></div></article>
-<div class="homepage-consulting-trusted" aria-label="Organizations ARCENI has worked with"><p class="homepage-consulting-trusted-label">Worked With</p><div class="homepage-consulting-trusted-name">Transformación Ballet<span>ORGANIZATION PARTNER</span></div><div class="homepage-consulting-trusted-name">NGO Committee on Migration<span>ORGANIZATION PARTNER</span></div><div class="homepage-consulting-trusted-name">Autizan<span>ORGANIZATION PARTNER</span></div></div>
-<div class="homepage-consulting-footer"><p>For projects, the scope, timelines and deliverables are agreed with each client based on the project needs. Services are tailored to each organization’s context, priorities and available resources.</p><a class="header-cta" href="contact.html">Book a Consultation ↗</a></div>
-    </section>
-     <figure class="homepage-photo-section" aria-labelledby="homepage-photo-section-caption"><img src="images/Homepage/mike-hindle-5DdjfFscfhw-unsplash.jpg" alt="Monochrome view looking up between modern buildings" loading="lazy"><figcaption id="homepage-photo-section-caption"><strong>Perspective into action</strong><span>Bringing clarity, preparation and purposeful impact to the work ahead.</span></figcaption></figure>
-<section class="homepage-programs" id="programs" aria-labelledby="homepage-programs-title"><div class="homepage-programs-heading"><h2 id="homepage-programs-title">Programs.</h2><p>We provide transformational coaching and leadership programs, designed to help individuals explore purpose, build clarity and become agents of change.</p></div><div class="homepage-program-grid"><article class="homepage-program-card"><figure><img src="images/Basketball/Slytherin.jpg" alt="Basketball players gathered together in a team huddle" loading="lazy"><span class="homepage-program-card-eyebrow">development</span></figure><div class="homepage-program-card-body"><h3>The Basketball</h3><p>The Arceni Basketball provides personalized training, holistic development and leadership to gain a competitive edge on and off the court.</p><a href="basketball.html">Explore Basketball ↗</a></div></article><article class="homepage-program-card"><figure><img src="images/Collective/wadi-lissa-AZvGpBp925o-unsplash.jpg" alt="Young people collaborating around a table" loading="lazy"><span class="homepage-program-card-eyebrow">1-on-1 Coaching</span></figure><div class="homepage-program-card-body"><h3>The Archer</h3><p>The Arceni Changemakers Program (ARCHER) helps individuals build self awareness, strengthen their voice, take purposeful steps in life and career.</p><a href="contact.html">Request info ↗</a></div></article></div><div class="homepage-program-footer"><p>Our programs are shaped around each person’s goals, experience and stage of growth, with practical support for development, confidence and purposeful progress.</p><a class="header-cta" href="contact.html">Book a Consultation ↗</a></div></section>
-    <figure class="homepage-impact-photo"><img src="images/homepage-contact-bg.jpg" alt="Nairobi skyline at golden hour" loading="lazy"><figcaption><strong>Built for meaningful impact</strong><span>Ideas, people and partnerships moving forward together.</span></figcaption></figure>
   </main>
   <footer class="homepage-footer"><span>© 2026 ARCENI · All rights reserved</span><span>Nairobi · Kenya · Global</span></footer>
   <script>
@@ -150,19 +163,6 @@
     const sitePreloader=document.querySelector('.site-preloader');
     if(sitePreloader&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
       window.setTimeout(()=>sitePreloader.remove(),2050);
-    }
-  </script>
-  <script>
-    const homepageConsultingImage=document.querySelector('.homepage-consulting-card figure');
-    const homepageConsultingBody=document.querySelector('.homepage-consulting-body');
-    if(homepageConsultingImage&&homepageConsultingBody&&!homepageConsultingImage.querySelector('.homepage-consulting-overlay')){
-      const label=homepageConsultingBody.querySelector('small');
-      const title=homepageConsultingBody.querySelector('h3');
-      const overlay=document.createElement('figcaption');
-      overlay.className='homepage-consulting-overlay';
-      overlay.append(label);
-      homepageConsultingBody.insertBefore(title,homepageConsultingBody.firstChild);
-      homepageConsultingImage.append(overlay);
     }
   </script>
 </body>
