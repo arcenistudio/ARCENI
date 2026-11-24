@@ -435,20 +435,10 @@
   <script src="site-layout.js"></script><script src="site-nav.js"></script>
   <footer class="programs-footer"><span>© 2026 ARCENI · All rights reserved</span><span>Nairobi · Kenya · Global</span></footer>
   <script>
-    const basketballDisclaimer=document.querySelector('#basketball-program')?.closest('.homepage-programs')?.querySelector('.homepage-program-footer');
-    const basketballStart=basketballDisclaimer?.querySelector('a.header-cta');
-    if(basketballDisclaimer&&basketballStart){
-      basketballStart.href='basketball.html#bball-contact';
-      basketballStart.textContent='Book a Session ↗';
-      basketballStart.className='header-cta secondary';
-      const exploreBasketball=document.createElement('a');
-      exploreBasketball.className='header-cta';
-      exploreBasketball.href='basketball.html';
-      exploreBasketball.textContent='Explore Basketball ↗';
-      const footerActions=document.createElement('div');
-      footerActions.className='homepage-program-footer-actions';
-      basketballStart.replaceWith(footerActions);
-      footerActions.append(exploreBasketball,basketballStart);
+    const basketballStart=document.querySelector('#basketball-program')?.closest('.homepage-programs')?.querySelector('.homepage-program-footer a.header-cta');
+    if(basketballStart){
+      basketballStart.href='basketball.html';
+      basketballStart.textContent='Explore Basketball ↗';
     }
   </script>
   <script>
