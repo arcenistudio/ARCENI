@@ -13,11 +13,14 @@
     @media(max-width:800px){.site-header{padding:17px 20px}.main-nav{display:none}.menu-button{display:block}.main-nav.is-open{position:absolute;top:100%;right:20px;left:20px;display:grid;gap:2px;padding:12px;border:1px solid rgba(255,255,255,.2);background:#171615;box-shadow:0 18px 40px rgba(0,0,0,.25)}.main-nav.is-open a{padding:12px}.homepage-hero{padding:96px 20px 36px}.homepage-hero:before{background-position:62% center}.homepage-hero-bottom{grid-template-columns:1fr;gap:22px;margin-top:54px}.homepage-hero-copy{max-width:38ch}.homepage-hero-actions{width:100%;flex-direction:column;align-items:stretch}.homepage-hero-actions a{width:100%}}@media(max-width:520px){.homepage-hero h1{font-size:clamp(52px,15vw,82px)}.homepage-hero-copy{font-size:14px}}
   </style>
   <style>
-    .site-preloader{position:fixed;z-index:9999;inset:0;display:grid;place-items:center;background:#fff;color:var(--ink);animation:homepagePreloaderCurtain .8s cubic-bezier(.76,0,.24,1) 1.2s forwards}
-    .site-preloader-wordmark{font-size:clamp(22px,3vw,34px);font-weight:400;letter-spacing:.28em;opacity:0;transform:translateX(-18px);filter:blur(8px);animation:homepagePreloaderWordmark .8s cubic-bezier(.22,1,.36,1) forwards}
+    .site-preloader{position:fixed;z-index:9999;inset:0;display:grid;place-items:center;background:#fff;color:var(--ink);animation:homepagePreloaderCurtain .8s cubic-bezier(.76,0,.24,1) 2.25s forwards}
+    .site-preloader-content{display:flex;flex-direction:column;align-items:center;gap:22px}
+    .site-preloader-mark{display:block;width:clamp(82px,13vw,148px);height:auto;opacity:0;transform:scale(.82);filter:blur(8px);animation:homepagePreloaderMark .75s cubic-bezier(.22,1,.36,1) forwards}
+    .site-preloader-wordmark{font-size:clamp(22px,3vw,34px);font-weight:400;letter-spacing:.28em;opacity:0;transform:translateY(16px);filter:blur(8px);animation:homepagePreloaderWordmark .8s cubic-bezier(.22,1,.36,1) .68s forwards}
     .site-preloader-wordmark sup{font-size:.42em;letter-spacing:0}
     .homepage-hero h1{opacity:0;transform:translateY(24px);animation:homepageHeadlineIn .8s cubic-bezier(.22,1,.36,1) 1.2s forwards}
-    @keyframes homepagePreloaderWordmark{from{opacity:0;letter-spacing:.28em;transform:translateX(-18px);filter:blur(8px)}to{opacity:1;letter-spacing:.18em;transform:translateX(0);filter:blur(0)}}
+    @keyframes homepagePreloaderMark{from{opacity:0;transform:scale(.82);filter:blur(8px)}to{opacity:1;transform:scale(1);filter:blur(0)}}
+    @keyframes homepagePreloaderWordmark{from{opacity:0;letter-spacing:.28em;transform:translateY(16px);filter:blur(8px)}to{opacity:1;letter-spacing:.18em;transform:translateY(0);filter:blur(0)}}
     @keyframes homepagePreloaderCurtain{to{clip-path:inset(0 0 100% 0);opacity:0}}
     @keyframes homepageHeadlineIn{to{opacity:1;transform:translateY(0)}}
     @media(prefers-reduced-motion:reduce){.site-preloader{display:none}.homepage-hero h1{opacity:1;transform:none;animation:none}}
@@ -158,54 +161,69 @@
     .site-header .brand{font-size:19px;font-weight:400;letter-spacing:.16em;color:#f4f1ee}
     .site-header .brand sup{font-size:9px;letter-spacing:0}
     .site-header .nav{display:flex;align-items:center;gap:clamp(16px,2.5vw,34px);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+    .site-header .nav .section-link{color:var(--muted);transition:color .2s ease,transform .2s ease}
+    .site-header .nav .section-link:hover,.site-header .nav .section-link:focus-visible{color:var(--ink);transform:translateY(-2px)}
     .site-header .button{display:inline-flex;align-items:center;justify-content:space-between;gap:18px;min-width:170px;padding:14px 16px;border:1px solid #f4f1ee;background:#f4f1ee;color:var(--ink);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;transition:transform .2s ease,background .2s ease}
     .site-header .button:hover,.site-header .button:focus-visible{background:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
-    @media(max-width:800px){.site-header{padding:17px 20px}.site-header .nav{gap:0}.site-header .button{min-width:0;padding:11px 12px;font-size:9px;white-space:nowrap}}
+    @media(max-width:800px){.site-header{padding:17px 20px}.site-header .nav{gap:12px}.site-header .nav .section-link{font-size:8px;letter-spacing:.05em;white-space:nowrap}.site-header .button{min-width:0;padding:11px 12px;font-size:9px;white-space:nowrap}}
   </style>
   <style>
-    .homepage-moved-archer{background:#ebe7e3;color:var(--ink)}
-    .homepage-moved-archer .homepage-moved-program-card{background:#efedea}
-    .homepage-moved-archer .homepage-moved-program-card-body>p,.homepage-moved-archer .homepage-moved-benefits p{color:var(--muted)}
-    .homepage-moved-archer .homepage-moved-benefits{border-top-color:var(--line)}
-    .homepage-moved-archer .homepage-moved-benefits li{border-bottom-color:var(--line)}
-    .homepage-moved-archer .homepage-moved-benefit-icon{border-color:var(--accent);color:var(--ink)}
-    .homepage-moved-archer .homepage-moved-benefits small{color:var(--muted)}
-    .homepage-moved-archer .homepage-moved-program-footer{border-top-color:var(--line)}
-    .homepage-moved-archer .homepage-moved-program-footer p{color:var(--muted)}
-    .homepage-moved-archer .homepage-moved-program-footer a{background:var(--ink);color:#fff}
-    .homepage-moved-archer .homepage-moved-consulting-trusted{border-top-color:var(--line);border-bottom-color:var(--line)}
-    .homepage-moved-archer .homepage-moved-consulting-trusted-label{color:var(--muted)}
-    .homepage-moved-archer .homepage-moved-consulting-trusted-name{border-left-color:var(--line);color:var(--ink)}
-    .homepage-moved-archer .homepage-moved-consulting-trusted-name span{color:var(--muted)}
-    .homepage-moved-archer .homepage-moved-consulting-trusted-name:hover,.homepage-moved-archer .homepage-moved-consulting-trusted-name:focus-within{background:transparent;color:var(--ink)}
+    .homepage-moved-archer{background:#2c2927;color:#f4f1ee}
+    .homepage-moved-archer .homepage-moved-program-card{grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr)}
+    .homepage-moved-archer .homepage-moved-program-card figure{order:2}
+    .homepage-moved-archer .homepage-moved-program-card-body{order:1}
+    .homepage-moved-archer .homepage-moved-program-card{background:#242220}
+    .homepage-moved-archer .homepage-moved-program-card-body>p,.homepage-moved-archer .homepage-moved-benefits p{color:rgba(244,241,238,.72)}
+    .homepage-moved-archer .homepage-moved-benefits{border-top-color:rgba(244,241,238,.22)}
+    .homepage-moved-archer .homepage-moved-benefits li{border-bottom-color:rgba(244,241,238,.22)}
+    .homepage-moved-archer .homepage-moved-benefit-icon{border-color:rgba(244,241,238,.42);color:#f4f1ee}
+    .homepage-moved-archer .homepage-moved-benefits small{color:rgba(244,241,238,.58)}
+    .homepage-moved-archer .homepage-moved-program-footer{border-top-color:rgba(244,241,238,.22)}
+    .homepage-moved-archer .homepage-moved-program-footer p{color:rgba(244,241,238,.68)}
+    .homepage-moved-archer .homepage-moved-program-footer a{background:#f4f1ee;color:var(--ink)}
+    .homepage-moved-archer .homepage-moved-consulting-trusted{border-top-color:rgba(244,241,238,.22);border-bottom-color:rgba(244,241,238,.22)}
+    .homepage-moved-archer .homepage-moved-consulting-trusted-label{color:rgba(244,241,238,.58)}
+    .homepage-moved-archer .homepage-moved-consulting-trusted-name{border-left-color:rgba(244,241,238,.22);color:#f4f1ee}
+    .homepage-moved-archer .homepage-moved-consulting-trusted-name span{color:rgba(244,241,238,.58)}
+    .homepage-moved-archer .homepage-moved-consulting-trusted-name:hover,.homepage-moved-archer .homepage-moved-consulting-trusted-name:focus-within{background:transparent;color:#fff}
+    .homepage-moved-card-eyebrow{position:absolute;top:20px;left:20px;z-index:1;margin:0;padding:9px 11px;background:transparent;color:#f4f1ee;text-shadow:0 1px 8px rgba(0,0,0,.72);font-size:9px;font-weight:700;letter-spacing:.16em;line-height:1;text-transform:uppercase}
+    @media(max-width:800px){.homepage-moved-card-eyebrow{top:16px;left:16px}}
+    @media(max-width:800px){.homepage-moved-archer .homepage-moved-program-card{display:block}.homepage-moved-archer .homepage-moved-program-card figure,.homepage-moved-archer .homepage-moved-program-card-body{order:initial}}
+  </style>
+  <style>
+    .site-header{background:#fff;border-bottom-color:rgba(23,22,21,.12);backdrop-filter:none}
+    .site-header .brand{color:var(--ink)}
+    .site-header .nav{color:var(--muted)}
+    .site-header .menu-button{display:none;border:1px solid rgba(23,22,21,.25);background:transparent;color:var(--ink);font:inherit;font-size:9px;font-weight:700;letter-spacing:.08em;padding:10px 12px;text-transform:uppercase}
+    .site-header .nav .button{background:var(--ink);border-color:var(--ink);color:#fff!important}
+    .site-header .nav .button:hover,.site-header .nav .button:focus-visible{background:#4b4643;border-color:#4b4643;color:#fff!important}
+    .site-header .main-nav a{color:var(--muted)}
+    .site-header .main-nav a:hover,.site-header .main-nav a:focus-visible{color:var(--ink)}
+    .site-header .header-cta{background:var(--ink);border-color:var(--ink);color:#fff!important}
+    .site-header .header-cta:hover,.site-header .header-cta:focus-visible{background:#4b4643;border-color:#4b4643;color:#fff!important}
+    @media(max-width:800px){.site-header .menu-button{display:inline-flex}.site-header .nav{display:none;position:absolute;top:100%;right:20px;left:20px;gap:0;padding:10px 14px;border:1px solid rgba(23,22,21,.16);background:#fff;box-shadow:0 18px 40px rgba(0,0,0,.14)}.site-header .nav.is-open{display:grid}.site-header .nav .section-link{padding:12px 0;border-bottom:1px solid rgba(23,22,21,.12);font-size:9px;letter-spacing:.08em}.site-header .nav .section-link:last-child{border-bottom:0}}
   </style>
 </head>
 <body>
-  <div class="site-preloader" role="status" aria-label="Loading ARCENI"><span class="site-preloader-wordmark">ARCENI<sup>®</sup></span></div>
+  <div class="site-preloader" role="status" aria-label="Loading ARCENI"><div class="site-preloader-content"><span class="site-preloader-wordmark">ARCENI<sup>®</sup></span></div></div>
   <header class="site-header">
     <a class="brand" href="sample.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a>
-    <nav class="nav" aria-label="Main navigation">
-      <a class="button" href="contact.html">Partner With Us <span aria-hidden="true">↗</span></a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="homepage-nav">Menu</button>
+    <nav class="nav" id="homepage-nav" aria-label="Main navigation">
+      <a class="section-link" href="#basketball-program-home">The Basketball</a>
+      <a class="section-link" href="#project-management-home">The Consulting</a>
+      <a class="section-link" href="#archer-program-home">The Collective</a>
     </nav>
   </header>
   <main>
-    <section class="homepage-hero" id="home" aria-labelledby="homepage-hero-title">
-      <div class="homepage-hero-content">
-        <p class="eyebrow">Est. 2018</p>
-        <h1 id="homepage-hero-title">We drive bold ideas, shared value <span>and impact.</span></h1>
-        <div class="homepage-hero-bottom">
-          <p class="homepage-hero-copy">ARCENI is an impact consultancy helping mission-driven organizations execute sustainable impact projects.</p>
-          <div class="homepage-hero-actions" aria-label="Homepage actions"><a href="#basketball-program-home">The Basketball <span aria-hidden="true">↗</span></a><a class="secondary consultation-cta" href="#project-management-home">Book a Consultation <span aria-hidden="true">↗</span></a></div>
-        </div>
-      </div>
-    </section>
     <section class="homepage-moved-program" id="basketball-program-home" aria-labelledby="basketball-program-home-card-title"><article class="homepage-moved-program-card"><figure><img src="images/Basketball/Slytherin.jpg" alt="Basketball players gathered together in a team huddle" loading="lazy"></figure><div class="homepage-moved-program-card-body"><h3 id="basketball-program-home-card-title">The Basketball</h3><p>The Arceni Basketball provides personalized training, development and leadership to gain a competitive edge on and off the court. Players strengthen their game on the court while developing the mindset, communication and purposeful habits that support growth beyond it.</p><ul class="homepage-moved-benefits" aria-label="Basketball program benefits"><li><span class="homepage-moved-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><path d="M4.7 9.2c2.3.8 4.4 2.2 6.1 4.1M13.5 4.4c-.1 2.5.5 4.8 1.8 6.8M19.3 14.8c-2.3-.1-4.6.4-6.7 1.6"></path></svg></span><div><small>For WHO</small><p>Players · Teams · Organizations</p></div></li><li><span class="homepage-moved-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19.5h16M6 17V7.5L12 4l6 3.5V17M9 17v-4h6v4"></path></svg></span><div><small>Services</small><p>Development · Performance</p></div></li><li><span class="homepage-moved-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 17.5 10 11l3.5 3.5L20 8M15.5 8H20v4.5"></path></svg></span><div><small>Approach</small><p>Player Centered · Values Based</p></div></li><li><span class="homepage-moved-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><path d="m8.5 12 2.3 2.3 4.8-5"></path></svg></span><div><small>Enrollment</small><p>Ongoing</p></div></li></ul></div></article><div class="homepage-moved-program-footer"><p>Our programs are shaped around each person’s goals, experience and stage of growth, with practical support for development, confidence and purposeful progress.</p><a href="basketball.html">Book a Session ↗</a></div></section>
     <section class="homepage-moved-program homepage-moved-archer" id="project-management-home" aria-labelledby="project-management-home-card-title"><article class="homepage-moved-program-card"><figure><img src="images/Consulting/project-management.jpg" alt="Person mapping project ideas on a glass board with colorful markers" loading="lazy"></figure><div class="homepage-moved-program-card-body"><h3 id="project-management-home-card-title">The Consulting</h3><p>The Arceni Consulting works with organizations launching seeking to launch a new initiative, project teams needing delivery support, or looking for a clear and practical operating path to execution. We align your scope, people, timelines and resources from the start, coordinate delivery and move projects from concept to completion.</p><ul class="homepage-moved-benefits" aria-label="Consulting service benefits"><li><span class="homepage-moved-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><path d="M4.7 9.2c2.3.8 4.4 2.2 6.1 4.1M13.5 4.4c-.1 2.5.5 4.8 1.8 6.8M19.3 14.8c-2.3-.1-4.6.4-6.7 1.6"></path></svg></span><div><small>who We Serve</small><p>Organizations</p></div></li><li><span class="homepage-moved-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19.5h16M6 17V7.5L12 4l6 3.5V17M9 17v-4h6v4"></path></svg></span><div><small>Services</small><p>Project Management · Capacity Building</p></div></li><li><span class="homepage-moved-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 17.5 10 11l3.5 3.5L20 8M15.5 8H20v4.5"></path></svg></span><div><small>Approach</small><p>Practical · Collaborative</p></div></li><li><span class="homepage-moved-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><path d="m8.5 12 2.3 2.3 4.8-5"></path></svg></span><div><small>Engagement</small><p>Project-Based</p></div></li></ul></div></article><div class="homepage-moved-consulting-trusted" aria-label="Organizations ARCENI has worked with"><p class="homepage-moved-consulting-trusted-label">Worked With</p><div class="homepage-moved-consulting-trusted-name"><strong>Transformación Ballet</strong><span>Organization Partner</span></div><div class="homepage-moved-consulting-trusted-name"><strong>NGO Committee on Migration</strong><span>Organization Partner</span></div><div class="homepage-moved-consulting-trusted-name"><strong>Autizan</strong><span>Organization Partner</span></div></div><div class="homepage-moved-program-footer"><p>For projects, the scope, timelines and deliverables are agreed with each client based on the project needs. Services are tailored to each organization’s context, priorities and available resources.</p><a href="contact.html">Start a Project ↗</a></div></section>
+    <section class="homepage-moved-program" id="archer-program-home" aria-labelledby="archer-program-home-card-title"><article class="homepage-moved-program-card"><figure><img src="images/Collective/wadi-lissa-AZvGpBp925o-unsplash.jpg" alt="Young people collaborating around a table" loading="lazy"></figure><div class="homepage-moved-program-card-body"><h3 id="archer-program-home-card-title">The Collective</h3><p>The Arceni Collective supports individuals build self-awareness, strengthen their voice and take purposeful steps in life and career. Through one-on-one coaching, participants build clarity, confidence and practical growth.</p><ul class="homepage-moved-benefits" aria-label="Archer program benefits"><li><span class="homepage-moved-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"></circle><path d="M5.5 20c.7-3.2 2.9-5 6.5-5s5.8 1.8 6.5 5"></path></svg></span><div><small>For WHO</small><p>Individuals · Emerging leaders</p></div></li><li><span class="homepage-moved-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19.5h16M6 17V7.5L12 4l6 3.5V17M9 17v-4h6v4"></path></svg></span><div><small>Services</small><p>Coaching · Leadership</p></div></li><li><span class="homepage-moved-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 17.5 10 11l3.5 3.5L20 8M15.5 8H20v4.5"></path></svg></span><div><small>Approach</small><p>Personalized · Action-Oriented</p></div></li><li><span class="homepage-moved-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><path d="m8.5 12 2.3 2.3 4.8-5"></path></svg></span><div><small>Enrollment</small><p>Jan 2027</p></div></li></ul></div></article><div class="homepage-moved-program-footer"><p>ARCHER supports each participant with focused coaching, practical reflection and clear next steps for growth in life and work.</p><a href="contact.html">Join The Waitlist ↗</a></div></section>
   </main>
   <footer class="homepage-footer"><span>© 2026 ARCENI · All rights reserved</span><span>Nairobi · Kenya · Global</span></footer>
   <script>
     const menuButton=document.querySelector('.menu-button');
-    const nav=document.querySelector('.main-nav');
+    const nav=document.querySelector('#homepage-nav');
     menuButton?.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')==='true';menuButton.setAttribute('aria-expanded',String(!open));nav.classList.toggle('is-open',!open)});
   </script>
   <script>
@@ -213,6 +231,17 @@
     if(sitePreloader&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
       window.setTimeout(()=>sitePreloader.remove(),2050);
     }
+  </script>
+  <script>
+    [['#basketball-program-home','train with purpose'],['#project-management-home','Strategy to Impact'],['#archer-program-home','lead to impact']].forEach(([sectionSelector,label])=>{
+      const figure=document.querySelector(`${sectionSelector} .homepage-moved-program-card figure`);
+      if(figure&&!figure.querySelector('.homepage-moved-card-eyebrow')){
+        const eyebrow=document.createElement('span');
+        eyebrow.className='homepage-moved-card-eyebrow';
+        eyebrow.textContent=label;
+        figure.append(eyebrow);
+      }
+    });
   </script>
 </body>
 </html>
