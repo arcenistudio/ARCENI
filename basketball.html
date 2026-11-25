@@ -626,9 +626,9 @@
 </style>
 <style>
   .bball-socials{display:flex;align-items:center;gap:14px;margin-left:auto}
-  .bball-socials a{display:grid;width:32px;height:32px;place-items:center;border:1px solid currentColor;border-radius:50%;background:rgba(8,8,8,.28);color:inherit;opacity:1;transition:background .2s ease,transform .2s ease}
-  .bball-socials a:hover,.bball-socials a:focus-visible{background:rgba(8,8,8,.52);transform:translateY(-2px)}
-  .bball-socials svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:2}
+  .bball-socials a{display:grid;width:28px;height:28px;place-items:center;color:inherit;opacity:.82;transition:opacity .2s ease,transform .2s ease}
+  .bball-socials a:hover,.bball-socials a:focus-visible{opacity:1;transform:translateY(-2px)}
+  .bball-socials svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7}
   .bball-socials .bball-social-fill{fill:currentColor;stroke:none}
   .bball-socials .bball-social-dot{fill:currentColor;stroke:none}
 </style>
@@ -648,6 +648,34 @@
 </style>
 <style>
   @media(max-width:700px){.bball-gallery-viewport{margin-right:-20px;margin-left:-20px}}
+</style>
+<style>
+  @media(max-width:700px){
+    .bball-title{
+      max-width:9ch!important;
+      font-size:clamp(62px,8.5vw,124px)!important;
+      font-weight:750!important;
+      line-height:.8!important;
+      letter-spacing:-.1em!important;
+      text-transform:uppercase!important;
+      white-space:normal!important;
+    }
+  }
+</style>
+<style>
+  @media(max-width:700px){
+    .bball-hero{
+      padding-top:76px!important;
+      padding-bottom:36px!important;
+    }
+    .bball-title{
+      top:0!important;
+      transform:none!important;
+    }
+    .bball-bottom{
+      margin-top:32px!important;
+    }
+  }
 </style>
 </body>
 </html>

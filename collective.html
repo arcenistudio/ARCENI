@@ -457,12 +457,25 @@
   collectiveTitleUndoStyle.textContent='body section.collective-hero h1{max-width:9ch!important;white-space:normal!important}@media(max-width:520px){body section.collective-hero h1{font-size:clamp(36px,10.5vw,57px)!important}}';
   document.head.append(collectiveTitleUndoStyle);
 </script>
+  <style>
+    @media(max-width:800px){
+      body section.collective-hero h1{
+        max-width:9ch!important;
+        font-size:clamp(62px,8.5vw,124px)!important;
+        font-weight:750!important;
+        line-height:.8!important;
+        letter-spacing:-.1em!important;
+        text-transform:uppercase!important;
+        white-space:normal!important;
+      }
+    }
+  </style>
 <style>@media(min-width:801px){.collective-hero{padding-bottom:clamp(36px,4vw,54px)!important}}</style>
 <style>
   .arceni-socials{display:flex;align-items:center;gap:14px;margin-left:auto}
-  .arceni-socials a{display:grid;width:32px;height:32px;place-items:center;border:1px solid currentColor;border-radius:50%;background:rgba(8,8,8,.28);color:inherit;opacity:1;transition:background .2s ease,transform .2s ease}
-  .arceni-socials a:hover,.arceni-socials a:focus-visible{background:rgba(8,8,8,.52);transform:translateY(-2px)}
-  .arceni-socials svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:2}
+  .arceni-socials a{display:grid;width:28px;height:28px;place-items:center;color:inherit;opacity:.82;transition:opacity .2s ease,transform .2s ease}
+  .arceni-socials a:hover,.arceni-socials a:focus-visible{opacity:1;transform:translateY(-2px)}
+  .arceni-socials svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7}
   .arceni-socials .arceni-social-fill{fill:currentColor;stroke:none}.arceni-socials .arceni-social-dot{fill:currentColor;stroke:none}
 </style>
 <script>

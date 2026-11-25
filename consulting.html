@@ -187,9 +187,9 @@
   </style>
   <style>
     .arceni-socials{display:flex;align-items:center;gap:14px;margin-left:auto}
-    .arceni-socials a{display:grid;width:32px;height:32px;place-items:center;border:1px solid currentColor;border-radius:50%;background:rgba(8,8,8,.28);color:inherit;opacity:1;transition:background .2s ease,transform .2s ease}
-    .arceni-socials a:hover,.arceni-socials a:focus-visible{background:rgba(8,8,8,.52);transform:translateY(-2px)}
-    .arceni-socials svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:2}
+    .arceni-socials a{display:grid;width:28px;height:28px;place-items:center;color:inherit;opacity:.82;transition:opacity .2s ease,transform .2s ease}
+    .arceni-socials a:hover,.arceni-socials a:focus-visible{opacity:1;transform:translateY(-2px)}
+    .arceni-socials svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7}
     .arceni-socials .arceni-social-fill{fill:currentColor;stroke:none}.arceni-socials .arceni-social-dot{fill:currentColor;stroke:none}
   </style>
   <script>
@@ -220,5 +220,34 @@
       consultingProgram.insertBefore(workedWithSection,consultingDisclaimer);
     }
   </script>
+  <script>
+    const consultingHeroLabel=document.querySelector('.consulting-hero .hero-label');
+    if(consultingHeroLabel){
+      consultingHeroLabel.classList.add('consulting-hero-service-columns');
+      consultingHeroLabel.innerHTML='<span>Project Management</span><span>Capacity Building</span>';
+    }
+    const consultingHeroServiceStyle=document.createElement('style');
+    consultingHeroServiceStyle.textContent='.consulting-hero-service-columns{display:grid;grid-template-columns:1fr;gap:6px;max-width:48ch}.consulting-hero-service-columns span{display:block}';
+    document.head.append(consultingHeroServiceStyle);
+    const consultingHeroPrimaryCta=document.querySelector('.consulting-hero .hero-actions .button:first-child');
+    if(consultingHeroPrimaryCta) consultingHeroPrimaryCta.innerHTML='What We Do <span aria-hidden="true">&#8599;</span>';
+  </script>
+  <script>
+    const consultingHeroDescription=document.querySelector('.consulting-hero .hero-copy');
+    if(consultingHeroDescription) consultingHeroDescription.textContent='We support mission-driven organizations execute sustainable projects and programs through project management and capacity building.';
+  </script>
+  <style>
+    .consulting-hero .hero-bottom{grid-template-columns:minmax(150px,.7fr) minmax(280px,1.3fr) minmax(300px,1fr);align-items:center;gap:clamp(24px,5vw,76px)}
+    .consulting-hero .hero-label{grid-column:1;grid-row:1;max-width:180px}
+    .consulting-hero .hero-copy{grid-column:2;grid-row:1;max-width:480px}
+    .consulting-hero .hero-actions{grid-column:3;grid-row:1;display:flex;flex-wrap:nowrap;align-items:stretch;width:100%;margin:0}
+    .consulting-hero .hero-actions .button{flex:1 1 0;min-width:0}
+    @media(max-width:800px){
+      .consulting-hero .hero-bottom{grid-template-columns:1fr;gap:20px}
+      .consulting-hero .hero-label,.consulting-hero .hero-copy,.consulting-hero .hero-actions{grid-column:1;grid-row:auto;max-width:48ch}
+      .consulting-hero .hero-actions{flex-direction:column;align-items:stretch;width:100%}
+      .consulting-hero .hero-actions .button{width:100%}
+    }
+  </style>
 </body>
 </html>

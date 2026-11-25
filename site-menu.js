@@ -1,72 +1,62 @@
-﻿(()=>{
-  const header=document.querySelector('header.home-nav,header.topbar,header.basketball-nav,header.coaching-nav,header.archer-nav,header.contact-nav,header.workshop-nav');
-  if(!header) throw new Error('ARCENI menu requires a page header.');
-
-  const trigger=document.createElement('button');
-  trigger.className='arceni-menu-trigger';
-  trigger.type='button';
-  trigger.setAttribute('aria-controls','arceni-site-menu');
-  trigger.setAttribute('aria-expanded','false');
-  trigger.innerHTML='<span>Menu</span><span class="arceni-menu-trigger-icon" aria-hidden="true"><span></span><span></span></span>';
+(() => {
+  if (!document.querySelector('link[data-arceni-menu-style]')) {
+    const style = document.createElement('link');
+    style.rel = 'stylesheet';
+    style.href = 'site-menu.css';
+    style.dataset.arceniMenuStyle = 'true';
+    document.head.append(style);
+  }
+  const header = document.querySelector('header.site-header, header.bball-nav, header.coaching-nav, header.basketball-nav, header.topbar, header.intro-header, header.archer-nav, header.contact-nav, header.workshop-nav');
+  if (!header || header.dataset.arceniMenuReady === 'true') return;
+  // Keep pages with an existing CTA navbar instead of replacing it with Explore.
+  if (header.classList.contains('bball-nav') || header.querySelector('nav .button, nav .header-cta, nav .header-cta-mobile, nav .bball-nav-cta')) {
+    header.classList.add('arceni-original-cta-header');
+    return;
+  }
+  header.dataset.arceniMenuReady = 'true';
+  [...header.querySelectorAll('nav, .menu-button, .header-cta-mobile')].forEach(element => element.remove());
+  if (document.body.classList.contains('homepage-page')) {
+    const cta = document.createElement('a');
+    cta.className = 'arceni-homepage-cta';
+    cta.href = 'contact.html';
+    cta.textContent = 'Partner With Us ↗';
+    header.append(cta);
+    return;
+  }
+  const trigger = document.createElement('button');
+  trigger.className = 'arceni-homepage-menu-button';
+  trigger.type = 'button';
+  trigger.setAttribute('aria-expanded', 'false');
+  trigger.setAttribute('aria-controls', 'arceni-homepage-menu');
+  trigger.textContent = 'Explore';
   header.append(trigger);
-
-  const dialog=document.createElement('dialog');
-  dialog.className='arceni-menu-dialog';
-  dialog.id='arceni-site-menu';
-  dialog.setAttribute('aria-label','Site menu');
-  dialog.innerHTML=`
-    <div class="arceni-menu-panel">
-      <div class="arceni-menu-top">
-        <a class="arceni-menu-brand" href="index.html">ARCENI<sup>®</sup></a>
-        <button class="arceni-menu-close" type="button" aria-label="Close menu">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg>
-        </button>
-      </div>
-      <nav class="arceni-menu-nav" aria-label="Main navigation">
-        <button class="arceni-menu-services-toggle" type="button" aria-expanded="true" aria-controls="arceni-menu-services">Our Work<span class="arceni-menu-chevron" aria-hidden="true"></span></button>
-        <div class="arceni-menu-services-list" id="arceni-menu-services">
-          <a class="arceni-menu-service-link" href="consulting.html">Consulting</a>
-          <a class="arceni-menu-service-link" href="programs.html">Coaching</a>
-          <a class="arceni-menu-service-link" href="basketball.html">Basketball</a>
-        </div>
-        <a class="arceni-menu-link" href="contact.html">Contact<span class="arceni-menu-chevron" aria-hidden="true"></span></a>
-      </nav>
-      <nav class="arceni-menu-social" aria-label="Social media">
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a>
-        <a href="https://www.linkedin.com/company/arceni/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      </nav>
+  const menu = document.createElement('nav');
+  menu.className = 'arceni-homepage-menu';
+  menu.id = 'arceni-homepage-menu';
+  menu.setAttribute('aria-label', 'Main navigation');
+  menu.innerHTML = `
+    <div class="arceni-homepage-menu-group">
+      <p>The Consulting</p>
+      <a href="consulting.html#project-management-home"><span class="arceni-homepage-menu-icon" aria-hidden="true">01</span><span><strong>Project Management</strong><small>Align people, priorities and delivery from concept to completion.</small></span></a>
+      <a href="consulting.html#consulting-contact"><span class="arceni-homepage-menu-icon" aria-hidden="true">02</span><span><strong>Capacity Building</strong><small>Strengthen the systems, skills and resources behind meaningful work.</small></span></a>
+      <a href="consulting.html#consulting-contact"><span class="arceni-homepage-menu-icon" aria-hidden="true">03</span><span><strong>Custom Consulting</strong><small>Shape a practical engagement around your organization’s goals.</small></span></a>
+    </div>
+    <div class="arceni-homepage-menu-group">
+      <p>The Basketball</p>
+      <a href="basketball.html#bball-approach"><span class="arceni-homepage-menu-icon" aria-hidden="true">01</span><span><strong>Player Development</strong><small>Build fundamentals, confidence, discipline and game awareness.</small></span></a>
+      <a href="basketball.html#bball-contact"><span class="arceni-homepage-menu-icon" aria-hidden="true">02</span><span><strong>Team Support</strong><small>Develop shared standards, communication and team culture.</small></span></a>
+      <a href="basketball.html#bball-contact"><span class="arceni-homepage-menu-icon" aria-hidden="true">03</span><span><strong>Program Inquiry</strong><small>Find the right development pathway for a player, team or organization.</small></span></a>
+    </div>
+    <div class="arceni-homepage-menu-group">
+      <p>The Collective</p>
+      <a href="collective.html#archer-program"><span class="arceni-homepage-menu-icon" aria-hidden="true">01</span><span><strong>The Archer</strong><small>One-to-one coaching for direction, confidence and purposeful progress.</small></span></a>
+      <a href="collective.html#archer-workshops"><span class="arceni-homepage-menu-icon" aria-hidden="true">02</span><span><strong>The Catalyst</strong><small>Workshops for reflection, shared learning and practical action.</small></span></a>
+      <a href="collective.html#registration"><span class="arceni-homepage-menu-icon" aria-hidden="true">03</span><span><strong>Enrollment</strong><small>Register your interest and start a conversation with ARCENI.</small></span></a>
     </div>`;
-  document.body.append(dialog);
-
-  const closeButton=dialog.querySelector('.arceni-menu-close');
-  const servicesToggle=dialog.querySelector('.arceni-menu-services-toggle');
-  const servicesList=dialog.querySelector('.arceni-menu-services-list');
-
-  trigger.addEventListener('click',()=>{
-    dialog.showModal();
-    trigger.setAttribute('aria-expanded','true');
-  });
-  closeButton.addEventListener('click',()=>dialog.close());
-  dialog.addEventListener('click',event=>{
-    if(event.target===dialog) dialog.close();
-  });
-  dialog.addEventListener('keydown',event=>{
-    if(event.key==='Escape'){
-      event.preventDefault();
-      dialog.close();
-    }
-  });
-  dialog.addEventListener('close',()=>{
-    trigger.setAttribute('aria-expanded','false');
-    trigger.focus();
-    servicesToggle.setAttribute('aria-expanded','true');
-    servicesList.hidden=false;
-  });
-  servicesToggle.addEventListener('click',()=>{
-    const expanded=servicesToggle.getAttribute('aria-expanded')==='true';
-    servicesToggle.setAttribute('aria-expanded',String(!expanded));
-    servicesList.hidden=expanded;
-  });
-  dialog.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>dialog.close()));
+  header.append(menu);
+  const setOpen = open => { trigger.setAttribute('aria-expanded', String(open)); menu.classList.toggle('is-open', open); };
+  trigger.addEventListener('click', () => setOpen(trigger.getAttribute('aria-expanded') !== 'true'));
+  document.addEventListener('click', event => { if (!header.contains(event.target)) setOpen(false); });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') setOpen(false); });
+  menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setOpen(false)));
 })();

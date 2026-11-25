@@ -1,32 +1,39 @@
-.arceni-menu-trigger{display:inline-flex;flex:0 0 auto;min-height:42px;align-items:center;justify-content:center;gap:9px;padding:0 13px;border:1px solid rgba(244,241,238,.36);background:transparent;color:#f4f1ee;font:600 10px Inter,Arial,sans-serif;letter-spacing:.11em;text-transform:uppercase;cursor:pointer;transition:background .2s ease,border-color .2s ease,color .2s ease}
-.arceni-menu-trigger:hover,.arceni-menu-trigger:focus-visible{border-color:#b8b0b3;background:#b8b0b3;color:#181716}
-.arceni-menu-trigger:focus-visible,.arceni-menu-close:focus-visible,.arceni-menu-dialog a:focus-visible,.arceni-menu-services-toggle:focus-visible{outline:2px solid #d0c9c7;outline-offset:4px}
-.arceni-menu-trigger-icon{display:grid;width:15px;gap:4px}
-.arceni-menu-trigger-icon span{display:block;width:100%;height:1px;background:currentColor;transition:transform .2s ease}
-.arceni-menu-dialog{position:fixed;inset:0 0 0 auto;width:min(100%,480px);max-width:none;height:100vh;height:100dvh;max-height:none;margin:0;padding:0;overflow:hidden;border:0;background:#242323;color:#f4f1ee;opacity:0;transform:translateX(100%);transition:opacity .28s ease,transform .38s cubic-bezier(.16,1,.3,1)}
-.arceni-menu-dialog[open]{opacity:1;transform:translateX(0)}
-.arceni-menu-dialog::backdrop{background:rgba(0,0,0,.64);backdrop-filter:blur(3px)}
-.arceni-menu-panel{display:flex;width:100%;height:100%;min-height:0;flex-direction:column;overflow-y:auto;padding:clamp(20px,5vw,36px);padding-top:max(clamp(20px,5vw,36px),env(safe-area-inset-top));padding-bottom:max(clamp(20px,5vw,36px),env(safe-area-inset-bottom))}
-.arceni-menu-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:clamp(32px,8vh,64px)}
-.arceni-menu-brand{color:#f4f1ee;font-size:18px;font-weight:750;letter-spacing:.12em}
-.arceni-menu-brand sup{margin-left:2px;font-size:9px;letter-spacing:0}
-.arceni-menu-close{display:grid;width:38px;height:38px;place-items:center;border:0;background:transparent;color:#f4f1ee;cursor:pointer}
-.arceni-menu-close svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round}
-.arceni-menu-nav{display:grid;align-content:start}
-.arceni-menu-link,.arceni-menu-services-toggle{display:flex;width:100%;min-height:54px;align-items:center;justify-content:space-between;gap:18px;padding:11px 2px;border:0;border-bottom:1px solid rgba(244,241,238,.08);background:transparent;color:#f4f1ee;text-align:left}
-.arceni-menu-link{font-size:clamp(17px,4.7vw,20px);font-weight:400}
-.arceni-menu-services-toggle{font:400 clamp(17px,4.7vw,20px) Inter,Arial,sans-serif;cursor:pointer}
-.arceni-menu-link:hover,.arceni-menu-services-toggle:hover{color:#d0c9c5}
-.arceni-menu-chevron{width:9px;height:9px;flex:0 0 auto;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg);transition:transform .2s ease}
-.arceni-menu-services-toggle[aria-expanded=true] .arceni-menu-chevron{transform:rotate(135deg)}
-.arceni-menu-services-list{display:grid;gap:0;padding:6px 0 12px 0}
-.arceni-menu-services-list[hidden]{display:none}
-.arceni-menu-service-link{display:flex;min-height:44px;align-items:center;justify-content:space-between;gap:14px;padding:8px 2px 8px 14px;border-bottom:1px solid rgba(244,241,238,.065);color:rgba(244,241,238,.76);font-size:13px}
-.arceni-menu-service-link:after{font-size:15px;content:"↗";transition:transform .2s ease}
-.arceni-menu-service-link:hover:after{transform:translate(2px,-2px)}
-.arceni-menu-social{display:flex;flex-wrap:wrap;gap:24px;margin-top:auto;padding-top:38px}
-.arceni-menu-social a{color:rgba(244,241,238,.62);font-size:12px;transition:color .2s ease}
-.arceni-menu-social a:hover{color:#f4f1ee}
-.about-page .site-header-social{margin-left:auto}
-@media(max-width:600px){.about-page .site-header-social{display:none}.arceni-menu-trigger{min-height:40px;padding-inline:11px}.arceni-menu-dialog{width:100%}}
-@media(prefers-reduced-motion:reduce){.arceni-menu-trigger,.arceni-menu-trigger-icon span,.arceni-menu-dialog,.arceni-menu-chevron,.arceni-menu-service-link:after{transition:none}}
+.arceni-homepage-menu-button{display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border:1px solid currentColor;background:transparent;color:inherit;font:700 9px/1 Inter,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .2s ease,color .2s ease}
+.arceni-homepage-menu-button:hover,.arceni-homepage-menu-button:focus-visible{background:#f4f4f2;color:#171615}
+.arceni-homepage-menu{display:none;position:absolute;top:100%;right:max(20px,calc((100% - 1240px)/2));width:min(1080px,calc(100% - 40px));grid-template-columns:repeat(3,minmax(0,1fr));padding:0;background:#171615;border:1px solid rgba(244,241,238,.2);box-shadow:0 24px 60px rgba(23,22,21,.28);color:#f4f1ee;z-index:20}
+.arceni-homepage-menu.is-open{display:grid}
+.arceni-homepage-menu-group{min-height:250px;padding:30px 30px 34px;border-right:1px solid rgba(244,241,238,.16)}
+.arceni-homepage-menu-group:last-child{border-right:0}
+.arceni-homepage-menu-group p{margin:0 0 24px;color:rgba(244,241,238,.52);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+.arceni-homepage-menu-group a{display:grid;grid-template-columns:34px 1fr;column-gap:12px;align-items:start;margin:0 -10px;padding:13px 10px;border-radius:0;color:#f4f1ee;font-size:14px;font-weight:600;letter-spacing:0;transition:background .2s ease}
+.arceni-homepage-menu-group a:hover,.arceni-homepage-menu-group a:focus-visible{background:rgba(244,241,238,.1)}
+.arceni-homepage-menu-icon{display:grid;width:34px;height:28px;align-items:start;justify-items:start;color:#b8b0b3;font-size:9px;font-weight:700;letter-spacing:.12em;line-height:1}
+.arceni-homepage-menu-group a>span:last-child{display:grid;gap:7px;padding-top:0}
+.arceni-homepage-menu-group small{max-width:24ch;color:rgba(244,241,238,.58);font-size:11px;font-weight:400;line-height:1.55}
+header.site-header,header.bball-nav,header.coaching-nav,header.basketball-nav,header.topbar,header.intro-header,header.archer-nav,header.contact-nav,header.workshop-nav{position:absolute;top:0;right:0;left:0;z-index:10;width:100%;margin:0;background:transparent!important;border-bottom:0!important;box-shadow:none!important}
+header.site-header>.brand,header.site-header>.bball-brand,header.site-header>.coaching-brand,header.site-header>.basketball-brand,header.site-header>.archer-brand,header.bball-nav>.brand,header.bball-nav>.bball-brand,header.coaching-nav>.brand,header.coaching-nav>.coaching-brand,header.basketball-nav>.brand,header.basketball-nav>.basketball-brand,header.intro-header>.brand,header.archer-nav>.brand,header.archer-nav>.archer-brand{position:relative;z-index:11;display:inline-flex;align-items:center;padding:8px 0;background:transparent;color:#fff!important;text-shadow:0 1px 10px rgba(0,0,0,.45);box-shadow:none}
+@media(max-width:800px){.arceni-homepage-menu{right:20px;left:20px;width:auto;grid-template-columns:1fr}.arceni-homepage-menu-group{min-height:0;padding:22px 24px 24px;border-right:0;border-bottom:1px solid rgba(244,241,238,.16)}.arceni-homepage-menu-group:last-child{border-bottom:0}.arceni-homepage-menu-group p{margin-bottom:16px}.arceni-homepage-menu-button{padding:10px 12px}}
+header.bball-nav{position:relative!important;top:auto!important;display:flex;min-height:76px;align-items:center;background:rgba(255,255,255,.94)!important;border-bottom:1px solid rgba(23,22,21,.1)!important;color:#171615!important;backdrop-filter:blur(14px)!important;-webkit-backdrop-filter:blur(14px)!important}
+header.bball-nav>.bball-brand{color:#171615!important;text-shadow:none}
+header.bball-nav .bball-nav-links{display:flex;align-items:center;gap:24px;margin-left:auto;color:#68615e}
+header.bball-nav .bball-nav-cta{display:inline-flex;min-width:150px;align-items:center;justify-content:center;padding:13px 17px;border:1px solid #171615;background:#171615;color:#fff}
+header.bball-nav .bball-nav-cta:hover,header.bball-nav .bball-nav-cta:focus-visible{border-color:#4b4643;background:#4b4643;color:#fff}
+@media(max-width:700px){header.bball-nav{min-height:64px;padding-right:20px;padding-left:20px}}
+/* Keep the homepage navbar separate from the stacked pathway panels. */
+body.homepage-page header.site-header{position:absolute!important;top:0!important;right:0!important;left:0!important;z-index:20;width:100%;min-height:78px;margin:0;padding:20px max(clamp(20px,5vw,72px),calc((100% - var(--max))/2));background:#171615!important;border-bottom:1px solid rgba(244,241,238,.24)!important;box-shadow:none!important;color:#f4f1ee!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+body.homepage-page header.site-header>.brand{color:#f4f1ee!important;text-shadow:0 1px 10px rgba(0,0,0,.45)}
+body.homepage-page header.site-header .arceni-homepage-menu-button{border-color:rgba(23,22,21,.35);color:#171615;background:transparent}
+body.homepage-page header.site-header .arceni-homepage-menu-button:hover,body.homepage-page header.site-header .arceni-homepage-menu-button:focus-visible{background:#171615;color:#fff}
+body.homepage-page .arceni-homepage-menu{top:100%;z-index:30}
+body.homepage-page header.site-header .arceni-homepage-cta{display:inline-flex;align-items:center;justify-content:center;min-width:150px;padding:13px 16px;border:1px solid rgba(244,241,238,.72);background:transparent;color:#fff;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;transition:background .2s ease,transform .2s ease}
+body.homepage-page header.site-header .arceni-homepage-cta:hover,body.homepage-page header.site-header .arceni-homepage-cta:focus-visible{background:#4b4643;transform:translateY(-2px)}
+@media(max-width:800px){body.homepage-page header.site-header{min-height:64px;padding:17px 20px}}
+/* Restore standalone CTA navbars and keep their hero sections below the nav. */
+header.site-header.arceni-original-cta-header{position:relative!important;top:auto!important;right:auto!important;left:auto!important;z-index:10;width:min(100% - 48px,var(--max));min-height:78px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;background:#fff!important;border-bottom:1px solid rgba(23,22,21,.14)!important;box-shadow:none!important;color:#171615!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+header.site-header.arceni-original-cta-header>.brand{color:#171615!important;text-shadow:none}
+header.site-header.arceni-original-cta-header .nav{display:flex;align-items:center;gap:22px;margin-left:auto;color:#68615e}
+header.site-header.arceni-original-cta-header .nav a{color:inherit}
+header.site-header.arceni-original-cta-header .nav .button,header.site-header.arceni-original-cta-header .nav .header-cta{display:inline-flex;align-items:center;justify-content:center;min-width:150px;padding:14px 16px;border:1px solid #171615;background:#171615;color:#fff!important}
+header.site-header.arceni-original-cta-header .nav .button:hover,header.site-header.arceni-original-cta-header .nav .button:focus-visible,header.site-header.arceni-original-cta-header .nav .header-cta:hover,header.site-header.arceni-original-cta-header .nav .header-cta:focus-visible{border-color:#4b4643;background:#4b4643}
+body:has(header.site-header.arceni-original-cta-header) .catalyst-hero,body:has(header.site-header.arceni-original-cta-header) .coaching-hero,body:has(header.site-header.arceni-original-cta-header) .archer-hero,body:has(header.site-header.arceni-original-cta-header) .consulting-hero,body:has(header.site-header.arceni-original-cta-header) .homepage-hero{min-height:calc(100svh - 78px)}
+@media(max-width:800px){header.site-header.arceni-original-cta-header{width:calc(100% - 40px);min-height:64px;padding:17px 0}header.site-header.arceni-original-cta-header .nav{gap:12px}body:has(header.site-header.arceni-original-cta-header) .catalyst-hero,body:has(header.site-header.arceni-original-cta-header) .coaching-hero,body:has(header.site-header.arceni-original-cta-header) .archer-hero,body:has(header.site-header.arceni-original-cta-header) .consulting-hero,body:has(header.site-header.arceni-original-cta-header) .homepage-hero{min-height:calc(100svh - 64px)}}

@@ -320,7 +320,7 @@
   </header>
   <main>
     <section class="homepage-panels" id="home" aria-label="ARCENI pathways"><a class="homepage-panel homepage-panel--basketball" href="basketball.html"><span class="homepage-panel-number">Train with purpose.</span><div class="homepage-panel-copy"><p class="homepage-panel-kicker">01</p><h2>The Basketball</h2><p class="homepage-panel-description">Build strong fundamentals, sharpen your overall game and grow through character, discipline, teamwork and grit.</p></div><span class="homepage-panel-arrow" aria-hidden="true">↗</span></a><a class="homepage-panel homepage-panel--collective" href="collective.html#archer-program"><span class="homepage-panel-number">Grow with clarity.</span><div class="homepage-panel-copy"><p class="homepage-panel-kicker">02</p><h2>The Collective</h2><p class="homepage-panel-description">Purposeful coaching and workshops for self-awareness, confidence and practical momentum.</p></div><span class="homepage-panel-arrow" aria-hidden="true">↗</span></a><a class="homepage-panel homepage-panel--consulting" href="consulting.html"><span class="homepage-panel-number">Move ideas forward.</span><div class="homepage-panel-copy"><p class="homepage-panel-kicker">03</p><h2>The Consulting</h2><p class="homepage-panel-description">Practical support for organizations ready to clarify priorities, strengthen delivery and create meaningful impact.</p></div><span class="homepage-panel-arrow" aria-hidden="true">↗</span></a></section>
-    <section class="homepage-hero" id="home" aria-labelledby="homepage-hero-title"><div class="homepage-hero-content"><p class="eyebrow">Est. 2018</p><h1 id="homepage-hero-title">We drive bold ideas, shared value <span>and impact.</span></h1><div class="homepage-hero-bottom"><p class="homepage-hero-copy">ARCENI is an impact consultancy helping mission-driven organizations execute sustainable impact projects.</p><div class="homepage-hero-actions" aria-label="Homepage actions"><a href="programs.html">Our Programs <span aria-hidden="true">↗</span></a><a class="secondary" href="consulting.html">Book a Consultation <span aria-hidden="true">↗</span></a></div></div></div></section>
+    <section class="homepage-hero" id="home" aria-labelledby="homepage-hero-title"><div class="homepage-hero-content"><p class="eyebrow">Est. 2018</p><h1 id="homepage-hero-title">We drive bold ideas, shared value <span>and impact.</span></h1><div class="homepage-hero-bottom"><p class="homepage-hero-copy">ARCENI is an impact consultancy supporting mission-driven organizations execute sustainable programs and projects.</p><div class="homepage-hero-actions" aria-label="Homepage actions"><a href="programs.html">Our Programs <span aria-hidden="true">↗</span></a><a class="secondary" href="consulting.html">Book a Consultation <span aria-hidden="true">↗</span></a></div></div></div></section>
   </main>
   <footer class="arceni-copyright" aria-label="ARCENI copyright"><span>© 2026 ARCENI</span><span>Nairobi · Kenya · Global</span></footer>
   <footer class="homepage-footer homepage-footer-modern" aria-label="ARCENI footer">
@@ -419,6 +419,35 @@
     .homepage-panel:after{background:linear-gradient(0deg,rgba(8,8,8,.72) 0%,rgba(8,8,8,.42) 30%,rgba(8,8,8,.12) 62%,transparent 88%)!important;opacity:1!important}
   }
 </style>
+<script>
+  document.querySelector('.site-header .menu-button')?.remove();
+  document.querySelector('.site-header #homepage-nav')?.remove();
+  document.querySelector('.homepage-panel--collective')?.setAttribute('href','collective.html');
+</script>
+<style>
+  .homepage-socials{display:flex;align-items:center;gap:14px;margin-left:auto}
+  .homepage-socials a{display:grid;width:28px;height:28px;place-items:center;color:inherit;opacity:.82;transition:opacity .2s ease,transform .2s ease}
+  .homepage-socials a:hover,.homepage-socials a:focus-visible{opacity:1;transform:translateY(-2px)}
+  .homepage-socials svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7}
+  .homepage-socials .homepage-social-fill,.homepage-socials .homepage-social-dot{fill:currentColor;stroke:none}
+</style>
+<script>
+  const homepageSocials=document.createElement('nav');
+  homepageSocials.className='homepage-socials';
+  homepageSocials.setAttribute('aria-label','ARCENI social media');
+  homepageSocials.innerHTML='<a href="https://www.instagram.com/thearceni/" target="_blank" rel="noopener noreferrer" aria-label="The ARCENI on Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" class="homepage-social-dot"></circle></svg></a><a href="https://www.youtube.com/@thearceni" target="_blank" rel="noopener noreferrer" aria-label="The ARCENI on YouTube" title="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.2 7.1a2.7 2.7 0 0 0-1.9-1.9C17.6 4.7 12 4.7 12 4.7s-5.6 0-7.3.5a2.7 2.7 0 0 0-1.9 1.9C2.3 8.8 2.3 12 2.3 12s0 3.2.5 4.9a2.7 2.7 0 0 0 1.9 1.9c1.7.5 7.3.5 7.3.5s5.6 0 7.3-.5a2.7 2.7 0 0 0 1.9-1.9c.5-1.7.5-4.9.5-4.9s0-3.2-.5-4.9Z"></path><path class="homepage-social-fill" d="m10 15.5 5-3.5-5-3.5v7Z"></path></svg></a><a href="https://www.linkedin.com/company/thearceni/" target="_blank" rel="noopener noreferrer" aria-label="The ARCENI on LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.3H2.8V21h2.4V8.3ZM4 3A1.5 1.5 0 1 0 4 6a1.5 1.5 0 0 0 0-3ZM21.2 13.7c0-3.8-2-5.6-4.7-5.6-2.2 0-3.2 1.2-3.8 2v-1.8h-2.4V21h2.4v-6.3c0-1.7.3-3.4 2.5-3.4s2.5 1.9 2.5 3.5V21h2.4v-7.3Z"></path></svg></a>';
+  document.querySelector('.site-header')?.append(homepageSocials);
+</script>
+<style>
+  .homepage-panels{width:100%;min-width:0;grid-template-columns:repeat(3,minmax(0,1fr))}
+  .homepage-panel{min-width:0}
+  @media(min-width:701px) and (max-width:900px){.homepage-panels .homepage-panel:last-child{grid-column:auto}}
+  @media(max-width:700px){.homepage-panels{grid-template-columns:1fr;gap:12px}.homepage-panel{padding-right:20px;padding-left:20px}.homepage-panel h2{font-size:clamp(24px,8vw,42px);white-space:normal;overflow-wrap:anywhere}.homepage-panel-description{font-size:14px;line-height:1.55}}
+</style>
+  <script>
+    const consultingPanelDescription=document.querySelector('.homepage-panel--consulting .homepage-panel-description');
+    if(consultingPanelDescription) consultingPanelDescription.textContent='Supporting mission-driven organizations execute sustainable projects and programs.';
+  </script>
 </body>
 </html>
 
