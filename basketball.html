@@ -203,6 +203,82 @@
     .bball-intro-copy .bball-coach-impact{display:none}
     @media(max-width:700px){.bball-stats-section{grid-template-columns:1fr}.bball-stats-section .bball-impact-stat,.bball-stats-section .bball-impact-stat:first-child,.bball-stats-section .bball-impact-stat:last-child{padding:18px 0;border-right:0;border-bottom:1px solid var(--line)}.bball-stats-section .bball-impact-stat:first-child{padding-top:0}.bball-stats-section .bball-impact-stat:last-child{padding-bottom:0;border-bottom:0}}
   </style>
+  <style>
+    /* Programs-style image-led basketball hero. */
+    .bball-hero{min-height:100svh;padding:clamp(110px,13vw,180px) max(24px,calc((100% - var(--max))/2)) clamp(54px,7vw,94px);background:#171615;color:#f4f1ee}
+    .bball-hero:before{display:block;position:absolute;z-index:-2;inset:0;background:linear-gradient(90deg,rgba(23,22,21,.9) 0%,rgba(23,22,21,.62) 43%,rgba(23,22,21,.25) 100%),linear-gradient(0deg,rgba(23,22,21,.82) 0%,rgba(23,22,21,.08) 65%),url('images/Basketball/IMG_5089.JPG') center/cover;content:"";filter:saturate(.78)}
+    .bball-hero:after{display:none}
+    .bball-portrait{display:none}.bball-eyebrow{margin-bottom:clamp(24px,4vw,46px);color:rgba(244,241,238,.74)}.bball-eyebrow:before{background:#b8b0b3}.bball-title{max-width:8ch;color:#f4f1ee;font-size:clamp(64px,10vw,142px);line-height:.8}.bball-title span:last-child{color:#b8b0b3}.bball-bottom{grid-template-columns:minmax(0,1fr) auto;gap:clamp(24px,5vw,76px);margin-top:clamp(42px,7vw,90px);padding-top:20px;border-top:1px solid rgba(244,241,238,.25)}.bball-label{display:none}.bball-copy{max-width:470px;color:rgba(244,241,238,.78);font-size:clamp(14px,1.5vw,18px)}.bball-cta{border-color:#f4f1ee;background:#f4f1ee;color:var(--ink)}
+    @media(max-width:800px){.bball-hero{padding:96px 20px 36px}.bball-hero:before{background-position:62% center}.bball-title{font-size:clamp(56px,16vw,86px)}.bball-bottom{grid-template-columns:1fr;gap:22px;margin-top:54px}.bball-copy{max-width:38ch;font-size:14px}.bball-cta{width:100%;max-width:none}}
+  </style>
+  <style>
+    .bball-intro{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);column-gap:clamp(34px,7vw,96px);align-items:start}
+    .bball-intro-heading{grid-column:2;grid-row:1}.bball-intro-copy{grid-column:2;grid-row:2;max-width:none;padding-top:clamp(28px,4vw,54px)}
+    .bball-intro-media{grid-column:1;grid-row:1 / span 2;min-height:clamp(460px,54vw,700px);margin:0;overflow:hidden;background:var(--soft)}
+    .bball-intro-media img{display:block;width:100%;height:100%;min-height:inherit;object-fit:cover;object-position:center 20%;filter:grayscale(.16)}
+    @media(max-width:700px){.bball-intro{grid-template-columns:1fr;gap:28px}.bball-intro-heading,.bball-intro-copy,.bball-intro-media{grid-column:1;grid-row:auto}.bball-intro-copy{padding-top:0}.bball-intro-media{min-height:clamp(360px,105vw,560px);margin-top:8px}}
+  </style>
+  <style>
+    /* Keep the basketball hero aligned with the Programs page: editorial copy, clear hierarchy, and paired CTAs. */
+    .bball-nav{justify-content:space-between;background:transparent!important;border-bottom:0!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+    .bball-hero:before{background:linear-gradient(0deg,rgba(23,22,21,.58) 0%,rgba(23,22,21,.24) 42%,rgba(23,22,21,.05) 78%,transparent 100%),url('images/Basketball/IMG_5089.JPG') center/cover}
+    .bball-nav .arceni-homepage-menu-button{margin-left:auto;border-color:rgba(244,241,238,.72)!important;background:transparent!important;color:#fff!important}
+    .bball-nav .arceni-homepage-menu-button:hover,.bball-nav .arceni-homepage-menu-button:focus-visible{border-color:#fff!important;background:rgba(244,241,238,.12)!important;color:#fff!important}
+     /* Restore the original standalone CTA navbar on the basketball page. */
+     .bball-nav{position:relative!important;top:auto;display:flex;min-height:76px;align-items:center;padding:0 max(20px,calc((100% - var(--max)) / 2));background:rgba(255,255,255,.94)!important;border-bottom:1px solid rgba(23,22,21,.1)!important;color:var(--ink)!important;backdrop-filter:blur(14px)!important;-webkit-backdrop-filter:blur(14px)!important}
+     .bball-nav .bball-brand{color:var(--ink)!important;text-shadow:none}
+     .bball-nav .bball-nav-links{display:flex;align-items:center;gap:24px;margin-left:auto;color:var(--muted)}
+     .bball-nav .bball-nav-cta{display:inline-flex;min-width:150px;align-items:center;justify-content:center;padding:13px 17px;border:1px solid var(--ink);background:var(--ink);color:#fff}
+     .bball-nav .bball-nav-cta:hover,.bball-nav .bball-nav-cta:focus-visible{border-color:#4b4643;background:#4b4643;color:#fff}
+     .bball-hero{min-height:calc(100svh - 76px);padding-top:clamp(80px,10vw,140px)}
+     /* Match the basketball template hero title treatment. */
+     .bball-title{max-width:8ch!important;font-size:clamp(58px,9vw,126px)!important;font-weight:800!important;line-height:.8!important;letter-spacing:-.1em!important;text-transform:uppercase!important}
+     .bball-bottom{grid-template-columns:minmax(180px,.65fr) minmax(260px,1.35fr);align-items:end}
+     .bball-copy{grid-column:2;grid-row:1}
+     .bball-label{display:block!important;grid-column:1;grid-row:1;max-width:180px;justify-self:start}
+     .bball-bottom .bball-actions{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}
+     .bball-bottom .bball-actions .bball-cta{min-width:190px}
+     .bball-bottom{grid-template-columns:minmax(160px,.7fr) minmax(260px,1.25fr) auto;gap:clamp(24px,4vw,64px)}
+     .bball-label{grid-column:1;grid-row:1}
+     .bball-copy{grid-column:2;grid-row:1}
+     .bball-bottom .bball-actions{grid-column:3;grid-row:1;flex-direction:column;align-items:stretch;justify-content:flex-end}
+     @media(max-width:700px){.bball-nav{min-height:64px;padding-right:20px;padding-left:20px}.bball-hero{min-height:calc(100svh - 64px);padding-top:76px}}
+     @media(max-width:700px){.bball-title{max-width:9ch;font-size:clamp(54px,15vw,82px)!important}.bball-bottom{grid-template-columns:1fr;gap:20px}.bball-copy,.bball-label{grid-column:1;grid-row:auto;max-width:48ch;justify-self:start}.bball-bottom .bball-actions{grid-column:1;grid-row:auto;justify-content:stretch;flex-direction:column}.bball-bottom .bball-actions .bball-cta{width:100%;max-width:340px}}
+    .bball-title{max-width:9ch;margin:0;font-size:clamp(62px,8.5vw,124px)!important;font-weight:750;line-height:.8;letter-spacing:-.1em;text-transform:none}
+    .bball-copy{max-width:470px;margin:0;color:rgba(244,241,238,.78);font-size:15px;line-height:1.7}
+    .bball-intro{row-gap:clamp(12px,1.5vw,18px)}
+    .bball-intro-copy{padding-top:0}
+    .bball-intro-copy p:first-child{color:var(--ink);font-size:16px;font-weight:500;line-height:1.6}
+    .bball-intro-media{position:relative}
+    .bball-intro-media figcaption{position:absolute;right:12px;bottom:12px;padding:7px 9px;background:rgba(23,22,21,.72);color:#fff;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+    .bball-approach-footer{grid-column:1 / -1;display:flex;align-items:center;justify-content:space-between;gap:28px;margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
+    .bball-intro-disclaimer{max-width:48ch;margin:0;color:var(--muted);font-size:10px;line-height:1.6;letter-spacing:.02em}
+    .bball-approach-cta{margin-top:0;flex:none}
+    .bball-approach-benefits{display:grid;grid-column:2;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px;margin:18px 0 0;padding:16px 0 0;border-top:1px solid var(--line);list-style:none}
+    .bball-approach-benefits li{padding:12px 0;border-bottom:1px solid var(--line)}
+    .bball-approach-benefits small{display:block;color:var(--muted);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+    .bball-approach-benefits p{margin:5px 0 0;color:var(--ink);font-size:12px;line-height:1.55}
+    .bball-intro-media{align-self:stretch;min-height:0;height:auto}
+    .bball-bottom{grid-template-columns:minmax(0,1fr) auto;align-items:end}
+    .bball-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:10px}
+    .bball-actions .bball-cta{min-width:168px;justify-content:space-between}
+    .bball-actions .bball-cta-secondary{border-color:rgba(244,241,238,.62);background:transparent;color:#f4f1ee}
+    .bball-actions .bball-cta-secondary:hover,.bball-actions .bball-cta-secondary:focus-visible{border-color:#f4f1ee;background:rgba(244,241,238,.12);color:#f4f1ee}
+    @media(max-width:800px){.bball-bottom{grid-template-columns:1fr}.bball-actions{justify-content:stretch;flex-direction:column;align-items:stretch}.bball-actions .bball-cta{width:100%}}
+    @media(max-width:700px){.bball-intro-media{min-height:clamp(360px,105vw,560px);height:auto}.bball-approach-benefits{grid-column:1;grid-template-columns:1fr;gap:0;margin-top:18px}.bball-approach-footer{display:block}.bball-approach-cta{margin-top:20px}}
+    @media(max-width:520px){.bball-title{font-size:clamp(36px,10.5vw,57px)!important}.bball-copy{font-size:15px}}
+  </style>
+  <style>
+    .bball-gallery{position:relative;padding:clamp(64px,9vw,120px) max(20px,calc((100% - var(--max)) / 2))}
+    .bball-gallery-item{height:clamp(473px,57.2vw,811px)!important}
+    .bball-gallery-controls{position:absolute;z-index:5;right:max(20px,calc((100% - var(--max)) / 2));bottom:calc(clamp(64px,9vw,120px) + 18px);left:max(20px,calc((100% - var(--max)) / 2));justify-content:center;margin:0;transform:none;pointer-events:none}
+    .bball-gallery-controls button{pointer-events:auto;box-shadow:0 8px 20px rgba(23,22,21,.18)}
+    .bball-gallery-controls .bball-gallery-dot{width:6px;min-width:0;height:6px;padding:0;border:1px solid #fff;border-radius:50%;background:rgba(23,22,21,.64);box-shadow:0 1px 8px rgba(0,0,0,.42);transition:transform .2s ease,background .2s ease}
+    .bball-gallery-controls .bball-gallery-dot.is-active{background:#fff;transform:scale(1.35)}
+    .bball-gallery-count{display:none!important}
+    .bball-gallery-caption{position:absolute;right:24px;bottom:20px;z-index:2;max-width:32ch;color:#fff;font-size:11px;font-weight:500;letter-spacing:.02em;line-height:1.45;text-align:right;text-shadow:0 2px 12px rgba(0,0,0,.7);pointer-events:none}
+    @media(max-width:700px){.bball-gallery-item{height:clamp(507px,131.3vw,811px)!important}.bball-gallery-controls{right:20px;left:20px}.bball-gallery-caption{right:16px;bottom:16px;max-width:26ch;font-size:10px}}
+  </style>
 </head>
 <body>
   <div class="bball-preloader" role="status" aria-label="Loading ARCENI Basketball"><img class="bball-preloader-logo" src="images/arceni-basketball-landscape.jpg" alt="ARCENI Basketball"></div>
@@ -210,8 +286,7 @@
     <header class="bball-nav"><a class="bball-brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a></header>
     <section class="bball-hero" aria-labelledby="bball-title">
       <img class="bball-portrait" src="images/Basketball/The Coach.png" alt="ARCENI basketball coach holding a basketball">
-      <p class="bball-eyebrow">ARCENI Basketball</p>
-      <h1 class="bball-title" id="bball-title"><span>Train</span> <span class="title-accent">With Purpose.</span></h1>
+      <h1 class="bball-title" id="bball-title"><span>Train</span> <span>With Purpose.</span></h1>
       <div class="bball-bottom">
         <p class="bball-label">Player development<br>Consulting Services</p>
         <p class="bball-copy">Build strong fundamentals, sharpen your overall game and bring character, discipline, teamwork and grit on and off the court.</p>
@@ -231,22 +306,19 @@
         <a class="bball-coach-link" href="basketball.html#basketball-contact-form">Work with ARCENI Basketball ↗</a>
       </div>
     </section>
-    <figure class="bball-photo-break" aria-label="ARCENI Basketball training in motion">
-      <img src="images/Basketball/IMG_5089.JPG" alt="ARCENI Basketball coach training a player on court" loading="lazy">
-      <figcaption><strong>Practice with purpose.</strong><span>Every rep builds confidence, awareness and a stronger foundation for the game.</span></figcaption>
-    </figure>
     <section class="bball-intro" id="bball-approach" aria-labelledby="bball-intro-title">
       <div class="bball-intro-heading"><p class="bball-intro-eyebrow">The ARCENI approach</p><h2 id="bball-intro-title">Build the game.<br><span>Grow the person.</span></h2></div>
       <div class="bball-intro-copy"><p>Sports, basketball in particular, we believe -- is a safe space, where you can engage, learn about yourself and your capabilities – a place where anything you set your mind to can be manifested. It's not always about wins, but the pursuit for growth, greatness – as an individual, a team, community and society.</p><p>Our philosophy is enshrined in building a strong foundation for aspiring basketball players, fostering communities that embody character, discipline, teamwork and grit. On court, the work is practical and focused: learn the skill, apply it under pressure, and carry that growth into competition and everyday life.</p><div class="bball-coach-impact" aria-label="ARCENI Basketball impact"><div class="bball-impact-stat"><strong>12+</strong><span>Years Coaching Experience</span></div><div class="bball-impact-stat"><strong>500+</strong><span>Players Impacted</span></div><div class="bball-impact-stat"><strong>10+</strong><span>Teams Impacted</span></div></div><a class="bball-intro-link" href="basketball.html#basketball-contact-form">Join a program ↗</a></div>
+      <figure class="bball-intro-media"><img src="images/Basketball/The Coach.png" alt="ARCENI basketball coach holding a basketball" loading="lazy"><figcaption>Meet Coach ALMAS (AL)</figcaption></figure>
     </section>
     <section class="bball-gallery" aria-labelledby="bball-gallery-title">
       <div class="bball-gallery-viewport"><div class="bball-gallery-grid">
         <a class="bball-gallery-item" href="basketball.html#basketball-contact-form"><img src="images/Basketball/IMG_2199.JPG" alt="ARCENI Basketball coach guiding a player during shooting practice" loading="lazy"></a>
         <a class="bball-gallery-item" href="basketball.html#basketball-contact-form"><img src="images/Basketball/basketball-action-IMG_3167.JPG" alt="Basketball player in action during training" loading="lazy"></a>
         <a class="bball-gallery-item" href="basketball.html#basketball-contact-form"><img src="images/Basketball/IMG_5051.JPG" alt="ARCENI Basketball coach working with a player on court" loading="lazy"></a>
-        <a class="bball-gallery-item" href="basketball.html#basketball-contact-form"><img src="images/Basketball/DSC_1219.jpg" alt="ARCENI Basketball team huddle on court" loading="lazy"></a>
-        <a class="bball-gallery-item" href="basketball.html#basketball-contact-form"><img src="images/Basketball/IMG_2912.JPG" alt="ARCENI Basketball coach speaking with a player on court" loading="lazy"></a>
         <a class="bball-gallery-item" href="basketball.html#basketball-contact-form"><img src="images/Basketball/IMG_4640.JPG" alt="Two ARCENI Basketball players talking together outside after training" loading="lazy"></a>
+        <a class="bball-gallery-item" href="basketball.html#basketball-contact-form"><img src="images/Basketball/faq-training-IMG_6604.JPG" alt="ARCENI Basketball players training on court" loading="lazy"></a>
+        <a class="bball-gallery-item" href="basketball.html#basketball-contact-form"><img src="images/Basketball/Slytherin.jpg" alt="ARCENI Basketball team huddle" loading="lazy"></a>
       </div></div>
       <div class="bball-gallery-controls"><button type="button" data-bball-gallery-prev aria-label="Previous gallery photo">←</button><span class="bball-gallery-count" aria-live="polite">01 / 06</span><button type="button" data-bball-gallery-next aria-label="Next gallery photo">→</button></div>
     </section>
@@ -259,14 +331,6 @@
       </div>
       <img class="bball-instagram-photo" src="images/Basketball/IMG_8206.JPG" alt="ARCENI Basketball coach walking across the court with a basketball" loading="lazy">
     </section>
-    <figure class="bball-photo-break bball-photo-break--approach" aria-label="ARCENI Basketball players training together">
-      <img src="images/Basketball/Slytherin.jpg" alt="ARCENI Basketball team huddle" loading="lazy">
-      <figcaption><strong>Growth carries beyond the court.</strong><span>Shared standards turn individual development into team culture and lasting impact.</span></figcaption>
-    </figure>
-    <figure class="bball-photo-break" aria-label="ARCENI Basketball player developing game skills">
-      <img src="images/Basketball/faq-training-IMG_6604.JPG" alt="ARCENI Basketball players training on court" loading="lazy">
-      <figcaption><strong>Find your next level.</strong><span>Focused coaching turns intention into repeatable habits, confidence and progress.</span></figcaption>
-    </figure>
     <section class="bball-contact" id="bball-contact" aria-labelledby="bball-contact-title">
       <div class="bball-contact-intro"><p class="bball-contact-eyebrow">Start your development journey</p><h2 id="bball-contact-title">Let’s grow <span class="title-accent">your</span> game.</h2><p>Tell us about your player-development goals, team needs or basketball program. We’ll help you find a practical next step on and off the court.</p><div class="bball-contact-links"><a href="#bball-contact">Player development <span>↗</span></a><a href="#bball-contact">Team &amp; organization support <span>↗</span></a><a href="#bball-contact">Program inquiry <span>↗</span></a></div></div>
       <form class="bball-contact-form" action="https://formspree.io/f/xpppdveo" method="POST"><div class="bball-contact-form-head"><span>ARCENI Basketball · Client inquiry</span><h3>Contact Us</h3></div><div class="bball-contact-field wide"><label for="bball-inquiry-type">I’m reaching out as</label><select id="bball-inquiry-type" name="inquiry_type" required><option value="">Choose one</option><option>Player</option><option>Parent or guardian</option><option>Coach</option><option>Team or organization</option><option>General inquiry</option></select></div><div class="bball-contact-field"><label for="bball-inquiry-name">Your name</label><input id="bball-inquiry-name" name="name" type="text" autocomplete="name" placeholder="Your name" required></div><div class="bball-contact-field"><label for="bball-inquiry-email">Email address</label><input id="bball-inquiry-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div><div class="bball-contact-field"><label for="bball-inquiry-phone">Phone number</label><input id="bball-inquiry-phone" name="phone" type="tel" autocomplete="tel" placeholder="Your phone number"></div><div class="bball-contact-field"><label for="bball-inquiry-location">Location</label><input id="bball-inquiry-location" name="location" type="text" autocomplete="address-level2" placeholder="City / country"></div><div class="bball-contact-field wide"><label for="bball-inquiry-message">Tell us about your goals</label><textarea id="bball-inquiry-message" name="message" placeholder="What kind of player development or team support are you looking for?"></textarea></div><button class="bball-contact-submit" type="submit">Send an inquiry <span aria-hidden="true">↗</span></button><p class="bball-contact-note">Your inquiry will be sent securely to ARCENI. We’ll respond as soon as possible.</p></form>
@@ -274,23 +338,35 @@
     <section class="bball-faq" id="bball-faq" aria-labelledby="bball-faq-title"><div class="bball-faq-heading"><p class="bball-contact-eyebrow">Player development FAQ</p><h2 id="bball-faq-title">Questions?</h2><p>Everything starts with understanding the player, the team and the outcome you want to build.</p></div><div class="bball-faq-list"><details class="bball-faq-item" open><summary><span>Who is ARCENI Basketball for?</span><span class="bball-faq-icon" aria-hidden="true"></span></summary><div class="bball-faq-answer">Players, parents, coaches and teams looking for practical development rooted in fundamentals, character, discipline, teamwork and grit.</div></details><details class="bball-faq-item"><summary><span>What does a session focus on?</span><span class="bball-faq-icon" aria-hidden="true"></span></summary><div class="bball-faq-answer">Sessions are shaped around the player’s goals and may include skill development, decision-making, movement, confidence, game application and competitive habits.</div></details><details class="bball-faq-item"><summary><span>Can teams train with ARCENI?</span><span class="bball-faq-icon" aria-hidden="true"></span></summary><div class="bball-faq-answer">Yes. Team engagements can support shared standards, communication, systems, leadership and a stronger development culture on and off the court.</div></details><details class="bball-faq-item"><summary><span>How do I join a program?</span><span class="bball-faq-icon" aria-hidden="true"></span></summary><div class="bball-faq-answer">Use the contact form to share your goals, experience and location. We will help identify the right next step and available pathway.</div></details></div></section>
   </main>
   <script>
+    const basketballGalleryCaptions=['Focused coaching turns intention into repeatable habits, confidence and progress.','Game-ready training builds awareness, decision-making, confidence and competitive habits.','Practical feedback helps players sharpen their skills and apply them under pressure.','Shared reflection builds communication, trust and a stronger team culture.','Consistent training turns individual effort into measurable growth on and off the court.','Shared standards turn individual development into team culture and lasting impact.'];
+    document.querySelectorAll('.bball-gallery-item').forEach((item,index)=>{
+      if(!item.querySelector('.bball-gallery-caption')){
+        const caption=document.createElement('span');
+        caption.className='bball-gallery-caption';
+        caption.textContent=basketballGalleryCaptions[index]||'ARCENI Basketball';
+        item.append(caption);
+      }
+    });
     const bballGallery=document.querySelector('.bball-gallery');
     if(bballGallery){
       const track=bballGallery.querySelector('.bball-gallery-grid');
       const slides=[...bballGallery.querySelectorAll('.bball-gallery-item')];
       const count=bballGallery.querySelector('.bball-gallery-count');
-      const prev=bballGallery.querySelector('[data-bball-gallery-prev]');
-      const next=bballGallery.querySelector('[data-bball-gallery-next]');
+      const controls=bballGallery.querySelector('.bball-gallery-controls');
+      controls.innerHTML='<button type="button" data-bball-gallery-prev aria-label="Previous gallery photo">&larr;</button><span class="bball-gallery-count" aria-live="polite"></span><button type="button" data-bball-gallery-next aria-label="Next gallery photo">&rarr;</button>';
+      const previous=controls.querySelector('[data-bball-gallery-prev]');
+      const next=controls.querySelector('[data-bball-gallery-next]');
       let current=0;
       let timer;
-      const render=()=>{const slideWidth=slides[0].getBoundingClientRect().width;track.style.transform=`translateX(-${current*(slideWidth+10)}px)`;count.textContent=`${String(current+1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`};
+      const render=()=>{const slideWidth=slides[0].getBoundingClientRect().width;track.style.transform=`translateX(-${current*(slideWidth+10)}px)`;if(count)count.textContent=`${String(current+1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`};
       const move=direction=>{current=(current+direction+slides.length)%slides.length;render()};
       const start=()=>{clearInterval(timer);timer=setInterval(()=>move(1),5200)};
-      prev.addEventListener('click',()=>{move(-1);start()});next.addEventListener('click',()=>{move(1);start()});
+      previous?.addEventListener('click',()=>{move(-1);start()});next?.addEventListener('click',()=>{move(1);start()});
       bballGallery.addEventListener('mouseenter',()=>clearInterval(timer));bballGallery.addEventListener('mouseleave',start);bballGallery.addEventListener('focusin',()=>clearInterval(timer));bballGallery.addEventListener('focusout',start);window.addEventListener('resize',render);render();start();
     }
   </script>
   <script>
+    document.querySelector('#bball-faq')?.remove();
     const bballFaq=document.querySelector('#bball-faq');
     const slytherinPhoto=document.querySelector('.bball-photo-break--approach');
     if(bballFaq&&slytherinPhoto){
@@ -453,5 +529,125 @@
     const basketballNavStyle=document.createElement('style');basketballNavStyle.textContent='.bball-nav-links a.bball-nav-cta{display:inline-flex!important}';document.head.append(basketballNavStyle);
     if(basketballHomepageNav){basketballHomepageNav.innerHTML='<a class="bball-brand" href="index.html#home" aria-label="ARCENI home">ARCENI<sup>®</sup></a><nav class="bball-nav-links" aria-label="Main navigation"><a class="bball-nav-cta" href="#bball-contact">Partner With Us ↗</a></nav>';}
   </script>
+  <script>
+    const basketballHeroCta=document.querySelector('.bball-bottom .bball-cta');
+    if(basketballHeroCta){
+      const basketballHeroActions=document.createElement('div');
+      basketballHeroActions.className='bball-actions';
+      basketballHeroActions.innerHTML='<a class="bball-cta bball-cta-secondary" href="#bball-approach">Meet the Coach <span aria-hidden="true">↗</span></a><a class="bball-cta" href="#bball-contact">Book a Session <span aria-hidden="true">↗</span></a>';
+      basketballHeroCta.replaceWith(basketballHeroActions);
+    }
+  </script>
+  <script>
+    const basketballHeroSide=document.createElement('div');
+    basketballHeroSide.className='bball-hero-side';
+    const basketballHeroBottom=document.querySelector('.bball-bottom');
+    const basketballHeroLabel=basketballHeroBottom?.querySelector('.bball-label');
+    const basketballHeroActions=document.querySelector('.bball-bottom .bball-actions');
+    if(basketballHeroBottom&&basketballHeroLabel&&basketballHeroActions){
+      basketballHeroBottom.append(basketballHeroSide);
+      basketballHeroBottom.insertBefore(basketballHeroLabel,basketballHeroBottom.querySelector('.bball-copy'));
+      basketballHeroSide.append(basketballHeroActions);
+    }
+  </script>
+  <style>
+    .bball-bottom{grid-template-columns:minmax(150px,.7fr) minmax(280px,1.3fr) minmax(300px,1fr);align-items:center}
+    .bball-hero-side{grid-column:3;grid-row:1;display:flex;align-items:center;width:100%;min-width:0}
+    .bball-hero-side .bball-actions{grid-column:auto;grid-row:auto;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:stretch;width:100%;gap:10px}
+    .bball-hero-side .bball-cta{flex:1 1 0;width:auto;min-width:0}
+    .bball-bottom>.bball-label{grid-column:1;grid-row:1}
+    .bball-title,.bball-title span,.bball-title span:last-child,.bball-bottom>.bball-label{color:#fff!important}
+    .bball-title{transform:translateY(clamp(10px,1.5vw,20px))}
+    .bball-nav{position:absolute!important;top:0;right:0;left:0;z-index:10;background:transparent!important;border-bottom:0!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;color:#f4f1ee!important}
+    .bball-nav .bball-brand{color:#f4f1ee!important}
+    .bball-hero{min-height:100svh!important;padding-top:clamp(120px,14vw,180px)!important}
+    .bball-hero .bball-eyebrow{display:none!important}
+    .bball-hero:after{display:block;position:absolute;z-index:-1;right:0;bottom:0;left:0;height:42%;background:linear-gradient(180deg,transparent 0%,rgba(8,8,8,.62) 100%);content:"";pointer-events:none}
+    @media(max-width:800px){.bball-hero{min-height:100svh!important;padding-top:96px!important}.bball-bottom{grid-template-columns:1fr;align-items:stretch}.bball-hero-side{grid-column:1;grid-row:auto;flex-direction:column;align-items:stretch;gap:16px}.bball-bottom>.bball-label{grid-column:1;grid-row:auto;max-width:48ch}}
+  </style>
+  <script>
+    document.querySelectorAll('.bball-actions .bball-cta').forEach((cta)=>cta.removeAttribute('hidden'));
+    const basketballMeetCoachCta=document.querySelector('.bball-actions .bball-cta:first-child');
+    const basketballBookSessionCta=document.querySelector('.bball-actions .bball-cta:nth-child(2)');
+    basketballMeetCoachCta?.classList.remove('bball-cta-secondary');
+    basketballBookSessionCta?.classList.add('bball-cta-secondary');
+  </script>
+  <script>
+    const basketballApproachCopy=document.querySelector('.bball-intro-copy');
+    if(basketballApproachCopy&&!basketballApproachCopy.querySelector('.bball-intro-disclaimer')){
+      basketballApproachCopy.querySelector('.bball-intro-link')?.remove();
+      const basketballDisclaimer=document.createElement('p');
+      basketballDisclaimer.className='bball-intro-disclaimer';
+      basketballDisclaimer.textContent='Every session is shaped around the player, with progress built through consistent practice, honest feedback and purposeful support.';
+      const basketballApproachCta=document.createElement('a');
+      basketballApproachCta.className='bball-intro-link bball-approach-cta';
+      basketballApproachCta.href='#bball-contact';
+      basketballApproachCta.innerHTML='Book a Session <span aria-hidden="true">↗</span>';
+      const basketballApproachBenefits=document.createElement('ul');
+      basketballApproachBenefits.className='bball-approach-benefits';
+      basketballApproachBenefits.setAttribute('aria-label','Basketball program details');
+      basketballApproachBenefits.innerHTML='<li><small>For Who</small><p>Players · Teams · Organizations</p></li><li><small>Services</small><p>Player Development · Consulting</p></li><li><small>Approach</small><p>Player Centered · Collaborative</p></li><li><small>Enrollment</small><p>Open</p></li>';
+      const basketballApproachFooter=document.createElement('div');
+      basketballApproachFooter.className='bball-approach-footer';
+      const basketballApproachMetrics=document.createElement('div');
+      basketballApproachMetrics.className='bball-approach-metrics';
+      basketballApproachMetrics.setAttribute('aria-label','Impact metrics');
+      basketballApproachMetrics.innerHTML='<div><strong>12+</strong><span>Years coaching</span></div><div><strong>500+</strong><span>Players impacted</span></div><div><strong>10+</strong><span>Teams impacted</span></div>';
+      basketballApproachFooter.append(basketballDisclaimer,basketballApproachMetrics,basketballApproachCta);
+      basketballApproachCopy.insertBefore(basketballApproachBenefits,basketballApproachCopy.querySelector('.bball-coach-impact'));
+      document.querySelector('.bball-intro')?.append(basketballApproachFooter);
+    }
+  </script>
+  <script src="site-menu.js"></script>
+<script>
+  const basketballMergedNavStyle=document.createElement('style');
+  basketballMergedNavStyle.textContent='header.bball-nav{position:absolute!important;top:0!important;right:0!important;left:0!important;z-index:10!important;min-height:76px!important;background:transparent!important;border-bottom:0!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;color:#f4f1ee!important}header.bball-nav>.bball-brand{color:#f4f1ee!important;text-shadow:0 1px 10px rgba(0,0,0,.45)!important}@media(max-width:700px){header.bball-nav{min-height:64px!important}}';
+  document.head.append(basketballMergedNavStyle);
+  document.querySelector('.bball-nav-cta')?.remove();
+  document.querySelector('.bball-nav-links')?.remove();
+</script>
+<style>
+  @media(min-width:701px){.bball-title{font-family:Inter,Arial,sans-serif!important;font-size:124px!important;font-weight:750!important;line-height:99px!important;letter-spacing:-12.4px!important;color:#f4f1ee!important}.bball-title span,.bball-title span:last-child{color:#f4f1ee!important}}
+</style>
+<style>@media(min-width:801px){.bball-hero{padding-bottom:clamp(36px,4vw,54px)!important}}</style>
+<style>.bball-hero:before{background-image:url('images/Basketball/IMG_5089.JPG')!important;background-position:66% bottom!important;background-size:cover!important}</style>
+<style>.bball-hero:after{display:block!important;background:linear-gradient(0deg,rgba(8,8,8,.48) 0%,rgba(8,8,8,.2) 38%,transparent 72%)!important}</style>
+<style>
+  .bball-approach-footer{align-items:center;flex-wrap:wrap}
+  .bball-approach-metrics{display:grid;grid-template-columns:repeat(3,minmax(88px,1fr));gap:0;flex:1;min-width:min(100%,360px);border-left:1px solid var(--line)}
+  .bball-approach-metrics>div{padding:0 18px;border-right:1px solid var(--line)}
+  .bball-approach-metrics strong{display:block;font-size:clamp(24px,3vw,38px);font-weight:750;line-height:.9;letter-spacing:-.08em}
+  .bball-approach-metrics span{display:block;margin-top:8px;color:var(--muted);font-size:9px;font-weight:700;letter-spacing:.1em;line-height:1.3;text-transform:uppercase}
+  @media(max-width:800px){.bball-approach-metrics{margin-top:18px;border-left:0;border-top:1px solid var(--line);padding-top:18px}.bball-approach-metrics>div{padding:0 12px}.bball-approach-metrics>div:first-child{padding-left:0}}
+  @media(max-width:520px){.bball-approach-metrics{grid-template-columns:1fr}.bball-approach-metrics>div{padding:12px 0;border-right:0;border-bottom:1px solid var(--line)}.bball-approach-metrics>div:last-child{border-bottom:0}}
+</style>
+<style>
+  .bball-hero:after{display:block!important;background:linear-gradient(0deg,rgba(8,8,8,.8) 0%,rgba(8,8,8,.5) 34%,rgba(8,8,8,.18) 68%,transparent 100%)!important}
+</style>
+<style>
+  .bball-socials{display:flex;align-items:center;gap:14px;margin-left:auto}
+  .bball-socials a{display:grid;width:32px;height:32px;place-items:center;border:1px solid currentColor;border-radius:50%;background:rgba(8,8,8,.28);color:inherit;opacity:1;transition:background .2s ease,transform .2s ease}
+  .bball-socials a:hover,.bball-socials a:focus-visible{background:rgba(8,8,8,.52);transform:translateY(-2px)}
+  .bball-socials svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:2}
+  .bball-socials .bball-social-fill{fill:currentColor;stroke:none}
+  .bball-socials .bball-social-dot{fill:currentColor;stroke:none}
+</style>
+<style>
+  @media(max-width:700px){.bball-title{position:relative;top:clamp(-132px,-14vh,-100px)}}
+</style>
+<script>
+  const basketballSocials=document.createElement('nav');
+  basketballSocials.className='bball-socials';
+  basketballSocials.setAttribute('aria-label','ARCENI Basketball social media');
+  basketballSocials.innerHTML='<a href="https://www.instagram.com/arcenibasketball/" target="_blank" rel="noopener noreferrer" aria-label="ARCENI Basketball on Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" class="bball-social-dot"></circle></svg></a><a href="https://www.youtube.com/@arcenibasketball" target="_blank" rel="noopener noreferrer" aria-label="ARCENI Basketball on YouTube" title="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.2 7.1a2.7 2.7 0 0 0-1.9-1.9C17.6 4.7 12 4.7 12 4.7s-5.6 0-7.3.5a2.7 2.7 0 0 0-1.9 1.9C2.3 8.8 2.3 12 2.3 12s0 3.2.5 4.9a2.7 2.7 0 0 0 1.9 1.9c1.7.5 7.3.5 7.3.5s5.6 0 7.3-.5a2.7 2.7 0 0 0 1.9-1.9c.5-1.7.5-4.9.5-4.9s0-3.2-.5-4.9Z"></path><path class="bball-social-fill" d="m10 15.5 5-3.5-5-3.5v7Z"></path></svg></a><a href="https://www.linkedin.com/company/arcenibasketball/" target="_blank" rel="noopener noreferrer" aria-label="ARCENI Basketball on LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.3H2.8V21h2.4V8.3ZM4 3A1.5 1.5 0 1 0 4 6a1.5 1.5 0 0 0 0-3ZM21.2 13.7c0-3.8-2-5.6-4.7-5.6-2.2 0-3.2 1.2-3.8 2v-1.8h-2.4V21h2.4v-6.3c0-1.7.3-3.4 2.5-3.4s2.5 1.9 2.5 3.5V21h2.4v-7.3Z"></path></svg></a>';
+  document.querySelector('.bball-nav')?.append(basketballSocials);
+</script>
+<style>
+  .bball-gallery-controls button{width:44px!important;height:44px!important;border:1px solid rgba(255,255,255,.82)!important;background:rgba(23,22,21,.7)!important;color:#fff!important;font-size:22px!important;line-height:1}
+  .bball-gallery-controls button:hover,.bball-gallery-controls button:focus-visible{background:#fff!important;color:#171615!important}
+</style>
+<style>
+  @media(max-width:700px){.bball-gallery-viewport{margin-right:-20px;margin-left:-20px}}
+</style>
 </body>
 </html>
