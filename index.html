@@ -305,7 +305,7 @@
   .homepage-panel-arrow{position:absolute;right:clamp(20px,3vw,44px);bottom:clamp(10px,1.2vw,16px);width:clamp(36px,4vw,44px);height:clamp(36px,4vw,44px);font-size:18px}
   .homepage-panel{min-width:0;min-height:clamp(520px,76vh,820px)}
   .homepage-panel-copy{min-width:0}
-  @media(max-width:900px) and (min-width:701px){.homepage-panels{grid-template-columns:repeat(2,minmax(0,1fr))}.homepage-panel:last-child{grid-column:1 / -1}}
+  @media(max-width:1100px) and (min-width:701px){.homepage-panels{grid-template-columns:1fr;gap:18px;padding-top:18px;padding-bottom:18px}.homepage-panel{min-height:clamp(520px,70vh,760px);border-top:0}.homepage-panel:last-child{grid-column:auto}}
   @media(max-width:700px){.homepage-panels{padding-right:0;padding-left:0;margin-top:84px;gap:12px}}
 </style>
 </head>
@@ -319,7 +319,7 @@
     </nav>
   </header>
   <main>
-    <section class="homepage-panels" id="home" aria-label="ARCENI pathways"><a class="homepage-panel homepage-panel--basketball" href="basketball.html"><span class="homepage-panel-number">Train with purpose.</span><div class="homepage-panel-copy"><p class="homepage-panel-kicker">01</p><h2>The Basketball</h2><p class="homepage-panel-description">Build strong fundamentals, sharpen your overall game and grow through character, discipline, teamwork and grit.</p></div><span class="homepage-panel-arrow" aria-hidden="true">↗</span></a><a class="homepage-panel homepage-panel--collective" href="collective.html#archer-program"><span class="homepage-panel-number">Grow with clarity.</span><div class="homepage-panel-copy"><p class="homepage-panel-kicker">02</p><h2>The Collective</h2><p class="homepage-panel-description">Purposeful coaching and workshops for self-awareness, confidence and practical momentum.</p></div><span class="homepage-panel-arrow" aria-hidden="true">↗</span></a><a class="homepage-panel homepage-panel--consulting" href="consulting.html"><span class="homepage-panel-number">Move ideas forward.</span><div class="homepage-panel-copy"><p class="homepage-panel-kicker">03</p><h2>The Consulting</h2><p class="homepage-panel-description">Practical support for organizations ready to clarify priorities, strengthen delivery and create meaningful impact.</p></div><span class="homepage-panel-arrow" aria-hidden="true">↗</span></a></section>
+    <section class="homepage-panels" id="home" aria-label="ARCENI pathways"><a class="homepage-panel homepage-panel--basketball" href="basketball.html"><span class="homepage-panel-number">Train with purpose.</span><div class="homepage-panel-copy"><p class="homepage-panel-kicker">01</p><h2>The Basketball</h2><p class="homepage-panel-description">Personalized training, development and leadership to gain a competitive edge on and off the court.</p></div><span class="homepage-panel-arrow" aria-hidden="true">↗</span></a><a class="homepage-panel homepage-panel--collective" href="collective.html#archer-program"><span class="homepage-panel-number">Grow with clarity.</span><div class="homepage-panel-copy"><p class="homepage-panel-kicker">02</p><h2>The Collective</h2><p class="homepage-panel-description">Coaching and leadership programs for individuals to build self-awareness, confidence in careers and life.</p></div><span class="homepage-panel-arrow" aria-hidden="true">↗</span></a><a class="homepage-panel homepage-panel--consulting" href="consulting.html"><span class="homepage-panel-number">Move ideas forward.</span><div class="homepage-panel-copy"><p class="homepage-panel-kicker">03</p><h2>The Consulting</h2><p class="homepage-panel-description">Practical support for organizations ready to clarify priorities, strengthen delivery and create meaningful impact.</p></div><span class="homepage-panel-arrow" aria-hidden="true">↗</span></a></section>
     <section class="homepage-hero" id="home" aria-labelledby="homepage-hero-title"><div class="homepage-hero-content"><p class="eyebrow">Est. 2018</p><h1 id="homepage-hero-title">We drive bold ideas, shared value <span>and impact.</span></h1><div class="homepage-hero-bottom"><p class="homepage-hero-copy">ARCENI is an impact consultancy supporting mission-driven organizations execute sustainable programs and projects.</p><div class="homepage-hero-actions" aria-label="Homepage actions"><a href="programs.html">Our Programs <span aria-hidden="true">↗</span></a><a class="secondary" href="consulting.html">Book a Consultation <span aria-hidden="true">↗</span></a></div></div></div></section>
   </main>
   <footer class="arceni-copyright" aria-label="ARCENI copyright"><span>© 2026 ARCENI</span><span>Nairobi · Kenya · Global</span></footer>
@@ -446,7 +446,7 @@
 </style>
   <script>
     const consultingPanelDescription=document.querySelector('.homepage-panel--consulting .homepage-panel-description');
-    if(consultingPanelDescription) consultingPanelDescription.textContent='Supporting mission-driven organizations execute sustainable projects and programs.';
+    if(consultingPanelDescription) consultingPanelDescription.textContent='An impact consultancy supporting mission-driven organizations execute sustainable projects and programs.';
   </script>
 </body>
 </html>
