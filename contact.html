@@ -74,5 +74,12 @@
   <script src="site-footer.js"></script>
   <script src="site-nav.js"></script>
   <script>document.querySelector('#contact-title')?.replaceChildren(document.createTextNode('Work With Us.'));</script>
+  <script>
+    const contactNewsletter=document.querySelector('.footer-newsletter form');
+    if(contactNewsletter){
+      contactNewsletter.action='https://formspree.io/f/xpppdveo';
+      contactNewsletter.removeAttribute('enctype');
+    }
+  </script>
 </body>
 </html>

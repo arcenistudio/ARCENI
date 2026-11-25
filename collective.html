@@ -46,6 +46,18 @@
   </style>
   <style>main > section:has(.archer-contact){width:min(100% - clamp(40px,10vw,144px),var(--max));margin-right:auto;margin-left:auto}main > section:has(.archer-contact) .archer-contact{width:100%;box-sizing:border-box}</style>
   <style>.archer-hero{display:none!important}</style>
+  <style>
+    /* Programs-style hero adapted for The Collective pathways. */
+    .site-header{position:sticky;top:0;right:auto;left:auto;z-index:20;border-bottom-color:rgba(23,22,21,.1);background:rgba(255,255,255,.94);color:var(--ink)}.site-header .brand{color:var(--ink)}.site-header .nav a:first-child{color:var(--muted)}.site-header .nav a:first-child:hover{color:var(--ink)}.site-header .button{background:#171615;border-color:#171615;color:#fff!important}.site-header .button:hover,.site-header .button:focus-visible{background:#4b4643;border-color:#4b4643;color:#fff!important}
+    .collective-hero{position:relative;isolation:isolate;display:flex;min-height:calc(100svh - 78px);flex-direction:column;justify-content:flex-end;overflow:hidden;padding:clamp(80px,10vw,140px) max(24px,calc((100% - var(--max))/2)) clamp(54px,7vw,90px);background:var(--ink);color:#f4f1ee}
+    .collective-hero:before{position:absolute;z-index:-2;inset:0;background:linear-gradient(90deg,rgba(23,22,21,.92) 0%,rgba(23,22,21,.68) 46%,rgba(23,22,21,.3) 100%),linear-gradient(0deg,rgba(23,22,21,.86) 0%,rgba(23,22,21,.08) 65%),url('images/Collective/wadi-lissa-AZvGpBp925o-unsplash.jpg') center/cover;content:"";filter:saturate(.72)}
+    .collective-hero .collective-hero-top{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:auto;color:rgba(244,241,241,.7);font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}.collective-hero .collective-hero-top span:last-child{color:#f4f1ee}
+    .collective-hero-content{max-width:none}.collective-hero .eyebrow{margin:0 0 clamp(24px,4vw,46px);color:rgba(244,241,238,.74)}.collective-hero .eyebrow:before{display:inline-block;width:28px;height:1px;margin:0 12px 3px 0;background:var(--accent);content:""}.collective-hero h1{max-width:9ch;margin:0;color:#f4f1ee;font-size:clamp(62px,8.5vw,124px);font-weight:750;line-height:.8;letter-spacing:-.1em}.collective-hero h1 span{color:#f4f1ee}
+    .collective-hero-bottom{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:clamp(24px,5vw,76px);margin-top:clamp(24px,4vw,44px);padding-top:0;border-top:0}.collective-hero-copy{max-width:470px;margin:0;color:rgba(244,241,238,.78);font-size:15px;line-height:1.7}.collective-hero-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;align-self:end;gap:10px}.collective-hero-actions .button{min-width:170px;justify-content:space-between;border-color:#f4f1ee;background:#f4f1ee;color:var(--ink)}.collective-hero-actions .button.secondary{border-color:rgba(255,255,255,.55);background:transparent;color:#f4f1ee}.collective-hero-actions .button span{font-size:0}.collective-hero-actions .button span::after{content:'↗';font-size:17px}.collective-hero-actions .button:hover,.collective-hero-actions .button:focus-visible{background:var(--accent);border-color:var(--accent)}
+    @media(max-width:800px){.site-header{padding:17px 20px}.collective-hero{min-height:calc(100svh - 64px);padding:76px 20px 36px}.collective-hero:before{background-position:62% center}.collective-hero-bottom{grid-template-columns:1fr;gap:22px;margin-top:32px}.collective-hero-copy{max-width:38ch}.collective-hero-actions{justify-content:stretch}.collective-hero-actions .button{width:100%}}@media(max-width:520px){.collective-hero h1{font-size:clamp(36px,10.5vw,57px)}.collective-hero-copy{font-size:15px}}
+    .site-header .nav .button{display:inline-flex!important;min-width:150px;padding:14px 16px;box-shadow:0 8px 20px rgba(0,0,0,.22)}
+    @media(max-width:520px){.site-header .nav .button{min-width:132px;padding:12px;font-size:9px}}
+  </style>
   <style>.archer-how{grid-template-columns:1fr}.archer-how-media{display:none}</style>
   <style>.archer-faq-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(24px,4vw,64px);align-items:start}@media(max-width:800px){.archer-faq-list{display:block}}</style>
   <style>.archer-how{grid-template-columns:minmax(0,1.28fr) minmax(260px,.72fr)}.archer-how-media{display:block;grid-column:2}.archer-how-content{grid-column:1}@media(max-width:900px){.archer-how{grid-template-columns:1fr}.archer-how-media,.archer-how-content{grid-column:auto}}</style>
@@ -208,11 +220,37 @@
   <style>
     .archer-workshop-footer{display:flex;align-items:center;justify-content:space-between;gap:28px;margin-top:18px;padding:clamp(24px,3vw,34px);border-top:1px solid var(--line);background:#fff}.archer-workshop-disclaimer{max-width:62ch;margin:0;color:var(--muted);font-size:11px;line-height:1.7}.archer-workshop-disclaimer strong{color:var(--ink)}.archer-workshop-cta{display:inline-flex;flex:none;align-items:center;gap:14px;padding:14px 16px;background:var(--ink);color:#fff;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.archer-workshop-cta:hover,.archer-workshop-cta:focus-visible{background:#4b4643}@media(max-width:800px){.archer-workshop-footer{display:block}.archer-workshop-cta{margin-top:20px}}
   </style>
-<style>#archer-program{width:100%;max-width:none;padding-left:max(20px,calc((100% - var(--max))/2));padding-right:max(20px,calc((100% - var(--max))/2));background:#171615;color:#f4f1ee;border-top-color:rgba(244,241,238,.22)}#archer-program .section-label,#archer-program .eyebrow{color:rgba(244,241,238,.58)}#archer-program h2,#archer-program h3,#archer-program strong{color:#f4f1ee}#archer-program p,#archer-program li{color:rgba(244,241,238,.72)}#archer-program ul{border-top-color:rgba(244,241,238,.22)}#archer-program li{border-bottom-color:rgba(244,241,238,.22)}#archer-program .button{background:#f4f1ee;border-color:#f4f1ee;color:#171615}</style><style>#archer-program .archer-benefit-icon{border-color:rgba(244,241,238,.48);background:transparent;color:#f4f1ee}#archer-program .archer-benefit-icon svg{stroke:#f4f1ee}</style><style>#archer-program .archer-program-footer{display:flex!important;align-items:center;justify-content:space-between;gap:28px;margin-top:clamp(36px,5vw,64px);padding-top:20px;border-top:1px solid rgba(244,241,238,.22)}#archer-program .archer-program-footer p{max-width:58ch;margin:0;color:rgba(244,241,238,.68);font-size:12px;line-height:1.7}#archer-program .archer-program-footer a{display:inline-flex;align-items:center;gap:14px;flex:none;padding:14px 16px;background:#f4f1ee;color:#171615;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}@media(max-width:800px){#archer-program .archer-program-footer{display:block!important}#archer-program .archer-program-footer a{margin-top:20px}}</style></head>
+<style>#archer-program{width:100%;max-width:none;padding-left:max(20px,calc((100% - var(--max))/2));padding-right:max(20px,calc((100% - var(--max))/2));background:#fff;color:var(--ink);border-top-color:var(--line)}#archer-program .section-label,#archer-program .eyebrow{color:var(--muted)}#archer-program h2,#archer-program h3,#archer-program strong{color:var(--ink)}#archer-program p,#archer-program li{color:var(--muted)}#archer-program ul{border-top-color:var(--line)}#archer-program li{border-bottom-color:var(--line)}#archer-program .button{background:var(--ink);border-color:var(--ink);color:#fff}</style><style>#archer-program .archer-benefit-icon{border-color:var(--line);background:transparent;color:var(--ink)}#archer-program .archer-benefit-icon svg{stroke:var(--ink)}</style><style>#archer-program .archer-program-footer{display:flex!important;align-items:center;justify-content:space-between;gap:28px;margin-top:clamp(36px,5vw,64px);padding-top:20px;border-top:1px solid var(--line)}#archer-program .archer-program-footer p{max-width:58ch;margin:0;color:var(--muted);font-size:12px;line-height:1.7}#archer-program .archer-program-footer a{display:inline-flex;align-items:center;gap:14px;flex:none;padding:14px 16px;background:var(--ink);color:#fff;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}@media(max-width:800px){#archer-program .archer-program-footer{display:block!important}#archer-program .archer-program-footer a{margin-top:20px}}</style>
+<style>
+  /* Swap the pathway colour treatments: light Archer, dark Catalyst. */
+  .archer-workshop-section{width:100%;max-width:none;margin:0;padding-right:max(20px,calc((100% - var(--max))/2));padding-left:max(20px,calc((100% - var(--max))/2));background:#171615;color:#f4f1ee;border-top-color:rgba(244,241,238,.22)}
+  .archer-workshop-section .section-label,.archer-workshop-section>header>p,.archer-workshop-card>span,.archer-workshop-card p,.archer-workshop-meta span,.archer-workshop-disclaimer{color:rgba(244,241,238,.68)}.archer-workshop-section h2,.archer-workshop-section h3,.archer-workshop-meta strong{color:#f4f1ee}.archer-workshop-card{border-color:rgba(244,241,238,.22);background:#242220}.archer-workshop-meta{border-left-color:rgba(244,241,238,.22)}.archer-workshop-footer{border-top-color:rgba(244,241,238,.22);background:#242220}.archer-workshop-cta{background:#f4f1ee;color:var(--ink)}.archer-workshop-cta:hover,.archer-workshop-cta:focus-visible{background:var(--accent)}
+  @media(max-width:800px){.archer-workshop-section{width:100%;padding-right:20px;padding-left:20px}}
+<style>.arceni-copyright{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px max(20px,calc((100% - var(--max))/2));border-top:1px solid var(--line);color:var(--muted);font-size:10px;letter-spacing:.08em;text-transform:uppercase}@media(max-width:520px){.arceni-copyright{align-items:flex-start;flex-direction:column;gap:8px;padding-right:20px;padding-left:20px}}</style></head>
+<style>
+  .collective-hero-actions .button span{font-size:inherit}
+  .collective-hero-actions .button span::after{content:none}
+  .archer-workshop-footer{background:transparent}
+</style>
+<style>
+  .archer-workshop-footer{align-items:center;justify-content:space-between;gap:28px;margin-top:clamp(36px,5vw,64px);padding:20px 0 0;border-top:1px solid var(--line);background:transparent}
+  .archer-workshop-disclaimer{max-width:58ch;margin:0;font-size:12px;line-height:1.7}
+  @media(max-width:800px){.archer-workshop-footer{display:block}.archer-workshop-cta{margin-top:20px}}
+</style>
 <body>
   <header class="site-header"><a class="brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a><nav class="nav" aria-label="ARCHER navigation"><a class="button" href="contact.html">Apply Now ↗</a></nav></header>
 
   <main>
+    <section class="collective-hero" aria-labelledby="collective-title">
+      <div class="collective-hero-content">
+        <p class="eyebrow">ARCENI COLLECTIVE</p>
+        <h1 id="collective-title">Collective.</h1>
+        <div class="collective-hero-bottom">
+          <p class="collective-hero-copy">A focused space for young people to find clarity, build confidence and turn meaningful ideas into purposeful action through coaching and workshops.</p>
+          <div class="collective-hero-actions" aria-label="Collective pathways"><a class="button" href="#archer-program">The Archer <span aria-hidden="true">â†—</span></a><a class="button secondary" href="#archer-workshops">The Catalyst <span aria-hidden="true">â†—</span></a></div>
+        </div>
+      </div>
+    </section>
     <section class="archer-hero archer-bball-hero" aria-labelledby="archer-title">
   <img class="archer-portrait" src="images/Collective/wadi-lissa-AZvGpBp925o-unsplash.jpg" alt="Young people collaborating around a table">
   <p class="archer-eyebrow">The Arceni Changemakers Program · The Archer</p>
@@ -224,16 +262,13 @@
   </div>
 </section>
     
-    <section class="archer-program-section" id="archer-program" aria-labelledby="archer-program-title"><div class="archer-program-inner"><div class="archer-program-description"><p class="eyebrow">The Archer · 1-on-1 Coaching</p><h2 id="archer-program-title">The Archer <span>Program.</span></h2><p>The Arceni Changemakers Program (ARCHER) provides personalized one-to-one coaching for individuals to find direction, shape an idea, build confidence and practical steps in their lives.</p></div><div class="archer-program-benefits"><p class="archer-program-support-copy">The Archer Program helps each participant connect what matters to them with practical goals for life, learning and work.</p><ul class="archer-benefit-list"><li><span class="archer-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"></circle><circle cx="12" cy="12" r="3"></circle><path d="m14.2 9.8 4.1-4.1"></path></svg></span><span>Explore your purpose, strengths and direction</span></li><li><span class="archer-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 19h14M7 16V6h10v10M10 10h4M10 13h4"></path><path d="m15 4 2 2-2 2"></path></svg></span><span>Turn an idea into a clear, achievable plan</span></li><li><span class="archer-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19.5h16M6 17V7.5L12 4l6 3.5V17M9 17v-4h6v4"></path><path d="m8 10 2 2 5-5"></path></svg></span><span>Build momentum with focused coaching and reflection</span></li></ul></div></div><div class="archer-program-footer"><p>The Archer is a coaching program designed for personal development. Participation does not guarantee specific outcomes; progress depends on individual goals and engagement.</p><a href="contact.html">APPLY NOW <span aria-hidden="true">&#8599;</span></a></div></section>
+     <section class="archer-program-section" id="archer-program" aria-labelledby="archer-program-title"><div class="archer-program-inner"><div class="archer-program-description"><p class="eyebrow">The Archer · 1-on-1 Coaching</p><h2 id="archer-program-title">The Archer <span>Program.</span></h2><p>The Arceni Changemakers Program (ARCHER) provides personalized one-to-one coaching for individuals to find direction, shape an idea, build confidence and practical steps in their lives.</p></div><div class="archer-program-benefits"><p class="archer-program-support-copy">The Archer Program helps each participant connect what matters to them with practical goals for life, learning and work.</p><ul class="archer-benefit-list"><li><span class="archer-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"></circle><circle cx="12" cy="12" r="3"></circle><path d="m14.2 9.8 4.1-4.1"></path></svg></span><span>Explore your purpose, strengths and direction</span></li><li><span class="archer-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 19h14M7 16V6h10v10M10 10h4M10 13h4"></path><path d="m15 4 2 2-2 2"></path></svg></span><span>Turn an idea into a clear, achievable plan</span></li><li><span class="archer-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19.5h16M6 17V7.5L12 4l6 3.5V17M9 17v-4h6v4"></path><path d="m8 10 2 2 5-5"></path></svg></span><span>Build momentum with focused coaching and reflection</span></li></ul></div></div><div class="archer-program-footer"><p>The Archer is a coaching program designed for personal development. Participation does not guarantee specific outcomes; progress depends on individual goals and engagement.</p><a href="contact.html">JOIN THE WAITLIST <span aria-hidden="true">&#8599;</span></a></div></section>
 
     <section class="archer-workshop-section" id="archer-workshops" aria-labelledby="archer-workshops-title">
       <header class="archer-workshop-heading">
         <div><p class="section-label">The Catalyst · Workshops</p><h2 id="archer-workshops-title">The Catalyst <span>Workshops.</span></h2></div>
         <p>Practical group sessions that turn reflection into action, giving young people tools, confidence and a supportive space to build together.</p>
       </header>
-      <div class="archer-workshop-grid">
-        <article class="archer-workshop-card"><div><span>WORKSHOP 01</span><h3>Identity &amp; Belonging</h3><p>Clarify your strengths, values and interests, then identify a meaningful next step.</p></div><div class="archer-workshop-meta"><div><span>Date</span><strong>TBD</strong></div><div><span>Time</span><strong>TBD</strong></div><div><span>Seats</span><strong>TBD</strong></div><div><span>Location</span><strong>TBD</strong></div></div></article>
-      </div>
       <div class="archer-workshop-footer"><p class="archer-workshop-disclaimer">Workshop details are subject to confirmation. Dates, times, available seats and location will be updated when finalized.</p><a class="archer-workshop-cta" href="contact.html">Join the Waitlist <span aria-hidden="true">↗</span></a></div>
     </section>
 
@@ -261,12 +296,13 @@
     <section class="section"><div class="final-cta"><div><p class="section-label">Next cohort</p><h2>Build it together.</h2></div><div><p>Applications for the next cohort are open. Tell me what your goals are and let’s build it together.</p><a class="button" href="contact.html">Start Your Application ↗</a></div></div></section>
     
   </main>
+  <footer class="arceni-copyright" aria-label="ARCENI copyright"><span>© 2026 ARCENI</span><span>Nairobi · Kenya · Global</span></footer>
   <script>
     const archerJourneySection=document.querySelector('#archer-journey');
     const archerRegistrationSection=document.querySelector('#registration');
     if(archerJourneySection&&archerRegistrationSection){archerRegistrationSection.before(archerJourneySection)}
     if(archerJourneySection&&document.querySelector('#archer-program')){const archerProgram=document.querySelector('#archer-program');const archerJourneyLabel=archerJourneySection.querySelector('.section-label');const archerProgramTimeline=archerProgram.querySelector('.archer-timeline');if(archerJourneyLabel&&archerProgramTimeline){archerProgramTimeline.before(archerJourneyLabel)}archerJourneySection.remove()}
-    document.querySelector('#registration')?.remove();
+    // Keep the shared Collective registration form available for both pathways.
     const archerFaqBlock=document.querySelector('#archer-faq');
     const archerProgramSectionForFaq=document.querySelector('#archer-program');
     if(archerFaqBlock&&archerProgramSectionForFaq){archerProgramSectionForFaq.after(archerFaqBlock)}
@@ -350,6 +386,28 @@
       archerImpact.querySelector('[data-archer-impact-next]').addEventListener('click',()=>show(current+1));
       show(0);
     }
+  </script>
+  <script>
+    const collectiveRegistration=document.querySelector('#registration');
+    if(collectiveRegistration){
+      const label=collectiveRegistration.querySelector('.archer-registration-intro .section-label');
+      const heading=collectiveRegistration.querySelector('#registration-title');
+      const intro=collectiveRegistration.querySelector('.archer-registration-intro>p:last-child');
+      const formLabel=collectiveRegistration.querySelector('.archer-contact-form-head span');
+      const formHeading=collectiveRegistration.querySelector('.archer-contact-form-head h3');
+      const pathway=collectiveRegistration.querySelector('#pathway');
+      if(label) label.textContent='The Collective · Enrollment';
+      if(heading) heading.innerHTML='Choose your <span>path.</span>';
+      if(intro) intro.textContent='Register your interest in The Archer or The Catalyst, and the ARCENI team will be in touch with the right next step.';
+      if(formLabel) formLabel.textContent='ARCENI · Collective enrollment';
+      if(formHeading) formHeading.textContent='Tell us how you want to grow.';
+      if(pathway) pathway.innerHTML='<option value="">Choose a pathway</option><option value="The Archer">The Archer · 1-on-1 Coaching</option><option value="The Catalyst">The Catalyst · Workshops</option><option value="unsure">I would like help choosing</option>';
+    }
+    document.querySelector('.site-header .button')?.setAttribute('href','#registration');
+    document.querySelectorAll('.archer-hero-cta,.archer-program-footer a,.archer-workshop-cta').forEach(link=>link.setAttribute('href','#registration'));
+  </script>
+  <script>
+    document.querySelectorAll('.collective-hero-actions span').forEach(arrow => { arrow.textContent='↗'; });
   </script>
 </body>
 </html>
