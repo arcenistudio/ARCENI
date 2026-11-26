@@ -605,12 +605,24 @@
     }
   </script>
   <style>
-    .collective-hero h1{width:100%;max-width:none!important;font-size:clamp(32px,8.5vw,108px)!important;white-space:nowrap!important}
-    @media(max-width:800px){.collective-hero h1{font-size:clamp(30px,8.5vw,68px)!important}}
+    .collective-hero h1{width:100%;max-width:none!important;margin:0!important;color:#f4f1ee!important;font-size:clamp(43px,6vw,87px)!important;font-weight:750!important;line-height:.8!important;letter-spacing:-.1em!important;text-transform:uppercase!important;white-space:nowrap!important}
+    @media(max-width:800px){.collective-hero h1{font-size:clamp(30px,10.5vw,43px)!important}}
   </style>
   <style>
     header.bball-nav{min-height:76px!important;padding-top:0!important;padding-bottom:0!important;padding-right:0!important;padding-left:0!important}
     @media(max-width:800px){header.bball-nav{min-height:64px!important;padding-top:0!important;padding-bottom:0!important;padding-right:0!important;padding-left:0!important}}
+  </style>
+  <style>
+    /* Keep the collective navbar separate from the hero. */
+    header.bball-nav{position:static!important;top:auto!important;right:auto!important;left:auto!important;display:flex!important;min-height:76px!important;padding:0 max(20px,calc((100% - var(--max))/2))!important;background:#fff!important;border-bottom:1px solid rgba(23,22,21,.12)!important;color:var(--ink)!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+    header.bball-nav .bball-brand{color:var(--ink)!important;text-shadow:none!important}
+    .collective-hero{min-height:calc(100svh - 76px)!important;padding-top:clamp(80px,10vw,140px)!important}
+    @media(max-width:800px){header.bball-nav{min-height:64px!important;padding-right:20px!important;padding-left:20px!important}.collective-hero{min-height:calc(100svh - 64px)!important;padding-top:76px!important}}
+  </style>
+  <style>
+    header.bball-nav .site-nav-socials{display:flex!important;align-items:center!important;gap:16px!important;margin-left:auto!important}
+    header.bball-nav .site-nav-socials a{display:grid!important;width:28px;height:28px;place-items:center;color:var(--ink)!important}
+    @media(max-width:700px){header.bball-nav .site-nav-socials{gap:12px!important}}
   </style>
 </body>
 </html>
