@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="responsive.css">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="ARCENI helps people and organizations turn purpose into practical progress.">
@@ -445,9 +446,37 @@
   @media(max-width:700px){.homepage-panels{grid-template-columns:1fr;gap:12px}.homepage-panel{padding-right:20px;padding-left:20px}.homepage-panel h2{font-size:clamp(24px,8vw,42px);white-space:normal;overflow-wrap:anywhere}.homepage-panel-description{font-size:14px;line-height:1.55}}
 </style>
   <script>
+    document.querySelectorAll('header nav[aria-label*="social" i],header .homepage-socials,header .arceni-socials,header .bball-socials').forEach(element=>element.remove());
+  </script>
+  <script>
     const consultingPanelDescription=document.querySelector('.homepage-panel--consulting .homepage-panel-description');
     if(consultingPanelDescription) consultingPanelDescription.textContent='An impact consultancy supporting mission-driven organizations execute sustainable projects and programs.';
   </script>
+  <style>
+    .bottom-social-footer{display:flex;align-items:center;justify-content:flex-end;gap:18px;padding:0 max(24px,calc((100% - var(--max))/2)) 26px;background:#fff;color:#68615e;font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+    .bottom-social-footer a{color:#171615;transition:color .2s ease,transform .2s ease}
+    .bottom-social-footer a:hover,.bottom-social-footer a:focus-visible{color:#68615e;transform:translateY(-2px)}
+    @media(max-width:520px){.bottom-social-footer{justify-content:flex-start;flex-wrap:wrap;padding-right:20px;padding-left:20px}}
+  </style>
+  <footer class="bottom-social-footer" aria-label="ARCENI social media"><a href="https://www.instagram.com/thearceni/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.youtube.com/@thearceni" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.linkedin.com/company/thearceni/" target="_blank" rel="noopener noreferrer">LinkedIn</a></footer>
+  <style>
+    .arceni-copyright{flex-wrap:wrap}
+    .arceni-copyright .bottom-social-footer{order:3;display:flex;align-items:center;gap:10px;padding:0;margin-left:auto;background:transparent}
+    .bottom-social-footer a{display:grid;width:28px;height:28px;place-items:center;border:1px solid currentColor;border-radius:50%}
+    .bottom-social-footer a{border:0;border-radius:0}
+    .bottom-social-footer svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7}
+    .bottom-social-footer .social-fill,.bottom-social-footer .social-dot{fill:currentColor;stroke:none}
+    @media(max-width:520px){.arceni-copyright .bottom-social-footer{margin-left:0}}
+  </style>
+  <script>
+    const homepageCopyrightFooter=document.querySelector('.arceni-copyright');
+    const homepageSocialFooter=document.querySelector('.bottom-social-footer');
+    if(homepageCopyrightFooter&&homepageSocialFooter){
+      homepageSocialFooter.innerHTML='<a href="https://www.instagram.com/thearceni/" target="_blank" rel="noopener noreferrer" aria-label="The ARCENI on Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" class="social-dot"></circle></svg></a><a href="https://www.youtube.com/@thearceni" target="_blank" rel="noopener noreferrer" aria-label="The ARCENI on YouTube" title="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.2 7.1a2.7 2.7 0 0 0-1.9-1.9C17.6 4.7 12 4.7 12 4.7s-5.6 0-7.3.5a2.7 2.7 0 0 0-1.9 1.9C2.3 8.8 2.3 12 2.3 12s0 3.2.5 4.9a2.7 2.7 0 0 0 1.9 1.9c1.7.5 7.3.5 7.3.5s5.6 0 7.3-.5a2.7 2.7 0 0 0 1.9-1.9c.5-1.7.5-4.9.5-4.9s0-3.2-.5-4.9Z"></path><path class="social-fill" d="m10 15.5 5-3.5-5-3.5v7Z"></path></svg></a><a href="https://www.linkedin.com/company/thearceni/" target="_blank" rel="noopener noreferrer" aria-label="The ARCENI on LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.3H2.8V21h2.4V8.3ZM4 3A1.5 1.5 0 1 0 4 6a1.5 1.5 0 0 0 0-3ZM21.2 13.7c0-3.8-2-5.6-4.7-5.6-2.2 0-3.2 1.2-3.8 2v-1.8h-2.4V21h2.4v-6.3c0-1.7.3-3.4 2.5-3.4s2.5 1.9 2.5 3.5V21h2.4v-7.3Z"></path></svg></a>';
+      homepageCopyrightFooter.append(homepageSocialFooter);
+    }
+  </script>
+  <script src="social-nav.js"></script>
 </body>
 </html>
 

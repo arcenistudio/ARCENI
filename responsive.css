@@ -1,0 +1,57 @@
+/* Shared responsive safeguards for ARCENI pages. */
+*,*::before,*::after{box-sizing:border-box}
+html{overflow-x:hidden}
+body{max-width:100%;overflow-x:hidden}
+main,section,article,header,footer,figure,form,nav,div{min-width:0}
+img,video,iframe,svg{max-width:100%}
+img,video{height:auto}
+input,select,textarea,button{max-width:100%;font:inherit}
+table{display:block;max-width:100%;overflow-x:auto}
+h1,h2,h3,h4,p,li,a{overflow-wrap:break-word}
+@media (max-width:1100px){
+  .site-header,.bball-nav,.coaching-nav,.basketball-nav,.topbar,.intro-header,.archer-nav{padding-right:clamp(20px,4vw,48px)!important;padding-left:clamp(20px,4vw,48px)!important}
+  .section,.consulting-services,.consulting-contact,.bball-intro,.bball-contact,.bball-faq,.archer-registration,.archer-program-section,.archer-workshop-section{max-width:100%}
+  .section-grid,.consulting-contact,.bball-contact,.archer-registration{column-gap:clamp(28px,5vw,64px)}
+}
+@media (max-width:900px){
+  .section-grid,.consulting-contact,.bball-contact,.archer-registration,.consulting-project-card,.homepage-moved-program-card{grid-template-columns:1fr!important}
+  .hero-bottom,.collective-hero-bottom,.bball-bottom{grid-template-columns:1fr!important}
+  .hero-actions,.collective-hero-actions,.bball-actions{width:100%;max-width:none}
+  .service-grid,.pathways,.archer-workshop-grid{grid-template-columns:1fr!important}
+  .trusted-by{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .contact-form,.bball-contact-form{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .homepage-moved-program-card figure,.consulting-project-image{min-height:320px}
+}
+@media (max-width:700px){
+  .site-header,.bball-nav,.coaching-nav,.basketball-nav,.topbar,.intro-header,.archer-nav{padding-right:20px!important;padding-left:20px!important}
+  .hero-bottom,.collective-hero-bottom,.bball-bottom{gap:20px!important}
+  .contact-form,.bball-contact-form{grid-template-columns:1fr!important}
+  .contact-field.wide,.contact-submit,.contact-note,.bball-contact-field.wide,.bball-contact-submit,.bball-contact-note{grid-column:1!important}
+  .trusted-by{grid-template-columns:1fr!important}
+  .section-heading,.archer-workshop-heading,.archer-faq-heading{display:block}
+  .section-heading>p,.archer-workshop-heading>p,.archer-faq-heading>p{margin-top:22px}
+  .homepage-moved-program-card figure,.consulting-project-image{min-height:260px}
+  .homepage-moved-benefits{grid-template-columns:1fr!important}
+  footer,.arceni-copyright{align-items:flex-start;flex-direction:column;gap:10px}
+  .bottom-social-footer,.collective-footer-social,.bball-footer-social{width:auto!important;margin-left:0!important;justify-content:flex-start!important;align-self:flex-start}
+}
+
+.site-nav-socials{display:flex!important;align-items:center;gap:16px;margin-left:auto;color:inherit}
+.site-nav-socials a{display:grid!important;width:28px;height:28px;place-items:center;color:inherit;opacity:.82;transition:opacity .2s ease,transform .2s ease}
+.site-nav-socials a:hover,.site-nav-socials a:focus-visible{opacity:1;transform:translateY(-2px)}
+.site-nav-socials svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7}
+.site-nav-socials .social-fill,.site-nav-socials .social-dot{fill:currentColor;stroke:none}
+@media (max-width:700px){.site-nav-socials{margin-left:auto;gap:12px}}
+
+/* Keep footer social links aligned consistently with the basketball footer. */
+.bottom-social-footer,.collective-footer-social,.bball-footer-social{display:flex!important;align-items:center;gap:16px;margin-left:auto}
+.bottom-social-footer a,.collective-footer-social a,.bball-footer-social a{display:grid;place-items:center;width:28px;height:28px;border:0;border-radius:0}
+.bottom-social-footer svg,.collective-footer-social svg,.bball-footer-social svg{width:17px;height:17px}
+@media (max-width:700px){
+  .bottom-social-footer,.collective-footer-social,.bball-footer-social{margin-left:0!important;justify-content:flex-start!important;align-self:flex-start}
+}
+@media (max-width:420px){
+  .hero-actions .button,.collective-hero-actions .button,.bball-cta,.bball-actions .button{width:100%;min-width:0}
+  .hero-copy,.collective-hero-copy,.bball-copy{font-size:14px!important}
+  .section h2,.contact-intro h2,.bball-contact-intro h2{font-size:clamp(42px,13vw,64px)}
+}

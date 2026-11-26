@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="responsive.css">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="ARCHER is ARCENI's personalized changemakers program for youth and aspiring professionals.">
@@ -256,11 +257,12 @@
   @media(max-width:800px){.archer-workshop-footer{display:block}.archer-workshop-cta{margin-top:20px}}
 </style>
 <body>
-  <header class="site-header"><a class="brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a><nav class="nav" aria-label="ARCHER navigation"><a class="button" href="contact.html">Apply Now ↗</a></nav></header>
+  <header class="bball-nav"><a class="bball-brand" href="index.html" aria-label="ARCENI home">ARCENI<sup>®</sup></a></header>
 
   <main>
     <section class="collective-hero" aria-labelledby="collective-title">
       <div class="collective-hero-content">
+        <p class="collective-hero-eyebrow">Grow with clarity</p>
         <h1 id="collective-title">COLLECTIVE</h1>
         <div class="collective-hero-bottom">
           <p class="collective-hero-label">1-on-1 Coaching<br>Bespoke Workshops</p>
@@ -485,5 +487,130 @@
   collectiveSocials.innerHTML='<a href="https://www.instagram.com/arcenicollective/" target="_blank" rel="noopener noreferrer" aria-label="ARCENI Collective on Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" class="arceni-social-dot"></circle></svg></a><a href="https://www.youtube.com/@thearceni" target="_blank" rel="noopener noreferrer" aria-label="The ARCENI on YouTube" title="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.2 7.1a2.7 2.7 0 0 0-1.9-1.9C17.6 4.7 12 4.7 12 4.7s-5.6 0-7.3.5a2.7 2.7 0 0 0-1.9 1.9C2.3 8.8 2.3 12 2.3 12s0 3.2.5 4.9a2.7 2.7 0 0 0 1.9 1.9c1.7.5 7.3.5 7.3.5s5.6 0 7.3-.5a2.7 2.7 0 0 0 1.9-1.9c.5-1.7.5-4.9.5-4.9s0-3.2-.5-4.9Z"></path><path class="arceni-social-fill" d="m10 15.5 5-3.5-5-3.5v7Z"></path></svg></a><a href="https://www.linkedin.com/company/thearceni/" target="_blank" rel="noopener noreferrer" aria-label="The ARCENI on LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.3H2.8V21h2.4V8.3ZM4 3A1.5 1.5 0 1 0 4 6a1.5 1.5 0 0 0 0-3ZM21.2 13.7c0-3.8-2-5.6-4.7-5.6-2.2 0-3.2 1.2-3.8 2v-1.8h-2.4V21h2.4v-6.3c0-1.7.3-3.4 2.5-3.4s2.5 1.9 2.5 3.5V21h2.4v-7.3Z"></path></svg></a>';
   document.querySelector('.site-header')?.append(collectiveSocials);
 </script>
+  <style>
+    .collective-footer-social{display:flex;align-items:center;gap:16px;margin-left:auto}
+    .collective-footer-social a{display:grid;width:28px;height:28px;place-items:center;color:inherit;opacity:.82;transition:opacity .2s ease,transform .2s ease}
+    .collective-footer-social a:hover,.collective-footer-social a:focus-visible{opacity:1;transform:translateY(-2px)}
+    .collective-footer-social svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7}
+    .collective-footer-social .social-fill,.collective-footer-social .social-dot{fill:currentColor;stroke:none}
+    @media(max-width:520px){.collective-footer-social{margin-left:0}}
+  </style>
+  <script>
+    const collectiveCopyrightFooter=document.querySelector('.arceni-copyright');
+    if(collectiveCopyrightFooter&&!collectiveCopyrightFooter.querySelector('.collective-footer-social')){
+      const collectiveFooterSocial=document.createElement('nav');
+      collectiveFooterSocial.className='collective-footer-social';
+      collectiveFooterSocial.setAttribute('aria-label','ARCENI social media');
+      collectiveFooterSocial.innerHTML='<a href="https://www.instagram.com/arcenicollective/" target="_blank" rel="noopener noreferrer" aria-label="ARCENI Collective on Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" class="social-dot"></circle></svg></a><a href="https://www.youtube.com/@thearceni" target="_blank" rel="noopener noreferrer" aria-label="The ARCENI on YouTube" title="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.2 7.1a2.7 2.7 0 0 0-1.9-1.9C17.6 4.7 12 4.7 12 4.7s-5.6 0-7.3.5a2.7 2.7 0 0 0-1.9 1.9C2.3 8.8 2.3 12 2.3 12s0 3.2.5 4.9a2.7 2.7 0 0 0 1.9 1.9c1.7.5 7.3.5 7.3.5s5.6 0 7.3-.5a2.7 2.7 0 0 0 1.9-1.9c.5-1.7.5-4.9.5-4.9s0-3.2-.5-4.9Z"></path><path class="social-fill" d="m10 15.5 5-3.5-5-3.5v7Z"></path></svg></a><a href="https://www.linkedin.com/company/thearceni/" target="_blank" rel="noopener noreferrer" aria-label="The ARCENI on LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.3H2.8V21h2.4V8.3ZM4 3A1.5 1.5 0 1 0 4 6a1.5 1.5 0 0 0 0-3ZM21.2 13.7c0-3.8-2-5.6-4.7-5.6-2.2 0-3.2 1.2-3.8 2v-1.8h-2.4V21h2.4v-6.3c0-1.7.3-3.4 2.5-3.4s2.5 1.9 2.5 3.5V21h2.4v-7.3Z"></path></svg></a>';
+      collectiveCopyrightFooter.append(collectiveFooterSocial);
+    }
+  </script>
+  <style>
+    header.site-header,header.site-header.arceni-original-cta-header{position:static!important;top:auto!important;right:auto!important;left:auto!important;z-index:4;min-height:76px!important;padding:20px max(24px,calc((100% - var(--max))/2));border-bottom:1px solid rgba(23,22,21,.12)!important;background:#fff!important;color:var(--ink)!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+    header.site-header .brand,header.site-header.arceni-original-cta-header>.brand{color:var(--ink)!important;text-shadow:none!important}
+    body section.collective-hero{min-height:calc(100svh - 76px)!important;padding-top:clamp(80px,10vw,140px)!important}
+    header.site-header .nav{margin-left:auto}
+    header.site-header .header-cta{display:inline-flex;align-items:center;justify-content:space-between;gap:18px;padding:13px 16px;border:1px solid var(--ink);background:var(--ink);color:#fff;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;transition:background .2s ease,border-color .2s ease,transform .2s ease}
+    header.site-header .header-cta:hover,header.site-header .header-cta:focus-visible{background:#4b4643;border-color:#4b4643;color:#fff;transform:translateY(-2px)}
+    @media(max-width:800px){header.site-header,header.site-header.arceni-original-cta-header{min-height:64px!important;padding:17px 20px}body section.collective-hero{min-height:calc(100svh - 64px)!important;padding-top:76px!important}}
+  </style>
+  <script>
+    const collectiveSyncHeader=()=>{
+      const collectiveHomeHeader=document.querySelector('header.site-header');
+      if(collectiveHomeHeader){
+        collectiveHomeHeader.querySelectorAll('.arceni-socials,.nav,.button').forEach(element=>element.remove());
+        collectiveHomeHeader.insertAdjacentHTML('beforeend','<nav class="nav" aria-label="Main navigation"><a class="header-cta" href="index.html#home">HOME <span aria-hidden="true">↗</span></a></nav>');
+      }
+    };
+    collectiveSyncHeader();
+    window.addEventListener('load',collectiveSyncHeader);
+    window.setTimeout(collectiveSyncHeader,0);
+  </script>
+  <style>
+    header.site-header{position:absolute!important;top:0;right:0;left:0;z-index:10;min-height:76px!important;padding:20px max(24px,calc((100% - var(--max))/2));border-bottom:0!important;background:transparent!important;color:#f4f1ee!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+    header.site-header .brand{color:#f4f1ee!important;text-shadow:none!important}
+    header.site-header .nav{display:none!important}
+    body section.collective-hero{min-height:100svh!important;padding-top:clamp(120px,14vw,180px)!important}
+    .collective-hero-eyebrow{margin:0 0 clamp(24px,4vw,46px);color:rgba(244,241,238,.74);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+    .collective-hero-eyebrow:before{display:inline-block;width:28px;height:1px;margin:0 12px 3px 0;background:#b8b0b3;content:""}
+    @media(max-width:800px){header.site-header{min-height:64px!important;padding:17px 20px}body section.collective-hero{min-height:100svh!important;padding-top:96px!important}}
+    header.site-header{display:flex!important}
+  </style>
+<style>
+  header.site-header,header.site-header.arceni-original-cta-header{display:flex!important;position:absolute!important;top:0;right:0;left:0;z-index:10;min-height:76px!important;padding:20px max(20px,calc((100% - min(100% - clamp(40px,10vw,144px),var(--max)))/2));border-bottom:0!important;background:transparent!important;color:#f4f1ee!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+  header.site-header .brand,header.site-header.arceni-original-cta-header>.brand{color:#f4f1ee!important;text-shadow:none!important}
+  header.site-header .nav{display:none!important}
+  body section.collective-hero{min-height:100svh!important;padding-top:clamp(120px,14vw,180px)!important}
+  @media(max-width:800px){header.site-header,header.site-header.arceni-original-cta-header{min-height:64px!important;padding:17px 20px}body section.collective-hero{min-height:100svh!important;padding-top:96px!important}}
+</style>
+<style>
+  header.bball-nav{display:flex!important;position:absolute!important;top:0;right:0;left:0;z-index:10;align-items:center;justify-content:space-between;gap:24px;width:100%!important;min-height:76px;padding:20px max(24px,calc((100% - var(--max))/2));border-bottom:0!important;background:transparent!important;color:#f4f1ee!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+  header.bball-nav .bball-brand{color:#f4f1ee!important}
+  body section.collective-hero{min-height:100svh!important;padding-top:clamp(120px,14vw,180px)!important}
+  @media(min-width:801px) and (max-width:1100px){header.bball-nav{padding-right:max(20px,calc((100% - min(100% - clamp(40px,10vw,144px),var(--max)))/2));padding-left:max(20px,calc((100% - min(100% - clamp(40px,10vw,144px),var(--max)))/2))}}
+  @media(max-width:800px){header.bball-nav{min-height:64px;padding:17px 20px}body section.collective-hero{min-height:100svh!important;padding-top:96px!important}}
+</style>
+  <style>
+    /* Test page: retain only the collective hero, Archer, Catalyst, and registration sections. */
+    main > .archer-hero,
+    main > section[aria-labelledby="apply-title"],
+    main > section.gain-section,
+    main > #archer-faq,
+    main > section:has(.final-cta){display:none!important}
+  </style>
+  <script>
+    document.querySelectorAll('main > .archer-hero, main > section[aria-labelledby="apply-title"], main > section.gain-section, main > #archer-faq, main > section:has(.final-cta)').forEach(section => section.remove());
+  </script>
+  <style>
+    header.bball-nav .bball-home-cta,header.bball-nav .bball-nav-cta,header.bball-nav .bball-nav-links{display:none!important}
+  </style>
+  <script src="social-nav.js"></script>
+  <style>
+    .collective-hero h1{font-size:clamp(43px,6vw,87px)!important}
+    @media(max-width:800px){.collective-hero h1{font-size:clamp(34px,10.5vw,43px)!important}}
+  </style>
+  <style>
+    /* Match the navbar logo edge to the Catalyst section container. */
+    header.bball-nav{padding-right:max(20px,calc((100% - var(--max))/2));padding-left:max(20px,calc((100% - var(--max))/2))}
+    @media(max-width:800px){header.bball-nav{padding-right:20px;padding-left:20px}}
+  </style>
+  <style>
+    /* Match basketball page dimensions across all responsive breakpoints. */
+    .collective-hero{min-height:100svh!important;padding:clamp(110px,13vw,180px) max(24px,calc((100% - var(--max))/2)) clamp(54px,7vw,94px)!important}
+    .collective-hero-content{width:100%;max-width:none}
+    .collective-hero h1{max-width:none!important}
+    .collective-hero-bottom{grid-template-columns:minmax(140px,.7fr) minmax(0,1.3fr) minmax(260px,1fr);align-items:center;gap:clamp(24px,5vw,76px)}
+    #archer-program,.archer-workshop-section,.archer-registration{padding-right:max(20px,calc((100% - var(--max))/2));padding-left:max(20px,calc((100% - var(--max))/2))}
+    @media(max-width:1100px) and (min-width:801px){
+      .collective-hero-bottom{grid-template-columns:minmax(130px,.65fr) minmax(0,1.35fr);gap:28px}
+      .collective-hero-actions{grid-column:1/-1;justify-content:flex-start}
+    }
+    @media(max-width:800px){
+      .collective-hero{min-height:100svh!important;padding:96px 20px 36px!important}
+      .collective-hero-bottom{grid-template-columns:1fr;gap:20px}
+      .collective-hero-actions{grid-column:1;flex-direction:column;align-items:stretch}
+      #archer-program,.archer-workshop-section,.archer-registration{padding-right:20px;padding-left:20px}
+    }
+  </style>
+  <style>
+    .collective-back-home{display:inline-flex;align-items:center;gap:10px;margin-left:auto;color:var(--muted);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:color .2s ease,transform .2s ease}
+    .collective-back-home span{font-size:18px;font-weight:400;line-height:1}
+    .collective-back-home:hover,.collective-back-home:focus-visible{color:var(--ink);transform:translateY(-2px)}
+    @media(max-width:700px){.collective-back-home{margin-left:0}}
+  </style>
+  <script>
+    const collectiveFooter=document.querySelector('.arceni-copyright');
+    if(collectiveFooter&&!collectiveFooter.querySelector('.collective-back-home')){
+      collectiveFooter.insertAdjacentHTML('beforeend','<a class="collective-back-home" href="index.html#home">BACK TO HOME <span aria-hidden="true">↗</span></a>');
+    }
+  </script>
+  <style>
+    .collective-hero h1{width:100%;max-width:none!important;font-size:clamp(32px,8.5vw,108px)!important;white-space:nowrap!important}
+    @media(max-width:800px){.collective-hero h1{font-size:clamp(30px,8.5vw,68px)!important}}
+  </style>
+  <style>
+    header.bball-nav{min-height:76px!important;padding-top:0!important;padding-bottom:0!important;padding-right:0!important;padding-left:0!important}
+    @media(max-width:800px){header.bball-nav{min-height:64px!important;padding-top:0!important;padding-bottom:0!important;padding-right:0!important;padding-left:0!important}}
+  </style>
 </body>
 </html>
