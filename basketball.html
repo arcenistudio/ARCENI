@@ -333,6 +333,9 @@
       </div>
       <img class="bball-instagram-photo" src="images/Basketball/IMG_8206.JPG" alt="ARCENI Basketball coach walking across the court with a basketball" loading="lazy">
     </section>
+    <figure class="bball-contact-photo" aria-label="ARCENI Basketball player development session">
+      <img src="images/Basketball/player-development-session.jpg" alt="ARCENI Basketball player development session on court" loading="lazy">
+    </figure>
     <section class="bball-contact" id="bball-contact" aria-labelledby="bball-contact-title">
       <div class="bball-contact-intro"><p class="bball-contact-eyebrow">Start your development journey</p><h2 id="bball-contact-title">Let’s grow <span class="title-accent">your</span> game.</h2><p>Tell us about your player-development goals, team needs or basketball program. We’ll help you find a practical next step on and off the court.</p><div class="bball-contact-links"><a href="#bball-contact">Player development <span>↗</span></a><a href="#bball-contact">Team &amp; organization support <span>↗</span></a><a href="#bball-contact">Program inquiry <span>↗</span></a></div></div>
       <form class="bball-contact-form" action="https://formspree.io/f/xpppdveo" method="POST"><div class="bball-contact-form-head"><span>ARCENI Basketball · Client inquiry</span></div><div class="bball-contact-field wide"><label for="bball-inquiry-type">I’m reaching out as</label><select id="bball-inquiry-type" name="inquiry_type" required><option value="">Choose one</option><option>Player</option><option>Parent or guardian</option><option>Coach</option><option>Team or organization</option><option>General inquiry</option></select></div><div class="bball-contact-field"><label for="bball-inquiry-name">Your name</label><input id="bball-inquiry-name" name="name" type="text" autocomplete="name" placeholder="Your name" required></div><div class="bball-contact-field"><label for="bball-inquiry-email">Email address</label><input id="bball-inquiry-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div><div class="bball-contact-field"><label for="bball-inquiry-phone">Phone number</label><input id="bball-inquiry-phone" name="phone" type="tel" autocomplete="tel" placeholder="Your phone number"></div><div class="bball-contact-field"><label for="bball-inquiry-location">Location</label><input id="bball-inquiry-location" name="location" type="text" autocomplete="address-level2" placeholder="City / country"></div><div class="bball-contact-field wide"><label for="bball-inquiry-message">Tell us about your goals</label><textarea id="bball-inquiry-message" name="message" placeholder="What kind of player development or team support are you looking for?"></textarea></div><button class="bball-contact-submit" type="submit">Send an inquiry <span aria-hidden="true">↗</span></button><p class="bball-contact-note">Your inquiry will be sent securely to ARCENI. We’ll respond as soon as possible.</p></form>
@@ -783,5 +786,44 @@
     .bball-hero{min-height:calc(100svh - 76px)!important;padding-top:clamp(80px,10vw,140px)!important}
     @media(max-width:800px){header.bball-nav{min-height:64px!important;padding-right:20px!important;padding-left:20px!important}.bball-hero{min-height:calc(100svh - 64px)!important;padding-top:76px!important}}
   </style>
+  <style>
+    .bball-preloader-logo{width:min(35.28vw,353px)!important}
+  </style>
+  <script src="site-chrome.js"></script>
+  <style>
+    @media(max-width:800px){
+      .bball-hero .bball-actions,.bball-hero-side .bball-actions{display:flex!important;flex-direction:column!important;align-items:stretch!important;width:100%!important;gap:10px!important}
+      .bball-hero .bball-actions .bball-cta,.bball-hero-side .bball-actions .bball-cta{width:100%!important;max-width:none!important}
+    }
+  </style>
+  <style>
+    /* Match the dark pathway treatment used by the Collective program section. */
+    #bball-contact{background:#171615;color:#f4f1ee;border-top-color:rgba(244,241,238,.22)}
+    #bball-contact .bball-contact-eyebrow,
+    #bball-contact .bball-contact-intro>p:not(.bball-contact-eyebrow),
+    #bball-contact .bball-contact-link-copy small,
+    #bball-contact .bball-contact-link-number,
+    #bball-contact .bball-contact-note{color:rgba(244,241,238,.68)}
+    #bball-contact .bball-contact-intro h2,
+    #bball-contact .bball-contact-link-copy strong,
+    #bball-contact .bball-contact-links a{color:#f4f1ee}
+    #bball-contact .bball-contact-links,
+    #bball-contact .bball-contact-links a{border-color:rgba(244,241,238,.22)}
+    #bball-contact .bball-contact-form{border-color:rgba(244,241,238,.22);background:#242220}
+    #bball-contact .bball-contact-form-head{border-bottom-color:rgba(244,241,238,.22)}
+    #bball-contact .bball-contact-form-head span,
+    #bball-contact .bball-contact-field label{color:rgba(244,241,238,.68)}
+    #bball-contact .bball-contact-form-head h3{color:#f4f1ee}
+    #bball-contact .bball-contact-field input,
+    #bball-contact .bball-contact-field select,
+    #bball-contact .bball-contact-field textarea{border-color:rgba(244,241,238,.22);background:transparent;color:#f4f1ee}
+    #bball-contact .bball-contact-submit{background:#f4f1ee;color:#171615}
+    #bball-contact .bball-contact-submit span{background:#171615;color:#f4f1ee}
+  </style>
+<style>
+  .bball-contact-photo{width:100%;height:clamp(280px,48vw,680px);margin:0;overflow:hidden;background:var(--ink)}
+  .bball-contact-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 52%;filter:brightness(.82) saturate(.88)}
+  @media(max-width:700px){.bball-contact-photo{height:clamp(260px,72vw,460px)}.bball-contact-photo img{object-position:center center}}
+</style>
 </body>
 </html>
